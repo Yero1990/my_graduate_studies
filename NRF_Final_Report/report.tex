@@ -5,43 +5,45 @@
 \documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out
                                                           % if you need a4paper
 %\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
-                                                          % paper
+\usepackage{url}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage[scientific-notation=true]{siunitx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[top=0.6 in, bottom=0.7 in, left=0.7in, right=0.7in]{geometry}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{vector}
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage{amssymb}
+\usepackage{tgtermes}
+\usepackage{gensymb}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{epstopdf}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage{datetime}
+\usepackage[hyperfootnotes=false, pdfnewwindow, colorlinks=true]{hyperref}
+
+\AtBeginDocument{% optionally set colors to your liking
+  \hypersetup{
+    urlcolor=red,
+    citecolor=green,
+    linkcolor=blue,
+  }%
+}                                                         % paper
 
 \IEEEoverridecommandlockouts                              % This command is only
                                                           % needed if you want to
                                                           % use the \thanks command
 \overrideIEEEmargins
-% See the \addtolength command later in the file to balance the column lengths
-% on the last page of the document
-
-
-
-% The following packages can be found on http:\\www.ctan.org
-%\usepackage{graphics} % for pdf, bitmapped graphics files
-%\usepackage{epsfig} % for postscript graphics files
-%\usepackage{mathptmx} % assumes new font selection scheme installed
-%\usepackage{times} % assumes new font selection scheme installed
-%\usepackage{amsmath} % assumes amsmath package installed
-%\usepackage{amssymb}  % assumes amsmath package installed
 
 \title{\LARGE \bf
-  On the Commissioning of the 12 GeV HMS Drift Chambers, Electronics/Computer Live Time Monitoring
+  On the Commissioning of the 12 GeV HMS Drift Chambers, Electronics/Computer Dead Time Monitoring
   and Overview of the D(e,e'p)n Experimental Run Plan}
 
-%\author{ \parbox{3 in}{\centering Huibert Kwakernaak*
-%         \thanks{*Use the $\backslash$thanks command to put information here}\\
-%         Faculty of Electrical Engineering, Mathematics and Computer Science\\
-%         University of Twente\\
-%         7500 AE Enschede, The Netherlands\\
-%         {\tt\small h.kwakernaak@autsubmit.com}}
-%         \hspace*{ 0.5 in}
-%         \parbox{3 in}{ \centering Pradeep Misra**
-%         \thanks{**The footnote marks may be inserted manually}\\
-%        Department of Electrical Engineering \\
-%         Wright State University\\
-%         Dayton, OH 45435, USA\\
-%         {\tt\small pmisra@cs.wright.edu}}
-%}
 
 \author{Carlos Yero \\
 October 30, 2017}
@@ -55,12 +57,11 @@ October 30, 2017}
       Three separate topics, all of equal importance, are briefly discussed. The new (12 GeV Era) HMS Drift Chambers are ready to be put in the HMS
       detector stack, in place of the old HMS Chambers. Several efficcinecy tests were performed on one of the chambers during the second week of October
       2017. The efficciecies were determined to be better than 99$\%$. The second chamber has not been tested yet, but it is
-      expected to behave the same since both chambers were tested under similar conditions in the past. Live time studies are currently in progress to
+      expected to behave the same since both chambers were tested under similar conditions in the past. Dead time studies are currently in progress to
       determine how many physics events (triggers) are actually lost due to computer and electronic deadtime inherent in our experimental equipment. 
       There had been some technical issues found related to the computer livetime that are being addressed by the Jefferson Lab DAQ group. The experimental run
-      plan of my thesis experiment, the electro-disintegration of deuteron (D(e,e'p)n), is briefly discussed as the kinematics have slightly changed and new
-      simulations had to be done. \\
-      
+      plan of my thesis experiment, the electro-disintegration of Deuteron, is briefly discussed as the kinematics have slightly changed and new
+      simulations had to be done. \\      
     \end{abstract}
   \end{@twocolumnfalse}
   ]
@@ -81,23 +82,58 @@ result of this delay, the commissioning experiments that were scheduled to run o
 This time window has allowed the Hall C collaboration to work extensively in preparation for the commissioning of the
 spectrometers on December. \\
 \indent One of the projects I have been involved in is the ongoing work on testing and commissioning the 12 GeV HMS Drift
-Chambers. The chambers were constructed at Hampton University by Dr. Lyuang Tang and his graduate student Bishnu Pandey in 2016.
-They were made the same design as the SHMS chambers, but smaller in size. The chambers we transported to Jefferson Lab on November 2016,
-where they underwent extensive tests as part of conditioning the chambers to sustain High Voltages using a gas mixture\footnote{This gas mixture is
-at lower cost compared to the gas mixture that the chambers run on during an experiment, which is why it is preferred during stress testing this detector.}
-of 75:25 Argon/CO$_{2}$ by volume.  The chambers were found to be operational at 1860 V which is below the expected value. The chambers often drew significant
-amount of current ($\sim$ few $\mu$A) which caused the High Voltage to shut down as a safety mechanism. It was determined that the most likely cause of not
-being able to raise the High Voltage was the gas mixture being used, so one of the chambers was transported to the experimental Hall C where a gas mixture of
-50:50 Argon/Ethane by volume was used. A test stand for the chamber was set up in the HMS hut, where it has been tested and verified to be operational with the
-new gas mixture.
-\indent A second project I am currently involve in is the determination of electronic and computer dead times by a different method than was previously used in
-Hall C.
+Chambers. The chambers were constructed at Hampton University by Dr. Liguang Tang and his graduate students in 2016.
+They were made the same design as the SHMS chambers, but slightly different size. The chambers were transported to Jefferson Lab on November 2016,
+where they underwent extensive tests as part of conditioning the chambers to sustain High Voltages using a gas mixture\footnote{This gas mixture is non-flammable and
+at lower cost compared to the gas mixture that the chambers run on during an experiment, which is why it is preferred during the testing phase of the detector.}
+of 75:25 Argon/CO$_{2}$ by volume. The chambers were found to be operational below 1850 V which is below the expected value\footnote{The HMS chambers
+are the same design as the SHMS chambers, which operate at $\sim$ 1940 V.} of 1940 V. At high voltages above 1850 V, the chambers drew a significant amount of
+dark current which made the signals from the chamber noisy.
+It was determined that the most likely cause of the large currents drawn was the gas mixture[Ar/CO$_{2}$] being used, so the one of the chambers (HMS DC II) was transported to the
+experimental Hall C where a gas mixture of 50:50 Argon/Ethane by volume was used. A test stand for the chamber was set up in the HMS hut, where it has been tested and
+verified to be operational with the new gas mixture. The other chamber (HMS DC I) exhibited similar symptoms as the first with the addition that it had a few missing channels
+due to a bad connection between the sense wires and the discriminator cards. The second chamber is now ready to be transported to Hall C for further tests with the
+Argon/Ethane gas mixture before it can be put in the detector stack.\\
+\indent A second project I am currently involved in is the determination of electronic and computer dead times. In nuclear/particle physics experiments,
+the number of physics events (triggers) are counted via nuclear electronic modules. These triggers ultimately get processed by the DAQ before being
+written to tape. The deadtime refers to the time window in which the modules are unable to process triggers and physics events are lost.
+The electronic deadtime contribution comes from the electronic modules having a maximum rate capability. Typically,
+the electronic modules in Hall C can achieve rates from a few MHz to few hundred MHz. Once the modules reach their limit, a pileup of signals can occur which
+contributes to the total dead time. The computer deadtime contribution comes from finite processing time of the DAQ. These rates are typically on the order of
+a few kHz, therefore, the dominant contribution of total dead time comes from the DAQ, since it takes a few kHz of data before physics events
+are lost. These measurements are important for the determination of high precision cross section measurements in Hall C, since knowing how many events
+are actually lost can make a significant difference in the uncertainty of the cross section. \\
+\indent My thesis experiment, the \textit{Electro-Disintegration of Deuteron at Very High Missing Momenta} is projected to run towards the end of
+February 2018, and will receive a total of six days of beam time. The experiment will be done at four different spectrometer configurations. The kinematic
+setting have changed slightly from the original proposal, and will be briefly discussed in this paper. 
 
-\section{PROCEDURE FOR PAPER SUBMISSION}
 
-\subsection{Selecting a Template (Heading 2)}
+\section{12 GeV HMS Drift Chambers}
 
-First, confirm that you have the correct template for your paper size. This template has been tailored for output on the US-letter paper size. Please do not use it for A4 paper since the margin requirements for A4 papers may be different from Letter paper size.
+
+\subsection{Design and Operation of the Chambers}
+The new HMS Drift Chambers were designed to be geometrically the same as the SHMS Drift Chambers. Each chamber consists of 6 wire planes and each wire
+plane is located between two cathode planes. The wire planes consist of alternating field and sense wires. The U, U', V and V' planes consist of
+96 sense wires each and are oriented 60$^{o}$ relative to the +x-coordinate. The X and X' planes consist of 102 sense wires and are oriented perpendicular to the x-axis (See
+Figures \ref{fig:dc1_planes} and \ref{fig:dc_wires}).
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=3.0in, height=2.5in]{dc2_tests/HMS_DC1_Planes.pdf}
+  \caption{HMS Drift Chamber 1 wire planes.}
+  \label{fig:dc1_planes}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=3.0in, height=1.5in]{dc2_tests/HMS_DC_Wires.pdf}
+  \caption{HMS Drift Chamber wire orientation for planes a) U, U', b) V, V' and c) X, X' where
+  the direction of the beam (+z) is into the plane of the paper.}
+  \label{fig:dc_wires}
+\end{figure}
+The cathode planes and field wires are held at a negative high voltage and the sense wires are grounded which establihses a potential gradient causing an electric field
+between high voltage and grounded wires. Each chamber is filled with a gas mixture\footnote{Argon is mixed with CO$_{2}$ or Ethane, where Argon is the ionizing agent the
+particles interact with, and Ethane/CO$_{2}$ are the quenching elements to control avalanche produced by secondary ionization} of Argon with either CO$_{2}$ or Ethane.
+As the particles traverse the chamber, the free electrons from ionized Argon drift towards the sense wires producing a detectable signal which is read out via discriminator
+cards and into electronic modules.
 
 \subsection{Maintaining the Integrity of the Specifications}
 
