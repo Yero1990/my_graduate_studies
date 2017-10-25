@@ -1,0 +1,106 @@
+void plot_eff_threshold_scan()
+{
+//Plot Efficiency Curve for Threshold scan of DC2, at HV = -1940 V:
+  //HMS Runs 682 (Thrs = 3.5V,  1082 evts )
+  //         673 (Thrs = 4.5V,  435 evts)
+  //         679 (Thsr = 5.5V , 1209 evts) 
+  //         680 (Thrs = 6.5V,  1680 evts)
+  //         681 (Thrs = 7.5V,  1177 evts) 
+  //         689 (Thrs = 8.5V,  1434 evts)
+  //         690 (Thrs = 9.4V)
+
+  // create first graph
+
+  const Int_t n = 6;
+  
+  //Read in the data
+  Double_t Thrs[] = {3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.4};   //X-axis (High Voltage)
+  Double_t ex[] = {0.0,0.0,0.0,0.0,0.0,0.0,0.0};            // no error in X
+  
+  //HMS DC2 Plane Efficiency
+  Double_t eff_u1[] = {1.0, 1.0, 0.999, 0.996, 0.995, 0.987,0.978};               
+  Double_t err_u1[] = {0.0, 0.00, 0.000845, 0.00135, 0.00194, 0.00296, 0.0033};    //uncertainty is given in percent    
+  
+  Double_t eff_u2[] = {1.0, 1.0, 1.0, 1.0, 0.998, 0.998, 0.990};            
+  Double_t err_u2[] = {0.0, 0.0, 0.0, 0.0, 0.00123, 0.00103, 0.00223};      
+
+  Double_t eff_x1[] = {1.0, 1.0, 1.0, 0.998, 1.0, 0.992, 0.983};               
+  Double_t err_x1[] = {0.0, 0.0, 0.0, 0.000862, 0.0, 0.00239, 0.00287};      
+  
+  Double_t eff_x2[] = {0.996, 0.995, 0.989, 0.989, 0.991, 0.995, 0.992};            
+  Double_t err_x2[] = {0.00186, 0.00328, 0.0030, 0.00247, 0.00273, 0.00178, 0.00199};      
+
+  Double_t eff_v1[] = {1.0, 1.0, 1.0, 0.999, 0.997, 0.995, 0.988};               
+  Double_t err_v1[] = {0.0, 0.0, 0.0, 0.000610, 0.00150, 0.00178, 0.00240};      
+  
+  Double_t eff_v2[] = {1.0, 1.0, 1.0, 1.0, 0.999, 0.996, 0.986};            
+  Double_t err_v2[] = {0.0, 0.0, 0.0, 0.0, 0.000873, 0.00162, 0.00260};      
+
+
+  TCanvas *c1 = new TCanvas("c1", "", 2000,500);
+  c1->SetGrid();
+  
+  // draw a frame to define the range
+  TMultiGraph *mg = new TMultiGraph();
+  
+  TGraphErrors *gr1 = new TGraphErrors(n,Thrs,eff_u1,ex,err_u1);
+  gr1->SetMarkerColor(kBlue);
+  gr1->SetMarkerStyle(20);
+  gr1->SetMarkerSize(1.5);
+
+  mg->Add(gr1);
+  
+  TGraphErrors *gr2 = new TGraphErrors(n,Thrs,eff_u2,ex,err_u2);
+  gr2->SetMarkerColor(kRed);
+  gr2->SetMarkerStyle(20);
+  gr2->SetMarkerSize(1.5);
+  
+  mg->Add(gr2);
+
+  TGraphErrors *gr3 = new TGraphErrors(n,Thrs,eff_x1,ex,err_x1);
+  gr3->SetMarkerColor(kBlack);
+  gr3->SetMarkerStyle(21);
+  gr3->SetMarkerSize(1.5);
+  
+  mg->Add(gr3);
+  
+  TGraphErrors *gr4 = new TGraphErrors(n,Thrs,eff_x2,ex,err_x2);
+  gr4->SetMarkerColor(kMagenta);
+  gr4->SetMarkerStyle(21);
+  gr4->SetMarkerSize(1.5);
+
+  mg->Add(gr4);
+
+   TGraphErrors *gr5 = new TGraphErrors(n,Thrs,eff_v1,ex,err_v1);
+  gr5->SetMarkerColor(8);
+  gr5->SetMarkerStyle(22);
+  gr5->SetMarkerSize(1.5);
+
+  mg->Add(gr5);
+  
+  TGraphErrors *gr6 = new TGraphErrors(n,Thrs,eff_v2,ex,err_v2);
+  gr6->SetMarkerColor(kCyan);
+  gr6->SetMarkerStyle(22);
+  gr6->SetMarkerSize(1.5);
+
+  mg->Add(gr6);
+
+
+
+  mg->Draw("ap");
+  mg->SetTitle("HMS DC2 Threshold Scan at HV = -1940 V");
+  mg->GetXaxis()->SetTitle("Threshold (Volts)");
+  mg->GetYaxis()->SetTitle("Efficiency (%)");
+
+  //Add a legend
+  auto legend = new TLegend(0.1, 0.2, 0.48, 0.9);
+  legend->SetHeader("HMS DC2 Planes", "C");
+  legend->AddEntry(gr1,"Plane U ", "lep");
+  legend->AddEntry(gr2,"Plane U'", "lep");
+  legend->AddEntry(gr3,"Plane X", "lep");
+  legend->AddEntry(gr4,"Plane X'", "lep");
+  legend->AddEntry(gr5,"Plane V", "lep");
+  legend->AddEntry(gr6,"Plane V'", "lep");
+  legend->Draw();
+
+}

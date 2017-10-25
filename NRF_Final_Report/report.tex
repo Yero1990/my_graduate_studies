@@ -136,9 +136,55 @@ As the particles traverse the chamber, the free electrons from ionized Argon dri
 cards and into electronic modules.
 
 \subsection{HMS Drift Chamber Cosmic Tests}
-
-The template is used to format your paper and style the text. All margins, column widths, line spaces, and text fonts are prescribed; please do not alter them. You may note peculiarities. For example, the head margin in this template measures proportionately more than is customary. This measurement and others are deliberate, using specifications that anticipate your paper as one part of the entire proceedings, and not as an independent document. Please do not revise any of the current designations
-
+To determine the operatility of the HMS Drift Chambers, several cosmic tests were performed on the chambers in the Experimental Storage Building (ESB) before being transported
+to Hall C. The chambers did not held the High Voltage beyond 1850 V without drawing a significant amount of current ($\geq$ 10 $\mu$A ) using a gas mixture of 75:25 Ar/CO$_{2}$ by
+volume. When Drift Chamber II (DCII) was transported to Hall C, the gas mixture was changed to 50:50 Ar/Ethane and a High Voltage scan was done (See Figure \ref{fig:current_draw})  
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4.0in, height=2.4in]{dc2_tests/gas_mix_current_drawn.pdf}
+  \caption{Comparison of the current drawn in the HMS and SHMS chambers for different gas mixtures. The subplot shows a zoomed version of the HMS DC II plot on a small scale.}
+  \label{fig:current_draw}
+\end{figure} \\
+Figure \ref{fig:current_draw} shows a decrease is the current drawn by the HMS chambers by three orders of magnitude smaller, from a few $\mu$A to a few nA of current drawn. This
+indicates that Ethane is a better quenching gas, as it kept the secondary electron ionization small for a broader range of High Voltages, up to $\sim$2100 Volts. There is still the
+unresolved issue of why the HMS and SHMS chambers behave differently with the same gas mixture, since they both have the same design. The broad High Voltage range achieved by DC II without
+significant current drawn allows for a better determination of the \textit{Plateau Region} of the chambers, which is a region in which the chamber efficinecies have little sensitivity
+to relatively large High Voltage variations of $\sim$40 V. \\
+\indent To determine the plateau region of HMS DC II,  a cosmic test stand was set up in the HMS detector hut (See Figure \ref{fig:cosmic_stand}). The setup consists of two scintillator paddles on the top
+and two on bottom of the chamber. The top two are completely overlapped while the bottom two are only partially overlapped. Each scintillator paddle is wrapped around a light tight material known as Tedlar,
+and is coupled to a Photomultiplier Tube (PMT) via a light guide. To ensure that only cosmic rays pass through the chamber, a coincidence between the top and bottom PMTs is made. It is required that the top
+two PMTs detect a signal to reduce the probability of instrinsic noise being interpreted as a cosmic signal. The bottom scintillators are partially overlapped to achieve full coverage of the chamber active
+area, and a less restrictive requirement was made by requiring that either of the bottom PMTs detect a signal. A final requirement was made so that the top and bottom PMTs would detect a signal within a
+certain time window. This requirement ensures a correlation between the top and bottom PMT signals, making it highly probable that the signal was produced by a cosmic ray. 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=3.4in, height=2.4in]{dc2_tests/dc2_teststand_03.jpg}
+  \caption{Cosmic test stand setup in Hall C detector hut.}
+  \label{fig:cosmic_stand}
+\end{figure} \\
+When cosmic data was taken, to ensure that all (or at leas most) of the sense wires in each plane were present (and had not been damaged by transporting the chamber), the wiremap distribution was
+a looked at first. The distributions show full occupancy for all wire planes in DC II (See Figure \ref{fig:hdc2_wiremap}).  
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=3.8in, height=2.2in]{dc2_tests/hdc2_xmap.pdf}
+  \caption{Wiremap distribution of the X Plane in DC II shows occupancy in all wires.}
+  \label{fig:hdc2_wiremap}
+\end{figure} \\
+Once all planes of the chamber were verified to have full occupancy, a High Voltage and threshold\footnote{The threshold set on the chamber is used to filter cosmic signals from noise by requiring that
+  the signals to be a certain size before discriminating them as logic signals, which are read out by the electronic modules.} scan was done to determine the plateau region. A high voltage scan was done first
+by setting the threshold fixed at 4.5 V. The optimal HV setting was determined to be 1940 V. A threshold scan was then performed at 1940 V to determine the optimal threshold. The results are shown in Figures
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4.1in, height=2.2in]{dc2_tests/dc2_hvscan_thrs45.pdf}
+  \caption{Wiremap distribution of the X Plane in DC II shows occupancy in all wires.}
+  \label{fig:hdc2_wire}
+\end{figure} \\
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4.1in, height=2.2in]{dc2_tests/dc2_thrsscan_HV_1940V.pdf}
+  \caption{Wiremap distribution of the X Plane in DC II shows occupancy in all wires.}
+  \label{fig:hdc2_wire}
+\end{figure} \\
 \section{MATH}
 
 Before you begin to format your paper, first write and save the content as a separate text file. Keep your text and graphic files separate until after the text has been formatted and styled. Do not use hard tabs, and limit use of hard returns to only one return at the end of a paragraph. Do not add any kind of pagination anywhere in the paper. Do not number text heads-the template will do that for you.
