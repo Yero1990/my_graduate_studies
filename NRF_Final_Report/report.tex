@@ -177,8 +177,8 @@ a looked at first. The distributions show full occupancy for all wire planes in 
   \caption{Wiremap distribution of the X Plane in DC II shows occupancy in all wires.}
   \label{fig:hdc2_wiremap}
 \end{figure} \\
-Once all planes of the chamber were verified to have full occupancy, a High Voltage and threshold\footnote{The threshold set on the chamber is used to filter cosmic signals from noise by requiring that
-the signals to be a certain size before discriminating them as logic signals, which are read out by the electronic modules.} scan was done to determine the plateau region. A high voltage scan was done first
+Once all planes of the chamber were verified to have full occupancy, a High Voltage and threshold\footnote{The threshold set on the chamber is used to filter cosmic signals from noise by requiring 
+the signal amplitude to cross a threshold before discriminating them to produce logic signals, which are read out by the electronic modules.} scan was done to determine the plateau region. A high voltage scan was done first
 by setting the threshold fixed at 4.5 V to determine the optimal HV setting. A threshold scan was then performed at 1940 V to determine the optimal threshold. The results are shown in Figures \ref{fig:hdc2_hvscan}
 and \ref{fig:hdc2_thrsscan}. The high voltage scan in Figure \ref{fig:hdc2_hvscan} shows the plateau region starting at 1900 V. The chamber operational high voltage was chosen to be 1940 V since the efficiencies seem
 to be stable and better than 99$\%$ over a $\sim\pm$40 Volt range about this central setting.
@@ -199,7 +199,23 @@ From the threshold scan results in Figure \ref{fig:hdc2_thrsscan}, there is a 3$
 The high voltage and threshold settings determined from the scans were chosen based on the high efficiency region and its small sensitivity over a voltage range.  
 
 
-\section{MATH}
+\section{Electronic and Computer Deadtime Studies}
+The procedure to determine the computer and electronic dead times is currently in the development stage in Hall C. The general idea is to use a pulse generator to produce
+a fixed frequency pulse and feed it as early as possible into the electronic modules being used in the experimental setup. This pulse will interfere wth the actual signals
+produced by physics, but its rate can be set orders of magnitude smaller such that its interference will be minimal and will have insignificant contribution to the deadtime.
+By counting the number of pulses generated before sending them to the electronics chain, compared to the number of pulses that actually make it to the end of the chain and
+are accepted by the TI (Trigger Interface) module, one may determine the dead time as follows:
+\begin{equation}
+  \text{dead time} = 1 - \frac{\# \text{ of accepted pulses}}{\# \text{ of generated pulses}}
+\end{equation}
+This is the total deadtime from the electronics and computer (TI module) that arises due to the finite processing time of the modules. The computer live time alone is calculated by the TI module since it has an
+internal scaler which counts the number of input and output signals, and takes the ratio to determine the computer live time. This calculation can also be done externally as a cross-check by counting the number of signals that make it to the
+TI via a scaler module, and comparing it to the number of accepted signals which is outputted by the TI and determined during the data analysis stage. The electronics deadtime is investigated by keeping the computer live time near 100$\%$ and
+increasing the pulse generator rate to probe the rate limits of the electronics modules. One might argue that such high rates can reduce the computer live time itself which is true, however, such high rates can be pre-scaled by the TI by orders
+of magnitude, such that the computer live time is preserved. For example, for every 10,000 counts/sec., (10 KHz), the TI counts 100 Hz., so that the rate is pre-scaled by a factor of 10$^{3}$. Using this technique, one can investigate the
+effects of high rates on the electronic modules. In this limitng case, the total live time measured will be the electronics live time, since the computer live time will be fixed. \\
+\indent The electronic and computer live time measurements have not been completed as there had been some issues encountered with the TI module that is currently being investgated by DAQ experts. These issues were uncovered during the
+initial stages of the deadtime studies in which a pulse generator at various rates was used to probe the limits of the modules. 
 
 Before you begin to format your paper, first write and save the content as a separate text file. Keep your text and graphic files separate until after the text has been formatted and styled. Do not use hard tabs, and limit use of hard returns to only one return at the end of a paragraph. Do not add any kind of pagination anywhere in the paper. Do not number text heads-the template will do that for you.
 
