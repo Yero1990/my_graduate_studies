@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  25 OCT 2017 12:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  29 OCT 2017 17:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -24,17 +24,12 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \@IEEEnormalsizefontbaselineskip=\skip41
 
--- This is a 10 point document.
+-- This is a 12 point document.
 \normalsizebaselineskip=\skip42
 \normaljot=\skip43
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
@@ -52,24 +47,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <16> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <22> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <22> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1113.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
@@ -1173,26 +1168,26 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip66
 )
-** ATTENTION: Overriding command lockouts (line 38).
-** ATTENTION: Overriding IEEE standard margins (line 41).
+** ATTENTION: Overriding command lockouts (line 39).
+** ATTENTION: Overriding IEEE standard margins (line 42).
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Try loading font information for OT1+qtm on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
+LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Try loading font information for OT1+qtm on input line 53.
  (/opt/local/share/texmf-texlive/tex/latex/tex-gyre/ot1qtm.fd
 File: ot1qtm.fd 2009/09/25 v1.2 font definition file for OT1/qtm
 )
@@ -1314,12 +1309,12 @@ File: siunitx-abbreviations.cfg 2017/05/19 v2.7g siunitx: Abbreviated units
 * \topmargin=-28.90756pt
 * \headheight=0.0pt
 * \headsep=0.0pt
-* \topskip=12.0pt
+* \topskip=13.92pt
 * \footskip=28.90755pt
 * \marginparwidth=20.0pt
 * \marginparsep=10.0pt
 * \columnsep=14.45377pt
-* \skip\footins=10.79993pt plus 4.79993pt minus 2.39996pt
+* \skip\footins=12.52791pt plus 5.5679pt minus 2.78395pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -1329,14 +1324,14 @@ File: siunitx-abbreviations.cfg 2017/05/19 v2.7g siunitx: Abbreviated units
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \celsius on input line 51.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 51.
+LaTeX Info: Redefining \celsius on input line 53.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 53.
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 51.
-Package gensymb Info: Using \Omega for \ohm on input line 51.
+LaTeX Info: Redefining \ohm on input line 53.
+Package gensymb Info: Using \Omega for \ohm on input line 53.
 
 Package gensymb Warning: Not defining \micro.
 
@@ -1350,7 +1345,7 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: pdftex.def on input line 147.
 )
-Package hyperref Info: Link coloring ON on input line 51.
+Package hyperref Info: Link coloring ON on input line 53.
 
 (/opt/local/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1360,135 +1355,262 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count303
 )
-LaTeX Info: Redefining \ref on input line 51.
-LaTeX Info: Redefining \pageref on input line 51.
-LaTeX Info: Redefining \nameref on input line 51.
+LaTeX Info: Redefining \ref on input line 53.
+LaTeX Info: Redefining \pageref on input line 53.
+LaTeX Info: Redefining \nameref on input line 53.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
 \c__siunitx_mathsf_int=\count304
-LaTeX Font Info:    Try loading font information for U+msa on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 51.
+LaTeX Font Info:    Try loading font information for U+msb on input line 53.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c__siunitx_mathtt_int=\count305
-
-Underfull \hbox (badness 4954) in paragraph at lines 76--109
-[]\OT1/qtm/m/n/10 My the-sis ex-per-i-ment, the \OT1/qtm/m/it/10 Electro-Disint
-egration of
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<dc2_tests/HMS_DC1_Planes.pdf, id=75, 605.78763pt x 440.60771pt>
+<dc2_tests/HMS_DC1_Planes.pdf, id=78, 605.78763pt x 440.60771pt>
 File: dc2_tests/HMS_DC1_Planes.pdf Graphic file (type pdf)
 
 <use dc2_tests/HMS_DC1_Planes.pdf>
-Package pdftex.def Info: dc2_tests/HMS_DC1_Planes.pdf used on input line 121.
+Package pdftex.def Info: dc2_tests/HMS_DC1_Planes.pdf used on input line 127.
 (pdftex.def)             Requested size: 216.80777pt x 180.67722pt.
 
-<dc2_tests/HMS_DC_Wires.pdf, id=76, 605.21341pt x 318.4481pt>
+<dc2_tests/HMS_DC_Wires.pdf, id=79, 605.21341pt x 318.4481pt>
 File: dc2_tests/HMS_DC_Wires.pdf Graphic file (type pdf)
 
 <use dc2_tests/HMS_DC_Wires.pdf>
-Package pdftex.def Info: dc2_tests/HMS_DC_Wires.pdf used on input line 127.
+Package pdftex.def Info: dc2_tests/HMS_DC_Wires.pdf used on input line 133.
 (pdftex.def)             Requested size: 216.80542pt x 108.40211pt.
 
-<dc2_tests/gas_mix_current_drawn.pdf, id=78, 569.12625pt x 324.21124pt>
+<dc2_tests/gas_mix_current_drawn.pdf, id=81, 569.12625pt x 324.21124pt>
 File: dc2_tests/gas_mix_current_drawn.pdf Graphic file (type pdf)
 
 <use dc2_tests/gas_mix_current_drawn.pdf>
 Package pdftex.def Info: dc2_tests/gas_mix_current_drawn.pdf used on input line
- 144.
-(pdftex.def)             Requested size: 289.09555pt x 173.44882pt.
+ 150.
+(pdftex.def)             Requested size: 252.9434pt x 173.44882pt.
 
-Overfull \hbox (39.76372pt too wide) in paragraph at lines 144--145
+Overfull \hbox (3.61157pt too wide) in paragraph at lines 150--151
  [][] 
  []
 
-[2 <./dc2_tests/HMS_DC1_Planes.pdf> <./dc2_tests/HMS_DC_Wires.pdf> <./dc2_tests
-/gas_mix_current_drawn.pdf, page is rotated 90 degrees>]
-<dc2_tests/dc2_teststand_03.jpg, id=180, 1284.8pt x 722.7pt>
+
+Underfull \hbox (badness 1533) in paragraph at lines 145--166
+\OT1/qtm/m/n/12 drawn. This in-di-cates that Ethane is a bet-ter
+ []
+
+
+Underfull \hbox (badness 1360) in paragraph at lines 145--166
+\OT1/qtm/m/n/12 ion-iza-tion small for a broader range of High
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 145--166
+
+ []
+
+[2 <./dc2_tests/HMS_DC1_Planes.pdf> <./dc2_tests/HMS_DC_Wires.pdf>]
+<dc2_tests/dc2_teststand_03.jpg, id=138, 1284.8pt x 722.7pt>
 File: dc2_tests/dc2_teststand_03.jpg Graphic file (type jpg)
 
 <use dc2_tests/dc2_teststand_03.jpg>
-Package pdftex.def Info: dc2_tests/dc2_teststand_03.jpg used on input line 168.
+Package pdftex.def Info: dc2_tests/dc2_teststand_03.jpg used on input line 174.
 
 (pdftex.def)             Requested size: 245.7025pt x 173.4405pt.
 
-<dc2_tests/hdc2_xmap.pdf, id=182, 569.12625pt x 326.21875pt>
+<dc2_tests/hdc2_xmap.pdf, id=140, 569.12625pt x 326.21875pt>
 File: dc2_tests/hdc2_xmap.pdf Graphic file (type pdf)
 
 <use dc2_tests/hdc2_xmap.pdf>
-Package pdftex.def Info: dc2_tests/hdc2_xmap.pdf used on input line 176.
-(pdftex.def)             Requested size: 274.63643pt x 158.99739pt.
+Package pdftex.def Info: dc2_tests/hdc2_xmap.pdf used on input line 182.
+(pdftex.def)             Requested size: 267.41121pt x 158.99739pt.
 
-Overfull \hbox (25.3046pt too wide) in paragraph at lines 176--177
+Overfull \hbox (18.07938pt too wide) in paragraph at lines 182--183
  [][] 
  []
 
-<dc2_tests/dc2_hvscan_thrs45.pdf, id=186, 569.12625pt x 287.0725pt>
+<dc2_tests/dc2_hvscan_thrs45.pdf, id=144, 569.12625pt x 287.0725pt>
 File: dc2_tests/dc2_hvscan_thrs45.pdf Graphic file (type pdf)
 
 <use dc2_tests/dc2_hvscan_thrs45.pdf>
-Package pdftex.def Info: dc2_tests/dc2_hvscan_thrs45.pdf used on input line 187
+Package pdftex.def Info: dc2_tests/dc2_hvscan_thrs45.pdf used on input line 193
 .
-(pdftex.def)             Requested size: 296.32077pt x 158.99858pt.
+(pdftex.def)             Requested size: 274.63643pt x 158.99858pt.
 
-Overfull \hbox (46.98894pt too wide) in paragraph at lines 187--188
+Overfull \hbox (25.3046pt too wide) in paragraph at lines 193--194
  [][] 
  []
 
-<dc2_tests/dc2_thrsscan_HV_1940V.pdf, id=187, 569.12625pt x 295.1025pt>
+<dc2_tests/dc2_thrsscan_HV_1940V.pdf, id=145, 569.12625pt x 295.1025pt>
 File: dc2_tests/dc2_thrsscan_HV_1940V.pdf Graphic file (type pdf)
 
 <use dc2_tests/dc2_thrsscan_HV_1940V.pdf>
 Package pdftex.def Info: dc2_tests/dc2_thrsscan_HV_1940V.pdf used on input line
- 193.
-(pdftex.def)             Requested size: 296.32077pt x 158.99724pt.
+ 199.
+(pdftex.def)             Requested size: 274.63643pt x 158.99724pt.
 
-Overfull \hbox (46.98894pt too wide) in paragraph at lines 193--194
+Overfull \hbox (25.3046pt too wide) in paragraph at lines 199--200
  [][] 
  []
 
-[3 <./dc2_tests/dc2_teststand_03.jpg> <./dc2_tests/hdc2_xmap.pdf, page is rotat
-ed 90 degrees> <./dc2_tests/dc2_hvscan_thrs45.pdf, page is rotated 90 degrees> 
-<./dc2_tests/dc2_thrsscan_HV_1940V.pdf, page is rotated 90 degrees>]
-Underfull \hbox (badness 2717) in paragraph at lines 239--240
-[]\OT1/qtm/m/n/10 A graph within a graph is an []Oinset[]O, not an
+[3 <./dc2_tests/gas_mix_current_drawn.pdf, page is rotated 90 degrees> <./dc2_t
+ests/dc2_teststand_03.jpg>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 1789) in paragraph at lines 217--229
+[]\OT1/qtm/m/n/12 One might ar-gue that such high rates can
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
-[]\OT1/qtm/m/n/10 Do not use the word []Oessentially[]O to mean
+Underfull \hbox (badness 10000) in paragraph at lines 217--229
+
+ []
+
+[4 <./dc2_tests/hdc2_xmap.pdf, page is rotated 90 degrees> <./dc2_tests/dc2_hvs
+can_thrs45.pdf, page is rotated 90 degrees> <./dc2_tests/dc2_thrsscan_HV_1940V.
+pdf, page is rotated 90 degrees>]
+<edtm/edtm_cases.pdf, id=338, 548.2914pt x 533.59624pt>
+File: edtm/edtm_cases.pdf Graphic file (type pdf)
+
+<use edtm/edtm_cases.pdf>
+Package pdftex.def Info: edtm/edtm_cases.pdf used on input line 236.
+(pdftex.def)             Requested size: 245.71652pt x 202.35342pt.
+
+Underfull \hbox (badness 2418) in paragraph at lines 230--240
+\OT1/qtm/m/n/12 pulse into the TI and ex-plore the ef-fect of
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--240
+
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 242--243
-[]\OT1/qtm/m/n/10 Be aware of the dif-fer-ent mean-ings of the
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
-\OT1/qtm/m/n/10 and []Ocompliment[]O, []Odiscreet[]O and []Odiscrete[]O,
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
+
  []
 
-[4] [5
+<edtm/poisson_pulse.pdf, id=340, 785.0122pt x 174.73953pt>
+File: edtm/poisson_pulse.pdf Graphic file (type pdf)
 
-] (./report.bbl)
+<use edtm/poisson_pulse.pdf>
+Package pdftex.def Info: edtm/poisson_pulse.pdf used on input line 263.
+(pdftex.def)             Requested size: 224.03026pt x 65.04189pt.
+ [5 <./edtm/edtm_cases.pdf>]
+<edtm/EDTM_Oscope.pdf, id=375, 889.61227pt x 669.41426pt>
+File: edtm/EDTM_Oscope.pdf Graphic file (type pdf)
+
+<use edtm/EDTM_Oscope.pdf>
+Package pdftex.def Info: edtm/EDTM_Oscope.pdf used on input line 338.
+(pdftex.def)             Requested size: 245.70972pt x 187.89436pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 1199) has occurred while \output is active []
+
+ [6 <./edtm/poisson_pulse.pdf, page is rotated 270 degrees>]
+<edtm/TI_Scaler_SYNC.pdf, id=400, 850.38246pt x 317.86359pt>
+File: edtm/TI_Scaler_SYNC.pdf Graphic file (type pdf)
+
+<use edtm/TI_Scaler_SYNC.pdf>
+Package pdftex.def Info: edtm/TI_Scaler_SYNC.pdf used on input line 356.
+(pdftex.def)             Requested size: 245.70926pt x 108.402pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 1715) in paragraph at lines 368--374
+\OT1/qtm/m/n/12 an elec-tron beam. The scat-tered elec-tron and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 368--374
+
+ []
+
+[7 <./edtm/EDTM_Oscope.pdf> <./edtm/TI_Scaler_SYNC.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 380--402
+
+ []
+
+
+Overfull \hbox (19.71617pt too wide) in paragraph at lines 429--442
+ [][] 
+ []
+
+
+Underfull \hbox (badness 3158) in paragraph at lines 403--443
+[]\OT1/qtm/m/n/12 The spec-trom-e-ters will be set to mea-sure
+ []
+
+
+Underfull \hbox (badness 3250) in paragraph at lines 403--443
+\OT1/qtm/m/n/12 cor-rec-tions needed be-fore ex-plor-ing the high
+ []
+
+
+Underfull \hbox (badness 1810) in paragraph at lines 403--443
+\OT1/qtm/m/n/12 set-ting. Dur-ing the en-tire D(e,e'p)n runs, the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 403--443
+
+ []
+
+<deut_kin/h_elast.pdf, id=449, 614.295pt x 794.97pt>
+File: deut_kin/h_elast.pdf Graphic file (type pdf)
+
+<use deut_kin/h_elast.pdf>
+Package pdftex.def Info: deut_kin/h_elast.pdf used on input line 475.
+(pdftex.def)             Requested size: 238.48677pt x 296.31773pt.
+ [8]
+<deut_kin/d2_acceptance.pdf, id=461, 966.34886pt x 492.16382pt>
+File: deut_kin/d2_acceptance.pdf Graphic file (type pdf)
+
+<use deut_kin/d2_acceptance.pdf>
+Package pdftex.def Info: deut_kin/d2_acceptance.pdf used on input line 492.
+(pdftex.def)             Requested size: 252.94049pt x 137.30928pt.
+
+Overfull \hbox (3.60866pt too wide) in paragraph at lines 492--493
+ [][] 
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 482--504
+[]\OT1/qtm/m/n/12 The re-sults from the sim-u-la-tions done on
+ []
+
+[9 <./deut_kin/h_elast.pdf> <./deut_kin/d2_acceptance.pdf>] (./report.bbl
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
+
+(/opt/local/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+))
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -1500,42 +1622,50 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 338.
-[6
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 546.
+[10
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 338.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 546.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 338.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 338.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 546.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 546.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 6C14F27BB6BC19A6628730E85E4DE694;846.
+(rerunfilecheck)             Checksum: EB062B57C46FDB426116975F6B8F40C1;1176.
  ) 
 Here is how much of TeX's memory you used:
- 20510 strings out of 494108
- 381077 string characters out of 6155655
- 458641 words of memory out of 5000000
- 23606 multiletter control sequences out of 15000+600000
- 152301 words of font info for 134 fonts, out of 8000000 for 9000
+ 20617 strings out of 494108
+ 382871 string characters out of 6155655
+ 461646 words of memory out of 5000000
+ 23674 multiletter control sequences out of 15000+600000
+ 138653 words of font info for 135 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
- 37i,8n,38p,10380b,722s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/opt/local/share/texmf-texlive/fonts/enc/dvips/tex-gyre/q-rm.enc}{/opt/local
-/share/texmf-texlive/fonts/enc/dvips/tex-gyre/q-rm-sc.enc}</opt/local/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/texmf-te
-xlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/local/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></opt/local/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmr9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-msy7.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.p
-fb></opt/local/share/texmf-texlive/fonts/type1/public/tex-gyre/qtmb.pfb></opt/l
-ocal/share/texmf-texlive/fonts/type1/public/tex-gyre/qtmr.pfb></opt/local/share
-/texmf-texlive/fonts/type1/public/tex-gyre/qtmri.pfb>
-Output written on report.pdf (6 pages, 605313 bytes).
+ 37i,14n,38p,10380b,726s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/opt/local/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}{/opt/local/share
+/texmf-texlive/fonts/enc/dvips/tex-gyre/q-rm.enc}{/opt/local/share/texmf-texliv
+e/fonts/enc/dvips/tex-gyre/q-rm-sc.enc}</opt/local/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb></opt/local/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmmi10.pfb></opt/local/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmmi12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmmi6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmmi7.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi9.pfb>
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/
+local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></opt/local/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></opt/local/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/local/share/texmf-texlive/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmsy6.pfb></opt/local/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmsy9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/tex-g
+yre/qtmb.pfb></opt/local/share/texmf-texlive/fonts/type1/public/tex-gyre/qtmr.p
+fb></opt/local/share/texmf-texlive/fonts/type1/public/tex-gyre/qtmri.pfb></opt/
+local/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on report.pdf (10 pages, 2545102 bytes).
 PDF statistics:
- 395 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 34 named destinations out of 1000 (max. 500000)
- 148 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 646 PDF objects out of 1000 (max. 8388607)
+ 455 compressed objects within 5 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 186 words of extra memory for PDF output out of 10000 (max. 10000000)
 

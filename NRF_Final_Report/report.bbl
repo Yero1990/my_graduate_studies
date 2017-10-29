@@ -1,8 +1,21 @@
 \begin{thebibliography}{1}
 
-\bibitem{Leo}
-W.~Leo, {\em Techniques for Nuclear and Particle Physics Experiments: A
-  How-to-Approach}.
-\newblock New York: Springer-Verlag New York, LLC, 1987.
+\bibitem{bishnu}
+B.~Pandey, ``Status {U}pdate {O}n {T}he {N}ew {HMS} {W}ire {C}hamber,''
+  Presented at the Joint Hall A and C Summer Collaboration Meeting, Newport
+  News, VA, 2017.
+
+\bibitem{TI}
+J.~W. Gu, {\em Description and {T}echnical Information for the VME Trigger
+  Interface (TI) Module}.
+\newblock Jefferson Lab, Data Acquisition Group.
+
+\bibitem{hysteresis}
+T.~E.~E. of~Encyclopedia~Britannica, ``{Hysteresis}.''
+\newblock \url{https://www.britannica.com/science/hysteresis}, accessed
+  2017-10-29.
+
+\bibitem{priv_comm}
+M.~Jones and W.~Boeglin, ``Private {C}ommunication,'' October 10, 2017.
 
 \end{thebibliography}
