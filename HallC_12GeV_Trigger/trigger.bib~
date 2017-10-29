@@ -1,0 +1,53 @@
+@article{hms_cer_article,
+  author  = {Cothran, C. and D. Day and J. Mitchell}, 
+  title   = {A threshold gas Cerenkov detector for CEBAF's Hall C high momentum spectrometer},
+  journal = {Bulletin of the American Physical Society},
+  year    = 1995,
+  number  = 01,
+  pages   = {1007f},
+  volume  = 28
+  }
+
+
+@article{hms_aero_article,
+  author  = {Asaturyan, R. and R. Ent and others}, 
+  title   = {The aerogel threshold Cherenkov detector for the High Momentum Spectrometer in Hall C at Jefferson Lab},
+  journal = {Nuclear Instruments and Methods in Physics Research Section A: Accelerators, Spectrometers, Detectors and Associated Equipment},
+  year    = 2005,
+  number  = 03,
+  pages   = {364-374},
+  volume  = 548
+  }
+
+
+@inproceedings{SHMS_PID,
+     author  = "Huber, G. and Day, D. and Mkrtchyan, H.",
+     title   = "SHMS Particle Identification",
+     publisher = "Presented at the 2009 SHMS Detector Review, Jefferson Lab, Newport News, VA",
+     year    = 2009,
+     note     = {\url {http://lichen.phys.uregina.ca/index_files/talks/shms_pidreview_09aug.pdf}} 
+}
+
+@inproceedings{shms_preSh_talk,
+     author  = "Mkrtchyan, H. and others",
+     title   = "SHMS Calorimeter Status Update",
+     publisher = "Presented at the 2012 Hall C Meeting, Jefferson Lab, Newport News, VA",
+     year    = 2012,
+     note     = {\url {https://www.jlab.org/Hall-C/talks/01_13_12/mkrtchyan.pdf}} 
+}
+
+@inproceedings{shms_hgc_talk,
+     author  = "Huber, G.",
+     title   = "SHMS Heavy Gas \v{C}erenkov",
+     publisher = "Presented at the 2008 Hall C User's Summer Workshop, Jefferson Lab, Newport News, VA",
+     year    = 2008,
+     note     = {\url {https://www.jlab.org/Hall-C/talks/08_04_08/talks/huber_heavygas.ppt}} 
+}
+
+@inproceedings{shms_ngc_talk,
+     author  = "Day, D. and Mikhail Yurov",
+     title   = "SHMS Noble Gas \v{C}erenkov",
+     publisher = "Presented at the 2013 Hall C Users Meeting, Jefferson Lab, Newport News, VA",
+     year    = 2013,
+     note     = {\url {https://www.jlab.org/Hall-C/talks/01_24_13/day.pdf}} 
+}
