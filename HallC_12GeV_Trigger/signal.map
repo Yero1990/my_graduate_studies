@@ -1,0 +1,754 @@
+This document should be found in ~cdaq/documents/trigger/signal.map
+The ADC/TDC map is ~cdaq/documents/data_acquisition/adctdc.map(.jan99)
+The scaler  map is
+~cdaq/documents/data_acquisition/scalers.map(.jan99)
+
+Last update: 080916  VT/HM/HF
+	Many incremental changes documented and cable lengths
+	measured and included herein.
+
+	The file formatting was cleaned up. In particular, the
+	patch table is now fixed-format space-delimited so that
+	it can be easily interpreted by a spreadsheet. Please
+	respect the formatting.
+
+DJG: 06212004; Correct for 2 changes to SOS patch.
+DJG: 07092004; Correct for 2 changes to SOS patch.
+
+--------------------------------------------
+
+PATCH NUMBERS: For all patch panels except the one in the detector hut,
+each channel as a letter associated with it, with 64 channels per letter
+(e.g. A001-A064, B065-B128...)
+
+A001-a064       B065-B128       C129-c192       D193-D256       E257-e320
+F321-F384       G385-g448       H449-H512       I513-i576       J577-J640
+
+ Upstairs:		Downstairs:
+			 SHMS   HMS
+ -------------		-------------
+ |  a  |  F  |		|  a  |  B  |
+ -------------		-------------
+ |  B  |  g  |		|  c  |  D  |
+ -------------		-------------
+ |  c  |  H  |		|  e  |  F  |		
+ -------------		-------------	
+ |  D  |  i  |		|  g  |  H  |		
+ -------------		-------------
+ |  e  |  J  |		|  i  |  J  |
+ -------------		-------------
+
+   SHMS Signal Locations:                        HMS Signal Locations:
+   Shower counter: ??	                         Shower counter: D & F & H & J
+   Cerenkov:	??	                         Cerenkov:	??
+   Hodoscope:	g & i	                         Hodoscope:	H & J
+   Aerogel:	??                               Aerogel:       a
+   Lucite:	e & g & i
+
+HMS Signal Names: 
+	Shower counter: hA01(+/-) - hA13(+/-)	| + are 'old' PMTs (right)
+			hB01(+/-) - hB13(+/-)	| - are 'new' PMTs (left)
+			hC01-hC13, hD01-hD13	| C and D have only  '+' PMT's
+	Cerenkov: hCER1, hCER2
+	Aerogel: hAER01(+/-) - hAER08(+/-)
+        Hodoscope: h1X01(+/-) - h1X16(+/-) = plane 1X(cntrs 1-16, +/- pmts)
+		   h1Y01(+/-) - h1Y10(+/-) = plane 1Y
+		   h2X01(+/-) - h2X16(+/-) = plane 2X
+		   h2Y01(+/-) - h2Y10(+/-) = plane 2Y
+
+SHMS Signal Names: 
+	Shower counter: sA01(+/-) - sA11(+/-)	| + are 'old' PMTs (left)
+			sB01(+/-) - sB11(+/-)	| - are 'new' PMTs (right)
+			sC01-sC11, sD01-sD11    | C and D have only '+' PMT's
+	HGCerenkov: sHGC1, sHGC2, sHGC3, sHGC4
+	NGCerenkov: sNGC1, sNGC2, sNGC3, sNGC4	
+	Aerogel: sAER01(+/-) - sAER07(+/-)
+	Lucite: sLUC01(+/-) - sLUC16(+/-)
+	Hodoscope: s1X01(+/-) - s1X13(+/-) = plane 1X (counters 1-13, +/- pmts)
+		   s1Y01(+/-) - s1Y13(+/-) = plane 1Y
+		   s2X01(+/-) - s2X14(+/-) = plane 2X
+		   s2Y01(+/-) - s2Y21(+/-) = plane 2Y
+
+
+ Patch in HMS hut:		 Patch in SHMS hut:
+ -----------------------------	 -----------------------------
+ |             |    91-120   |	 |              |             |
+ |             |             |	 | I513 -  I576 |I513 -  I576 |
+ |             |  h2X+,h2Y+  |	 |              |             |
+ -----------------------------	 -----------------------------
+ |    1-30     |   121-150   |	 |              |             |
+ |             |             |	 | G385 - G448  |G385 - G448  |
+ |    Blank    |  h2X-,h2Y-  |	 |              |             |
+ -----------------------------	 -----------------------------
+ |    31-60    |   151-180   |	 |              |             |
+ |             |             |	 | E257 - E320  |E257 - E320  |
+ |  h1X+,h1Y+  |  hA01-hC06  |	 |              |             |
+ -----------------------------	 -----------------------------
+ |    61-90    |   181-200   |	 |              |             |
+ |  h1X-,h1Y-  |  hC06-hD12  |	 | C183 - C192  |C183 - C192  |
+ |             |   + hCER    |	 |              |             |
+ -----------------------------	 -----------------------------
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXX
+XXX     THE REST OF THIS FILE (BELOW) IS FIXED FORMAT. NO TABS,
+XXX     JUST SPACES.  PLEASE MAINTAIN THIS FORMAT SO THAT THE FILE CAN BE
+XXX     EASILY IMPORTATED TO SPREADSHEET PROGRAMS!!
+XXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+
+Cable Label         Counting  Patches   Patch in  Signal or Cable Label                   ns from C Comments
+in Hall-C           Room C    on Hall   Hut or at Detector  from Detectors                Patch to
+Counting Room       Patch     Floor     Pivot     Name      to Patch in hut or pivot      Detector
+|__CR Cable Label__||CR Patch||Fl Patch||Hut_Patc||_Signal_||___Hut Cable Label__________||_Length_||_Comments_________|
+                    -         -         n/c       hmuon1(L) 107                           -
+                    -         -         n/c       sp to h1X+signal048                     -
+                    -         -         n/c       sp to h1X-signal077                     -
+                    -         -         n/c       sp to h1X-signal078                     -
+                    -         -         n/c       sp to h2X+signal108                     -
+                    -         -         n/c       sp to h2X-signal137                     -
+                    -         -         n/c       sp to h2X-signal138                     -
+                    A001      -         -         -         From microwave cavities       -
+                    A002      -         -         -         From microwave cavities       -
+                    A003      -         -         -         From microwave cavities       -
+                    A004      -         -         -         From microwave cavities       -
+                    A005      -         -         -         -                             -
+                    A006      -         -         -         -                             -
+                    A007      -         -         -         -                             -
+                    A008      -         -         -         RF (499MHz)                   -
+                    A009      -         -         -         Microwave cavity patch to MCC -
+                    A010      -         -         -         Microwave cavity patch to MCC -
+                    A011      -         -         -         Microwave cavity patch to MCC -
+                    A012      -         -         -         Microwave cavity patch to MCC -
+                    A013      -         -         -         -                             -
+                    A014      -         -         -         -                             -
+                    A015      -         -         -         -                             -
+                    A016      -         -         -         Beam Gate                     -
+                    A017      -         -         -         Hall C BCM #1 (from BSY SB)   -
+                    A018      -         -         -         Hall C BCM #1 (from BSY SB)   -
+                    A019      -         -         -         Hall C BCM #1 (from BSY SB)   -
+                    A020      -         -         -         Hall C BCM #1 (from BSY SB)   -
+hAER01-             A021      A021      -         -         -                             -
+hAER02-             A022      A022      -         -         -                             -
+hAER03-             A023      A023      -         -         -                             -
+hAER04-             A024      A024      -         -         -                             -
+hAER05-             A025      A025      -         -         -                             -
+hAER06-             A026      A026      -         -         -                             -
+hAER07-             A027      A027      -         -         -                             -
+hAER08-             A028      A028      -         -         -                             -
+hAER01+             A029      A029      -         -         -                             -
+hAER02+             A030      A030      -         -         -                             -
+hAER03+             A031      A031      -         -         -                             -
+hAER04+             A032      A032      -         -         -                             -
+hAER05+             A033      A033      -         -         -                             -
+hAER06+             A034      A034      -         -         -                             -
+hAER07+             A035      A035      -         -         -                             -
+hAER08+             A036      A036      -         -         -                             -
+                    A037      A037      -         -         -                             -
+                    A038      A038      -         -         -                             -
+                    A039      A039      -         -         -                             -
+                    A040      A040      -         -         -                             -
+                    A041      A041      -         -         -                             -
+                    A042      A042      -         -         -                             -
+                    A043      A043      -         -         -                             -
+                    A044      A044      -         -         -                             -
+                    A045      A045      -         -         -                             -
+                    A046      A046      -         -         -                             -
+                    A047      A047      -         -         -                             -
+                    A048      A048      -         -         -                             -
+                    A049      A049      -         -         -                             -
+                    A050      A050      -         -         -                             -
+                    A051      A051      -         -         -                             -
+                    A052      A052      -         -         -                             -
+                    A053      A053      -         -         -                             -
+                    A054      A054      -         -         -                             -
+                    A055      A055      -         -         -                             -
+                    A056      A056      -         -         -                             -
+                    A057      A057      -         -         -                             -
+                    A058      A058      -         -         -                             -
+                    A059      A059      -         -         -                             -
+                    A060      A060      -         -         -                             -
+                    A061      A061      -         -         -                             -
+                    A062      A062      -         -         -                             -
+                    A063      A063      -         -         -                             -
+                    A064      A064      -         -         -                             -
+                    B065      B065      -         -         -                             -
+                    B066      B066      -         -         -                             -
+                    B067      B067      -         -         -                             -
+                    B068      B068      -         -         -                             -
+                    B069      B069      -         -         -                             -
+                    B070      B070      -         -         -                             -
+                    B071      B071      -         -         -                             -
+                    B072      B072      -         -         -                             -
+                    B073      B073      -         -         -                             -
+                    B074      B074      -         -         -                             -
+                    B075      B075      -         -         -                             -
+                    B076      B076      -         -         -                             -
+                    B077      B077      -         -         -                             -
+                    B078      B078      -         -         -                             -
+                    B079      B079      -         -         -                             -
+                    B080      B080      -         -         -                             -
+                    B081      B081      -         -         -                             -
+                    B082      B082      -         -         -                             -
+                    B083      B083      -         -         -                             -
+                    B084      B084      -         -         -                             -
+                    B085      B085      -         -         -                             -
+                    B086      B086      -         -         -                             -
+                    B087      B087      -         -         -                             -
+                    B088      B088      -         -         -                             -
+                    B089      B089      -         -         -                             -
+                    B090      B090      -         -         -                             -
+                    B091      B091      -         -         -                             -
+                    B092      B092      -         -         -                             -
+                    B093      B093      -         -         -                             -
+                    B094      B094      -         -         -                             -
+                    B095      B095      -         -         -                             -
+                    B096      B096      -         -         -                             -
+                    B097      B097      -         -         -                             -
+                    B098      B098      -         -         -                             -
+                    B099      B099      -         -         -                             -
+                    B100      B100      -         -         -                             -
+                    B101      B101      -         -         -                             -
+                    B102      B102      -         -         -                             -
+                    B103      B103      -         -         -                             -
+                    B104      B104      -         -         -                             -
+                    B105      B105      -         -         -                             -
+                    B106      B106      -         -         -                             -
+                    B107      B107      -         -         -                             -
+                    B108      B108      -         -         -                             -
+                    B109      B109      -         -         -                             -
+                    B110      B110      -         -         -                             -
+                    B111      B111      -         -         -                             -
+                    B112      B112      -         -         -                             -
+                    B113      B113      -         -         -                             -
+                    B114      B114      -         -         -                             -
+                    B115      B115      -         -         -                             -
+                    B116      B116      -         -         -                             -
+                    B117      B117      -         -         -                             -
+                    B118      B118      -         -         -                             -
+                    B119      B119      -         -         -                             -
+                    B120      B120      -         -         -                             -
+                    B121      B121      -         -         -                             -
+                    B122      B122      -         -         -                             -
+                    B123      B123      -         -         -                             -
+                    B124      B124      -         -         -                             -
+                    B125      B125      -         -         -                             -
+                    B126      B126      -         -         -                             -
+                    B127      B127      -         -         -                             -
+                    B128      B128      -         -         -                             -
+XA-Raster           C129      C129      1         -         #1 (GEP03)                    -         @pivot. JAB 5/03
+YA-Raster           C130      C130      2         -         #2 (GEP03)                    -         @pivot. JAB 5/03
+XB-Raster           C131      C131      3         -         #3 (GEP03)                    -         @pivot. JAB 5/03
+YB-Raster           C132      C132      4         -         #4 (GEP03)                    -         @pivot. JAB 5/03
+XA-Raster           C133      C133      5         -         #5 (GEP03)                    -         @pivot. JAB 5/03
+YA-Raster           C134      C134      6         -         #6 (GEP03)                    -         @pivot. JAB 5/03
+XB-Raster           C135      C135      7         -         #7 (GEP03)                    -         @pivot. JAB 5/03
+YB-Raster           C136      C136      8         -         #8 (GEP03)                    -         @pivot. JAB 5/03
+                    C137      C137      9         -         #9 (GEP03)                    -         @pivot. JAB 5/03
+                    C138      C138      11        -         #10 (GEP03)                   -         @pivot. JAB 5/03
+                    C139      C139      12        -         #11 (GEP03)                   -         @pivot. JAB 5/03
+                    C140      C140      13        -         #12 (GEP03)                   -         @pivot. JAB 5/03
+                    C141      C141      14        -         #13 (GEP03)                   -         @pivot. JAB 5/03
+                    C142      C142      15        -         #14 (GEP03)                   -         @pivot. JAB 5/03
+                    C143      C143      16        -         #15 (GEP03)                   -         @pivot. JAB 5/03
+                    C144      C144      19        -         #16 (GEP03)                   -         @pivot. JAB 5/03
+                    C145      C145      20        -         #17 (GEP03)                   -         @pivot. JAB 5/03
+                    C146      C146      21        -         #18 (GEP03)                   -         @pivot. JAB 5/03
+                    C147      C147      22        -         #19 (GEP03)                   -         @pivot. JAB 5/03
+                    C148      C148      23        -         #20 (GEP03)                   -         @pivot. JAB 5/03
+                    C149      C149      24        -         #21 (GEP03)                   -         @pivot. JAB 5/03
+                    C150      C150      25        -         #22 (GEP03)                   -         @pivot. JAB 5/03
+                    C151      C151      26        -         #23 (GEP03)                   -         @pivot. JAB 5/03
+                    C152      C152      27        -         #24 (GEP03)                   -         @pivot. JAB 5/03
+                    C153      C153      28        -         #25 (GEP03)                   -         @pivot. JAB 5/03
+                    C154      C154      29        -         #26 (GEP03)                   -         @pivot. JAB 5/03
+                    C155      C155      -         -         -                             -
+                    C156      C156      -         -         -                             -
+                    C157      C157      -         -         -                             -
+                    C158      C158      -         -         -                             -
+                    C159      C159      -         -         -                             -
+                    C160      C160      -         -         -                             -
+                    C161      C161      -         -         -                             -
+                    C162      C162      -         -         -                             -
+                    C163      C163      -         -         -                             -
+                    C164      C164      -         -         -                             -
+                    C165      C165      -         -         -                             -
+                    C166      C166      -         -         -                             -
+                    C167      C167      -         -         -                             -
+                    C168      C168      -         -         -                             -
+                    C169      C169      -         -         -                             -
+                    C170      C170      -         -         -                             -
+                    C171      C171      -         -         -                             -
+                    C172      C172      -         -         -                             -
+                    C173      C173      -         -         -                             -
+                    C174      C174      -         -         -                             -
+                    C175      C175      -         -         -                             -
+                    C176      C176      -         -         -                             -
+                    C177      C177      -         -         -                             -
+                    C178      C178      -         -         -                             -
+                    C179      C179      -         -         -                             -
+                    C180      C180      -         -         -                             -
+                    C181      C181      -         -         -                             -
+                    C182      C182      -         -         -                             -
+                    C183      C183      -         -         -                             -
+                    C184      C184      -         -         -                             -
+n/c                 C185      C185      s001      -         n/c                           -
+(ethernet cable)    C186      C186      s002      ethernet  unlabeled                     -
+n/c                 C187      C187      s003      -         n/c                           -
+                    C188      C188      s004      slc07+    176 (LC07+)                   -
+n/c                 C189      C189      s005      -         n/c                           -
+n/c                 C190      C190      s006      -         n/c                           -
+n/c                 C191      C191      s007      -         n/c                           -
+n/c                 C192      C192      s008      -         n/c                           -
+                    D193      D193      -         -         -                             -
+                    D194      D194      -         -         -                             -
+                    D195      D195      -         -         -                             -
+                    D196      D196      -         -         -                             -
+                    D197      D197      -         -         -                             -
+                    D198      D198      -         -         -                             -
+                    D199      D199      -         -         -                             -
+                    D200      D200      -         -         -                             -
+                    D201      D201      -         -         -                             -
+                    D202      D202      -         -         -                             -
+                    D203      D203      -         -         -                             -
+                    D204      D204      -         -         -                             -
+                    D205      D205      -         -         -                             -
+                    D206      D206      -         -         -                             -
+                    D207      D207      -         -         -                             -
+                    D208      D208      -         -         -                             -
+                    D209      D209      -         -         -                             -
+                    D210      D210      -         -         -                             -
+                    D211      D211      -         -         -                             -
+                    D212      D212      -         -         -                             -
+                    D213      D213      -         -         -                             -
+                    D214      D214      -         -         -                             -
+                    D215      D215      -         -         -                             -
+                    D216      D216      -         -         -                             -
+                    D217      D217      -         -         -                             -
+                    D218      D218      -         -         -                             -
+                    D219      D219      -         -         -                             -
+                    D220      D220      -         -         -                             -
+                    D221      D221      -         -         -                             -
+                    D222      D222      -         -         -                             -
+                    D223      D223      -         -         -                             -
+                    D224      D224      -         -         -                             -
+                    D225      D225      -         -         -                             -
+                    D226      D226      -         -         -                             -
+                    D227      D227      -         -         -                             -
+                    D228      D228      -         -         -                             -
+hD01+               D229      D229      h001      hD01+     signal28                      -         
+n/c                 D230      D230      h002      -         n/c                           334
+n/c                 D231      D231      h003      -         n/c                           324
+TV Sw7 Button 4     D232      D232      h004      HMS_D_NMR signal006                     -         Video Camera in Hut
+(RG8 to under floor)D233      D233      h005      -         n/c                           -
+                    D234      D234      h006      SAW-Ether no mark                       -
+(ethernet cable)    D235      D235      h007      SAW-Ether no mark                       -
+hA01-               D236      D236      h008      hA01-     signal8                       360
+                    D237      D237      h009      TV Camera unlabeled                     326
+hA02-               D238      D238      h010      hA02-     signal10                      362
+hA03-               D239      D239      h011      hA03-     signal11                      362
+hA04-               D240      D240      h012      hA04-     signal12                      362
+hA05-               D241      D241      h013      hA05-     signal13                      362
+hA06-               D242      D242      h014      hA06-     signal14                      362
+hA07-               D243      D243      h015      hA07-     signal15                      362
+hA08-               D244      D244      h016      hA08-     signal16                      362
+hA09-               D245      D245      h017      hA09-     signal17                      362
+hA10-               D246      D246      h018      hA10-     signal18                      362
+hA11-               D247      D247      h019      hA11-     signal19                      362
+hA12-               D248      D248      h020      hA12-     signal20                      362
+hA13-               D249      D249      h021      hA13-     signal21                      362
+                    D250      D250      h022      unused    -                             362
+hA02+               D251      D251      h151      hA02+     signal151                     362
+hA03+               D252      D252      h152      hA03+     signal152                     362
+hA04+               D253      D253      h153      hA04+     signal153                     362
+hA05+               D254      D254      h154      hA05+     signal154                     362
+hA06+               D255      D255      h155      hA06+     signal155                     362
+hA07+               D256      D256      h156      hA07+     signal156                     362
+                    E257      E257      s009      sa01-     sPreSh[1-4]                   397
+                    E258      E258      s010      sb04-     sPreSh[5-8]                   397
+                    E259      E259      s011      sb06-     sPreSh[9-12]                  397
+                    E260      E260      s012      sb08-     sPreSh[13-14]                 397
+                    E261      E261      s013      sb10-     -                             359       Connection in hut ?
+                    E262      E262      s014      slc07-    LC07-                         397
+                    E263      E263      s015      slc08-    LC08-                         397
+                    E264      E264      s016      slc01+    LC01+                         397
+sPreSh[1-4]         E265      E265      s017      sPreSh    sPreSh[1-4]                   397
+sPreSh[5-8]         E266      E266      s018      sPreSh    sPreSh[5-8]                   397
+sPreSh[9-12]        E267      E267      s019      sPreSh    sPreSh[9-12]                  397
+sPreSh[13-14]       E268      E268      s020      sPreSh    sPreSh[13-14]                 397
+                    E269      E269      s021      slc06+    LC06+                         397
+                    E270      E270      s022      sA01+     1                             397
+                    E271      E271      s023      sA02+     2                             397
+                    E272      E272      s024      sA03+     3                             397
+                    E273      E273      s025      sa02-     15                            397
+                    E274      E274      s026      sa03-     16                            397
+                    E275      E275      s027      sA04+     4                             397
+                    E276      E276      s028      sA05+     5                             397
+                    E277      E277      s029      sA06+     6                             397
+                    E278      E278      s030      sA07+     7                             397
+                    E279      E279      s031      sA08+     8                             397
+                    E280      E280      s032      sb07-     31                            397
+                    E281      E281      s033      sA09+     9                             397
+                    E282      E282      s034      sA10+     10                            385
+                    E283      E283      s035      sA11+     11                            397
+                    E284      E284      s036      sB01+     12                            397
+                    E285      E285      s037      sB02+     13                            397
+                    E286      E286      s038      sB03+     14                            397
+                    E287      E287      s039      sB04+     15                            397
+                    E288      E288      s040      sB05+     16                            397
+sNGC03              E289      E289      s041      sNGC03    NGC-3                         397
+sNGC04              E290      E290      s042      sNGC04    NGC-4                         385
+sHGC01              E291      E291      s043      sHGC01    HGC-1                         397
+sAER04+             E292      E292      s044      sAER04+   AER-4POS                      397
+sAER04-             E293      E293      s045      sAER04-   AER-4NEG                      397
+                    E294      E294      s046      sB11+     22                            397
+                    E295      E295      s047      sC01+     23                            397
+                    E296      E296      s048      sC02+     24                            397
+                    E297      E297      s049      sC03+     25                            397
+                    E298      E298      s050      sC04+     26                            397
+sNGC01              E299      E299      s051      sNGC01    NGC-1                         397
+sNGC02              E300      E300      s052      sNGC02    NGC-2                         397
+n/c                 E301      E301      s053      -         n/c                           295
+                    E302      E302      s054      sC07+     29                            397
+                    E303      E303      s055      sC08+     30                            397
+sHGC02              E304      E304      s056      sHGC02    HGC-2                         397
+sHGC03              E305      E305      s057      sHGC03    HGC-3                         359
+sHGC04              E306      E306      s058      sHGC04    HGC-4                         397
+sAER01+             E307      E307      s059      sAER01+   AER-1POS                      397
+sAER02+             E308      E308      s060      sAER02+   AER-2POS                      397
+sAER03+             E309      E309      s061      sAER03+   AER-3POS                      397
+                    E310      E310      s062      sD02+     35                            397
+sAER05+             E311      E311      s063      sAER05+   AER-5POS                      397
+sAER06+             E312      E312      s064      sAER06+   AER-6POS                      397
+sAER07+             E313      E313      s065      sAER07+   AER-7POS                      397
+sAER01-             E314      E314      s066      sAER01-   AER-1NEG                      397
+sAER02-             E315      E315      s067      sAER02-   AER-2NEG                      397
+sAER03-             E316      E316      s068      sAER03-   AER-3NEG                      165
+                    E317      E317      s069      sa05-     18                            397
+sAER05-             E318      E318      s070      sAER05-   AER-5NEG                      397
+sAER06-             E319      E319      s071      sAER06-   AER-6NEG                      295
+sAER07-             E320      E320      s072      sAER07-   AER-7NEG                      397
+                    F321      F321      -         MCC       -                             -
+                    F322      F322      -         MCC       -                             -
+                    F323      F323      -         MCC       -                             -
+                    F324      F324      -         MCC       -                             -
+                    F325      F325      -         MCC       -                             -
+                    F326      F326      -         MCC       -                             -
+                    F327      F327      -         MCC       -                             -
+                    F328      F328      -         MCC       -                             -
+                    F329      F329      -         MCC       -                             -
+                    F330      F330      -         MCC       -                             -
+                    F331      F331      -         MCC       -                             -
+                    F332      F332      -         MCC       -                             -
+                    F333      F333      -         MCC       -                             -
+                    F334      F334      -         MCC       -                             -
+                    F335      F335      -         MCC       -                             -
+                    F336      F336      -         MCC       -                             -
+                    F337      F337      -         MCC       -                             -
+                    F338      F338      -         MCC       -                             -
+                    F339      F339      -         MCC       -                             -
+                    F340      F340      -         MCC       -                             -
+hA08+               F341      F341      h157      hA08+     signal157                     362
+hA09+               F342      F342      h158      hA09+     signal158                     362
+hA10+               F343      F343      h159      hA10+     signal159                     362
+hA11+               F344      F344      h160      hA11+     signal160                     362
+hA12+               F345      F345      h161      hA12+     signal161                     362
+hA13+               F346      F346      h162      hA13+     signal162                     362
+hB02+               F347      F347      h163      hB02+     signal163                     362
+hB03+               F348      F348      h164      hB03+     signal164                     362
+hB04+               F349      F349      h165      hB04+     signal165                     362
+hB05+               F350      F350      h166      hB05+     signal166                     362
+hB06+               F351      F351      h167      hB06+     signal167                     362
+hB07+               F352      F352      h168      hB07+     signal168                     362
+hB08+               F353      F353      h169      hB08+     signal169                     362
+hB09+               F354      F354      h170      hB09+     signal170                     362
+hB10+               F355      F355      h171      hB10+     signal171                     362
+hB11+               F356      F356      h172      hB11+     signal172                     362
+hB12+               F357      F357      h173      hB12+     signal173                     362
+hB13+               F358      F358      h174      hB13+     signal174                     362
+hC02+               F359      F359      h175      hC02+     signal175                     362
+hC03+               F360      F360      h176      hC03+     signal176                     362
+hC04+               F361      F361      h177      hC04+     signal177                     362
+hC05+               F362      F362      h178      hC05+     signal178                     362
+hC06+               F363      F363      h179      hC06+     signal179                     362
+hC07+               F364      F364      h180      hC07+     signal180                     362
+hC08+               F365      F365      h181      hC08+     signal181                     362
+hC09+               F366      F366      h182      hC09+     signal182                     362
+n/c                 F367      F367      h183      -         n/c                           -
+hC11+               F368      F368      h184      hC11+     signal184                     362
+hC12+               F369      F369      h185      hC12+     signal185                     362
+hC13+               F370      F370      h186      hC13+     signal186                     362
+hD02+               F371      F371      h187      hD02+     signal187                     362
+hD03+               F372      F372      h188      hD03+     signal188                     362
+hD04+               F373      F373      h189      hD04+     signal189                     362
+hD05+               F374      F374      h190      hD05+     signal190                     362
+hD06+               F375      F375      h191      hD06+     signal191                     362
+hD07+               F376      F376      h192      hD07+     signal192                     362
+hD08+               F377      F377      h193      hD08+     signal193                     362
+hD09+               F378      F378      h194      hD09+     signal194                     362
+hD10+               F379      F379      h195      hD10+     signal195                     362
+hD11+               F380      F380      h196      hD11+     signal196                     362
+hD12+               F381      F381      h197      hD12+     signal197                     362
+hD13+               F382      F382      h198      hD13+     signal198                     362
+                    F383      F383      h199      hCER1     signal199                     362
+                    F384      F384      h200      hCER2     signal200                     362
+                    G385      G385      s073      sb01-     25                            395
+                    G386      G386      s074      sb02-     26                            395
+                    G387      G387      s075      sb03-     27                            395
+                    G388      G388      s076      slc01-    LC01-                         395
+                    G389      G389      s077      sCER1     scer1                         399
+                    G390      G390      s078      sCER2     scer2                         399
+S1X001L             G391      G391      s079      S1X01+    S1X-001L                      399
+S1X002L             G392      G392      s080      S1X02+    S1X-002L                      399
+S1X003L             G393      G393      s081      S1X03+    S1X-003L                      367
+S1X004L             G394      G394      s082      S1X04+    S1X-004L                      367
+S1X005L             G395      G395      s083      S1X05+    S1X-005L                      367
+S1X006L             G396      G396      s084      S1X06+    S1X-006L                      367
+S1X007L             G397      G397      s085      S1X07+    S1X-007L                      367
+S1X008L             G398      G398      s086      S1X08+    S1X-008L                      367
+S1X009L             G399      G399      s087      S1X09+    S1X-009L                      367
+S1X010L             G400      G400      s088      S1X10+    S1X-010L                      367
+S1X011L             G401      G401      s089      S1X11+    S1X-011L                      367
+S1X012L             G402      G402      s090      S1X12+    S1X-012L                      367
+S1X013L             G403      G403      s091      S1X13+    S1X-013L                      367
+S1X001R             G404      G404      s092      S1X01-    S1X-001R                      367
+S1X002R             G405      G405      s093      S1X02-    S1X-002R                      367
+S1X003R             G406      G406      s094      S1X03-    S1X-003R                      367
+S1X004R             G407      G407      s095      S1X04-    S1X-004R                      -
+S1X005R             G408      G408      s096      S1X05-    S1X-005R                      397
+S1X006R             G409      G409      s097      S1X06-    S1X-006R                      397
+S1X007R             G410      G410      s098      S1X07-    S1X-007R                      397
+S1X008R             G411      G411      s099      S1X08-    S1X-008R                      397
+S1X009R             G412      G412      s100      S1X09-    S1X-009R                      397
+S1X010R             G413      G413      s101      S1X10-    S1X-010R                      397
+S1X011R             G414      G414      s102      S1X11-    S1X-011R                      397
+S1X012R             G415      G415      s103      S1X12-    S1X-012R                      397
+S1X013R             G416      G416      s104      S1X13-    S1X-013R                      397
+S1Y001T             G417      G417      s105      S1Y01-    S1Y-001T                      397
+S1Y002T             G418      G418      s106      S1Y02-    S1Y-002T                      397
+S1Y003T             G419      G419      s107      S1Y03-    S1Y-003T                      397
+S1Y004T             G420      G420      s108      S1Y04-    S1Y-004T                      397
+S1Y005T             G421      G421      s109      S1Y05-    S1Y-005T                      397
+S1Y006T             G422      G422      s110      S1Y06-    S1Y-006T                      397
+S1Y007T             G423      G423      s111      S1Y07-    S1Y-007T                      397
+S1Y008T             G424      G424      s112      S1Y08-    S1Y-008T                      397
+S1Y009T             G425      G425      s113      S1Y09-    S1Y-009T                      397
+S1Y010T             G426      G426      s114      S1Y10-    S1Y-010T                      397
+S1Y011T             G427      G427      s115      S1Y11-    S1Y-011T                      397
+S1Y012T             G428      G428      s116      S1Y12-    S1Y-012T                      397
+S1Y013T             G429      G429      s117      S1Y13-    S1Y-013T                      397
+S1Y001B             G430      G430      s118      S1Y01+    S1Y-001B                      397
+S1Y002B             G431      G431      s119      S1Y02+    S1Y-002B                      397
+S1Y003B             G432      G432      s120      S1Y03+    S1Y-003B                      397
+S1Y004B             G433      G433      s121      S1Y04+    S1Y-004B                      397
+S1Y005B             G434      G434      s122      S1Y05+    S1Y-005B                      397
+S1Y006B             G435      G435      s123      S1Y06+    S1Y-006B                      397
+S1Y007B             G436      G436      s124      S1Y07+    S1Y-007B                      397
+S1Y008B             G437      G437      s125      S1Y08+    S1Y-008B                      397
+S1Y009B             G438      G438      s126      S1Y09+    S1Y-009B                      397
+S1Y010B             G439      G439      s127      S1Y10+    S1Y-010B                      397
+S1Y011B             G440      G440      s128      S1Y11+    S1Y-011B                      397
+S1Y012B             G441      G441      s129      S1Y12+    S1Y-012B                      397
+S1Y013B             G442      G442      s130      S1Y13+    S1Y-013B                      397
+S2X001L             G443      G443      s131      S2X01+    S2X-001L                      397
+S2X002L             G444      G444      s132      S2X02+    S2X-002L                      397
+S2X003L             G445      G445      s133      S2X03+    S2X-003L                      359
+S2X004L             G446      G446      s134      S2X04+    S2X-004L                      397
+S2X005L             G447      G447      s135	  S2X05+    S2X-005L                      -
+S2X006L             G448      G448      s136      S2X06+    S2X-006L                      397
+h1x1+               H449      H449      h031      h1X01+    signal31                      362
+h1x2+               H450      H450      h032      h1X02+    signal32                      362
+h1x3+               H451      H451      h033      h1X03+    signal33                      362
+h1x4+               H452      H452      h034      h1X04+    signal34                      362
+h1x5+               H453      H453      h035      h1X05+    signal35                      362
+h1x6+               H454      H454      h036      h1X06+    signal36                      362
+h1x7+               H455      H455      h037      h1X07+    signal37                      362
+h1x8+               H456      H456      h038      h1X08+    signal38                      362
+h1x9+               H457      H457      h039      h1X09+    signal39                      362
+h1x10+              H458      H458      h040      h1X10+    signal40                      362
+h1x11+              H459      H459      h041      h1X11+    signal41                      362
+h1x12+              H460      H460      h042      h1X12+    signal42                      362
+h1x13+              H461      H461      h043      h1X13+    signal43                      362
+h1x14+              H462      H462      h044      h1X14+    signal44                      362
+h1x15+              H463      H463      h045      h1X15+    signal45                      362
+h1x16+              H464      H464      h046      h1X16+    signal46                      362
+hB04-               H465      H465      h047      hB04-     signal004                     362
+hB05-               H466      H466      h048      hB05-     signal005                     362
+h1y1+               H467      H467      h049      h1Y01+    signal49                      362
+h1y2+               H468      H468      h050      h1Y02+    signal50                      362
+h1y3+               H469      H469      h051      h1Y03+    signal51                      362
+h1y4+               H470      H470      h052      h1Y04+    signal52                      362
+h1y5+               H471      H471      h053      h1Y05+    signal53                      362
+h1y6+               H472      H472      h054      h1Y06+    signal54                      362
+h1y7+               H473      H473      h055      h1Y07+    signal55                      362
+h1y8+               H474      H474      h056      h1Y08+    signal56                      362
+h1y9+               H475      H475      h057      h1Y09+    signal57                      362
+h1y10+              H476      H476      h058      h1Y10+    signal58                      362
+hB06-               H477      H477      h059      hB06-     signal006                     362
+hB07-               H478      H478      h060      hB07-     signal007                     362
+h1x1-               H479      H479      h061      h1X01-    signal61                      362
+h1x2-               H480      H480      h062      h1X02-    signal62                      362
+h1x3-               H481      H481      h063      h1X03-    signal63                      362
+h1x4-               H482      H482      h064      h1X04-    signal64                      362
+h1x5-               H483      H483      h065      h1X05-    signal65                      362
+h1x6-               H484      H484      h066      h1X06-    signal66                      362
+h1x7-               H485      H485      h067      h1X07-    signal67                      362
+h1x8-               H486      H486      h068      h1X08-    signal68                      362
+h1x9-               H487      H487      h069      h1X09-    signal69                      362
+h1x10-              H488      H488      h070      h1X10-    signal70                      362
+h1x11-              H489      H489      h071      h1X11-    signal71                      362
+h1x12-              H490      H490      h072      h1X12-    signal72                      362
+h1x13-              H491      H491      h073      h1X13-    signal73                      362
+h1x14-              H492      H492      h074      h1X14-    signal74                      362
+h1x15-              H493      H493      h075      h1X15-    signal75                      362
+h1x16-              H494      H494      h076      h1X16-    signal76                      362
+hB08-               H495      H495      h077      hB08-     signal008                     362
+hB09-               H496      H496      h078      hB09-     signal009                     362
+h1y1-               H497      H497      h079      h1Y01-    signal79                      362
+h1y2-               H498      H498      h080      h1Y02-    signal80                      362
+h1y3-               H499      H499      h081      h1Y03-    signal81                      362
+h1y4-               H500      H500      h082      h1Y04-    signal82                      362
+h1y5-               H501      H501      h083      h1Y05-    signal83                      362
+h1y6-               H502      H502      h084      h1Y06-    signal84                      362
+h1y7-               H503      H503      h085      h1Y07-    signal85                      362
+h1y8-               H504      H504      h086      h1Y08-    signal86                      362
+h1y9-               H505      H505      h087      h1Y09-    signal87                      362
+h1y10-              H506      H506      h088      h1Y10-    signal88                      362
+hB10-               H507      H507      h089      hB10-     signal010                     362
+hC10+               H508      H508      h090      hC10+     signal183                     362
+h2x1+               H509      H509      h091      h2X01+    signal91                      362
+h2x2+               H510      H510      h092      h2X02+    signal92                      362
+h2x3+               H511      H511      h093      h2X03+    signal93                      362
+h2x4+               H512      H512      h094      h2X04+    signal94                      362
+S2X007L             I513      I513      s137      S2X07+    S2X-007L                      396
+S2X008L             I514      I514      s138      S2X08+    S2X-008L                      396
+S2X009L             I515      I515      s139      S2X09+    S2X-009L                      396
+S2X010L             I516      I516      s140      S2X10+    S2X-010L                      359
+S2X011L             I517      I517      s141      S2X11+    S2X-011L                      395
+S2X012L             I518      I518      s142      S2X12+    S2X-012L                      395
+S2X013L             I519      I519      s143      S2X13+    S2X-013L                      395
+S2X014L             I520      I520      s144      S2X14+    S2X-014L                      395
+S2X001R             I521      I521      s145      S2X01-    S2X-001R                      395
+S2X002R             I522      I522      s146      S2X02-    S2X-002R                      395
+S2X003R             I523      I523      s147      S2X03-    S2X-003R                      395
+S2X004R             I524      I524      s148      S2X04-    S2X-004R                      395
+S2X005R             I525      I525      s149      S2X05-    S2X-005R                      395
+S2X006R             I526      I526      s150      S2X06-    S2X-006R                      395
+S2X007R             I527      I527      s151      S2X07-    S2X-007R                      395
+S2X008R             I528      I528      s152      S2X08-    S2X-008R                      395
+S2X009R             I529      I529      s153      S2X09-    S2X-009R                      395
+S2X010R             I530      I530      s154      S2X10-    S2X-010R                      395
+S2X011R             I531      I531      s155      S2X11-    S2X-011R                      395
+S2X012R             I532      I532      s156      S2X12-    S2X-012R                      395
+S2X013R             I533      I533      s157      S2X13-    S2X-013R                      395
+S2X014R             I534      I534      s158      S2X14-    S2X-014R                      395
+S2Y001T             I535      I535      s159      S2Y01-    S2Y-001T                      169
+S2Y002T             I536      I536      s160      S2Y02-    S2Y-002T                      395
+S2Y003T             I537      I537      s161      S2Y03-    S2Y-003T                      395
+S2Y004T             I538      I538      s162      S2Y04-    S2Y-004T                      395
+S2Y005T             I539      I539      s163      S2Y05-    S2Y-005T                      395
+S2Y006T             I540      I540      s164      S2Y06-    S2Y-006T                      395
+S2Y007T             I541      I541      s165      S2Y07-    S2Y-007T                      395
+S2Y008T             I542      I542      s166      S2Y08-    S2Y-008T                      395
+S2Y009T             I543      I543      s167      S2Y09-    S2Y-009T                      395
+S2Y010T             I544      I544      s168      S2Y10-    S2Y-010T                      365
+S2Y011T             I545      I545      s169      S2X11-    S2Y-011T                      395
+S2Y012T             I546      I546      s170      S2Y12-    S2Y-012T                      395
+S2Y013T             I547      I547      s171      S2Y13-    S2Y-013T                      395
+S2Y014T             I548      I548      s172      S2Y14-    S2Y-014T                      395
+S2Y015T             I549      I549      s173      S2Y15-    S2Y-015T                      395
+S2Y016T             I550      I550      s174      S2Y16-    S2Y-016T                      395
+S2Y017T             I551      I551      s175      S2Y17-    S2Y-017T                      395
+S2Y018T             I552      I552      s176      S2Y18-    S2Y-018T                      395
+S2Y019T             I553      I553      s177      S2Y19-    S2Y-019T                      395
+S2Y020T             I554      I554      s178      S2Y20-    S2Y-020T                      395
+S2Y021T             I555      I555      s179      S2Y21-    S2Y-021T                      395
+S2Y001B             I556      I556      s180      S2Y01+    S2Y-001B                      395
+S2Y002B             I557      I557      s181      S2Y02+    S2Y-002B                      395
+S2Y003B             I558      I558      s182      S2Y03+    S2Y-003B                      395
+S2Y004B             I559      I559      s183      S2Y04+    S2Y-004B                      395
+S2Y005B             I560      I560      s184      S2Y05+    S2Y-005B                      395
+S2Y006B             I561      I561      s185      S2Y06+    S2Y-006B                      395
+S2Y007B             I562      I562      s186      S2Y07+    S2Y-007B                      395
+S2Y008B             I563      I563      s187      S2Y08+    S2Y-008B                      395
+S2Y009B             I564      I564      s188      S2Y09+    S2Y-009B                      395
+S2Y010B             I565      I565      s189      S2Y10+    S2Y-010B                      395
+S2Y011B             I566      I566      s190      S2Y11+    S2Y-011B                      395
+S2Y012B             I567      I567      s191      S2Y12+    S2Y-012B                      395
+S2Y013B             I568      I568      s192      S2Y13+    S2Y-013B                      395
+S2Y014B             I569      I569      s193      S2Y14+    S2Y-014B                      395
+S2Y015B             I570      I570      s194      S2Y15+    S2Y-015B                      395
+S2Y016B             I571      I571      s195      S2Y16+    S2Y-016B                      395
+S2Y017B             I572      I572      s196      S2Y17+    S2Y-017B                      167
+S2Y018B             I573      I573      s197      S2Y18+    S2Y-018B                      395
+S2Y019B             I574      I574      s198      S2Y19+    S2Y-019B                      395
+S2Y020B             I575      I575      s199      S2Y20+    S2Y-020B                      395
+S2Y021B             I576      I576      s200      S2Y21+    S2Y-021B                      395
+h2x5+               J577      J577      h095      h2X05+    signal95                      362
+h2x6+               J578      J578      h096      h2X06+    signal96                      362
+h2x7+               J579      J579      h097      h2X07+    signal97                      362
+h2x8+               J580      J580      h098      h2X08+    signal98                      362
+h2x9+               J581      J581      h099      h2X09+    signal99                      362
+h2x10+              J582      J582      h100      h2X10+    signal100                     362
+h2x11+              J583      J583      h101      h2X11+    signal101                     362
+h2x12+              J584      J584      h102      h2X12+    signal102                     362
+h2x13+              J585      J585      h103      h2X13+    signal103                     362
+h2x14+              J586      J586      h104      h2X14+    signal104                     362
+h2x15+              J587      J587      h105      h2X15+    signal105                     362
+n/c                 J588      J588      h106      unlabeled signal106                     164
+h2x16+              J589      J589      h107      h2X16+    signal107                     362
+hB11-               J590      J590      h108      hb11-     signal011                     362
+h2y1+               J591      J591      h109      h2Y01+    signal109                     362
+h2y2+               J592      J592      h110      h2Y02+    signal110                     362
+h2y3+               J593      J593      h111      h2Y03+    signal111                     362
+h2y4+               J594      J594      h112      h2Y04+    signal112                     362
+h2y5+               J595      J595      h113      h2Y05+    signal113                     362
+h2y6+               J596      J596      h114      h2Y06+    signal114                     362
+h2y7+               J597      J597      h115      h2Y07+    signal115                     362
+h2y8+               J598      J598      h116      h2Y08+    signal116                     362
+h2y9+               J599      J599      h117      h2Y09+    signal117                     362
+h2y10+              J600      J600      h118      h2Y10+    signal118                     362
+n/c                 J601      J601      h119      CPU_reset signal119                     362
+hB01-               J602      J602      h120      hB01-     signal001                     362
+h2x1-               J603      J603      h121      h2X01-    signal121                     362
+h2x2-               J604      J604      h122      h2X02-    signal122                     362
+h2x3-               J605      J605      h123      h2X03-    signal123                     362
+h2x4-               J606      J606      h124      h2X04-    signal124                     362
+h2x5-               J607      J607      h125      h2X05-    signal125                     362
+h2x6-               J608      J608      h126      h2X06-    signal126                     362
+h2x7-               J609      J609      h127      h2X07-    signal127                     362
+h2x8-               J610      J610      h128      h2X08-    signal128                     362
+h2x9-               J611      J611      h129      h2X09-    signal129                     362
+h2x10-              J612      J612      h130      h2X10-    signal130                     362
+h2x11-              J613      J613      h131      h2X11-    signal131                     362
+h2x12-              J614      J614      h132      h2X12-    signal132                     362
+h2x13-              J615      J615      h133      h2X13-    signal133                     362
+h2x14-              J616      J616      h134      h2X14-    signal134                     362
+h2x15-              J617      J617      h135      h2X15-    signal135                     362
+h2x16-              J618      J618      h136      h2X16-    signal136                     362
+hB12-               J619      J619      h137      hB12-     signal012                     362
+hB13-               J620      J620      h138      hB13-     signal013                     362
+h2y1-               J621      J621      h139      h2Y01-    signal139                     362
+h2y2-               J622      J622      h140      h2Y02-    signal140                     362
+h2y3-               J623      J623      h141      h2Y03-    signal141                     362
+h2y4-               J624      J624      h142      h2Y04-    signal142                     362
+h2y5-               J625      J625      h143      h2Y05-    signal143                     362
+n/c                 J626      J626      h144      -         n/c                           -         have problem
+h2y7-               J627      J627      h145      h2Y07-    signal145                     362
+h2y8-               J628      J628      h146      h2Y08-    signal146                     362
+h2y9-               J629      J629      h147      h2Y09-    signal147                     362
+h2y10-              J630      J630      h148      h2Y10-    signal148                     362
+mu2(in16 of hD spl) J631      J631      h149      hmuon2(R) 131                           362
+h2y6-               J632      J632      h150      h2Y06-    signal144                     362
+hB02-               J633      J633      h023      hB02-     signal002                     362
+hB03-               J634      J634      h024      hB03-     signal 003                    362
+hA01+               J635      J635      h025      hA01+     signal25                      362
+hB01+               J636      J636      h026      hB01+     signal26                      362
+hC01+               J637      J637      h027      hC01+     signal27                      362
+                    J638      J638      h028      hD01+     signal28                      362
+n/c                 J639      J639      h029      unlabeled signal029                     172
+                    J640      J640      h030      TV Camera no mark                       356
+
+|__CR Cable Label__||CR Patch||Fl Patch||Hut_Patc||_Signal_||___Hut Cable Label__________||_Length_||_Comments_________|
+
