@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  29 OCT 2017 17:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  30 OCT 2017 21:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1473,6 +1473,11 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./dc2_tests/hdc2_xmap.pdf, page is rotated 90 degrees> <./dc2_tests/dc2_hv
+scan_thrs45.pdf, page is rotated 90 degrees> <./dc2_tests/dc2_thrsscan_HV_1940V
+.pdf, page is rotated 90 degrees>]
 Underfull \hbox (badness 1789) in paragraph at lines 217--229
 []\OT1/qtm/m/n/12 One might ar-gue that such high rates can
  []
@@ -1482,10 +1487,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--229
 
  []
 
-[4 <./dc2_tests/hdc2_xmap.pdf, page is rotated 90 degrees> <./dc2_tests/dc2_hvs
-can_thrs45.pdf, page is rotated 90 degrees> <./dc2_tests/dc2_thrsscan_HV_1940V.
-pdf, page is rotated 90 degrees>]
-<edtm/edtm_cases.pdf, id=338, 548.2914pt x 533.59624pt>
+<edtm/edtm_cases.pdf, id=336, 548.2914pt x 533.59624pt>
 File: edtm/edtm_cases.pdf Graphic file (type pdf)
 
 <use edtm/edtm_cases.pdf>
@@ -1511,14 +1513,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--244
 
  []
 
-<edtm/poisson_pulse.pdf, id=340, 785.0122pt x 174.73953pt>
+[5 <./edtm/edtm_cases.pdf>]
+<edtm/poisson_pulse.pdf, id=364, 785.0122pt x 174.73953pt>
 File: edtm/poisson_pulse.pdf Graphic file (type pdf)
 
 <use edtm/poisson_pulse.pdf>
 Package pdftex.def Info: edtm/poisson_pulse.pdf used on input line 263.
 (pdftex.def)             Requested size: 224.03026pt x 65.04189pt.
- [5 <./edtm/edtm_cases.pdf>]
-<edtm/EDTM_Oscope.pdf, id=375, 889.61227pt x 669.41426pt>
+
+<edtm/EDTM_Oscope.pdf, id=373, 889.61227pt x 669.41426pt>
 File: edtm/EDTM_Oscope.pdf Graphic file (type pdf)
 
 <use edtm/EDTM_Oscope.pdf>
@@ -1528,20 +1531,13 @@ Package pdftex.def Info: edtm/EDTM_Oscope.pdf used on input line 338.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 1199) has occurred while \output is active []
-
- [6 <./edtm/poisson_pulse.pdf, page is rotated 270 degrees>]
+[6 <./edtm/poisson_pulse.pdf, page is rotated 270 degrees>]
 <edtm/TI_Scaler_SYNC.pdf, id=400, 850.38246pt x 317.86359pt>
 File: edtm/TI_Scaler_SYNC.pdf Graphic file (type pdf)
 
 <use edtm/TI_Scaler_SYNC.pdf>
 Package pdftex.def Info: edtm/TI_Scaler_SYNC.pdf used on input line 356.
 (pdftex.def)             Requested size: 245.70926pt x 108.402pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 
 Underfull \hbox (badness 1715) in paragraph at lines 368--374
 \OT1/qtm/m/n/12 an elec-tron beam. The scat-tered elec-tron and
@@ -1582,13 +1578,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 403--443
 
  []
 
-<deut_kin/h_elast.pdf, id=449, 614.295pt x 794.97pt>
+[8] <deut_kin/h_elast.pdf, id=460, 614.295pt x 794.97pt>
 File: deut_kin/h_elast.pdf Graphic file (type pdf)
 
 <use deut_kin/h_elast.pdf>
 Package pdftex.def Info: deut_kin/h_elast.pdf used on input line 475.
 (pdftex.def)             Requested size: 238.48677pt x 296.31773pt.
- [8]
+
 <deut_kin/d2_acceptance.pdf, id=461, 966.34886pt x 492.16382pt>
 File: deut_kin/d2_acceptance.pdf Graphic file (type pdf)
 
@@ -1605,7 +1601,12 @@ Underfull \hbox (badness 2970) in paragraph at lines 482--504
 []\OT1/qtm/m/n/12 The re-sults from the sim-u-la-tions done on
  []
 
-[9 <./deut_kin/h_elast.pdf> <./deut_kin/d2_acceptance.pdf>] (./report.bbl
+
+Underfull \vbox (badness 7064) has occurred while \output is active []
+
+ [9 <./deut_kin/h_elast.pdf> <./deut_kin/d2_acceptance.pdf>] [10
+
+] (./report.bbl
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
 
 (/opt/local/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
@@ -1623,7 +1624,7 @@ Before submitting the final camera ready copy, remember to:
  process uses the US letter (8.5in X 11in) paper size.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 546.
-[10
+[11
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 546.
@@ -1634,9 +1635,9 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: EB062B57C46FDB426116975F6B8F40C1;1176.
  ) 
 Here is how much of TeX's memory you used:
- 20617 strings out of 494108
- 382871 string characters out of 6155655
- 461646 words of memory out of 5000000
+ 20618 strings out of 494108
+ 382878 string characters out of 6155655
+ 462646 words of memory out of 5000000
  23674 multiletter control sequences out of 15000+600000
  138653 words of font info for 135 fonts, out of 8000000 for 9000
  430 hyphenation exceptions out of 8191
@@ -1662,10 +1663,10 @@ public/amsfonts/cm/cmsy8.pfb></opt/local/share/texmf-texlive/fonts/type1/public
 yre/qtmb.pfb></opt/local/share/texmf-texlive/fonts/type1/public/tex-gyre/qtmr.p
 fb></opt/local/share/texmf-texlive/fonts/type1/public/tex-gyre/qtmri.pfb></opt/
 local/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on report.pdf (10 pages, 2545102 bytes).
+Output written on report.pdf (11 pages, 2545366 bytes).
 PDF statistics:
- 646 PDF objects out of 1000 (max. 8388607)
- 455 compressed objects within 5 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 650 PDF objects out of 1000 (max. 8388607)
+ 458 compressed objects within 5 object streams
+ 57 named destinations out of 1000 (max. 500000)
  186 words of extra memory for PDF output out of 10000 (max. 10000000)
 
