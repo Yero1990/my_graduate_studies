@@ -20,9 +20,9 @@
 
 \usepackage{epstopdf}
 
-\title{On the Out-of-Sync TDC Module on the HMS Chambers}
+\title{\textbf{Discussion On the Out-of-Sync TDC Module from the HMS Chambers}}
 \author{Carlos Yero}
-\date{August 28 2018}
+\date{August 29 2018}
 
 \begin{document}
 
@@ -31,11 +31,12 @@
 
 
 %*****************************************************************************************************************************************************
-During the Fall-2017/Spring-2018 Hall C Commissioning Run Period, it was found that a particular TDC module in the HMS
+\noindent During the Fall-2017/Spring-2018 Hall C Commissioning Run Period, it was found that a particular TDC module in the HMS
 Drift Chambers Crate (ROC03) was shifting the tdc times of the corresponding groups of wires being fed into it. At that time,
 this did not seem to be a serious concern, as this could be fixed in software. There also seem to be no issues with the
 residuals per wire after calibration. After the end of the Spring Run, I decided to look at the residuals per wire for a defocused
-run in the HMS, and found certaing groups of wire residuals to be significantly smeared compared to adjacent groups of wires.
+run in the HMS (run 1267), and found certain groups of wire residuals to be significantly smeared compared to adjacent groups of wires (smeared
+residuals were being overshadowed by another problem fixed by Mark Jones during Spring 2018 SIDIS, concerning the \texttt{hodoscope starttime}).
 These were the same group of wires that exhibited the shift in time, which pointed to the same TDC module in ROC03, Slot 2.
 In this document I discuss the following: \\
 \\
@@ -46,7 +47,7 @@ In this document I discuss the following: \\
 \section{Observed Correlations on the Out-of-Sync TDC Module}  
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=7.0in, height=4.0in]{shifted_drifttimes.png}
+  \includegraphics[width=6.5in, height=3.5in]{shifted_drifttimes.png}
   \caption{The Raw TDC vs. Wire Number Correlations for all 12 planes. An offset of $\sim$ 1000 Channels ($\sim$ 100 ns) is observed
     in wire groups of four distinct planes.}
   \label{fig:shift_dtimes}
@@ -169,6 +170,11 @@ the instructions are as follows:
     \label{fig:gen_param}
   \end{minipage}
 \end{itemize}
+\noindent In case you need help or do NOT have the time to create this parameter file, I have uploaded both the script that produces the parameter file and the parameter file
+itself to my github page. \\
+\textbf{Link to script:} \\ \url{https://github.com/Yero1990/scientific_articles/blob/master/Spring_2018_Run/OutOfSync_TDC/write_sig_param.C} \\
+\textbf{Link to parameter file:} \\\url{https://github.com/Yero1990/scientific_articles/blob/master/Spring_2018_Run/OutOfSync_TDC/hdc_sigma_per_wire.param}
+
 \newpage
 \onecolumn
 \bibliography{template}
