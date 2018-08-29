@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+
+
+\usepackage{url}
+\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage[scientific-notation=true]{siunitx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[top=0.6 in, bottom=0.7 in, left=0.7in, right=0.7in]{geometry}
+\usepackage{setspace}
+\usepackage{vector}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tgtermes}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage{epstopdf}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+        
+        
+        {\Huge Title}
+        
+        \vspace{1.5cm}
+        
+        {\Large Name}
+        
+        \vspace{0.8cm}
+        
+        {\Large \today}
+
+        \vspace{1.8cm}
+                
+        \includegraphics[width=0.25\textwidth]{hallc_logo.png}
+
+        \vspace{2.0in}
+        
+        \large
+        Thomas Jefferson National Accelerator Facility \\
+        Newport News, Virginia\\
+        USA\\
+        \date{today}
+        
+    \end{center}
+\end{titlepage}
+
+
+%*****************************************************************************************************************************************************
+
+\section{Section 1} 
+\indent This is section 1.
+
+\section{Section 2}
+\indent This is section 2.
+
+(See Figures \ref{fig:sample} 
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3.0in, height=2.0in]{sample_fig.pdf}
+  \caption{This is the sample figure.}
+  \label{fig:sample}
+\end{figure}
+\newline
+
+\newpage
+\onecolumn
+\bibliography{template}
+\bibliographystyle{acm}
+
+
+\end{document}

@@ -1,0 +1,123 @@
+\documentclass[11pt]{article}
+
+
+\usepackage{url}
+\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage[scientific-notation=true]{siunitx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[top=0.6 in, bottom=0.7 in, left=0.7in, right=0.7in]{geometry}
+\usepackage{setspace}
+\usepackage{vector}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tgtermes}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage{epstopdf}
+
+\title{On the Out-of-Sync TDC Module on the HMS Chambers}
+\author{Carlos Yero}
+\date{August 28 2018}
+
+\begin{document}
+
+\maketitle
+
+
+
+%*****************************************************************************************************************************************************
+During the Fall-2017/Spring-2018 Hall C Commissioning Run Period, it was found that a particular TDC module in the HMS
+Drift Chambers Crate (ROC03) was shifting the tdc times of the corresponding groups of wires being fed into it. At that time,
+this did not seem to be a serious concern, as this could be fixed in software. There also seem to be no issues with the
+residuals per wire after calibration. After the end of the Spring Run, I decided to look at the residuals per wire for a defocused
+run in the HMS, and found certaing groups of wire residuals to be significantly smeared compared to adjacent groups of wires.
+These were the same group of wires that exhibited the shift in time, which pointed to the same TDC module in ROC03, Slot 2.
+In this document I discuss the following: \\
+\\
+1) the observations made that led to the determination of an out-of-sync TDC module \\
+2) what was done to fix this problem in future experiments \\
+3) how to minimize the impact on wire residuals for the Spring 2018 Run
+
+\section{Observed Correlations on the Out-of-Sync TDC Module}  
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=7.0in, height=4.0in]{shifted_drifttimes.png}
+  \caption{The Raw TDC vs. Wire Number Correlations for all 12 planes. An offset of $\sim$ 1000 Channels ($\sim$ 100 ns) is observed
+    in wire groups of four distinct planes.}
+  \label{fig:shift_dtimes}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=7.0in, height=4.0in]{bad_wireresidual.png}
+  \caption{Correlation of Residuals vs. Wire Number for all 12 planes. Four wire groups stand out from the rest, with a noticeable smearing.
+  The adjacent planes are affected by this smearing as well, even though they are NOT part of the problematic TDC.}
+  \label{fig:wire_residual}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=6.0in, height=4.0in]{hDC_RefTime_correlation.png}
+  \caption{Correlation between the HMS DC reference time and the raw TDC times. The DC 1, V'-Plane raw TDC vs. Wire Number is shown. Adjacent wirgroups which
+  are NOT in TDC Slot 2 are compared to the TDC Slot 2 wire group before and after applying the reference time correction to the TDC time.}
+  \label{fig:wire_residual}
+\end{figure}
+
+\newpage
+The figure above is determinant in this study, as it shows the correlation of the reference time with the raw TDC time before and after applying the reference time correction.
+As expected from a normal TDC, when tdc times are reference time subtracted, the correlation dissappears. However, in TDC Slot 2, the reference time and raw tdc time appear to be
+correlated, which is an indication that its copy of the reference time is Out-of-Sync with the rest of the modules.
+
+\section{Temporary Solution for the Out-Of-Sync TDC}
+\indent As a temporary solution, it was decided that a copy of the reference time should be fed independently to the bad TDC module. This way, the TDC can synchronize with its own
+reference time, as opposed to receiving an alternate copy from the trigger interface (TI) module. This modification was done on hardware on July 30, 2018. See Log Enrty \url{https://logbooks.jlab.org/entry/3583094}.
+
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{hdcref5_corr.png}
+  \caption{TDC Slot 2 Reference Time vs. Raw Uncorrected TDC \\Time for wire group 1V2 (49-64)}
+  \label{fig:ref5_correlated}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{hdcref5_uncorr.png}
+  \caption{TDC Slot 2 Reference Time vs. Raw Corrected TDC \\Time for wire group 1V2 (49-64)}
+  \label{fig:ref5_uncorrelated}
+\end{subfigure}
+\caption{Results of HMS singles (DAQ in Coincidence Mode) cosmic run 4437 to verify that adding the new reference time to TDC Slot 2 fixes the problem.
+  The subfigures above show the correlation between the newly added reference time and raw TDC Time from a group of wires in TDC Slot 2. As shown in subfigure (b), the correlation
+  between the new reference time and raw TDC time is NOT present when the raw time is reference time corrected.}
+\label{fig:test}
+\end{figure}
+
+A modification in software map was also necessary, as the TDC Slot 2 needed to point to the new reference time. This change affects the data replay from the
+Spring 2018 Commissioning Run Period since during that time, TDC Slot 2 was pointing to a different reference time in the software. Therefore, if you have the most up-to-date copy of the
+hallc replay analyzer, to replay data from the previous run period, make sure to load the correct map into the replay script being used. See Figure \ref{fig:map} 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=5.0in, height=1.0in]{loadmap.png}
+  \caption{Snippet of the hms replay script that shows how to load the correct map for Spring 2018 run period.}
+  \label{fig:map}
+\end{figure}
+
+\section{How to Minimize the impact the Out-of-Sync TDC had on Residuals }
+\noindent The group of wires that were affected by the TDC synchronization issue cannot be restored to normal, so their resduals will remain significantly smeared out. Fortunately,
+two of the groups are located at the edge of each chamber, so they have minimal impact. The other two groups, even though they are near the center of the chamber, they are
+in different chambers, so tracking in NOT severely affected. The group of wires in adjacent planes are affected (See Figure \ref{fig:wire_residual}) by this smearing, since
+they depend heavily on their adjacent partners (U,V planes) for the (x,y) coordinate determination from tracking. To minimize this effect, the Hall C source code \textit{hcana}
+was modified to read in the sigma parameters on a per-wire basis, if a certain flag is set. Originally, the sigma parameters were read on a per-plane basis, and were assigned a
+value of 0.02 by default. If the sigma-per-wire flag is set, then the sigma parameter values are read on a wire-by-wire basis, and the wire groups associated with the
+Out-of-Sync TDC are assigned a sigma of 0.06, while the rest are assigne a value of 0.02 so that during the track-fitting algorithm, if a track passes though one of this groups,
+they will have a smaller contribution (or weight) to the fit. The results are shown in Figure
+
+\newpage
+\onecolumn
+\bibliography{template}
+\bibliographystyle{acm}
+
+
+\end{document}

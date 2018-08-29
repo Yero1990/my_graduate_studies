@@ -1,0 +1,93 @@
+\documentclass[11pt]{article}
+
+
+\usepackage{url}
+\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage[scientific-notation=true]{siunitx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[top=0.6 in, bottom=0.7 in, left=0.7in, right=0.7in]{geometry}
+\usepackage{setspace}
+\usepackage{vector}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tgtermes}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage{epstopdf}
+
+\title{On the Out-of-Sync TDC Module on the HMS Chambers}
+\author{Carlos Yero}
+\date{August 28 2018}
+
+\begin{document}
+
+\maketitle
+
+
+
+%*****************************************************************************************************************************************************
+During the Fall-2017/Spring-2018 Hall C Commissioning Run Period, it was found that a particular TDC module in the HMS
+Drift Chambers Crate (ROC03) was shifting the tdc times of the corresponding groups of wires being fed into it. At that time,
+this did not seem to be a serious concern, as this could be fixed in software. There also seem to be no issues with the
+residuals per wire after calibration. After the end of the Spring Run, I decided to look at the residuals per wire for a defocused
+run in the HMS, and found certaing groups of wire residuals to be significantly smeared compared to adjacent groups of wires.
+These were the same group of wires that exhibited the shift in time, which pointed to the same TDC module in ROC03, Slot 2.
+In this document I discuss the following: \\
+\\
+1) the observations made that led to the determination of an out-of-sync TDC module \\
+2) what was done to fix this problem in future experiments \\
+3) how to minimize the impact on wire residuals 
+
+\section{Observed Correlations on the Out-of-Sync TDC Module}  
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=7.0in, height=4.0in]{shifted_drifttimes.png}
+  \caption{The Raw TDC vs. Wire Number Correlations for all 12 planes. An offset of $\sim$ 1000 Channels ($\sim$ 100 ns) is observed
+    in wire groups of four distinct planes.}
+  \label{fig:shift_dtimes}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=7.0in, height=4.0in]{bad_wireresidual.png}
+  \caption{Correlation of Residuals vs. Wire Number for all 12 planes. Four wire groups stand out from the rest, with a noticeable smearing.
+  The adjacent planes are affected by this smearing as well, even though they are NOT part of the problematic TDC.}
+  \label{fig:wire_residual}
+\end{figure}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=6.0in, height=4.0in]{hDC_RefTime_correlation.png}
+  \caption{Correlation between the HMS DC reference time and the raw TDC times. The DC 1, V'-Plane raw TDC vs. Wire Number is shown. Adjacent wirgroups which
+  are NOT in TDC Slot 2 are compared to the TDC Slot 2 wire group before and after applying the reference time correction to the TDC time.}
+  \label{fig:wire_residual}
+\end{figure}
+
+\newpage
+The figure above is determinant in this study, as it shows the correlation of the reference time with the raw TDC time before and after applying the reference time correction.
+As expected from a normal TDC, when tdc times are reference time subtracted, the correlation dissappears. However, in TDC Slot 2, the reference time and raw tdc time appear to be
+correlated, which is an indication that its copy of the reference time is Out-of-Sync with the rest of the modules.
+
+\section{Temporary Solution for the Out-Of-Sync TDC}
+\indent As a temporary solution, it was decided that a copy of the reference time should be fed independently to the bad TDC module. This way, the TDC can synchronize with its own
+reference time, as opposed to receiving an alternate copy from the trigger interface (TI) module. This modification was done on hardware on July 30, 2018. See Log Enrty \url{https://logbooks.jlab.org/entry/3583094}. A modification in software map was also necessary, as the TDC Slot 2 needed to point to the new reference time. This change affects the data replay from the
+Spring Commissioning Run Period since during that time, TDC Slot 2 was pointing to a different reference time in the software. Therefore, if you have the most up-to-date copy of the
+hallc replay analyzer, to replay data from the previous run period, make sure to load the correct map into the replay script being used. See Figure 
+
+%(See Figures \ref{fig:sample} 
+%\begin{figure}[h]
+%  \centering
+%  \includegraphics[width=3.0in, height=2.0in]{sample_fig.pdf}
+%  \caption{This is the sample figure.}
+%  \label{fig:sample}
+%\end{figure}
+
+
+\newpage
+\onecolumn
+\bibliography{template}
+\bibliographystyle{acm}
+
+
+\end{document}
