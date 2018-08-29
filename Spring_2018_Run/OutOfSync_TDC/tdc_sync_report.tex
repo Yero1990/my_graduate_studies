@@ -4,6 +4,8 @@
 \usepackage{url}
 \usepackage[hyperfootnotes=false]{hyperref}
 \usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage[usenames, dvipsnames]{color}
+\definecolor{navyblue}{rgb}{0.0, 0.0, 0.5}
 \usepackage{graphicx}
 \usepackage[scientific-notation=true]{siunitx}
 \usepackage{subcaption}
@@ -70,7 +72,7 @@ As expected from a normal TDC, when tdc times are reference time subtracted, the
 correlated, which is an indication that its copy of the reference time is Out-of-Sync with the rest of the modules.
 
 \section{Temporary Solution for the Out-Of-Sync TDC}
-\indent As a temporary solution, it was decided that a copy of the reference time should be fed independently to the bad TDC module. This way, the TDC can synchronize with its own
+\indent As a temporary solution (until we replace the TDC module), it was decided that a copy of the reference time should be fed independently to the bad TDC module. This way, the TDC can synchronize with its own
 reference time, as opposed to receiving an alternate copy from the trigger interface (TI) module. This modification was done on hardware on July 30, 2018. See Log Enrty \url{https://logbooks.jlab.org/entry/3583094}.
 
 \begin{figure}[h!]
@@ -90,7 +92,7 @@ reference time, as opposed to receiving an alternate copy from the trigger inter
 \caption{Results of HMS singles (DAQ in Coincidence Mode) cosmic run 4437 to verify that adding the new reference time to TDC Slot 2 fixes the problem.
   The subfigures above show the correlation between the newly added reference time and raw TDC Time from a group of wires in TDC Slot 2. As shown in subfigure (b), the correlation
   between the new reference time and raw TDC time is NOT present when the raw time is reference time corrected.}
-\label{fig:test}
+\label{fig:hdc_Ref5}
 \end{figure}
 
 A modification in software map was also necessary, as the TDC Slot 2 needed to point to the new reference time. This change affects the data replay from the
@@ -112,8 +114,61 @@ they depend heavily on their adjacent partners (U,V planes) for the (x,y) coordi
 was modified to read in the sigma parameters on a per-wire basis, if a certain flag is set. Originally, the sigma parameters were read on a per-plane basis, and were assigned a
 value of 0.02 by default. If the sigma-per-wire flag is set, then the sigma parameter values are read on a wire-by-wire basis, and the wire groups associated with the
 Out-of-Sync TDC are assigned a sigma of 0.06, while the rest are assigne a value of 0.02 so that during the track-fitting algorithm, if a track passes though one of this groups,
-they will have a smaller contribution (or weight) to the fit. The results are shown in Figure
+they will have a smaller contribution (or weight) to the fit. The results are shown in Figures \ref{fig:wire_residuals_flag}.
+\begin{figure}[h!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \hspace*{-5cm}                                                           
+  \centering
+  \includegraphics[width=2.1\linewidth]{2d_residuals_flagOFF.png}
+  \subcaption{Residuals vs. Wire Number for all Chamber planes, with sigma-per-wire flag \textit{OFF}.}
+  \label{fig:2d_res_flagOff}
+\end{subfigure}%
 
+\begin{subfigure}{.5\textwidth}
+\hspace*{-5cm}                                                           
+  \centering
+  \includegraphics[width=2.1\linewidth]{2d_residuals_flagON.png}
+  \caption{Residuals vs. Wire Number for all Chamber planes, with sigma-per-wire flag \textit{ON}.}
+  \label{fig:2d_res_flagON}
+\end{subfigure}
+\caption{Residuals vs. Wire Number for all Chamber planes. The \textcolor{red}{RED BOXES} highlight the group of wires that were affected, but had nothing to do with the
+  out-of-sync TDCs wire groups.}
+\label{fig:wire_residuals_flag}
+\end{figure}\\
+In subfigure (b), when a sigma of 0.06 was applied to the bad groups (Planes 1u1, 1v2, 2v1, 2u2), the adjacent planes (highlighted in \textcolor{red}{RED})
+wire residuals improved significantly. This is due the fact that less weight (larger sigma($\sigma$)) was given to the affected group of wires. \\
+\newpage
+The plane residuals, however, did not have much improvement after increasing the weight factor. At most, there was a 25 $\mu$m improvevent in the Standard Deviation.
+See Figure \ref{fig:plane_residuals}
+\begin{figure}[ht!]
+  \hspace*{-1.5cm}                                                           
+%  \vspace*{10.5cm}                                                           
+  \centering
+  \includegraphics[width=7.0in, height=4.0in]{residuals_compare.pdf}
+  \caption{Plane residuals with the sigma-per-wire flag ON (\textcolor{red}{RED}) and OFF (\textcolor{navyblue}{BLUE})}
+  \label{fig:plane_residuals}
+\end{figure}
+\newline
+\noindent It is importnant to note that the sigma-per-wire flag and the parameter file are NOT included in \texttt{hallc$\_$replay}, since this is a very specific scenario that
+ONLY applies to the Winter-2017/Spring-2018 Run Period. If users who took data during that time, and would like to try adding this flag and the parameter file,
+the instructions are as follows:
+\begin{itemize}
+\item  Create the parameter file in path: \texttt{/PARAM/HMS/DC/hdc$\_$sigma$\_$per$\_$wire.param} \par
+  \begin{minipage}{\linewidth}
+    \centering
+    \includegraphics[width=15cm]{param.png}
+    \captionof{figure}{Snippet of sigma-per-wire parameter file.}
+    \label{fig:param}
+  \end{minipage}
+\item  Include the parameter file in path: \texttt{/DBASE/HMS/general.param} \par
+  \begin{minipage}{\linewidth}                                                          
+    \centering
+    \includegraphics[width=10cm]{gen_parm.png}
+    \captionof{figure}{Snippet of general.param file.}
+    \label{fig:gen_param}
+  \end{minipage}
+\end{itemize}
 \newpage
 \onecolumn
 \bibliography{template}
