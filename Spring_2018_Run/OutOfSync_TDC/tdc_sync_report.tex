@@ -70,13 +70,18 @@ software, but now the tarcking had been affected.
   \centering
   \includegraphics[width=5.1in, height=3.1in]{hDC_RefTime_correlation.png}
   \caption{Correlation between the HMS DC reference time and the raw TDC times. The DC 1, V'-Plane raw TDC vs. Wire Number is shown. Adjacent wirgroups which
-  are NOT in TDC Slot 2 are compared to the TDC Slot 2 wire group before and after applying the reference time correction to the raw TDC time.}
+    are NOT in TDC Slot 2 are compared to the TDC Slot 2 wire group before and after applying the reference time correction to the raw TDC time. The vertical axis
+  is the HMS DC reference time corrected from itself (ns units). The horizontal axis is the raw TDC time in units of Channel ($\sim$0.1 ns/Channel).}
   \label{fig:hDC_correlation}
 \end{figure}
 \newpage
 Figure \ref{fig:hDC_correlation} is determinant in this study, as it shows the correlation of the reference time with the raw TDC time before and after applying the reference time correction.
-As expected from a normal TDC, when tdc times are reference time subtracted, the correlation dissappears. However, in TDC Slot 2, the reference time and raw tdc time appear to be
-correlated, which is an indication that its copy of the reference time is Out-of-Sync with the rest of the modules.
+As expected from a normal TDC, when tdc times are reference time subtracted, the correlation dissappears. However, in TDC Slot 2, the reference time and raw tdc time
+are uncorrelated, which is an indication that it is Out-of-Sync with the rest of the modules. When the raw TDC time for Slot 2 is corrected with the reference
+time from another Slot, the corrected TDC time now has a correlation with the reference time which is indicative of a synchronization issue.
+The reference time spans over a 25 ns range, even though it is reference time corrected from itself, which is due to the intrinsic 25 ns jitter coming from the TDC internal 40 MHz clock. The
+raw TDC time spans over a $\sim$ 100 ns range, and at the smallest range, which corresponds to drift times of particles nearest to the sense wires, one can clearly see a
+correlation with the reference time. 
 
 \section{Temporary Solution for the Out-Of-Sync TDC}
 \indent As a temporary solution (until we replace the TDC module), it was decided that a copy of the reference time should be fed independently to the bad TDC module. This way, the TDC can synchronize with its own
@@ -115,7 +120,7 @@ hallc replay analyzer, to replay data from the previous run period, make sure to
 \end{figure}
 \newpage
 \section{How to Minimize the impact the Out-of-Sync TDC had on Residuals }
-\noindent The group of wires that were affected by the TDC synchronization issue cannot be restored to normal, so their resduals will remain significantly smeared out. Fortunately,
+\noindent The group of wires that were affected by the TDC synchronization issue cannot be restored to normal, so their residuals will remain significantly smeared out. Fortunately,
 two of the groups are located at the edge of each chamber, so they have minimal impact. The other two groups, even though they are near the center of the chamber, they are
 in different chambers, so tracking in NOT severely affected. The group of wires in adjacent planes are affected (See Figure \ref{fig:wire_residual}) by this smearing, since
 they depend heavily on their adjacent partners (U,V planes) for the (x,y) coordinate determination from tracking. To minimize this effect, the Hall C source code \textit{hcana}
