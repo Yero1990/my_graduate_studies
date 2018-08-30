@@ -44,14 +44,21 @@ In this document I discuss the following: \\
 2) what was done to fix this problem in future experiments \\
 3) how to minimize the impact on wire residuals for the Spring 2018 Run
 
-\section{Observed Correlations on the Out-of-Sync TDC Module}  
+\section{Observed Correlations on the Out-of-Sync TDC Module}
+\noindent Figure \ref{fig:shift_dtimes} shows the Drift Chamber raw TDC times vs. Wire Number for all 12 planes. In four of the planes,
+a $\sim$ 100 ns drift for cetrtain groups of wires can clearly be observed. This was the first indication, but NOT with absolute certainty,
+that the TDC module to which these four groups were connected to was problematic.
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=6.5in, height=3.5in]{shifted_drifttimes.png}
+  \includegraphics[width=6.0in, height=3.0in]{shifted_drifttimes.png}
   \caption{The Raw TDC vs. Wire Number Correlations for all 12 planes. An offset of $\sim$ 1000 Channels ($\sim$ 100 ns) is observed
     in wire groups of four distinct planes.}
   \label{fig:shift_dtimes}
 \end{figure}
+\newpage
+In Figure \ref{fig:wire_residual}, the redisuals for the tracks are plotted as a function of wire number. It can be clearly observed that the same four groups mentioned in
+Figure \ref{fig:shift_dtimes} have smeared out residuals. At this point, I started to consider this issue seriously, as it was NOT simply drifted times which could be fixed in
+software, but now the tarcking had been affected.
 \begin{figure}[h!]
   \centering
   \includegraphics[width=7.0in, height=4.0in]{bad_wireresidual.png}
@@ -61,14 +68,13 @@ In this document I discuss the following: \\
 \end{figure}
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=6.0in, height=4.0in]{hDC_RefTime_correlation.png}
+  \includegraphics[width=5.1in, height=3.1in]{hDC_RefTime_correlation.png}
   \caption{Correlation between the HMS DC reference time and the raw TDC times. The DC 1, V'-Plane raw TDC vs. Wire Number is shown. Adjacent wirgroups which
-  are NOT in TDC Slot 2 are compared to the TDC Slot 2 wire group before and after applying the reference time correction to the TDC time.}
-  \label{fig:wire_residual}
+  are NOT in TDC Slot 2 are compared to the TDC Slot 2 wire group before and after applying the reference time correction to the raw TDC time.}
+  \label{fig:hDC_correlation}
 \end{figure}
-
 \newpage
-The figure above is determinant in this study, as it shows the correlation of the reference time with the raw TDC time before and after applying the reference time correction.
+Figure \ref{fig:hDC_correlation} is determinant in this study, as it shows the correlation of the reference time with the raw TDC time before and after applying the reference time correction.
 As expected from a normal TDC, when tdc times are reference time subtracted, the correlation dissappears. However, in TDC Slot 2, the reference time and raw tdc time appear to be
 correlated, which is an indication that its copy of the reference time is Out-of-Sync with the rest of the modules.
 
@@ -95,8 +101,9 @@ reference time, as opposed to receiving an alternate copy from the trigger inter
   between the new reference time and raw TDC time is NOT present when the raw time is reference time corrected.}
 \label{fig:hdc_Ref5}
 \end{figure}
-
-A modification in software map was also necessary, as the TDC Slot 2 needed to point to the new reference time. This change affects the data replay from the
+\noindent To demonstrate that the new reference time added fixed the issue, I decided to take an HMS singles (DAQ in Coincidence Mode) cosmic run to prove that when the
+new reference time was subtracted from the raw TDC time, the correlation that was present originally, dissappeared. This was indeed what happened, as observed in Figure \ref{fig:hdc_Ref5}.\\
+\indent A modification in software map was also necessary, as the TDC Slot 2 needed to point to the new reference time. This change affects the data replay from the
 Spring 2018 Commissioning Run Period since during that time, TDC Slot 2 was pointing to a different reference time in the software. Therefore, if you have the most up-to-date copy of the
 hallc replay analyzer, to replay data from the previous run period, make sure to load the correct map into the replay script being used. See Figure \ref{fig:map} 
 
@@ -106,7 +113,7 @@ hallc replay analyzer, to replay data from the previous run period, make sure to
   \caption{Snippet of the hms replay script that shows how to load the correct map for Spring 2018 run period.}
   \label{fig:map}
 \end{figure}
-
+\newpage
 \section{How to Minimize the impact the Out-of-Sync TDC had on Residuals }
 \noindent The group of wires that were affected by the TDC synchronization issue cannot be restored to normal, so their resduals will remain significantly smeared out. Fortunately,
 two of the groups are located at the edge of each chamber, so they have minimal impact. The other two groups, even though they are near the center of the chamber, they are
@@ -138,19 +145,25 @@ they will have a smaller contribution (or weight) to the fit. The results are sh
 \label{fig:wire_residuals_flag}
 \end{figure}\\
 In subfigure (b), when a sigma of 0.06 was applied to the bad groups (Planes 1u1, 1v2, 2v1, 2u2), the adjacent planes (highlighted in \textcolor{red}{RED})
-wire residuals improved significantly. This is due the fact that less weight (larger sigma($\sigma$)) was given to the affected group of wires. \\
-\newpage
+wire residuals improved significantly. This is due the fact that less weight (larger sigma($\sigma$)) was given to the affected group of wires.
+To quantify by how much the group residuals highlighted in Figure \ref{fig:wire_residuals_flag} have improved, I plotted the 1D-projection of such wire groups.
+There seemed to be a noticable improvement with up to $\sim$ 60 $\mu$m in the residuals. See Figure \ref{fig:group_residuals} below.
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=7.0in, height=4.0in]{group_residuals.pdf}
+  \caption{Residuals of highlighted wire groups in Figure \ref{fig:wire_residuals_flag}}
+  \label{fig:group_residuals}
+\end{figure}\\
 The plane residuals, however, did not have much improvement after increasing the weight factor. At most, there was a 25 $\mu$m improvevent in the Standard Deviation.
 See Figure \ref{fig:plane_residuals}
-\begin{figure}[ht!]
-  \hspace*{-1.5cm}                                                           
+\begin{figure}[ht!]                                                          
 %  \vspace*{10.5cm}                                                           
   \centering
-  \includegraphics[width=7.0in, height=4.0in]{residuals_compare.pdf}
+  \includegraphics[width=7.5in, height=3.0in]{residuals_compare.pdf}
   \caption{Plane residuals with the sigma-per-wire flag ON (\textcolor{red}{RED}) and OFF (\textcolor{navyblue}{BLUE})}
   \label{fig:plane_residuals}
 \end{figure}
-\newline
+\newpage
 \noindent It is importnant to note that the sigma-per-wire flag and the parameter file are NOT included in \texttt{hallc$\_$replay}, since this is a very specific scenario that
 ONLY applies to the Winter-2017/Spring-2018 Run Period. If users who took data during that time, and would like to try adding this flag and the parameter file,
 the instructions are as follows:
