@@ -1,0 +1,32 @@
+********************************************
+ Check HMS Momentum Using H(e,e'p) Elastics
+********************************************
+
+Purpose: 
+Check if HMS momentum (+polarity) is set correctly, and verify there are no
+correlations between the (calculated - measured)/measured  momentum vs. HMS focal plane
+A total of five elastics taken during Deuteron Electro-Disintegration are used in these studies.
+
+
+Approach:
+For both SIMC and DATA, determine the HMS calculated momentum (using proton momentum formula), P_calc(Eb, theta_p), assuming 
+the beam energy and angle are well known. Then determine the fractional deviation of
+measured momentum both from SIMC/DATA by using the formula:
+
+dP =  [P_calc - P_meas] / P_meas, |  where P_calc = 2*Mp*Eb*(Eb+Mp)*cos(theta_p) / ( Mp^2 + 2*Mp*Eb + Eb^2*sin^2(theta_p) )
+                                  |  and P_meas is obtained from delta (both in SIMC and DATA).  delta = (P - P_cent) / P_cent
+
+** The dP will be a distribution centered near zero, which can then be fitted, to determine the mean, and its error.
+
+Since the calculated momentum has no dependence on delta, by taking the difference [P_calculated - P_meas.]/P_meas, one 
+is able to gauge by how much is the measured momentum off from the calculated momentum, due to delta. For SIMC, this difference was found to be
+typically < 0.1 %, which is very small as expected. For data, however, it was found to be > 0.1% for some elastics, so a correction to the 
+momentum was applied in the std. kin file from data was applied, and was also applied to the SIMC input file. This resulted in dP < 0.1% for data as well.
+Then, the difference between SIMC and DATA, (dP_simc - dP_data) was calculated, and the result was < 0.1% .
+
+Once this was done, the fractional momentum deviation dP vs. HMS focal plane in SIMC and DATA was plotted, to check for any correlations.
+Any correlations could possibly distort the fit of dP, as the dP distribution would NOT be symmetric. This could distort the peak in dP, which
+can cause the momentum correction to be distorted as well. Therefore, it is important to remove any possible correlations first.
+
+For these studies, no correlations were found in dP vs HMS (xfp, yfp, xpfp, ypfp) in the data, which gave us confidence that the momentum corrections 
+determined had not been distorted. 
