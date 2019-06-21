@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: report.aux
+The style file: acm.bst
+Database file #1: report.bib
+Warning--empty school in meekins
+You've used 2 entries,
+            2253 wiz_defined-function locations,
+            540 strings with 4149 characters,
+and the built_in function-call counts, 491 in all, are:
+= -- 47
+> -- 14
+< -- 0
++ -- 6
+- -- 4
+* -- 38
+:= -- 92
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 7
+chr.to.int$ -- 0
+cite$ -- 3
+duplicate$ -- 19
+empty$ -- 41
+format.name$ -- 4
+if$ -- 96
+int.to.chr$ -- 0
+int.to.str$ -- 2
+missing$ -- 1
+newline$ -- 13
+num.names$ -- 4
+pop$ -- 5
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 25
+swap$ -- 4
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 8
+warning$ -- 1
+while$ -- 5
+width$ -- 3
+write$ -- 23
+(There was 1 warning)
