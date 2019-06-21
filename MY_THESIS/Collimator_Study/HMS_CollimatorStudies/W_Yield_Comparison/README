@@ -1,0 +1,35 @@
+*********************
+ W Yield Comparisons
+*********************
+
+CUTS Applied: 
+HMS Delta:  -8, 8
+SHMS Delta: -10, 22
+W:           0.85, 1.05
+
+
+The W Yield Ratio between DATA/SIMC was plotted vs. SHMS 3/4 rate for various 
+scales of HMS Collimator Cut.  
+
+The plots at various collimator cuts in both DATA and SIMC were made for:
+
+** Simulating Eloss In HMS Collimator
+
+** NOT Simulating Eloss In HMS Collimator
+
+An example of HMS Collimator for SIMC with / without Eloss is Shown, as well
+as the data collimator for comparison.
+
+
+Comments:
+The Yield Ratio with Eloss in HMS Collimator shows an improvement of the
+as now, the data point with NO collimator cut (RED) is closer to the rest 
+of the data points.  
+
+The reason is: Before SIMC simulated Eloss in the collimator, when a collimator
+cut was placed, the data would lose events at the edge of the collimator while
+SIMC would NOT, as it did not have events at the edge (no Eloss). Now, since
+SIMC simulated Eloss at the collimator, when the collimator cut is placed, where
+there were NO events before to Cut out, now there are events at the edge of the SIMC HMS
+Collimator, resulting in a cut of those events in SIMC, so the DATA / SIMC Ratio increases
+because SIMC Yield decreases with the collimator cut, as opposed to before.

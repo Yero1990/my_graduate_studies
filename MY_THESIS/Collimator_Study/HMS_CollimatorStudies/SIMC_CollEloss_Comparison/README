@@ -1,0 +1,18 @@
+*********************************************
+HMS Collimator Eloss ON/OFF Comparison Plots
+*********************************************
+
+Cuts Made:  
+HMS Delta: (-8,8)
+SHMS Delta: (-10, 22)
+W:          (0.85, 1.05)
+
+Blue:  DATA/SIMC Ratio with HMS Collimator Eloss ON in SIMC
+Red:   DATA/SIMC Ratio with HMS Collimator Eloss OFF in SIMC
+
+The scales refer to the HMS Collimator Cuts made in Octagonal Shape;
+No Scale --> No Collimator Cut
+Scale 1 --> HMS Collimator Cut (Using Dimensions of Collimator)
+Scale 0.95, 0.9, . . .---> HMS Collimator Cuts scaled. For example, 0.95 * collimator dimensions
+
+These plots were mode for H(e,e'p) Run 3288 ONLY, as it is the closest in kinematics to D(e,e'p) 80 MeV

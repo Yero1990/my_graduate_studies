@@ -1,0 +1,42 @@
+*********************
+ MY_THESIS DIRECTORY
+*********************
+
+DIRECTORY STRUCTURE:
+
+---FirstLook_DataSIMC_Deut----
+Has DATA/SIMC comparisons right after the
+experiment was taken on April 03, to April 09, 2018.
+
+
+--SIMC_Deut_EstimationYield---
+Has simulation results before the experiment was taken.
+Yields and rates are estimated.
+
+
+---Coin_Time_Module---
+Has information relevant to the coincidence time module
+implemented in hcana.  Documentation might be relevant to
+include in thesis.
+
+
+--HallC_12GeV_Trigger---
+Has information relevant to the Hall C electronics/trigger
+setup for single arm and coincidence. (See also HallC 2018 Collaboration Meeting
+for nicer diagrams)
+
+--Hodoscope_Calib_Doc---
+Has information relevant to the new Hall C Hodoscope Calibration procedure
+that was implemented in hallc_replay
+
+--OutOfSync_TDC---
+Has information relevant to a synchronization issue observed in HMS DC Crates
+TDC which had a small impact on the TDC performance and affected the
+residuals observed in some planes.
+
+
+--ProtonAbsorption---
+Has information relevant to the proton absorption studies done using H(e,e'p)
+elastics. This proton absorption goes as a correction factor in the yield.
+
+--
