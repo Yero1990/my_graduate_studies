@@ -1,0 +1,42 @@
+**************
+Trigger Notes
+**************
+
+Here are some HC-LOG Entry references regarding the trigger set-up;
+
+==12/08/2017==
+
+The reference times for both the HMS and SHMS have been configured. We have configured
+them to arrive at the TDC in the following order: 3/4, STOF, EL-REAL, EL-CLEAN. Cosmic runs
+1547 (SHMS) and 1107 (HMS) inidicate the reference times are present and healthy.
+
+Link: https://logbooks.jlab.org/entry/3501198
+
+
+==01/23/2018==
+
+Removed STOF from the HMS reference time.  All triggers except EL-REAL derive from 3/4
+
+Link: https://logbooks.jlab.org/entry/3519686
+
+
+==08/09/2018==
+
+I have removed EL-CLEAN from both the HMS and SHMS reference time. Now, all that is present
+in the reference time is an OR between 3/4 and EL-REAL. This was done as a result of STOF being
+removed from the reference time during the spring 2018 commissioning run.
+
+Link: https://logbooks.jlab.org/entry/3585301
+
+
+
+
+My Comments:
+** For D2 Experiment, we had:  SHMS ref times: 3/4 or EL-REAL or EL-CLEAN (Mult == 3)
+** T.coin.hT1_tdcMultiplicity== 1
+** T.coin.hFADC_adcMult == 1
+** T.coin.pT1_tdcMultiplicity == 3
+** T.coin.pFADC_adcMult == 2
+
+** T.coin.hDCREF1_tdcMult == 1
+** T.coin.pDCREF1_tdcMult == 3
