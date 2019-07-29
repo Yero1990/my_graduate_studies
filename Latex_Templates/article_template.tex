@@ -1,0 +1,84 @@
+\documentclass[11pt]{article}
+
+\usepackage{url}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage{graphicx}
+\usepackage[scientific-notation=true]{siunitx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[top=0.6 in, bottom=0.7 in, left=0.7in, right=0.7in]{geometry}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{vector}
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage{amssymb}
+\usepackage{tgtermes}
+\usepackage{gensymb}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{epstopdf}
+\usepackage[singlelinecheck=false]{caption}
+\usepackage[hyperfootnotes=false, pdfnewwindow, colorlinks=true]{hyperref}
+\usepackage[title]{appendix}
+\usepackage[section]{placeins}
+\usepackage{float}
+
+\AtBeginDocument{% optionally set colors to your liking
+  \hypersetup{
+    urlcolor=red,
+    citecolor=green,
+    linkcolor=blue,
+  }%
+}
+
+\begin{document}
+
+
+
+\title{\Large \bf{Title}}
+
+\author{Carlos Yero}
+
+\date{\today}
+\maketitle
+
+
+
+%*****************************************************************************************************************************************************
+\section{Section I . . .}
+Here goes section introduction . . .
+
+\subsection{subsection 1 . . .}
+Here goes subsection . . .
+\\
+Equation
+\begin{equation}
+  F = m\cdot\frac{dv}{dt}
+  \label{eq:1}
+\end{equation}
+See Eq. \ref{eq:1}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{figure.png}
+  \caption{Here goes caption}
+  \label{fig:label}
+\end{figure}
+
+
+%Bibliography
+\newpage
+\onecolumn
+\bibliography{d2_optim.bib}
+\bibliographystyle{acm}
+
+%APPENDIX
+\newpage
+\begin{appendices}
+\appendix
+\section{Appdx Section 1}
+\subsection{SubSection 1 . . .}
+\label{appendix:AppxA1}
+\end{appendices}
+
+\end{document}

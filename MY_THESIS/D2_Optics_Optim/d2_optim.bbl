@@ -1,0 +1,31 @@
+\begin{thebibliography}{1}
+
+\bibitem{HMS_notes}
+J.~Bericic.
+\newblock Notes on hms optics.
+\newblock Technical report, Jefferson Lab, 2017.
+\newblock \url
+  {https://hallcweb.jlab.org/DocDB/0008/000849/001/HMS_optics_notes.pdf}.
+
+\bibitem{priv_comm}
+M.~Jones.
+\newblock private communication.
+
+\bibitem{HMS_Optics}
+H.~Szumila-Vance.
+\newblock Commissioning the hms optics in the 2017-18 run period.
+\newblock Technical report, Jefferson Lab, 2019.
+\newblock \url {https://hallcweb.jlab.org/DocDB/0009/000998/002/hmsSat.pdf}.
+
+\bibitem{SHMS_Optics}
+H.~Szumila-Vance.
+\newblock Notes on the shms optics in the 2017-18 run period.
+\newblock Technical report, Jefferson Lab, 2019.
+\newblock \url {https://hallcweb.jlab.org/DocDB/0010/001007/001/shmsNote.pdf}.
+
+\bibitem{shmsOpt_git_repo}
+H.~Szumila-Vance.
+\newblock Shms optics, 2019.
+\newblock \url{https://github.com/hszumila/SHMS_optics}.
+
+\end{thebibliography}

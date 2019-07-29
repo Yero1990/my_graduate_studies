@@ -1,0 +1,31 @@
+%HMS/SHMS Optics Notes
+
+@techreport{SHMS_Optics,
+     author  = {Szumila-Vance, Holly},
+     title   = {Notes on the SHMS optics in the 2017-18 run period},
+     institution = {Jefferson Lab},
+     year        = 2019,
+     note     = {\url {https://hallcweb.jlab.org/DocDB/0010/001007/001/shmsNote.pdf}} 
+}
+
+@techreport{HMS_Optics,
+     author  = {Szumila-Vance, Holly},
+     title   = {Commissioning the HMS optics in the 2017-18 run period},
+     institution = {Jefferson Lab},
+     year        = 2019,
+     note     = {\url {https://hallcweb.jlab.org/DocDB/0009/000998/002/hmsSat.pdf}} 
+}
+
+@techreport{HMS_notes,
+     author  = {Bericic, Jure},
+     title   = {Notes on HMS optics},
+     institution = {Jefferson Lab},
+     year        = 2017,
+     note     = {\url {https://hallcweb.jlab.org/DocDB/0008/000849/001/HMS_optics_notes.pdf}} 
+}
+
+@misc{priv_comm,
+  author = "Jones, Mark",
+  date = "2019-07-24",
+  howpublished = "private communication"
+}
