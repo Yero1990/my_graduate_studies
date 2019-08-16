@@ -1,0 +1,41 @@
+
+FIU PhD Dissertation LaTeX Package
+Geoffrey Smith
+August 2011
+
+The goal of the LaTeX class file "fiu.cls" is to make it easier
+to format your dissertation as required by the FIU Graduate School.
+
+As an illustration, this directory contains the files to generate a
+skeletal FIU PhD dissertation: 
+
+  thesis.tex		main file
+  macros.tex		any macros that you wish to define
+  prologue.tex		generates all the sections of the prologue
+  abstract.tex          the text of the abstract
+  chap?.tex		the various chapters of the dissertation
+  epilogue.tex          generates the bibliography, appendices, and vita
+  vita.tex              a sample vita
+  automata.bib          a sample bibliography database, for bibtex
+  thesis.pdf		the final PDF that gets created
+
+Note how thesis.tex specifies information like the dissertation title,
+degree field, and committee members; this information is used repeatedly
+in automatically generating the title page, signature page, etc.
+
+To compile the dissertation, creating thesis.pdf, use the commands:
+
+  pdflatex thesis
+  bibtex thesis
+  pdflatex thesis
+  pdflatex thesis
+
+(As usual, latex must be run several times to get the cross-references right.)
+
+Acknowlegments: "fiu.cls" was adapted from "cornell.cls", a LaTeX class file
+for formatting Cornell University dissertations.
+
+While this package has been used successfully by quite a few PhD students
+in the School of Computing and Information Sciences, it is offered on an
+"as is" basis, with no guarantees of its adequacy...
+
