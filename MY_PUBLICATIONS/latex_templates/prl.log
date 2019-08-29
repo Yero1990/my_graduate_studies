@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  29 AUG 2019 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  29 AUG 2019 17:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -304,13 +304,17 @@ l.207 \includegraphics{fig_2.ps}
 ? 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 320.
-[2]
+(./acknowledgement.tex) [2]
 No file prl.bbl.
+
+Class revtex4-1 Warning: Environment acknowledgements is obsolete;
+Use acknowledgments instead.
+
 [3] [4] (./prl.aux) ) 
 Here is how much of TeX's memory you used:
- 4024 strings out of 494108
- 53487 string characters out of 6155655
- 146323 words of memory out of 5000000
+ 4027 strings out of 494108
+ 53541 string characters out of 6155655
+ 147323 words of memory out of 5000000
  7318 multiletter control sequences out of 15000+600000
  19211 words of font info for 72 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
@@ -342,7 +346,7 @@ fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts
 /public/amsfonts/euler/eufm10.pfb></opt/local/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></opt/local/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/symbols/msbm10.pfb>
-Output written on prl.pdf (4 pages, 297520 bytes).
+Output written on prl.pdf (4 pages, 297613 bytes).
 PDF statistics:
  129 PDF objects out of 1000 (max. 8388607)
  94 compressed objects within 1 object stream
