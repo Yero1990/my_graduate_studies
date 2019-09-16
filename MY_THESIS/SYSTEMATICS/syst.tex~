@@ -1,0 +1,25 @@
+\documentclass[11pt]{article}
+
+
+\usepackage{url}
+\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage[usenames, dvipsnames]{color}
+\definecolor{navyblue}{rgb}{0.0, 0.0, 0.5}
+\usepackage{graphicx}
+\usepackage[scientific-notation=true]{siunitx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[top=0.6 in, bottom=0.7 in, left=0.7in, right=0.7in]{geometry}
+\usepackage{setspace}
+\usepackage{vector}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tgtermes}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage{epstopdf}
+
+\title{\textbf{Systematics from Correction Factors}}
+\begin{document}
+\end{document}

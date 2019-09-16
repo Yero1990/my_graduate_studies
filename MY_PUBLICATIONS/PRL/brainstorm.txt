@@ -1,0 +1,17 @@
+This .txt file has some initial ideas of what we want to include in the PRL
+paper for the deutron.
+
+
+Tables:
+
+** Kinematic Systematics Table with relative uncertainties (these should be global, determined using Heep) 
+   Eb, th_b, ph_b, E', th_e, phi_e, Pp, th_p, ph_p,
+
+** Systematics on Yield correction factors (these should be presented per data set. 80, 580_set1, . . .)
+   target boiling, proton absorption, tracking efficiencies, total live time,
+   total BCM charge
+
+
+Plots:
+
+** 

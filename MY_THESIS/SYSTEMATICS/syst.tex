@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+
+
+\usepackage{url}
+\usepackage[hyperfootnotes=false]{hyperref}
+\usepackage[font=footnotesize,labelfont=bf]{caption}
+\usepackage[usenames, dvipsnames]{color}
+\definecolor{navyblue}{rgb}{0.0, 0.0, 0.5}
+\usepackage{graphicx}
+\usepackage[scientific-notation=true]{siunitx}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage[top=0.6 in, bottom=0.7 in, left=0.7in, right=0.7in]{geometry}
+\usepackage{setspace}
+\usepackage{vector}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{tgtermes}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage{epstopdf}
+
+\title{\textbf{Systematics from Correction Factors}}
+
+\begin{document}
+\maketitle
+
+Starting from the experimental cross section,
+
+\begin{equation}
+  \sigma^{exp} = \sigma^{exp}_{uncorr} \cdot f_{1} \cdot f_{2} . . . \cdot f_{n}
+\end{equation}
+where $\sigma^{exp}_{uncorr}$ is the uncorrected Yield divided by the SIMC phase space, and $f_{n}'s$ are the correction factors,
+
+\begin{align*}
+  f_{1} &= \frac{1}{1-m\cdot I_{avg}}   \hspace{2cm}  \text{        target boiling factor, where $m$ is the slope} \\
+  f_{2} &= \frac{1}{p_{T}}              \hspace{4cm}   \text{proton transmission factor}  \\
+  f_{3} &= \frac{1}{\epsilon_{eTrk}}   \hspace{4cm}   \text{e-  tracking efficiency} \\
+  f_{4} &= \frac{1}{\epsilon_{hTrk}}   \hspace{4cm}   \text{h  tracking efficiency} \\
+  f_{5} &= \frac{1}{\epsilon_{tLT}}   \hspace{4cm}   \text{total live time} \\
+  f_{6} &= \frac{1}{Q_{tot}}          \hspace{4cm}   \text{total charge} \\
+  f_{7} &= f_{rad} \hspace{4cm}   \text{radiative correction factor} \\
+  f_{8} &= f_{bc}  \hspace{4cm}   \text{bin-centering correction factor} \\
+\end{align*}
+The systematic uncertainty on the cross section due to the uncertainty in each of these correction factors is
+\begin{align}
+  (d\sigma^{exp}_{syst})^{2} = \sum_{i=1}^{8} \Big( \frac{\partial\sigma^{exp}}{\partial f_{i}}\Big)^{2} df_{i}^{2}
+\end{align}
+If the derivative with respect to factor $f_{i}$ is
+\begin{equation}
+  \frac{\partial\sigma^{exp}}{\partial f_{i}} = \frac{\sigma^{exp}}{f_{i}}
+\end{equation}
+Substituting (3) in (2), one obtains
+\begin{align}
+  (d\sigma^{exp}_{syst})^{2} = (\sigma^{exp})^{2}\sum_{i=1}^{8} \Big( \frac{df_{i}}{f_{i}}\Big)^{2}
+\end{align}
+For a given data set with multiple runs, the correction factor might differ from run to run, for example, the tracking efficiencies or total
+live time might be slightly different. In this case, the correction factor and its uncertainty is calculated for each run.  The weighted average is
+then determined as follows: \\
+Define a weight, $w$, 
+\begin{equation}
+  w_{i} \equiv \frac{1}{df_{i}^{2}}
+\end{equation}
+where the sum is over all run numbers, and $\sigma_{i}$ is the uncertainty in the correction factor $f_{i}$ for the $i$ run.
+The weighted average and its uncertainty on the correction factor can then be expressed as
+\begin{align}
+  f_{w} &= \frac{\sum_{i}f_{i}w_{i}}{\sum_{i}w_{i}} \\
+  d_{fw} &= \frac{1}{\sqrt{\sum_{i}w_{i}}}
+\end{align}
+where (6) and (7) are the correction factor and its uncertainty for a given experimental data set.
+Substituting (6) and (7) in (4) would then give the total systematic uncertainty for  that particular data set.
+Each of the $(P_{m}, \theta_{nq})$ for that data set would have a specific cross section, $\sigma_{exp}$, but all
+bins would have the same systematic error, $d_{fw}$.
+
+\end{document}
