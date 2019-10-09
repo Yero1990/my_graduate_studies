@@ -1,0 +1,58 @@
+\documentclass[a4paper]{article}
+%\usepackage{simplemargins}
+
+%\usepackage[square]{natbib}
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+%\usepackage{graphicx}
+%\usepackage[T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\usepackage[urw-garamond]{mathdesign}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{tgbonum}
+\usepackage[left=4cm, right=4cm, top=1cm]{geometry}
+
+\begin{document}
+\pagenumbering{gobble}
+
+\Large
+ \begin{center}
+Deuteron Electro-Disintegration at Very High Missing Momenta\\ 
+
+\hspace{10pt}
+
+% Author names and affiliations
+\large
+Carlos Yero \\
+
+\hspace{10pt}
+
+\small
+April 08, 2019 \\
+
+\hspace{10pt}
+
+\small  
+Florida International University\\
+
+\end{center}
+
+\hspace{10pt}
+
+\normalsize
+
+\noindent The Deuteron Electro-Disintegration experiment (E12-10-003) at Jefferson Lab, Hall C is discussed. The experiment
+consists of using an electron beam to break up the Deuteron into a proton and neutron. The scattered electron is detected by the Super High
+Momentum Spectrometer (SHMS) in coincidence with the knocked out proton in the High Momentum Spectrometer (HMS) and the missing neutron is reconstructed
+from conservation laws. This experiment investigates an unexplored kinematic region at high missing momentum in which Final State Interactions (FSI)
+between the outgoing proton and neutron are small. In this regime, the neutron missing momentum is approximately equal to its internal momentum in the
+Deuteron enabling the extraction of momentum distributions from the measured cross-sections. A general theoretical background of the D(e,e'p) reaction and
+very preliminary results are presented.
+
+
+
+\end{document}
