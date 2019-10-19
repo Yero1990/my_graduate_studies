@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  23 JUN 2018 16:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  18 OCT 2019 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -582,10 +582,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 383.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 383.
 Package rerunfilecheck Info: File `hodo_calib.out' has not changed.
 (rerunfilecheck)             Checksum: 2070DEC482FCBEDD554548CBEBDD4744;147.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 383.
  ) 
 Here is how much of TeX's memory you used:
@@ -611,7 +607,7 @@ pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb><
 ocal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/local/
 share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb></opt/local/
 share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on hodo_calib.pdf (8 pages, 10820528 bytes).
+Output written on hodo_calib.pdf (8 pages, 10820604 bytes).
 PDF statistics:
  579 PDF objects out of 1000 (max. 8388607)
  413 compressed objects within 5 object streams

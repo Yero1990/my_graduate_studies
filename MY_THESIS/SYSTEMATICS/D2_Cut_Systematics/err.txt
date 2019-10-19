@@ -1,0 +1,38 @@
+#Investigate why: (Pm, th_nq)-> (740 MeV, 45 deg) of Pm_set580(set2)
+has a ratio R which unusually high for the Xsec(Em_cut=80)-Xsec(Em_cut=50),
+however, when the Xsectiona are plotted versus Em_cut, this large
+difference between the two Xsec is NOT observed.
+
+
+From the data file:
+
+The Roger Barlow's Ratio was calculated by taking the difference between the largest set (Em_cut < 80 MeV), and other subsets
+----------------------------------------------------
+Nominal-> Em cut = 80 MeV
+dataXsec_580set2_nom[f,27]     = 2.04343284e-08
+dataXsec_err_580set2_nom[f,28] = 4.82140033e-09
+-----------------------------------------------------
+
+==Emcut < 45 MeV===
+dataXsec_580set2[f,39]     =   1.91102119e-08 
+dataXsec_err_580set2[f,40] =   4.93846306e-09
+
+R =  (2.04343284e-08 - 1.91102119e-08) / np.sqrt(abs(4.82140033e-09**2 - 4.93846306e-09**2))
+  =  1.2387823357939882
+
+==Emcut < 50 MeV===
+dataXsec_580set2[f,39]     =    1.86738953e-08
+dataXsec_err_580set2[f,40] =    4.82570543e-09
+
+R =  (2.04343284e-08 - 1.86738953e-08) / np.sqrt(abs(4.82140033e-09**2 - 4.82570543e-09**2))
+  =  8.638321905453015   ---> Why is this ratio completely OFF from the adjacent Ratios?
+
+==Emcut < 60 MeV===
+dataXsec_580set2[f,39]     =    1.79269994e-08
+dataXsec_err_580set2[f,40] =    4.63269312e-09
+
+R =  (2.04343284e-08 - 1.79269994e-08) / np.sqrt( 4.82140033e-09**2 - 4.63269312e-09**2)
+  =  1.8771852432637557
+
+From the actual cross sections, I can reproduce the jump observed in th 580 (set2) data,
+however, this is NOT obvious from the cross section vs. Em cut plot.
