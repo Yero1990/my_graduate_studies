@@ -14,4 +14,11 @@ Tables:
 
 Plots:
 
-** 
+** Reduced Xsec vs. Pm for th_nq = 35, 45 and 65 deg
+** % Deviation of all models and data relative to CD-Bonn FSI (data better matched this model)
+**
+
+
+Motivation:
+- understand short range structure of deuteron or equivalently, the high momentum components of the deuteron wavefunction
+- the most direct way is via the exclusive deuteron electro-disintegration at very high recoil neuteon momenta in PWIA kinematics

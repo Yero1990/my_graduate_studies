@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{2}%
+\begin{thebibliography}{1}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,22 +50,14 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{\citenamefont {Boeglin}\ \emph {et~al.}(2011)\citenamefont {Boeglin}
-  \emph {et~al.}}]{halla_deut_2011}%
+\bibitem [{\citenamefont {Ulmer}\ \emph {et~al.}(2001)\citenamefont {Ulmer}
+  \emph {et~al.}}]{pr01-020}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~U.}\ \bibnamefont
-  {Boeglin}} \emph {et~al.} (\bibinfo {collaboration} {For the Hall A
-  Collaboration}),\ }\href {\doibase 10.1103/PhysRevLett.107.262501} {\bibfield
-   {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
-  {volume} {107}},\ \bibinfo {pages} {262501} (\bibinfo {year}
-  {2011})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
-  {Sargsian}(2015)}]{sargsian_2015}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Boeglin}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Sargsian}},\ }\href {\doibase 10.1142/S0218301315300039} {\bibfield
-  {journal} {\bibinfo  {journal} {International Journal of Modern Physics E}\
-  }\textbf {\bibinfo {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo
-  {year} {2015})}\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Ulmer}} \emph {et~al.},\ }\href@noop {} {\enquote {\bibinfo {title}
+  {Short-{Distance Structure} of the {Deuteron} and {Reaction Dynamics} in
+  $^{2}${H}(e,e'p)n},}\ }\bibinfo {howpublished}
+  {\url{https://www.jlab.org/exp_prog/proposals/01/PR01-020.pdf}} (\bibinfo
+  {year} {2001}),\ \bibinfo {note} {\textit{Jefferson Lab Proposal
+  E01-020}}\BibitemShut {NoStop}%
 \end{thebibliography}%
