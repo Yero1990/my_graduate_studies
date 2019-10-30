@@ -20,13 +20,14 @@
 % Choose pra, prb, prc, prd, pre, prl, prstab, or rmp for journal
 %  Add 'draft' option to mark overfull boxes with black boxes
 %  Add 'showpacs' option to make PACS codes appear
-\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4-1}  % for review and submission
+\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4-2}  % for review and submission
 %\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
 \usepackage{graphicx}  % needed for figures
 \usepackage{dcolumn}   % needed for some tables
 \usepackage{bm}        % for math
 \usepackage{amssymb}   % for math
 \usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
 \usepackage{xcolor}
 \hypersetup{
     colorlinks,
@@ -86,57 +87,17 @@
 
 \pacs{}
 \maketitle
+%\thispagestyle{plain} 
 
 %\section{\label{sec:level1}First-level heading}
 % sections are not used for PRL papers
 
 %--------------MOTIVATION / introduction (from my proposal)--------------
 
-Being the most simple $np$ bound state, the deuteron serves as a starting point to study the
-strong nuclear force at the subfermi level which is currently
-not well understood. At such small internucleon distances 
-the NN (nucleon-nucleon) potential is expected to exhibit a repulsive core in which 
-the interacting nucleon pair begins to overlap. The overlap is 
-directly related to two-nucleon short range correlations (SRC) observed in $A\geq2$
-nuclei. Short-distance studies of the deuteron are
-also important in determining whether or to what extent the
-description of nuclei in terms of nucleon/meson degrees of 
-freedom must be supplemented by the inclusion of explicit
-quark effects, which is an issue of fundamental importance in
-nuclear physics\cite{pr01-020}. \\
-\indent The most direct way to study the short range structure (or equivalently, the high momentum components)
-of the deuteron wavefunction is via the exclusive deuteron electro-disintegration reaction within the
-PWIA kinematics. In this approximation, the virtual photon couples to the proton which is ejected from the nucleus without
-further interaction with the recoiling neutron, which carries a momentum equal in magnitude but opposite in direction to the ejected proton, $\vec{p}_{r} = -\vec{p}_{i,p}$.
-This gives direct access to the deuteron momentum distributions since the scattered neutron momentum remains unchanged. \\
-\indent In reality, the ejected particles undergo subsequent interactions resulting in re-scattering of the proton and neutron (FSIs).
-Another possibility is that the photon may couple to the virtual meson being exchanged between the nucleons (MECs), or the photon may excite either nucleon in the deuteron
-into a resonance state (ICs) which decays back into the ground state nucleon causing futher re-scattering between the proton and neutron. The above-mentioned long-range processes
-alter the final neutron momentum making the deuteron momentum distributions unaccessible.\\
-\indent Previous deuteron electro-disintegration experiments performed at Jefferson Lab have helped dis-entangle and quantify the contributions from FSI, MEC and IC on the $^{2}H(e,e'p)n$ cross-section. 
-The first of these was performed in Hall A at relatively low momentum transfers $Q^{2}=0.665$ (GeV/c)$^{2}$ and neutron recoil momenta up to $p_{r} = $ 550 MeV/c where it was shown that for
-$p_{r}>$ 300 MeV/c, the inclusion of FSI, MEC and IC was necessary in Arenhovel's calculations for a satisfactory agreement between the theory and data. \\
-\indent The next experiment was performed in Hall B using the CEBAF Large Acceptance Spectrometer (CLAS) which took advantage of its large detector acceptance to simultaneously measure
-a wide variety of kinematic settings giving an overview of the $^{2}H(e,e'p)n$ reaction kinematics. This was the first experiment to probe the deuteron at high momentum transfers ( 1.75 $\leq Q^{2}\leq$ 5.5 (GeV/c)$^{2}$)
-and presented angular distributions of cross-sections and confirmed the onset of the General Eikonal Approximation (GEA), which predicts a strong angular dependence of FSI with neutron recoil angles with FSI peaking at $\theta_{nq} \sim 70^{o}$.
-The cross-sections versus neutron recoil momenta up to 2 GeV/c were also presented with integrated over all neutron recoil angles to gain better statistical precision. As a result, it was not possible to choose kinematical regions
-regions in which FSI were minimal to extract the momentum distributions. \\
-\indent Finally, a third $^{2}H(e,e'p)n$ experiment was performed in Hall A at $Q^{2} = 0.8, 2.5, 3.5$ (GeV/c)$^{2}$ and recoil momenta up to 550 MeV/c at kinematics which allowed the extraction of angular and momentum distributions for significantly
-smaller kinematical bins than in Hall B/CLAS. The angular distributions were presented as the cross-section ratio, $R = \sigma_{exp}/\sigma_{PWIA}$ versus $\theta_{nq}$, and verified the strong anisotropy of FSI with $\theta_{nq}$.
-Most importantly, for recoil neutron momentum bins, $p_{r}=0.4\pm0.02$ and $0.5\pm0.02$ GeV/c, the ratio $R\sim1$ for $35^{o}\leq \theta_{nq}\leq45^{o}$ indicating a reduced sensitivity of the experimental cross-section to FSI,
-in which, $\sigma_{exp}\sim\sigma_{PWIA}$.  This kinematic window in which FSI are small can also be seen in the momentum distributions for $\theta_{nq}=35\pm5^{o}$ and $\theta_{nq}=45\pm5^{o}$, where data and theory agree well
-within the PWIA kinematics. The experiment concluded that this kinematic window found at $35^{o}\leq \theta_{nq}\leq45^{o}$ gives for the first time a direct access to the high momentum components of the deuteron momentum distribution.
-
-
-
-%Depending on the kinematics chosen, however, PWIA may be overshadowed by
-%long-range processes such as final-state interactions (FSIs), meson-exchange currents (MECs) or isobar confgurations (ICs).
-
-
-
-
+\input introduction.tex
+\input body.tex
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\   %This space must remain here to keep the acknowledgemn section in place
 \input acknowledgement.tex   % input acknowledgement
-
 \bibliography{prl}
 
 \end{document}

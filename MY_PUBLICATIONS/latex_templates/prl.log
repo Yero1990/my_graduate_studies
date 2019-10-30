@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  17 SEP 2019 00:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  21 OCT 2019 11:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -73,9 +73,6 @@ Class revtex4-1 Info: RevTeX society APS selected on input line 31.
 )
 Class revtex4-1 Info: Selecting journal prl on input line 7544.
 Class revtex4-1 Info: APS journal PRL selected on input line 7545.
-
-
-Class revtex4-1 Warning: No type size specified, using default 10.
 
 (/opt/local/share/texmf-texlive/tex/latex/aps10pt4-1.rtx
 File: aps10pt4-1 2010/07/25/20:33:00 4.1r (http://publish.aps.org/revtex4/ for 
@@ -463,7 +460,7 @@ Package natbib Warning: Citation `pdg' on page 2 undefined on input line 316.
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 328.
-(./acknowledgement.tex) (./prl.bbl)
+(./acknowledgement.tex [2]) (./prl.bbl)
 
 Class revtex4-1 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
@@ -471,19 +468,24 @@ Use acknowledgments instead.
 
 Package natbib Warning: There were undefined citations.
 
-[2] [3]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 376.
+[3] [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
  (./prl.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 376.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 376.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 378.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
 Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: E2220D12B56FCD9ADB7C4E56C049B2C6;234.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
  ) 
 Here is how much of TeX's memory you used:
- 7936 strings out of 494108
- 111478 string characters out of 6155655
- 264189 words of memory out of 5000000
- 11175 multiletter control sequences out of 15000+600000
+ 7939 strings out of 494108
+ 111523 string characters out of 6155655
+ 235333 words of memory out of 5000000
+ 11177 multiletter control sequences out of 15000+600000
  18558 words of font info for 70 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
  28i,15n,48p,520b,428s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -513,10 +515,10 @@ msfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
 s/euler/eufm10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
 symbols/msam10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
 symbols/msbm10.pfb>
-Output written on prl.pdf (3 pages, 281432 bytes).
+Output written on prl.pdf (4 pages, 281977 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
- 26 named destinations out of 1000 (max. 500000)
+ 207 PDF objects out of 1000 (max. 8388607)
+ 171 compressed objects within 2 object streams
+ 27 named destinations out of 1000 (max. 500000)
  33 words of extra memory for PDF output out of 10000 (max. 10000000)
 
