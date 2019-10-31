@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  29 OCT 2019 15:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  30 OCT 2019 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,97 +419,8 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 l.89 \maketitle
                
 ? 
-(./introduction.tex) (./body.tex) (./acknowledgement.tex
-Underfull \hbox (badness 1484) in paragraph at lines 1--1
-\OT1/cmr/m/n/10 may cou-ple to the vir-tual me-son be-ing ex-changed
- []
-
-
-Underfull \hbox (badness 1742) in paragraph at lines 1--1
-\OT1/cmr/m/n/10 Eikonal Ap-prox-i-ma-tion (GEA), pre-dict-ing a strong
- []
-
-
-Underfull \hbox (badness 1939) in paragraph at lines 1--1
-\OT1/cmr/m/n/10 beam cur-rents de-liv-ered by the ac-cel-er-a-tor ranged
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1--1
-
- []
-
-[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./prl.bbl
+(./introduction.tex) (./body.tex [1{/opt/local/var/db/texmf/fonts/map/pdftex/up
+dmap/pdftex.map}]) (./acknowledgement.tex) (./prl.bbl [2]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
@@ -519,7 +430,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--108
 []
  []
 
-[2])
+)
 
 Class revtex4-2 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
@@ -533,13 +444,13 @@ Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 5D3A8663C379C1CAB8AE33053B1D8755;303.
  ) 
 Here is how much of TeX's memory you used:
- 8087 strings out of 494108
- 113522 string characters out of 6155655
+ 8086 strings out of 494108
+ 113512 string characters out of 6155655
  229221 words of memory out of 5000000
- 11336 multiletter control sequences out of 15000+600000
+ 11335 multiletter control sequences out of 15000+600000
  19002 words of font info for 71 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 28i,6n,48p,365b,516s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,6n,48p,365b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -559,7 +470,7 @@ e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt/local/share/tex
 mf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-tex
 live/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/
 fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on prl.pdf (3 pages, 227227 bytes).
+Output written on prl.pdf (3 pages, 230656 bytes).
 PDF statistics:
  156 PDF objects out of 1000 (max. 8388607)
  128 compressed objects within 2 object streams
