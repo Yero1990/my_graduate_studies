@@ -1,0 +1,79 @@
+import numpy as np
+
+#This code defined the H(e,e'p) elastic cross section in terms of
+#the electric and magnetic form factors. Then apply error propagation
+#in terms of the form factors to get uncertainty in cross section at thw
+#gven beam energy, elecrtron angle and momentum.
+#Finally, use the error in the Xsec as the error as the simc yield error
+#Define Physical Constnats
+
+
+hbarc = 197.327053 / 1000.       #GeV * fm
+alpha = 1./137.0359895    #structure constant
+dtr = np.pi / 180.
+
+
+#(1 GeV)^2 = (1000 MeV)^2 = 1e6 MeV^2
+
+#Masses in GeV
+MP = 938.272 / 1000.
+MN = 939.566 / 1000.
+MD = 1875.61 / 1000.
+me = 0.51099 / 1000.
+
+#Mott Cross Section
+def sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD):
+
+    #Units: kf ~ Ef [GeV]   electron momentum  
+    #th_e[deg] electron angle  
+    #Q2[GeV2]   4-momentum transfer
+
+    mu_N = 3.1524512326 *1e-14 / 1000.   #nuclear magneton [GeV T^-1]
+    mu_p = 2.7928473508 * mu_N   #proton magnetic moment [GeV T^-1]
+
+    #Mott cross section
+    th_e = th_e * dtr    #convert degree to radians
+    sigM = (2.*alpha*hbarc*kf*np.cos(th_e/2.)/Q2 )**2   #GeV^2 * fm^2 *GeV^2/GeV^4--> fm2 / sr
+    sigMott = sigM * 1e4    #convert fm^2 -> microbarn
+
+    tau =  Q2 /(4.*MP)**2
+    L2 = 0.71   #Lambda parameter [GeV^2]
+    GD = 1. / (1 + Q2/L2)**2     #dipole form factor
+    muGD = mu_p * GD   #[GeV T^-1]
+    
+    #Get form factors
+    GEp = GEp_GD * GD
+    GMp = GMp_muGD * muGD
+
+    #Elastic H(e,e'p) Cross Section
+    sig = sigMott * ( (GEp**2 + tau*GMp**2)/(1. + tau) + 2.*tau*GMp**2*np.tan(th_e/2.)**2 )
+
+    #Error Propagation
+    #derivatives of cross sectio w.r.to form factors
+    dsig_dGEp = sigMott * ( (2.*GEp + tau*GMp**2) / (1. + tau))
+    dsig_dGMp = sigMott * ( (GEp**2 + 2.*tau*GMp) / (1. + tau) + 4.*tau*GMp*np.tan(th_e/2.)**2 )
+    #uncertainty in form factors
+    dGEp = dGEp_GD * GD
+    dGMp = dGMp_muGD * muGD
+
+    dsig2 =  (dsig_dGEp* dGEp)**2 + (dsig_dGMp*dGMp)**2
+    dsig = np.sqrt(dsig2)
+    
+    return sig, dsig
+
+Eb = 10.6005
+kf = 8.5423
+th_e = 12.194 * dtr
+Q2 = 4. * Eb * kf * np.sin(th_e/2.)**2
+print(Q2)
+#
+#Q2 = 4.0272
+#GEp_GD = 5.603858e-01
+#GMp_muGD = 1.070627
+#dGEp_GD = 1.608647e-02
+#dGMp_muGD =  9.712494e-03
+
+#Xsec, Xsec_err = sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD)
+
+#print('Xsec = ',Xsec,' +/- ',Xsec_err)
+#print(Xsec_err / Xsec)
