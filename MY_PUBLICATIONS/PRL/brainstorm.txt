@@ -22,3 +22,10 @@ Plots:
 Motivation:
 - understand short range structure of deuteron or equivalently, the high momentum components of the deuteron wavefunction
 - the most direct way is via the exclusive deuteron electro-disintegration at very high recoil neuteon momenta in PWIA kinematics
+
+
+Experimentally, the reduced cross sections are defined as:
+sig_red = sig_exp / Ksig_cc1
+where  sig_exp . .. .
+
+Theoretically, the reduced cross sec

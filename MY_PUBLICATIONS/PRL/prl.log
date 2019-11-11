@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  6 NOV 2019 15:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  11 NOV 2019 17:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -307,45 +307,60 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 37.
+(/opt/local/share/texmf-texlive/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count106
+\float@exts=\toks19
+\float@box=\box41
+\@float@everytoks=\toks20
+\@floatcapt=\box42
+)
+(/opt/local/share/texmf-texlive/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
+\c@lips@count=\count107
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 39.
 Class revtex4-2 Info: Unrecognized array package. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 44.
-Class revtex4-2 Info: Robustifying \LaTeX's \boldmath command on input line 44.
+lass! (Proceeding with fingers crossed.) on input line 46.
 
-Class revtex4-2 Info: cite was not loaded (OK!) on input line 44.
-Class revtex4-2 Info: mcite was not loaded (OK!) on input line 44.
-Class revtex4-2 Info: multicol was not loaded (OK!) on input line 44.
- (./prl.aux)
+
+Class revtex4-2 Warning: Repair the float package.
+
+Class revtex4-2 Info: Robustifying \LaTeX's \boldmath command on input line 46.
+
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 46.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 46.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 46.
+(./prl.aux)
 \openout1 = `prl.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 44.
-LaTeX Font Info:    ... okay on input line 44.
-
-(/opt/local/share/texmf-texlive/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+ (/opt/local/share/texmf-texlive/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
+\scratchcounter=\count108
 \scratchdimen=\dimen110
-\scratchbox=\box41
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count109
+\scratchbox=\box43
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count111
 \MPscratchDim=\dimen111
-\MPnumerator=\count110
-\makeMPintoPDFobject=\count111
-\everyMPtoPDFconversion=\toks20
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks22
 ) (/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -363,8 +378,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box42
-Package hyperref Info: Link coloring ON on input line 44.
+\AtBeginShipoutBox=\box44
+Package hyperref Info: Link coloring ON on input line 46.
 
 (/opt/local/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -372,26 +387,26 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/opt/local/share/texmf-texlive/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count112
+\c@section@level=\count114
 )
-LaTeX Info: Redefining \ref on input line 44.
-LaTeX Info: Redefining \pageref on input line 44.
-LaTeX Info: Redefining \nameref on input line 44.
+LaTeX Info: Redefining \ref on input line 46.
+LaTeX Info: Redefining \pageref on input line 46.
+LaTeX Info: Redefining \nameref on input line 46.
 
 (./prl.out) (./prl.out)
 \@outlinefile=\write4
 \openout4 = `prl.out'.
 
-Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 44.
+Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 46.
 \openout3 = `prlNotes.bib'.
 
  (./author_list.tex)
-LaTeX Font Info:    Try loading font information for U+msa on input line 66.
+LaTeX Font Info:    Try loading font information for U+msa on input line 68.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 66.
+LaTeX Font Info:    Try loading font information for U+msb on input line 68.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -399,35 +414,212 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.89 \maketitle
+l.91 \maketitle
                
 ? 
 
-LaTeX Warning: Command \pdfstringdef invalid in math mode on input line 89.
+LaTeX Warning: Command \pdfstringdef invalid in math mode on input line 91.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 89.
+(hyperref)                removing `\\' on input line 91.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 89.
+(hyperref)                removing `superscript' on input line 91.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.89 \maketitle
+l.91 \maketitle
                
 ? 
-(./introduction.tex) (./body.tex
-<prl_plots/PRL_plot2.pdf, id=29, 433.62pt x 722.7pt>
+(./introduction.tex) (./body.tex [1{/opt/local/var/db/texmf/fonts/map/pdftex/up
+dmap/pdftex.map}] [2] <prl_plots/PRL_plot2.pdf, id=64, 484.209pt x 722.7pt>
 File: prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use prl_plots/PRL_plot2.pdf>
-Package pdftex.def Info: prl_plots/PRL_plot2.pdf used on input line 36.
-(pdftex.def)             Requested size: 216.80946pt x 361.3491pt.
- [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]) (./acknow
-ledgement.tex) (./prl.bbl [3 <./prl_plots/PRL_plot2.pdf>]
+Package pdftex.def Info: prl_plots/PRL_plot2.pdf used on input line 51.
+(pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
+
+Underfull \hbox (badness 1253) in paragraph at lines 45--73
+\OT1/cmr/m/n/10 deuteron mo-men-tum dis-tri-bu-tions (n$(\OML/cmm/m/it/10 p[]\O
+T1/cmr/m/n/10 )$) us-ing the
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 45--73
+\OT1/cmr/m/n/10 de-scribed by the CD-Bonn curves which ex-hibit a
+ []
+
+
+Underfull \hbox (badness 1389) in paragraph at lines 45--73
+\OT1/cmr/m/n/10 re-coil mo-menta up to $\OMS/cmsy/m/n/10 ^^X$ \OT1/cmr/m/n/10 8
+00 MeV/c be-fore be-ing
+ []
+
+
+Underfull \hbox (badness 1314) in paragraph at lines 45--73
+\OT1/cmr/m/n/10 re-coil mo-men-tum, $\OML/cmm/m/it/10 p[]$ \OT1/cmr/m/n/10 for 
+three an-gu-lar set-tings at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--73
+
+ []
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.73 \onecolumngrid
+                    <./prl_plots/PRL_plot2.pdf>]
+<prl_plots/PRL_plot1.pdf, id=108, 968.41798pt x 433.62pt>
+File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
+
+<use prl_plots/PRL_plot1.pdf>
+Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 77.
+(pdftex.def)             Requested size: 484.20781pt x 216.80946pt.
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.83 \twocolumngrid
+                    <./prl_plots/PRL_plot1.pdf>]) (./acknowledgement.tex)
+(./prl.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
@@ -442,22 +634,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--108
 Class revtex4-2 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
 
-[4]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
+[5]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 105.
  (./prl.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 5D3A8663C379C1CAB8AE33053B1D8755;303.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
  ) 
 Here is how much of TeX's memory you used:
- 8110 strings out of 494108
- 113914 string characters out of 6155655
- 239450 words of memory out of 5000000
- 11352 multiletter control sequences out of 15000+600000
+ 8358 strings out of 494108
+ 117007 string characters out of 6155655
+ 339345 words of memory out of 5000000
+ 11589 multiletter control sequences out of 15000+600000
  19002 words of font info for 71 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 28i,8n,48p,399b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 28i,8n,48p,485b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -479,11 +676,12 @@ live/fonts/type1/public/amsfonts/cm/cmsy9.pfb></opt/local/share/texmf-texlive/f
 onts/type1/public/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/
 type1/public/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmtt9.pfb>
-Output written on prl.pdf (4 pages, 343549 bytes).
+c/amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsf
+onts/symbols/msam10.pfb>
+Output written on prl.pdf (5 pages, 396518 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 38 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 254 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
