@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  11 NOV 2019 17:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  12 NOV 2019 00:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -441,185 +441,27 @@ File: prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 <use prl_plots/PRL_plot2.pdf>
 Package pdftex.def Info: prl_plots/PRL_plot2.pdf used on input line 51.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
-
-Underfull \hbox (badness 1253) in paragraph at lines 45--73
-\OT1/cmr/m/n/10 deuteron mo-men-tum dis-tri-bu-tions (n$(\OML/cmm/m/it/10 p[]\O
-T1/cmr/m/n/10 )$) us-ing the
- []
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 45--73
-\OT1/cmr/m/n/10 de-scribed by the CD-Bonn curves which ex-hibit a
- []
-
-
-Underfull \hbox (badness 1389) in paragraph at lines 45--73
-\OT1/cmr/m/n/10 re-coil mo-menta up to $\OMS/cmsy/m/n/10 ^^X$ \OT1/cmr/m/n/10 8
-00 MeV/c be-fore be-ing
- []
-
-
-Underfull \hbox (badness 1314) in paragraph at lines 45--73
-\OT1/cmr/m/n/10 re-coil mo-men-tum, $\OML/cmm/m/it/10 p[]$ \OT1/cmr/m/n/10 for 
-three an-gu-lar set-tings at
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 45--73
-
- []
-
-[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.73 \onecolumngrid
+l.80 \onecolumngrid
                     <./prl_plots/PRL_plot2.pdf>]
-<prl_plots/PRL_plot1.pdf, id=108, 968.41798pt x 433.62pt>
+<prl_plots/PRL_plot1.pdf, id=115, 968.41798pt x 433.62pt>
 File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use prl_plots/PRL_plot1.pdf>
-Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 77.
+Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 83.
 (pdftex.def)             Requested size: 484.20781pt x 216.80946pt.
  [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.83 \twocolumngrid
-                    <./prl_plots/PRL_plot1.pdf>]) (./acknowledgement.tex)
-(./prl.bbl
+l.90 \indent
+             We have measured <./prl_plots/PRL_plot1.pdf>])
+(./acknowledgement.tex) (./prl.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
@@ -641,17 +483,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 105.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 105.
 Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 5D3A8663C379C1CAB8AE33053B1D8755;303.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
  ) 
 Here is how much of TeX's memory you used:
- 8358 strings out of 494108
- 117007 string characters out of 6155655
+ 8359 strings out of 494108
+ 117017 string characters out of 6155655
  339345 words of memory out of 5000000
- 11589 multiletter control sequences out of 15000+600000
+ 11590 multiletter control sequences out of 15000+600000
  19002 words of font info for 71 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
  28i,8n,48p,485b,381s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -678,10 +515,10 @@ type1/public/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/publi
 c/amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsf
 onts/symbols/msam10.pfb>
-Output written on prl.pdf (5 pages, 396518 bytes).
+Output written on prl.pdf (5 pages, 398535 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 191 compressed objects within 2 object streams
+ 260 PDF objects out of 1000 (max. 8388607)
+ 197 compressed objects within 2 object streams
  25 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
