@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  13 NOV 2019 19:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  13 NOV 2019 23:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -436,29 +436,24 @@ l.91 \maketitle
 ? 
 (./introduction.tex) (./body.tex
 Underfull \hbox (badness 3088) in paragraph at lines 1--47
-[]\OT1/cmr/m/n/10 Being the only bound two-nucleon sys-tem, the
+[]\OT1/cmr/m/n/10 Being the only two-nucleon bound sys-tem, the
  []
 
 [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<../prl_plots/PRL_plot2.pdf, id=94, 484.209pt x 722.7pt>
+<../prl_plots/PRL_plot2.pdf, id=95, 484.209pt x 722.7pt>
 File: ../prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use ../prl_plots/PRL_plot2.pdf>
 Package pdftex.def Info: ../prl_plots/PRL_plot2.pdf used on input line 56.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
-
-
-Package natbib Warning: Citation `Sargsian_2001' on page 3 undefined on input l
-ine 77.
-
-[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.86 \onecolumngrid
                     <../prl_plots/PRL_plot2.pdf>]
-<../prl_plots/PRL_plot1.pdf, id=157, 968.41798pt x 433.62pt>
+<../prl_plots/PRL_plot1.pdf, id=160, 968.41798pt x 433.62pt>
 File: ../prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use ../prl_plots/PRL_plot1.pdf>
@@ -481,11 +476,6 @@ Type  H <return>  for immediate help.
 l.96 \twocolumngrid
                    
 ? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--107
-
- []
-
 ) (./acknowledgement.tex) (./prl.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
@@ -540,7 +530,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--299
 
  []
 
-[5]
+
 Underfull \hbox (badness 10000) in paragraph at lines 310--314
  []\OT1/cmr/m/n/9 C. Yero, Pro-ton ab-sorp-tion (2019), [][]$\OT1/cmtt/m/n/9 ht
 tps :
@@ -551,7 +541,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 310--314
  \OT1/cmtt/m/n/9 / / hallcweb . jlab . org / DocDB / 0010 / 001020 / 002 /
  []
 
-
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 317--321
  []\OT1/cmr/m/n/9 C. Yero, Hms tar-get boil-ing stud-ies (2019),
  []
@@ -566,9 +556,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 317--321
 
 Class revtex4-2 Warning: Environment acknowledgements is obsolete;
 Use acknowledgments instead.
-
-
-Package natbib Warning: There were undefined citations.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 103--104
@@ -1049,43 +1036,42 @@ Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 5D3A8663C379C1CAB8AE33053B1D8755;303.
  ) 
 Here is how much of TeX's memory you used:
- 8462 strings out of 494108
- 119174 string characters out of 6155655
- 341607 words of memory out of 5000000
- 11672 multiletter control sequences out of 15000+600000
+ 8467 strings out of 494108
+ 119300 string characters out of 6155655
+ 341865 words of memory out of 5000000
+ 11676 multiletter control sequences out of 15000+600000
  19002 words of font info for 71 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 28i,8n,48p,482b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/local/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/local/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmmi7.pfb></opt/local/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmmi9.pfb></opt/local/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/
-cm/cmr17.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
-5.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb><
-/opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/local/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/local/share/texm
-f-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/local/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmsy6.pfb></opt/local/share/texmf-texlive/fonts/t
-ype1/public/amsfonts/cm/cmsy7.pfb></opt/local/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmsy9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt
-9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/msam1
-0.pfb>
-Output written on prl.pdf (7 pages, 434911 bytes).
+ 30i,8n,57p,544b,562s stack positions out of 5000i,500n,10000p,200000b,80000s
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
+al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/local/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/local/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmmi9.pfb></opt/local/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmr17.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr5.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/loca
+l/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/local/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/local/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/local/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></opt/local/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmsy9.pfb></opt/local/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmti10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/
+msam10.pfb>
+Output written on prl.pdf (7 pages, 426708 bytes).
 PDF statistics:
- 365 PDF objects out of 1000 (max. 8388607)
- 296 compressed objects within 3 object streams
- 46 named destinations out of 1000 (max. 500000)
+ 371 PDF objects out of 1000 (max. 8388607)
+ 301 compressed objects within 4 object streams
+ 47 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

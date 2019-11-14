@@ -1,11 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/MacPorts 2017_0)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: prl.aux
-Case mismatch error between cite keys Sargsian_2001 and sargsian_2001
----line 48 of file prl.aux
- : \citation{PhysRevC.56.1124,Sargsian_2001
- :                                         }
-I'm skipping whatever remains of this command
 The style file: apsrev4-2.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -39,45 +34,46 @@ Control: production of eprint (0) enabled
 Warning--empty year in hodo_techreport
 Warning--empty year in dc_techreport
 Warning--empty year in ngc_techreport
-You've used 34 entries,
+Warning--empty year in e12_10_003_proposal
+You've used 35 entries,
             6079 wiz_defined-function locations,
-            1890 strings with 22523 characters,
-and the built_in function-call counts, 30907 in all, are:
-= -- 2371
-> -- 661
-< -- 162
-+ -- 223
-- -- 166
-* -- 4515
-:= -- 3071
-add.period$ -- 32
-call.type$ -- 34
-change.case$ -- 167
-chr.to.int$ -- 41
-cite$ -- 37
-duplicate$ -- 2878
-empty$ -- 2205
-format.name$ -- 376
-if$ -- 6239
+            1894 strings with 22694 characters,
+and the built_in function-call counts, 31593 in all, are:
+= -- 2421
+> -- 677
+< -- 164
++ -- 229
+- -- 170
+* -- 4619
+:= -- 3149
+add.period$ -- 33
+call.type$ -- 35
+change.case$ -- 172
+chr.to.int$ -- 42
+cite$ -- 39
+duplicate$ -- 2944
+empty$ -- 2256
+format.name$ -- 388
+if$ -- 6370
 int.to.chr$ -- 4
-int.to.str$ -- 41
-missing$ -- 433
-newline$ -- 148
-num.names$ -- 93
-pop$ -- 1100
+int.to.str$ -- 42
+missing$ -- 439
+newline$ -- 151
+num.names$ -- 96
+pop$ -- 1126
 preamble$ -- 1
-purify$ -- 156
+purify$ -- 160
 quote$ -- 0
-skip$ -- 1387
+skip$ -- 1411
 stack$ -- 0
-substring$ -- 808
-swap$ -- 2625
-text.length$ -- 62
+substring$ -- 820
+swap$ -- 2678
+text.length$ -- 63
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 437
-warning$ -- 4
-while$ -- 95
+type$ -- 450
+warning$ -- 5
+while$ -- 97
 width$ -- 0
-write$ -- 325
-(There were 2 error messages)
+write$ -- 332
+(There was 1 error message)

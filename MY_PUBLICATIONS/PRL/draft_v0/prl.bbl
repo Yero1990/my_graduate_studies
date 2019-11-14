@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{32}%
+\begin{thebibliography}{33}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -326,12 +326,6 @@
   {https://doi.org/10.1103/PhysRevC.51.409} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {51}},\ \bibinfo
   {pages} {409} (\bibinfo {year} {1995})}\BibitemShut {NoStop}%
-\bibitem [{Note1()}]{Note1}%
-  \BibitemOpen
-  \bibinfo {note} {Conservative estimates on the systematic uncertainties of
-  the total live and charge were made. Determination of systematics on these
-  quantities is a work in progress. (Private communication with D.
-  Mack)}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Lacombe}\ \emph {et~al.}(1980)\citenamefont
   {Lacombe}, \citenamefont {Loiseau}, \citenamefont {Richard}, \citenamefont
   {Mau}, \citenamefont {C\^ot\'e}, \citenamefont {Pir\`es},\ and\ \citenamefont
@@ -349,6 +343,12 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume}
   {21}},\ \bibinfo {pages} {861} (\bibinfo {year} {1980})}\BibitemShut
   {NoStop}%
+\bibitem [{Note1()}]{Note1}%
+  \BibitemOpen
+  \bibinfo {note} {Conservative estimates on the systematic uncertainties of
+  the total live and charge were made. Determination of systematics on these
+  quantities is a work in progress. (Private communication with D.
+  Mack)}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Forest}(1983)}]{DEFOREST1983}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
@@ -378,4 +378,13 @@
   {https://doi.org/10.1103/PhysRevC.51.38} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {51}},\ \bibinfo
   {pages} {38} (\bibinfo {year} {1995})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boeglin}\ \emph {et~al.}()\citenamefont {Boeglin}
+  \emph {et~al.}}]{e12_10_003_proposal}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~U.}\ \bibnamefont
+  {Boeglin}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {Deuteron
+  {Electro-Disintegration} at {Very High Missing Momenta}}},\ \bibinfo
+  {howpublished}
+  {\url{https://www.jlab.org/exp_prog/proposals/10/PR12-10-003.pdf}}\BibitemShut
+  {NoStop}%
 \end{thebibliography}%
