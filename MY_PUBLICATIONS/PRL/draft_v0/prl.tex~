@@ -47,7 +47,7 @@
 
 % The following information is for internal review, please remove them for submission
 \widetext
-\leftline{Version xx as of \today}
+\leftline{Version 00 as of \today}
 \leftline{Primary authors: Carlos Yero, Werner Boeglin, Mark Jones}
 \leftline{To be submitted to PRL}
 \leftline{Comment to {\tt cyero002@fiu.edu} by xxx, yyy}
@@ -65,11 +65,11 @@
 
 
 \begin{abstract}
-  First results of cross section measurements of the $^{2}H(e,e'p)n$ reaction at 4-momentum transfers \\ 4 $\leq Q^{2}\leq$ 5 (GeV/c)$^{2}$  and
-  neutron recoil momenta up to 1.18 GeV/c are presented. At the selected kinematics, Meson Exchange Currents (MEC) and Isobar
-  Configurations (IC) are suppressed. Final State Interactions (FSI) have also been suppressed by choosing a kinematic region where the neutron recoil
+  First results of cross section measurements of the $^{2}H(e,e'p)n$ reaction at 4-momentum transfers \\ 4 $\leq Q^{2}\leq$ 5 GeV$^{2}$ and
+  neutron recoil momenta up to $p_{r}\sim$1.18 GeV/c are presented. At the selected kinematics, Meson Exchange Currents (MEC) and Isobar
+  Configurations (IC) are suppressed. Final State Interactions (FSI) have also been suppressed by choosing a kinematic region where the in-plane neutron recoil
   angle ($\theta_{nq}$) is between 35 and 45 degrees with respect to the 3-momentum transfer, $\vec{q}$. In this region, the Plane Wave Impulse Approximation (PWIA)
-  dominates and comparison to recent theoretical calculations show data to be sensitive to momentum distributions up to $\sim$ 700 MeV/c recoil momenta.
+  dominates and comparison to recent theoretical calculations show data to be sensitive to momentum distributions up to $p_{r}\sim$ 700 MeV/c.
   
   
 %  momentum distribution has been determined from measured for neutron recoil momenta up to 1.14 GeV/c.
