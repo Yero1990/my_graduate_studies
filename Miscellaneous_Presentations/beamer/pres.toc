@@ -1,0 +1,19 @@
+\beamer@endinputifotherversion {3.24pt}
+\select@language {english}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{What is the Deuteron?}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{Deuteron D-State Admixture}{3}{0}{1}
+\beamer@sectionintoc {2}{Motivation}{4}{0}{2}
+\beamer@sectionintoc {3}{Theoretical Framework}{5}{0}{3}
+\beamer@subsectionintoc {3}{1}{Plane Wave Impulse Approximation}{6}{0}{3}
+\beamer@subsectionintoc {3}{2}{Final State Interactions (FS1)}{7}{0}{3}
+\beamer@subsectionintoc {3}{3}{Meson Exchange Currents (MEC)}{8}{0}{3}
+\beamer@subsectionintoc {3}{4}{Isobar Configuration Currents (IC)}{9}{0}{3}
+\beamer@sectionintoc {4}{D(e,e'p)n Data}{10}{0}{4}
+\beamer@subsectionintoc {4}{1}{Data from Mainz Microtron (MAMI)}{10}{0}{4}
+\beamer@subsectionintoc {4}{2}{Data from Jefferson Lab (Hall A)}{11}{0}{4}
+\beamer@sectionintoc {5}{12 GeV Upgrade and D(e,e'p)n}{12}{0}{5}
+\beamer@subsectionintoc {5}{1}{High Momentum Spectrometer (HMS) and Super High Momentum Spectrometer (SHMS)}{12}{0}{5}
+\beamer@subsectionintoc {5}{2}{Simulation of D(e,e'p)n at Hall C}{13}{0}{5}
+\beamer@sectionintoc {6}{Conclusion and Future Outlook}{14}{0}{6}
+\beamer@sectionintoc {7}{Acknowledgments}{15}{0}{7}
