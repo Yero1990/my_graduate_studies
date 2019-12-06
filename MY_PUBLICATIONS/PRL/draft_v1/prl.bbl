@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{33}%
+\begin{thebibliography}{35}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -133,6 +133,39 @@
   {https://doi.org/10.1103/PhysRevC.66.042201} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {66}},\ \bibinfo
   {pages} {042201} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sargsian}(2001)}]{Sargsian_2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {{Selected Topics} in
+  {High Energy Semi-Exclusive Electro-Nuclear Reactions}},\ }\href
+  {https://doi.org/10.1142/s0218301301000617} {\bibfield  {journal} {\bibinfo
+  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
+  {volume} {10}},\ \bibinfo {pages} {405–457} (\bibinfo {year}
+  {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Frankfurt}\ \emph {et~al.}(1997)\citenamefont
+  {Frankfurt}, \citenamefont {Sargsian},\ and\ \citenamefont
+  {Strikman}}]{PhysRevC.56.1124}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~L.}\ \bibnamefont
+  {Frankfurt}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sargsian}},\ and\ \bibinfo {author} {\bibfnamefont {M.~I.}\ \bibnamefont
+  {Strikman}},\ }\bibfield  {title} {\bibinfo {title} {Feynman graphs and
+  generalized eikonal approach to high energy knock-out processes},\ }\href
+  {https://doi.org/10.1103/PhysRevC.56.1124} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
+  {pages} {1124} (\bibinfo {year} {1997})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
+  {Sargsian}(2015)}]{sargsian_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Boeglin}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {Modern studies of the
+  deuteron: From the lab frame to the light front},\ }\href
+  {https://doi.org/10.1142/S0218301315300039} {\bibfield  {journal} {\bibinfo
+  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
+  {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo {year} {2015})},\
+  \Eprint {https://arxiv.org/abs/https://doi.org/10.1142/S0218301315300039}
+  {https://doi.org/10.1142/S0218301315300039} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Ulmer}\ \emph {et~al.}(2002)\citenamefont {Ulmer}
   \emph {et~al.}}]{PhysRevLett.89.062301}%
   \BibitemOpen
@@ -204,27 +237,6 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
   {\bibinfo {volume} {98}},\ \bibinfo {pages} {262502} (\bibinfo {year}
   {2007})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Sargsian}(2001)}]{sargsian_2001}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
-  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {{Selected Topics} in
-  {High Energy Semi-Exclusive Electro-Nuclear Reactions}},\ }\href
-  {https://doi.org/10.1142/s0218301301000617} {\bibfield  {journal} {\bibinfo
-  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
-  {volume} {10}},\ \bibinfo {pages} {405–457} (\bibinfo {year}
-  {2001})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Frankfurt}\ \emph {et~al.}(1997)\citenamefont
-  {Frankfurt}, \citenamefont {Sargsian},\ and\ \citenamefont
-  {Strikman}}]{PhysRevC.56.1124}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~L.}\ \bibnamefont
-  {Frankfurt}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
-  {Sargsian}},\ and\ \bibinfo {author} {\bibfnamefont {M.~I.}\ \bibnamefont
-  {Strikman}},\ }\bibfield  {title} {\bibinfo {title} {Feynman graphs and
-  generalized eikonal approach to high energy knock-out processes},\ }\href
-  {https://doi.org/10.1103/PhysRevC.56.1124} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
-  {pages} {1124} (\bibinfo {year} {1997})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Boeglin}\ \emph {et~al.}(2011)\citenamefont {Boeglin}
   \emph {et~al.}}]{PhysRevLett.107.262501}%
   \BibitemOpen
@@ -318,14 +330,29 @@
   (\bibinfo {year} {2019}{\natexlab{d}}),\ \bibinfo {note}
   {\url{https://hallcweb.jlab.org/DocDB/0010/001023/003/TargetBoiling_v2.pdf}}\BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {Bosted}(1995)}]{PhysRevC.51.409}%
+\bibitem [{\citenamefont {Arrington}(2004)}]{PhysRevC.69.022201}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~E.}\ \bibnamefont
-  {Bosted}},\ }\bibfield  {title} {\bibinfo {title} {Empirical fit to the
-  nucleon electromagnetic form factors},\ }\href
-  {https://doi.org/10.1103/PhysRevC.51.409} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {51}},\ \bibinfo
-  {pages} {409} (\bibinfo {year} {1995})}\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Arrington}},\ }\bibfield  {title} {\bibinfo {title} {Implications of the
+  discrepancy between proton form factor measurements},\ }\href
+  {https://doi.org/10.1103/PhysRevC.69.022201} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {69}},\ \bibinfo
+  {pages} {022201} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
+\bibitem [{Note1()}]{Note1}%
+  \BibitemOpen
+  \bibinfo {note} {Conservative estimates on the systematic uncertainties of
+  the total live and charge were made. Determination of systematics on these
+  quantities is a work in progress. (Private communication with D.
+  Mack)}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Laget}(2005)}]{LAGET2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Laget}},\ }\bibfield  {title} {\bibinfo {title} {The electro-disintegration
+  of few body systems revisited},\ }\href
+  {https://doi.org/https://doi.org/10.1016/j.physletb.2005.01.046} {\bibfield
+  {journal} {\bibinfo  {journal} {Physics Letters B}\ }\textbf {\bibinfo
+  {volume} {609}},\ \bibinfo {pages} {49 } (\bibinfo {year}
+  {2005})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Lacombe}\ \emph {et~al.}(1980)\citenamefont
   {Lacombe}, \citenamefont {Loiseau}, \citenamefont {Richard}, \citenamefont
   {Mau}, \citenamefont {C\^ot\'e}, \citenamefont {Pir\`es},\ and\ \citenamefont
@@ -343,12 +370,6 @@
   {journal} {\bibinfo  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume}
   {21}},\ \bibinfo {pages} {861} (\bibinfo {year} {1980})}\BibitemShut
   {NoStop}%
-\bibitem [{Note1()}]{Note1}%
-  \BibitemOpen
-  \bibinfo {note} {Conservative estimates on the systematic uncertainties of
-  the total live and charge were made. Determination of systematics on these
-  quantities is a work in progress. (Private communication with D.
-  Mack)}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Forest}(1983)}]{DEFOREST1983}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
