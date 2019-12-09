@@ -1,11 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/MacPorts 2017_0)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: prl.aux
-Case mismatch error between cite keys sargsian_2001 and Sargsian_2001
----line 50 of file prl.aux
- : \citation{sargsian_2001
- :                        ,PhysRevC.56.1124}
-I'm skipping whatever remains of this command
 The style file: apsrev4-2.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -18,7 +13,7 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: prlNotes.bib
 Database file #2: prl.bib
-I was expecting a `,' or a `}'---line 319 of file prl.bib
+I was expecting a `,' or a `}'---line 333 of file prl.bib
  :   
  :   year         = {2014},
 (Error may have been on previous line)
@@ -40,45 +35,45 @@ Warning--empty year in hodo_techreport
 Warning--empty year in dc_techreport
 Warning--empty year in ngc_techreport
 Warning--empty year in e12_10_003_proposal
-You've used 37 entries,
+You've used 38 entries,
             6079 wiz_defined-function locations,
-            1918 strings with 23174 characters,
-and the built_in function-call counts, 33577 in all, are:
-= -- 2590
-> -- 708
-< -- 173
-+ -- 241
-- -- 176
-* -- 4894
-:= -- 3345
-add.period$ -- 35
-call.type$ -- 37
-change.case$ -- 182
-chr.to.int$ -- 44
-cite$ -- 41
-duplicate$ -- 3123
-empty$ -- 2404
-format.name$ -- 406
-if$ -- 6781
+            1926 strings with 23389 characters,
+and the built_in function-call counts, 34468 in all, are:
+= -- 2669
+> -- 719
+< -- 177
++ -- 245
+- -- 178
+* -- 5008
+:= -- 3438
+add.period$ -- 36
+call.type$ -- 38
+change.case$ -- 187
+chr.to.int$ -- 45
+cite$ -- 42
+duplicate$ -- 3204
+empty$ -- 2472
+format.name$ -- 411
+if$ -- 6967
 int.to.chr$ -- 4
-int.to.str$ -- 44
-missing$ -- 468
-newline$ -- 157
-num.names$ -- 102
-pop$ -- 1196
+int.to.str$ -- 45
+missing$ -- 482
+newline$ -- 160
+num.names$ -- 105
+pop$ -- 1228
 preamble$ -- 1
-purify$ -- 170
+purify$ -- 175
 quote$ -- 0
-skip$ -- 1514
+skip$ -- 1563
 stack$ -- 0
-substring$ -- 889
-swap$ -- 2842
-text.length$ -- 66
+substring$ -- 921
+swap$ -- 2913
+text.length$ -- 67
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 475
+type$ -- 487
 warning$ -- 5
-while$ -- 103
+while$ -- 106
 width$ -- 0
-write$ -- 351
-(There were 2 error messages)
+write$ -- 360
+(There was 1 error message)
