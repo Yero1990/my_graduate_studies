@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  13 DEC 2019 17:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  16 DEC 2019 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -453,11 +453,11 @@ Package pdftex.def Info: ../prl_plots/PRL_plot1.pdf used on input line 44.
                                                   \fi \fi 
 l.50 \end{center}
                   <../prl_plots/PRL_plot1.pdf>]
-<../prl_plots/PRL_plot2.pdf, id=152, 484.209pt x 722.7pt>
+<../prl_plots/PRL_plot2.pdf, id=147, 484.209pt x 722.7pt>
 File: ../prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use ../prl_plots/PRL_plot2.pdf>
-Package pdftex.def Info: ../prl_plots/PRL_plot2.pdf used on input line 92.
+Package pdftex.def Info: ../prl_plots/PRL_plot2.pdf used on input line 90.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
 
 
@@ -468,7 +468,7 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.123 
+l.121 
        <../prl_plots/PRL_plot2.pdf>]) (./prl.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
@@ -498,11 +498,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 272--277
 hms _
  []
 
-[5]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
-
+[5]
 Underfull \hbox (badness 6445) in paragraph at lines 299--303
  []\OT1/cmr/m/n/9 D. Day, Pre-lim-i-nary de-sign of the shms no-ble
  []
@@ -555,13 +554,13 @@ Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 3E7BD285620756FEFF8F8F8396AF83C0;242.
  ) 
 Here is how much of TeX's memory you used:
- 8475 strings out of 494108
- 119528 string characters out of 6155655
+ 8474 strings out of 494108
+ 119517 string characters out of 6155655
  344392 words of memory out of 5000000
- 11687 multiletter control sequences out of 15000+600000
+ 11686 multiletter control sequences out of 15000+600000
  18656 words of font info for 70 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 30i,8n,57p,657b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,8n,57p,657b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -586,10 +585,10 @@ blic/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfon
 ts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb>
-Output written on prl.pdf (6 pages, 415213 bytes).
+Output written on prl.pdf (6 pages, 414836 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 299 compressed objects within 3 object streams
+ 346 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
  48 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
