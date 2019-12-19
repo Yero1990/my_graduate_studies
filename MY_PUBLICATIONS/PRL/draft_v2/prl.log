@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  16 DEC 2019 22:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  17 DEC 2019 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -76,10 +76,13 @@ Class revtex4-2 Info: RevTeX society APS selected on input line 37.
 Class revtex4-2 Info: Selecting journal prl on input line 7583.
 Class revtex4-2 Info: APS journal PRL selected on input line 7584.
 
-(/opt/local/share/texmf-texlive/tex/latex/aps12pt4-2.rtx
-File: aps12pt4-2 2019/01/18/14:29:48 4.2c (https://journals.aps.org/revtex/ for
+
+Class revtex4-2 Warning: No type size specified, using default 10.
+
+(/opt/local/share/texmf-texlive/tex/latex/aps10pt4-2.rtx
+File: aps10pt4-2 2019/01/18/14:29:48 4.2c (https://journals.aps.org/revtex/ for
  documentation)
-Class revtex4-2 Info: RevTeX pointsize 12pt selected on input line 36.
+Class revtex4-2 Info: RevTeX pointsize 10pt selected on input line 36.
 )
 (/opt/local/share/texmf-texlive/tex/latex/textcase/textcase.sty
 Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
@@ -411,348 +414,181 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.77 \maketitle
+l.81 \maketitle
                
 ? 
 
-LaTeX Warning: Command \pdfstringdef invalid in math mode on input line 77.
+LaTeX Warning: Command \pdfstringdef invalid in math mode on input line 81.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 77.
+(hyperref)                removing `\\' on input line 81.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 77.
+(hyperref)                removing `superscript' on input line 81.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.77 \maketitle
+l.81 \maketitle
                
 ? 
 (./introduction.tex) (./body.tex
-Underfull \hbox (badness 1132) in paragraph at lines 1--42
-[]\OT1/cmr/m/n/12 The deuteron is the only two-nucleon
+Underfull \hbox (badness 2065) in paragraph at lines 1--41
+[]\OT1/cmr/m/n/10 The sys-tem-atic un-cer-tain-ties due to our lim-ited
  []
 
-
-Underfull \hbox (badness 4543) in paragraph at lines 1--42
-[]\OT1/cmr/m/n/12 In re-al-ity, the ejected par-ti-cles un-
- []
-
-
-Underfull \hbox (badness 1107) in paragraph at lines 1--42
-[]\OT1/cmr/m/n/12 Previous deuteron electro-disintegration
- []
-
-
-Underfull \hbox (badness 2951) in paragraph at lines 1--42
-\OT1/cmr/m/n/12 ex-per-i-ments per-formed at Jef-fer-son Lab
- []
-
-
-Underfull \hbox (badness 1082) in paragraph at lines 1--42
-\OT1/cmr/m/n/12 (JLab) have helped con-firmed var-i-ous of
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 1--42
-\OT1/cmr/m/n/12 the spec-trom-e-ter ac-cep-tance model us-ing
- []
-
-
-Underfull \hbox (badness 1655) in paragraph at lines 1--42
-[]\OT1/cmr/m/n/12 Both ex-per-i-men-tal and the-o-ret-i-cal re-
- []
-
-[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-[4] [5] <../prl_plots/PRL_plot1.pdf, id=104, 968.41798pt x 433.62pt>
+[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<../prl_plots/PRL_plot1.pdf, id=92, 968.41798pt x 433.62pt>
 File: ../prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use ../prl_plots/PRL_plot1.pdf>
-Package pdftex.def Info: ../prl_plots/PRL_plot1.pdf used on input line 45.
+Package pdftex.def Info: ../prl_plots/PRL_plot1.pdf used on input line 44.
 (pdftex.def)             Requested size: 445.47768pt x 199.46762pt.
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
 
-Underfull \hbox (badness 1681) in paragraph at lines 57--70
-\OT1/cmr/m/n/12 where $\OML/cmm/m/it/12 ^^[[]$ \OT1/cmr/m/n/12 is the 5-fold ex
--per-i-men-tal
- []
-
-
-Underfull \hbox (badness 3049) in paragraph at lines 57--70
-\OT1/cmr/m/n/12 (or the-o-ret-i-cal) dif-fer-en-tial cross sec-tion
- []
-
-
-Underfull \hbox (badness 1082) in paragraph at lines 57--70
-\OT1/cmr/m/n/12 is the re-coil fac-tor that arises from the
- []
-
-
-Underfull \hbox (badness 1303) in paragraph at lines 57--70
-\OT1/cmr/m/n/12 in-te-gra-tion over miss-ing en-ergy and $\OML/cmm/m/it/12 ^^[[
-]$
- []
-
-[6]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 70.
-
-<../prl_plots/PRL_plot2.pdf, id=130, 484.209pt x 722.7pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.50 \end{center}
+                  <../prl_plots/PRL_plot1.pdf>]
+<../prl_plots/PRL_plot2.pdf, id=147, 484.209pt x 722.7pt>
 File: ../prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use ../prl_plots/PRL_plot2.pdf>
-Package pdftex.def Info: ../prl_plots/PRL_plot2.pdf used on input line 91.
+Package pdftex.def Info: ../prl_plots/PRL_plot2.pdf used on input line 90.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
-
-Overfull \hbox (13.1039pt too wide) in paragraph at lines 91--92
- [][] 
- []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7]
+[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 122.
-
-) (./prl.bbl
-Underfull \hbox (badness 1418) in paragraph at lines 58--64
- []\OT1/cmr/m/n/10.95 K. S. Egiyan \OT1/cmr/m/it/10.95 et al. \OT1/cmr/m/n/10.9
-5 (CLAS Col-lab-o-ra-
- []
-
-
-Underfull \hbox (badness 1057) in paragraph at lines 68--74
- \OT1/cmr/m/n/10.95 Mea-sure-ment of two- and three-nucleon
- []
-
-
-Underfull \hbox (badness 2426) in paragraph at lines 78--86
- \OT1/cmr/m/n/10.95 re-ac-tion, [][]Phys. Rev. Lett. \OT1/cmr/bx/n/10.95 99\OT1
-/cmr/m/n/10.95 , 072501
- []
-
-[8]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 86.
-
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.121 
+       <../prl_plots/PRL_plot2.pdf>]) (./prl.bbl
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no “ in font cmr9!
 
 Underfull \hbox (badness 10000) in paragraph at lines 101--108
- \OT1/cmr/m/n/10.95 in $[]$H(e,e'p)n, [][]$\OT1/cmtt/m/n/10.95 https : / / www 
-. jlab . org /
+ \OT1/cmtt/m/n/9 jlab . org / exp _ prog / proposals / 01 / PR01-[]020 . pdf$[]
+[]
+ []
+
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no “ in font cmr9!
+
+Underfull \hbox (badness 10000) in paragraph at lines 272--277
+ []\OT1/cmr/m/n/9 M. Christy, P. Mon-aghan, N. Kalan-tar-i-ans,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--108
- \OT1/cmtt/m/n/10.95 exp _ prog / proposals / 01 / PR01-[]020 . pdf$[][]
- []
-
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
-
-Overfull \hbox (9.1707pt too wide) in paragraph at lines 162--170
- [][]\OT1/cmr/m/n/10.95 https://doi.org/10.1142/S0218301315300039[][]. 
- []
-
-
-Underfull \hbox (badness 1132) in paragraph at lines 223--230
- []\OT1/cmr/m/n/10.95 H. Arenh^^?ovel, F. Ritz, H. G^^?oller, and
- []
-
-[9]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 253.
-
-
-Underfull \hbox (badness 1077) in paragraph at lines 260--266
- []\OT1/cmr/m/n/10.95 G. Niculescu, I. Niculescu, M. Bur-ton,
- []
-
-
-Underfull \hbox (badness 7256) in paragraph at lines 260--266
- \OT1/cmr/m/n/10.95 Shms ho-doscope scin-til-la-tor de-tec-tors,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--266
- [][]$\OT1/cmtt/m/n/10.95 https : / / hallcweb . jlab . org / document /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 260--266
- \OT1/cmtt/m/n/10.95 howtos / shms _ scintillator _ hodoscope .
- []
-
-
-Underfull \hbox (badness 2894) in paragraph at lines 272--277
- []\OT1/cmr/m/n/10.95 M. Christy, P. Mon-aghan, N. Kalan-
+Underfull \hbox (badness 4316) in paragraph at lines 272--277
+ \OT1/cmr/m/n/9 D. Biswas, and M. Long, Shms drift cham-bers,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 272--277
- \OT1/cmtt/m/n/10.95 org / document / howtos / shms _ drift _
+ [][]$\OT1/cmtt/m/n/9 https : / / hallcweb . jlab . org / document / howtos / s
+hms _
  []
 
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no “ in font cmr10!
+Missing character: There is no â in font cmr9!
+Missing character: There is no € in font cmr9!
+Missing character: There is no “ in font cmr9!
 
-Underfull \hbox (badness 10000) in paragraph at lines 299--303
- []\OT1/cmr/m/n/10.95 D. Day, Pre-lim-i-nary de-sign of
+Underfull \hbox (badness 6445) in paragraph at lines 299--303
+ []\OT1/cmr/m/n/9 D. Day, Pre-lim-i-nary de-sign of the shms no-ble
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 299--303
- \OT1/cmr/m/n/10.95 the shms no-ble cerenkov de-tec-tor,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 299--303
- [][]$\OT1/cmtt/m/n/10.95 https : / / hallcweb . jlab . org / DocDB /
+[5]
+Underfull \hbox (badness 7047) in paragraph at lines 306--311
+ []\OT1/cmr/m/n/9 C. Yero, Up-date on spec-trom-e-ter off-sets de-ter-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 306--311
- [][]$\OT1/cmtt/m/n/10.95 https : / / hallcweb . jlab . org / DocDB /
+ \OT1/cmr/m/n/9 mi-na-tion us-ing h(e,e'p) elas-tics (2019), [][]$\OT1/cmtt/m/n
+/9 https :
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 306--311
- \OT1/cmtt/m/n/10.95 0010 / 001036 / 002 / HC _ SoftwareMeeting _
- []
+ \OT1/cmtt/m/n/9 / / hallcweb . jlab . org / DocDB / 0010 / 001036 / 002 / HC _
 
-
-Underfull \hbox (badness 4366) in paragraph at lines 314--319
- []\OT1/cmr/m/n/10.95 C. Yero, Op-tics op-ti-miza-tion for the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--319
- [][]$\OT1/cmtt/m/n/10.95 https : / / hallcweb . jlab . org / DocDB /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 322--326
- []\OT1/cmr/m/n/10.95 C. Yero, Pro-ton ab-sorp-tion (2019),
+ []\OT1/cmr/m/n/9 C. Yero, Pro-ton ab-sorp-tion (2019), [][]$\OT1/cmtt/m/n/9 ht
+tps :
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 322--326
- [][]$\OT1/cmtt/m/n/10.95 https : / / hallcweb . jlab . org / DocDB /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 322--326
- \OT1/cmtt/m/n/10.95 0010 / 001020 / 002 / ProtonAbsorption _
+ \OT1/cmtt/m/n/9 / / hallcweb . jlab . org / DocDB / 0010 / 001020 / 002 /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 329--333
- [][]$\OT1/cmtt/m/n/10.95 https : / / hallcweb . jlab . org / DocDB /
+ []\OT1/cmr/m/n/9 C. Yero, Hms tar-get boil-ing stud-ies (2019),
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 329--333
- \OT1/cmtt/m/n/10.95 0010 / 001023 / 003 / TargetBoiling _ v2 .
+ [][]$\OT1/cmtt/m/n/9 https : / / hallcweb . jlab . org / DocDB / 0010 / 001023
+ /
  []
 
-
-Underfull \hbox (badness 3536) in paragraph at lines 367--373
- \OT1/cmr/m/n/10.95 R. V. Mau, J. C^ot^^Se, P. Pir^^Res, and
- []
-
-
-Underfull \hbox (badness 1769) in paragraph at lines 376--382
- []\OT1/cmr/m/n/10.95 T. D. For-est, Off-shell electron-nucleon
- []
-
-[10]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 382.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 385--392
- []\OT1/cmr/m/n/10.95 R. Mach-leidt, High-precision, charge-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--419
- \OT1/cmr/m/n/10.95 Disintegration at Very High Miss-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 414--419
- \OT1/cmr/m/n/10.95 Mo-menta, [][]$\OT1/cmtt/m/n/10.95 https : / / www . jlab .
- org / exp _
- []
-
-) [11] [12pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.1}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.90 \end{document}
-                    <../prl_plots/PRL_plot1.pdf>] [13pdfTeX warning (ext4): des
-tination with the same identifier (name{figure.2}) has been already used, dupli
-cate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.90 \end{document}
-                    <../prl_plots/PRL_plot2.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
+) [6]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
  (./prl.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
 Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 3E7BD285620756FEFF8F8F8396AF83C0;242.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
  ) 
 Here is how much of TeX's memory you used:
- 8477 strings out of 494108
- 119688 string characters out of 6155655
- 344187 words of memory out of 5000000
- 11693 multiletter control sequences out of 15000+600000
- 19913 words of font info for 74 fonts, out of 8000000 for 9000
+ 8475 strings out of 494108
+ 119527 string characters out of 6155655
+ 344479 words of memory out of 5000000
+ 11687 multiletter control sequences out of 15000+600000
+ 18656 words of font info for 70 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 30i,8n,57p,657b,584s stack positions out of 5000i,500n,10000p,200000b,80000s
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></o
-pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></opt/lo
-cal/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/share/
-texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></opt/local/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type
-1/public/amsfonts/cm/cmr17.pfb></opt/local/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmr8.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmsy10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
-6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb></opt
-/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti12.pfb></opt/loca
-l/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></opt/local/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt12.pfb></opt/local/share/te
-xmf-texlive/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on prl.pdf (13 pages, 356012 bytes).
+ 30i,8n,57p,657b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
+</opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
+al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></opt/local/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></opt/local/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/local/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmmi7.pfb></opt/local/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmmi9.pfb></opt/local/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmr10.pfb></opt/local/share/texmf-texlive/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmr17.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmr5.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.
+pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></o
+pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></opt/loca
+l/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></opt/local/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></opt/local/share/texm
+f-texlive/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/local/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></opt/local/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></opt/local/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmsy9.pfb></opt/local/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb>
+Output written on prl.pdf (6 pages, 415321 bytes).
 PDF statistics:
- 369 PDF objects out of 1000 (max. 8388607)
- 315 compressed objects within 4 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 345 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 48 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
