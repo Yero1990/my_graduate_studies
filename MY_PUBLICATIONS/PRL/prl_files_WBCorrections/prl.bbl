@@ -1,0 +1,360 @@
+%apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+%Control: key (0)
+%Control: author (8) initials jnrlst
+%Control: editor formatted (1) identically to author
+%Control: production of article title (0) allowed
+%Control: page (0) single
+%Control: year (1) truncated
+%Control: production of eprint (0) enabled
+\begin{thebibliography}{31}%
+\makeatletter
+\providecommand \@ifxundefined [1]{%
+ \@ifx{#1\undefined}
+}%
+\providecommand \@ifnum [1]{%
+ \ifnum #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \@ifx [1]{%
+ \ifx #1\expandafter \@firstoftwo
+ \else \expandafter \@secondoftwo
+ \fi
+}%
+\providecommand \natexlab [1]{#1}%
+\providecommand \enquote  [1]{``#1''}%
+\providecommand \bibnamefont  [1]{#1}%
+\providecommand \bibfnamefont [1]{#1}%
+\providecommand \citenamefont [1]{#1}%
+\providecommand \href@noop [0]{\@secondoftwo}%
+\providecommand \href [0]{\begingroup \@sanitize@url \@href}%
+\providecommand \@href[1]{\@@startlink{#1}\@@href}%
+\providecommand \@@href[1]{\endgroup#1\@@endlink}%
+\providecommand \@sanitize@url [0]{\catcode `\\12\catcode `\$12\catcode
+  `\&12\catcode `\#12\catcode `\^12\catcode `\_12\catcode `\%12\relax}%
+\providecommand \@@startlink[1]{}%
+\providecommand \@@endlink[0]{}%
+\providecommand \url  [0]{\begingroup\@sanitize@url \@url }%
+\providecommand \@url [1]{\endgroup\@href {#1}{\urlprefix }}%
+\providecommand \urlprefix  [0]{URL }%
+\providecommand \Eprint [0]{\href }%
+\providecommand \doibase [0]{https://doi.org/}%
+\providecommand \selectlanguage [0]{\@gobble}%
+\providecommand \bibinfo  [0]{\@secondoftwo}%
+\providecommand \bibfield  [0]{\@secondoftwo}%
+\providecommand \translation [1]{[#1]}%
+\providecommand \BibitemOpen [0]{}%
+\providecommand \bibitemStop [0]{}%
+\providecommand \bibitemNoStop [0]{.\EOS\space}%
+\providecommand \EOS [0]{\spacefactor3000\relax}%
+\providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
+\let\auto@bib@innerbib\@empty
+%</preamble>
+\bibitem [{\citenamefont {Egiyan}\ \emph {et~al.}(2003)\citenamefont {Egiyan}
+  \emph {et~al.}}]{PhysRevC.68.014313}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~S.}\ \bibnamefont
+  {Egiyan}} \emph {et~al.} (\bibinfo {collaboration} {CLAS Collaboration}),\
+  }\bibfield  {title} {\bibinfo {title} {Observation of nuclear scaling in the
+  ${A(e,e}^{\ensuremath{'}})$ reaction at ${x}_{B}>1$},\ }\href
+  {https://doi.org/10.1103/PhysRevC.68.014313} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {68}},\ \bibinfo
+  {pages} {014313} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Egiyan}\ \emph {et~al.}(2006)\citenamefont {Egiyan}
+  \emph {et~al.}}]{PhysRevLett.96.082501}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~S.}\ \bibnamefont
+  {Egiyan}} \emph {et~al.} (\bibinfo {collaboration} {CLAS Collaboration}),\
+  }\bibfield  {title} {\bibinfo {title} {Measurement of two- and three-nucleon
+  short-range correlation probabilities in nuclei},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.96.082501} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {96}},\
+  \bibinfo {pages} {082501} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Shneor}\ \emph {et~al.}(2007)\citenamefont {Shneor}
+  \emph {et~al.}}]{PhysRevLett.99.072501}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Shneor}} \emph {et~al.} (\bibinfo {collaboration} {Jefferson Lab Hall A
+  Collaboration}),\ }\bibfield  {title} {\bibinfo {title} {Investigation of
+  proton-proton short-range correlations via the
+  $^{12}\mathrm{C}(e,{e}^{\ensuremath{'}}pp)$ reaction},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.99.072501} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {99}},\
+  \bibinfo {pages} {072501} (\bibinfo {year} {2007})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Fomin}\ \emph {et~al.}(2017)\citenamefont {Fomin},
+  \citenamefont {Higinbotham}, \citenamefont {Sargsian},\ and\ \citenamefont
+  {Solvignon}}]{Fomin_2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
+  {Fomin}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Higinbotham}},
+  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Sargsian}},\ and\
+  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Solvignon}},\ }\bibfield
+  {title} {\bibinfo {title} {New results on short-range correlations in
+  nuclei},\ }\href {https://doi.org/10.1146/annurev-nucl-102115-044939}
+  {\bibfield  {journal} {\bibinfo  {journal} {Annual Review of Nuclear and
+  Particle Science}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo {pages}
+  {129–159} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ulmer}\ \emph {et~al.}(2001)\citenamefont {Ulmer}
+  \emph {et~al.}}]{pr01-020}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
+  {Ulmer}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {Short-{Distance
+  Structure} of the {Deuteron} and {Reaction Dynamics} in $^{2}${H}(e,e'p)n}},\
+  \bibinfo {howpublished}
+  {\url{https://www.jlab.org/exp_prog/proposals/01/PR01-020.pdf}} (\bibinfo
+  {year} {2001}),\ \bibinfo {note} {\textit{Jefferson Lab Proposal
+  E01-020}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Bochna}\ \emph {et~al.}(1998)\citenamefont {Bochna}
+  \emph {et~al.}}]{PhysRevLett.81.4576}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Bochna}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
+  {Measurements of deuteron photodisintegration up to 4.0 gev},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.81.4576} {\bibfield  {journal} {\bibinfo
+   {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {81}},\ \bibinfo
+  {pages} {4576} (\bibinfo {year} {1998})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Schulte}\ \emph {et~al.}(2001)\citenamefont {Schulte}
+  \emph {et~al.}}]{PhysRevLett.87.102302}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~C.}\ \bibnamefont
+  {Schulte}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
+  {Measurement of the high energy two-body deuteron photodisintegration
+  differential cross section},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.87.102302} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {87}},\
+  \bibinfo {pages} {102302} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Schulte}\ \emph {et~al.}(2002)\citenamefont {Schulte}
+  \emph {et~al.}}]{PhysRevC.66.042201}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~C.}\ \bibnamefont
+  {Schulte}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {High
+  energy angular distribution measurements of the exclusive deuteron
+  photodisintegration reaction},\ }\href
+  {https://doi.org/10.1103/PhysRevC.66.042201} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {66}},\ \bibinfo
+  {pages} {042201} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sargsian}(2001)}]{Sargsian_2001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {{Selected Topics} in
+  {High Energy Semi-Exclusive Electro-Nuclear Reactions}},\ }\href
+  {https://doi.org/10.1142/s0218301301000617} {\bibfield  {journal} {\bibinfo
+  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
+  {volume} {10}},\ \bibinfo {pages} {405–457} (\bibinfo {year}
+  {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Frankfurt}\ \emph {et~al.}(1997)\citenamefont
+  {Frankfurt}, \citenamefont {Sargsian},\ and\ \citenamefont
+  {Strikman}}]{PhysRevC.56.1124}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~L.}\ \bibnamefont
+  {Frankfurt}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sargsian}},\ and\ \bibinfo {author} {\bibfnamefont {M.~I.}\ \bibnamefont
+  {Strikman}},\ }\bibfield  {title} {\bibinfo {title} {Feynman graphs and
+  generalized eikonal approach to high energy knock-out processes},\ }\href
+  {https://doi.org/10.1103/PhysRevC.56.1124} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
+  {pages} {1124} (\bibinfo {year} {1997})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
+  {Sargsian}(2015)}]{sargsian_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Boeglin}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {Modern studies of the
+  deuteron: From the lab frame to the light front},\ }\href
+  {https://doi.org/10.1142/S0218301315300039} {\bibfield  {journal} {\bibinfo
+  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
+  {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo {year} {2015})},\
+  \Eprint {https://arxiv.org/abs/https://doi.org/10.1142/S0218301315300039}
+  {https://doi.org/10.1142/S0218301315300039} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Ulmer}\ \emph {et~al.}(2002)\citenamefont {Ulmer}
+  \emph {et~al.}}]{PhysRevLett.89.062301}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~E.}\ \bibnamefont
+  {Ulmer}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
+  {$^{\mathrm{2}}\mathrm{H}(e,{e}^{\ensuremath{'}}p)n$ reaction at high recoil
+  momenta},\ }\href {https://doi.org/10.1103/PhysRevLett.89.062301} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
+  {volume} {89}},\ \bibinfo {pages} {062301} (\bibinfo {year}
+  {2002})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Egiyan}\ \emph {et~al.}(2007)\citenamefont {Egiyan}
+  \emph {et~al.}}]{PhysRevLett.98.262502}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~S.}\ \bibnamefont
+  {Egiyan}} \emph {et~al.} (\bibinfo {collaboration} {CLAS Collaboration}),\
+  }\bibfield  {title} {\bibinfo {title} {Experimental study of exclusive
+  $^{2}\mathrm{H}(e,{e}^{\ensuremath{'}}p)n$ reaction mechanisms at high
+  ${Q}^{2}$},\ }\href {https://doi.org/10.1103/PhysRevLett.98.262502}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
+  {\bibinfo {volume} {98}},\ \bibinfo {pages} {262502} (\bibinfo {year}
+  {2007})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boeglin}\ \emph {et~al.}(2011)\citenamefont {Boeglin}
+  \emph {et~al.}}]{PhysRevLett.107.262501}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~U.}\ \bibnamefont
+  {Boeglin}} \emph {et~al.} (\bibinfo {collaboration} {For the Hall A
+  Collaboration}),\ }\bibfield  {title} {\bibinfo {title} {Probing the high
+  momentum component of the deuteron at high ${Q}^{2}$},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.107.262501} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {107}},\
+  \bibinfo {pages} {262501} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Niculescu}\ \emph {et~al.}()\citenamefont
+  {Niculescu}, \citenamefont {Niculescu}, \citenamefont {Burton}, \citenamefont
+  {Coquelin}, \citenamefont {Nisson},\ and\ \citenamefont
+  {Jarell}}]{hodo_techreport}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Niculescu}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Niculescu}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Burton}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Coquelin}}, \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Nisson}},\ and\ \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {Jarell}},\ }\href@noop {} {\bibinfo {title}
+  {Shms hodoscope scintillator detectors}},\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/document/howtos/shms_scintillator_hodoscope.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Christy}\ \emph {et~al.}()\citenamefont {Christy},
+  \citenamefont {Monaghan}, \citenamefont {Kalantarians}, \citenamefont
+  {Biswas},\ and\ \citenamefont {Long}}]{dc_techreport}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Christy}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Monaghan}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Kalantarians}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Biswas}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Long}},\ }\href@noop {} {\bibinfo {title}
+  {Shms drift chambers}},\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/document/howtos/shms_drift_chambers.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Mkrtchyan}\ \emph {et~al.}(2013)\citenamefont
+  {Mkrtchyan} \emph {et~al.}}]{Mkrtchyan_2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Mkrtchyan}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {The
+  lead-glass electromagnetic calorimeters for the magnetic spectrometers in
+  hall c at jefferson lab},\ }\href
+  {https://doi.org/10.1016/j.nima.2013.03.070} {\bibfield  {journal} {\bibinfo
+  {journal} {Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}\ }\textbf
+  {\bibinfo {volume} {719}},\ \bibinfo {pages} {85–100} (\bibinfo {year}
+  {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Li}(2012)}]{Li_Wenliang_mthesis}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Li}},\ }\emph {\bibinfo {title} {Heavy Gas Cherenkov Detector Construction
+  for Hall C at Thomas Jefferson National Accelerator Facility}},\ \href
+  {https://ourspace.uregina.ca/handle/10294/3818} {Master's thesis},\ \bibinfo
+  {school} {University of Regina} (\bibinfo {year} {2012})\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Day}()}]{ngc_techreport}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Day}},\ }\href@noop {} {\bibinfo {title} {Preliminary design of the shms
+  noble cerenkov detector}},\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/DocDB/0009/000933/001/shms-cerv6.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Yero}(2019{\natexlab{a}})}]{cyero_specKinUnc}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Yero}},\ }\href@noop {} {\bibinfo {title} {Update on spectrometer offsets
+  determination using h(e,e'p) elastics}} (\bibinfo {year}
+  {2019}{\natexlab{a}}),\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/DocDB/0010/001036/002/HC_SoftwareMeeting_Oct03_2019_pdf.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Yero}(2019{\natexlab{b}})}]{cyero_SHMSOptics}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Yero}},\ }\href@noop {} {\bibinfo {title} {Optics optimization for the
+  d(e,e'p)n experiment [e12-10-003]}} (\bibinfo {year} {2019}{\natexlab{b}}),\
+  \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/DocDB/0010/001033/001/d2_optim.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Yero}(2019{\natexlab{c}})}]{cyero_pAbs}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Yero}},\ }\href@noop {} {\bibinfo {title} {Proton absorption}} (\bibinfo
+  {year} {2019}{\natexlab{c}}),\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/DocDB/0010/001020/002/ProtonAbsorption_slides.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Yero}(2019{\natexlab{d}})}]{cyero_tgtBoil}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Yero}},\ }\href@noop {} {\bibinfo {title} {Hms target boiling studies}}
+  (\bibinfo {year} {2019}{\natexlab{d}}),\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/DocDB/0010/001023/003/TargetBoiling_v2.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Arrington}(2004)}]{PhysRevC.69.022201}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Arrington}},\ }\bibfield  {title} {\bibinfo {title} {Implications of the
+  discrepancy between proton form factor measurements},\ }\href
+  {https://doi.org/10.1103/PhysRevC.69.022201} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {69}},\ \bibinfo
+  {pages} {022201} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
+\bibitem [{Note1()}]{Note1}%
+  \BibitemOpen
+  \bibinfo {note} {Conservative estimates on the systematic uncertainties of
+  the total live and charge were made. Determination of systematics on these
+  quantities is a work in progress. (Private communication with D.
+  Mack)}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Laget}(2005)}]{LAGET2005}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Laget}},\ }\bibfield  {title} {\bibinfo {title} {The electro-disintegration
+  of few body systems revisited},\ }\href
+  {https://doi.org/https://doi.org/10.1016/j.physletb.2005.01.046} {\bibfield
+  {journal} {\bibinfo  {journal} {Physics Letters B}\ }\textbf {\bibinfo
+  {volume} {609}},\ \bibinfo {pages} {49 } (\bibinfo {year}
+  {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lacombe}\ \emph {et~al.}(1980)\citenamefont
+  {Lacombe}, \citenamefont {Loiseau}, \citenamefont {Richard}, \citenamefont
+  {Mau}, \citenamefont {C\^ot\'e}, \citenamefont {Pir\`es},\ and\ \citenamefont
+  {de~Tourreil}}]{PhysRevC.21.861}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Lacombe}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Loiseau}},
+  \bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont {Richard}}, \bibinfo
+  {author} {\bibfnamefont {R.~V.}\ \bibnamefont {Mau}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {C\^ot\'e}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Pir\`es}},\ and\ \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {de~Tourreil}},\ }\bibfield  {title}
+  {\bibinfo {title} {Parametrization of the paris $n\ensuremath{-}n$
+  potential},\ }\href {https://doi.org/10.1103/PhysRevC.21.861} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume}
+  {21}},\ \bibinfo {pages} {861} (\bibinfo {year} {1980})}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Forest}(1983)}]{DEFOREST1983}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
+  {Forest}},\ }\bibfield  {title} {\bibinfo {title} {Off-shell electron-nucleon
+  cross sections: The impulse approximation},\ }\href
+  {https://doi.org/https://doi.org/10.1016/0375-9474(83)90124-0} {\bibfield
+  {journal} {\bibinfo  {journal} {Nuclear Physics A}\ }\textbf {\bibinfo
+  {volume} {392}},\ \bibinfo {pages} {232} (\bibinfo {year}
+  {1983})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Machleidt}(2001)}]{PhysRevC.63.024001}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Machleidt}},\ }\bibfield  {title} {\bibinfo {title} {High-precision,
+  charge-dependent bonn nucleon-nucleon potential},\ }\href
+  {https://doi.org/10.1103/PhysRevC.63.024001} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {63}},\ \bibinfo
+  {pages} {024001} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Wiringa}\ \emph {et~al.}(1995)\citenamefont
+  {Wiringa}, \citenamefont {Stoks},\ and\ \citenamefont
+  {Schiavilla}}]{PhysRevC.51.38}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.~B.}\ \bibnamefont
+  {Wiringa}}, \bibinfo {author} {\bibfnamefont {V.~G.~J.}\ \bibnamefont
+  {Stoks}},\ and\ \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Schiavilla}},\ }\bibfield  {title} {\bibinfo {title} {Accurate
+  nucleon-nucleon potential with charge-independence breaking},\ }\href
+  {https://doi.org/10.1103/PhysRevC.51.38} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {51}},\ \bibinfo
+  {pages} {38} (\bibinfo {year} {1995})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Sargsian}(2010)}]{PhysRevC.82.014612}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {Large ${Q}^{2}$
+  electrodisintegration of the deuteron in the virtual nucleon approximation},\
+  }\href {https://doi.org/10.1103/PhysRevC.82.014612} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {82}},\
+  \bibinfo {pages} {014612} (\bibinfo {year} {2010})}\BibitemShut {NoStop}%
+\end{thebibliography}%
