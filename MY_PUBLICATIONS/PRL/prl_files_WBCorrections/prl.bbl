@@ -142,18 +142,6 @@
   {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
   {volume} {10}},\ \bibinfo {pages} {405–457} (\bibinfo {year}
   {2001})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Frankfurt}\ \emph {et~al.}(1997)\citenamefont
-  {Frankfurt}, \citenamefont {Sargsian},\ and\ \citenamefont
-  {Strikman}}]{PhysRevC.56.1124}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~L.}\ \bibnamefont
-  {Frankfurt}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
-  {Sargsian}},\ and\ \bibinfo {author} {\bibfnamefont {M.~I.}\ \bibnamefont
-  {Strikman}},\ }\bibfield  {title} {\bibinfo {title} {Feynman graphs and
-  generalized eikonal approach to high energy knock-out processes},\ }\href
-  {https://doi.org/10.1103/PhysRevC.56.1124} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
-  {pages} {1124} (\bibinfo {year} {1997})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
   {Sargsian}(2015)}]{sargsian_2015}%
   \BibitemOpen
@@ -166,6 +154,18 @@
   {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo {year} {2015})},\
   \Eprint {https://arxiv.org/abs/https://doi.org/10.1142/S0218301315300039}
   {https://doi.org/10.1142/S0218301315300039} \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Frankfurt}\ \emph {et~al.}(1997)\citenamefont
+  {Frankfurt}, \citenamefont {Sargsian},\ and\ \citenamefont
+  {Strikman}}]{PhysRevC.56.1124}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~L.}\ \bibnamefont
+  {Frankfurt}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
+  {Sargsian}},\ and\ \bibinfo {author} {\bibfnamefont {M.~I.}\ \bibnamefont
+  {Strikman}},\ }\bibfield  {title} {\bibinfo {title} {Feynman graphs and
+  generalized eikonal approach to high energy knock-out processes},\ }\href
+  {https://doi.org/10.1103/PhysRevC.56.1124} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
+  {pages} {1124} (\bibinfo {year} {1997})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Ulmer}\ \emph {et~al.}(2002)\citenamefont {Ulmer}
   \emph {et~al.}}]{PhysRevLett.89.062301}%
   \BibitemOpen
@@ -303,23 +303,6 @@
   {journal} {\bibinfo  {journal} {Physics Letters B}\ }\textbf {\bibinfo
   {volume} {609}},\ \bibinfo {pages} {49 } (\bibinfo {year}
   {2005})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Lacombe}\ \emph {et~al.}(1980)\citenamefont
-  {Lacombe}, \citenamefont {Loiseau}, \citenamefont {Richard}, \citenamefont
-  {Mau}, \citenamefont {C\^ot\'e}, \citenamefont {Pir\`es},\ and\ \citenamefont
-  {de~Tourreil}}]{PhysRevC.21.861}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Lacombe}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Loiseau}},
-  \bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont {Richard}}, \bibinfo
-  {author} {\bibfnamefont {R.~V.}\ \bibnamefont {Mau}}, \bibinfo {author}
-  {\bibfnamefont {J.}~\bibnamefont {C\^ot\'e}}, \bibinfo {author}
-  {\bibfnamefont {P.}~\bibnamefont {Pir\`es}},\ and\ \bibinfo {author}
-  {\bibfnamefont {R.}~\bibnamefont {de~Tourreil}},\ }\bibfield  {title}
-  {\bibinfo {title} {Parametrization of the paris $n\ensuremath{-}n$
-  potential},\ }\href {https://doi.org/10.1103/PhysRevC.21.861} {\bibfield
-  {journal} {\bibinfo  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume}
-  {21}},\ \bibinfo {pages} {861} (\bibinfo {year} {1980})}\BibitemShut
-  {NoStop}%
 \bibitem [{\citenamefont {Forest}(1983)}]{DEFOREST1983}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
@@ -349,6 +332,23 @@
   {https://doi.org/10.1103/PhysRevC.51.38} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {51}},\ \bibinfo
   {pages} {38} (\bibinfo {year} {1995})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Lacombe}\ \emph {et~al.}(1980)\citenamefont
+  {Lacombe}, \citenamefont {Loiseau}, \citenamefont {Richard}, \citenamefont
+  {Mau}, \citenamefont {C\^ot\'e}, \citenamefont {Pir\`es},\ and\ \citenamefont
+  {de~Tourreil}}]{PhysRevC.21.861}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Lacombe}}, \bibinfo {author} {\bibfnamefont {B.}~\bibnamefont {Loiseau}},
+  \bibinfo {author} {\bibfnamefont {J.~M.}\ \bibnamefont {Richard}}, \bibinfo
+  {author} {\bibfnamefont {R.~V.}\ \bibnamefont {Mau}}, \bibinfo {author}
+  {\bibfnamefont {J.}~\bibnamefont {C\^ot\'e}}, \bibinfo {author}
+  {\bibfnamefont {P.}~\bibnamefont {Pir\`es}},\ and\ \bibinfo {author}
+  {\bibfnamefont {R.}~\bibnamefont {de~Tourreil}},\ }\bibfield  {title}
+  {\bibinfo {title} {Parametrization of the paris $n\ensuremath{-}n$
+  potential},\ }\href {https://doi.org/10.1103/PhysRevC.21.861} {\bibfield
+  {journal} {\bibinfo  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume}
+  {21}},\ \bibinfo {pages} {861} (\bibinfo {year} {1980})}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Sargsian}(2010)}]{PhysRevC.82.014612}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
