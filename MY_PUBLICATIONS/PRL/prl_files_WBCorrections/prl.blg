@@ -22,6 +22,11 @@ I was expecting a `,' or a `}'---line 347 of file prl.bib
  :   year         = {2014},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+You're missing a field name---line 540 of file prl.bib
+ :   
+ :   %note         = {An optional note}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 control{REVTEX42Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
 control{apsrev42Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{0}, control.pages{0}, control.year{1}, control.eprint{N/A}, 
 Warning--jnrlst (dependency: not reversed) set 1
@@ -38,45 +43,45 @@ Control: production of eprint (0) enabled
 Warning--empty year in hodo_techreport
 Warning--empty year in dc_techreport
 Warning--empty year in ngc_techreport
-You've used 33 entries,
+You've used 30 entries,
             6079 wiz_defined-function locations,
-            1888 strings with 22189 characters,
-and the built_in function-call counts, 29320 in all, are:
-= -- 2287
-> -- 588
-< -- 154
-+ -- 205
-- -- 148
-* -- 4219
-:= -- 2943
-add.period$ -- 31
-call.type$ -- 33
-change.case$ -- 162
+            1877 strings with 21788 characters,
+and the built_in function-call counts, 27494 in all, are:
+= -- 2126
+> -- 561
+< -- 148
++ -- 190
+- -- 142
+* -- 3976
+:= -- 2723
+add.period$ -- 28
+call.type$ -- 30
+change.case$ -- 142
 chr.to.int$ -- 40
-cite$ -- 36
-duplicate$ -- 2730
-empty$ -- 2100
-format.name$ -- 335
-if$ -- 5915
-int.to.chr$ -- 4
-int.to.str$ -- 40
-missing$ -- 411
-newline$ -- 145
-num.names$ -- 90
-pop$ -- 1044
+cite$ -- 33
+duplicate$ -- 2555
+empty$ -- 1971
+format.name$ -- 320
+if$ -- 5568
+int.to.chr$ -- 1
+int.to.str$ -- 37
+missing$ -- 393
+newline$ -- 136
+num.names$ -- 81
+pop$ -- 973
 preamble$ -- 1
-purify$ -- 151
+purify$ -- 136
 quote$ -- 0
-skip$ -- 1342
+skip$ -- 1272
 stack$ -- 0
-substring$ -- 808
-swap$ -- 2465
-text.length$ -- 53
+substring$ -- 761
+swap$ -- 2325
+text.length$ -- 50
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 417
+type$ -- 381
 warning$ -- 4
-while$ -- 92
+while$ -- 86
 width$ -- 0
-write$ -- 317
-(There were 2 error messages)
+write$ -- 294
+(There were 3 error messages)
