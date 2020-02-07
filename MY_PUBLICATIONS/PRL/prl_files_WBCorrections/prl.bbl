@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{28}%
+\begin{thebibliography}{26}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -94,16 +94,18 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Annual Review of Nuclear and
   Particle Science}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo {pages}
   {129–159} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Ulmer}\ \emph {et~al.}(2001)\citenamefont {Ulmer}
-  \emph {et~al.}}]{pr01-020}%
+\bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
+  {Sargsian}(2015)}]{sargsian_2015}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.}~\bibnamefont
-  {Ulmer}} \emph {et~al.},\ }\href@noop {} {\bibinfo {title} {Short-{Distance
-  Structure} of the {Deuteron} and {Reaction Dynamics} in $^{2}${H}(e,e'p)n}},\
-  \bibinfo {howpublished}
-  {\url{https://www.jlab.org/exp_prog/proposals/01/PR01-020.pdf}} (\bibinfo
-  {year} {2001}),\ \bibinfo {note} {\textit{Jefferson Lab Proposal
-  E01-020}}\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Boeglin}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {Modern studies of the
+  deuteron: From the lab frame to the light front},\ }\href
+  {https://doi.org/10.1142/S0218301315300039} {\bibfield  {journal} {\bibinfo
+  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
+  {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo {year} {2015})},\
+  \Eprint {https://arxiv.org/abs/https://doi.org/10.1142/S0218301315300039}
+  {https://doi.org/10.1142/S0218301315300039} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Bochna}\ \emph {et~al.}(1998)\citenamefont {Bochna}
   \emph {et~al.}}]{PhysRevLett.81.4576}%
   \BibitemOpen
@@ -142,18 +144,6 @@
   {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
   {volume} {10}},\ \bibinfo {pages} {405–457} (\bibinfo {year}
   {2001})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
-  {Sargsian}(2015)}]{sargsian_2015}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Boeglin}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {Modern studies of the
-  deuteron: From the lab frame to the light front},\ }\href
-  {https://doi.org/10.1142/S0218301315300039} {\bibfield  {journal} {\bibinfo
-  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
-  {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo {year} {2015})},\
-  \Eprint {https://arxiv.org/abs/https://doi.org/10.1142/S0218301315300039}
-  {https://doi.org/10.1142/S0218301315300039} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Frankfurt}\ \emph {et~al.}(1997)\citenamefont
   {Frankfurt}, \citenamefont {Sargsian},\ and\ \citenamefont
   {Strikman}}]{PhysRevC.56.1124}%
@@ -166,16 +156,16 @@
   {https://doi.org/10.1103/PhysRevC.56.1124} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {56}},\ \bibinfo
   {pages} {1124} (\bibinfo {year} {1997})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Ulmer}\ \emph {et~al.}(2002)\citenamefont {Ulmer}
-  \emph {et~al.}}]{PhysRevLett.89.062301}%
+\bibitem [{\citenamefont {Boeglin}\ \emph {et~al.}(2011)\citenamefont {Boeglin}
+  \emph {et~al.}}]{PhysRevLett.107.262501}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {P.~E.}\ \bibnamefont
-  {Ulmer}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
-  {$^{\mathrm{2}}\mathrm{H}(e,{e}^{\ensuremath{'}}p)n$ reaction at high recoil
-  momenta},\ }\href {https://doi.org/10.1103/PhysRevLett.89.062301} {\bibfield
-  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
-  {volume} {89}},\ \bibinfo {pages} {062301} (\bibinfo {year}
-  {2002})}\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~U.}\ \bibnamefont
+  {Boeglin}} \emph {et~al.} (\bibinfo {collaboration} {For the Hall A
+  Collaboration}),\ }\bibfield  {title} {\bibinfo {title} {Probing the high
+  momentum component of the deuteron at high ${Q}^{2}$},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.107.262501} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {107}},\
+  \bibinfo {pages} {262501} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Egiyan}\ \emph {et~al.}(2007)\citenamefont {Egiyan}
   \emph {et~al.}}]{PhysRevLett.98.262502}%
   \BibitemOpen
@@ -187,16 +177,6 @@
   {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf
   {\bibinfo {volume} {98}},\ \bibinfo {pages} {262502} (\bibinfo {year}
   {2007})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Boeglin}\ \emph {et~al.}(2011)\citenamefont {Boeglin}
-  \emph {et~al.}}]{PhysRevLett.107.262501}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.~U.}\ \bibnamefont
-  {Boeglin}} \emph {et~al.} (\bibinfo {collaboration} {For the Hall A
-  Collaboration}),\ }\bibfield  {title} {\bibinfo {title} {Probing the high
-  momentum component of the deuteron at high ${Q}^{2}$},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.107.262501} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {107}},\
-  \bibinfo {pages} {262501} (\bibinfo {year} {2011})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Niculescu}\ \emph {et~al.}()\citenamefont
   {Niculescu}, \citenamefont {Niculescu}, \citenamefont {Burton}, \citenamefont
   {Coquelin}, \citenamefont {Nisson},\ and\ \citenamefont
