@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  6 FEB 2020 18:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  8 FEB 2020 13:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -457,7 +457,7 @@ Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 80.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.100 
+l.103 
        <./prl_plots/PRL_plot2.pdf>]) (./prl.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
@@ -500,11 +500,11 @@ Package rerunfilecheck Info: File `prl.out' has not changed.
 Here is how much of TeX's memory you used:
  8423 strings out of 494108
  118376 string characters out of 6155655
- 368197 words of memory out of 5000000
+ 362935 words of memory out of 5000000
  11645 multiletter control sequences out of 15000+600000
  18656 words of font info for 70 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 30i,8n,57p,575b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,8n,57p,600b,438s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -529,7 +529,7 @@ blic/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfon
 ts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb>
-Output written on prl.pdf (5 pages, 413021 bytes).
+Output written on prl.pdf (5 pages, 414861 bytes).
 PDF statistics:
  308 PDF objects out of 1000 (max. 8388607)
  257 compressed objects within 3 object streams
