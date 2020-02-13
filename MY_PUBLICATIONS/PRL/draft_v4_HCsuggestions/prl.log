@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  12 FEB 2020 18:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  13 FEB 2020 08:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -400,32 +400,32 @@ LaTeX Info: Redefining \nameref on input line 46.
 Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 46.
 \openout3 = `prlNotes.bib'.
 
- (./author_listv2.tex)
-LaTeX Font Info:    Try loading font information for U+msa on input line 68.
+ (./authorlist.tex)
+LaTeX Font Info:    Try loading font information for U+msa on input line 66.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 68.
+LaTeX Font Info:    Try loading font information for U+msb on input line 66.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\\' on input line 81.
+(hyperref)                removing `\\' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 81.
+(hyperref)                removing `math shift' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 81.
+(hyperref)                removing `superscript' on input line 79.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 81.
+(hyperref)                removing `math shift' on input line 79.
 
 (./introduction.tex [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.m
 ap}]) (./body.tex
@@ -490,26 +490,21 @@ Underfull \hbox (badness 6445) in paragraph at lines 229--233
  []
 
 ) [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 92.
  (./prl.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 94.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 92.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 92.
 Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 3E7BD285620756FEFF8F8F8396AF83C0;242.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
-
-
  ) 
 Here is how much of TeX's memory you used:
  8423 strings out of 494108
- 118380 string characters out of 6155655
- 339294 words of memory out of 5000000
+ 118372 string characters out of 6155655
+ 339130 words of memory out of 5000000
  11644 multiletter control sequences out of 15000+600000
  18656 words of font info for 70 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 30i,8n,57p,600b,510s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,8n,57p,600b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -534,7 +529,7 @@ blic/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfon
 ts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb>
-Output written on prl.pdf (6 pages, 424133 bytes).
+Output written on prl.pdf (6 pages, 424120 bytes).
 PDF statistics:
  312 PDF objects out of 1000 (max. 8388607)
  260 compressed objects within 3 object streams
