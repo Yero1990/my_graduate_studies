@@ -1,0 +1,13 @@
+OK - starting from furthest from the target, the beamline elements are:
+
+Fast raster, distance from target ~ 14 meters from the target
+BCMs 3H04A, 3H04B, 3H04C (all in one box on beamline) ~ 10.5 meters from 
+target
+BCM1, Unser, BCM2 ~ 7.5 meters from target
+BPM3H07A:  3.2 meters from target
+Harp 3H07A: 2.95 meters from target
+BPM3H07B:  2.24 meters from target
+Harp 3H07B: 1.54 meters from target
+BPM3H07C: 1.29 meters from target
+
+
