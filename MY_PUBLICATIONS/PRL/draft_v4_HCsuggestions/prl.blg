@@ -13,18 +13,9 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: prlNotes.bib
 Database file #2: prl.bib
-I was expecting a `,' or a `}'---line 5 of file prl.bib
- : title = {} 
- :            %"Pion exchange currents and isobar configurations in deuteron electro-disintegration below pion threshold",
-I'm skipping whatever remains of this entry
 I was expecting a `,' or a `}'---line 347 of file prl.bib
  :   
  :   year         = {2014},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You're missing a field name---line 540 of file prl.bib
- :   
- :   %note         = {An optional note}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 control{REVTEX42Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
@@ -43,45 +34,46 @@ Control: production of eprint (0) enabled
 Warning--empty year in hodo_techreport
 Warning--empty year in dc_techreport
 Warning--empty year in ngc_techreport
-You've used 28 entries,
+Warning--empty year in Suppl_Mat
+You've used 31 entries,
             6079 wiz_defined-function locations,
-            1864 strings with 21331 characters,
-and the built_in function-call counts, 25708 in all, are:
-= -- 1977
-> -- 525
-< -- 142
-+ -- 178
-- -- 134
-* -- 3718
-:= -- 2536
-add.period$ -- 26
-call.type$ -- 28
-change.case$ -- 131
-chr.to.int$ -- 38
-cite$ -- 31
-duplicate$ -- 2389
-empty$ -- 1840
-format.name$ -- 296
-if$ -- 5204
+            1883 strings with 22101 characters,
+and the built_in function-call counts, 28587 in all, are:
+= -- 2198
+> -- 592
+< -- 153
++ -- 198
+- -- 150
+* -- 4149
+:= -- 2808
+add.period$ -- 29
+call.type$ -- 31
+change.case$ -- 148
+chr.to.int$ -- 41
+cite$ -- 37
+duplicate$ -- 2656
+empty$ -- 2051
+format.name$ -- 334
+if$ -- 5795
 int.to.chr$ -- 1
-int.to.str$ -- 35
-missing$ -- 371
-newline$ -- 130
-num.names$ -- 75
-pop$ -- 917
+int.to.str$ -- 38
+missing$ -- 411
+newline$ -- 139
+num.names$ -- 81
+pop$ -- 1030
 preamble$ -- 1
-purify$ -- 126
+purify$ -- 140
 quote$ -- 0
-skip$ -- 1191
+skip$ -- 1314
 stack$ -- 0
-substring$ -- 714
-swap$ -- 2180
-text.length$ -- 48
+substring$ -- 787
+swap$ -- 2421
+text.length$ -- 55
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 355
-warning$ -- 4
-while$ -- 81
+type$ -- 396
+warning$ -- 5
+while$ -- 87
 width$ -- 0
-write$ -- 276
-(There were 3 error messages)
+write$ -- 301
+(There was 1 error message)
