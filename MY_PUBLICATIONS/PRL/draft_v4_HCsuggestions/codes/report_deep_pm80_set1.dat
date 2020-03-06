@@ -1,0 +1,16 @@
+#-------------------------------------
+         #Cut Limits Set             
+#-------------------------------------
+#Missing Energy:(-0.020000, 0.040000) GeV
+#HMS Delta:(-8.000000, 8.000000) 
+#SHMS Delta:(-10.000000, 22.000000) 
+#ZtarDiff:(-2.000000,2.000000) cm
+#Q2: (4.000000,5.000000) GeV2
+#SHMS EcalTotTrackNorm: (0.700000,5.000000)
+#Coincidence  Time: (10.500000,14.500000) ns
+#HMS Collimator Scale: 1.000000
+#--------------------------------------
+# All rates are in [kHz] :: total_time has a bcm current cut and is in seconds (all quantities have bcm cut) :: tLT has been corrected with tLT_corr_factor
+# Spectrometer Mispointings and BPMs are in [cm]
+#!Run[i,0]/             charge[f,1]/              cpuLT[f,2]/          cpuLT_err[f,3]/                tLT[f,4]/    tLT_corr_factor[f,5]/            hTrkEff[f,6]/        hTrkEff_err[f,7]/            eTrkEff[f,8]/        eTrkEff_err[f,9]/    tgtBoil_factor[f,10]/       avg_current[f,11]/         pS1X_rate[f,12]/       ptrig1_rate[f,13]/       ptrig2_rate[f,14]/       ptrig3_rate[f,15]/       ptrig4_rate[f,16]/       ptrig6_rate[f,17]/        pEDTM_rate[f,18]/           ptrig6_scl_noedtm[i,19]/        ptrig6_scl[i,20]/       ptrig6_accp[i,21]/         pEDTM_scl[i,22]/        pEDTM_accp[i,23]/total_time[f,23]/         HMS_Angle[f,24]/          HMS_Pcen[f,25]/        SHMS_Angle[f,26]/         SHMS_Pcen[f,27]/           HMS_Xmp[f,28]/           HMS_Ymp[f,29]/          SHMS_Xmp[f,30]/          SHMS_Ymp[f,31]/              xBPM[f,32]/              yBPM[f,33]/
+3289                  142.147                 0.981124               0.00182749                 0.907733                  0.99998                 0.988676              0.000340364                 0.965388              0.000398608                 0.958052                  52.4154                  1033.07                  145.855                  53.4475                  34.9386                 0.641214                 0.111036               0.00300192                   301122                   309263                   302828                     8141                     7390                  2711.93                  -38.896                     2.84                   12.194                  8.53425                 0.084042                 0.307905                   -0.126                    -0.06                 0.026637                 0.016842
