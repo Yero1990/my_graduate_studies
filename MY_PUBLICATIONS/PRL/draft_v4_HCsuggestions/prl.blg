@@ -13,11 +13,6 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: prlNotes.bib
 Database file #2: prl.bib
-I was expecting a `,' or a `}'---line 347 of file prl.bib
- :   
- :   year         = {2014},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 control{REVTEX42Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
 control{apsrev42Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{0}, control.pages{0}, control.year{1}, control.eprint{N/A}, 
 Warning--jnrlst (dependency: not reversed) set 1
@@ -35,45 +30,45 @@ Warning--empty year in hodo_techreport
 Warning--empty year in dc_techreport
 Warning--empty year in ngc_techreport
 Warning--empty year in Suppl_Mat
-You've used 31 entries,
+You've used 32 entries,
             6079 wiz_defined-function locations,
-            1883 strings with 22101 characters,
-and the built_in function-call counts, 28587 in all, are:
-= -- 2198
-> -- 592
-< -- 153
-+ -- 198
-- -- 150
-* -- 4149
-:= -- 2808
-add.period$ -- 29
-call.type$ -- 31
-change.case$ -- 148
-chr.to.int$ -- 41
-cite$ -- 37
-duplicate$ -- 2656
-empty$ -- 2051
-format.name$ -- 334
-if$ -- 5795
+            1889 strings with 22350 characters,
+and the built_in function-call counts, 30045 in all, are:
+= -- 2293
+> -- 640
+< -- 161
++ -- 212
+- -- 162
+* -- 4391
+:= -- 2934
+add.period$ -- 30
+call.type$ -- 32
+change.case$ -- 154
+chr.to.int$ -- 42
+cite$ -- 38
+duplicate$ -- 2786
+empty$ -- 2153
+format.name$ -- 361
+if$ -- 6098
 int.to.chr$ -- 1
-int.to.str$ -- 38
-missing$ -- 411
-newline$ -- 139
-num.names$ -- 81
-pop$ -- 1030
+int.to.str$ -- 39
+missing$ -- 431
+newline$ -- 142
+num.names$ -- 84
+pop$ -- 1077
 preamble$ -- 1
-purify$ -- 140
+purify$ -- 145
 quote$ -- 0
-skip$ -- 1314
+skip$ -- 1373
 stack$ -- 0
-substring$ -- 787
-swap$ -- 2421
-text.length$ -- 55
+substring$ -- 821
+swap$ -- 2554
+text.length$ -- 61
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 396
+type$ -- 413
 warning$ -- 5
-while$ -- 87
+while$ -- 90
 width$ -- 0
-write$ -- 301
-(There was 1 error message)
+write$ -- 311
+(There were 5 warnings)
