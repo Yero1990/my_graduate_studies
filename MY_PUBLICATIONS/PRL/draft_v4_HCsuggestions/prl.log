@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  6 MAR 2020 23:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  15 MAR 2020 18:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -481,25 +481,25 @@ Underfull \hbox (badness 2065) in paragraph at lines 1--41
 []\OT1/cmr/m/n/10 The sys-tem-atic un-cer-tain-ties due to our lim-ited
  []
 
-[2] [3] <prl_plots/PRL_plot1.pdf, id=104, 968.41798pt x 433.62pt>
+[2] <prl_plots/PRL_plot1.pdf, id=81, 968.41798pt x 433.62pt>
 File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use prl_plots/PRL_plot1.pdf>
-Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 52.
+Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 49.
 (pdftex.def)             Requested size: 445.47768pt x 199.46762pt.
-
-<./prl_plots/PRL_plot2.pdf, id=123, 484.209pt x 722.7pt>
+ [3]
+<./prl_plots/PRL_plot2.pdf, id=121, 484.209pt x 722.7pt>
 File: ./prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use ./prl_plots/PRL_plot2.pdf>
-Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 82.
+Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 83.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
  [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.105 
+l.106 
        <./prl_plots/PRL_plot1.pdf>]) (./prl.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
@@ -515,8 +515,8 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.126   {Sargsian}(2015)}]{sargsian_2015}
-                                         % <./prl_plots/PRL_plot2.pdf>]
+l.138   \emph {et~al.}}]{PhysRevLett.81.4576}
+                                             % <./prl_plots/PRL_plot2.pdf>]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
@@ -559,13 +559,13 @@ Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 4AD3AEC2EAF27DBDFA8547A1EACB43D8;255.
  ) 
 Here is how much of TeX's memory you used:
- 8442 strings out of 494108
- 118801 string characters out of 6155655
- 354724 words of memory out of 5000000
- 11659 multiletter control sequences out of 15000+600000
+ 8443 strings out of 494108
+ 118811 string characters out of 6155655
+ 357445 words of memory out of 5000000
+ 11660 multiletter control sequences out of 15000+600000
  18656 words of font info for 70 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 30i,8n,57p,628b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,8n,57p,628b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -591,10 +591,10 @@ msfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfont
 s/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
 cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/symbols/m
 sam10.pfb>
-Output written on prl.pdf (6 pages, 431530 bytes).
+Output written on prl.pdf (6 pages, 432769 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
+ 336 PDF objects out of 1000 (max. 8388607)
+ 283 compressed objects within 3 object streams
  42 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,10 +4,10 @@ void make_plot(int set, int pm, string model, string rad)
   //gROOT->SetBatch(kTRUE);  
   gStyle->SetOptStat(1001111);
 
-  string thnq_set = "all_thnq_Q2_4to5GeV";
+  //string thnq_set = "all_thnq_Q2_4to5GeV";
   //string thnq_set = "thnq35_Q2_4to5GeV";
   //string thnq_set = "thnq45_Q2_4to5GeV";
-  //string thnq_set = "thnq75_Q2_4to5GeV";
+  string thnq_set = "thnq75_Q2_4to5GeV";
   
   
   TString root_dir = Form("../root_files/pm%d_fsiXsec_set%d_%s/", pm, set, thnq_set.c_str());
