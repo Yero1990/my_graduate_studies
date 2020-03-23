@@ -1,7 +1,5 @@
 \indent A 10.6 GeV electron beam was incident on a 10 cm long liquid deuterium target (LD$_{2}$). The scattered electron and knocked-out proton were detected in coincidence
-by the new SHMS and the existing High Momentum Spectrometer (HMS), respectively. The recoiling neutron was reconstructed using energy-momentum conservation. The recoil momentum is defined as 
-$\vec{p_{\mathrm{r}}} = \vec{q} - \vec{p_{\mathrm{f}}}$ and the nuclear binding (or ``missing'') energy as $E_{\mathrm{m}} = \omega - T_{p} - T_{\mathrm{r}}$ where $\vec{p_{\mathrm{f}}}$ is the final proton momentum, $\vec{q}$ is the 3-momentum transfer and $(T_{p}$ and $T_{\mathrm{r}})$ are the
-final proton and recoil system kinetic energies, respectively, where the recoil system is assumed to be a neutron. The beam currents delivered by the accelerator ranged between 45-60 $\mu$A and the beam was rastered over a 2x2 mm$^{2}$ area to reduce the effects of localized boiling on the cryogenic targets (hydrogen and deuterium).\\
+by the new SHMS and the existing High Momentum Spectrometer (HMS), respectively. The beam currents delivered by the accelerator ranged between 45-60 $\mu$A and the beam was rastered over a 2x2 mm$^{2}$ area to reduce the effects of localized boiling on the cryogenic targets (hydrogen and deuterium).\\
 \indent Both Hall C spectrometers have similar standard detector packages, each with four scintillator planes \cite{hodo_techreport} used for triggering, a pair of drift chambers \cite{dc_techreport} used for tracking, and a calorimeter \cite{Mkrtchyan_2013} and gas \u{C}erenkov \cite{Li_Wenliang_mthesis,ngc_techreport} used for electron identification.
 The trigger setup for this experiment required a minimum of 3/4 hodoscope planes to detect a signal for data readout in each spectrometer. Due to the absence of significant background and the low
 accidental trigger rates at the higher missing momentum settings, the use of additional particle identification (PID) was found to have little to no effect on the final cross section.\\
@@ -12,6 +10,10 @@ At these forward angles and large momenta transferred to the proton, the  proces
 \indent Hydrogen elastic $^{1}\mathrm{H}(e,e'p)$ data were also taken at kinematics close to the deuteron $p_{\mathrm{r}}=80$ MeV/c setting for cross-checks with the spectrometer acceptance model using the  Hall C Monte Carlo
 simulation program, SIMC \cite{PhysRevC.64.054610}. Additional $^{1}\mathrm{H}(e,e'p)$ data were also taken at three other kinematic settings that covered the SHMS momentum acceptance range for the deuteron and were used for spectrometer optics optimization, 
 momentum calibration and the determination of the spectrometer offsets and kinematic uncertainties \cite{cyero_phdthesis}.\\
+\indent The recoiling neutron was reconstructed using energy-momentum conservation. The recoil momentum is defined as $\vec{p_{\mathrm{r}}} = \vec{q} - \vec{p_{\mathrm{f}}}$
+and the nuclear binding (or ``missing'') energy as $E_{\mathrm{m}} = \omega - T_{p} - T_{\mathrm{r}}$ where $\vec{p_{\mathrm{f}}}$ is the final proton momentum, $\vec{q}$ is the
+3-momentum transfer and $T_{p}$ is the final proton kinetic energy. The recoil particle kinetic energy, $T_{\mathrm{r}}$, is calculated from the electron and proton
+4-momentum vectors assuming an exclusive three-body final state with a recoiling neutron.\\
 \indent Identical event selection criteria were used for the hydrogen and deuteron data. The criteria were determined by making standard cuts on the spectrometer momentum fraction ($\delta$) to select a region for which the reconstruction optics
 are well known,  a cut to restrict the HMS solid angle acceptance to events that passed directly through the collimator and not by re-scattering from the collimator edges, a ``missing''
 energy cut (peak $\sim$ 2.22 MeV for the deuteron) to select true $^{2}\mathrm{H}(e,e'p)n$ coincidences, a coincidence time cut to select true coincidence events, a PID cut on the
@@ -25,8 +27,7 @@ model. The ratio of data to simulation yield was determined to be $97.6\pm0.3 \%
 %For $^{2}\mathrm{H}(e,e'p)n$, the low missing momentum data ($p_{\mathrm{r}}=80$ MeV/c) were compared to the Hall A data (See Fig. \ref{fig:fig1}).
 %The good agreement gives us confidence in the measurements made at higher missing momentum settings for which no previous data exist. \\
 \indent The systematic uncertainties of the measured cross sections were determined from 
-normalization \footnote{Conservative estimates on the systematic uncertainties of the total live and charge were made.
-Determination of systematics on these quantities is a work in progress.} and kinematic uncertainties in the beam energy and spectrometer angle/momentum settings. The individual
+normalization and kinematic uncertainties in the beam energy and spectrometer angle/momentum settings. The individual
 contributions from normalization uncertainties for each setting were determined to be (on average): tracking efficiencies ($0.40 \%$-HMS, $0.59 \%$-SHMS ), proton loss in HMS ($0.49 \%$), target boiling ($0.39 \%$), total live time ($3.0 \%$) and total charge ($2.0\%$)
 for an overall normalization uncertainty added in quadrature of about 3.7 $\%$ per setting. \\
 \indent The systematic uncertainties due to our limited knowledge of the beam energy and spectrometer angle/momentum settings were determined point-to-point in ($\theta_{nq}, p_{\mathrm{r}}$) bins for each missing momentum setting,
@@ -37,13 +38,8 @@ to the statistical uncertainty (25-30$\%$ on average) to obtain the final uncert
 For each bin in ($\theta_{nq}, p_{\mathrm{r}}$), the averaged $^{2}\mathrm{H}(e,e'p)n$ kinematics was calculated and used in the bin centering correction factor defined as:
 $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}} / \bar{\sigma}$, where $\sigma_{\mathrm{avg.kin}}$ is the cross section calculated at the averaged kinematics and $\bar{\sigma}$ is the cross section averaged
 over the kinematic bin. The systematic uncertainty associated with the radiative and bin-centering corrections was investigated using the J.M. Laget PWIA and FSI models but negligible effects on the cross sections were found.\\
-\indent The experimental and theoretical reduced cross sections were extracted and are defined as follows:
-\begin{equation}
-\sigma_{\mathrm{red}} \equiv \frac{\sigma_{\mathrm{exp(th)}}}{Kf_{\mathrm{rec}}\sigma_{\mathrm{cc1}}},
-\label{eq:1}
-\end{equation}
+\indent The experimental and theoretical reduced cross 
 \onecolumngrid
-\newpage
 \begin{center}
 \begin{figure}[ht!]
 \includegraphics[scale=0.46]{prl_plots/PRL_plot1.pdf}
@@ -54,9 +50,14 @@ AV18(green) and CD-Bonn(magenta) NN potentials.}
 \end{figure}
 \end{center}
 \twocolumngrid
-\noindent where $\sigma_{\mathrm{exp(th)}}$ is the 5-fold experimental (or theoretical) differential cross section $\frac{d^{5}\sigma}{d\omega d\Omega_{e} d\Omega_{p}}$, $K$ is a kinematical factor\footnote{The kinematical factor in Eq.\ref{eq:1} is defined as $K\equiv E_{\mathrm{f}}p_{\mathrm{f}}$, where $E_{\mathrm{f}}$ and $p_{\mathrm{f}}$ are the final proton energy and momentum, respectively.},
-$f_{\mathrm{rec}}$ is a recoil factor\footnote{The recoil factor in Eq.\ref{eq:1} is obtained by integrating over the deuteron binding energy in the 6-fold differential cross section and is defined as $f_{\mathrm{rec}}\equiv \frac{2p_{\mathrm{f}}^{2}E_{\mathrm{r}}}{2p_{\mathrm{f}}^{2}E_{\mathrm{r}} - (q^{2} - (p_{\mathrm{f}}^{2} + p_{\mathrm{r}}^{2}))E_{\mathrm{f}}}$, where
-          $E_{\mathrm{f}}$ and $p_{\mathrm{f}}$ are the final proton energy and momentum, respectively.} and $\sigma_{\mathrm{cc1}}$ is the
+\noindent sections were extracted and are defined as follows:
+\begin{equation}
+\sigma_{\mathrm{red}} \equiv \frac{\sigma_{\mathrm{exp(th)}}}{E_{\mathrm{f}}p_{\mathrm{f}}f_{\mathrm{rec}}\sigma_{\mathrm{cc1}}},
+\label{eq:1}
+\end{equation}
+\noindent where $\sigma_{\mathrm{exp(th)}}$ is the 5-fold experimental (or theoretical) differential cross section $\frac{d^{5}\sigma}{d\omega d\Omega_{e} d\Omega_{p}}$,
+$E_{\mathrm{f}}$ is the final proton energy, $f_{\mathrm{rec}}\equiv \frac{2p_{\mathrm{f}}^{2}E_{\mathrm{r}}}{2p_{\mathrm{f}}^{2}E_{\mathrm{r}} - (q^{2} - (p_{\mathrm{f}}^{2} + p_{\mathrm{r}}^{2}))E_{\mathrm{f}}}$
+is a recoil factor obtained by integrating over the deuteron binding energy in the 6-fold differential cross section, and $\sigma_{\mathrm{cc1}}$ is the
 de Forest \cite{DEFOREST1983} electron-proton off-shell cross section calculated using the form factor parametrization of Ref. \cite{PhysRevC.69.022201}.
 Within the PWIA, $\sigma_{\mathrm{red}}$ corresponds to the proton momentum distribution inside the deuteron. \\
 \indent Figure \ref{fig:fig1} shows the extracted experimental and theoretical reduced cross sections as a function of neutron recoil momentum

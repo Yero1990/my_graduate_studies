@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{31}%
+\begin{thebibliography}{28}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -290,11 +290,6 @@
   {https://doi.org/10.1103/PhysRevC.69.022201} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {69}},\ \bibinfo
   {pages} {022201} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
-\bibitem [{Note1()}]{Note1}%
-  \BibitemOpen
-  \bibinfo {note} {Conservative estimates on the systematic uncertainties of
-  the total live and charge were made. Determination of systematics on these
-  quantities is a work in progress.}\BibitemShut {Stop}%
 \bibitem [{\citenamefont {Laget}(2005)}]{LAGET2005}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
@@ -304,22 +299,6 @@
   {journal} {\bibinfo  {journal} {Physics Letters B}\ }\textbf {\bibinfo
   {volume} {609}},\ \bibinfo {pages} {49 } (\bibinfo {year}
   {2005})}\BibitemShut {NoStop}%
-\bibitem [{Note2()}]{Note2}%
-  \BibitemOpen
-  \bibinfo {note} {The kinematical factor in Eq.\ref {eq:1} is defined as
-  $K\equiv E_{\protect \mathrm {f}}p_{\protect \mathrm {f}}$, where
-  $E_{\protect \mathrm {f}}$ and $p_{\protect \mathrm {f}}$ are the final
-  proton energy and momentum, respectively.}\BibitemShut {Stop}%
-\bibitem [{Note3()}]{Note3}%
-  \BibitemOpen
-  \bibinfo {note} {The recoil factor in Eq.\ref {eq:1} is obtained by
-  integrating over the deuteron binding energy in the 6-fold differential cross
-  section and is defined as $f_{\protect \mathrm {rec}}\equiv {\begingroup
-  2p_{\protect \mathrm {f}}^{2}E_{\protect \mathrm {r}}\endgroup \over
-  2p_{\protect \mathrm {f}}^{2}E_{\protect \mathrm {r}} - (q^{2} - (p_{\protect
-  \mathrm {f}}^{2} + p_{\protect \mathrm {r}}^{2}))E_{\protect \mathrm {f}}}$,
-  where $E_{\protect \mathrm {f}}$ and $p_{\protect \mathrm {f}}$ are the final
-  proton energy and momentum, respectively.}\BibitemShut {Stop}%
 \bibitem [{\citenamefont {Forest}(1983)}]{DEFOREST1983}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {T.~D.}\ \bibnamefont
