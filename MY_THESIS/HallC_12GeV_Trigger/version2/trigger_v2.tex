@@ -148,17 +148,18 @@ for each spectrometer. The signals are also sent to ADCs/TDCs to determine energ
     Electronic Racks for HMS/SHMS detectors (right 2 racks).}
   \label{fig:cr_racks_patch}
 \end{figure}
+
 \newpage
 \section{HMS Trigger Set-Up} 
 \indent The XY scintillator arrays (hodoscope planes) will form part of the standard HMS trigger configuration.  
 Additional particle detectors may also be incorporated into the HMS trigger as required by different experiments. The Gas \v{C}erenkov and Calorimeter triggers will be
-used for e/$\pi$ separation, whereas the Aerogel \v{C}erenkov trigger will be used for $\pi$/K/p separation. 
+used for $e/\pi$ separation, whereas the Aerogel \v{C}erenkov trigger will be used for $\pi/K/p$ separation. 
 
 
 \subsection{Hodoscope Pre-Trigger}
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.5]{hHODO_diagram.png}
+  \includegraphics[scale=0.5]{../hHODO_diagram.png}
   \caption{HMS Hodoscope Electronics Diagram. For original diagram, see Appendix \ref{appendix:AppxA1}}
   \label{fig:hHODO_diagram}
 \end{figure}
@@ -190,10 +191,10 @@ coincidence (h1 = h1X \textit{AND} h1Y, h2 = h2X \textit{AND} h2Y) is then made 
   \label{fig:hCAL_diagram}
 \end{figure}
 \noindent The HMS Calorimeter consists of four layers of lead blocks. Layers A and B read out a 26 PMT signals per layer (13 signals/side) while layers C and D
-read out 13 signals/layer on one side. The first two layers form the Pre-Shower Counter while all four layers (A, B, C and D) form the Shower Counter.  
+read out 13 signals/layer on one side. The first layer form the Pre-Shower counter while all four layers (A, B, C and D) form the Shower counter.  
 Each layer is read out in the Counting Room patch and fed into 50:50 splitters. One output of the splitter is fed to fADCs via a Ribbon-to-BNC converter (same as hodoscopes)
 while the other output is sent to a P/S Model 740 NIM Linear FI/FO summing modules. Each side of a layer is summed first (hA+, hA-, hB+, hB-, hC and hD sums). The sums are fed into
-a LeCroy Model 428F summing module where layers hA+/- and hB+/- are summed to form hA and hB sums. A copy of each layer sum is sent to fADCs. The Pre-Shower SUM is then made from the sum of layers A and B, while the Shower SUM is made by summing all four layers. A copy of the PreShower and Shower sums is also sent to fADCs. The Pre-Shower and Shower sums are then sent to a P/S Model 715
+a LeCroy Model 428F summing module where layers hA+/- and hB+/- are summed to form hA and hB sums. A copy of each layer sum is sent to fADCs. The Pre-Shower SUM is then made from the sum of layer A, while the Shower SUM is made by summing all four layers. A copy of the Pre-Shower and Shower sums is also sent to fADCs. The Pre-Shower and Shower sums are then sent to a P/S Model 715
 NIM Discriminator unit to form the PreShower Low/High (LO/HI) and Shower Low pre-triggers with thresholds \hPrShLo, \hPrShHi and \hSHLo, respectively with all gate widths set to 30 ns. A copy of the pre-triggers is sent to TDCs/Scaler modules for trigger timing and counting rate
 information.
 
