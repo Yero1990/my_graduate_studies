@@ -218,11 +218,6 @@ void make_plot(int set, int pm, int thnq)
   data_Pm->SetFillColorAlpha(kBlue, 0.35);
   data_Pm->SetFillStyle(3004);
 
-
-  //======Set Up Normalization Constant====
-  //We normalize the data and SIMC to the integral over SIMC--> data_hist/integral(SIMC) , simc_hist/integral(SIMC)
-  Double_t norm = 1.;
-  Double_t scale = 0; //initialize scale
   
   //====Plot Spectrometer Acceptance
   TCanvas *c1 = new TCanvas("c1", "Electron Arm: Target Reconstruction", 5000, 3000);
