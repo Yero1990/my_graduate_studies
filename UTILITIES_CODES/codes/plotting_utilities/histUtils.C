@@ -61,15 +61,22 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   hdata->GetYaxis()->SetTitleOffset(0.6);
   hdata->SetLabelFont(22, "XY");
   hdata->SetTitleFont(22, "XY");
-  
-  dataI = hdata->Integral();
-  simcI = hsimc->Integral();
+
+  double dataI_err, simcI_err;
+  double nbins = hdata->GetNbinsX();  //Get total number of bins (excluding overflow)
+  dataI = hdata->IntegralAndError(1, nbins, dataI_err);
+  simcI = hsimc->IntegralAndError(1, nbins, simcI_err);
+
   leg->AddEntry(hdata,Form("Data | Integral: %d", dataI),"f");
   leg->AddEntry(hsimc,Form("SIMC | Integral: %d", simcI));
   //leg->AddEntry((TObject*)0, Form("Data Integral: %d", dataI), "");
   //leg->AddEntry((TObject*)0, Form("SIMC Integral: %d", simcI), "");
   leg->Draw();
-  
+  cout << "DATA Integral = " << dataI << " +/- " << dataI_err << endl;
+  cout << "SIMC Integral = " << simcI << " +/- " << simcI_err << endl;
+  double R = (float)dataI / simcI;
+  double R_err = R * sqrt(pow(dataI_err/dataI,2) + pow(simcI_err/simcI,2));
+  cout << "DATA/SIMC = " << R << " +/- " << R_err << endl;
   c->cd(2);
   TPad* pad = (TPad*)c->GetPad(2);
   pad->SetTopMargin(0.01);
@@ -112,21 +119,6 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   lmax_20->SetLineColor(kBlue);
   lmax_20->SetLineStyle(2);
   lmax_20->Draw();
-  /*
-  auto c1 = new TCanvas("c1", "fit residual simple");
-  auto h1 = new TH1D("h1", "h1", 50, -5, 5);
-  h1->FillRandom("gaus", 2000);
-  h1->Fit("gaus");
-  h1->GetXaxis()->SetTitle("x");
-  h1->GetYaxis()->SetTitle("y");
-  c1->Clear();
-  auto rp1 = new TRatioPlot(h1);
-  std::vector<double> lines = {-3, -2, -1, 0, 1, 2, 3};
-  rp1->SetGridlines(lines);
-  rp1->Draw();
-  rp1->GetLowerRefGraph()->SetMinimum(-4);
-  rp1->GetLowerRefGraph()->SetMaximum(4);
-  c1->Update();
-  */
+
 }
 
