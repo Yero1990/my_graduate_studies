@@ -1,7 +1,8 @@
+#include "../plotting_utilities/histUtils.C"   //load utilities code for histo plotting
+
 //Script to make comparison between SIMC and Commissioning Data from HallC Spring 2018
 //The comparisons are all charge normalized and corrected for all inefficiencies
 
-#include "../plotting_utilities/histUtils.C"   //load utilities code for histo plotting
 void compare_heep(int run)
 {
 
@@ -294,10 +295,21 @@ void compare_heep(int run)
   data_file->GetObject("H_Pmz_Lab", data_Pmz);
 
 
-  //Plot the relevant histograms
+  //Plot the SHMS Recon
   //hist_ratio(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
   //hist_ratio(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
-  hist_ratio(data_W, simc_W, "Invariant Mass, W [GeV]", "Counts", "Invariant Mass");
+  //hist_ratio(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
+  //hist_ratio(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
+
+  //Plot the HMS Recon
+  //hist_ratio(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
+  //hist_ratio(data_hxptar, simc_hxptar, "HMS X'_{tar} [rad]", "Counts", "HMS X'_{tar}");
+  //hist_ratio(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
+  //hist_ratio(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts", "HMS #delta");
+
+  
+  //Plot Kinematic Variables
+  //hist_ratio(data_W, simc_W, "Invariant Mass, W [GeV]", "Counts", "Invariant Mass");
  
   
 }
