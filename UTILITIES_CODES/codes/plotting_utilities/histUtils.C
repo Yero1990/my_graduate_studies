@@ -11,7 +11,7 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   gStyle->SetLegendTextSize(0.06);
 
   //Create Canvas
-  auto c = new TCanvas("c", "c", 700, 700);
+  TCanvas *c = new TCanvas(title, "c", 700, 700);
   c->Divide(1,2, 0., 0.0);
 
   //VARIABLES TO Normalize histogram (if desired)
@@ -25,7 +25,7 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
 
   hdata->SetFillColorAlpha(kBlue, 0.35);
   hdata->SetFillStyle(3004);
-
+  hdata->SetLineWidth(2);
   //Create new histo to store ratio
   TH1F *hratio = (TH1F*) hdata->Clone();
 
@@ -42,13 +42,13 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   
   c->cd(1);
   //auto leg = new TLegend(0.1,0.8,0.28,0.9); 
-  auto leg = new TLegend(0.14,0.85,0.25,0.65); 
+  auto leg = new TLegend(0.14,0.84,0.25,0.64); 
 
   TPad* pad1 = (TPad*)c->GetPad(1);
   pad1->SetBottomMargin(0.02);
   pad1->SetRightMargin(0.02);
   pad1->SetLeftMargin(0.1);
-  pad1->SetTopMargin(0.1);
+  pad1->SetTopMargin(0.13);
   pad1->SetFrameLineWidth(2);
   hdata->Draw("samehistE0");
   hsimc->Draw("samesE0");

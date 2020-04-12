@@ -296,8 +296,8 @@ void compare_heep(int run)
 
 
   //Plot the SHMS Recon
-  //hist_ratio(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
-  //hist_ratio(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
+  hist_ratio(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
+  hist_ratio(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
   //hist_ratio(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
   //hist_ratio(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
 

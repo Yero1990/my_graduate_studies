@@ -145,7 +145,7 @@ void compare_deep(int pm, int set, int thnq)
   //hist_ratio(data_hytar, simc_hytar_fsi, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
   //hist_ratio(data_hxptar, simc_hxptar_fsi, "HMS X'_{tar} [rad]", "Counts", "HMS X'_{tar}");
   //hist_ratio(data_hyptar, simc_hyptar_fsi, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
-  //hist_ratio(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts", "HMS #delta");
+  hist_ratio(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts", "HMS #delta");
 
   //Plot Only Data Histos
   //plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts", "SHMS Calorimeter Total Normalized Energy", "logy");
@@ -161,7 +161,7 @@ void compare_deep(int pm, int set, int thnq)
   //compare_hist(data_ztar_diff, simc_ztar_diff_fsi, "Z_{tar} Difference [cm]", "Counts", "Z_{tar} Difference");
   //compare_hist(data_emiss, simc_emiss_fsi, "Missing Energy, E_{m} [GeV]", "Counts", "Nuclear Missing Energy");
 
-  compare_hist(data_Pm, simc_Pm_fsi, "Neutron Recoil Momentum, P_{r} [GeV]", "Counts", "Neutron Recoil Momentum");
+  //compare_hist(data_Pm, simc_Pm_fsi, "Neutron Recoil Momentum, P_{r} [GeV]", "Counts", "Neutron Recoil Momentum");
 
   
 }
