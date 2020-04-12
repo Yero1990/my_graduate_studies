@@ -11,6 +11,8 @@ void compare_heep(int run)
 
 
   TString root_dir = "../../root_files/pre_HEEP_ELASTICS/";
+  //TString root_dir = "../../root_files/HEEP_ELASTICS/";
+
   //Pre-defined SIMC/data root file names containing histogram object to comapare
   TString simc_filename =  Form("heep_simc_histos_%d_rad.root", run);                      
   TString data_filename = Form("heep_data_histos_%d_combined.root",run); 
@@ -296,8 +298,8 @@ void compare_heep(int run)
 
 
   //Plot the SHMS Recon
-  hist_ratio(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
-  hist_ratio(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
+  //hist_ratio(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
+  //hist_ratio(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
   //hist_ratio(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
   //hist_ratio(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
 
@@ -310,6 +312,21 @@ void compare_heep(int run)
   
   //Plot Kinematic Variables
   //hist_ratio(data_W, simc_W, "Invariant Mass, W [GeV]", "Counts", "Invariant Mass");
- 
-  
+
+
+  //ONLY COMPARE HISTOS  
+   //Plot the SHMS Recon
+  //compare_hist(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
+  //compare_hist(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
+  //compare_hist(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
+  //compare_hist(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
+
+  //Plot the HMS Recon
+  //compare_hist(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
+  compare_hist(data_hxptar, simc_hxptar, "HMS X'_{tar} [rad]", "Counts", "HMS X'_{tar}");
+  //compare_hist(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
+  //compare_hist(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts", "HMS #delta");
+
+  //compare_hist(data_W, simc_W, "Invariant Mass, W [GeV]", "Counts", "Invariant Mass");
+
 }
