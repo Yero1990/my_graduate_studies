@@ -129,7 +129,7 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
   gStyle->SetLegendTextSize(0.03);
 
   //Create Canvas
-  TCanvas *c = new TCanvas("c", "c", 900, 700);
+  TCanvas *c = new TCanvas(title, "c", 900, 700);
   c->SetFrameLineWidth(2);
   //VARIABLES TO Normalize histogram (if desired)
   Double_t scale; //Used to scale SIMC histograms by 1./h->Integral(data)
@@ -185,7 +185,7 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
 
 //---------------------
 
-void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", TString title="")
+void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", TString title="", TString set_logy="")
 {
 
   gStyle->SetOptStat(0);
@@ -215,25 +215,27 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
   hdata->GetYaxis()->SetLabelSize(0.04);
   hdata->GetXaxis()->SetLabelSize(0.04);
   hdata->SetTitleSize(0.04, "XY");
-
- 
-  //auto leg = new TLegend(0.1,0.8,0.28,0.9); 
-  TLegend *leg = new TLegend(0.14,0.88,0.25,0.73); 
-
-  hdata->Draw("samehistE0");
-  hsimc->Draw("samesE0");
+  
   hdata->SetTitle(title);
 
   hdata->GetYaxis()->SetTitle(ylabel);
   hdata->GetXaxis()->SetTitle(xlabel);
   hdata->GetYaxis()->CenterTitle();
   hdata->GetXaxis()->CenterTitle();
-  hdata->GetYaxis()->SetRangeUser(0,hdata->GetMaximum()+0.6*hdata->GetMaximum());
+  hdata->GetYaxis()->SetRangeUser(0.001,hdata->GetMaximum()+0.6*hdata->GetMaximum());
   hdata->GetXaxis()->SetTitleOffset(1.);  
   hdata->GetYaxis()->SetTitleOffset(1.);
   hdata->SetLabelFont(22, "XY");
   hdata->SetTitleFont(22, "XY");
 
+  //auto leg = new TLegend(0.1,0.8,0.28,0.9); 
+  TLegend *leg = new TLegend(0.14,0.88,0.25,0.73); 
+  if(set_logy=="logy"){
+    c->SetLogy();
+  }
+  hdata->Draw("samehistE0");
+  hsimc->Draw("samesE0");
+  
   double dataI_err, simcI_err;
   double nbins = hdata->GetNbinsX();  //Get total number of bins (excluding overflow)
   dataI = hdata->IntegralAndError(1, nbins, dataI_err);

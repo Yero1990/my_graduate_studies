@@ -1,7 +1,7 @@
 \indent A 10.6 GeV electron beam was incident on a 10 cm long liquid deuterium target (LD$_{2}$). The scattered electron and knocked-out proton were detected in coincidence
 by the new SHMS and the existing High Momentum Spectrometer (HMS), respectively. The beam currents delivered by the accelerator ranged between 45-60 $\mu$A and the beam was rastered over a 2x2 mm$^{2}$ area to reduce the effects of localized boiling on the cryogenic targets (hydrogen and deuterium).\\
 \indent Both Hall C spectrometers have similar standard detector packages, each with four scintillator planes \cite{hodo_techreport} used for triggering, a pair of drift chambers \cite{dc_techreport} used for tracking, and a calorimeter \cite{Mkrtchyan_2013} and gas \u{C}erenkov \cite{Li_Wenliang_mthesis,ngc_techreport} used for electron identification.
-For each spectrometer, a logical hardware signal was created from  the coincidence of hits in three of the four scintillator planes. The event trigger was the the coincidence of these two signals. \\
+For each spectrometer, a logical hardware signal was created from  the coincidence of hits in three of the four scintillator planes. The event trigger was the coincidence of these two signals. \\
 \indent We measured three central missing momentum settings: $p_{\mathrm{r}}=80, 580$ and $750$ MeV/c. At each of these settings, the electron arm (SHMS) was fixed and the proton arm (HMS) was rotated from smaller to larger angles corresponding to the
 the lower and higher missing momentum settings, respectively. At these kinematic settings, the 3-momentum transfer covered a range of $2.4\lesssim|\vec{q}|\lesssim3.2$ GeV/c, which is more than twice the highest neutron recoil momentum
 measured in this experiment. As a result, most of the virtual photon momentum is transferred to the proton which scatters at angles relative to $\vec{q}$ in the range $0.4^{\circ}\lesssim \theta_{pq}\lesssim21.4^{\circ}$.
@@ -21,7 +21,7 @@ originated from the same reaction vertex at the target.\\
 \indent The experimental data yields for both hydrogen and deuteron data were normalized by the total charge and corrected for various inefficiencies. For $^{2}\mathrm{H}(e,e'p)n$, the corrections
 were as follows: tracking efficiencies ($98.9 \%$-HMS, $96.4 \%$-SHMS), total live time ($92.3 \%$), proton loss inefficiency due to nuclear interactions in the HMS ($4.7 \%$) \cite{cyero_phdthesis} and
 target boiling inefficiency ($4.2 \%$) \cite{cyero_phdthesis}. The values in parentheses were averaged over all momentum settings. \\
-\indent For $^{1}\mathrm{H}(e,e'p)$, the corrected data yield was compared to SIMC calculations using J. Arrington's proton form factor parametrization \cite{PhysRevC.69.022201} to check the spectrometer acceptance
+\indent For $^{1}\mathrm{H}(e,e'p)$, the corrected data yield was compared to SIMC calculations using Arrington's proton form factor parametrization \cite{PhysRevC.69.022201} to check the spectrometer acceptance
 model. The ratio of data to simulation yield was determined to be $97.6\pm0.3 \%$ (statistical uncertainty only).\\
 %For $^{2}\mathrm{H}(e,e'p)n$, the low missing momentum data ($p_{\mathrm{r}}=80$ MeV/c) were compared to the Hall A data (See Fig. \ref{fig:fig1}).
 %The good agreement gives us confidence in the measurements made at higher missing momentum settings for which no previous data exist. \\
@@ -31,14 +31,17 @@ contributions from normalization uncertainties for each setting were determined 
 and target boiling ($0.38 \%$) which were added in quadrature and determined to be about 0.81 $\%$ per setting. The systematic uncertainties due to
 proton loss in HMS ($0.49 \%$), total live time ($3.0 \%$), and total charge ($2.0\%$) were the same for every setting and thus were added (in quadrature)
 as an overall normalization constant to the final result.\\
-\indent The systematic uncertainties due to our limited knowledge of the beam energy and spectrometer angle/momentum settings were determined point-to-point in ($\theta_{nq}, p_{\mathrm{r}}$) bins for each missing momentum setting,
-and added in quadrature for overlapping $p_{\mathrm{r}}$ bins. For $\theta_{nq}= 35^{\circ}, 45^{\circ}$ and $75^{\circ}$ (presented in this Letter) the overall kinematic uncertainty varied up to 6.5$\%$.
+%\indent The systematic uncertainties due to our finite knowledge of the beam energy and spectrometer angle/momentum settings were determined point-to-point in ($\theta_{nq}, p_{\mathrm{r}}$) bins for each missing momentum setting,
+%and added in quadrature for overlapping $p_{\mathrm{r}}$ bins.
+\indent The systematic uncertainties on the cross section due to systematic error on the absolute beam energy and spectrometer angle/momentum settings were
+determined point-to-point in ($\theta_{nq}$, $p_{\mathrm{r}}$) bins for each missing momentum setting, and added in quadrature for overlapping pr bins. 
+For $\theta_{nq}= 35^{\circ}, 45^{\circ}$ and $75^{\circ}$ (presented in this Letter) the overall kinematic uncertainty varied up to 6.5$\%$.
 The overall systematic uncertainty in the cross section was determined by the quadrature sum of the normalization and kinematic uncertainties. This result was then added in quadrature
 to the statistical uncertainty (25-30$\%$ on average) to obtain the final uncertainty in the cross section. \\
-\indent The data were radiatively corrected for each bin in ($\theta_{nq}, p_{\mathrm{r}}$) by multiplying the measured cross sections by the ratio of the calculated particle yield excluding and including radiative effects. The SIMC simulation code was used for these calculations with the Deuteron Model by J.M. Laget including FSI \cite{LAGET2005}.
+\indent The data were radiatively corrected for each bin in ($\theta_{nq}, p_{\mathrm{r}}$) by multiplying the measured cross sections by the ratio of the calculated particle yield excluding and including radiative effects. The SIMC simulation code was used for these calculations with the Deuteron Model by Laget including FSI \cite{LAGET2005}.
 For each bin in ($\theta_{nq}, p_{\mathrm{r}}$), the averaged $^{2}\mathrm{H}(e,e'p)n$ kinematics was calculated and used in the bin centering correction factor defined as:
 $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}} / \bar{\sigma}$, where $\sigma_{\mathrm{avg.kin}}$ is the cross section calculated at the averaged kinematics and $\bar{\sigma}$ is the cross section averaged
-over the kinematic bin. The systematic uncertainty associated with the radiative and bin-centering corrections was investigated using the J.M. Laget PWIA and FSI models but negligible effects on the cross sections were found.\\
+over the kinematic bin. The systematic uncertainty associated with the radiative and bin-centering corrections was investigated using the Laget PWIA and FSI models but negligible effects on the cross sections were found.\\
 \indent The experimental and theoretical reduced cross sections were extracted and are defined as follows:
 \onecolumngrid
 \begin{center}
@@ -59,13 +62,13 @@ AV18(green) and CD-Bonn(magenta) NN potentials.}
 $E_{\mathrm{f}}$ is the final proton energy, $f_{\mathrm{rec}}\equiv \frac{2p_{\mathrm{f}}^{2}E_{\mathrm{r}}}{2p_{\mathrm{f}}^{2}E_{\mathrm{r}} - (q^{2} - (p_{\mathrm{f}}^{2} + p_{\mathrm{r}}^{2}))E_{\mathrm{f}}}$
 is a recoil factor obtained by integrating over the missing energy of the bound state in the 6-fold differential cross section where $E_{\mathrm{r}}$ is the neutron recoil energy, and $\sigma_{\mathrm{cc1}}$ is the
 de Forest \cite{DEFOREST1983} electron-proton off-shell cross section calculated using the form factor parametrization of Ref. \cite{PhysRevC.69.022201}.
-Within the PWIA, $\sigma_{\mathrm{red}}$ corresponds to the proton momentum distribution inside the deuteron. \\
+Within the PWIA, $\sigma_{\mathrm{red}}$ corresponds to the PWIA cross section from the scattering of a proton in the deuteron. \\
 \indent Figure \ref{fig:fig1} shows the extracted experimental and theoretical reduced cross sections as a function of neutron recoil momentum
 $p_{\mathrm{r}}$ for three recoil angle settings at $Q^{2}=4.5\pm0.5$ (GeV/c)$^{2}$. For the two highest settings ($p_{\mathrm{r}}=580, 750$ MeV/c), a weighted average of the cross sections were taken in the overlapping regions of $p_{\mathrm{r}}$ . The results from the previous experiment \cite{PhysRevLett.107.262501} at a $Q^{2}=3.5\pm0.25$ (GeV/c)$^{2}$ are plotted as well (red square). The good agreement between the Hall A and C data at lower $p_{\mathrm{r}}$
 gives us confidence in the measurements made at higher missing momentum settings for which no previous data exist.
 The data are compared to theoretical reduced
 cross sections using the charge-dependent Bonn (CD-Bonn) \cite{PhysRevC.63.024001}, Argonne $v_{18}$ (AV18) \cite{PhysRevC.51.38} and Paris \cite{PhysRevC.21.861} NN-potentials. The theoretical calculations
-for the CD-Bonn (magenta) and AV18 (green) potentials were performed by M. Sargsian \cite{PhysRevC.82.014612} and those for the Paris potential  (blue) were  by J.M. Laget \cite{LAGET2005}.\\
+for the CD-Bonn (magenta) and AV18 (green) potentials were performed by Sargsian \cite{PhysRevC.82.014612} and those for the Paris potential (blue) were by Laget \cite{LAGET2005}.\\
 \indent For all recoil angles shown in Fig. \hyperref[fig:fig1]{1} at recoil momenta $p_{\mathrm{r}}\leq300$ MeV/c, the cross sections are well reproduced  by  all models when FSI are included.
 The agreement at $p_{\mathrm{r}}\leq300$ MeV/c can be understood from the fact that this region corresponds to the long-range part of the NN potential where the One Pion Exchange Potential (OPEP)
 is well known and common to all modern potentials. \\
@@ -74,7 +77,7 @@ AV18 models significantly differ from the CD-Bonn. In this region, the Paris/AV1
 The main difference between the CD-Bonn and Paris/AV18 models is the use of Feynman amplitudes in covariant (original) form by the Bonn group as opposed to local (static) approximations of these amplitudes used by Paris/AV18 groups
 to describe the NN potential. The effect of these local approximations on the NN potential are shown in Fig. 2 of Ref. \cite{PhysRevC.63.024001}. \\
 \indent At $\theta_{nq}=75^{\circ}$ (Fig. \hyperref[fig:fig1]{1(c)}) and $p_{\mathrm{r}}>180$ MeV/c, FSI become the dominant contributions to the cross sections for all models which exhibit a similar
-behaviour (smaller falloff) that overshadows any possibility of extracting the momentum distributions.\\
+behaviour (smaller fall-off) that overshadows any possibility of extracting the momentum distributions.\\
 \indent To quantify the discrepancy observed between data and theory in Fig. \ref{fig:fig1}, the ratio of the experimental and theoretical reduced cross sections ($\sigma_{\mathrm{red}}$) to the
 deuteron momentum distribution  calculated using the CD-Bonn potential ($\sigma^{\text{CD-Bonn PWIA}}_{\mathrm{red}}$) \cite{PhysRevC.63.024001} is shown in Fig. \ref{fig:fig2}. \\
 \indent For $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ (Figs. \hyperref[fig:fig2]{2(a),(b)}), the data are best described by the CD-Bonn PWIA calculation for recoil momenta up
@@ -93,7 +96,7 @@ At $\theta_{nq}=45^{\circ}$ the FSI dominance starts earlier for all models abov
 \indent Overall, it is interesting to note that none of the calculations can reproduce the measured $p_{\mathrm{r}}$ dependence above 600 MeV/c in a region where FSI are still relatively small $(<30\%)$.  This behavior of the data is new
 and additional data in this kinematic region are necessary to improve the statistics. \\
 \indent At $\theta_{nq}=75^{\circ}$ (Fig. \hyperref[fig:fig2]{2(c)}), FSI are small below $p_{\mathrm{r}}\sim180$ MeV/c, but do not exactly cancel the PWIA/FSI interference term in the scattering amplitude which results in a small dip in this region in agreement with the data.
-At $p_{\mathrm{r}}>300$ MeV/c, the data was statistically limited as our focus was on the smaller recoil angles. The Hall A data, however, shows a reasonable agreement with the FSI from all models which gives us confidence in our understanding
+At $p_{\mathrm{r}}>300$ MeV/c, the data were statistically limited as our focus was on the smaller recoil angles. The Hall A data, however, shows a reasonable agreement with the FSI from all models which gives us confidence in our understanding
 of FSI at the smaller recoil angles. \\
 \indent This experiment extended the previous Hall A cross section measurements on the $^{2}\mathrm{H}(e,e'p)n$ reaction to 
 very high neutron recoil momenta ($p_{\mathrm{r}}>500$ MeV/c) at kinematics where FSI were expected to be small and the cross section was dominated by PWIA and sensitive to the

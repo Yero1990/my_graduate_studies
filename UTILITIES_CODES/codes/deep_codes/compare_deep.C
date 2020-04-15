@@ -148,7 +148,7 @@ void compare_deep(int pm, int set, int thnq)
   //hist_ratio(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts", "HMS #delta");
 
   //Plot Only Data Histos
-  plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts", "SHMS Calorimeter Total Normalized Energy", "logy");
+  //plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts", "SHMS Calorimeter Total Normalized Energy", "logy");
   //plot_hist(data_CoinTime, "Coincidence Time [ns]", "Counts", "Coincidence Time", "logy");
 
 

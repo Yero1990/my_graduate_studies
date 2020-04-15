@@ -140,11 +140,25 @@ void compare_heep(int run)
   TH1F *data_Pmy = 0;
   TH1F *data_Pmz = 0;
 
+  //-----------------------
+  TH1F *simc_ztar_diff = 0; 
+  TH2F *simc_HMS_Coll = 0;
+  
+  TH1F *data_ztar_diff = 0; 
+  TH2F *data_HMS_Coll = 0;
+
+  TH1F *data_CoinTime = 0;
+  TH1F *data_pid_eCal = 0;
+
   //---------------------------------------------------------------
 
  //change to simc_file
   simc_file->cd();
 
+  simc_file->GetObject("H_ztar_diff_sys", simc_ztar_diff);
+  simc_file->GetObject("H_hXColl_vs_hYColl_sys", simc_HMS_Coll);
+
+  
   
   //----------Get Target Histograms------------------
   //Get Histogram objects from SIMC rootfile
@@ -160,6 +174,11 @@ void compare_heep(int run)
   //change to data_file
   data_file->cd();
 
+  data_file->GetObject("H_ztar_diff_sys", data_ztar_diff);
+  data_file->GetObject("H_hXColl_vs_hYColl_sys", data_HMS_Coll); 
+  data_file->GetObject("H_pcal_etotTrkNorm_sys", data_pid_eCal); 
+  data_file->GetObject("H_ctime_sys", data_CoinTime);
+  
   //Get Histogram objects from data rootfile
   data_file->GetObject("H_hx_tar", data_xtarH);
   data_file->GetObject("H_hy_tar", data_ytarH);
@@ -184,12 +203,12 @@ void compare_heep(int run)
   simc_file->GetObject("H_eytar", simc_eytar);
   simc_file->GetObject("H_exptar", simc_exptar);
   simc_file->GetObject("H_eyptar", simc_eyptar);
-  simc_file->GetObject("H_edelta", simc_edelta);
+  simc_file->GetObject("H_edelta_sys", simc_edelta);
 
   simc_file->GetObject("H_hytar", simc_hytar);
   simc_file->GetObject("H_hxptar", simc_hxptar);
   simc_file->GetObject("H_hyptar", simc_hyptar);
-  simc_file->GetObject("H_hdelta", simc_hdelta);
+  simc_file->GetObject("H_hdelta_sys", simc_hdelta);
 
   simc_file->GetObject("H_Pmx_Lab", simc_Pmx);
   simc_file->GetObject("H_Pmy_Lab", simc_Pmy);
@@ -204,12 +223,12 @@ void compare_heep(int run)
   data_file->GetObject("H_eytar", data_eytar);
   data_file->GetObject("H_exptar", data_exptar);
   data_file->GetObject("H_eyptar", data_eyptar);
-  data_file->GetObject("H_edelta", data_edelta);
+  data_file->GetObject("H_edelta_sys", data_edelta);
   
   data_file->GetObject("H_hytar", data_hytar);
   data_file->GetObject("H_hxptar", data_hxptar);
   data_file->GetObject("H_hyptar", data_hyptar);
-  data_file->GetObject("H_hdelta", data_hdelta);
+  data_file->GetObject("H_hdelta_sys", data_hdelta);
 
 
   //-----------------------------------------------------------------
@@ -254,7 +273,7 @@ void compare_heep(int run)
   simc_file->cd();
 
   //Get Histogram objects from SIMC rootfile
-  simc_file->GetObject("H_Q2", simc_Q2);
+  simc_file->GetObject("H_Q2_sys", simc_Q2);
   simc_file->GetObject("H_omega", simc_omega);
   simc_file->GetObject("H_W", simc_W);
   simc_file->GetObject("H_theta_q", simc_thq);
@@ -262,7 +281,7 @@ void compare_heep(int run)
   simc_file->GetObject("H_xbj", simc_xbj);
   simc_file->GetObject("H_theta_elec", simc_th_elec);
   simc_file->GetObject("H_kf", simc_kf);
-  simc_file->GetObject("H_Emiss", simc_emiss);
+  simc_file->GetObject("H_Em_sys", simc_emiss);
 
   simc_file->GetObject("H_Pm", simc_Pm);
   simc_file->GetObject("H_Pf", simc_Pf);
@@ -275,7 +294,7 @@ void compare_heep(int run)
   data_file->cd();
   
   //Get Histogram objects from data rootfile
-  data_file->GetObject("H_Q2", data_Q2);
+  data_file->GetObject("H_Q2_sys", data_Q2);
   data_file->GetObject("H_omega", data_omega);
   data_file->GetObject("H_W", data_W);
   data_file->GetObject("H_theta_q", data_thq);
@@ -284,7 +303,7 @@ void compare_heep(int run)
   data_file->GetObject("H_xbj", data_xbj);
   data_file->GetObject("H_theta_elec", data_th_elec);
   data_file->GetObject("H_kf", data_kf);
-  data_file->GetObject("H_Emiss", data_emiss);
+  data_file->GetObject("H_Em_sys", data_emiss);
 
   data_file->GetObject("H_Pm", data_Pm);
   data_file->GetObject("H_Pf", data_Pf);
@@ -297,36 +316,52 @@ void compare_heep(int run)
   data_file->GetObject("H_Pmz_Lab", data_Pmz);
 
 
-  //Plot the SHMS Recon
-  //hist_ratio(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
-  //hist_ratio(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
-  //hist_ratio(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
-  //hist_ratio(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
+  //Plot the SHMS Recon Ratio
+  /*
+  hist_ratio(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
+  hist_ratio(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
+  hist_ratio(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
+  hist_ratio(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
 
-  //Plot the HMS Recon
-  //hist_ratio(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
-  //hist_ratio(data_hxptar, simc_hxptar, "HMS X'_{tar} [rad]", "Counts", "HMS X'_{tar}");
-  //hist_ratio(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
-  //hist_ratio(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts", "HMS #delta");
-
+  //Plot the HMS Recon Ratio
+  hist_ratio(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
+  hist_ratio(data_hxptar, simc_hxptar, "HMS X'_{tar} [rad]", "Counts", "HMS X'_{tar}");
+  hist_ratio(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
+  hist_ratio(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts", "HMS #delta");
+  */
   
   //Plot Kinematic Variables
   //hist_ratio(data_W, simc_W, "Invariant Mass, W [GeV]", "Counts", "Invariant Mass");
 
-
+  
   //ONLY COMPARE HISTOS  
    //Plot the SHMS Recon
-  //compare_hist(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
-  //compare_hist(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
-  //compare_hist(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
-  //compare_hist(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
+  /*
+  compare_hist(data_eytar, simc_eytar, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
+  compare_hist(data_exptar, simc_exptar, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
+  compare_hist(data_eyptar, simc_eyptar, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
+  compare_hist(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts", "SHMS #delta");
 
   //Plot the HMS Recon
-  //compare_hist(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
+  compare_hist(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
   compare_hist(data_hxptar, simc_hxptar, "HMS X'_{tar} [rad]", "Counts", "HMS X'_{tar}");
-  //compare_hist(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
-  //compare_hist(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts", "HMS #delta");
+  compare_hist(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
+  compare_hist(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts", "HMS #delta");
+  */
 
+  //Plot Event Selection Cuts
   //compare_hist(data_W, simc_W, "Invariant Mass, W [GeV]", "Counts", "Invariant Mass");
 
+  //plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Charge Normalized Counts", "SHMS Calorimeter Total Normalized Energy", "logy");
+  //plot_hist(data_CoinTime, "Coincidence Time [ns]", "Charge Normalized Counts", "Coincidence Time", "logy");
+
+
+  //ONLY PLOT DATA-2-SIMC COMPARISONS (NOT RATIOS)
+  //compare_hist(data_hdelta, simc_hdelta, "HMS #delta [%]", "Charge Normalized Counts", "HMS #delta");
+  //compare_hist(data_edelta, simc_edelta, "SHMS #delta [%]", "Charge Normalized Counts", "SHMS #delta");
+
+  //compare_hist(data_Q2, simc_Q2, "Q^{2} [GeV^{2}]", "Charge Normalized Counts", "4-Momentum Transfer, Q^{2}");
+  //compare_hist(data_thnq, simc_thnq_fsi, "#theta_{nq} [deg]", "Charge Normalized Counts", "Neutron Recoil Angles, #theta_{nq}");
+  compare_hist(data_ztar_diff, simc_ztar_diff, "Z_{tar} Difference [cm]", "Charge Normalized Counts", "Z_{tar} Difference", "logy");
+  //compare_hist(data_emiss, simc_emiss, "Missing Energy, E_{m} [GeV]", "Charge Normalized Counts", "Missing Energy");
 }

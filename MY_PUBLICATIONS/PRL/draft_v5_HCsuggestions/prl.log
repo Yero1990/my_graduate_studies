@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  14 APR 2020 21:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  15 APR 2020 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -412,25 +412,21 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 68.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./introduction.tex [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex
 .map}]) (./body.tex
-Underfull \hbox (badness 2065) in paragraph at lines 1--43
-[]\OT1/cmr/m/n/10 The sys-tem-atic un-cer-tain-ties due to our lim-ited
- []
-
-[2] <prl_plots/PRL_plot1.pdf, id=80, 968.41798pt x 433.62pt>
+[2] <prl_plots/PRL_plot1.pdf, id=77, 968.41798pt x 433.62pt>
 File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use prl_plots/PRL_plot1.pdf>
-Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 46.
+Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 49.
 (pdftex.def)             Requested size: 445.47768pt x 199.46762pt.
  [3]
 <./prl_plots/PRL_plot2.pdf, id=111, 484.209pt x 722.7pt>
 File: ./prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use ./prl_plots/PRL_plot2.pdf>
-Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 86.
+Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 89.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
 
-Underfull \hbox (badness 6380) in paragraph at lines 57--111
+Underfull \hbox (badness 6380) in paragraph at lines 60--114
 []\OT1/cmr/m/n/10 In con-clu-sion, ad-di-tional mea-sure-ments of the
  []
 
@@ -439,7 +435,7 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.111 
+l.114 
        <./prl_plots/PRL_plot1.pdf>]) (./prl.bbl [5pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.2}) has been already used, duplicat
 e ignored
@@ -506,8 +502,8 @@ Package rerunfilecheck Info: File `prl.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  8409 strings out of 494108
- 118406 string characters out of 6155655
- 358740 words of memory out of 5000000
+ 118408 string characters out of 6155655
+ 358730 words of memory out of 5000000
  11636 multiletter control sequences out of 15000+600000
  14329 words of font info for 54 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
@@ -534,7 +530,7 @@ onts/type1/public/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/
 public/amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public
 /amsfonts/symbols/msam10.pfb>
-Output written on prl.pdf (6 pages, 409379 bytes).
+Output written on prl.pdf (6 pages, 410393 bytes).
 PDF statistics:
  317 PDF objects out of 1000 (max. 8388607)
  267 compressed objects within 3 object streams
