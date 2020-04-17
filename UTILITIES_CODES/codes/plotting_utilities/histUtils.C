@@ -46,7 +46,7 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
 
   TPad* pad1 = (TPad*)c->GetPad(1);
   pad1->SetBottomMargin(0.02);
-  pad1->SetRightMargin(0.02);
+  pad1->SetRightMargin(0.03);
   pad1->SetLeftMargin(0.1);
   pad1->SetTopMargin(0.13);
   pad1->SetFrameLineWidth(2);
@@ -78,7 +78,7 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   TPad* pad = (TPad*)c->GetPad(2);
   pad->SetTopMargin(0.01);
   pad->SetBottomMargin(0.5);
-  pad->SetRightMargin(0.02);
+  pad->SetRightMargin(0.03);
   pad->SetLeftMargin(0.1);
   pad->SetFrameLineWidth(2);
 
