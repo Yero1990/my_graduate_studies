@@ -55,50 +55,49 @@ if not os.path.exists(dir_name):
 
 #Get Reduced Xsec Data File
 fname_Q2_3to4 = '../deep_data_files/redXsec_combined_Q2_3to4.txt'   #Read Q2 = 3.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
-#fname_Q2_4to5 = '../deep_data_files/redXsec_combined_Q2_4to5.txt'   #Read Q2 = 4.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
-fname_Q2_4to5 = '../deep_data_files/redXsec_combined.txt'
+fname_Q2_4to5 = '../deep_data_files/redXsec_combined_Q2_4to5.txt'   #Read Q2 = 4.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
 
 f3to4 = B.get_file(fname_Q2_3to4)
 f4to5 = B.get_file(fname_Q2_4to5)
 
 #Get Bin Information (Same info for all files), regardless of kinematic Q2 bin (as long as histogram binning is samee)                                                                                              
-i_b = B.get_data(f4to5, 'i_b')    #2D bin number                                                                    
-i_x = B.get_data(f4to5, 'i_x')    #x (th_nq) bin number                                                                                    
-i_y = B.get_data(f4to5, 'i_y')    #y (pmiss) bin number                                        
-thnq = B.get_data(f4to5, 'xb')      #th_nq value at bin center
-pm =  B.get_data(f4to5, 'yb')      #pmiss value at bin center   
+i_b = np.array(B.get_data(f4to5, 'i_b'))    #2D bin number                                                                    
+i_x = np.array(B.get_data(f4to5, 'i_x'))    #x (th_nq) bin number                                                                                    
+i_y = np.array(B.get_data(f4to5, 'i_y'))    #y (pmiss) bin number                                        
+thnq = np.array(B.get_data(f4to5, 'xb'))      #th_nq value at bin center
+pm =  np.array(B.get_data(f4to5, 'yb'))      #pmiss value at bin center   
 
 #Get averaged missing momentum
 pm_avg_3to4 = B.get_data(f3to4, 'pm_avg')
 pm_avg_4to5 = B.get_data(f4to5, 'pm_avg')
 
+#Get Combined Final Red Xsec for all kinematics (Q2 = 3.5 +/- 0.5 GeV2)
+red_dataXsec_avg_3to4          = np.array(B.get_data(f3to4,'red_dataXsec_avg'))
+red_dataXsec_avg_err_3to4      = np.array(B.get_data(f3to4,'red_dataXsec_avg_err'))
+red_dataXsec_avg_syst_err_3to4 = np.array(B.get_data(f3to4,'red_dataXsec_avg_syst_err'))
+red_dataXsec_avg_tot_err_3to4  = np.array(B.get_data(f3to4,'red_dataXsec_avg_tot_err'))
+red_pwiaXsec_avg_3to4          = np.array(B.get_data(f3to4,'red_pwiaXsec_avg'))
+red_fsiXsec_avg_3to4           = np.array(B.get_data(f3to4,'red_fsiXsec_avg'))
 #Get Combined Final Red Xsec for all kinematics (Q2 = 4.5 +/- 0.5 GeV2)
-red_dataXsec_avg_3to4          = B.get_data(f3to4,'red_dataXsec_avg')
-red_dataXsec_avg_err_3to4      = B.get_data(f3to4,'red_dataXsec_avg_err')
-red_dataXsec_avg_syst_err_3to4 = B.get_data(f3to4,'red_dataXsec_avg_syst_err')
-red_dataXsec_avg_tot_err_3to4  = B.get_data(f3to4,'red_dataXsec_avg_tot_err')
-red_pwiaXsec_avg_3to4          = B.get_data(f3to4,'red_pwiaXsec_avg')
-red_fsiXsec_avg_3to4           = B.get_data(f3to4,'red_fsiXsec_avg')
-
-red_dataXsec_avg_4to5          = B.get_data(f4to5,'red_dataXsec_avg')
-red_dataXsec_avg_err_4to5      = B.get_data(f4to5,'red_dataXsec_avg_err')
-red_dataXsec_avg_syst_err_4to5 = B.get_data(f4to5,'red_dataXsec_avg_syst_err')
-red_dataXsec_avg_tot_err_4to5  = B.get_data(f4to5,'red_dataXsec_avg_tot_err')
-red_pwiaXsec_avg_4to5          = B.get_data(f4to5,'red_pwiaXsec_avg')
-red_fsiXsec_avg_4to5           = B.get_data(f4to5,'red_fsiXsec_avg')
+red_dataXsec_avg_4to5          = np.array(B.get_data(f4to5,'red_dataXsec_avg'))
+red_dataXsec_avg_err_4to5      = np.array(B.get_data(f4to5,'red_dataXsec_avg_err'))
+red_dataXsec_avg_syst_err_4to5 = np.array(B.get_data(f4to5,'red_dataXsec_avg_syst_err'))
+red_dataXsec_avg_tot_err_4to5  = np.array(B.get_data(f4to5,'red_dataXsec_avg_tot_err'))
+red_pwiaXsec_avg_4to5          = np.array(B.get_data(f4to5,'red_pwiaXsec_avg'))
+red_fsiXsec_avg_4to5           = np.array(B.get_data(f4to5,'red_fsiXsec_avg'))
 
 #Get total relative errors / (Pm, thnq) bin for plotting (probably also write to table)
-kin_syst_tot_3to4 = dfile(fname_Q2_3to4)['kin_syst_tot']    #kinematic systematics
-norm_syst_tot_3to4 = dfile(fname_Q2_3to4)['norm_syst_tot']  #normalization systematics
-tot_syst_err_3to4 = dfile(fname_Q2_3to4)['tot_syst_err']    #total systematics
-tot_stats_err_3to4 = dfile(fname_Q2_3to4)['tot_stats_err']  #total statistical
-tot_err_3to4 = dfile(fname_Q2_3to4)['tot_err']              #overall error
+kin_syst_tot_3to4 = np.array(dfile(fname_Q2_3to4)['kin_syst_tot'])    #kinematic systematics
+norm_syst_tot_3to4 = np.array(dfile(fname_Q2_3to4)['norm_syst_tot'])  #normalization systematics
+tot_syst_err_3to4 = np.array(dfile(fname_Q2_3to4)['tot_syst_err'])    #total systematics
+tot_stats_err_3to4 = np.array(dfile(fname_Q2_3to4)['tot_stats_err'])  #total statistical
+tot_err_3to4 = np.array(dfile(fname_Q2_3to4)['tot_err'])              #overall error
 
-kin_syst_tot_4to5 = dfile(fname_Q2_4to5)['kin_syst_tot']    #kinematic systematics
-norm_syst_tot_4to5 = dfile(fname_Q2_4to5)['norm_syst_tot']  #normalization systematics
-tot_syst_err_4to5 = dfile(fname_Q2_4to5)['tot_syst_err']    #total systematics
-tot_stats_err_4to5 = dfile(fname_Q2_4to5)['tot_stats_err']  #total statistical
-tot_err_4to5 = dfile(fname_Q2_4to5)['tot_err']              #overall error
+kin_syst_tot_4to5 = np.array(dfile(fname_Q2_4to5)['kin_syst_tot'])    #kinematic systematics
+norm_syst_tot_4to5 = np.array(dfile(fname_Q2_4to5)['norm_syst_tot'])  #normalization systematics
+tot_syst_err_4to5 = np.array(dfile(fname_Q2_4to5)['tot_syst_err'])    #total systematics
+tot_stats_err_4to5 = np.array(dfile(fname_Q2_4to5)['tot_stats_err'])  #total statistical
+tot_err_4to5 = np.array(dfile(fname_Q2_4to5)['tot_err'])              #overall error
 
 def read_halla_data(thnq=0):
 
@@ -176,12 +175,12 @@ def plot_momentum_dist():
     #Make PRL paper plots
 
     #Read This Experiment (Hall C) Data, and require better than 50% statistics for both Q2 = 3.5 and Q2 = 4.5
-    red_dataXsec_avg_masked_3to4 = np.ma.array(red_dataXsec_avg_3to4, mask=(red_dataXsec_avg_err_3to4>0.5*red_dataXsec_avg_3to4))
+    red_dataXsec_avg_masked_3to4 = np.ma.array(red_dataXsec_avg_3to4, mask=(red_dataXsec_avg_err_3to4>0.5*red_dataXsec_avg_3to4))    
     red_dataXsec_avg_masked_3to4 = np.ma.filled(red_dataXsec_avg_masked_3to4.astype(float), np.nan)
 
     red_dataXsec_avg_masked_4to5 = np.ma.array(red_dataXsec_avg_4to5, mask=(red_dataXsec_avg_err_4to5>0.5*red_dataXsec_avg_4to5))
     red_dataXsec_avg_masked_4to5 = np.ma.filled(red_dataXsec_avg_masked_4to5.astype(float), np.nan)
-
+    
     
     #Read Hall A data (reduced Xsec already in fm^3 units, and Precoil in GeV)
     pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35 = read_halla_data(35)
@@ -244,9 +243,21 @@ def plot_momentum_dist():
         red_pwiaXsec_CD = np.array(red_pwiaXsec_CD)*MeV2fm
         red_fsiXsec_CD = np.array(red_fsiXsec_CD)*MeV2fm
 
-        f_red_pwiaXsec_avg_4to5 = interp1d(pm_avg_4to5[thnq==ithnq], red_pwiaXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='linear') 
-        f_red_fsiXsec_avg_4to5 = interp1d(pm_avg_4to5[thnq==ithnq], red_fsiXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='linear') 
+        #Paris LAGET (Due to limited data, adjustements on interpolation have to be made,depending on the data)
+        #thnq: 5, 15, 95 deg (plot with pm_avg_4to5[thnq])   configuration1, c1 (interpolation)
+        f_red_pwiaXsec_avg_4to5_c1 = interp1d(pm_avg_4to5[thnq==ithnq], red_pwiaXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='linear') 
+        f_red_fsiXsec_avg_4to5_c1 = interp1d(pm_avg_4to5[thnq==ithnq], red_fsiXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='linear') 
 
+        #thnq: 35, 45 deg (plot with pm[thnq])
+        f_red_pwiaXsec_avg_4to5_c2 = interp1d(pm[thnq==ithnq], red_pwiaXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='cubic') 
+        f_red_fsiXsec_avg_4to5_c2 = interp1d(pm[thnq==ithnq], red_fsiXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='cubic') 
+
+        #thnq:  25, 55, 65, 75, 85 (plot with pm[thnq])
+        f_red_pwiaXsec_avg_4to5_c3 = interp1d(pm[thnq==ithnq], red_pwiaXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='linear') 
+        f_red_fsiXsec_avg_4to5_c3 = interp1d(pm[thnq==ithnq], red_fsiXsec_avg_4to5[thnq==ithnq],fill_value='extrapolate', kind='linear') 
+
+        
+        
         f_red_pwiaXsec_V18 = interp1d(pm_avg1, red_pwiaXsec_V18,fill_value='extrapolate', kind='cubic')                        #AV18 (M. Sargsian calculation)
         f_red_fsiXsec_V18 = interp1d(pm_avg2, red_fsiXsec_V18,fill_value='extrapolate', kind='cubic')
        
@@ -370,29 +381,11 @@ def plot_momentum_dist():
         #Remove un-necessary X tick labels from subplot
         B.pl.setp(ax0.get_xticklabels(), visible=False)
         
-        
-        #Plot theoretical curves
-        
-        #Laget Q2 = 4.5 +/- 0.5
-        B.plot_exp(pm[thnq==ithnq], f_red_pwiaXsec_avg_4to5(pm[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
-        B.plot_exp(pm[thnq==ithnq], f_red_fsiXsec_avg_4to5(pm[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
-        #B.plot_exp(pm_paris, redXsec_Paris_MS(pm_paris), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
-        #B.plot_exp(pm_paris, f_red_fsiXsec_avg_4to5(pm_avg_4to5[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
-               
-        #AV18
-        B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='AV18 PWIA')   
-        B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='AV18 FSI') 
-        #CD-Bonn
-        B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn PWIA')     
-        B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
+        #----------PLOT HALL C DATA: FINAL REDUCED XSEC VS. THETA_nq------------
+        B.plot_exp(pm_avg_4to5[(thnq==ithnq)], red_dataXsec_avg_masked_4to5[thnq==ithnq]*MeV2fm, red_dataXsec_avg_tot_err_4to5[thnq==ithnq]*MeV2fm, marker='o', markersize=6, c='k', mec='k', mfc='k', label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=4,capsize=0)
+        B.plot_exp(pm_avg_3to4[(thnq==ithnq)], red_dataXsec_avg_masked_3to4[(thnq==ithnq)]*MeV2fm, red_dataXsec_avg_tot_err_3to4[(thnq==ithnq)]*MeV2fm, marker='o', markersize=6, c='c', mec='c', mfc='white', label=r'$Q^{2}=3.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=3,capsize=0)
 
-
-        #----------PLOT FINAL REDUCED XSEC VS. THETA_nq------------
-        B.plot_exp(pm_avg_4to5[thnq==ithnq], red_dataXsec_avg_masked_4to5[thnq==ithnq]*MeV2fm, red_dataXsec_avg_tot_err_4to5[thnq==ithnq]*MeV2fm, marker='o', markersize=6, c='k', mec='k', mfc='k', label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=4,capsize=0)
-        B.plot_exp(pm_avg_3to4[thnq==ithnq], red_dataXsec_avg_masked_3to4[thnq==ithnq]*MeV2fm, red_dataXsec_avg_tot_err_3to4[thnq==ithnq]*MeV2fm, marker='o', markersize=6, c='c', mec='c', mfc='white', label=r'$Q^{2}=3.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=3,capsize=0)
-
-        
-        #--------------HALL A DATA---------------
+        #---------PLOT HALL A DATA---------------
         if(ithnq==35):
             #Plot Hall A Data for thnq==35 or 45 deg
             B.plot_exp(pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35, marker='s', markersize=6, mfc='white', color='r', label='Hall A Data', zorder=2, capsize=0)
@@ -405,13 +398,32 @@ def plot_momentum_dist():
         #----------------------------------------
 
         
+        #----PLOT THEORETICAL CURVES-----
+
+        #---Paris (Laget calculation)  Q2 = 4.5 +/- 0.5 (multiple interpolations configurations depending on angle setting)
+        if(ithnq==5 or ithnq==15 or ithnq==95):
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_fsiXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+        elif(ithnq==35 or ithnq==45):
+            B.plot_exp(pm[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
+            B.plot_exp(pm[thnq==ithnq], f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+        else:
+            B.plot_exp(pm[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c3(pm[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
+            B.plot_exp(pm[thnq==ithnq], f_red_fsiXsec_avg_4to5_c3(pm[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+        
+        #AV18
+        B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='AV18 PWIA')   
+        B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='AV18 FSI') 
+
+        #CD-Bonn
+        B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn PWIA')     
+        B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
 
         B.pl.xlabel('')
         B.pl.ylabel(r'$\sigma_{\mathrm{red}} (\mathrm{fm}^{3})$', fontsize=22)
         B.pl.xlim(0., 1.2)
-        B.pl.title(r'Reduced Cross Section, $\theta_{nq} = %i \pm 5^{\circ}$ '%(ithnq), fontsize=22)
+        B.pl.title(r'Reduced Cross Section, $\theta_{nq} = %i \pm 5^{\circ}$ '%(ithnq), fontsize=20)
         B.pl.legend(frameon=False, fontsize=12, loc='upper right')            
-
 
         
         #--------------------------------Calculate and PLOT RATIO-----------------------------
@@ -421,41 +433,57 @@ def plot_momentum_dist():
         ax1.tick_params(axis='both', which='both', direction='in', top=True, bottom=True, left=True, right=True, labelsize=19)    
 
         
-        #--------Calculate Ratio of redXsec relative to CD-Bonn
-        #Calculate ref and data ratios
+        #--------Calculate Ratio of redXsec relative to CD-Bonn-----
+        #Reference
         R_ref = f_red_pwiaXsec_CD(pm[thnq==ithnq]) / f_red_pwiaXsec_CD(pm[thnq==ithnq])
-        
+
+        #DATA / CD-BONN PWIA
         R_data_4to5 = red_dataXsec_avg_masked_4to5[thnq==ithnq]*MeV2fm / f_red_pwiaXsec_CD(pm_avg_4to5[thnq==ithnq])
         R_data_err_4to5 = red_dataXsec_avg_tot_err_4to5[thnq==ithnq]*MeV2fm / f_red_pwiaXsec_CD(pm_avg_4to5[thnq==ithnq])
-
+        
         R_data_3to4 = red_dataXsec_avg_masked_3to4[thnq==ithnq]*MeV2fm / f_red_pwiaXsec_CD(pm_avg_3to4[thnq==ithnq])
         R_data_err_3to4 = red_dataXsec_avg_tot_err_3to4[thnq==ithnq]*MeV2fm / f_red_pwiaXsec_CD(pm_avg_3to4[thnq==ithnq])
         
         #Theory curves ratio to CD-BONN
+
+        #Paris LAGET            
+        #thnq: 5, 15, 95 deg
+        R_Paris_pwia_4to5_c1 = f_red_pwiaXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg_4to5[thnq==ithnq])
+        R_Paris_fsi_4to5_c1 = f_red_fsiXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg_4to5[thnq==ithnq])
+        #thnq: 35, 45 deg
+        R_Paris_pwia_4to5_c2 = f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq]) / f_red_pwiaXsec_CD(pm[thnq==ithnq])
+        R_Paris_fsi_4to5_c2 = f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq]) / f_red_pwiaXsec_CD(pm[thnq==ithnq])
+        #thnq: 25, 55, 65, 75, 85
+        R_Paris_pwia_4to5_c3 = f_red_pwiaXsec_avg_4to5_c3(pm[thnq==ithnq]) / f_red_pwiaXsec_CD(pm[thnq==ithnq])
+        R_Paris_fsi_4to5_c3 = f_red_fsiXsec_avg_4to5_c3(pm[thnq==ithnq]) / f_red_pwiaXsec_CD(pm[thnq==ithnq])
+
+        #AV 18
         R_AV18_pwia = f_red_pwiaXsec_V18(pm_avg1) / f_red_pwiaXsec_CD(pm_avg1)
         R_AV18_fsi = f_red_fsiXsec_V18(pm_avg2) / f_red_pwiaXsec_CD(pm_avg2)
-
+        #CD-BONN
         R_CDBonn_fsi = f_red_fsiXsec_CD(pm_avg4) / f_red_pwiaXsec_CD(pm_avg4)
 
-        R_Paris_pwia_4to5 = f_red_pwiaXsec_avg_4to5(pm_avg_4to5[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg_4to5[thnq==ithnq])
-        R_Paris_fsi_4to5 = f_red_fsiXsec_avg_4to5(pm_avg_4to5[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg_4to5[thnq==ithnq])
-
-        #R_Paris_pwia_3to4 = f_red_pwiaXsec_avg_3to4(pm_avg_3to4[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg_3to4[thnq==ithnq])
-        #R_Paris_fsi_3to4 = f_red_fsiXsec_avg_3to4(pm_avg_3to4[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg_3to4[thnq==ithnq])
-
-        #Plot the Data to CD-Bonn PWIA model
+        
+        #----Plot the RATIO OF Data to CD-Bonn PWIA model
         B.plot_exp(pm_avg_4to5[thnq==ithnq], R_data_4to5, R_data_err_4to5, marker='o', markersize=6, c='k', mec='k', mfc='k',     label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', capsize=0, zorder=4)
         B.plot_exp(pm_avg_3to4[thnq==ithnq], R_data_3to4, R_data_err_3to4, marker='o', markersize=6, c='c', mec='c', mfc='white', label=r'$Q^{2}=3.5\pm0.5$ GeV$^{2}$ (Hall C)', capsize=0, zorder=3)
 
-        #Plot the ref. and all to CD-Bonn PWIA model
-        B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_pwia_4to5, marker='None', linestyle='--', color='b', label='Paris PWIA')
-        B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_fsi_4to5, marker='None', linestyle='-', color='b', label='Paris FSI')
+        #-----PLOT THEORETICAL RATIO-----
+        #Paris LAGET
+        if(ithnq==5 or ithnq==15 or ithnq==95):
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_pwia_4to5_c1, marker='None', linestyle='--', color='b', label='Paris PWIA')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_fsi_4to5_c1, marker='None', linestyle='-', color='b', label='Paris FSI')
+        if(ithnq==35 or ithnq==45):
+            B.plot_exp(pm[thnq==ithnq], R_Paris_pwia_4to5_c2, marker='None', linestyle='--', color='b', label='Paris PWIA')
+            B.plot_exp(pm[thnq==ithnq], R_Paris_fsi_4to5_c2, marker='None', linestyle='-', color='b', label='Paris FSI')
+        else:
+            B.plot_exp(pm[thnq==ithnq], R_Paris_pwia_4to5_c3, marker='None', linestyle='--', color='b', label='Paris PWIA')
+            B.plot_exp(pm[thnq==ithnq], R_Paris_fsi_4to5_c3, marker='None', linestyle='-', color='b', label='Paris FSI')
 
-        #B.plot_exp(pm_avg_3to4[thnq==ithnq], R_Paris_pwia_3to4, marker='None', linestyle='--', color='c', label='Paris PWIA')
-        #B.plot_exp(pm_avg_3to4[thnq==ithnq], R_Paris_fsi_3to4, marker='None', linestyle='-', color='c', label='Paris FSI')
-        
+        #Plot CD-BONN
         B.plot_exp(pm[thnq==ithnq], R_ref,  marker='None', linestyle='--', color='#ff00ff', label='CD-Bonn PWIA')
         B.plot_exp(pm_avg4, R_CDBonn_fsi, marker='None', linestyle='-', color='#ff00ff', label='CD-Bonn FSI')
+        #Plot AV 18
         B.plot_exp(pm_avg1, R_AV18_pwia, marker='None', linestyle='--', color='g', label='AV18 PWIA')
         B.plot_exp(pm_avg2, R_AV18_fsi, marker='None', linestyle='-', color='g', label='AV18 FSI')
         
@@ -478,45 +506,118 @@ def plot_momentum_dist():
         
         #Set axis limits
         B.pl.xlim(0.0, 1.2)
-        #B.pl.ylim(-0.05, 22.8)
-        
+        if(ithnq==5 or ithnq==15):
+            B.pl.ylim(-1., 10.5)
+        if(ithnq==15):
+            B.pl.ylim(-0.5, 12.3)
+        elif(ithnq==25):
+            B.pl.ylim(-1., 20.5)
+        elif(ithnq==35):
+            B.pl.ylim(-1., 29.9)            
+        elif(ithnq==45 or ithnq==55):
+            B.pl.ylim(-5., 119.9)
+        elif(ithnq==65):
+            B.pl.ylim(-1.5, 66.5)
+        elif(ithnq==75):
+            B.pl.ylim(-1., 27.5)
+        elif(ithnq==85):
+            B.pl.ylim(0.2, 13.5)
+        elif(ithnq==95):
+            B.pl.ylim(0.2, 10.5)
+        else:
+            print('OK')
+
         #Remove spacing between subplots
-        plt.subplots_adjust(hspace = 0.001, bottom=0.08, top=0.95, right=0.95, left=0.2) #, hspace = 0.001, wspace = 0.001)
+        plt.subplots_adjust(hspace = 0.01, bottom=0.08, top=0.95, right=0.95, left=0.2) #, hspace = 0.001, wspace = 0.001)
 
         #Set Axes Labels for subplot 0
-        B.pl.xlabel(r'$p_{\mathrm{r}} [GeV/c]$', fontsize=19)                                                                                                                                                                                                   
+        B.pl.xlabel(r'$p_{\mathrm{r}} $ [GeV/c]', fontsize=19)                                                                                                                                                                                                   
         B.pl.ylabel(r'$R=\sigma_{\mathrm{red}}/\sigma^{\mathrm{CD-Bonn PWIA}}_{\mathrm{red}}$', fontsize=19)                                                                                                                                                                        
         B.pl.title('')
 
-
-        #create INSET PLOT
-        if(ithnq==25 or ithnq==35 or ithnq==45):
-            axins = inset_axes(ax1, width='50%', height='50%', loc='upper left')
-        else:
-            axins = inset_axes(ax1, width='50%', height='50%', loc='upper right')
-            
-        B.pl.xlim(0,0.4)
-        B.pl.ylim(0.5,1.5)
         
-        #Plot the Data to CD-Bonn PWIA model
-        B.plot_exp(pm_avg_4to5[thnq==ithnq], R_data_4to5, R_data_err_4to5, marker='o', markersize=6, c='k', mec='k', mfc='k', capsize=0, zorder=4)
-        B.plot_exp(pm_avg_3to4[thnq==ithnq], R_data_3to4, R_data_err_3to4, marker='o', markersize=6, c='c', mec='c', mfc='white', capsize=0, zorder=3)
+        #CREATE INSET PLOT
+        if(ithnq==5 or ithnq==25 or ithnq==95 or ithnq==75 or ithnq==85):
+            axins = inset_axes(ax1, width='60%', height='60%', loc='upper right')
+            axins.yaxis.tick_left()
+        elif(ithnq==45 or ithnq==55 or ithnq==35 or ithnq==25):
+            axins = inset_axes(ax1, width='70%', height='70%', loc='upper left')
+            axins.yaxis.tick_right()            
+        else:
+            axins = inset_axes(ax1, width='60%', height='60%', loc='upper left')
+            axins.yaxis.tick_right()
+       
+        #----Plot the RATIO OF Data to CD-Bonn PWIA model
+        B.plot_exp(pm_avg_4to5[thnq==ithnq], R_data_4to5, R_data_err_4to5, marker='o', markersize=6, c='k', mec='k', mfc='k',     label=r'', capsize=0, zorder=4)
+        B.plot_exp(pm_avg_3to4[thnq==ithnq], R_data_3to4, R_data_err_3to4, marker='o', markersize=6, c='c', mec='c', mfc='white', label=r'', capsize=0, zorder=3)
 
-        #Plot the ref. and all to CD-Bonn PWIA model
+        
+         #-----PLOT THEORETICAL RATIO-----
+        #Paris LAGET
+        if(ithnq==5 or ithnq==15 or ithnq==95):
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_pwia_4to5_c1, marker='None', linestyle='--', color='b', label='')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_fsi_4to5_c1, marker='None', linestyle='-', color='b', label='')
+        if(ithnq==35 or ithnq==45):
+            B.plot_exp(pm[thnq==ithnq], R_Paris_pwia_4to5_c2, marker='None', linestyle='--', color='b', label='')
+            B.plot_exp(pm[thnq==ithnq], R_Paris_fsi_4to5_c2, marker='None', linestyle='-', color='b', label='Paris FSI')
+        else:
+            B.plot_exp(pm[thnq==ithnq], R_Paris_pwia_4to5_c3, marker='None', linestyle='--', color='b', label='Paris PWIA')
+            B.plot_exp(pm[thnq==ithnq], R_Paris_fsi_4to5_c3, marker='None', linestyle='-', color='b', label='Paris FSI')
+
+        
+        #Plot CD-BONN
         B.plot_exp(pm[thnq==ithnq], R_ref,  marker='None', linestyle='--', color='#ff00ff', label='CD-Bonn PWIA')
-        B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_pwia_4to5, marker='None', linestyle='--', color='b', label='Paris PWIA')
-        B.plot_exp(pm_avg_4to5[thnq==ithnq], R_Paris_fsi_4to5, marker='None', linestyle='-', color='b', label='Paris FSI')        
         B.plot_exp(pm_avg4, R_CDBonn_fsi, marker='None', linestyle='-', color='#ff00ff', label='CD-Bonn FSI')
+        #Plot AV 18
         B.plot_exp(pm_avg1, R_AV18_pwia, marker='None', linestyle='--', color='g', label='AV18 PWIA')
         B.plot_exp(pm_avg2, R_AV18_fsi, marker='None', linestyle='-', color='g', label='AV18 FSI')
+        
+        if ithnq==35:
+            pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
+            R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
+            R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+        if ithnq==45:
+            pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
+            R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
+            R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha) 
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+        if ithnq==75:
+            pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
+            R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
+            R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
 
-        if(ithnq==25 or ithnq==35 or ithnq==45):
-            axins.yaxis.tick_right()
+
+
+        if(ithnq==5):
+            B.pl.xlim(-0.01, 0.195); B.pl.ylim(0.5, 1.45)
+        elif(ithnq==15):
+            B.pl.xlim(-0.01, 0.23); B.pl.ylim(0.7, 1.63)
+        elif(ithnq==25):
+            B.pl.xlim(-0.01, 0.823); B.pl.ylim(0.2, 2.7)
+        elif(ithnq==35):
+            B.pl.xlim(-0.01, 0.830); B.pl.ylim(0.3, 2.7) 
+        elif(ithnq==45):
+            B.pl.xlim(-0.01, 0.91); B.pl.ylim(0.5, 6.7)
+        elif(ithnq==55):
+            B.pl.xlim(-0.01, 0.823); B.pl.ylim(0.5, 7.7)            
+        elif(ithnq==65):
+            B.pl.xlim(-0.01, 0.73); B.pl.ylim(0.2, 10.7)
+        elif(ithnq==75):
+            B.pl.xlim(-0.01, 0.67); B.pl.ylim(0.3, 6.7)
+        elif(ithnq==85):
+            B.pl.xlim(-0.01, 0.47); B.pl.ylim(0.5, 3.7)
+        elif(ithnq==95):
+            B.pl.xlim(-0.01, 0.33); B.pl.ylim(0.2, 2.)
         else:
-            axins.yaxis.tick_left()
+            print('OK')
+
+            
         B.pl.xlabel('')
         B.pl.ylabel('')
         B.pl.title('')
+
         B.pl.show()
 
     #-----------------------------VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV----------------------------------
