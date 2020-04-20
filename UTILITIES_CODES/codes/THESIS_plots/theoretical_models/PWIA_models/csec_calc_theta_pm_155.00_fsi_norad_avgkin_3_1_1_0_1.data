@@ -1,0 +1,18 @@
+# 1  # the knock-out nucleon is proton(1), neutron(-1)
+# 1  # Off-Shell effects included (1) not included (0)
+# 1  # only pole term in FSI (0), pole+PV (1) 
+# 1  # it calculates d\sigma/dE'_e d\Omega_e d\Omega_pf
+# 1  # icon = 0 initialization, 1 - PWIA, 2 -forward rescattering, 3 - charge exchange rescattering 
+#         12 - PWIA+FSI, 13 - PWIA+CHEX, 123 - PWIA+FSI+CHEX
+# 10   #iv2  - version of parameterization of CHEX amplitude - 
+#         10 - Gibbs-Loiseau (has only real part), 21 - SAID, 1021 - SAID+GL
+#         10021 - SAID+GL (with Im part at p>p0 modelled using SAID's value
+#         -21 SAID   - For details look at fpn_chex.f
+# 3  # iv1  - version of FSI; 1- diagonal FSI using fpn.f, 2- diagonal FSI using f_NN_sd.f 
+#         which uses SAID parameterization for plab<3.68, 3 - nondiagonal approximation 
+#         using f_NN_sd.f. At p>1.4 it uses diffractive parametrization like fpn.f
+# 0  # idd  - isd = 1 spectator mechanism, isd=2 direct mechanism isd =0 both   
+# 3  # iw   - 1 - Paris 2 - V18 deuteron wave funcion, 3- cd Bonn, 4 - AV18sb
+# 0  # ipp  - 1 - quasi "pp" wave functio - only S-parital wave, 0, both S and D waves
+#    crs  - cross section in nb/GeV/str^2
+#! thr0[f,0]/ phr0[f,1]/ pr[f,2]/ ei[f,3]/ th_e[f,4]/ q2[f,5]/ x[f,6]/ plab[f,7]/ crs0[f,8]/ crs12[f,9]/ ratio[f,10]/ th_nq_mc[f,11]/ pm_b[f,12]/ pm_b_av[f,13]/ ix[f,14]/ iy[f,15]/ kin[s,16]/ 

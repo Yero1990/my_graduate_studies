@@ -1,0 +1,19 @@
+# reduced cross section as a function of missing momentum 
+#
+# theta_nq = 35.0 
+# 1 GeV = 1/0.1975 fm^-1 = 5.063291139240506 fm^-1
+# p_miss        : fm^-1, missing momentum
+# delta_rho     : fm^3, total error in reduced cross section (momentum distribution) 
+# delta_rho1    : fm^3, total error in reduced cross section including chi2 of averaging 
+#
+#! p_miss[f,0]/ rho[f,1]/ delta_rho[f,2]/ delta_rho1[f,3]/ 
+0.904  1.587e-02  7.091e-04  9.644e-04 
+1.101  6.465e-03  3.710e-04  4.827e-04 
+1.295  2.295e-03  2.438e-04  3.027e-05 
+1.502  1.081e-03  2.419e-04  2.419e-04 
+1.734  4.872e-04  5.631e-05  4.282e-05 
+1.926  2.456e-04  2.769e-05  2.769e-05 
+2.123  1.450e-04  1.666e-05  5.470e-06 
+2.328  1.080e-04  1.155e-05  9.115e-06 
+2.524  7.370e-05  9.591e-06  8.805e-06 
+2.727  5.151e-05  9.256e-06  9.256e-06 

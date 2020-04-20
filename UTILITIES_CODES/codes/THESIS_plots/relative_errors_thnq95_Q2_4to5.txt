@@ -1,0 +1,2 @@
+#theta_nq = 95 +/- 5 deg :: All errors are relative, dsig / sig [%], Q2 = 4.5 +/- 0.5 GeV2 
+#!pm_avg[f,0]/   kin_syst[f,1]/   norm_syst[f,2]/   tot_syst[f,3]/   tot_stats[f,4]/   tot_err[f,5]/
