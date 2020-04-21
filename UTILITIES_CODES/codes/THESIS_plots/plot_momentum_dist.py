@@ -14,12 +14,12 @@ from mpl_toolkits.axes_grid1.inset_locator import (inset_axes, InsetPosition, ma
 
 
 matplotlib.use('Agg')
-
+plt.ioff() # prevent plots froms displaying
 #Use latex commands (e.g. \textit ot \textbf)
 rc('text', usetex=True)
 #Set default font to times new roman
 font = {'family' : 'Times New Roman',
-        'weight' : 'normal',
+        'weight' : 'bold',
         'size'   : 12
 }
 plt.rc('font', **font)
@@ -44,13 +44,13 @@ MeV2fm = 197.3**3    #convert MeV^-3 to fm^3
 #========User Input (Dir. Name to store output)=======
 #usage: ipython plot_momentum_dist.py
 
-dir_name = "thesis_redXsec_plots"
+dir_name1 = "thesis_redXsec_plots"
 dir_name2 = "thesis_relError_plots"
 dir_name3 = "thesis_kin_tables"
 
 #check if directory exists, else creates it.
-if not os.path.exists(dir_name):
-    os.makedirs(dir_name)
+if not os.path.exists(dir_name1):
+    os.makedirs(dir_name1)
 if not os.path.exists(dir_name2):
     os.makedirs(dir_name2)
 if not os.path.exists(dir_name3):
@@ -421,7 +421,7 @@ def plot_momentum_dist():
         #-----------------------------ALTERNATIVE: MAKE SUBPLOTS----------------------------------
         B.pl.clf()
         #-----Create Subplots-----
-        fig = B.pl.subplots(2, sharex=True, sharey=False, figsize=(7, 14)) 
+        fig = B.pl.subplots(2, sharex=True, sharey=False, figsize=(7, 10)) 
         gs = gridspec.GridSpec(2, 1) 
         ax0 = B.pl.subplot(gs[0])
         ax0.tick_params(axis='both', which='both', direction='in', top=True, bottom=True, left=True, right=True, labelsize=19)    
@@ -468,7 +468,7 @@ def plot_momentum_dist():
         B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
 
         B.pl.xlabel('')
-        B.pl.ylabel(r'$\sigma_{\mathrm{red}} (\mathrm{fm}^{3})$', fontsize=18)
+        B.pl.ylabel(r'$\sigma_{\mathrm{red}} [\mathrm{fm}^{3}]$', fontsize=18)
         B.pl.xlim(0., 1.2)
         B.pl.title(r'Reduced Cross Section, $\theta_{nq} = %i \pm 5^{\circ}$ '%(ithnq), fontsize=20)
         B.pl.legend(frameon=False, fontsize=12, loc='upper right')            
@@ -665,11 +665,14 @@ def plot_momentum_dist():
         B.pl.xlabel('')
         B.pl.ylabel('')
         B.pl.title('')
-        #B.pl.savefig(dir_name+'')
-        B.pl.show()
+        B.pl.tight_layout()
+
+        B.pl.savefig(dir_name1+'/redXsec_thnq%i_deg.pdf'%(ithnq))
+
+        #B.pl.show()
 
         #----------------------------PLOT RELATIVE ERRORS------------------------
-        B.pl.figure(figsize=(10,6))
+        B.pl.figure(figsize=(10,7))
 
         yref = np.array((red_dataXsec_avg_masked_3to4[thnq==ithnq])) * 0.0
         B.plot_exp(pm_avg_3to4[thnq==ithnq], yref, tot_stats_err_3to4_m[thnq==ithnq]*100, marker='o', c='b', label='Statistical Error')
@@ -679,6 +682,8 @@ def plot_momentum_dist():
         B.pl.title(r'Relative Errors: $\theta_{nq}=%i\pm5^{\circ}$, $Q^{2}=3.5\pm0.5$ GeV$^{2}$'%(ithnq), fontsize=20)
         B.pl.xlabel(r'$p_{\mathrm{r}} $ [GeV/c]', fontsize=18)
         B.pl.ylabel(r'Relative Errors $[\%]$', fontsize=18)
+        plt.xticks(fontsize=19)
+        plt.yticks(fontsize=19)
 
         B.pl.hlines(10., 0, 1.2, colors='r', linestyles='dashed', label=r'$\pm$ 10 $\%$')
         B.pl.hlines(-10., 0, 1.2, colors='r', linestyles='dashed')
@@ -686,37 +691,41 @@ def plot_momentum_dist():
         B.pl.hlines(-25., 0, 1.2, colors='b', linestyles='dashed')
         
         B.pl.ylim(-60,80)
-        B.pl.legend(frameon=False, fontsize=12, loc='upper right')
-        #B.pl.savefig(dir_name2+'/relXsec_err_Q2_3to4_thnq%i_deg.pdf'%(ithnq))
-        B.pl.show()
+        B.pl.legend(frameon=False, fontsize=12, loc='upper left')
+        B.pl.savefig(dir_name2+'/relXsec_err_Q2_3to4_thnq%i_deg.pdf'%(ithnq))
+        #B.pl.show()
+        B.pl.tight_layout()
 
-        B.pl.figure(figsize=(10,6))
+        B.pl.figure(figsize=(10,7))
 
         yref = np.array((red_dataXsec_avg_masked_4to5[thnq==ithnq])) * 0.0
         B.plot_exp(pm_avg_4to5[thnq==ithnq], yref, tot_stats_err_4to5_m[thnq==ithnq]*100, marker='o', c='b', label='Statistical Error')
         B.plot_exp(pm_avg_4to5[thnq==ithnq], yref, tot_syst_err_4to5_m[thnq==ithnq]*100, marker='o', c='r', label='Systematics Error')
         B.plot_exp(pm_avg_4to5[thnq==ithnq], yref, tot_err_4to5_m[thnq==ithnq]*100, marker='o', c='k', label='Total Error')
 
-        B.pl.title(r'Relative Errors, $\theta_{nq}=%i\pm5^{\circ}$, $Q^{2}=4.5\pm0.5$ GeV$^{2}$'%(ithnq), fontsize=20)
+        B.pl.title(r'Relative Errors: $\theta_{nq}=%i\pm5^{\circ}$, $Q^{2}=4.5\pm0.5$ GeV$^{2}$'%(ithnq), fontsize=20)
         B.pl.xlabel(r'$p_{\mathrm{r}} $ [GeV/c]', fontsize=18)
         B.pl.ylabel(r'Relative Errors $[\%]$', fontsize=18)
-
+        plt.xticks(fontsize=19)
+        plt.yticks(fontsize=19)
+        
         B.pl.hlines(10., 0, 1.2, colors='r', linestyles='dashed', label=r'$\pm$ 10 $\%$')
         B.pl.hlines(-10., 0, 1.2, colors='r', linestyles='dashed')
         B.pl.hlines(25., 0, 1.2, colors='b', linestyles='dashed', label=r'$\pm$ 25 $\%$')
         B.pl.hlines(-25., 0, 1.2, colors='b', linestyles='dashed')
         
         B.pl.ylim(-60,80)
-        B.pl.legend(frameon=False, fontsize=12, loc='upper right')
-        #B.pl.savefig(dir_name2+'/relXsec_err_Q2_4to5_thnq%i_deg.pdf'%(ithnq))
-        B.pl.show()
+        B.pl.legend(frameon=False, fontsize=12, loc='upper left')
+        B.pl.savefig(dir_name2+'/relXsec_err_Q2_4to5_thnq%i_deg.pdf'%(ithnq))
+        #B.pl.show()
+        B.pl.tight_layout()
 
 
         
         
         #-----------------------------WRITE DATA XSEC (And other relevant quatities) to FILE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
-        fout_name3to4 = 'relative_errors_thnq%i_Q2_3to4.txt' % (ithnq)
+        fout_name3to4 = dir_name3+'/relative_errors_thnq%i_Q2_3to4.txt' % (ithnq)
         fout_3to4 = open(fout_name3to4, 'w')
         fout_3to4.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
         fout_3to4.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
@@ -741,7 +750,7 @@ def plot_momentum_dist():
         fout_3to4.close()
 
       #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 4.5 +/- 0.5
-        fout_name4to5 = 'relative_errors_thnq%i_Q2_4to5.txt' % (ithnq)
+        fout_name4to5 = dir_name3+'/relative_errors_thnq%i_Q2_4to5.txt' % (ithnq)
         fout_4to5 = open(fout_name4to5, 'w')
         fout_4to5.write('#theta_nq = %i +/- 5 deg :: Q2 = 4.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
         fout_4to5.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
