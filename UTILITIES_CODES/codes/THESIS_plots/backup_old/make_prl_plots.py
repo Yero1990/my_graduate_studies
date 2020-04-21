@@ -288,7 +288,7 @@ def make_prl_plots():
 
     #Set Axes Labels for subplot 0
     B.pl.xlabel('')                                                                                                                                                                                                   
-    B.pl.ylabel(r'$\sigma_{\mathrm{red}}$ ($\mathrm{fm}^{3}$) ', fontsize=22,  labelpad=10)                                                                                                                                                                        
+    B.pl.ylabel(r'$\sigma_{\mathrm{red}}$ [$\mathrm{fm}^{3}$] ', fontsize=22,  labelpad=10)                                                                                                                                                                        
     B.pl.title('') 
 
     #THETA_NQ = 45 DEG
@@ -369,6 +369,8 @@ def make_prl_plots():
     #B.pl.show()
     B.pl.savefig('./PRL_plot1.pdf')
 
+    #-------------------------------------------PLOT RELATIVE ERRORS---------------------
+    
     '''
     B.pl.figure()
     #Take Ratio of red. Xsec to Misak's redXsec to determine K_sig_cc1 ratio
