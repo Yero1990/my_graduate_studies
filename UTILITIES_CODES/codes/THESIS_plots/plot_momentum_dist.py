@@ -63,22 +63,7 @@ fname_Q2_4to5 = '../deep_data_files/redXsec_combined_Q2_4to5.txt'   #Read Q2 = 4
 f3to4 = B.get_file(fname_Q2_3to4)
 f4to5 = B.get_file(fname_Q2_4to5)
 
-#Get average kinematics
-def find3to4(header, ang):
-    thnq = np.array(f3to4['xb'])
-    arr = (np.array(f3to4[header]))[thnq==ang]
-    #print(arr)
-    return arr
-
-def find4to5(header, ang):
-    thnq = np.array(f4to5['xb'])
-    arr = (np.array(f4to5[header]))[thnq==ang]
-    #print(arr)
-    return arr
-
-
     
-
 #Get Bin Information (Same info for all files), regardless of kinematic Q2 bin (as long as histogram binning is samee)                                                                                              
 i_b = np.array(B.get_data(f4to5, 'i_b'))    #2D bin number                                                                    
 i_x = np.array(B.get_data(f4to5, 'i_x'))    #x (th_nq) bin number                                                                                    
@@ -92,11 +77,12 @@ pm_avg_4to5 = np.array(B.get_data(f4to5, 'pm_avg'))
 
 #Get Combined Final Red Xsec for all kinematics (Q2 = 3.5 +/- 0.5 GeV2)
 red_dataXsec_avg_3to4          = np.array(B.get_data(f3to4,'red_dataXsec_avg'))
-red_dataXsec_avg_err_3to4      = np.array(B.get_data(f3to4,'red_dataXsec_avg_err'))  #statistocal error
+red_dataXsec_avg_err_3to4      = np.array(B.get_data(f3to4,'red_dataXsec_avg_err'))  #statistical error
 red_dataXsec_avg_syst_err_3to4 = np.array(B.get_data(f3to4,'red_dataXsec_avg_syst_err')) 
 red_dataXsec_avg_tot_err_3to4  = np.array(B.get_data(f3to4,'red_dataXsec_avg_tot_err'))
 red_pwiaXsec_avg_3to4          = np.array(B.get_data(f3to4,'red_pwiaXsec_avg'))
 red_fsiXsec_avg_3to4           = np.array(B.get_data(f3to4,'red_fsiXsec_avg'))
+
 #Get Combined Final Red Xsec for all kinematics (Q2 = 4.5 +/- 0.5 GeV2)
 red_dataXsec_avg_4to5          = np.array(B.get_data(f4to5,'red_dataXsec_avg'))
 red_dataXsec_avg_err_4to5      = np.array(B.get_data(f4to5,'red_dataXsec_avg_err'))
@@ -105,7 +91,7 @@ red_dataXsec_avg_tot_err_4to5  = np.array(B.get_data(f4to5,'red_dataXsec_avg_tot
 red_pwiaXsec_avg_4to5          = np.array(B.get_data(f4to5,'red_pwiaXsec_avg'))
 red_fsiXsec_avg_4to5           = np.array(B.get_data(f4to5,'red_fsiXsec_avg'))
 
-#Get total relative errors / (Pm, thnq) bin for plotting (probably also write to table)
+#Get total relative errors / (Pm, thnq) bin for plotting (write to table)
 kin_syst_tot_3to4 = np.array(dfile(fname_Q2_3to4)['kin_syst_tot'])    #kinematic systematics
 norm_syst_tot_3to4 = np.array(dfile(fname_Q2_3to4)['norm_syst_tot'])  #normalization systematics
 tot_syst_err_3to4 = np.array(dfile(fname_Q2_3to4)['tot_syst_err'])    #total systematics
@@ -192,7 +178,7 @@ def read_theoretical_models(theory="", model="", thnq=0):
 
 
 def plot_momentum_dist():
-    #Make PRL paper plots
+    #Make THESIS paper plots
 
     #Read This Experiment (Hall C) Data, and require better than 50% statistics for both Q2 = 3.5 and Q2 = 4.5
     red_dataXsec_avg_masked_3to4 = np.ma.array(red_dataXsec_avg_3to4, mask=(red_dataXsec_avg_err_3to4>0.5*red_dataXsec_avg_3to4))    
@@ -245,23 +231,6 @@ def plot_momentum_dist():
         th_nq_min = ithnq - 5
         th_nq_max = ithnq + 5
 
-
-
-        
-        '''
-        #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 4.5 +/- 0.5
-        fout_name4to5 = 'relative_errors_thnq%i_Q2_4to5.txt' % (ithnq)
-        fout_4to5 = open(fout_name4to5, 'w')
-        comment='#theta_nq = %i +/- 5 deg :: All errors are relative, dsig / sig [%%], Q2 = 4.5 +/- 0.5 GeV2 \n' %(ithnq)
-        header='#!pm_avg[f,0]/   kin_syst[f,1]/   norm_syst[f,2]/   tot_syst[f,3]/   tot_stats[f,4]/   tot_err[f,5]/\n'
-        fout_4to5.write(comment)
-        fout_4to5.write(header)
-
-        for i in range(len(pm_avg[thnq==ithnq])):
-        fout.write('%.5f %.5E  %.5E  %.5f  %.5f  %.5f  %.5f  %.5f\n' % ((pm_avg[thnq==35])[i], (red_dataXsec_avg_masked[thnq==35]*MeV2fm)[i], (red_dataXsec_avg_tot_err[thnq==35]*MeV2fm)[i], (tot_stats_err[thnq==35])[i], (kin_syst_tot[thnq==35])[i], (norm_syst_tot[thnq==35])[i], (tot_syst_err[thnq==35])[i], (tot_err[thnq==35])[i]))
-
-        fout.close()
-        '''
         
         #Read Other Theoretical Models (V18, CD-BONN) (Only at Q2 = 4.5 +/- 0.5)
         pm_avg1, red_pwiaXsec_V18 = read_theoretical_models("V18", "PWIA", ithnq)
@@ -645,15 +614,15 @@ def plot_momentum_dist():
         elif(ithnq==25):
             B.pl.xlim(-0.01, 0.823); B.pl.ylim(0.2, 2.7)
         elif(ithnq==35):
-            B.pl.xlim(-0.01, 0.830); B.pl.ylim(0.3, 2.7) 
+            B.pl.xlim(-0.01, 1.2); B.pl.ylim(0.3, 2.7) 
         elif(ithnq==45):
-            B.pl.xlim(-0.01, 0.91); B.pl.ylim(0.5, 4.7)
+            B.pl.xlim(-0.01, 1.2); B.pl.ylim(0.5, 4.7)
         elif(ithnq==55):
             B.pl.xlim(-0.01, 0.823); B.pl.ylim(0.5, 7.7)            
         elif(ithnq==65):
             B.pl.xlim(-0.01, 0.73); B.pl.ylim(0.2, 10.7)
         elif(ithnq==75):
-            B.pl.xlim(-0.01, 0.67); B.pl.ylim(0.3, 6.7)
+            B.pl.xlim(-0.01, 1.2); B.pl.ylim(0.3, 6.7)
         elif(ithnq==85):
             B.pl.xlim(-0.01, 0.47); B.pl.ylim(0.5, 3.7)
         elif(ithnq==95):
@@ -730,10 +699,10 @@ def plot_momentum_dist():
         fout_3to4.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
         fout_3to4.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
         fout_3to4.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
-        fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/   red_dataXsec_avg_stat_err[f,3]/   red_dataXsec_avg_syst_err[f,4]/   red_dataXsec_avg_tot_err[f,5]/   rel_stats_err[f,6]/   rel_norm_syst[f,7]/   rel_kin_syst[f,8]/   rel_syst_tot[f,9]/   rel_tot_err[f,10]/   Ei_avg[f, 11]/   kf_avg[f,12]/   the_avg[f,13]/   pf_avg[f,14]/   nu_avg[f,15]/   Q2_avg[f,16]/   q_avg[f,17]/ \n')    #red_dataXsec_avg_syst_err[f,3]/  kin_syst[f,2]/   norm_syst[f,3]/   tot_syst[f,4]/   tot_stats[f,5]/   tot_err[f,6]/   red_dataXsec[f,7]/  \n')
+        fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/   red_dataXsec_avg_stat_err[f,3]/   red_dataXsec_avg_syst_err[f,4]/   red_dataXsec_avg_tot_err[f,5]/   rel_stats_err[f,6]/   rel_norm_syst[f,7]/   rel_kin_syst[f,8]/   rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
 
         for i in range(len(pm[thnq==ithnq])):
-            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<34.5E}{:<34.5E}{:<33.5E}{:<22.5f}{:<22.5f}{:<21.5f}{:<21.5f}{:<21.5f}{:<17.5f}{:<16.5f}{:<17.5f}{:<16.5f}{:<16.5f}{:<16.5f}{:<21.5f}\n".format(
+            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<34.5E}{:<34.5E}{:<33.5E}{:<22.5f}{:<22.5f}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
                                                                                                                                   (pm[thnq==ithnq])[i], (pm_avg_3to4[thnq==ithnq])[i],
                                                                                                                                   (red_dataXsec_avg_masked_3to4[thnq==ithnq])[i]*MeV2fm,
                                                                                                                                   (red_dataXsec_avg_err_3to4[thnq==ithnq])[i]*MeV2fm,
@@ -741,10 +710,7 @@ def plot_momentum_dist():
                                                                                                                                   (red_dataXsec_avg_tot_err_3to4[thnq==ithnq])[i]*MeV2fm,
                                                                                                                                   (tot_stats_err_3to4[thnq==ithnq])[i], (norm_syst_tot_3to4[thnq==ithnq])[i],
                                                                                                                                   (kin_syst_tot_3to4[thnq==ithnq])[i], (tot_syst_err_3to4[thnq==ithnq])[i],
-                                                                                                                                  (tot_err_3to4[thnq==ithnq])[i], (find3to4('Ei_avg', ithnq))[i],
-                                                                                                                                  (find3to4('kf_avg', ithnq))[i], (find3to4('the_avg', ithnq))[i],
-                                                                                                                                  (find3to4('pf_avg', ithnq))[i], (find3to4('nu_avg', ithnq))[i],         
-                                                                                                                                  (find3to4('Q2_avg', ithnq))[i], (find3to4('q_avg', ithnq))[i])
+                                                                                                                                  (tot_err_3to4[thnq==ithnq])[i])
 
             fout_3to4.write(line)
         fout_3to4.close()
@@ -755,10 +721,10 @@ def plot_momentum_dist():
         fout_4to5.write('#theta_nq = %i +/- 5 deg :: Q2 = 4.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
         fout_4to5.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
         fout_4to5.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
-        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/   red_dataXsec_avg_stat_err[f,3]/   red_dataXsec_avg_syst_err[f,4]/   red_dataXsec_avg_tot_err[f,5]/   rel_stats_err[f,6]/   rel_norm_syst[f,7]/   rel_kin_syst[f,8]/   rel_syst_tot[f,9]/   rel_tot_err[f,10]/   Ei_avg[f, 11]/   kf_avg[f,12]/   the_avg[f,13]/   pf_avg[f,14]/   nu_avg[f,15]/   Q2_avg[f,16]/   q_avg[f,17]/ \n')    #red_dataXsec_avg_syst_err[f,3]/  kin_syst[f,2]/   norm_syst[f,3]/   tot_syst[f,4]/   tot_stats[f,5]/   tot_err[f,6]/   red_dataXsec[f,7]/  \n')
+        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/   red_dataXsec_avg_stat_err[f,3]/   red_dataXsec_avg_syst_err[f,4]/   red_dataXsec_avg_tot_err[f,5]/   rel_stats_err[f,6]/   rel_norm_syst[f,7]/   rel_kin_syst[f,8]/   rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
 
         for i in range(len(pm[thnq==ithnq])):
-            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<34.5E}{:<34.5E}{:<33.5E}{:<22.5f}{:<22.5f}{:<21.5f}{:<21.5f}{:<21.5f}{:<17.5f}{:<16.5f}{:<17.5f}{:<16.5f}{:<16.5f}{:<16.5f}{:<21.5f}\n".format(
+            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<34.5E}{:<34.5E}{:<33.5E}{:<22.5f}{:<22.5f}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
                                                                                                                                   (pm[thnq==ithnq])[i], (pm_avg_4to5[thnq==ithnq])[i],
                                                                                                                                   (red_dataXsec_avg_masked_4to5[thnq==ithnq])[i]*MeV2fm,
                                                                                                                                   (red_dataXsec_avg_err_4to5[thnq==ithnq])[i]*MeV2fm,
@@ -766,10 +732,7 @@ def plot_momentum_dist():
                                                                                                                                   (red_dataXsec_avg_tot_err_4to5[thnq==ithnq])[i]*MeV2fm,
                                                                                                                                   (tot_stats_err_4to5[thnq==ithnq])[i], (norm_syst_tot_4to5[thnq==ithnq])[i],
                                                                                                                                   (kin_syst_tot_4to5[thnq==ithnq])[i], (tot_syst_err_4to5[thnq==ithnq])[i],
-                                                                                                                                  (tot_err_4to5[thnq==ithnq])[i], (find4to5('Ei_avg', ithnq))[i],
-                                                                                                                                  (find4to5('kf_avg', ithnq))[i], (find4to5('the_avg', ithnq))[i],
-                                                                                                                                  (find4to5('pf_avg', ithnq))[i], (find4to5('nu_avg', ithnq))[i],         
-                                                                                                                                  (find4to5('Q2_avg', ithnq))[i], (find4to5('q_avg', ithnq))[i])
+                                                                                                                                  (tot_err_4to5[thnq==ithnq])[i])
 
             fout_4to5.write(line)
         fout_4to5.close()

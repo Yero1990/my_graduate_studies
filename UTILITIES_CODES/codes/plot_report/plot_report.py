@@ -72,6 +72,7 @@ def plot_report():
         return fvar
 
     
+    B.pl.figure(figsize=(8,4))
     #---------------Plot Accepted COin. Triggers Counts per charge---------------
     CPQ80_set1 = get_var(80,1,'ptrig6_accp')/get_var(80,1,'charge') ; CPQ80_set1_err = get_var(80,1,'ptrig6_accp')/get_var(80,1,'charge')**2 * (0.02*get_var(80,1,'charge'))
     CPQ580_set1 = get_var(580,1,'ptrig6_accp')/get_var(580,1,'charge') ; CPQ580_set1_err = get_var(580,1,'ptrig6_accp')/get_var(580,1,'charge')**2 * (0.02*get_var(580,1,'charge'))
@@ -90,13 +91,16 @@ def plot_report():
     B.pl.xlabel('Run Number')
     B.pl.ylabel('Accepted Coin. Triggers / mC')
     B.pl.title('Accepted Coincidence Triggers  vs. Run Number')
-    B.pl.grid(True)
+    B.pl.grid(False)
     B.pl.legend(loc='upper right')
-    B.pl.show()
-    #B.pl.savefig(dir_name_misc+'/counts_per_charge.pdf')
+    B.pl.tight_layout()
+    #B.pl.show()
+    B.pl.savefig(dir_name_misc+'/counts_per_charge.pdf')
     #-------------------------------------------------------
     
     #---------------Plot Run vs Total Live Time---------------
+    B.pl.figure(figsize=(8,4))
+
     LT80 = np.array(get_var(80,1,'tLT'))
     LT580_s1 = np.array(get_var(580,1,'tLT'))
     LT580_s2 = np.array(get_var(580,2,'tLT'))
@@ -122,19 +126,23 @@ def plot_report():
     B.pl.xlabel('Run Number')
     B.pl.ylabel('Total Live Time')
     B.pl.text(3290, 1.02, 'Average Live Time: %.3f'%(LT_avg))
-    B.pl.grid(True)
+    B.pl.grid(False)
 
     B.pl.title('Total EDTM Live Time vs. Run Number')
 
     
     B.pl.legend(loc='upper right')
-    B.pl.show()
-    #B.pl.savefig(dir_name_misc+'/total_livetime.pdf')
+    B.pl.tight_layout()
+
+    #B.pl.show()
+    B.pl.savefig(dir_name_misc+'/total_livetime.pdf')
 
     #-------------------------------------------------------
     
     
     #---------------Plot Run vs Tracking Efficiencies---------------
+    B.pl.figure(figsize=(8,4))
+
     htrk80 = np.array(get_var(80,1,'hTrkEff'));         etrk80 = np.array(get_var(80,1,'eTrkEff'))
     htrk580_s1 = np.array(get_var(580,1,'hTrkEff'));    etrk580_s1 = np.array(get_var(580,1,'eTrkEff'))
     htrk580_s2 = np.array(get_var(580,2,'hTrkEff'));    etrk580_s2 = np.array(get_var(580,2,'eTrkEff'))
@@ -174,14 +182,18 @@ def plot_report():
     B.pl.title('Tracking Efficiency vs. Run Number')
     B.pl.ylim(0.92, 1.08)
     B.pl.xlim(3285, 3400)
-    B.pl.grid(True)
+    B.pl.grid(False)
 
     B.pl.legend(ncol=2, loc='upper right')
-    B.pl.show()
-    #B.pl.savefig(dir_name_misc+'/tracking_eff.pdf')
+    #B.pl.show()
+    B.pl.tight_layout()
+
+    B.pl.savefig(dir_name_misc+'/tracking_eff.pdf')
 
     
     #---------------Plot Run vs Target Boiling Factor---------------
+    B.pl.figure(figsize=(8,4))
+
     #tgt_Boil = 1 - m*I  ; apply errror propagation
     m =  0.00080029      #LD2 slope
     sig_m = 0.00007037   
@@ -222,16 +234,20 @@ def plot_report():
     B.pl.title(r'LD$_{2}$ Boiling Factor vs. Run Number')
     B.pl.ylim(0.9, 1.05)
     B.pl.xlim(3285, 3400)
-    B.pl.grid(True)
+    B.pl.grid(False)
 
     B.pl.legend(loc='upper right')
-    B.pl.show()
-    #B.pl.savefig(dir_name_misc+'/target_boil.pdf')
+    #B.pl.show()
+    B.pl.tight_layout()
+
+    B.pl.savefig(dir_name_misc+'/target_boil.pdf')
 
     #---------------------------------------------------------------
     
     
     #---------------Plot Run vs Average Beam Current---------------
+    B.pl.figure(figsize=(8,5.0))
+
     B.plot_exp(get_var(80,1,'Run'),  get_var(80,1,'avg_current'), get_var(80,1,'avg_current')*0.02,  marker='s', color='k', label='80 (set1)' )
     B.plot_exp(get_var(580,1,'Run'),  get_var(580,1,'avg_current'), get_var(580,1,'avg_current')*0.02,  marker='s', color='b', label='580 (set1)' )
     B.plot_exp(get_var(580,2,'Run'),  get_var(580,2,'avg_current'), get_var(580,2,'avg_current')*0.02,  marker='s', color='g', label='580 (set2)' )
@@ -245,17 +261,21 @@ def plot_report():
     B.pl.title('Average Beam Current vs. Run Number')
     B.pl.ylim(40, 75)
     B.pl.xlim(3285, 3400)
-    B.pl.grid(True)
+    B.pl.grid(False)
 
     B.pl.legend(loc='upper right')
-    B.pl.show()
-    #B.pl.savefig(dir_name_misc+'/beam_current.pdf')
+    #B.pl.show()
+    B.pl.tight_layout()
+
+    B.pl.savefig(dir_name_misc+'/beam_current.pdf')
 
     #-------------------------------------------------------
     
 
     
-    #---------------Plot Run vs Trigger Rates---------------   
+    #---------------Plot Run vs Trigger Rates---------------
+    B.pl.figure(figsize=(9,8))
+
     B.pl.subplot(311)
     B.plot_exp(get_var(80,1,'Run'),  get_var(80,1,'ptrig1_rate'),   marker='s', color='k', label='80 (set1)' )
     B.plot_exp(get_var(580,1,'Run'),  get_var(580,1,'ptrig1_rate'),   marker='s', color='b', label='580 (set1)' )
@@ -265,8 +285,10 @@ def plot_report():
     B.plot_exp(get_var(750,3,'Run'),  get_var(750,3,'ptrig1_rate'),   marker='s', color='c', label='750 (set3)' )
     B.pl.title('Trigger Rates vs. Run Number')
     B.pl.ylabel(r'SHMS Rate [kHz]')
+    B.pl.xlabel(r'')
+
     B.pl.xlim(3285, 3410)
-    B.pl.grid(True)
+    B.pl.grid(False)
 
     B.pl.legend(loc='upper right')
 
@@ -281,8 +303,9 @@ def plot_report():
     B.pl.ylabel(r'HMS Rate [kHz]')
     B.pl.text(3390, 0.15, '$P_{m}=80$ MeV/c \n (scaled x $1/0.2$)')
     B.pl.title('')
+    B.pl.xlabel(r'')
     B.pl.xlim(3285, 3410)
-    B.pl.grid(True)
+    B.pl.grid(False)
 
     #---------------------------
     B.pl.subplot(313)
@@ -295,20 +318,24 @@ def plot_report():
     B.pl.ylabel(r'Coin. Rate [Hz]')
     B.pl.text(3390, 2.6, '$P_{m}=80$ MeV/c \n (scaled x $1/0.02$)')
     B.pl.title('')
-    B.pl.grid(True)
+    B.pl.grid(False)
 
-    B.pl.subplots_adjust(hspace=.001)
+    B.pl.subplots_adjust(hspace=.00001)
     B.pl.xlabel('Run Number')
     #B.pl.ylabel(r'Trigger Rate [kHz]')
     B.pl.xlim(3285, 3410)
-    B.pl.show()
-    #B.pl.savefig(dir_name_misc+'/trigger_rates.pdf')
+    #B.pl.show()
+    B.pl.tight_layout()
+
+    B.pl.savefig(dir_name_misc+'/trigger_rates.pdf')
 
     #-------------------------------------------------------
 
     
     
     #---------------Plot Run vs BPM position---------------
+    B.pl.figure(figsize=(9.5,4))
+
     xbpm_80s1 = get_var(80,1,'xBPM')   ;  ybpm_80s1 = get_var(80,1,'yBPM')
     xbpm_580s1 = get_var(580,1,'xBPM') ;  ybpm_580s1 = get_var(580,1,'yBPM')
     xbpm_580s2 = get_var(580,2,'xBPM') ;  ybpm_580s2 = get_var(580,2,'yBPM')
@@ -356,11 +383,13 @@ def plot_report():
     B.pl.text(3290, 0.022, r'Y BPM Average: %.3f cm'%(ybpm_avg))
     B.pl.xlim(3285, 3410)
     B.pl.ylim(0.0125, 0.0375)
-    B.pl.grid(True)
+    B.pl.grid(False)
 
     B.pl.legend()
-    B.pl.show()
-    #B.pl.savefig(dir_name_misc+'/beam_position.pdf')
+    #B.pl.show()
+    B.pl.tight_layout()
+
+    B.pl.savefig(dir_name_misc+'/beam_position.pdf')
     
     #------------------------------------------------------------
 

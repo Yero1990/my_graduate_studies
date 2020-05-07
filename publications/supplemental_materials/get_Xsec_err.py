@@ -1,7 +1,7 @@
 import numpy as np
 from interpolate_ff import *
 
-#This code defined the H(e,e'p) elastic cross section in terms of
+#This code defines the H(e,e'p) elastic cross section in terms of
 #the electric and magnetic form factors. Then apply error propagation
 #in terms of the form factors to get uncertainty in cross section at thw
 #gven beam energy, elecrtron angle and momentum.
@@ -52,6 +52,7 @@ def sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD):
     #derivatives of cross sectio w.r.to form factors
     dsig_dGEp = sigMott * ( (2.*GEp + tau*GMp**2) / (1. + tau))
     dsig_dGMp = sigMott * ( (GEp**2 + 2.*tau*GMp) / (1. + tau) + 4.*tau*GMp*np.tan(th_e/2.)**2 )
+
     #uncertainty in form factors
     dGEp = dGEp_GD * GD
     dGMp = dGMp_muGD * muGD
@@ -65,15 +66,21 @@ def sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD):
 #Heep Kinematics
 dtr = np.pi / 180.
 Eb = 10.6005   #beam
-Ef = 8.5342488  #e- momentum
+#Ef = 8.5342488  #e- momentum
 th_e = np.array([12.194, 13.93, 9.928, 8.495])  #e- angle
+
+#This selection of e- final momentum is determined by selectin
+#the th_e bin +/- 0.01 deg, i.e. for [13.92,13.94], 
+Ef = np.array([8.4407, 7.951, 9.0603, 9.425])
+
 Q2 = 4.*Eb*Ef*np.sin(th_e*dtr/2.)**2   #central Q2 for given kinematics
+
 run = np.array([3288, 3371, 3374, 3377])
 
 for i in range(len(th_e)):
     
     ith_e = th_e[i]
-    kf = Ef
+    kf = Ef[i]
     iQ2 = Q2[i] 
 
     
@@ -87,7 +94,7 @@ for i in range(len(th_e)):
     print('Run Number: %i'%(run[i]))
 
     print('Beam Energy: ', Eb,' GeV')
-    print('electron momentum: ', Ef, ' GeV')
+    print('electron momentum: ', kf, ' GeV')
     print('electron angle: ',ith_e, ' deg')
     print('Q2: ', iQ2, ' GeV2')
     print('Xsec = ',Xsec,' +/- ',Xsec_err, 'microbarn/sr')

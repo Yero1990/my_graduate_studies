@@ -201,8 +201,8 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
 
   //VARIABLES TO Normalize histogram (if desired)
   Double_t scale; //Used to scale SIMC histograms by 1./h->Integral(data)
-  int dataI;  //data integral
-  int simcI;  //simc integral
+  double dataI;  //data integral
+  double simcI;  //simc integral
   
   //Set Histo Aesthetics
   hsimc->SetLineWidth(2);
@@ -227,12 +227,13 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
   hdata->GetYaxis()->SetTitleOffset(1.);
   hdata->SetLabelFont(22, "XY");
   hdata->SetTitleFont(22, "XY");
-
+  
   //auto leg = new TLegend(0.1,0.8,0.28,0.9); 
   TLegend *leg = new TLegend(0.14,0.88,0.25,0.73); 
   if(set_logy=="logy"){
     c->SetLogy();
   }
+  
   hdata->Draw("samehistE0");
   hsimc->Draw("samesE0");
   
@@ -243,9 +244,9 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
   double R = (float)dataI / simcI;
   double R_err = R * sqrt(pow(dataI_err/dataI,2) + pow(simcI_err/simcI,2));
   
-  leg->AddEntry(hdata,Form("Data | Integral: %d", dataI),"f");
-  leg->AddEntry(hsimc,Form("SIMC | Integral: %d", simcI));
-  leg->AddEntry((TObject*)0, Form("Ratio: %.3f #pm %.3f", R, R_err), "");
+  leg->AddEntry(hdata,Form("Data | Integral: %.5f", dataI),"f");
+  leg->AddEntry(hsimc,Form("SIMC | Integral: %.5f", simcI));
+  leg->AddEntry((TObject*)0, Form("Ratio: %.5f #pm %.5f", R, R_err), "");
   leg->Draw();
 
 

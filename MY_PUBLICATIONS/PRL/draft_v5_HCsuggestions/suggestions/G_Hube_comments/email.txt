@@ -1,0 +1,42 @@
+Hi Carlos,
+
+Thanks for the new draft of the manuscript.  I have a few comments, mostly minor.
+
+Best wishes, Garth
+---
+
+My Name: Please include my middle initial:  G.M. Huber
+There are apparently quite a few other G. Huber in Germany and I need to 
+distinguish myself from them.
+
+Please include my Open Researcher and Contributor ID (ORCID) to the
+publication.
+ORCiD: http://orcid.org/0000-0002-5658-1065
+
+Paper Title: I see that you changed the paper title.  While I generally like the 
+new title better than the old one, I suggest to avoid qualitative descriptions 
+in favor of quantitative ones.  Here, I suggest to replace "at Very High Missing 
+Momenta" to "up to 1.0 GeV/c Missing Momentum".
+
+Fig 2c: I see there is a small bump in the new data near pr=0.25 which disagrees 
+by quite a few standard deviations with the Hall A data.  In general, the 
+agreement between the two data sets is quite good, so it is a surprise to see a 
+4sigma?? discrepancy there.  Any idea what this may be due to?
+
+Acknowledgements: I believe we are supposed to acknowledge our funding agencies. 
+  Since there are quite a few Regina co-authors (5), please add:
+
+Natural Sciences and Engineering Research Council of Canada (NSERC)
+
+Some of the newly revised text have minor grammatical errors:
+
+p2, LHS, near bottom: General Eikonal Approximation (GEA) [7,11,12] COMMA
+p2, RHS: For the first time COMMA very different
+up to pr~1 GeV/c COMMA which is
+at about 8.5 GeV/c COMMA which was
+
+p3, LHS: is transferred to the proton COMMA which scatters
+is defined as pr=q-pf COMMA and the nuclear binding (or "missing") energy as 
+Em=omega-Tp-Tr comma where
+
+p5, LHS: At theta_nq=45deg COMMA the FSI
