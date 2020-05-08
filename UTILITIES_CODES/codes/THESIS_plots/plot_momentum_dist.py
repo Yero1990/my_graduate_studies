@@ -691,7 +691,7 @@ def plot_momentum_dist():
 
 
         
-        
+        '''
         #-----------------------------WRITE DATA XSEC (And other relevant quatities) to FILE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
         fout_name3to4 = dir_name3+'/relative_errors_thnq%i_Q2_3to4.txt' % (ithnq)
@@ -737,8 +737,54 @@ def plot_momentum_dist():
             fout_4to5.write(line)
         fout_4to5.close()
 
+        '''
+
+        #-----------------------------WRITE DATA XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
+        #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
+        fout_name3to4 = dir_name3+'/relative_errors_thnq%i_Q2_3to4.txt' % (ithnq)
+        fout_3to4 = open(fout_name3to4, 'w')
+        fout_3to4.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
+        fout_3to4.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
+        fout_3to4.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
+        fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,6]/  rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
+
+        for i in range(len(pm[thnq==ithnq])):
+            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
+                                                                                                                                  (pm[thnq==ithnq])[i], (pm_avg_3to4[thnq==ithnq])[i],
+                                                                                                                                  (red_dataXsec_avg_masked_3to4[thnq==ithnq])[i]*MeV2fm,
+                                                                                                                                  
+                                                                                                                                 
+                                                                                                                                  
+                                                                                                                                  (tot_stats_err_3to4[thnq==ithnq])[i], (tot_syst_err_3to4[thnq==ithnq])[i],
+                                                                                                                                  (tot_err_3to4[thnq==ithnq])[i])
+
+            fout_3to4.write(line)
+        fout_3to4.close()
         
-    
+
+        
+        #-----------------------------WRITE DATA XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
+        #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
+        fout_name4to5 = dir_name3+'/relative_errors_thnq%i_Q2_4to5.txt' % (ithnq)
+        fout_4to5 = open(fout_name4to5, 'w')
+        fout_4to5.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
+        fout_4to5.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
+        fout_4to5.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
+        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,6]/  rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
+
+        for i in range(len(pm[thnq==ithnq])):
+            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
+                                                                                                                                  (pm[thnq==ithnq])[i], (pm_avg_4to5[thnq==ithnq])[i],
+                                                                                                                                  (red_dataXsec_avg_masked_4to5[thnq==ithnq])[i]*MeV2fm,
+                                                                                                                                  
+                                                                                                                                 
+                                                                                                                                  
+                                                                                                                                  (tot_stats_err_4to5[thnq==ithnq])[i], (tot_syst_err_4to5[thnq==ithnq])[i],
+                                                                                                                                  (tot_err_4to5[thnq==ithnq])[i])
+
+            fout_4to5.write(line)
+        fout_4to5.close()
+        
     '''
     #Read Models at all other angles
     #Read All Other Theoretical Models At all angles (V18, CD-BONN)
