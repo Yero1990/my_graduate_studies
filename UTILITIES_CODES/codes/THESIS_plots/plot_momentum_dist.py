@@ -56,6 +56,57 @@ if not os.path.exists(dir_name2):
 if not os.path.exists(dir_name3):
     os.makedirs(dir_name3)     
 
+
+def get_kin_syst(header_name='', pm_set=0, data_set=0, Q2_set='', ithnq=0, ipm=0):
+    #Code to get any header and data array from the kin. systematic data files
+    #User: Q2 = '3to4', or '4to5'
+    #Get file containing kin. systematics
+    if(pm_set==80):
+        f = dfile('../deep_data_files/Q2_%sGeV/avg_kinematics/all_thnq_Q2_%sGeV/pm%i_fsi_norad_avgkin_systematics.txt' % (Q2_set, Q2_set, pm_set))
+    else:
+        f = dfile('../deep_data_files/Q2_%sGeV/avg_kinematics/all_thnq_Q2_%sGeV/pm%i_fsi_norad_avgkin_set%i_systematics.txt' % (Q2_set, Q2_set, pm_set, data_set))
+
+    pm_bin = np.array(f['yb'])
+    thnq_bin = np.array(f['xb'])
+    #Get data array with desired header name (kin. syst are in %)
+    data = ((np.array(f[header_name]))[thnq_bin==ithnq])[ipm]  #returns a single value    
+    return data
+
+def get_norm_syst(header_name, Q2_set=''):   #header_name = 'tot_syst_norm' added all contributions in quadrature for each data set
+    #Code to get any header and data array from the normalization. systematic data file
+
+    #Get file containing norm. systematics
+    f = dfile('../deep_data_files/Q2_%sGeV/normalization_systematics_summary.txt' % (Q2_set))
+    
+    #Get data array with desired header name (norm. syst are in fractional rel. error)
+    data = np.array(f[header_name])*100.   #convert to percent   
+    return data
+
+#Get 5-fold differential cross section per data set (to write to file for THESIS)
+def get_Xsec(pm_set=0, dset=0, Q2_set='', ithnq=0, ipm=0):
+    #Xsec units are in: ub * MeV^-1 * sr^-2
+    if(pm_set==80):
+        fname = '../deep_data_files/Q2_%sGeV/final_Xsec/pm%i_laget_bc_corr.txt' % (Q2_set, pm_set)
+    else:
+        fname = '../deep_data_files/Q2_%sGeV/final_Xsec/pm%i_laget_bc_corr_set%i.txt' % (Q2_set, pm_set, dset)
+    kin = dfile(fname)
+    pm_bin = np.array(kin['yb'])
+    thnq_bin = np.array(kin['xb'])
+    #read cross section for a specified ithnq bin:5,25,35, . . .  and a specified ipm element 0,1 2,3
+    data_Xsec = ((np.array(kin['fsiRC_dataXsec_fsibc_corr']))[thnq_bin==ithnq])[ipm]
+    data_Xsec_err = ((np.array(kin['fsiRC_dataXsec_fsibc_corr_err']))[thnq_bin==ithnq])[ipm]
+    rel_stats_err = data_Xsec_err / data_Xsec
+    #mask xsec if stats err > 50%
+    data_Xsec_m = np.ma.array(data_Xsec, mask=(data_Xsec_err>0.5*data_Xsec))    
+    rel_stats_err_m =  np.ma.masked_where(np.ma.getmask(data_Xsec_m), rel_stats_err) * 100 #relative error in percent
+
+    return[data_Xsec_m, rel_stats_err_m]  #returns a single value for each element
+
+    
+
+
+
+    
 #Get Reduced Xsec Data File
 fname_Q2_3to4 = '../deep_data_files/redXsec_combined_Q2_3to4.txt'   #Read Q2 = 3.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
 fname_Q2_4to5 = '../deep_data_files/redXsec_combined_Q2_4to5.txt'   #Read Q2 = 4.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
@@ -103,6 +154,41 @@ norm_syst_tot_4to5 = np.array(dfile(fname_Q2_4to5)['norm_syst_tot'])  #normaliza
 tot_syst_err_4to5 = np.array(dfile(fname_Q2_4to5)['tot_syst_err'])    #total systematics
 tot_stats_err_4to5 = np.array(dfile(fname_Q2_4to5)['tot_stats_err'])  #total statistical
 tot_err_4to5 = np.array(dfile(fname_Q2_4to5)['tot_err'])              #overall error
+
+
+#Read Digitized Data from W.V.Orden (2014) article
+#This data shows a band with lower/upper limits of calculations for PWIA and FSI
+fname_digit_pwia = './digitized_data/PWIA_digitized_final.txt'
+fname_digit_fsi = './digitized_data/FSI_digitized_final.txt'
+
+pwia_dgt = dfile(fname_digit_pwia)
+fsi_dgt = dfile(fname_digit_fsi)
+
+pm_pwia_dgt = np.array(pwia_dgt['Pm'])                       #digitized PWIA missing momentum [GeV/c]
+redXsec_pwia_dgt = np.array(pwia_dgt['red_theoryXsec'])  #reduced PWIA Xsec [fm^3]
+
+pm_fsi_dgt = np.array(fsi_dgt['Pm'])    #digitized FSI missing momentum [GeV/c]
+redXsec_fsi_dgt = np.array(fsi_dgt['red_theoryXsec']) #reduced FSI Xsec [fm^3]
+
+#Define the lower/upper bounds for each array
+pm_pwia_dgt_lower =  pm_pwia_dgt[0:19]               
+redXsec_pwia_dgt_lower = redXsec_pwia_dgt[0:19]
+pm_pwia_dgt_upper =  pm_pwia_dgt[20:40]              
+redXsec_pwia_dgt_upper = redXsec_pwia_dgt[20:40]
+
+pm_fsi_dgt_lower =  pm_fsi_dgt[0:22]               
+redXsec_fsi_dgt_lower = redXsec_fsi_dgt[0:22]
+pm_fsi_dgt_upper =  pm_fsi_dgt[23:46]              
+redXsec_fsi_dgt_upper = redXsec_fsi_dgt[23:46]
+#%%
+#interpolate
+f_pwia_lower = interp1d(pm_pwia_dgt_lower,redXsec_pwia_dgt_lower , fill_value='extrapolate', kind='linear')  
+f_pwia_upper = interp1d(pm_pwia_dgt_upper,redXsec_pwia_dgt_upper , fill_value='extrapolate', kind='linear')  
+
+f_fsi_lower = interp1d(pm_fsi_dgt_lower,redXsec_fsi_dgt_lower , fill_value='extrapolate', kind='linear')  
+f_fsi_upper = interp1d(pm_fsi_dgt_upper,redXsec_fsi_dgt_upper , fill_value='extrapolate', kind='linear')  
+
+#%%
 
 
 def read_halla_data(thnq=0):
@@ -284,14 +370,14 @@ def plot_momentum_dist():
         
         print(ithnq)
 
+        
+        #----------PLOT FINAL REDUCED XSEC VS. THETA_nq  (PRL) ------------
         '''
-        #----------PLOT FINAL REDUCED XSEC VS. THETA_nq------------
-
         B.pl.clf()
         B.pl.figure(i)
 
 
-        B.plot_exp(pm_avg[thnq==ithnq], red_dataXsec_avg_masked[thnq==ithnq]*MeV2fm, red_dataXsec_avg_tot_err[thnq==ithnq]*MeV2fm, marker='o', markersize=6, color='k', markerfacecolor='k', label='This Experiment (Hall C)', zorder=3)
+        B.plot_exp(pm_avg_4to5[thnq==ithnq], red_dataXsec_avg_masked_4to5[thnq==ithnq]*MeV2fm, red_dataXsec_avg_tot_err_4to5[thnq==ithnq]*MeV2fm, marker='o', markersize=6, color='k', markerfacecolor='k', label='This Experiment (Hall C)', zorder=3)
                 
         #--------------HALL A DATA---------------
         if(ithnq==35):
@@ -307,9 +393,16 @@ def plot_momentum_dist():
 
         
         #Plot theoretical curves
-        B.plot_exp(pm_avg[thnq==ithnq], f_red_pwiaXsec_avg(pm_avg[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
-        B.plot_exp(pm_avg[thnq==ithnq], f_red_fsiXsec_avg(pm_avg[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
-       
+        if(ithnq==35 or ithnq==45):
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c2(pm_avg_4to5[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_fsiXsec_avg_4to5_c2(pm_avg_4to5[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+        elif(ithnq==25 or ithnq==55 or ithnq==65 or ithnq==75 or ithnq==85):
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c3(pm_avg_4to5[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_fsiXsec_avg_4to5_c3(pm_avg_4to5[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+        else:
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_fsiXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+            
         #Q2 = (3,4) GeV2
         #B.plot_exp(pm_avg0[thnq==ithnq], f_red_pwiaXsec_avg0(pm_avg0[thnq==ithnq]), linestyle='--', marker='None', color='red', logy=True, label=r'Paris PWIA ($Q^{2}=3.5\pm0.5$ GeV$^{2}$)')
         #B.plot_exp(pm_avg0[thnq==ithnq], f_red_fsiXsec_avg0(pm_avg0[thnq==ithnq]), linestyle='-', marker='None', color='red', logy=True, label=r'Paris FSI ($Q^{2}=3.5\pm0.5$ GeV$^{2}$)')
@@ -321,6 +414,10 @@ def plot_momentum_dist():
         B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn PWIA')     
         B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
 
+
+        #Plot Digitized Data
+        #B.pl.fill_between(pm_pwia_dgt_lower, f_pwia_lower(pm_pwia_dgt_lower),f_pwia_upper(pm_pwia_dgt_lower), color='gray', alpha=0.3, label='W.V.Orden PWIA calculations')
+        B.pl.fill_between(pm_fsi_dgt_lower, f_fsi_lower(pm_fsi_dgt_lower),f_fsi_upper(pm_fsi_dgt_lower), color='gray', alpha=0.2, label='W.V.Orden FSI calculations')
 
         B.pl.xlabel('')
         B.pl.ylabel(r'$\sigma_{red} (fm^{3})$')
@@ -337,7 +434,7 @@ def plot_momentum_dist():
  
         #--------Calculate Ratio of redXsec relative to CD-Bonn
         #Calculate ref and data ratios
-        R_ref = f_red_pwiaXsec_CD(pm_avg[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg[thnq==ithnq])
+        R_ref = f_red_pwiaXsec_CD(pm_avg_4to5[thnq==ithnq]) / f_red_pwiaXsec_CD(pm_avg[thnq==ithnq])
         R_data = red_dataXsec_avg_masked[thnq==ithnq]*MeV2fm / f_red_pwiaXsec_CD(pm_avg[thnq==ithnq])
         R_data_err = red_dataXsec_avg_tot_err[thnq==ithnq]*MeV2fm / f_red_pwiaXsec_CD(pm_avg[thnq==ithnq])
 
@@ -385,8 +482,15 @@ def plot_momentum_dist():
         B.pl.title(r'Reduced Cross Section Ratio: $\theta_{nq} = %i \pm 5$ deg '%(ithnq))
         B.pl.legend()
         B.pl.show()
-        '''
+        
 
+        '''
+        #======================END PRL PLOTS==============
+
+
+        
+        #----------------------PRODUCE PLOTS FOR THESIS----------
+        '''
         #-----------------------------ALTERNATIVE: MAKE SUBPLOTS----------------------------------
         B.pl.clf()
         #-----Create Subplots-----
@@ -690,56 +794,7 @@ def plot_momentum_dist():
         B.pl.tight_layout()
 
 
-        
-        '''
-        #-----------------------------WRITE DATA XSEC (And other relevant quatities) to FILE----------------------------------
-        #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
-        fout_name3to4 = dir_name3+'/relative_errors_thnq%i_Q2_3to4.txt' % (ithnq)
-        fout_3to4 = open(fout_name3to4, 'w')
-        fout_3to4.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
-        fout_3to4.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
-        fout_3to4.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
-        fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/   red_dataXsec_avg_stat_err[f,3]/   red_dataXsec_avg_syst_err[f,4]/   red_dataXsec_avg_tot_err[f,5]/   rel_stats_err[f,6]/   rel_norm_syst[f,7]/   rel_kin_syst[f,8]/   rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
-
-        for i in range(len(pm[thnq==ithnq])):
-            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<34.5E}{:<34.5E}{:<33.5E}{:<22.5f}{:<22.5f}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
-                                                                                                                                  (pm[thnq==ithnq])[i], (pm_avg_3to4[thnq==ithnq])[i],
-                                                                                                                                  (red_dataXsec_avg_masked_3to4[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (red_dataXsec_avg_err_3to4[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (red_dataXsec_avg_syst_err_3to4[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (red_dataXsec_avg_tot_err_3to4[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (tot_stats_err_3to4[thnq==ithnq])[i], (norm_syst_tot_3to4[thnq==ithnq])[i],
-                                                                                                                                  (kin_syst_tot_3to4[thnq==ithnq])[i], (tot_syst_err_3to4[thnq==ithnq])[i],
-                                                                                                                                  (tot_err_3to4[thnq==ithnq])[i])
-
-            fout_3to4.write(line)
-        fout_3to4.close()
-
-      #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 4.5 +/- 0.5
-        fout_name4to5 = dir_name3+'/relative_errors_thnq%i_Q2_4to5.txt' % (ithnq)
-        fout_4to5 = open(fout_name4to5, 'w')
-        fout_4to5.write('#theta_nq = %i +/- 5 deg :: Q2 = 4.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
-        fout_4to5.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
-        fout_4to5.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
-        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/   red_dataXsec_avg_stat_err[f,3]/   red_dataXsec_avg_syst_err[f,4]/   red_dataXsec_avg_tot_err[f,5]/   rel_stats_err[f,6]/   rel_norm_syst[f,7]/   rel_kin_syst[f,8]/   rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
-
-        for i in range(len(pm[thnq==ithnq])):
-            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<34.5E}{:<34.5E}{:<33.5E}{:<22.5f}{:<22.5f}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
-                                                                                                                                  (pm[thnq==ithnq])[i], (pm_avg_4to5[thnq==ithnq])[i],
-                                                                                                                                  (red_dataXsec_avg_masked_4to5[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (red_dataXsec_avg_err_4to5[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (red_dataXsec_avg_syst_err_4to5[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (red_dataXsec_avg_tot_err_4to5[thnq==ithnq])[i]*MeV2fm,
-                                                                                                                                  (tot_stats_err_4to5[thnq==ithnq])[i], (norm_syst_tot_4to5[thnq==ithnq])[i],
-                                                                                                                                  (kin_syst_tot_4to5[thnq==ithnq])[i], (tot_syst_err_4to5[thnq==ithnq])[i],
-                                                                                                                                  (tot_err_4to5[thnq==ithnq])[i])
-
-            fout_4to5.write(line)
-        fout_4to5.close()
-
-        '''
-
-        #-----------------------------WRITE DATA XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
+        #-----------------------------WRITE DATA REDUCED XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
         fout_name3to4 = dir_name3+'/relative_errors_thnq%i_Q2_3to4.txt' % (ithnq)
         fout_3to4 = open(fout_name3to4, 'w')
@@ -755,15 +810,15 @@ def plot_momentum_dist():
                                                                                                                                   
                                                                                                                                  
                                                                                                                                   
-                                                                                                                                  (tot_stats_err_3to4[thnq==ithnq])[i], (tot_syst_err_3to4[thnq==ithnq])[i],
-                                                                                                                                  (tot_err_3to4[thnq==ithnq])[i])
+                                                                                                                                  (tot_stats_err_3to4[thnq==ithnq])[i]*100., (tot_syst_err_3to4[thnq==ithnq])[i]*100.,
+                                                                                                                                  (tot_err_3to4[thnq==ithnq])[i]*100.)
 
             fout_3to4.write(line)
         fout_3to4.close()
         
 
         
-        #-----------------------------WRITE DATA XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
+        #-----------------------------WRITE DATA REDUCED XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
         fout_name4to5 = dir_name3+'/relative_errors_thnq%i_Q2_4to5.txt' % (ithnq)
         fout_4to5 = open(fout_name4to5, 'w')
@@ -779,11 +834,350 @@ def plot_momentum_dist():
                                                                                                                                   
                                                                                                                                  
                                                                                                                                   
-                                                                                                                                  (tot_stats_err_4to5[thnq==ithnq])[i], (tot_syst_err_4to5[thnq==ithnq])[i],
-                                                                                                                                  (tot_err_4to5[thnq==ithnq])[i])
+                                                                                                                                  (tot_stats_err_4to5[thnq==ithnq])[i]*100., (tot_syst_err_4to5[thnq==ithnq])[i]*100.,
+                                                                                                                                  (tot_err_4to5[thnq==ithnq])[i]*100.)
 
             fout_4to5.write(line)
         fout_4to5.close()
+
+
+
+        #-----------------------------WRITE DATA 5-FOLD DIFFERENTIAL XSEC (PER DATASET) TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
+        #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
+        fout_name3to4 = dir_name3+'/dataXsec_thnq%i_Q2_3to4_80set1.txt' % (ithnq)
+        fout_3to4 = open(fout_name3to4, 'w')
+        fout_3to4.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%]. \n'  %(ithnq))
+        fout_3to4.write('#pm_bin: central bin with +/- 0.02 GeV. dataXsec with with nan values have > 50%% stats uncertainty should be ignored.\n')
+        fout_3to4.write('#dataXsec [ub MeV^-1 sr^-2], pm_bin[GeV/c], pm_avg[GeV/c], rel_*err are in percent  \n')
+        fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  dataXsec[f,2]/  rel_stats_err[f,6]/  rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
+
+        for i in range(len(pm[thnq==ithnq])):
+            rel_tot_err = np.sqrt( (get_kin_syst('sig_kin_tot', 80, 1, '3to4')[thnq==ithnq])[i]**2 +  get_norm_syst('tot_syst_norm', Q2_set='3to4')[0]**2 + (((get_Xsec(80, 1, '3to4'))[thnq==ithnq])[i])[1]**2)
+            rel_syst_err = np.sqrt( get_kin_syst('sig_kin_tot', 80, 1, '3to4', ithnq, i)**2 +  get_norm_syst('tot_syst_norm', Q2_set='3to4')[0]**2 )
+            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<21.5f}{:<21.5f}{:<21.5f}\n".format( (pm[thnq==ithnq])[i], (pm_avg_3to4[thnq==ithnq])[i], (get_Xsec(80, 1, '3to4',ithnq,i))[0], (get_Xsec(80, 1, '3to4',ithnq,i))[1],
+                                                                                                                                                                                 rel_syst_err, rel_tot_err)                                                                                         
+                                                                                                                                  
+
+            fout_3to4.write(line)
+        fout_3to4.close()
+        '''
+        #=============================END CODE TO PRODUCE THESIS PLOTS================================
+
+                
+        #Require ONLY thnq = 35, 45 deg (FOCUS POINT: pm= 0.5 GeV)
+        if (ithnq==35 or ithnq==45):
+            #-------FIT data and model reduced cross sections directly----------
+
+            #DATA
+            print('pm=',pm[thnq==ithnq])
+            pm_avg_data = pm_avg_4to5[(thnq==ithnq)]
+            
+            sig_exp =  red_dataXsec_avg_masked_4to5[thnq==ithnq]*MeV2fm 
+            sig_exp_err =  red_dataXsec_avg_tot_err_4to5[thnq==ithnq]*MeV2fm 
+
+
+            #Paris
+            pm_paris = pm[thnq==ithnq]
+            #sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq])            
+            #sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq])                                                                                                            
+
+            sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm_avg_data)            
+            sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm_avg_data)
+            
+            #AV18                                                                                                                   
+            #sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg1)        #V18 Xsec                                                                                     
+            #sig_V18_fsi = f_red_fsiXsec_V18(pm_avg2)        #V18 Xsec                                                                      
+            sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg_data)        #V18 Xsec                                                                                     
+            sig_V18_fsi = f_red_fsiXsec_V18(pm_avg_data)        #V18 Xsec  
+            
+            #CD-Bonn
+            #sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg3)        #CD-Bonn Xsec
+            #sig_CD_fsi = f_red_fsiXsec_CD(pm_avg4)        #CD-Bonn Xsec
+
+            sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg_data)        #CD-Bonn Xsec
+            sig_CD_fsi = f_red_fsiXsec_CD(pm_avg_data)        #CD-Bonn Xsec
+            
+            #Calculate the chi2 between data and model
+            chi2_pwia_paris = ((sig_exp - sig_paris_pwia)/sig_exp_err)**2
+            chi2_fsi_paris = ((sig_exp - sig_paris_fsi)/sig_exp_err)**2
+            
+            chi2_pwia_V18 = ((sig_exp - sig_V18_pwia)/sig_exp_err)**2
+            chi2_fsi_V18 = ((sig_exp - sig_V18_fsi)/sig_exp_err)**2
+            
+            chi2_pwia_CD = ((sig_exp - sig_CD_pwia)/sig_exp_err)**2
+            chi2_fsi_CD = ((sig_exp - sig_CD_fsi)/sig_exp_err)**2
+
+            #plot chi2 of ((data-model)/data_err)**2
+            B.plot_exp(pm_avg_data, chi2_pwia_paris, marker='o', markersize=6, c='b', mec='b', mfc='b', label=r'Paris PWIA')
+            B.plot_exp(pm_avg_data, chi2_fsi_paris, marker='o', markersize=6, c='b', mec='b', mfc='white', label=r'Paris FSI')
+
+            B.plot_exp(pm_avg_data, chi2_pwia_V18, marker='s', markersize=6, c='g', mec='g', mfc='g', label=r'AV18 PWIA')
+            B.plot_exp(pm_avg_data, chi2_fsi_V18, marker='s', markersize=6, c='g', mec='g', mfc='white', label=r'AV18 FSI')
+            
+            B.plot_exp(pm_avg_data, chi2_pwia_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='magenta', label=r'CD-Bonn PWIA')
+            B.plot_exp(pm_avg_data, chi2_fsi_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='white', label=r'CD-Bonn FSI')
+            
+            '''
+            #--------Plot reduced data and model cross sections to be fitted
+            B.plot_exp(pm_avg_data, sig_exp, sig_exp_err, marker='o', markersize=6, c='k', mec='k', mfc='k', label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=4,capsize=0)
+            B.plot_exp(pm_paris, sig_paris_pwia, linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
+            B.plot_exp(pm_paris, sig_paris_fsi, linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+
+            #AV18
+            B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='AV18 PWIA')   
+            B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='AV18 FSI') 
+            
+            #CD-Bonn
+            B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn PWIA')     
+            B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
+
+            #Define Fit Function
+            def f(x):
+                y = b() * np.exp(m()*x)    #lny = m*x + ln b
+                return y
+            
+            #--------Fit data----------
+            xd =pm_avg_data[ (~np.isnan(sig_exp)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_exp[(~np.isnan(sig_exp)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd_err = sig_exp_err[(~np.isnan(sig_exp)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd, yd_err)            
+            mp = m.get()[1] ; mp_err=m.get()[2]
+            bp = np.log(b.get()[1]) ; bp_err=np.log(b.get()[2])
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='DATA FIT \n slope: %.4E $\pm$ %.4E'%(mp, mp_err))
+            B.pl.yscale('log')
+            #----------------------------
+            
+            #--------Fit Paris PWIA----------
+            xd =pm_paris[ (~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
+            yd = sig_paris_pwia[(~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_paris = m.get()[1] ; mp_paris_err=m.get()[2]
+            bp_paris = np.log(b.get()[1]) ; bp_paris_err=np.log(b.get()[2])
+            
+            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='Paris (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_paris, mp_paris_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #--------Fit AV18 PWIA----------
+            xd =pm_avg1[ (~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
+            yd = sig_V18_pwia[(~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_v18 = m.get()[1] ; mp_v18_err=m.get()[2]
+            bp_v18 = np.log(b.get()[1]) ; bp_v18_err=np.log(b.get()[2])
+            B.plot_line(F.xpl, F.ypl, color='gray', lw=2, label='AV18 (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #--------Fit CD-Bonn PWIA----------
+            xd =pm_avg3[ (~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
+            yd = sig_CD_pwia[(~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            B.plot_line(F.xpl, F.ypl, color='c', lw=2, label='CD-Bonn (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #Barlow ratio to determine if data and model slopes are significantly different
+            R_paris = np.abs(mp_paris - mp) / np.sqrt(np.abs(mp_err**2))
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            R_v18 = np.abs(mp_v18 - mp) / np.sqrt(np.abs(mp_err**2))
+
+            print('R_paris_pwia = ',R_paris,' sigmas')
+            print('R_AV18_pwia = ',R_v18,' sigmas')
+            print('R_CD_pwia = ',R_cd,' sigmas')
+            '''
+
+            '''
+            #--------Fit Paris FSI----------
+            xd =pm_paris[ (~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
+            yd = sig_paris_fsi[(~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_paris = m.get()[1] ; mp_paris_err=m.get()[2]
+            bp_paris = np.log(b.get()[1]) ; bp_paris_err=np.log(b.get()[2])
+            
+            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='Paris (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_paris, mp_paris_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #--------Fit AV18 FSI----------
+            xd =pm_avg1[ (~np.isnan(sig_V18_fsi)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
+            yd = sig_V18_fsi[(~np.isnan(sig_V18_fsi)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_v18 = m.get()[1] ; mp_v18_err=m.get()[2]
+            bp_v18 = np.log(b.get()[1]) ; bp_v18_err=np.log(b.get()[2])
+            B.plot_line(F.xpl, F.ypl, color='gray', lw=2, label='AV18 (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #--------Fit CD-Bonn FSI----------
+            xd =pm_avg3[ (~np.isnan(sig_CD_fsi)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
+            yd = sig_CD_fsi[(~np.isnan(sig_CD_fsi)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            B.plot_line(F.xpl, F.ypl, color='c', lw=2, label='CD-Bonn (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #Barlow ratio to determine if data and model slopes are significantly different
+            R_paris = np.abs(mp_paris - mp) / np.sqrt(np.abs(mp_err**2))
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            R_v18 = np.abs(mp_v18 - mp) / np.sqrt(np.abs(mp_err**2))
+
+            print('R_paris_fsi = ',R_paris,' sigmas')
+            print('R_AV18_fsi = ',R_v18,' sigmas')
+            print('R_CD_fsi = ',R_cd,' sigmas')
+            
+            B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
+            B.pl.ylabel(r'$\sigma_{\mathrm{red}}$')                                                                                                                                                                       
+            B.pl.title(r'Cross Section Ratio, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
+            B.pl.legend(loc='upper right', fontsize='small')
+            B.pl.show()
+            '''
+            B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
+            B.pl.ylabel(r'$\chi^{2}$')                                                                                                                                                                       
+            B.pl.title(r'Reduced Cross Sections $\chi^{2}$, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
+            B.pl.legend(loc='upper right', fontsize='small')
+            B.pl.show()
+
+
+
+
+            #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
+
+            '''
+            fp = np.array([0.5, 0.82])
+            for j in range(len(fp)):
+                B.pl.clf()                                                                                                          
+                B.pl.figure(j) 
+                print('fp=',fp[j])
+                #DATA
+                print('pm=',pm[thnq==ithnq])
+                sig_exp =  red_dataXsec_avg_masked_4to5[thnq==ithnq] 
+                sig_exp_p0 = red_dataXsec_avg_masked_4to5[(thnq==ithnq)][np.where(pm[thnq==ithnq]==fp[j])]
+                sig_exp_err =  red_dataXsec_avg_tot_err_4to5[thnq==ithnq] 
+                sig_exp_p0_err = red_dataXsec_avg_tot_err_4to5[thnq==ithnq][np.where(pm[thnq==ithnq]==fp[j])]
+                print('sig_exp=',sig_exp)
+                print('sig_exp_p0=', sig_exp_p0)
+                #Paris
+                sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq])
+                sig_paris_pwia_p0 = f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq][np.where(pm[thnq==ithnq]==fp[j])]) 
+                
+                sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq])                                                                                                            
+                sig_paris_fsi_p0 = f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq][np.where(pm[thnq==ithnq]==fp[j])]) 
+                
+                
+                #AV18                                                                                                                   
+                sig_V18_pwia = f_red_pwiaXsec_V18(pm[thnq==ithnq])        #V18 Xsec                                                                             
+                sig_V18_pwia_p0 = f_red_pwiaXsec_V18(pm[np.where(pm[thnq==ithnq]==fp[j])])  #V18 Xsec given that Pm = 0.5, 0.8 GeV 
+                
+                sig_V18_fsi = f_red_fsiXsec_V18(pm[thnq==ithnq])        #V18 Xsec                                                                      
+                sig_V18_fsi_p0 = f_red_fsiXsec_V18(pm[np.where(pm[thnq==ithnq]==fp[j])])  #V18 Xsec given that Pm = 0.5, 0.8 GeV   
+                
+                #CD-Bonn
+                sig_CD_pwia = f_red_pwiaXsec_CD(pm[thnq==ithnq])        #CD-Bonn Xsec
+                sig_CD_pwia_p0 = f_red_pwiaXsec_CD(pm[np.where(pm[thnq==ithnq]==fp[j])])  #CD-Bonn Xsec given that Pm = 0.5, 0.8 GeV 
+                
+                sig_CD_fsi = f_red_fsiXsec_CD(pm[thnq==ithnq])        #CD-Bonn Xsec                                                                     
+                sig_CD_fsi_p0 = f_red_fsiXsec_CD(pm[np.where(pm[thnq==ithnq]==fp[j])])  #CD-Bonn Xsec given that Pm = 0.5, 0.8 GeV  
+                #print('pm=',pm_bin3)
+                #print('sig_CD=',sig_CD_pwia)
+                #print('sig_CD_p0=',sig_CD_pwia_p0)
+                #DEFINE THE RATIOS
+                #DATA
+                R_exp = sig_exp / float(sig_exp_p0)
+                R_exp_err = np.sqrt(((1. / sig_exp_p0)**2 *  sig_exp_err**2 )  + (sig_exp / sig_exp_p0**2)**2 * sig_exp_p0_err**2)
+                #Paris
+                R_paris_pwia = sig_paris_pwia / sig_paris_pwia_p0
+                R_paris_fsi = sig_paris_fsi / sig_paris_fsi_p0 
+                #AV18
+                R_V18_pwia = sig_V18_pwia / sig_V18_pwia_p0                                                                
+                R_V18_fsi = sig_V18_fsi / sig_V18_fsi_p0 
+                #CD-Bonn                                                                                                                          
+                R_CD_pwia = sig_CD_pwia / sig_CD_pwia_p0                                                                                            
+                R_CD_fsi = sig_CD_fsi / sig_CD_fsi_p0 
+                
+                B.plot_exp(pm[thnq==ithnq], R_exp, R_exp_err, marker='o', color='k', label='DATA', logy=True)
+                
+                B.plot_exp(pm[thnq==ithnq], R_paris_pwia, linestyle='--',  marker='None', color='blue', label='Paris PWIA', logy=True)  
+                B.plot_exp(pm[thnq==ithnq], R_paris_fsi, linestyle='-',  marker='None', color='blue', label='Paris FSI', logy=True) 
+                
+                B.plot_exp(pm[thnq==ithnq], R_V18_pwia, linestyle='--',  marker='None', color='green', label='V18 PWIA', logy=True)                             
+                B.plot_exp(pm[thnq==ithnq], R_V18_fsi, linestyle='-',  marker='None', color='green', label='V18 FSI', logy=True)
+                
+                B.plot_exp(pm[thnq==ithnq], R_CD_pwia, linestyle='--',  marker='None', color='magenta', label='CD-Bonn PWIA', logy=True)                                         
+                B.plot_exp(pm[thnq==ithnq], R_CD_fsi, linestyle='-',  marker='None', color='magenta', label='CD-Bonn FSI', logy=True) 
+                
+                #xdata = pm[thnq==ithnq][np.where(pm[thnq==ithnq]>=fp[j])]
+                #ydata =  R_exp[np.where(pm[thnq==ithnq]>=fp[j])]   
+                #ydata_err =  R_exp_err[np.where(pm[thnq==ithnq]>=fp[j])]
+                if(ithnq==35):
+                    xdata = pm[thnq==ithnq]
+                    ydata = R_exp
+                    ydata_err = R_exp_err
+                    xd = xdata[(~np.isnan(ydata)) & (xdata>=0.5)]
+                    yd = ydata[(~np.isnan(ydata)) & (xdata>=0.5)]
+                    yd_err = ydata_err[(~np.isnan(ydata)) & (xdata>=0.5)]
+                if(ithnq==45):
+                    xdata=pm[thnq==ithnq]
+                    ydata=R_exp
+                    ydata_err = R_exp_err
+               
+                    xd = xdata[(~np.isnan(ydata)) & (xdata>=0.5)]
+                    yd = ydata[(~np.isnan(ydata)) & (xdata>=0.5)]
+                    yd_err = ydata_err[(~np.isnan(ydata)) & (xdata>=0.5)]
+                
+                #Define Fit Function
+                def f(x):
+                    y = b() * np.exp(m()*x)    #lny = m*x + ln b
+                    return y
+                m = B.Parameter(1., 'm')
+                b = B.Parameter(1., 'b')
+                F = B.genfit(f,[m,b], xd, yd, yd_err)
+                mp = m.get()[1] ; mp_err=m.get()[2]
+                bp = np.log(b.get()[1]) ; bp_err=np.log(b.get()[2])
+                B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='FIT \n slope: %.3f $\pm$ %.3f \n y-int.= %.3f $\pm$ %.3f'%(mp, mp_err, bp, bp_err))
+                B.pl.yscale('log')
+                B.pl.xlim(0., 1.19)
+                B.pl.ylim(0, 1e6)
+                
+                B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
+                B.pl.ylabel(r'R = $\sigma_{\mathrm{red}}/\sigma_{\mathrm{red}}(p_{0}=%.2f)$'%(fp[j]))                                                                                                                                                                       
+                B.pl.title(r'Cross Section Ratio, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
+                B.pl.legend(loc='upper right', fontsize='small')
+                B.pl.show()
+                #B.pl.savefig(dir_name+'/ratio_test_fp%f_thnq%i.pdf'%(fp[j], ithnq))   
+            '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         
     '''
     #Read Models at all other angles
