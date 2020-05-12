@@ -108,8 +108,8 @@ def get_Xsec(pm_set=0, dset=0, Q2_set='', ithnq=0, ipm=0):
 
     
 #Get Reduced Xsec Data File
-fname_Q2_3to4 = '../deep_data_files/redXsec_combined_Q2_3to4.txt'   #Read Q2 = 3.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
-fname_Q2_4to5 = '../deep_data_files/redXsec_combined_Q2_4to5.txt'   #Read Q2 = 4.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
+fname_Q2_3to4 = '../deep_data_files/Q2_3to4/redXsec_combined.txt'   #Read Q2 = 3.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
+fname_Q2_4to5 = '../deep_data_files/Q2_4to5/redXsec_combined.txt'   #Read Q2 = 4.5 +/- 0.5 GeV2 data (Hall C E12-10-003)
 
 f3to4 = B.get_file(fname_Q2_3to4)
 f4to5 = B.get_file(fname_Q2_4to5)
@@ -864,7 +864,7 @@ def plot_momentum_dist():
         #=============================END CODE TO PRODUCE THESIS PLOTS================================
 
                 
-        #Require ONLY thnq = 35, 45 deg (FOCUS POINT: pm= 0.5 GeV)
+        #Require ONLY thnq = 35, 45 deg
         if (ithnq==35 or ithnq==45):
             #-------FIT data and model reduced cross sections directly----------
 
@@ -878,46 +878,50 @@ def plot_momentum_dist():
 
             #Paris
             pm_paris = pm[thnq==ithnq]
-            #sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq])            
-            #sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq])                                                                                                            
+            sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq])            
+            sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq])                                                                                                            
 
-            sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm_avg_data)            
-            sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm_avg_data)
+            #chi2 calculation
+            #sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm_avg_data)            
+            #sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm_avg_data)
             
             #AV18                                                                                                                   
-            #sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg1)        #V18 Xsec                                                                                     
-            #sig_V18_fsi = f_red_fsiXsec_V18(pm_avg2)        #V18 Xsec                                                                      
-            sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg_data)        #V18 Xsec                                                                                     
-            sig_V18_fsi = f_red_fsiXsec_V18(pm_avg_data)        #V18 Xsec  
+            sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg1)        #V18 Xsec                                                                                     
+            sig_V18_fsi = f_red_fsiXsec_V18(pm_avg2)        #V18 Xsec                                                                      
+
+            #chi2 calculation
+            #sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg_data)        #V18 Xsec                                                                                     
+            #sig_V18_fsi = f_red_fsiXsec_V18(pm_avg_data)        #V18 Xsec  
             
             #CD-Bonn
-            #sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg3)        #CD-Bonn Xsec
-            #sig_CD_fsi = f_red_fsiXsec_CD(pm_avg4)        #CD-Bonn Xsec
+            sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg3)        #CD-Bonn Xsec
+            sig_CD_fsi = f_red_fsiXsec_CD(pm_avg4)        #CD-Bonn Xsec
 
-            sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg_data)        #CD-Bonn Xsec
-            sig_CD_fsi = f_red_fsiXsec_CD(pm_avg_data)        #CD-Bonn Xsec
+            #chi2 calculation
+            #sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg_data)        #CD-Bonn Xsec
+            #sig_CD_fsi = f_red_fsiXsec_CD(pm_avg_data)        #CD-Bonn Xsec
             
             #Calculate the chi2 between data and model
-            chi2_pwia_paris = ((sig_exp - sig_paris_pwia)/sig_exp_err)**2
-            chi2_fsi_paris = ((sig_exp - sig_paris_fsi)/sig_exp_err)**2
+            #chi2_pwia_paris = ((sig_exp - sig_paris_pwia)/sig_exp_err)**2
+            #chi2_fsi_paris = ((sig_exp - sig_paris_fsi)/sig_exp_err)**2
             
-            chi2_pwia_V18 = ((sig_exp - sig_V18_pwia)/sig_exp_err)**2
-            chi2_fsi_V18 = ((sig_exp - sig_V18_fsi)/sig_exp_err)**2
+            #chi2_pwia_V18 = ((sig_exp - sig_V18_pwia)/sig_exp_err)**2
+            #chi2_fsi_V18 = ((sig_exp - sig_V18_fsi)/sig_exp_err)**2
             
-            chi2_pwia_CD = ((sig_exp - sig_CD_pwia)/sig_exp_err)**2
-            chi2_fsi_CD = ((sig_exp - sig_CD_fsi)/sig_exp_err)**2
+            #chi2_pwia_CD = ((sig_exp - sig_CD_pwia)/sig_exp_err)**2
+            #chi2_fsi_CD = ((sig_exp - sig_CD_fsi)/sig_exp_err)**2
 
             #plot chi2 of ((data-model)/data_err)**2
-            B.plot_exp(pm_avg_data, chi2_pwia_paris, marker='o', markersize=6, c='b', mec='b', mfc='b', label=r'Paris PWIA')
-            B.plot_exp(pm_avg_data, chi2_fsi_paris, marker='o', markersize=6, c='b', mec='b', mfc='white', label=r'Paris FSI')
+            #B.plot_exp(pm_avg_data, chi2_pwia_paris, marker='o', markersize=6, c='b', mec='b', mfc='b', label=r'Paris PWIA')
+            #B.plot_exp(pm_avg_data, chi2_fsi_paris, marker='o', markersize=6, c='b', mec='b', mfc='white', label=r'Paris FSI')
 
-            B.plot_exp(pm_avg_data, chi2_pwia_V18, marker='s', markersize=6, c='g', mec='g', mfc='g', label=r'AV18 PWIA')
-            B.plot_exp(pm_avg_data, chi2_fsi_V18, marker='s', markersize=6, c='g', mec='g', mfc='white', label=r'AV18 FSI')
+            #B.plot_exp(pm_avg_data, chi2_pwia_V18, marker='s', markersize=6, c='g', mec='g', mfc='g', label=r'AV18 PWIA')
+            #B.plot_exp(pm_avg_data, chi2_fsi_V18, marker='s', markersize=6, c='g', mec='g', mfc='white', label=r'AV18 FSI')
             
-            B.plot_exp(pm_avg_data, chi2_pwia_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='magenta', label=r'CD-Bonn PWIA')
-            B.plot_exp(pm_avg_data, chi2_fsi_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='white', label=r'CD-Bonn FSI')
+            #B.plot_exp(pm_avg_data, chi2_pwia_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='magenta', label=r'CD-Bonn PWIA')
+            #B.plot_exp(pm_avg_data, chi2_fsi_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='white', label=r'CD-Bonn FSI')
             
-            '''
+            
             #--------Plot reduced data and model cross sections to be fitted
             B.plot_exp(pm_avg_data, sig_exp, sig_exp_err, marker='o', markersize=6, c='k', mec='k', mfc='k', label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=4,capsize=0)
             B.plot_exp(pm_paris, sig_paris_pwia, linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
@@ -948,7 +952,7 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='DATA FIT \n slope: %.4E $\pm$ %.4E'%(mp, mp_err))
             B.pl.yscale('log')
             #----------------------------
-            
+            '''
             #--------Fit Paris PWIA----------
             xd =pm_paris[ (~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             yd = sig_paris_pwia[(~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
@@ -996,7 +1000,7 @@ def plot_momentum_dist():
             print('R_CD_pwia = ',R_cd,' sigmas')
             '''
 
-            '''
+            
             #--------Fit Paris FSI----------
             xd =pm_paris[ (~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             yd = sig_paris_fsi[(~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
@@ -1048,12 +1052,12 @@ def plot_momentum_dist():
             B.pl.title(r'Cross Section Ratio, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
             B.pl.legend(loc='upper right', fontsize='small')
             B.pl.show()
-            '''
-            B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
-            B.pl.ylabel(r'$\chi^{2}$')                                                                                                                                                                       
-            B.pl.title(r'Reduced Cross Sections $\chi^{2}$, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
-            B.pl.legend(loc='upper right', fontsize='small')
-            B.pl.show()
+        
+            #B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
+            #B.pl.ylabel(r'$\chi^{2}$')                                                                                                                                                                       
+            #B.pl.title(r'Reduced Cross Sections $\chi^{2}$, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
+            #B.pl.legend(loc='upper right', fontsize='small')
+            #B.pl.show()
 
 
 

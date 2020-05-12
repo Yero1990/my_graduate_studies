@@ -1,1 +1,0 @@
- "{:<15}{:^10}{:>15}".format(left_aligned, center, right_aligned)
