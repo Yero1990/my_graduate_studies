@@ -62,9 +62,9 @@ def get_kin_syst(header_name='', pm_set=0, data_set=0, Q2_set='', ithnq=0, ipm=0
     #User: Q2 = '3to4', or '4to5'
     #Get file containing kin. systematics
     if(pm_set==80):
-        f = dfile('../deep_data_files/Q2_%sGeV/avg_kinematics/all_thnq_Q2_%sGeV/pm%i_fsi_norad_avgkin_systematics.txt' % (Q2_set, Q2_set, pm_set))
+        f = dfile('../deep_data_files/Q2_%sGeV/avg_kinematics/pm%i_fsi_norad_avgkin_systematics.txt' % (Q2_set, pm_set))
     else:
-        f = dfile('../deep_data_files/Q2_%sGeV/avg_kinematics/all_thnq_Q2_%sGeV/pm%i_fsi_norad_avgkin_set%i_systematics.txt' % (Q2_set, Q2_set, pm_set, data_set))
+        f = dfile('../deep_data_files/Q2_%sGeV/avg_kinematics/pm%i_fsi_norad_avgkin_set%i_systematics.txt' % (Q2_set, pm_set, data_set))
 
     pm_bin = np.array(f['yb'])
     thnq_bin = np.array(f['xb'])
@@ -489,7 +489,7 @@ def plot_momentum_dist():
 
         
         #----------------------PRODUCE PLOTS FOR THESIS----------
-        '''
+        
         #-----------------------------ALTERNATIVE: MAKE SUBPLOTS----------------------------------
         B.pl.clf()
         #-----Create Subplots-----
@@ -859,10 +859,10 @@ def plot_momentum_dist():
 
             fout_3to4.write(line)
         fout_3to4.close()
-        '''
+        
         #=============================END CODE TO PRODUCE THESIS PLOTS================================
 
-                
+        '''        
         #Require ONLY thnq = 35, 45 deg
         if (ithnq==35 or ithnq==45):
             #-------FIT data and model reduced cross sections directly----------
@@ -951,7 +951,7 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='DATA FIT \n slope: %.4E $\pm$ %.4E'%(mp, mp_err))
             B.pl.yscale('log')
             #----------------------------
-            '''
+            
             #--------Fit Paris PWIA----------
             xd =pm_paris[ (~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             yd = sig_paris_pwia[(~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
@@ -997,7 +997,7 @@ def plot_momentum_dist():
             print('R_paris_pwia = ',R_paris,' sigmas')
             print('R_AV18_pwia = ',R_v18,' sigmas')
             print('R_CD_pwia = ',R_cd,' sigmas')
-            '''
+            
 
             
             #--------Fit Paris FSI----------
@@ -1063,7 +1063,7 @@ def plot_momentum_dist():
 
             #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
 
-            '''
+            
             fp = np.array([0.5, 0.82])
             for j in range(len(fp)):
                 B.pl.clf()                                                                                                          
