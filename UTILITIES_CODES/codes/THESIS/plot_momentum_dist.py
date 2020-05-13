@@ -180,7 +180,7 @@ pm_fsi_dgt_lower =  pm_fsi_dgt[0:22]
 redXsec_fsi_dgt_lower = redXsec_fsi_dgt[0:22]
 pm_fsi_dgt_upper =  pm_fsi_dgt[23:46]              
 redXsec_fsi_dgt_upper = redXsec_fsi_dgt[23:46]
-#%%
+
 #interpolate
 f_pwia_lower = interp1d(pm_pwia_dgt_lower,redXsec_pwia_dgt_lower , fill_value='extrapolate', kind='linear')  
 f_pwia_upper = interp1d(pm_pwia_dgt_upper,redXsec_pwia_dgt_upper , fill_value='extrapolate', kind='linear')  
@@ -188,7 +188,6 @@ f_pwia_upper = interp1d(pm_pwia_dgt_upper,redXsec_pwia_dgt_upper , fill_value='e
 f_fsi_lower = interp1d(pm_fsi_dgt_lower,redXsec_fsi_dgt_lower , fill_value='extrapolate', kind='linear')  
 f_fsi_upper = interp1d(pm_fsi_dgt_upper,redXsec_fsi_dgt_upper , fill_value='extrapolate', kind='linear')  
 
-#%%
 
 
 def read_halla_data(thnq=0):
@@ -819,13 +818,13 @@ def plot_momentum_dist():
 
         
         #-----------------------------WRITE DATA REDUCED XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
-        #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
+        #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 4.5 +/- 0.5
         fout_name4to5 = dir_name3+'/relative_errors_thnq%i_Q2_4to5.txt' % (ithnq)
         fout_4to5 = open(fout_name4to5, 'w')
-        fout_4to5.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
+        fout_4to5.write('#theta_nq = %i +/- 5 deg :: Q2 = 4.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
         fout_4to5.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
         fout_4to5.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
-        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,6]/  rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
+        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,3]/  rel_syst_tot[f,4]/   rel_tot_err[f,5]/\n')
 
         for i in range(len(pm[thnq==ithnq])):
             line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
