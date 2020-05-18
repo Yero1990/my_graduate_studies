@@ -277,8 +277,8 @@
 \bibitem [{\citenamefont {Yero}(ress)}]{cyero_phdthesis}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Yero}},\ }\emph {\bibinfo {title} {Cross-Section Measurements of Deuteron
-  Electro-Disintegration at Very High Recoil Momenta and Large $Q^{2}$}},\
+  {Yero}},\ }\emph {\bibinfo {title} {{Cross Section Measurements of Deuteron
+  Electro-Disintegration at Very High Recoil Momenta and Large $Q^{2}$}}},\
   \href@noop {} {Ph.D. thesis},\ \bibinfo  {school} {Florida International
   University}, \bibinfo {address} {11200 SW 8th St, Miami, FL 33199} (\bibinfo
   {year} {in progress})\BibitemShut {NoStop}%

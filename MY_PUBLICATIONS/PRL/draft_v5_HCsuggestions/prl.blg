@@ -31,7 +31,7 @@ Warning--empty year in dc_techreport
 Warning--empty year in ngc_techreport
 You've used 30 entries,
             6079 wiz_defined-function locations,
-            1883 strings with 21958 characters,
+            1883 strings with 21960 characters,
 and the built_in function-call counts, 29381 in all, are:
 = -- 2223
 > -- 640
