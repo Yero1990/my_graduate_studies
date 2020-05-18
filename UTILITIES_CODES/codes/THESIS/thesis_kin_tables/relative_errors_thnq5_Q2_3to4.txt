@@ -1,34 +1,34 @@
 #theta_nq = 5 +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%],  all(*_err) are absolute. 
 #pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.
 #Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  
-#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,6]/  rel_syst_tot[f,9]/   rel_tot_err[f,10]/
-0.02000         0.03027       6.37735E+00              33.23280             4.99820              33.60650             
-0.06000         0.05398       2.07666E+00              22.37680             6.33950              23.25750             
-0.10000         0.08453       NAN                      51.22590             6.84120              51.68070             
-0.14000         nan           NAN                      nan                  nan                  nan                  
-0.18000         nan           NAN                      nan                  nan                  nan                  
-0.22000         nan           NAN                      nan                  nan                  nan                  
-0.26000         nan           NAN                      nan                  nan                  nan                  
-0.30000         nan           NAN                      nan                  nan                  nan                  
-0.34000         nan           NAN                      nan                  nan                  nan                  
-0.38000         nan           NAN                      nan                  nan                  nan                  
-0.42000         nan           NAN                      nan                  nan                  nan                  
-0.46000         nan           NAN                      nan                  nan                  nan                  
-0.50000         nan           NAN                      nan                  nan                  nan                  
-0.54000         nan           NAN                      nan                  nan                  nan                  
-0.58000         nan           NAN                      nan                  nan                  nan                  
-0.62000         nan           NAN                      nan                  nan                  nan                  
-0.66000         nan           NAN                      nan                  nan                  nan                  
-0.70000         nan           NAN                      nan                  nan                  nan                  
-0.74000         nan           NAN                      nan                  nan                  nan                  
-0.78000         nan           NAN                      nan                  nan                  nan                  
-0.82000         nan           NAN                      nan                  nan                  nan                  
-0.86000         nan           NAN                      nan                  nan                  nan                  
-0.90000         nan           NAN                      nan                  nan                  nan                  
-0.94000         nan           NAN                      nan                  nan                  nan                  
-0.98000         nan           NAN                      nan                  nan                  nan                  
-1.02000         nan           NAN                      nan                  nan                  nan                  
-1.06000         nan           NAN                      nan                  nan                  nan                  
-1.10000         nan           NAN                      nan                  nan                  nan                  
-1.14000         nan           NAN                      nan                  nan                  nan                  
-1.18000         nan           NAN                      nan                  nan                  nan                  
+#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,3]/  rel_norm_syst[f,4]/  rel_kin_syst[f,5]/ rel_syst_tot[f,6]/   rel_tot_err[f,7]/
+0.020           0.03027       6.37735E+00              33.23                3.66                 3.40                 5.00                 33.61                
+0.060           0.05398       2.07666E+00              22.38                3.66                 5.18                 6.34                 23.26                
+0.100           0.08453       NAN                      51.23                3.66                 5.78                 6.84                 51.68                
+0.140           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.180           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.220           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.260           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.300           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.340           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.380           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.420           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.460           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.500           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.540           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.580           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.620           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.660           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.700           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.740           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.780           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.820           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.860           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.900           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.940           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.980           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+1.020           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+1.060           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+1.100           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+1.140           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+1.180           nan           NAN                      nan                  nan                  nan                  nan                  nan                  

@@ -1,0 +1,20 @@
+Hi Werner,
+Attached please see my comments on the draft.
+
+Also the paragraph below I suggest to use instead of the one I suggested to 
+remove in  the text.
+
+The difference between the deuteron wave functions with CD-Bonn and Paris/AV18  potentials is 
+how the NN potential is modeled based on the empirical NN scattering data.
+The CD-Bonn model is based on the One-Boson-Exchange approach in which the 
+Nucleon-Meson-Meson couplings are constrained to describe the NN scattering phase shifts
+extracted from the date.  The interaction potential represents the static limit of 
+this potential.  Paris and AV18 potentials are phenomenological in which the 
+Yukawa type interaction is introduced and parameters are fitted to describe the 
+same NN scattering phase-shifts.   The major difference between CD-Bonn and Paris/AV18 
+potentials is that the former predicts much softer repulsive interaction at short distance which 
+results in a less high momentum component in the deuteron wave function in the momentum space.
+
+ 
+With Best Regards
+Misak

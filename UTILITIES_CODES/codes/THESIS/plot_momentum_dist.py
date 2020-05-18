@@ -69,7 +69,7 @@ def get_kin_syst(header_name='', pm_set=0, data_set=0, Q2_set='', ithnq=0, ipm=0
     pm_bin = np.array(f['yb'])
     thnq_bin = np.array(f['xb'])
     #Get data array with desired header name (kin. syst are in %)
-    data = ((np.array(f[header_name]))[thnq_bin==ithnq])[ipm]  #returns a single value    
+    data = np.array( (f[header_name])[thnq_bin==ithnq])[ipm]*100.  #returns a single value in %    
     return data
 
 def get_norm_syst(header_name, Q2_set=''):   #header_name = 'tot_syst_norm' added all contributions in quadrature for each data set
@@ -800,16 +800,17 @@ def plot_momentum_dist():
         fout_3to4.write('#theta_nq = %i +/- 5 deg :: Q2 = 3.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
         fout_3to4.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
         fout_3to4.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
-        fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,6]/  rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
+        fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,3]/  rel_norm_syst[f,4]/  rel_kin_syst[f,5]/ rel_syst_tot[f,6]/   rel_tot_err[f,7]/\n')
 
         for i in range(len(pm[thnq==ithnq])):
-            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
+            line = "{:<16.3f}{:<14.5f}{:<25.5E}{:<21.2f}{:<21.2f}{:<21.2f}{:<21.2f}{:<21.2f}\n".format(
                                                                                                                                   (pm[thnq==ithnq])[i], (pm_avg_3to4[thnq==ithnq])[i],
                                                                                                                                   (red_dataXsec_avg_masked_3to4[thnq==ithnq])[i]*MeV2fm,
                                                                                                                                   
                                                                                                                                  
                                                                                                                                   
-                                                                                                                                  (tot_stats_err_3to4[thnq==ithnq])[i]*100., (tot_syst_err_3to4[thnq==ithnq])[i]*100.,
+                                                                                                                                  (tot_stats_err_3to4[thnq==ithnq])[i]*100., (norm_syst_tot_3to4[thnq==ithnq])[i]*100.,
+                                                                                                                                  (kin_syst_tot_3to4[thnq==ithnq])[i]*100., (tot_syst_err_3to4[thnq==ithnq])[i]*100.,
                                                                                                                                   (tot_err_3to4[thnq==ithnq])[i]*100.)
 
             fout_3to4.write(line)
@@ -824,23 +825,24 @@ def plot_momentum_dist():
         fout_4to5.write('#theta_nq = %i +/- 5 deg :: Q2 = 4.5 +/- 0.5 GeV2 :: All (*_syst) errors are relative, dsig / sig [%%],  all(*_err) are absolute. \n'  %(ithnq))
         fout_4to5.write('#pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.\n')
         fout_4to5.write('#Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  \n')
-        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,3]/  rel_syst_tot[f,4]/   rel_tot_err[f,5]/\n')
+        fout_4to5.write('#!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,3]/  rel_norm_syst[f,4]/  rel_kin_syst[f,5]/ rel_syst_tot[f,6]/   rel_tot_err[f,7]/\n')
 
         for i in range(len(pm[thnq==ithnq])):
-            line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<21.5f}{:<21.5f}{:<21.5f}\n".format(
+            line = "{:<16.3f}{:<14.5f}{:<25.5E}{:<21.2f}{:<21.2f}{:<21.2f}{:<21.2f}{:<21.2f}\n".format(
                                                                                                                                   (pm[thnq==ithnq])[i], (pm_avg_4to5[thnq==ithnq])[i],
                                                                                                                                   (red_dataXsec_avg_masked_4to5[thnq==ithnq])[i]*MeV2fm,
                                                                                                                                   
                                                                                                                                  
                                                                                                                                   
-                                                                                                                                  (tot_stats_err_4to5[thnq==ithnq])[i]*100., (tot_syst_err_4to5[thnq==ithnq])[i]*100.,
+                                                                                                                                  (tot_stats_err_4to5[thnq==ithnq])[i]*100., (norm_syst_tot_4to5[thnq==ithnq])[i]*100.,
+                                                                                                                                  (kin_syst_tot_4to5[thnq==ithnq])[i]*100., (tot_syst_err_4to5[thnq==ithnq])[i]*100.,
                                                                                                                                   (tot_err_4to5[thnq==ithnq])[i]*100.)
 
             fout_4to5.write(line)
         fout_4to5.close()
 
 
-
+        '''
         #-----------------------------WRITE DATA 5-FOLD DIFFERENTIAL XSEC (PER DATASET) TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
         fout_name3to4 = dir_name3+'/dataXsec_thnq%i_Q2_3to4_80set1.txt' % (ithnq)
@@ -851,7 +853,7 @@ def plot_momentum_dist():
         fout_3to4.write('#!pm_bin[i,0]/  pm_avg[f,1]/  dataXsec[f,2]/  rel_stats_err[f,6]/  rel_syst_tot[f,9]/   rel_tot_err[f,10]/\n')
 
         for i in range(len(pm[thnq==ithnq])):
-            rel_tot_err = np.sqrt( (get_kin_syst('sig_kin_tot', 80, 1, '3to4')[thnq==ithnq])[i]**2 +  get_norm_syst('tot_syst_norm', Q2_set='3to4')[0]**2 + (((get_Xsec(80, 1, '3to4'))[thnq==ithnq])[i])[1]**2)
+            rel_tot_err = np.sqrt( (get_kin_syst('sig_kin_tot', 80, 1, '3to4', ithnq, i)**2 +  get_norm_syst('tot_syst_norm', Q2_set='3to4')[0]**2 + (((get_Xsec(80, 1, '3to4'))[thnq==ithnq])[i])[1]**2)
             rel_syst_err = np.sqrt( get_kin_syst('sig_kin_tot', 80, 1, '3to4', ithnq, i)**2 +  get_norm_syst('tot_syst_norm', Q2_set='3to4')[0]**2 )
             line = "{:<16.5f}{:<14.5f}{:<25.5E}{:<21.5f}{:<21.5f}{:<21.5f}\n".format( (pm[thnq==ithnq])[i], (pm_avg_3to4[thnq==ithnq])[i], (get_Xsec(80, 1, '3to4',ithnq,i))[0], (get_Xsec(80, 1, '3to4',ithnq,i))[1],
                                                                                                                                                                                  rel_syst_err, rel_tot_err)                                                                                         
@@ -862,7 +864,7 @@ def plot_momentum_dist():
         
         #=============================END CODE TO PRODUCE THESIS PLOTS================================
 
-        '''        
+           
         #Require ONLY thnq = 35, 45 deg
         if (ithnq==35 or ithnq==45):
             #-------FIT data and model reduced cross sections directly----------
