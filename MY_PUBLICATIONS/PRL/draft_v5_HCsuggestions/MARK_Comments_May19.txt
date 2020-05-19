@@ -1,0 +1,30 @@
+====MAY 19, 2020====
+
+Carlos,
+         A few comments:
+
+The first sentence in the abstract, I would suggest changing -Q2 to just Q2
+and rewriting as this:
+
+2H(e, e′p)n cross sections have been measured at 4-momentum transfers of Q2 = 4.5 ± 0.5
+(GeV/c)2 over a range of neutron recoil momenta,pr, with pr reaching up to 1.0 GeV/c.
+
+Replace "is" with "are"
+
+"The dynamics in this short distance region are directly"
+
+Remove "s" from "freedoms"
+
+"explicit quark degrees of freedom"
+
+For  the last sentence on the paper:
+
+"In conclusion, additional measurements of the
+2H(e, e′p)n would be required to reduce the statistical"
+
+
+I would remove the "In conclusion" and join the sentence
+to the rest of the preceding paragraph. 
+
+Cheers,
+             Mark
