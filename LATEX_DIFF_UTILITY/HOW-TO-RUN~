@@ -1,0 +1,14 @@
+To run this program, type:
+
+>> latexdiff original.tex revised.tex > diff.tex
+
+where the original.tex is the original LaTex file, and the
+revised.tex is the revised LaTex file.  The diff.tex file
+is a latex file with the changes in a usful format.
+
+Now run,
+
+>> pdflatex diff.tex
+
+to produce an output diff.pdf file which contains the
+old (crossed red) and revised (underline blue) changes.

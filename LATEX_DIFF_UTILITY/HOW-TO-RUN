@@ -1,0 +1,31 @@
+To run this program, type:
+
+(1) >> latexdiff original.tex revised.tex > diff.tex
+
+where the original.tex is the original LaTex file, and the
+revised.tex is the revised LaTex file.  The diff.tex file
+is a latex file with the changes in a usful format.
+
+Now run,
+
+(2) >> pdflatex diff.tex
+
+to produce an output diff.pdf file which contains the
+old (crossed red) and revised (underline blue) changes.
+
+In some cases, the .tex files may input other tex files via: \input input.tex
+
+In this case, simply compare these input files separately using the command (1)
+As an example,
+
+(3)  >> latexdiff oldinput.tex newinput.tex > diffinput.tex
+
+This diffinput.tex file can then be loaded in the diff.tex file, as one
+would normally do:   \input diffinput.tex
+
+Finally, run:
+
+(4) >> pdflatex diff.tex
+
+once again, with the diffinput.tex file loaded, and this should produce
+a pdf with the marked revisions, including those from the input.
