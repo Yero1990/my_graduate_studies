@@ -13,8 +13,8 @@ from matplotlib import *
 from mpl_toolkits.axes_grid1.inset_locator import (inset_axes, InsetPosition, mark_inset)
 
 
-matplotlib.use('Agg')
-plt.ioff() # prevent plots froms displaying
+#matplotlib.use('Agg')
+#plt.ioff() # prevent plots froms displaying
 #Use latex commands (e.g. \textit ot \textbf)
 rc('text', usetex=True)
 #Set default font to times new roman
@@ -37,10 +37,10 @@ def convert2NaN(arr=np.array([]), value=0):
     return arr
 
 
-#Conversion factor:  1 fm = 1/ (197 MeV),   
+#Conversion factor:  1 fm = 1/ (197.3 MeV),   
 #The reduced cross section is in MeV^-3 units
 MeV2fm = 197.3**3    #convert MeV^-3 to fm^3
-
+GeV2fm = 0.1973**3   #conver GeV^-3 to fm^3
 #========User Input (Dir. Name to store output)=======
 #usage: ipython plot_momentum_dist.py
 
@@ -157,6 +157,18 @@ tot_err_4to5 = np.array(dfile(fname_Q2_4to5)['tot_err'])              #overall e
 
 
 #Read Digitized Data from W.V.Orden (2014) article
+fname_digit_CDBonn = './digitized_data/CD_Bonn_digitized.data'
+fname_digit_WJC1 = './digitized_data/WJC1_digitized.data'
+
+CDBonn_dgt = dfile(fname_digit_CDBonn)
+WJC1_dgt = dfile(fname_digit_WJC1)
+
+pm_cd_dgt = np.array(CDBonn_dgt['xpw'])                       #digitized CD-Bonn missing momentum [GeV/c]
+rho_cdbonn = np.array(CDBonn_dgt['ypw']) * GeV2fm / (8.*np.pi**3)   
+
+pm_wjc1_dgt = np.array(WJC1_dgt['xpw'])                       #digitized WJC1 missing momentum [GeV/c]
+rho_wjc1 = np.array(WJC1_dgt['ypw']) * GeV2fm / (8.*np.pi**3)
+
 #This data shows a band with lower/upper limits of calculations for PWIA and FSI
 fname_digit_pwia = './digitized_data/PWIA_digitized_final.txt'
 fname_digit_fsi = './digitized_data/FSI_digitized_final.txt'
@@ -188,6 +200,8 @@ f_pwia_upper = interp1d(pm_pwia_dgt_upper,redXsec_pwia_dgt_upper , fill_value='e
 f_fsi_lower = interp1d(pm_fsi_dgt_lower,redXsec_fsi_dgt_lower , fill_value='extrapolate', kind='linear')  
 f_fsi_upper = interp1d(pm_fsi_dgt_upper,redXsec_fsi_dgt_upper , fill_value='extrapolate', kind='linear')  
 
+f_cd_dgt = interp1d(pm_cd_dgt, rho_cdbonn, fill_value='extrapolate', kind='linear')
+f_wjc1_dgt = interp1d(pm_wjc1_dgt, rho_wjc1, fill_value='extrapolate', kind='linear')
 
 
 def read_halla_data(thnq=0):
@@ -487,7 +501,7 @@ def plot_momentum_dist():
         #======================END PRL PLOTS==============
 
 
-        
+        '''
         #----------------------PRODUCE PLOTS FOR THESIS----------
         
         #-----------------------------ALTERNATIVE: MAKE SUBPLOTS----------------------------------
@@ -842,7 +856,7 @@ def plot_momentum_dist():
         fout_4to5.close()
 
 
-        '''
+        
         #-----------------------------WRITE DATA 5-FOLD DIFFERENTIAL XSEC (PER DATASET) TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
         fout_name3to4 = dir_name3+'/dataXsec_thnq%i_Q2_3to4_80set1.txt' % (ithnq)
@@ -864,7 +878,7 @@ def plot_momentum_dist():
         
         #=============================END CODE TO PRODUCE THESIS PLOTS================================
 
-           
+        '''   
         #Require ONLY thnq = 35, 45 deg
         if (ithnq==35 or ithnq==45):
             #-------FIT data and model reduced cross sections directly----------
@@ -925,6 +939,8 @@ def plot_momentum_dist():
             
             #--------Plot reduced data and model cross sections to be fitted
             B.plot_exp(pm_avg_data, sig_exp, sig_exp_err, marker='o', markersize=6, c='k', mec='k', mfc='k', label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=4,capsize=0)
+
+            #Paris
             B.plot_exp(pm_paris, sig_paris_pwia, linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
             B.plot_exp(pm_paris, sig_paris_fsi, linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
 
@@ -936,6 +952,12 @@ def plot_momentum_dist():
             B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn PWIA')     
             B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
 
+            #Digitized WJC1
+            B.plot_exp(pm_wjc1_dgt, f_wjc1_dgt(pm_wjc1_dgt), linestyle='dashdot', marker='None', color='navy', logy=True, label='WJC1 (J.W.V. Orden)')     
+            #Digitized CD-Bonn
+            B.plot_exp(pm_cd_dgt, f_cd_dgt(pm_cd_dgt), linestyle='dotted', marker='None', color='darkviolet', logy=True, label='CD-Bonn (J.W.V. Orden)')     
+
+            
             #Define Fit Function
             def f(x):
                 y = b() * np.exp(m()*x)    #lny = m*x + ln b
@@ -963,7 +985,7 @@ def plot_momentum_dist():
             mp_paris = m.get()[1] ; mp_paris_err=m.get()[2]
             bp_paris = np.log(b.get()[1]) ; bp_paris_err=np.log(b.get()[2])
             
-            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='Paris (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_paris, mp_paris_err))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='Paris (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_paris, mp_paris_err))
             B.pl.yscale('log')
             #----------------------------
 
@@ -975,7 +997,7 @@ def plot_momentum_dist():
             F = B.genfit(f,[m,b], xd, yd)            
             mp_v18 = m.get()[1] ; mp_v18_err=m.get()[2]
             bp_v18 = np.log(b.get()[1]) ; bp_v18_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='gray', lw=2, label='AV18 (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
             B.pl.yscale('log')
             #----------------------------
 
@@ -987,7 +1009,7 @@ def plot_momentum_dist():
             F = B.genfit(f,[m,b], xd, yd)            
             mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
             bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='c', lw=2, label='CD-Bonn (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
             B.pl.yscale('log')
             #----------------------------
 
@@ -1023,19 +1045,23 @@ def plot_momentum_dist():
             F = B.genfit(f,[m,b], xd, yd)            
             mp_v18 = m.get()[1] ; mp_v18_err=m.get()[2]
             bp_v18 = np.log(b.get()[1]) ; bp_v18_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='gray', lw=2, label='AV18 (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
+            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='AV18 (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
             B.pl.yscale('log')
             #----------------------------
 
             #--------Fit CD-Bonn FSI----------
-            xd =pm_avg3[ (~np.isnan(sig_CD_fsi)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
-            yd = sig_CD_fsi[(~np.isnan(sig_CD_fsi)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
+            xd =pm_avg4[ (~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
+            yd = sig_CD_fsi[(~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
+            print('pm_avg4=',pm_avg4)
+            print('xd = ',xd)
+            print('yd = ',yd)
             m = B.Parameter(1., 'm')
             b = B.Parameter(1., 'b')
             F = B.genfit(f,[m,b], xd, yd)            
+            #F = B.linefit(xd, yd)  
             mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
             bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='c', lw=2, label='CD-Bonn (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
+            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='CD-Bonn (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
             B.pl.yscale('log')
             #----------------------------
 
@@ -1047,13 +1073,51 @@ def plot_momentum_dist():
             print('R_paris_fsi = ',R_paris,' sigmas')
             print('R_AV18_fsi = ',R_v18,' sigmas')
             print('R_CD_fsi = ',R_cd,' sigmas')
+
+            #--------Fit WJC1 (J.W.V.Orden)----------
+            sig_wjc1 = f_wjc1_dgt(pm_wjc1_dgt)
+            xd =pm_wjc1_dgt[ (pm_wjc1_dgt>=0.55) & (pm_wjc1_dgt<=1.0)]
+            yd = sig_wjc1[(pm_wjc1_dgt>=0.55) & (pm_wjc1_dgt<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_wjc1 = m.get()[1] ; mp_wjc1_err=m.get()[2]
+            bp_wjc1 = np.log(b.get()[1]) ; bp_wjc1_err=np.log(b.get()[2])
             
-            B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
-            B.pl.ylabel(r'$\sigma_{\mathrm{red}}$')                                                                                                                                                                       
-            B.pl.title(r'Cross Section Ratio, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC1 FIT \n slope: %.4E $\pm$ %.4E'%(mp_wjc1, mp_wjc1_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #--------Fit CD-Bonn (J.W.V. Orden)----------
+            sig_cd = f_cd_dgt(pm_cd_dgt)
+            xd =pm_cd_dgt[ (pm_cd_dgt>=0.55) & (pm_cd_dgt<=1.0)]
+            yd = sig_cd[(pm_cd_dgt>=0.55) & (pm_cd_dgt<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
+            B.pl.yscale('log')
+            #----------------------------
+
+            #Barlow ratio to determine if data and model slopes are significantly different
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            R_wjc1 = np.abs(mp_wjc1 - mp) / np.sqrt(np.abs(mp_err**2))
+
+            print('R_WJC1 = ',R_wjc1,' sigmas')
+            print('R_CD = ',R_cd,' sigmas')
+
+            
+            B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)', fontsize=16)                                                                                                                                                            
+            B.pl.ylabel(r'$\sigma_{\mathrm{red}}$[fm$^{3}$]', fontsize=16)                                                                                                                                                                       
+            B.pl.title(r'Cross Section Ratio, $\theta_{nq} = %i \pm 5$ deg'%(ithnq), fontsize=16)                                                                                                                             
             B.pl.legend(loc='upper right', fontsize='small')
             B.pl.show()
-        
+
+
+            
             #B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
             #B.pl.ylabel(r'$\chi^{2}$')                                                                                                                                                                       
             #B.pl.title(r'Reduced Cross Sections $\chi^{2}$, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
@@ -1062,9 +1126,9 @@ def plot_momentum_dist():
 
 
 
-
+            '''
             #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
-
+            
             
             fp = np.array([0.5, 0.82])
             for j in range(len(fp)):

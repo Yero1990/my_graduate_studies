@@ -296,6 +296,8 @@ for i, ithnq in enumerate(thnq_arr):
     B.pl.figure(i)
 
     #Plot BC ratio PWIA and FSI
+    B.pl.hlines(1.1, 0., 1.2, linestyles='dashed', label=r'$\pm 10\%$' )
+    B.pl.hlines(0.9,0., 1.2, linestyles='dashed')
     B.plot_exp(pm[thnq==ithnq], BC_fact_pwia_80[thnq==ithnq], BC_fact_pwia_80_err[thnq==ithnq], marker='o', color='k', label='PWIA')
     B.plot_exp(pm[thnq==ithnq], BC_fact_pwia_580s1[thnq==ithnq], BC_fact_pwia_580s1_err[thnq==ithnq], marker='s', color='b', logy=False, label='PWIA')
     B.plot_exp(pm[thnq==ithnq], BC_fact_pwia_580s2[thnq==ithnq], BC_fact_pwia_580s2_err[thnq==ithnq], marker='^', color='r', logy=False, label='PWIA')
@@ -303,7 +305,8 @@ for i, ithnq in enumerate(thnq_arr):
     B.plot_exp(pm[thnq==ithnq], BC_fact_pwia_750s2[thnq==ithnq], BC_fact_pwia_750s2_err[thnq==ithnq], marker='p', color='m', logy=False, label='PWIA')
     B.plot_exp(pm[thnq==ithnq], BC_fact_pwia_750s3[thnq==ithnq], BC_fact_pwia_750s3_err[thnq==ithnq], marker='D', color='c', logy=False, label='PWIA')
 
-     
+    B.pl.hlines(1.2, 0., 1.2, linestyles='dashdot', color='r', label=r'$\pm 20\%$')
+    B.pl.hlines(0.8,0., 1.2, linestyles='dashdot', color='r')
     B.plot_exp(pm[thnq==ithnq], BC_fact_fsi_80[thnq==ithnq],  BC_fact_fsi_80_err[thnq==ithnq], marker='o', markerfacecolor='w', color='k', label='FSI, 80 (set1)')
     B.plot_exp(pm[thnq==ithnq], BC_fact_fsi_580s1[thnq==ithnq],  BC_fact_fsi_580s1_err[thnq==ithnq], marker='s',  markerfacecolor='w',color='b', label='FSI, 580 (set1)')
     B.plot_exp(pm[thnq==ithnq], BC_fact_fsi_580s2[thnq==ithnq],  BC_fact_fsi_580s2_err[thnq==ithnq], marker='^',  markerfacecolor='w',color='r', label='FSI, 580 (set2)')
@@ -311,6 +314,12 @@ for i, ithnq in enumerate(thnq_arr):
     B.plot_exp(pm[thnq==ithnq], BC_fact_fsi_750s2[thnq==ithnq],  BC_fact_fsi_750s2_err[thnq==ithnq], marker='p',  markerfacecolor='w',color='m', label='FSI, 750 (set2)')
     B.plot_exp(pm[thnq==ithnq], BC_fact_fsi_750s3[thnq==ithnq],  BC_fact_fsi_750s3_err[thnq==ithnq], marker='D',  markerfacecolor='w',color='c', label='FSI, 750 (set3)')
 
+
+    #Plot horizontal lines to denote +/- 10 and 20 %
+
+
+
+    
     B.pl.legend(ncol=2, loc='upper right', prop={'size': 10}) 
 
     B.pl.ylim(0.5, 1.5)
@@ -320,8 +329,9 @@ for i, ithnq in enumerate(thnq_arr):
     B.pl.xticks(fontsize=14)
     B.pl.yticks(fontsize=14)
     B.pl.tight_layout()
-    #B.pl.show()
+    B.pl.show()
 
     B.pl.savefig('./BCratio_thnq%i.pdf'%(ithnq))
 
 
+    
