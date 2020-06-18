@@ -1,0 +1,13 @@
+This directory contains line fits of the reduced Xsec
+for the D(e,e'p)n experiment for thnq = 35 and 45 deg.
+
+From the data and model fits, the ratio
+
+R = (slope_model - slope_data) / slope_data_err
+
+is defined.  This quantity is used to quantify the discrepancy
+observed between data and model and is expressed in terms
+of the number of standard deviations. This is to show that
+the discrepancies are very unlikely to be due to statistical
+fluctuations. For example a R= 7 sigma (where sigma=slope_data_err)
+is very large discrepancy.

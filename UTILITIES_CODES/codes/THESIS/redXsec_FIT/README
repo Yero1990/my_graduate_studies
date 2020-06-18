@@ -1,0 +1,35 @@
+This directory contains line fits of the reduced Xsec
+for the D(e,e'p)n experiment for thnq = 35 and 45 deg.
+
+From the data and model fits, the ratio
+
+R = (slope_model - slope_data) / slope_data_err
+
+is defined.  This quantity is used to quantify the discrepancy
+observed between data and model and is expressed in terms
+of the number of standard deviations. This is to show that
+the discrepancies are very unlikely to be due to statistical
+fluctuations. For example a R= 7 sigma (where sigma=slope_data_err)
+is very large discrepancy.
+
+
+------------------
+Hi Carlos
+
+You are overthinking it. When you do the fit you get a certain value and an uncertainty for the slope.
+You get the a similar value for the fit to the theory. Now the data are a statistical snapshot i.e. if
+we would repeat this experiment many times we would get a sequence of values for the slope and we could
+histogram these values and get a certain sigma for its width. As we cannot do these repeated experiment
+we approximate the width of the distribution of slope values by the uncertainty we get from the fit.
+If I now compare the difference in slopes between the fit to the data and  the fit to theory, I notice
+that the difference is much larger than the uncertainty of the fitted slope. If we assume that the
+distribution of fitted slopes is gaussian with the fitted uncertainty as sigma then we can estimate the
+probability to observed a statistical fluctuation of a certain value. A natural unit for a deviation for
+a gaussian is its sigma, you can calculate that the probability of observing a deviation of 1 sigma is about
+37% and 3 sigma is about 1% and you can imagine how small the probability for 5 - 10 and even more sigmas is.
+So just do the fits and get the values for the slope and their uncertainties. Then do the same for the calculations you have.
+
+Kind regards
+
+Werner
+------------------

@@ -276,6 +276,74 @@ def read_theoretical_models(theory="", model="", thnq=0):
         return pm_bin, red_fsiXsec_CD_Bonn
 
 
+def read_JWVO_data(ithnq=0, theory='', fofa='', model='', pmavg=np.array([])):
+    
+    #Read theoretical cross sections from W.V.Orden
+    #The cross sections used the WJC2, AV18 and CD-Bonn models
+
+    fname = '../deep_data_files/JWVOrden_calculations/JWV_Orden_redXsec_%i_deg_AVERAGE.txt' % (ithnq)
+
+    f = dfile(fname)
+    
+    pm_avg = np.array(f['pm_avg'])                       #average missing momentum (GeV/c)
+    WJC2_GKex05_PWBA_red = np.array(f['WJC2_GKex05_PWBA_red'])
+    WJC2_GKex05_DWBA_red = np.array(f['WJC2_GKex05_DWBA_red'])
+    WJC2_AMT_PWBA_red = np.array(f['WJC2_AMT_PWBA_red'])
+    WJC2_AMT_DWBA_red = np.array(f['WJC2_AMT_DWBA_red'])
+
+    AV18_GKex05_PWBA_red = np.array(f['AV18_GKex05_PWBA_red'])
+    AV18_GKex05_DWBA_red = np.array(f['AV18_GKex05_DWBA_red'])
+    AV18_AMT_PWBA_red = np.array(f['AV18_AMT_PWBA_red'])
+    AV18_AMT_DWBA_red = np.array(f['AV18_AMT_DWBA_red'])
+
+    CD_GKex05_PWBA_red = np.array(f['CD_GKex05_PWBA_red'])
+    CD_GKex05_DWBA_red = np.array(f['CD_GKex05_DWBA_red'])
+    CD_AMT_PWBA_red = np.array(f['CD_AMT_PWBA_red'])
+    CD_AMT_DWBA_red = np.array(f['CD_AMT_DWBA_red'])
+    
+    #interpolate
+    f_WJC2_GKex05_PWBA_red = interp1d(pm_avg, WJC2_GKex05_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_WJC2_GKex05_DWBA_red = interp1d(pm_avg, WJC2_GKex05_DWBA_red, fill_value='extrapolate', kind='linear')  
+    f_WJC2_AMT_PWBA_red = interp1d(pm_avg, WJC2_AMT_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_WJC2_AMT_DWBA_red = interp1d(pm_avg, WJC2_AMT_DWBA_red, fill_value='extrapolate', kind='linear') 
+
+    f_AV18_GKex05_PWBA_red = interp1d(pm_avg, AV18_GKex05_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_AV18_GKex05_DWBA_red = interp1d(pm_avg, AV18_GKex05_DWBA_red, fill_value='extrapolate', kind='linear')  
+    f_AV18_AMT_PWBA_red = interp1d(pm_avg, AV18_AMT_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_AV18_AMT_DWBA_red = interp1d(pm_avg, AV18_AMT_DWBA_red, fill_value='extrapolate', kind='linear') 
+
+    f_CD_GKex05_PWBA_red = interp1d(pm_avg, CD_GKex05_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_CD_GKex05_DWBA_red = interp1d(pm_avg, CD_GKex05_DWBA_red, fill_value='extrapolate', kind='linear')  
+    f_CD_AMT_PWBA_red = interp1d(pm_avg, CD_AMT_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_CD_AMT_DWBA_red = interp1d(pm_avg, CD_AMT_DWBA_red, fill_value='extrapolate', kind='linear')
+
+    if(theory=='WJC2' and fofa=='GKex05' and model=='PWBA'):
+        return[pmavg, f_WJC2_GKex05_PWBA_red(pmavg)]
+    elif(theory=='WJC2' and fofa=='GKex05' and model=='DWBA'):
+        return[pmavg, f_WJC2_GKex05_DWBA_red(pmavg)]
+    elif(theory=='WJC2' and fofa=='AMT' and model=='PWBA'):
+        return[pmavg, f_WJC2_AMT_PWBA_red(pmavg)]
+    elif(theory=='WJC2' and fofa=='AMT' and model=='DWBA'):
+        return[pmavg, f_WJC2_AMT_DWBA_red(pmavg)]
+
+    elif(theory=='AV18' and fofa=='GKex05' and model=='PWBA'):
+        return[pmavg, f_AV18_GKex05_PWBA_red(pmavg)]
+    elif(theory=='AV18' and fofa=='GKex05' and model=='DWBA'):
+        return[pmavg, f_AV18_GKex05_DWBA_red(pmavg)]
+    elif(theory=='AV18' and fofa=='AMT' and model=='PWBA'):
+        return[pmavg, f_AV18_AMT_PWBA_red(pmavg)]
+    elif(theory=='AV18' and fofa=='AMT' and model=='DWBA'):
+        return[pmavg, f_AV18_AMT_DWBA_red(pmavg)]
+
+    elif(theory=='CD' and fofa=='GKex05' and model=='PWBA'):
+        return[pmavg, f_CD_GKex05_PWBA_red(pmavg)]
+    elif(theory=='CD' and fofa=='GKex05' and model=='DWBA'):
+        return[pmavg, f_CD_GKex05_DWBA_red(pmavg)]
+    elif(theory=='CD' and fofa=='AMT' and model=='PWBA'):
+        return[pmavg, f_CD_AMT_PWBA_red(pmavg)]
+    elif(theory=='CD' and fofa=='AMT' and model=='DWBA'):
+        return[pmavg, f_CD_AMT_DWBA_red(pmavg)] 
+
 def plot_momentum_dist():
     #Make THESIS paper plots
 
@@ -890,72 +958,104 @@ def plot_momentum_dist():
             sig_exp =  red_dataXsec_avg_masked_4to5[thnq==ithnq]*MeV2fm 
             sig_exp_err =  red_dataXsec_avg_tot_err_4to5[thnq==ithnq]*MeV2fm 
 
-
-            #Paris
+            #-----J.M. Laget----
+            #Paris 
             pm_paris = pm[thnq==ithnq]
             sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq])            
             sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq])                                                                                                            
 
-            #chi2 calculation
-            #sig_paris_pwia = f_red_pwiaXsec_avg_4to5_c2(pm_avg_data)            
-            #sig_paris_fsi = f_red_fsiXsec_avg_4to5_c2(pm_avg_data)
-            
+            #-----M. Sargsian-----
             #AV18                                                                                                                   
             sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg1)        #V18 Xsec                                                                                     
             sig_V18_fsi = f_red_fsiXsec_V18(pm_avg2)        #V18 Xsec                                                                      
-
-            #chi2 calculation
-            #sig_V18_pwia = f_red_pwiaXsec_V18(pm_avg_data)        #V18 Xsec                                                                                     
-            #sig_V18_fsi = f_red_fsiXsec_V18(pm_avg_data)        #V18 Xsec  
             
             #CD-Bonn
             sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg3)        #CD-Bonn Xsec
             sig_CD_fsi = f_red_fsiXsec_CD(pm_avg4)        #CD-Bonn Xsec
 
-            #chi2 calculation
-            #sig_CD_pwia = f_red_pwiaXsec_CD(pm_avg_data)        #CD-Bonn Xsec
-            #sig_CD_fsi = f_red_fsiXsec_CD(pm_avg_data)        #CD-Bonn Xsec
+            #----J.W.V. Orden and Sabine calculations
+            #WJC2 (GKex05, AMT --> nucleon form factor parametrizations)
+            sig_WJC2_GK_pwba = read_JWVO_data(ithnq,'WJC2','GKex05','PWBA',pm_avg_data)[1]
+            sig_WJC2_GK_dwba = read_JWVO_data(ithnq,'WJC2','GKex05','DWBA',pm_avg_data)[1]
             
-            #Calculate the chi2 between data and model
-            #chi2_pwia_paris = ((sig_exp - sig_paris_pwia)/sig_exp_err)**2
-            #chi2_fsi_paris = ((sig_exp - sig_paris_fsi)/sig_exp_err)**2
-            
-            #chi2_pwia_V18 = ((sig_exp - sig_V18_pwia)/sig_exp_err)**2
-            #chi2_fsi_V18 = ((sig_exp - sig_V18_fsi)/sig_exp_err)**2
-            
-            #chi2_pwia_CD = ((sig_exp - sig_CD_pwia)/sig_exp_err)**2
-            #chi2_fsi_CD = ((sig_exp - sig_CD_fsi)/sig_exp_err)**2
+            sig_WJC2_AMT_pwba = read_JWVO_data(ithnq,'WJC2','AMT','PWBA',pm_avg_data)[1]
+            sig_WJC2_AMT_dwba = read_JWVO_data(ithnq,'WJC2','AMT','DWBA',pm_avg_data)[1]
 
-            #plot chi2 of ((data-model)/data_err)**2
-            #B.plot_exp(pm_avg_data, chi2_pwia_paris, marker='o', markersize=6, c='b', mec='b', mfc='b', label=r'Paris PWIA')
-            #B.plot_exp(pm_avg_data, chi2_fsi_paris, marker='o', markersize=6, c='b', mec='b', mfc='white', label=r'Paris FSI')
+            #AV18 (GKex05, AMT --> nucleon form factor parametrizations)
+            sig_AV18_GK_pwba = read_JWVO_data(ithnq,'AV18','GKex05','PWBA',pm_avg_data)[1]
+            sig_AV18_GK_dwba = read_JWVO_data(ithnq,'AV18','GKex05','DWBA',pm_avg_data)[1]
+            
+            sig_AV18_AMT_pwba = read_JWVO_data(ithnq,'AV18','AMT','PWBA',pm_avg_data)[1]
+            sig_AV18_AMT_dwba = read_JWVO_data(ithnq,'AV18','AMT','DWBA',pm_avg_data)[1]
 
-            #B.plot_exp(pm_avg_data, chi2_pwia_V18, marker='s', markersize=6, c='g', mec='g', mfc='g', label=r'AV18 PWIA')
-            #B.plot_exp(pm_avg_data, chi2_fsi_V18, marker='s', markersize=6, c='g', mec='g', mfc='white', label=r'AV18 FSI')
+            #CD (GKex05, AMT --> nucleon form factor parametrizations)
+            sig_CD_GK_pwba = read_JWVO_data(ithnq,'CD','GKex05','PWBA',pm_avg_data)[1]
+            sig_CD_GK_dwba = read_JWVO_data(ithnq,'CD','GKex05','DWBA',pm_avg_data)[1]
             
-            #B.plot_exp(pm_avg_data, chi2_pwia_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='magenta', label=r'CD-Bonn PWIA')
-            #B.plot_exp(pm_avg_data, chi2_fsi_CD, marker='^', markersize=6, c='magenta', mec='magenta', mfc='white', label=r'CD-Bonn FSI')
-            
+            sig_CD_AMT_pwba = read_JWVO_data(ithnq,'CD','AMT','PWBA',pm_avg_data)[1]
+            sig_CD_AMT_dwba = read_JWVO_data(ithnq,'CD','AMT','DWBA',pm_avg_data)[1]
             
             #--------Plot reduced data and model cross sections to be fitted
             B.plot_exp(pm_avg_data, sig_exp, sig_exp_err, marker='o', markersize=6, c='k', mec='k', mfc='k', label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=4,capsize=0)
-
-            #Paris
-            B.plot_exp(pm_paris, sig_paris_pwia, linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
-            B.plot_exp(pm_paris, sig_paris_fsi, linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
-
-            #AV18
-            B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='AV18 PWIA')   
-            B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='AV18 FSI') 
             
-            #CD-Bonn
-            B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn PWIA')     
-            B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
+            '''
+            #Paris, Galster parametrization: neutron electric form factor, proton electric form factor:  O. Gayou, et al., Phys. Rev. Lett. 88 (2002) 092301, magnetic form factors: conventional dipole expression
+            B.plot_exp(pm_paris, sig_paris_pwia, linestyle='--', marker='None', color='blue', logy=True, label='Paris (Galster) PWIA')
+            B.plot_exp(pm_paris, sig_paris_fsi, linestyle='-', marker='None', color='blue', logy=True, label='Paris (Galster) FSI')
+            '''
+            
+            '''
+            #AV18 (JJK)
+            B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='AV18 (JJK) PWIA')   
+            B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='AV18 (JJK) FSI') 
+            '''
 
+            '''
+            #CD-Bonn (JJK)
+            B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn (JJK) PWIA')     
+            B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn (JJK) FSI') 
+            '''
+            
+            
+            #------J.W.V.Orden Calculations using WJC2, AV18 and CD-Bonn
+
+            '''
+            #WJC2 (GK)
+            B.plot_exp(pm_avg_data, sig_WJC2_GK_pwba, linestyle='--', marker='None', color='orange', logy=True, label='WJC2 (GKex05) PWIA', zorder=2 )
+            B.plot_exp(pm_avg_data, sig_WJC2_GK_dwba, linestyle='-', marker='None', color='orange', logy=True, label='WJC2 (GKex05) FSI', zorder=2 )
+            '''
+            
+            '''
+            #WJC2 (AMT)
+            B.plot_exp(pm_avg_data, sig_WJC2_AMT_pwba, linestyle='--', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) PWIA', zorder=2 )
+            B.plot_exp(pm_avg_data, sig_WJC2_AMT_dwba, linestyle='-', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) FSI', zorder=2 )
+            '''
+            '''
+            #AV18 (GK)
+            B.plot_exp(pm_avg_data,  sig_AV18_GK_pwba, linestyle='--', marker='None', color='cyan', logy=True, label='AV18 (GKex05) PWIA', zorder=2 )
+            B.plot_exp(pm_avg_data,  sig_AV18_GK_dwba, linestyle='-', marker='None', color='cyan', logy=True, label='AV18 (GKex05) FSI', zorder=2 )
+            '''
+            '''
+            #AV18 (AMT)
+            B.plot_exp(pm_avg_data,  sig_AV18_AMT_pwba, linestyle='--', marker='None', color='darkcyan', logy=True, label='AV18 (AMT) PWIA', zorder=2 )
+            B.plot_exp(pm_avg_data,  sig_AV18_AMT_dwba, linestyle='-', marker='None', color='darkcyan', logy=True, label='AV18 (AMT) FSI', zorder=2 )
+            '''
+            '''
+            #CD-Bonn(GK)
+            B.plot_exp(pm_avg_data,  sig_CD_GK_pwba, linestyle='--', marker='None', color='purple', logy=True, label='CD-Bonn (GKex05) PWIA', zorder=2 )
+            B.plot_exp(pm_avg_data,  sig_CD_GK_dwba, linestyle='-', marker='None', color='purple', logy=True, label='CD-Bonn (GKex05) FSI', zorder=2 )
+            '''
+            
+            #CD-Bonn (AMT)
+            B.plot_exp(pm_avg_data,  sig_CD_AMT_pwba, linestyle='--', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) PWIA', zorder=2 )
+            B.plot_exp(pm_avg_data,  sig_CD_AMT_dwba, linestyle='-', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) FSI', zorder=2 )
+            
+    
+            
             #Digitized WJC1
-            B.plot_exp(pm_wjc1_dgt, f_wjc1_dgt(pm_wjc1_dgt), linestyle='dashdot', marker='None', color='navy', logy=True, label='WJC1 (J.W.V. Orden)')     
+            #B.plot_exp(pm_wjc1_dgt, f_wjc1_dgt(pm_wjc1_dgt), linestyle='dashdot', marker='None', color='navy', logy=True, label='WJC1 (J.W.V. Orden)')     
             #Digitized CD-Bonn
-            B.plot_exp(pm_cd_dgt, f_cd_dgt(pm_cd_dgt), linestyle='dotted', marker='None', color='darkviolet', logy=True, label='CD-Bonn (J.W.V. Orden)')     
+            #B.plot_exp(pm_cd_dgt, f_cd_dgt(pm_cd_dgt), linestyle='dotted', marker='None', color='darkviolet', logy=True, label='CD-Bonn (J.W.V. Orden)')     
 
             
             #Define Fit Function
@@ -975,8 +1075,9 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='DATA FIT \n slope: %.4E $\pm$ %.4E'%(mp, mp_err))
             B.pl.yscale('log')
             #----------------------------
-            
-            #--------Fit Paris PWIA----------
+            '''
+            #--------Fit Paris--------
+            #PWIA (Galster)
             xd =pm_paris[ (~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             yd = sig_paris_pwia[(~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             m = B.Parameter(1., 'm')
@@ -985,46 +1086,12 @@ def plot_momentum_dist():
             mp_paris = m.get()[1] ; mp_paris_err=m.get()[2]
             bp_paris = np.log(b.get()[1]) ; bp_paris_err=np.log(b.get()[2])
             
-            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='Paris (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_paris, mp_paris_err))
-            B.pl.yscale('log')
-            #----------------------------
-
-            #--------Fit AV18 PWIA----------
-            xd =pm_avg1[ (~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
-            yd = sig_V18_pwia[(~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
-            m = B.Parameter(1., 'm')
-            b = B.Parameter(1., 'b')
-            F = B.genfit(f,[m,b], xd, yd)            
-            mp_v18 = m.get()[1] ; mp_v18_err=m.get()[2]
-            bp_v18 = np.log(b.get()[1]) ; bp_v18_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
-            B.pl.yscale('log')
-            #----------------------------
-
-            #--------Fit CD-Bonn PWIA----------
-            xd =pm_avg3[ (~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
-            yd = sig_CD_pwia[(~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
-            m = B.Parameter(1., 'm')
-            b = B.Parameter(1., 'b')
-            F = B.genfit(f,[m,b], xd, yd)            
-            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
-            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (PWIA) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
-            B.pl.yscale('log')
-            #----------------------------
-
             #Barlow ratio to determine if data and model slopes are significantly different
             R_paris = np.abs(mp_paris - mp) / np.sqrt(np.abs(mp_err**2))
-            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
-            R_v18 = np.abs(mp_v18 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='Paris (Galster) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_paris, mp_paris_err, R_paris))
+            B.pl.yscale('log')
 
-            print('R_paris_pwia = ',R_paris,' sigmas')
-            print('R_AV18_pwia = ',R_v18,' sigmas')
-            print('R_CD_pwia = ',R_cd,' sigmas')
-            
-
-            
-            #--------Fit Paris FSI----------
+            #FSI (Galster)
             xd =pm_paris[ (~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             yd = sig_paris_fsi[(~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1032,12 +1099,29 @@ def plot_momentum_dist():
             F = B.genfit(f,[m,b], xd, yd)            
             mp_paris = m.get()[1] ; mp_paris_err=m.get()[2]
             bp_paris = np.log(b.get()[1]) ; bp_paris_err=np.log(b.get()[2])
-            
-            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='Paris (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_paris, mp_paris_err))
-            B.pl.yscale('log')
-            #----------------------------
 
-            #--------Fit AV18 FSI----------
+            R_paris = np.abs(mp_paris - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='Paris (Galster) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_paris, mp_paris_err, R_paris))
+            B.pl.yscale('log')
+
+            #----------------------------
+            '''
+            '''
+            #--------Fit AV18------------
+            #PWIA
+            xd =pm_avg1[ (~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
+            yd = sig_V18_pwia[(~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_v18 = m.get()[1] ; mp_v18_err=m.get()[2]
+            bp_v18 = np.log(b.get()[1]) ; bp_v18_err=np.log(b.get()[2])
+            R_v18 = np.abs(mp_v18 - mp) / np.sqrt(np.abs(mp_err**2))
+
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (JJK) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_v18, mp_v18_err, R_v18))
+            B.pl.yscale('log')
+
+            #FSI
             xd =pm_avg1[ (~np.isnan(sig_V18_fsi)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
             yd = sig_V18_fsi[(~np.isnan(sig_V18_fsi)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
             m = B.Parameter(1., 'm')
@@ -1045,87 +1129,237 @@ def plot_momentum_dist():
             F = B.genfit(f,[m,b], xd, yd)            
             mp_v18 = m.get()[1] ; mp_v18_err=m.get()[2]
             bp_v18 = np.log(b.get()[1]) ; bp_v18_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='AV18 (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_v18, mp_v18_err))
-            B.pl.yscale('log')
-            #----------------------------
-
-            #--------Fit CD-Bonn FSI----------
-            xd =pm_avg4[ (~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
-            yd = sig_CD_fsi[(~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
-            print('pm_avg4=',pm_avg4)
-            print('xd = ',xd)
-            print('yd = ',yd)
-            m = B.Parameter(1., 'm')
-            b = B.Parameter(1., 'b')
-            F = B.genfit(f,[m,b], xd, yd)            
-            #F = B.linefit(xd, yd)  
-            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
-            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='k', lw=2, label='CD-Bonn (FSI) FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
-            B.pl.yscale('log')
-            #----------------------------
-
-            #Barlow ratio to determine if data and model slopes are significantly different
-            R_paris = np.abs(mp_paris - mp) / np.sqrt(np.abs(mp_err**2))
-            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
             R_v18 = np.abs(mp_v18 - mp) / np.sqrt(np.abs(mp_err**2))
 
-            print('R_paris_fsi = ',R_paris,' sigmas')
-            print('R_AV18_fsi = ',R_v18,' sigmas')
-            print('R_CD_fsi = ',R_cd,' sigmas')
-
-            #--------Fit WJC1 (J.W.V.Orden)----------
-            sig_wjc1 = f_wjc1_dgt(pm_wjc1_dgt)
-            xd =pm_wjc1_dgt[ (pm_wjc1_dgt>=0.55) & (pm_wjc1_dgt<=1.0)]
-            yd = sig_wjc1[(pm_wjc1_dgt>=0.55) & (pm_wjc1_dgt<=1.0)]
-            m = B.Parameter(1., 'm')
-            b = B.Parameter(1., 'b')
-            F = B.genfit(f,[m,b], xd, yd)            
-            mp_wjc1 = m.get()[1] ; mp_wjc1_err=m.get()[2]
-            bp_wjc1 = np.log(b.get()[1]) ; bp_wjc1_err=np.log(b.get()[2])
-            
-            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC1 FIT \n slope: %.4E $\pm$ %.4E'%(mp_wjc1, mp_wjc1_err))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (JJK) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_v18, mp_v18_err, R_v18))
             B.pl.yscale('log')
+            
             #----------------------------
-
-            #--------Fit CD-Bonn (J.W.V. Orden)----------
-            sig_cd = f_cd_dgt(pm_cd_dgt)
-            xd =pm_cd_dgt[ (pm_cd_dgt>=0.55) & (pm_cd_dgt<=1.0)]
-            yd = sig_cd[(pm_cd_dgt>=0.55) & (pm_cd_dgt<=1.0)]
+            '''
+            
+            '''
+            #--------Fit CD-Bonn---------
+            #PWIA
+            xd =pm_avg3[ (~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
+            yd = sig_CD_pwia[(~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
             m = B.Parameter(1., 'm')
             b = B.Parameter(1., 'b')
             F = B.genfit(f,[m,b], xd, yd)            
             mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
             bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (JJK) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_cd, mp_cd_err, R_cd))
+            B.pl.yscale('log')
+
+            #FSI
+            xd =pm_avg4[ (~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
+            yd = sig_CD_fsi[(~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (JJK) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_cd, mp_cd_err, R_cd))
+            B.pl.yscale('log')
+
+            #----------------------------
+            '''
             
-            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn FIT \n slope: %.4E $\pm$ %.4E'%(mp_cd, mp_cd_err))
+            #========J.W.V.Orden Calculations======
+
+            '''
+            #--------Fit WJC2----------
+            #PWBA (GKex05) 
+            xd =pm_avg_data[ (~np.isnan(sig_WJC2_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_WJC2_GK_pwba[(~np.isnan(sig_WJC2_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_wjc2 = m.get()[1] ; mp_wjc2_err=m.get()[2]
+            bp_wjc2 = np.log(b.get()[1]) ; bp_wjc2_err=np.log(b.get()[2])
+            R_wjc2 = np.abs(mp_wjc2 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC2 (GKex05) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_wjc2, mp_wjc2_err, R_wjc2))
+            B.pl.yscale('log')
+            
+            #DWBA (GKex05) 
+            xd =pm_avg_data[ (~np.isnan(sig_WJC2_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_WJC2_GK_dwba[(~np.isnan(sig_WJC2_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_wjc2 = m.get()[1] ; mp_wjc2_err=m.get()[2]
+            bp_wjc2 = np.log(b.get()[1]) ; bp_wjc2_err=np.log(b.get()[2])
+            R_wjc2 = np.abs(mp_wjc2 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC2 (GKex05) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_wjc2, mp_wjc2_err, R_wjc2))
             B.pl.yscale('log')
             #----------------------------
+            '''
+            '''
+            #--------Fit WJC2-----------
+            #PWBA (AMT)
+            xd =pm_avg_data[ (~np.isnan(sig_WJC2_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_WJC2_AMT_pwba[(~np.isnan(sig_WJC2_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_wjc2 = m.get()[1] ; mp_wjc2_err=m.get()[2]
+            bp_wjc2 = np.log(b.get()[1]) ; bp_wjc2_err=np.log(b.get()[2])
+            R_wjc2 = np.abs(mp_wjc2 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC2 (AMT) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_wjc2, mp_wjc2_err, R_wjc2))
+            B.pl.yscale('log')
+
+            #DWBA (AMT)
+            xd =pm_avg_data[ (~np.isnan(sig_WJC2_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_WJC2_AMT_dwba[(~np.isnan(sig_WJC2_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_wjc2 = m.get()[1] ; mp_wjc2_err=m.get()[2]
+            bp_wjc2 = np.log(b.get()[1]) ; bp_wjc2_err=np.log(b.get()[2])
+            R_wjc2 = np.abs(mp_wjc2 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC2 (AMT) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_wjc2, mp_wjc2_err, R_wjc2))
+            B.pl.yscale('log')
+            #----------------------------
+            '''
+            
+            '''
+            #--------Fit AV18------------
+            #PWBA (GKex05)
+            xd =pm_avg_data[ (~np.isnan(sig_AV18_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_AV18_GK_pwba[(~np.isnan(sig_AV18_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_av18 = m.get()[1] ; mp_av18_err=m.get()[2]
+            bp_av18 = np.log(b.get()[1]) ; bp_av18_err=np.log(b.get()[2])
+            R_av18 = np.abs(mp_av18 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (GKex05) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_av18, mp_av18_err, R_av18))
+            B.pl.yscale('log')
+
+            #DWBA (GKex05)
+            xd =pm_avg_data[ (~np.isnan(sig_AV18_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_AV18_GK_dwba[(~np.isnan(sig_AV18_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_av18 = m.get()[1] ; mp_av18_err=m.get()[2]
+            bp_av18 = np.log(b.get()[1]) ; bp_av18_err=np.log(b.get()[2])
+            R_av18 = np.abs(mp_av18 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (GKex05) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_av18, mp_av18_err, R_av18))
+            B.pl.yscale('log')
+            #----------------------------
+            '''
+            '''
+            #--------Fit AV18------------
+            #PWBA (AMT)
+            xd =pm_avg_data[ (~np.isnan(sig_AV18_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_AV18_AMT_pwba[(~np.isnan(sig_AV18_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_av18 = m.get()[1] ; mp_av18_err=m.get()[2]
+            bp_av18 = np.log(b.get()[1]) ; bp_av18_err=np.log(b.get()[2])
+            R_av18 = np.abs(mp_av18 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (AMT) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_av18, mp_av18_err, R_av18))
+            B.pl.yscale('log')
+
+            #DWBA (AMT)
+            xd =pm_avg_data[ (~np.isnan(sig_AV18_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_AV18_AMT_dwba[(~np.isnan(sig_AV18_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_av18 = m.get()[1] ; mp_av18_err=m.get()[2]
+            bp_av18 = np.log(b.get()[1]) ; bp_av18_err=np.log(b.get()[2])
+            R_av18 = np.abs(mp_av18 - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (AMT) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_av18, mp_av18_err, R_av18))
+            B.pl.yscale('log')
+            #----------------------------
+            '''
+            '''
+            #--------Fit CD-Bonn---------
+            #PWBA (GKex05)
+            xd =pm_avg_data[ (~np.isnan(sig_CD_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_CD_GK_pwba[(~np.isnan(sig_CD_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (GKex05) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_cd, mp_cd_err, R_cd))
+            B.pl.yscale('log')
+
+            #DWBA (GKex05)
+            xd =pm_avg_data[ (~np.isnan(sig_CD_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_CD_GK_dwba[(~np.isnan(sig_CD_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (GKex05) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_cd, mp_cd_err, R_cd))
+            B.pl.yscale('log')
+            #----------------------------
+            '''
+
+            #--------Fit CD-Bonn---------
+            #PWBA (AMT)
+            xd =pm_avg_data[ (~np.isnan(sig_CD_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_CD_AMT_pwba[(~np.isnan(sig_CD_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (AMT) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_cd, mp_cd_err, R_cd))
+            B.pl.yscale('log')
+
+            #DWBA (AMT)
+            xd =pm_avg_data[ (~np.isnan(sig_CD_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            yd = sig_CD_AMT_dwba[(~np.isnan(sig_CD_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
+            m = B.Parameter(1., 'm')
+            b = B.Parameter(1., 'b')
+            F = B.genfit(f,[m,b], xd, yd)            
+            mp_cd = m.get()[1] ; mp_cd_err=m.get()[2]
+            bp_cd = np.log(b.get()[1]) ; bp_cd_err=np.log(b.get()[2])
+            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (AMT) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_cd, mp_cd_err, R_cd))
+            B.pl.yscale('log')
+            #----------------------------
+            
+            
+            #Barlow ratio to determine if data and model slopes are significantly different
+            #R_paris = np.abs(mp_paris - mp) / np.sqrt(np.abs(mp_err**2))
+            #R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            #R_v18 = np.abs(mp_v18 - mp) / np.sqrt(np.abs(mp_err**2))
+
+            #print('R_paris_pwia = ',R_paris,' sigmas')
+            #print('R_AV18_MS_pwia = ',R_v18,' sigmas')
+            #print('R_CD_MS_pwia = ',R_cd,' sigmas')
+
+            
 
             #Barlow ratio to determine if data and model slopes are significantly different
-            R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
-            R_wjc1 = np.abs(mp_wjc1 - mp) / np.sqrt(np.abs(mp_err**2))
+            #R_paris = np.abs(mp_paris - mp) / np.sqrt(np.abs(mp_err**2))
+            #R_cd = np.abs(mp_cd - mp) / np.sqrt(np.abs(mp_err**2))
+            #R_v18 = np.abs(mp_v18 - mp) / np.sqrt(np.abs(mp_err**2))
 
-            print('R_WJC1 = ',R_wjc1,' sigmas')
-            print('R_CD = ',R_cd,' sigmas')
-
+            #print('R_paris_fsi = ',R_paris,' sigmas')
+            #print('R_AV18_fsi = ',R_v18,' sigmas')
+            #print('R_CD_fsi = ',R_cd,' sigmas')
             
             B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)', fontsize=16)                                                                                                                                                            
             B.pl.ylabel(r'$\sigma_{\mathrm{red}}$[fm$^{3}$]', fontsize=16)                                                                                                                                                                       
             B.pl.title(r'Cross Section Ratio, $\theta_{nq} = %i \pm 5$ deg'%(ithnq), fontsize=16)                                                                                                                             
             B.pl.legend(loc='upper right', fontsize='small')
             B.pl.show()
-
-
             
-            #B.pl.xlabel(r'Neutron Recoil Momenta, $p_{\mathrm{r}}$ (GeV/c)')                                                                                                                                                            
-            #B.pl.ylabel(r'$\chi^{2}$')                                                                                                                                                                       
-            #B.pl.title(r'Reduced Cross Sections $\chi^{2}$, $\theta_{nq} = %i \pm 5$ deg'%(ithnq))                                                                                                                             
-            #B.pl.legend(loc='upper right', fontsize='small')
-            #B.pl.show()
-
-
-
             '''
             #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
             
@@ -1232,19 +1466,6 @@ def plot_momentum_dist():
                 B.pl.show()
                 #B.pl.savefig(dir_name+'/ratio_test_fp%f_thnq%i.pdf'%(fp[j], ithnq))   
             '''
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         
