@@ -1,7 +1,7 @@
 \indent A 10.6 GeV electron beam was incident on a 10 cm long liquid deuterium target (LD$_{2}$). The scattered electron and knocked-out proton were detected in coincidence
 by the new SHMS and the existing High Momentum Spectrometer (HMS), respectively. The beam currents delivered by the accelerator ranged between 45-60 $\mu$A and the beam was rastered over a 2x2 mm$^{2}$ area to reduce the effects of localized boiling on the cryogenic targets (hydrogen and deuterium).\\
 \indent Both Hall C spectrometers have similar standard detector packages, each with four scintillator planes \cite{hodo_techreport} used for triggering, a pair of drift chambers \cite{dc_techreport} used for tracking, and a calorimeter \cite{Mkrtchyan_2013} and gas \u{C}erenkov \cite{Li_Wenliang_mthesis,ngc_techreport} used for electron identification.
-For each spectrometer, a logical hardware signal was created from  the coincidence of hits in three of the four scintillator planes. The event trigger was the coincidence of these two signals. \\
+For each spectrometer, a logical signal was created from  the coincidence of hits in three of the four scintillator planes. The event trigger was the coincidence of these two signals. \\
 \indent We measured three central missing momentum settings: $p_{\mathrm{r}}=80, 580$ and $750$ MeV/c. At each of these settings, the electron arm (SHMS) was fixed and the proton arm (HMS) was rotated from smaller to larger angles corresponding to the
 the lower and higher missing momentum settings, respectively. At these kinematic settings, the 3-momentum transfer covered a range of $2.4\lesssim|\vec{q}|\lesssim3.2$ GeV/c, which is more than twice the highest neutron recoil momentum
 measured in this experiment. As a result, most of the virtual photon momentum is transferred to the proton, which scatters at angles relative to $\vec{q}$ in the range $0.4^{\circ}\lesssim \theta_{pq}\lesssim21.4^{\circ}$.
@@ -45,10 +45,10 @@ over the kinematic bin. The systematic uncertainty associated with the radiative
 \onecolumngrid
 \begin{center}
 \begin{figure}
-\includegraphics[scale=0.46]{prl_plots/PRL_plot1.pdf}
+\includegraphics[scale=0.46]{prl_plots/PRL_plot1_WJC2.pdf}
 \caption{The reduced cross sections $\sigma_{\mathrm{red}}(p_{\mathrm{r}})$ as a function of neutron recoil momentum $p_{\mathrm{r}}$ are shown in (a)-(c) for recoil angles $\theta_{nq}=35^{\circ}, 45^{\circ}$ and $75^{\circ}$, respectively,
-with a bin width of $\pm 5^{\circ}$. The data is compared to the previous Hall A experiment (red square) results \cite{PhysRevLett.107.262501} as well as the theoretical reduced cross sections using the Paris(blue),
-AV18(green) and CD-Bonn(magenta) NN potentials.}
+with a bin width of $\pm 5^{\circ}$. The data is compared to the previous Hall A experiment (red square) results \cite{PhysRevLett.107.262501} as well as the theoretical reduced cross sections using the Paris (blue),
+AV18 (green), CD-Bonn (magenta) and WJC2 (orange) NN potentials.}
 \label{fig:fig1}
 \end{figure}
 \end{center}
@@ -67,23 +67,32 @@ Within the PWIA, $\sigma_{\mathrm{red}}$ corresponds to the PWIA cross section f
 $p_{\mathrm{r}}$ for three recoil angle settings at $Q^{2}=4.5\pm0.5$ (GeV/c)$^{2}$. For the two highest momentum settings ($p_{\mathrm{r}}=580, 750$ MeV/c), a weighted average of the cross sections were taken in the overlapping regions of $p_{\mathrm{r}}$ . The results from the previous experiment \cite{PhysRevLett.107.262501} at a $Q^{2}=3.5\pm0.25$ (GeV/c)$^{2}$ are plotted as well (red square). The good agreement between the Hall A and C data at lower $p_{\mathrm{r}}$
 gives us confidence in the measurements made at higher missing momentum settings for which no previous data exist.
 The data are compared to theoretical reduced
-cross sections using the charge-dependent Bonn (CD-Bonn) \cite{PhysRevC.63.024001}, Argonne $v_{18}$ (AV18) \cite{PhysRevC.51.38} and Paris \cite{PhysRevC.21.861} NN-potentials. The theoretical calculations
-for the CD-Bonn (magenta) and AV18 (green) potentials were performed by Sargsian \cite{PhysRevC.82.014612} within the GEA and those for the Paris potential (blue) were by Laget \cite{LAGET2005} within the diagrammatic approach.\\
-\indent For all recoil angles shown in Fig. \hyperref[fig:fig1]{1} at recoil momenta $p_{\mathrm{r}}\leq300$ MeV/c, the cross sections are well reproduced  by  all models when FSI are included.
+cross sections using the charge-dependent Bonn (CD-Bonn) \cite{PhysRevC.63.024001}, Argonne $v_{18}$ (AV18) \cite{PhysRevC.51.38}, Paris \cite{PhysRevC.21.861} and WJC2 \cite{Gross_2007} NN potentials. The theoretical calculations
+for the CD-Bonn (magenta) and AV18 (green) potentials were performed by Sargsian \cite{PhysRevC.82.014612} within the GEA and those for the Paris potential (blue) were by Laget \cite{LAGET2005} within the diagrammatic approach.
+For the WJC2 (orange) potential, the calculations were done by Orden and Jeschonnek \cite{PhysRevC.90.064006} using a Bethe-Salpeter-like formalism for two-body bound states. The calculations
+used two different form factor parametrizations (GKex05 \cite{PhysRevC.66.045501}, AMT \cite{PhysRevC.76.035205}) where a discrepancy of $\sim5.8-6.6 \%$ was found between the respective
+WJC2 reduced cross sections. Figure \ref{fig:fig1} shows the results using only the WJC2 (GKex05) parametrization. \\
+\indent For all recoil angles shown in Fig. \hyperref[fig:fig1]{1} at recoil momenta $p_{\mathrm{r}}\leq250$ MeV/c, the cross sections are well reproduced by all models when FSI are included.
 The agreement at $p_{\mathrm{r}}\leq250$ MeV/c can be understood from the fact that this region corresponds to the long-range part of the NN potential where the One Pion Exchange Potential (OPEP)
 is well known and common to all modern potentials. \\
-\indent Beyond $p_{\mathrm{r}}\sim250$ MeV/c at $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ (Figs. \hyperref[fig:fig1]{1(a), 1(b)}), the Paris and
-AV18 models increasingly differ from the CD-Bonn. In this region, the Paris/AV18 cross sections are dominated by the PWIA and in good agreement up to $p_{\mathrm{r}}\sim700$ MeV/c. The CD-Bonn cross sections in contrast are generally smaller than the Paris/AV18 in this region.  In addition, for $\theta_{nq}=35^{\circ}$, they are dominated by the PWIA up to $p_{\mathrm{r}}\sim800$ MeV/c (Fig. \hyperref[fig:fig1]{1(a)})  while for $\theta_{nq}=45^{\circ}$  FSI start to contribute already above 600 MeV/c (Fig. \hyperref[fig:fig1]{1(b)}).\\
-\indent The difference between the deuteron wave functions with CD-Bonn and Paris/AV18  potentials is 
+\indent Beyond $p_{\mathrm{r}}\sim250$ MeV/c at $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ (Figs. \hyperref[fig:fig1]{1(a), 1(b)}), the Paris,
+AV18 and WJC2 models increasingly differ from the CD-Bonn calculation. In this region, the Paris/AV18 cross sections are dominated by the PWIA and in good agreement up to $p_{\mathrm{r}}\sim700$ MeV/c whereas
+the WJC2 PWIA falls off with a comparatively smaller cross section at $\theta_{nq}=35^{\circ}$. The CD-Bonn cross sections in contrast are generally smaller than the Paris, AV18 and WJC2 in this region.
+In addition, for $\theta_{nq}=35^{\circ}$, they are dominated by the PWIA up to $p_{\mathrm{r}}\sim800$ MeV/c
+(Fig. \hyperref[fig:fig1]{1(a)})  while for $\theta_{nq}=45^{\circ}$  FSI start to contribute already above 600 MeV/c (Fig. \hyperref[fig:fig1]{1(b)}).\\
+\indent Moreover, in spite of the partial agreement between data and theory, at $p_{\mathrm{r}} \sim 0.55-1.0$ GeV/c, the data exhibits a smaller
+fall-off compared to all models which was quantified by a linear fit to both the data and each of the PWIA calculations. A difference of at least
+4.241 standard deviations was found which corresponds to a probability of $1.1\times 10^{-5}$ (very unlikely) that the observed discrepancy is due to a statistical fluctuation. \\ 
+\indent The difference between the deuteron wave functions with CD-Bonn and Paris/AV18 potentials is 
 how the NN potential is modeled based on the empirical NN scattering data.
 The CD-Bonn model is based on the One-Boson-Exchange approach in which the 
-nucleon-neson-meson couplings are constrained to describe the NN scattering phase shifts
+nucleon-meson-meson couplings are constrained to describe the NN scattering phase shifts
 extracted from the data. The interaction potential represents the static limit of 
 this potential. Paris and AV18 potentials are phenomenological in which the 
 Yukawa type interaction is introduced and parameters are fitted to describe the 
 same NN scattering phase-shifts. The major difference between CD-Bonn and Paris/AV18 
 potentials is that the former predicts much softer repulsive interaction at short distance which 
-results in a less high momentum component in the deuteron wave function in the momentum space.
+results in a smaller high momentum component in the deuteron wave function in momentum space.
 %The main difference between the CD-Bonn and Paris/AV18 models is the use of Feynman amplitudes in covariant
 %(original) form by the Bonn group as opposed to local (static) approximations of these amplitudes used by Paris/AV18
 %groups to describe the NN potential.
@@ -93,34 +102,36 @@ behavior (smaller fall-off) that overshadows any possibility of extracting the g
 \indent To quantify the discrepancy observed between data and theory in Fig. \ref{fig:fig1}, the ratio of the experimental and theoretical reduced cross sections ($\sigma_{\mathrm{red}}$) to the
 deuteron momentum distribution  calculated using the CD-Bonn potential ($\sigma^{\text{CD-Bonn PWIA}}_{\mathrm{red}}$) \cite{PhysRevC.63.024001} is shown in Fig. \ref{fig:fig2}. \\
 \indent For $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ (Figs. \hyperref[fig:fig2]{2(a),(b)}), the data are best described by the CD-Bonn PWIA calculation for recoil momenta up
-to $p_{\mathrm{r}}\sim700$ MeV/c and $\sim600$ MeV/c, respectively. Furthermore, the agreement between the Halls A and C data solidifies the Hall A approach of selecting a kinematic
+to $p_{\mathrm{r}}\sim700$ MeV/c and $\sim600$ MeV/c, respectively. Furthermore, the agreement between the Halls A and C data confirm the Hall A approach of selecting a kinematic
 region where recoil angles are small and FSI are reduced. \\
 \indent At larger recoil momenta, where the ratio $R>1$ and increasing with $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ FSI start to dominate for
 missing momenta typically above 800 MeV/c for the CD-Bonn
 \begin{figure}[!t]
-\includegraphics[scale=0.5]{./prl_plots/PRL_plot2.pdf}
+\includegraphics[scale=0.5]{./prl_plots/PRL_plot2_WJC2.pdf}
 \caption{The ratio $R(p_{\mathrm{r}}$) is shown in (a)-(c) for $\theta_{nq}=35^{\circ}, 45^{\circ}$ and $75^{\circ}$, respectively, each with a bin width of $\pm 5^{\circ}$.
 The dashed reference (magenta) line refers to CD-Bonn PWIA calculation (or momentum distribution) by which the data and all models are divided.}
 \label{fig:fig2}
 \end{figure}
 calculation while the other models predict still relatively small FSI below 900 MeV/c.
 At $\theta_{nq}=45^{\circ}$, the FSI dominance starts earlier for all models above 800 MeV/c and for the CD-Bonn based calculation above 600 MeV/c. \\
-\indent Overall, it is interesting to note that none of the calculations can reproduce the measured $p_{\mathrm{r}}$ dependence above 600 MeV/c in a region where FSI are still relatively small $(<30\%)$.  This behavior of the data is new
-and additional data in this kinematic region are necessary to improve the statistics. \\
+\indent Overall, it is interesting to note that none of the calculations can reproduce the measured $p_{\mathrm{r}}$ dependence above 600 MeV/c in a
+region where FSI are still relatively small $(<30\%)$. This behavior of the data is new and additional data in this kinematic region are necessary
+to improve the statistics. \\
 \indent At $\theta_{nq}=75^{\circ}$ (Fig. \hyperref[fig:fig2]{2(c)}), FSI are small below $p_{\mathrm{r}}\sim180$ MeV/c, but do not exactly cancel the PWIA/FSI interference term in the scattering amplitude which results in a small dip in this region in agreement with the data.
 At $p_{\mathrm{r}}>300$ MeV/c and $\theta_{nq}=75^{\circ}$, the data were statistically limited as our focus was on the smaller recoil angles. The Hall A data, however, shows a reasonable agreement with the FSI from all models which gives us confidence in our understanding
 of FSI at the smaller recoil angles. \\
 \indent To summarize, this experiment extended the previous Hall A cross section measurements on the $^{2}\mathrm{H}(e,e'p)n$ reaction to 
 very high neutron recoil momenta ($p_{\mathrm{r}}>500$ MeV/c) at kinematics where FSI were expected to be small and the cross section was dominated by PWIA and sensitive to the
 short range part of the deuteron wave function. The experimental reduced cross sections were extracted and found to be in good agreement with the Hall A data.
-Furthermore, the CD-Bonn model was found to be significantly different than the Paris or AV18 models and was able to partially describe the data over a larger range in $p_{\mathrm{r}}$.
-At higher missing momenta ($p_{\mathrm{r}}>700$ MeV/c), however, all models were unable to describe the data. \\
-\indent In conclusion, additional measurements of the $^{2}\mathrm{H}(e,e'p)n$ would be required to reduce the statistical uncertainties in this very high missing
-momentum region ($p_{\mathrm{r}}>500$ MeV/c) to better understand the large deviations observed between the different models and data.
+Furthermore, the CD-Bonn model was found to be significantly different than the Paris, AV18 or WJC2 models and was able to partially describe the data over a larger range in $p_{\mathrm{r}}$.
+At higher missing momenta ($p_{\mathrm{r}}>700$ MeV/c), however, all models were unable to describe the data. 
+Additional measurements of the $^{2}\mathrm{H}(e,e'p)n$ would be required to reduce the statistical uncertainties in this very high missing
+momentum region ($p_{\mathrm{r}}>500$ MeV/c) to better understand the large deviations observed between the different models and data.\\
 \indent We acknowledge the outstanding support of the staff of the Accelerator and Physics Divisions at Jefferson Lab
 as well as the entire Hall C staff, technicians, graduate students and users who took shifts or contributed
-to the equipment for the Hall C upgrade, making all four commissioning experiments possible. This work
-was supported in part by the U.S. Department of Energy (DOE), Office of Science, Office of Nuclear Physics
+to the equipment for the Hall C upgrade, making all four commissioning experiments possible. We would also like to
+thank Misak Sargsian, Sabine Jeschonnek and J.W.Van Orden for providing the theoretical calculations as well as the useful
+discussions we had on this topic. This work was supported in part by the U.S. Department of Energy (DOE), Office of Science, Office of Nuclear Physics
 under grant No. DE-SC0013620 and contract DE-AC05-06OR23177, the Nuclear Regulatory Commission (NRC) Fellowship
 under grant No. NRC-HQ-84-14-G-0040, the Doctoral Evidence Acquisition (DEA) Fellowship and the Natural Sciences and Engineering Research Council of Canada (NSERC).
 

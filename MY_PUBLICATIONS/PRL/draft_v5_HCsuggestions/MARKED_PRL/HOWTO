@@ -1,0 +1,34 @@
+Usage
+
+To compare two documents simply run latexdiff in the command line like so:
+
+latexdiff draft.tex revision.tex > diff.tex
+
+where draft.tex and revision.tex are original and changed versions of your document, and diff.tex
+is where the markup is stored. The above command provides latexdiff with the two comparison files
+and the filename for the resulting marked .tex file. If the two input files you provide are valid
+.tex files, the resulting diff.tex will also be a .tex file. This marked file can now be compiled
+with your choice of TeX compiler (pdfLaTeX etc.).
+
+Out of the box, any removed words are crossed out with a single line and colored red, whereas any
+added words are underlined with a squiggle and colored blue. When equations are changed, additions
+are marked with a blue font and removals are marked with a red.
+
+
+------
+
+If the LaTex file has other input .tex files, then these should be run independently
+to produce diff_file1.tex, diff_file2.tex, ect.
+
+Then, then, a copu of the original file should be made where these diff files are read in as input.
+
+e.g.   cp draft.tex diff.tex,
+
+latexdiff intro.tex intro_revision.tex > intro_diff.tex
+latexdiff body.tex body_revision.tex > body_diff.tex
+
+
+then on diff.tex:
+
+\input {intro_diff.tex}
+\input {body_diff.tex}

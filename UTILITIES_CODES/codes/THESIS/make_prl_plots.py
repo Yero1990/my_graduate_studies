@@ -375,6 +375,7 @@ def make_prl_plots():
     WJC2_GK_PWBA, = B.plot_exp(read_JWVO_data(35,'WJC2','GKex05','PWBA',pm_avg[thnq==35])[0],  read_JWVO_data(35,'WJC2','GKex05','PWBA',pm_avg[thnq==35])[1], linestyle='--', marker='None', color='orange', logy=True, label='WJC2 (GKex05) PWBA', zorder=2 )
     WJC2_GK_DWBA, = B.plot_exp(read_JWVO_data(35,'WJC2','GKex05','DWBA',pm_avg[thnq==35])[0],  read_JWVO_data(35,'WJC2','GKex05','DWBA',pm_avg[thnq==35])[1], linestyle='-', marker='None', color='orange', logy=True, label='WJC2 (GKex05) DWBA', zorder=2 )
 
+    '''
     WJC2_AMT_PWBA, = B.plot_exp(read_JWVO_data(35,'WJC2','AMT','PWBA',pm_avg[thnq==35])[0],  read_JWVO_data(35,'WJC2','AMT','PWBA',pm_avg[thnq==35])[1], linestyle='--', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) PWBA', zorder=2 )
     WJC2_AMT_DWBA, = B.plot_exp(read_JWVO_data(35,'WJC2','AMT','DWBA',pm_avg[thnq==35])[0],  read_JWVO_data(35,'WJC2','AMT','DWBA',pm_avg[thnq==35])[1], linestyle='-', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) DWBA', zorder=2 )
 
@@ -389,7 +390,7 @@ def make_prl_plots():
 
     CD_AMT_PWBA, = B.plot_exp(read_JWVO_data(35,'CD','AMT','PWBA',pm_avg[thnq==35])[0],  read_JWVO_data(35,'CD','AMT','PWBA',pm_avg[thnq==35])[1], linestyle='--', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) PWBA', zorder=2 )
     CD_AMT_DWBA, = B.plot_exp(read_JWVO_data(35,'CD','AMT','DWBA',pm_avg[thnq==35])[0],  read_JWVO_data(35,'CD','AMT','DWBA',pm_avg[thnq==35])[1], linestyle='-', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) DWBA', zorder=2 )
-
+    '''
     
     #Plot Experimental Data (Hall A or Hall C)
     l2 = B.plot_exp(pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35, marker='s',  markersize=5, color='#ff1000', markerfacecolor='white', capsize=0, logy=True,  label='Hall A Data', zorder=3)
@@ -439,6 +440,7 @@ def make_prl_plots():
     WJC2_GK_PWBA, = B.plot_exp(read_JWVO_data(45,'WJC2','GKex05','PWBA',pm_avg[thnq==45])[0],  read_JWVO_data(45,'WJC2','GKex05','PWBA',pm_avg[thnq==45])[1], linestyle='--', marker='None', color='orange', logy=True, label='WJC2 (GKex05) PWBA', zorder=2 )
     WJC2_GK_DWBA, = B.plot_exp(read_JWVO_data(45,'WJC2','GKex05','DWBA', pm_avg[thnq==45])[0],  read_JWVO_data(45,'WJC2','GKex05','DWBA',pm_avg[thnq==45])[1], linestyle='-', marker='None', color='orange', logy=True, label='WJC2 (GKex05) DWBA', zorder=2 )
 
+    '''
     WJC2_AMT_PWBA, = B.plot_exp(read_JWVO_data(45,'WJC2','AMT','PWBA',pm_avg[thnq==45])[0],  read_JWVO_data(45,'WJC2','AMT','PWBA',pm_avg[thnq==45])[1], linestyle='--', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) PWBA', zorder=2 )
     WJC2_AMT_DWBA, = B.plot_exp(read_JWVO_data(45,'WJC2','AMT','DWBA',pm_avg[thnq==45])[0],  read_JWVO_data(45,'WJC2','AMT','DWBA',pm_avg[thnq==45])[1], linestyle='-', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) DWBA', zorder=2 )
 
@@ -453,7 +455,7 @@ def make_prl_plots():
 
     CD_AMT_PWBA, = B.plot_exp(read_JWVO_data(45,'CD','AMT','PWBA',pm_avg[thnq==45])[0],  read_JWVO_data(45,'CD','AMT','PWBA',pm_avg[thnq==45])[1], linestyle='--', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) PWBA', zorder=2 )
     CD_AMT_DWBA, = B.plot_exp(read_JWVO_data(45,'CD','AMT','DWBA',pm_avg[thnq==45])[0],  read_JWVO_data(45,'CD','AMT','DWBA',pm_avg[thnq==45])[1], linestyle='-', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) DWBA', zorder=2 )
-
+    '''
     
     B.plot_exp(pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45, marker='s', markersize=5, capsize=0, color='#ff0000', markerfacecolor='white',  logy=True, label='Hall A Data', zorder=3)
     B.plot_exp(pm_avg[thnq==45], red_dataXsec_avg_masked[thnq==45]*MeV2fm, red_dataXsec_avg_tot_err[thnq==45]*MeV2fm, marker='o', markersize=5, capsize=0, color='k', markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
@@ -485,7 +487,7 @@ def make_prl_plots():
     ax2 = plt.subplot(gs[2], sharey=ax0)
 
     B.pl.text(0.7, 0.5e-6, r'$\theta_{nq}=75\pm5^{o}$', fontsize=19)
-    B.pl.text(1.1, 1e0, r'(c)', fontsize=19)
+    B.pl.text(1., 1e0, r'(c)', fontsize=19)
 
     #Remove un-necessary Y tick labels from subplot
     B.pl.setp(ax2.get_yticklabels(), visible=False)
@@ -495,6 +497,7 @@ def make_prl_plots():
     WJC2_GK_PWBA, = B.plot_exp(read_JWVO_data(75,'WJC2','GKex05','PWBA',pm_avg_75)[0],  read_JWVO_data(75,'WJC2','GKex05','PWBA',pm_avg_75)[1], linestyle='--', marker='None', color='orange', logy=True, label='WJC2 (GKex05) PWBA', zorder=2 )
     WJC2_GK_DWBA, = B.plot_exp(read_JWVO_data(75,'WJC2','GKex05','DWBA',pm_avg_75)[0],  read_JWVO_data(75,'WJC2','GKex05','DWBA',pm_avg_75)[1], linestyle='-', marker='None', color='orange', logy=True, label='WJC2 (GKex05) DWBA', zorder=2 )
 
+    '''
     WJC2_AMT_PWBA, = B.plot_exp(read_JWVO_data(75,'WJC2','AMT','PWBA',pm_avg_75)[0],  read_JWVO_data(75,'WJC2','AMT','PWBA',pm_avg_75)[1], linestyle='--', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) PWBA', zorder=2 )
     WJC2_AMT_DWBA, = B.plot_exp(read_JWVO_data(75,'WJC2','AMT','DWBA',pm_avg_75)[0],  read_JWVO_data(75,'WJC2','AMT','DWBA',pm_avg_75)[1], linestyle='-', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) DWBA', zorder=2 )
 
@@ -509,7 +512,7 @@ def make_prl_plots():
 
     CD_AMT_PWBA, = B.plot_exp(read_JWVO_data(75,'CD','AMT','PWBA',pm_avg_75)[0],  read_JWVO_data(75,'CD','AMT','PWBA',pm_avg_75)[1], linestyle='--', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) PWBA', zorder=2 )
     CD_AMT_DWBA, = B.plot_exp(read_JWVO_data(75,'CD','AMT','DWBA',pm_avg_75)[0],  read_JWVO_data(75,'CD','AMT','DWBA',pm_avg_75)[1], linestyle='-', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) DWBA', zorder=2 )
-
+    '''
     
     B.plot_exp(pm_ha75, red_dataXsec_ha75, red_dataXsec_err_ha75, marker='s', markersize=5, capsize=0, color='#ff0000',  markerfacecolor='white', logy=True, label='Hall A Data',zorder=3)
     B.plot_exp(pm_avg[thnq==75], red_dataXsec_avg_masked[thnq==75]*MeV2fm, red_dataXsec_avg_tot_err[thnq==75]*MeV2fm, marker='o', markersize=5, capsize=0, color='k', markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4 )
@@ -540,30 +543,135 @@ def make_prl_plots():
     plt.subplots_adjust(wspace = 0.0000000001, bottom=0.13, top=0.98, left=0.085, right=0.98) #, hspace = 0.001, wspace = 0.001)
     
     #Create labels for specified plots in given order
-    line_labels=['This Experiment (Hall C)', 'Hall A Data', 'Paris (Galster) PWIA', 'Paris (Galster) FSI', 'AV18 (JJK) PWIA', 'AV18 (JJK) FSI', 'CD-Bonn (JJK) PWIA', 'CD-Bonn (JJK) FSI', 'WJC2 (GKex05) PWIA', 'WJC2 (GKex05) FSI', 'WJC2 (AMT) PWIA', 'WJC2 (AMT) FSI', 'AV18 (GKex05) PWIA', 'AV18 (GKex05) FSI', 'AV18 (AMT) PWIA', 'AV18 (AMT) FSI', 'CD-Bonn (GKex05) PWIA', 'CD-Bonn (GKex05) FSI', 'CD-Bonn (AMT) PWIA', 'CD-Bonn (AMT) FSI']   #define legend labels
-    ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, WJC2_GK_PWBA, WJC2_GK_DWBA, WJC2_AMT_PWBA, WJC2_AMT_DWBA, AV18_GK_PWBA, AV18_GK_DWBA, AV18_AMT_PWBA, AV18_AMT_DWBA, CD_GK_PWBA, CD_GK_DWBA, CD_AMT_PWBA, CD_AMT_DWBA], line_labels, loc='upper right', frameon=False, fontsize=9)      #subplot to use for common legend
-      
+    #line_labels=['This Experiment (Hall C)', 'Hall A Data', 'Paris (Galster) PWIA', 'Paris (Galster) FSI', 'AV18 (JJK) PWIA', 'AV18 (JJK) FSI', 'CD-Bonn (JJK) PWIA', 'CD-Bonn (JJK) FSI', 'WJC2 (GKex05) PWIA', 'WJC2 (GKex05) FSI', 'WJC2 (AMT) PWIA', 'WJC2 (AMT) FSI', 'AV18 (GKex05) PWIA', 'AV18 (GKex05) FSI', 'AV18 (AMT) PWIA', 'AV18 (AMT) FSI', 'CD-Bonn (GKex05) PWIA', 'CD-Bonn (GKex05) FSI', 'CD-Bonn (AMT) PWIA', 'CD-Bonn (AMT) FSI']   #define legend labels
+    #ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, WJC2_GK_PWBA, WJC2_GK_DWBA, WJC2_AMT_PWBA, WJC2_AMT_DWBA, AV18_GK_PWBA, AV18_GK_DWBA, AV18_AMT_PWBA, AV18_AMT_DWBA, CD_GK_PWBA, CD_GK_DWBA, CD_AMT_PWBA, CD_AMT_DWBA], line_labels, loc='upper right', frameon=False, fontsize=9)      #subplot to use for common legend
+
+    line_labels=['This Experiment (Hall C)', 'Hall A Data', 'Paris PWIA', 'Paris FSI', 'AV18 PWIA', 'AV18 FSI', 'CD-Bonn PWIA', 'CD-Bonn FSI', 'WJC2 PWIA', 'WJC2 FSI']
+    ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, WJC2_GK_PWBA, WJC2_GK_DWBA], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
+           
 
     #B.pl.show()
     B.pl.savefig('./PRL_plot1.pdf')
 
 
     #Write PRL PLOT 1 data to file (avg. Pm, data Xsec and errors, and theory Xsec
-    '''
-    fout_name = 'redXsec_HallC_thnq35_deg.txt'
+    
+    #fout_name = 'redXsec_HallC_thnq35_deg.txt'
+    fout_name = 'FOFA_ratio_HallC_thnq35_deg.txt'
+    
     fout = open(fout_name, 'w')
-    comment1='#This datafile contains redXsec from Hall C Deuteron Experiment: E12-10-003\n'
-    comment2='#Units: pm_avg [GeV/c] :: redXsec [fm^3],   theta_nq = 35 +\- 5 deg \n'
-    header='#!pm_avg[f,0]/   data_redXsec[f,1]/   data_redXsec_tot_err[f,2]/   stats_rel_err[f,3]/  kin_rel_err[f,4]/   norm_rel_err[f,5]   tot_rel_syst_err[f,6]/   tot_rel_err[f,7]/ \n'
+    #comment1='#This datafile contains redXsec from Hall C Deuteron Experiment: E12-10-003\n'
+    #comment2='#Units: pm_avg [GeV/c] :: redXsec [fm^3],   theta_nq = 35 +\- 5 deg \n'
+    #header='#!pm_avg[f,0]/   data_redXsec[f,1]/   data_redXsec_tot_err[f,2]/   stats_rel_err[f,3]/  kin_rel_err[f,4]/   norm_rel_err[f,5]   tot_rel_syst_err[f,6]/   tot_rel_err[f,7]/   \n'
+
+    comment1='#This datafile contains ratio of J.W.V.Orden to Misak calculations using different fofa parametrizations\n'
+    comment2='#Units: pm_avg [GeV/c],   theta_nq = 35 +\- 5 deg \n'
+    comment3='#R_av18_GK_pwia = redXsec_av18_GK / redXsec_av18_jjk, R_av18_amt_pwia = redXsec_av18_amt / redXsec_av18_jjk, same for CD-Bonn \n'
+    header='#!pm_avg[f,0]/ R_av18_GK_pwia[f,1]/ R_av18_amt_pwia[f,2]/ R_cd_GK_pwia[f,3]/ R_cd_amt_pwia[f,4]/  R_av18_GK2amt_pwia[f,5]/ R_cd_GK2amt_pwia[f,6]/ R_wjc2_GK2amt_pwia[f,7]/ \n'
     fout.write(comment1)
     fout.write(comment2)
+    fout.write(comment3)
+
     fout.write(header)
+    #Re-name redXsec variables to write to file
+    pm_35 = np.array(pm_avg[thnq==35])
+    data_redXsec = red_dataXsec_avg_masked[thnq==35]*MeV2fm
+    paris_pwia = f_red_pwiaXsec_avg_35(pm_35)
+    paris_fsi = f_red_fsiXsec_avg_35(pm_35)
+    av18_pwia_jjk = f_red_pwiaXsec_V18_35(pm_35)
+    av18_fsi_jjk =f_red_fsiXsec_V18_35(pm_35)
+    cd_pwia_jjk = f_red_pwiaXsec_CD_35(pm_35)
+    cd_fsi_jjk = f_red_fsiXsec_CD_35(pm_35)
+    
+    #Wally & Sabine calculations
+    wjc2_pwia_GK = read_JWVO_data(35,'WJC2','GKex05','PWBA',pm_avg[thnq==35])[1]
+    wjc2_fsi_GK = read_JWVO_data(35,'WJC2','GKex05','DWBA',pm_avg[thnq==35])[1]
+    wjc2_pwia_amt = read_JWVO_data(35,'WJC2','AMT','PWBA',pm_avg[thnq==35])[1]
+    wjc2_fsi_amt = read_JWVO_data(35,'WJC2','AMT','DWBA',pm_avg[thnq==35])[1]
 
+    av18_pwia_GK = read_JWVO_data(35,'AV18','GKex05','PWBA',pm_avg[thnq==35])[1]
+    av18_fsi_GK = read_JWVO_data(35,'AV18','GKex05','DWBA',pm_avg[thnq==35])[1]
+    av18_pwia_amt = read_JWVO_data(35,'AV18','AMT','PWBA',pm_avg[thnq==35])[1]
+    av18_fsi_amt = read_JWVO_data(35,'AV18','AMT','DWBA',pm_avg[thnq==35])[1]
+
+    cd_pwia_GK = read_JWVO_data(35,'CD','GKex05','PWBA',pm_avg[thnq==35])[1]
+    cd_fsi_GK = read_JWVO_data(35,'CD','GKex05','DWBA',pm_avg[thnq==35])[1]
+    cd_pwia_amt = read_JWVO_data(35,'CD','AMT','PWBA',pm_avg[thnq==35])[1]
+    cd_fsi_amt = read_JWVO_data(35,'CD','AMT','DWBA',pm_avg[thnq==35])[1]
+
+    #Take ratios of Wally to Misak theoretical curves of the same NN potential to determine fofa variations
+    R_av18_GK_pwia = (av18_pwia_GK - av18_pwia_jjk) / av18_pwia_jjk * 100.
+    R_av18_amt_pwia = (av18_pwia_amt - av18_pwia_jjk) / av18_pwia_jjk * 100.
+
+    R_cd_GK_pwia = (cd_pwia_GK - cd_pwia_jjk)/ cd_pwia_jjk * 100.
+    R_cd_amt_pwia = (cd_pwia_amt - cd_pwia_jjk) / cd_pwia_jjk * 100.
+
+    #Take ratio of GKex05 / AMT since both the calculations are done by Wally
+    R_av18_GK2amt_pwia = (av18_pwia_GK - av18_pwia_amt) / av18_pwia_amt * 100.
+    R_cd_GK2amt_pwia = (cd_pwia_GK - cd_pwia_amt) / cd_pwia_amt * 100.
+    R_wjc2_GK2amt_pwia = (wjc2_pwia_GK - wjc2_pwia_amt) / wjc2_pwia_amt * 100.
+    
     for i in range(len(pm_avg[thnq==35])):
-        fout.write('%.5f %.5E  %.5E  %.5f  %.5f  %.5f  %.5f  %.5f\n' % ((pm_avg[thnq==35])[i], (red_dataXsec_avg_masked[thnq==35]*MeV2fm)[i], (red_dataXsec_avg_tot_err[thnq==35]*MeV2fm)[i], (tot_stats_err[thnq==35])[i], (kin_syst_tot[thnq==35])[i], (norm_syst_tot[thnq==35])[i], (tot_syst_err[thnq==35])[i], (tot_err[thnq==35])[i]))
-
+        #fout.write('%.5f %.5E  %.5E  %.5f  %.5f  %.5f  %.5f  %.5f\n' % ((pm_avg[thnq==35])[i], (red_dataXsec_avg_masked[thnq==35]*MeV2fm)[i], (red_dataXsec_avg_tot_err[thnq==35]*MeV2fm)[i], (tot_stats_err[thnq==35])[i], (kin_syst_tot[thnq==35])[i], (norm_syst_tot[thnq==35])[i], (tot_syst_err[thnq==35])[i], (tot_err[thnq==35])[i]))
+        fout.write('%.5f %.5f  %.5f  %.5f  %.5f  %.5f  %.5f  %.5f\n' % (pm_35[i],  R_av18_GK_pwia[i], R_av18_amt_pwia[i], R_cd_GK_pwia[i], R_cd_amt_pwia[i], R_av18_GK2amt_pwia[i], R_cd_GK2amt_pwia[i], R_wjc2_GK2amt_pwia[i]))
     fout.close()
 
+
+    fout_name = 'FOFA_ratio_HallC_thnq45_deg.txt'
+    
+    fout = open(fout_name, 'w')
+    comment1='#This datafile contains ratio of J.W.V.Orden to Misak calculations using different fofa parametrizations\n'
+    comment2='#Units: pm_avg [GeV/c],   theta_nq = 45 +\- 5 deg \n'
+    comment3='#R_av18_GK_pwia = redXsec_av18_GK / redXsec_av18_jjk, R_av18_amt_pwia = redXsec_av18_amt / redXsec_av18_jjk, same for CD-Bonn \n'
+    header='#!pm_avg[f,0]/ R_av18_GK_pwia[f,1]/ R_av18_amt_pwia[f,2]/ R_cd_GK_pwia[f,3]/ R_cd_amt_pwia[f,4]/ R_av18_GK2amt_pwia[f,5]/ R_cd_GK2amt_pwia[f,6]/ R_wjc2_GK2amt_pwia[f,7]/\n'
+    fout.write(comment1)
+    fout.write(comment2)
+    fout.write(comment3)
+
+    fout.write(header)
+    #Re-name redXsec variables to write to file
+    pm_45 = np.array(pm_avg[thnq==45])
+    data_redXsec = red_dataXsec_avg_masked[thnq==45]*MeV2fm
+    paris_pwia = f_red_pwiaXsec_avg_45(pm_45)
+    paris_fsi = f_red_fsiXsec_avg_45(pm_45)
+    av18_pwia_jjk = f_red_pwiaXsec_V18_45(pm_45)
+    av18_fsi_jjk =f_red_fsiXsec_V18_45(pm_45)
+    cd_pwia_jjk = f_red_pwiaXsec_CD_45(pm_45)
+    cd_fsi_jjk = f_red_fsiXsec_CD_45(pm_45)
+    
+    #Wally & Sabine calculations
+    wjc2_pwia_GK = read_JWVO_data(45,'WJC2','GKex05','PWBA',pm_avg[thnq==45])[1]
+    wjc2_fsi_GK = read_JWVO_data(45,'WJC2','GKex05','DWBA',pm_avg[thnq==45])[1]
+    wjc2_pwia_amt = read_JWVO_data(45,'WJC2','AMT','PWBA',pm_avg[thnq==45])[1]
+    wjc2_fsi_amt = read_JWVO_data(45,'WJC2','AMT','DWBA',pm_avg[thnq==45])[1]
+
+    av18_pwia_GK = read_JWVO_data(45,'AV18','GKex05','PWBA',pm_avg[thnq==45])[1]
+    av18_fsi_GK = read_JWVO_data(45,'AV18','GKex05','DWBA',pm_avg[thnq==45])[1]
+    av18_pwia_amt = read_JWVO_data(45,'AV18','AMT','PWBA',pm_avg[thnq==45])[1]
+    av18_fsi_amt = read_JWVO_data(45,'AV18','AMT','DWBA',pm_avg[thnq==45])[1]
+
+    cd_pwia_GK = read_JWVO_data(45,'CD','GKex05','PWBA',pm_avg[thnq==45])[1]
+    cd_fsi_GK = read_JWVO_data(45,'CD','GKex05','DWBA',pm_avg[thnq==45])[1]
+    cd_pwia_amt = read_JWVO_data(45,'CD','AMT','PWBA',pm_avg[thnq==45])[1]
+    cd_fsi_amt = read_JWVO_data(45,'CD','AMT','DWBA',pm_avg[thnq==45])[1]
+
+    #Take ratios of Wally to Misak theoretical curves of the same NN potential to determine fofa variations
+    R_av18_GK_pwia = (av18_pwia_GK - av18_pwia_jjk) / av18_pwia_jjk * 100.
+    R_av18_amt_pwia = (av18_pwia_amt - av18_pwia_jjk) / av18_pwia_jjk * 100.
+
+    R_cd_GK_pwia = (cd_pwia_GK - cd_pwia_jjk) / cd_pwia_jjk * 100.
+    R_cd_amt_pwia = (cd_pwia_amt - cd_pwia_jjk)/ cd_pwia_jjk * 100.
+
+    #Take ratio of GKex05 / AMT since both the calculations are done by Wally
+    R_av18_GK2amt_pwia = (av18_pwia_GK - av18_pwia_amt) / av18_pwia_amt * 100.
+    R_cd_GK2amt_pwia = (cd_pwia_GK - cd_pwia_amt) / cd_pwia_amt * 100.
+    R_wjc2_GK2amt_pwia = (wjc2_pwia_GK - wjc2_pwia_amt) / wjc2_pwia_amt * 100.
+
+    for i in range(len(pm_avg[thnq==45])):
+        fout.write('%.5f %.5f  %.5f  %.5f  %.5f  %.5f  %.5f  %.5f\n' % (pm_45[i],  R_av18_GK_pwia[i], R_av18_amt_pwia[i], R_cd_GK_pwia[i], R_cd_amt_pwia[i], R_av18_GK2amt_pwia[i], R_cd_GK2amt_pwia[i], R_wjc2_GK2amt_pwia[i]))
+    fout.close()
+    
+    '''
     fout_name = 'redXsec_HallC_thnq45_deg.txt'
     fout = open(fout_name, 'w')
     comment1='#This datafile contains redXsec from Hall C Deuteron Experiment: E12-10-003\n'
@@ -732,8 +840,9 @@ def make_prl_plots():
     #Plot J.W.V.Orden Calculations RATIO
     #B.plot_exp(pm_avg[thnq==35], R_Ref_jvo_35, marker='None', linestyle='--', color='purple', label='CD-Bonn (GKex05) PWBA', zorder=2)
 
-    B.plot_exp(pm_avg[thnq==35], R_WJC2_GK_pwba_35, marker='None', linestyle='--', color='orange', label='WJC2 (GKex05) PWBA', zorder=1)
-    B.plot_exp(pm_avg[thnq==35], R_WJC2_GK_dwba_35, marker='None', linestyle='-', color='orange', label='WJC2 (GKex05) DWBA', zorder=1)
+    B.plot_exp(pm_avg[thnq==35], R_WJC2_GK_pwba_35, marker='None', linestyle='--', color='orange', label='WJC2 PWIA', zorder=1)
+    B.plot_exp(pm_avg[thnq==35], R_WJC2_GK_dwba_35, marker='None', linestyle='-', color='orange', label='WJC2 FSI', zorder=1)
+    '''
     B.plot_exp(pm_avg[thnq==35], R_WJC2_AMT_pwba_35, marker='None', linestyle='--', color='darkgoldenrod', label='WJC2 (AMT) PWBA', zorder=1)
     B.plot_exp(pm_avg[thnq==35], R_WJC2_AMT_dwba_35, marker='None', linestyle='-', color='darkgoldenrod', label='WJC2 (AMT) DWBA', zorder=1)
 
@@ -747,7 +856,7 @@ def make_prl_plots():
     B.plot_exp(pm_avg[thnq==35], R_CD_GK_dwba_35, marker='None', linestyle='-', color='purple', label='CD-Bonn (GKex05) DWBA', zorder=1)
     B.plot_exp(pm_avg[thnq==35], R_CD_AMT_pwba_35, marker='None', linestyle='--', color='darkviolet', label='CD-Bonn (AMT) PWBA', zorder=1)
     B.plot_exp(pm_avg[thnq==35], R_CD_AMT_dwba_35, marker='None', linestyle='-', color='darkviolet', label='CD-Bonn (AMT) DWBA', zorder=1)
-
+    '''
     
     #Set axis limits
     B.pl.xlim(0.0, 1.2)
@@ -819,8 +928,9 @@ def make_prl_plots():
     #Plot J.W.V.Orden Calculations RATIO
     #B.plot_exp(pm_avg[thnq==45], R_Ref_jvo_45, marker='None', linestyle='--', color='purple', label='CD-Bonn (GKex05) PWBA', zorder=2)
 
-    B.plot_exp(pm_avg[thnq==45], R_WJC2_GK_pwba_45, marker='None', linestyle='--', color='orange', label='WJC2 (GKex05) PWBA', zorder=1)
-    B.plot_exp(pm_avg[thnq==45], R_WJC2_GK_dwba_45, marker='None', linestyle='-', color='orange', label='WJC2 (GKex05) DWBA', zorder=1)
+    B.plot_exp(pm_avg[thnq==45], R_WJC2_GK_pwba_45, marker='None', linestyle='--', color='orange', label='WJC2 PWIA', zorder=1)
+    B.plot_exp(pm_avg[thnq==45], R_WJC2_GK_dwba_45, marker='None', linestyle='-', color='orange', label='WJC2 FSI', zorder=1)
+    '''
     B.plot_exp(pm_avg[thnq==45], R_WJC2_AMT_pwba_45, marker='None', linestyle='--', color='darkgoldenrod', label='WJC2 (AMT) PWBA', zorder=1)
     B.plot_exp(pm_avg[thnq==45], R_WJC2_AMT_dwba_45, marker='None', linestyle='-', color='darkgoldenrod', label='WJC2 (AMT) DWBA', zorder=1)
 
@@ -833,7 +943,7 @@ def make_prl_plots():
     B.plot_exp(pm_avg[thnq==45], R_CD_GK_dwba_45, marker='None', linestyle='-', color='purple', label='CD-Bonn (GKex05) DWBA', zorder=1)
     B.plot_exp(pm_avg[thnq==45], R_CD_AMT_pwba_45, marker='None', linestyle='--', color='darkviolet', label='CD-Bonn (AMT) PWBA', zorder=1)
     B.plot_exp(pm_avg[thnq==45], R_CD_AMT_dwba_45, marker='None', linestyle='-', color='darkviolet', label='CD-Bonn (AMT) DWBA', zorder=1)
-
+    '''
     #Set axis limits
     B.pl.xlim(0.0, 1.2)
     #B.pl.ylim(0.5, 2.3) #ZOOM 
@@ -885,24 +995,25 @@ def make_prl_plots():
 
     #Plot the Data (and all models) to CD-Bonn PWIA model
     #B.plot_exp(pm_avg[thnq==35], R_ref35,  marker='None', linestyle='--', color='#ff00ff', label='CD-Bonn PWIA')
-    B.pl.axhline(y=1.0, xmin=0.0, xmax=0.7, color='#ff00ff', linestyle='--', label='CD-Bonn (JJK) PWIA',zorder=2)
+    B.pl.axhline(y=1.0, xmin=0.0, xmax=0.7, color='#ff00ff', linestyle='--', label='CD-Bonn PWIA',zorder=2)
 
     B.plot_exp(pm_ha75, R_HAdata75, R_HAdata_err75, marker='s', color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0,zorder=3)
     B.plot_exp(pm_avg_75, R_data75, R_data_err75, marker='o', color='k', label='Hall C Data', capsize=0,zorder=4)
 
-    B.plot_exp(pm_avg_75, R_CDBonn_fsi75, marker='None', linestyle='-', color='#ff00ff', label='CD-Bonn (JJK) FSI',zorder=1)
+    B.plot_exp(pm_avg_75, R_CDBonn_fsi75, marker='None', linestyle='-', color='#ff00ff', label='CD-Bonn FSI',zorder=1)
 
-    B.plot_exp(pm_avg_75, R_Paris_pwia75, marker='None', linestyle='--', color='#0000ff', label='Paris (Galster) PWIA',zorder=1)
-    B.plot_exp(pm_avg_75, R_Paris_fsi75, marker='None', linestyle='-', color='#0000ff', label='Paris (Galster) FSI',zorder=1)
+    B.plot_exp(pm_avg_75, R_Paris_pwia75, marker='None', linestyle='--', color='#0000ff', label='Paris PWIA',zorder=1)
+    B.plot_exp(pm_avg_75, R_Paris_fsi75, marker='None', linestyle='-', color='#0000ff', label='Paris FSI',zorder=1)
     
-    B.plot_exp(pm_avg_75, R_AV18_pwia75, marker='None', linestyle='--', color='#009000', label='AV18 (JJK) PWIA',zorder=1)
-    B.plot_exp(pm_avg_75, R_AV18_fsi75, marker='None', linestyle='-', color='#009000', label='AV18 (JJK) FSI',zorder=1)
+    B.plot_exp(pm_avg_75, R_AV18_pwia75, marker='None', linestyle='--', color='#009000', label='AV18 PWIA',zorder=1)
+    B.plot_exp(pm_avg_75, R_AV18_fsi75, marker='None', linestyle='-', color='#009000', label='AV18 FSI',zorder=1)
 
     #Plot J.W.V.Orden Calculations RATIO
     #B.plot_exp(pm_avg[thnq==75], R_Ref_jvo_75, marker='None', linestyle='--', color='purple', label='CD-Bonn (GKex05) PWBA', zorder=2)
 
-    B.plot_exp(pm_avg_75, R_WJC2_GK_pwba_75, marker='None', linestyle='--', color='orange', label='WJC2 (GKex05) PWIA',zorder=1)
-    B.plot_exp(pm_avg_75, R_WJC2_GK_dwba_75, marker='None', linestyle='-', color='orange', label='WJC2 (GKex05) FSI', zorder=1)
+    B.plot_exp(pm_avg_75, R_WJC2_GK_pwba_75, marker='None', linestyle='--', color='orange', label='WJC2 PWIA',zorder=1)
+    B.plot_exp(pm_avg_75, R_WJC2_GK_dwba_75, marker='None', linestyle='-', color='orange', label='WJC2 FSI', zorder=1)
+    '''
     B.plot_exp(pm_avg_75, R_WJC2_AMT_pwba_75, marker='None', linestyle='--', color='darkgoldenrod', label='WJC2 (AMT) PWIA', zorder=1)
     B.plot_exp(pm_avg_75, R_WJC2_AMT_dwba_75, marker='None', linestyle='-', color='darkgoldenrod', label='WJC2 (AMT) FSI', zorder=1)
 
@@ -916,7 +1027,7 @@ def make_prl_plots():
     B.plot_exp(pm_avg_75, R_CD_GK_dwba_75, marker='None', linestyle='-', color='purple', label='CD (GKex05) FSI', zorder=1)
     B.plot_exp(pm_avg_75, R_CD_AMT_pwba_75, marker='None', linestyle='--', color='darkviolet', label='CD-Bonn (AMT) PWIA', zorder=1)
     B.plot_exp(pm_avg_75, R_CD_AMT_dwba_75, marker='None', linestyle='-', color='darkviolet', label='CD-Bonn (AMT) FSI', zorder=1)
-    
+    '''
     #Set axis limits
     B.pl.xlim(0.0, 1.2)
     B.pl.ylim(-0.5, 5.8)
@@ -936,7 +1047,7 @@ def make_prl_plots():
     #Remove spacing between subplots
     plt.subplots_adjust(hspace = 0.00000001, bottom=0.09, top=0.98, right=0.95, left=0.18) #, hspace = 0.001, wspace = 0.001)
     B.pl.legend(loc='upper right', fontsize=12, frameon=False)
-    B.pl.legend(loc='upper right', fontsize=6.5, frameon=False)
+    #B.pl.legend(loc='upper right', fontsize=6.5, frameon=False)
     
 
     '''
