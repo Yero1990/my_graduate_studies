@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  25 JUN 2020 19:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  30 JUN 2020 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -105,43 +105,12 @@ Package: revsymb4-2 2019/01/18/14:29:48 4.2c (https://journals.aps.org/revtex/
 for documentation)
 LaTeX Info: Redefining \REV@mathfrak on input line 125.
 ))
-(/opt/local/share/texmf-texlive/tex/generic/ulem/ulem.sty
-\UL@box=\box41
-\UL@hyphenbox=\box42
-\UL@skip=\skip46
-\UL@hook=\toks16
-\UL@height=\dimen102
-\UL@pe=\count95
-\UL@pixel=\dimen103
-\ULC@box=\box43
-Package: ulem 2012/05/18
-\ULdepth=\dimen104
-)
-(/opt/local/share/texmf-texlive/tex/latex/graphics/color.sty
-Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
-
-(/opt/local/share/texmf-texlive/tex/latex/graphics-cfg/color.cfg
-File: color.cfg 2016/01/02 v1.6 sample color configuration
-)
-Package color Info: Driver file: pdftex.def on input line 147.
-
-(/opt/local/share/texmf-texlive/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
-
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
-(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count96
-))
 (/opt/local/share/texmf-texlive/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/opt/local/share/texmf-texlive/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+\KV@toks@=\toks16
 )
 (/opt/local/share/texmf-texlive/tex/latex/graphics/graphics.sty
 Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
@@ -153,20 +122,31 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/opt/local/share/texmf-texlive/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-\Gin@req@height=\dimen105
-\Gin@req@width=\dimen106
+(/opt/local/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count95
+))
+\Gin@req@height=\dimen102
+\Gin@req@width=\dimen103
 )
 (/opt/local/share/texmf-texlive/tex/latex/tools/dcolumn.sty
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 
 (/opt/local/share/texmf-texlive/tex/latex/tools/array.sty
 Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
-\col@sep=\dimen107
-\extrarowheight=\dimen108
-\NC@list=\toks18
-\extratabsurround=\skip47
-\backup@length=\skip48
+\col@sep=\dimen104
+\extrarowheight=\dimen105
+\NC@list=\toks17
+\extratabsurround=\skip46
+\backup@length=\skip47
 ))
 (/opt/local/share/texmf-texlive/tex/latex/tools/bm.sty
 Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
@@ -181,7 +161,7 @@ Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks19
+\@emptytoks=\toks18
 \symAMSa=\mathgroup7
 \symAMSb=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
@@ -244,14 +224,14 @@ Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 (/opt/local/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
-\@linkdim=\dimen109
-\Hy@linkcounter=\count97
-\Hy@pagecounter=\count98
+\@linkdim=\dimen106
+\Hy@linkcounter=\count96
+\Hy@pagecounter=\count97
 
 (/opt/local/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count99
+\Hy@SavedSpaceFactor=\count98
 
 (/opt/local/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -264,12 +244,12 @@ Package hyperref Info: Backreferencing OFF on input line 4518.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4751.
 LaTeX Info: Redefining \href on input line 5015.
-\c@Hy@tempcnt=\count100
+\c@Hy@tempcnt=\count99
 LaTeX Info: Redefining \url on input line 5104.
-\XeTeXLinkMargin=\dimen110
-\Fld@menulength=\count101
-\Field@Width=\dimen111
-\Fld@charsize=\dimen112
+\XeTeXLinkMargin=\dimen107
+\Fld@menulength=\count100
+\Field@Width=\dimen108
+\Fld@charsize=\dimen109
 Package hyperref Info: Hyper figures OFF on input line 6358.
 Package hyperref Info: Link nesting OFF on input line 6363.
 Package hyperref Info: Hyper index ON on input line 6366.
@@ -279,36 +259,36 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6383.
 Package hyperref Info: PDF/A mode OFF on input line 6388.
 LaTeX Info: Redefining \ref on input line 6428.
 LaTeX Info: Redefining \pageref on input line 6432.
-\Hy@abspage=\count102
-\c@Item=\count103
-\c@Hfootnote=\count104
+\Hy@abspage=\count101
+\c@Item=\count102
+\c@Hfootnote=\count103
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/opt/local/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
-\Fld@listcount=\count105
-\c@bookmark@seq@number=\count106
+\Fld@listcount=\count104
+\c@bookmark@seq@number=\count105
 
 (/opt/local/share/texmf-texlive/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip49
+\Hy@SectionHShift=\skip48
 )
 (/opt/local/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2016/09/06 3.8 Extensive control of page headers and footers
-\fancy@headwidth=\skip50
-\f@ncyO@elh=\skip51
-\f@ncyO@erh=\skip52
-\f@ncyO@olh=\skip53
-\f@ncyO@orh=\skip54
-\f@ncyO@elf=\skip55
-\f@ncyO@erf=\skip56
-\f@ncyO@olf=\skip57
-\f@ncyO@orf=\skip58
+\fancy@headwidth=\skip49
+\f@ncyO@elh=\skip50
+\f@ncyO@erh=\skip51
+\f@ncyO@olh=\skip52
+\f@ncyO@orh=\skip53
+\f@ncyO@elf=\skip54
+\f@ncyO@erf=\skip55
+\f@ncyO@olf=\skip56
+\f@ncyO@orf=\skip57
 )
 (/opt/local/share/texmf-texlive/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
@@ -317,7 +297,6 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
-LaTeX Info: Redefining \color on input line 709.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -330,45 +309,58 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (/opt/local/share/texmf-texlive/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count107
-\float@exts=\toks20
-\float@box=\box44
-\@float@everytoks=\toks21
-\@floatcapt=\box45
+\c@float@type=\count106
+\float@exts=\toks19
+\float@box=\box41
+\@float@everytoks=\toks20
+\@floatcapt=\box42
 )
 (/opt/local/share/texmf-texlive/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
-\c@lips@count=\count108
+\c@lips@count=\count107
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 60.
+Package hyperref Info: Option `colorlinks' set `true' on input line 39.
+
+(/opt/local/share/texmf-texlive/tex/generic/ulem/ulem.sty
+\UL@box=\box43
+\UL@hyphenbox=\box44
+\UL@skip=\skip58
+\UL@hook=\toks21
+\UL@height=\dimen110
+\UL@pe=\count108
+\UL@pixel=\dimen111
+\ULC@box=\box45
+Package: ulem 2012/05/18
+\ULdepth=\dimen112
+)
 Class revtex4-2 Info: Unrecognized array package. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 67.
+lass! (Proceeding with fingers crossed.) on input line 65.
 
 
 Class revtex4-2 Warning: Repair the float package.
 
-Class revtex4-2 Info: Robustifying \LaTeX's \boldmath command on input line 67.
+Class revtex4-2 Info: Robustifying \LaTeX's \boldmath command on input line 65.
 
-Class revtex4-2 Info: cite was not loaded (OK!) on input line 67.
-Class revtex4-2 Info: mcite was not loaded (OK!) on input line 67.
-Class revtex4-2 Info: multicol was not loaded (OK!) on input line 67.
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 65.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 65.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 65.
 (./prl-diff.aux)
 \openout1 = `prl-diff.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
-LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 (/opt/local/share/texmf-texlive/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -401,7 +393,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box47
-Package hyperref Info: Link coloring ON on input line 67.
+Package hyperref Info: Link coloring ON on input line 65.
 
 (/opt/local/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -411,58 +403,55 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count115
 )
-LaTeX Info: Redefining \ref on input line 67.
-LaTeX Info: Redefining \pageref on input line 67.
-LaTeX Info: Redefining \nameref on input line 67.
+LaTeX Info: Redefining \ref on input line 65.
+LaTeX Info: Redefining \pageref on input line 65.
+LaTeX Info: Redefining \nameref on input line 65.
 
 (./prl-diff.out) (./prl-diff.out)
 \@outlinefile=\write4
 \openout4 = `prl-diff.out'.
 
-Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 67.
+Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 65.
 \openout3 = `prl-diffNotes.bib'.
 
  (./authorlist.tex)
-LaTeX Font Info:    Try loading font information for U+msa on input line 91.
+LaTeX Font Info:    Try loading font information for U+msa on input line 89.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 91.
+LaTeX Font Info:    Try loading font information for U+msb on input line 89.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (./introduction.tex [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex
-.map}])
-(./body-diff.tex [2]
-<prl_plots/PRL_plot1_WJC2.pdf, id=80, 968.41798pt x 433.62pt>
-File: prl_plots/PRL_plot1_WJC2.pdf Graphic file (type pdf)
+) (./intro-diff.tex
+[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+(./body-diff.tex [2] <prl_plots/PRL_plot1.pdf, id=80, 968.41798pt x 433.62pt>
+File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
-<use prl_plots/PRL_plot1_WJC2.pdf>
-Package pdftex.def Info: prl_plots/PRL_plot1_WJC2.pdf used on input line 48.
+<use prl_plots/PRL_plot1.pdf>
+Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 48.
 (pdftex.def)             Requested size: 445.47768pt x 199.46762pt.
  [3]
-<./prl_plots/PRL_plot2_WJC2.pdf, id=122, 484.209pt x 722.7pt>
-File: ./prl_plots/PRL_plot2_WJC2.pdf Graphic file (type pdf)
+<./prl_plots/PRL_plot2.pdf, id=123, 484.209pt x 722.7pt>
+File: ./prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
-<use ./prl_plots/PRL_plot2_WJC2.pdf>
-Package pdftex.def Info: ./prl_plots/PRL_plot2_WJC2.pdf used on input line 123.
-
+<use ./prl_plots/PRL_plot2.pdf>
+Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 111.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
  [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.150 
-       <./prl_plots/PRL_plot1_WJC2.pdf>] [5pdfTeX warning (ext4): destination w
-ith the same identifier (name{figure.2}) has been already used, duplicate ignor
-ed
+l.138 
+       <./prl_plots/PRL_plot1.pdf>] [5pdfTeX warning (ext4): destination with t
+he same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.150 
-       <./prl_plots/PRL_plot2_WJC2.pdf>]) (./prl-diff.bbl
+l.138 
+       <./prl_plots/PRL_plot2.pdf>]) (./prl-diff.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
@@ -516,21 +505,21 @@ Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
 ) [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
  (./prl-diff.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 112.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 112.
 Package rerunfilecheck Info: File `prl-diff.out' has not changed.
 (rerunfilecheck)             Checksum: 5FB4ED4F338BC142CDC291E26D1DB09F;197.
  ) 
 Here is how much of TeX's memory you used:
- 8535 strings out of 494108
- 120266 string characters out of 6155655
- 367185 words of memory out of 5000000
- 11747 multiletter control sequences out of 15000+600000
+ 8546 strings out of 494108
+ 120360 string characters out of 6155655
+ 351337 words of memory out of 5000000
+ 11758 multiletter control sequences out of 15000+600000
  14435 words of font info for 55 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 31i,8n,57p,731b,565s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,8n,57p,651b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -555,10 +544,10 @@ ublic/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public
 /amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/latxfont/lasy6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on prl-diff.pdf (7 pages, 425104 bytes).
+Output written on prl-diff.pdf (7 pages, 425086 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 302 compressed objects within 4 object streams
- 46 named destinations out of 1000 (max. 500000)
+ 367 PDF objects out of 1000 (max. 8388607)
+ 313 compressed objects within 4 object streams
+ 50 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 

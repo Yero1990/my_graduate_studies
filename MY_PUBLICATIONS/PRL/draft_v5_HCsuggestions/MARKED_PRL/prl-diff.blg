@@ -29,45 +29,45 @@ Control: production of eprint (0) enabled
 Warning--empty year in hodo_techreport
 Warning--empty year in dc_techreport
 Warning--empty year in ngc_techreport
-You've used 34 entries,
+You've used 38 entries,
             6079 wiz_defined-function locations,
-            1918 strings with 23019 characters,
-and the built_in function-call counts, 33564 in all, are:
-= -- 2560
-> -- 725
-< -- 180
-+ -- 234
-- -- 180
-* -- 4915
-:= -- 3261
-add.period$ -- 32
-call.type$ -- 34
-change.case$ -- 164
-chr.to.int$ -- 44
-cite$ -- 37
-duplicate$ -- 3101
-empty$ -- 2411
-format.name$ -- 409
-if$ -- 6846
-int.to.chr$ -- 1
-int.to.str$ -- 41
-missing$ -- 487
-newline$ -- 148
-num.names$ -- 96
-pop$ -- 1180
+            1948 strings with 23771 characters,
+and the built_in function-call counts, 37033 in all, are:
+= -- 2867
+> -- 769
+< -- 196
++ -- 251
+- -- 188
+* -- 5366
+:= -- 3624
+add.period$ -- 36
+call.type$ -- 38
+change.case$ -- 184
+chr.to.int$ -- 47
+cite$ -- 41
+duplicate$ -- 3425
+empty$ -- 2674
+format.name$ -- 429
+if$ -- 7563
+int.to.chr$ -- 2
+int.to.str$ -- 45
+missing$ -- 543
+newline$ -- 160
+num.names$ -- 108
+pop$ -- 1312
 preamble$ -- 1
-purify$ -- 157
+purify$ -- 177
 quote$ -- 0
-skip$ -- 1555
+skip$ -- 1735
 stack$ -- 0
-substring$ -- 928
-swap$ -- 2869
-text.length$ -- 70
+substring$ -- 1029
+swap$ -- 3155
+text.length$ -- 74
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 444
+type$ -- 492
 warning$ -- 4
-while$ -- 102
+while$ -- 114
 width$ -- 0
-write$ -- 338
+write$ -- 374
 (There were 4 warnings)

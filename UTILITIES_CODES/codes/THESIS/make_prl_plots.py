@@ -546,7 +546,7 @@ def make_prl_plots():
     #line_labels=['This Experiment (Hall C)', 'Hall A Data', 'Paris (Galster) PWIA', 'Paris (Galster) FSI', 'AV18 (JJK) PWIA', 'AV18 (JJK) FSI', 'CD-Bonn (JJK) PWIA', 'CD-Bonn (JJK) FSI', 'WJC2 (GKex05) PWIA', 'WJC2 (GKex05) FSI', 'WJC2 (AMT) PWIA', 'WJC2 (AMT) FSI', 'AV18 (GKex05) PWIA', 'AV18 (GKex05) FSI', 'AV18 (AMT) PWIA', 'AV18 (AMT) FSI', 'CD-Bonn (GKex05) PWIA', 'CD-Bonn (GKex05) FSI', 'CD-Bonn (AMT) PWIA', 'CD-Bonn (AMT) FSI']   #define legend labels
     #ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, WJC2_GK_PWBA, WJC2_GK_DWBA, WJC2_AMT_PWBA, WJC2_AMT_DWBA, AV18_GK_PWBA, AV18_GK_DWBA, AV18_AMT_PWBA, AV18_AMT_DWBA, CD_GK_PWBA, CD_GK_DWBA, CD_AMT_PWBA, CD_AMT_DWBA], line_labels, loc='upper right', frameon=False, fontsize=9)      #subplot to use for common legend
 
-    line_labels=['This Experiment (Hall C)', 'Hall A Data', 'Paris PWIA', 'Paris FSI', 'AV18 PWIA', 'AV18 FSI', 'CD-Bonn PWIA', 'CD-Bonn FSI', 'WJC2 PWIA', 'WJC2 FSI']
+    line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI']
     ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, WJC2_GK_PWBA, WJC2_GK_DWBA], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
            
 
@@ -995,24 +995,24 @@ def make_prl_plots():
 
     #Plot the Data (and all models) to CD-Bonn PWIA model
     #B.plot_exp(pm_avg[thnq==35], R_ref35,  marker='None', linestyle='--', color='#ff00ff', label='CD-Bonn PWIA')
-    B.pl.axhline(y=1.0, xmin=0.0, xmax=0.7, color='#ff00ff', linestyle='--', label='CD-Bonn PWIA',zorder=2)
+    B.pl.axhline(y=1.0, xmin=0.0, xmax=0.6, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
 
     B.plot_exp(pm_ha75, R_HAdata75, R_HAdata_err75, marker='s', color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0,zorder=3)
     B.plot_exp(pm_avg_75, R_data75, R_data_err75, marker='o', color='k', label='Hall C Data', capsize=0,zorder=4)
 
-    B.plot_exp(pm_avg_75, R_CDBonn_fsi75, marker='None', linestyle='-', color='#ff00ff', label='CD-Bonn FSI',zorder=1)
+    B.plot_exp(pm_avg_75, R_CDBonn_fsi75, marker='None', linestyle='-', color='#ff00ff', label='MS CD-Bonn FSI',zorder=1)
 
-    B.plot_exp(pm_avg_75, R_Paris_pwia75, marker='None', linestyle='--', color='#0000ff', label='Paris PWIA',zorder=1)
-    B.plot_exp(pm_avg_75, R_Paris_fsi75, marker='None', linestyle='-', color='#0000ff', label='Paris FSI',zorder=1)
     
-    B.plot_exp(pm_avg_75, R_AV18_pwia75, marker='None', linestyle='--', color='#009000', label='AV18 PWIA',zorder=1)
-    B.plot_exp(pm_avg_75, R_AV18_fsi75, marker='None', linestyle='-', color='#009000', label='AV18 FSI',zorder=1)
+    B.plot_exp(pm_avg_75, R_AV18_pwia75, marker='None', linestyle='--', color='#009000', label='MS AV18 PWBA',zorder=1)
+    B.plot_exp(pm_avg_75, R_AV18_fsi75, marker='None', linestyle='-', color='#009000', label='MS AV18 FSI',zorder=1)
 
+    B.plot_exp(pm_avg_75, R_Paris_pwia75, marker='None', linestyle='--', color='#0000ff', label='JML Paris PWIA',zorder=1)
+    B.plot_exp(pm_avg_75, R_Paris_fsi75, marker='None', linestyle='-', color='#0000ff', label='JML Paris FSI',zorder=1)
     #Plot J.W.V.Orden Calculations RATIO
     #B.plot_exp(pm_avg[thnq==75], R_Ref_jvo_75, marker='None', linestyle='--', color='purple', label='CD-Bonn (GKex05) PWBA', zorder=2)
 
-    B.plot_exp(pm_avg_75, R_WJC2_GK_pwba_75, marker='None', linestyle='--', color='orange', label='WJC2 PWIA',zorder=1)
-    B.plot_exp(pm_avg_75, R_WJC2_GK_dwba_75, marker='None', linestyle='-', color='orange', label='WJC2 FSI', zorder=1)
+    B.plot_exp(pm_avg_75, R_WJC2_GK_pwba_75, marker='None', linestyle='--', color='orange', label='JVO WJC2 PWBA',zorder=1)
+    B.plot_exp(pm_avg_75, R_WJC2_GK_dwba_75, marker='None', linestyle='-', color='orange', label='JVO WJC2 FSI', zorder=1)
     '''
     B.plot_exp(pm_avg_75, R_WJC2_AMT_pwba_75, marker='None', linestyle='--', color='darkgoldenrod', label='WJC2 (AMT) PWIA', zorder=1)
     B.plot_exp(pm_avg_75, R_WJC2_AMT_dwba_75, marker='None', linestyle='-', color='darkgoldenrod', label='WJC2 (AMT) FSI', zorder=1)
