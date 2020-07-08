@@ -569,7 +569,7 @@ def plot_momentum_dist():
         #======================END PRL PLOTS==============
 
 
-        '''
+        
         #----------------------PRODUCE PLOTS FOR THESIS----------
         
         #-----------------------------ALTERNATIVE: MAKE SUBPLOTS----------------------------------
@@ -590,13 +590,13 @@ def plot_momentum_dist():
         #---------PLOT HALL A DATA---------------
         if(ithnq==35):
             #Plot Hall A Data for thnq==35 or 45 deg
-            B.plot_exp(pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35, marker='s', markersize=6, mfc='white', color='r', label='Hall A Data', zorder=2, capsize=0)
+            B.plot_exp(pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35, marker='s', markersize=6, mfc='white', color='r', label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', zorder=2, capsize=0)
         if(ithnq==45):                                                                                                             
             #Plot Hall A Data for thnq==35 or 45 deg                                                                                                                                                    
-            B.plot_exp(pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45, marker='s', markersize=6, mfc='white', color='r', label='Hall A Data', zorder=2, capsize=0)
+            B.plot_exp(pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45, marker='s', markersize=6, mfc='white', color='r', label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', zorder=2, capsize=0)
         if(ithnq==75):                                                                                                             
             #Plot Hall A Data for thnq==35 or 45 deg                                                                                                                                                    
-            B.plot_exp(pm_ha75, red_dataXsec_ha75, red_dataXsec_err_ha75, marker='s', markersize=6, mfc='white', color='r', label='Hall A Data', zorder=2, capsize=0)
+            B.plot_exp(pm_ha75, red_dataXsec_ha75, red_dataXsec_err_ha75, marker='s', markersize=6, mfc='white', color='r', label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', zorder=2, capsize=0)
         #----------------------------------------
 
         
@@ -604,22 +604,22 @@ def plot_momentum_dist():
 
         #---Paris (Laget calculation)  Q2 = 4.5 +/- 0.5 (multiple interpolations configurations depending on angle setting)
         if(ithnq==5 or ithnq==15 or ithnq==95):
-            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
-            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_fsiXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='JML Paris PWIA')
+            B.plot_exp(pm_avg_4to5[thnq==ithnq], f_red_fsiXsec_avg_4to5_c1(pm_avg_4to5[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='JML Paris FSI')
         elif(ithnq==35 or ithnq==45):
-            B.plot_exp(pm[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
-            B.plot_exp(pm[thnq==ithnq], f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+            B.plot_exp(pm[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c2(pm[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='JML Paris PWIA')
+            B.plot_exp(pm[thnq==ithnq], f_red_fsiXsec_avg_4to5_c2(pm[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='JML Paris FSI')
         else:
-            B.plot_exp(pm[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c3(pm[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='Paris PWIA')
-            B.plot_exp(pm[thnq==ithnq], f_red_fsiXsec_avg_4to5_c3(pm[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='Paris FSI')
+            B.plot_exp(pm[thnq==ithnq], f_red_pwiaXsec_avg_4to5_c3(pm[thnq==ithnq]), linestyle='--', marker='None', color='blue', logy=True, label='JML Paris PWIA')
+            B.plot_exp(pm[thnq==ithnq], f_red_fsiXsec_avg_4to5_c3(pm[thnq==ithnq]), linestyle='-', marker='None', color='blue', logy=True, label='JML Paris FSI')
         
         #AV18
-        B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='AV18 PWIA')   
-        B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='AV18 FSI') 
+        B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='MS AV18 PWIA')   
+        B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='MS AV18 FSI') 
 
         #CD-Bonn
-        B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn PWIA')     
-        B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn FSI') 
+        B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='MS CD-Bonn PWIA')     
+        B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='MS CD-Bonn FSI') 
 
         B.pl.xlabel('')
         B.pl.ylabel(r'$\sigma_{\mathrm{red}} [\mathrm{fm}^{3}]$', fontsize=18)
@@ -693,17 +693,17 @@ def plot_momentum_dist():
             pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
             R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
             R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha)
-            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
         if ithnq==45:
             pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
             R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
             R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha) 
-            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (QHall A)', capsize=0, zorder=2)
         if ithnq==75:
             pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
             R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
             R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha)
-            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (QHall A)', capsize=0, zorder=2)
         
         
         #Set axis limits
@@ -778,17 +778,17 @@ def plot_momentum_dist():
             pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
             R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
             R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha)
-            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
         if ithnq==45:
             pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
             R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
             R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha) 
-            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
         if ithnq==75:
             pm_ha, red_dataXsec_ha, red_dataXsec_err_ha = read_halla_data(ithnq)
             R_HAdata = red_dataXsec_ha / f_red_pwiaXsec_CD(pm_ha)                #Hall A data (Q2=3.5) ratio to CD-Bonn PWIA (Q2=4.5)
             R_HAdata_err =  red_dataXsec_err_ha / f_red_pwiaXsec_CD(pm_ha)
-            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label='$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
+            B.plot_exp(pm_ha, R_HAdata, R_HAdata_err, marker='s', color='r', mfc='white',  label=r'$Q^{2}=3.5\pm0.25$ GeV$^{2}$ (Hall A)', capsize=0, zorder=2)
 
 
 
@@ -825,6 +825,7 @@ def plot_momentum_dist():
 
         #B.pl.show()
 
+        '''
         #----------------------------PLOT RELATIVE ERRORS------------------------
         B.pl.figure(figsize=(10,7))
 
@@ -945,8 +946,8 @@ def plot_momentum_dist():
         fout_3to4.close()
         
         #=============================END CODE TO PRODUCE THESIS PLOTS================================
-
-        '''   
+        '''
+        '''
         #Require ONLY thnq = 35, 45 deg
         if (ithnq==35 or ithnq==45):
             #-------FIT data and model reduced cross sections directly----------
@@ -997,54 +998,51 @@ def plot_momentum_dist():
             
             #--------Plot reduced data and model cross sections to be fitted
             B.plot_exp(pm_avg_data, sig_exp, sig_exp_err, marker='o', markersize=6, c='k', mec='k', mfc='k', label=r'$Q^{2}=4.5\pm0.5$ GeV$^{2}$ (Hall C)', zorder=4,capsize=0)
-            
-            '''
+
             #Paris, Galster parametrization: neutron electric form factor, proton electric form factor:  O. Gayou, et al., Phys. Rev. Lett. 88 (2002) 092301, magnetic form factors: conventional dipole expression
             B.plot_exp(pm_paris, sig_paris_pwia, linestyle='--', marker='None', color='blue', logy=True, label='Paris (Galster) PWIA')
             B.plot_exp(pm_paris, sig_paris_fsi, linestyle='-', marker='None', color='blue', logy=True, label='Paris (Galster) FSI')
-            '''
             
-            '''
             #AV18 (JJK)
             B.plot_exp(pm_avg1, f_red_pwiaXsec_V18(pm_avg1), linestyle='--', marker='None', color='green', logy=True, label='AV18 (JJK) PWIA')   
             B.plot_exp(pm_avg2, f_red_fsiXsec_V18(pm_avg2), linestyle='-', marker='None', color='green', logy=True, label='AV18 (JJK) FSI') 
-            '''
+            
 
-            '''
+            
             #CD-Bonn (JJK)
             B.plot_exp(pm_avg3, f_red_pwiaXsec_CD(pm_avg3), linestyle='--', marker='None', color='magenta', logy=True, label='CD-Bonn (JJK) PWIA')     
             B.plot_exp(pm_avg4, f_red_fsiXsec_CD(pm_avg4), linestyle='-', marker='None', color='magenta', logy=True, label='CD-Bonn (JJK) FSI') 
-            '''
+            
             
             
             #------J.W.V.Orden Calculations using WJC2, AV18 and CD-Bonn
 
-            '''
+            
             #WJC2 (GK)
             B.plot_exp(pm_avg_data, sig_WJC2_GK_pwba, linestyle='--', marker='None', color='orange', logy=True, label='WJC2 (GKex05) PWIA', zorder=2 )
             B.plot_exp(pm_avg_data, sig_WJC2_GK_dwba, linestyle='-', marker='None', color='orange', logy=True, label='WJC2 (GKex05) FSI', zorder=2 )
-            '''
             
-            '''
+            
+            
             #WJC2 (AMT)
             B.plot_exp(pm_avg_data, sig_WJC2_AMT_pwba, linestyle='--', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) PWIA', zorder=2 )
             B.plot_exp(pm_avg_data, sig_WJC2_AMT_dwba, linestyle='-', marker='None', color='darkgoldenrod', logy=True, label='WJC2 (AMT) FSI', zorder=2 )
-            '''
-            '''
+            
+            
             #AV18 (GK)
             B.plot_exp(pm_avg_data,  sig_AV18_GK_pwba, linestyle='--', marker='None', color='cyan', logy=True, label='AV18 (GKex05) PWIA', zorder=2 )
             B.plot_exp(pm_avg_data,  sig_AV18_GK_dwba, linestyle='-', marker='None', color='cyan', logy=True, label='AV18 (GKex05) FSI', zorder=2 )
-            '''
-            '''
+            
+            
             #AV18 (AMT)
             B.plot_exp(pm_avg_data,  sig_AV18_AMT_pwba, linestyle='--', marker='None', color='darkcyan', logy=True, label='AV18 (AMT) PWIA', zorder=2 )
             B.plot_exp(pm_avg_data,  sig_AV18_AMT_dwba, linestyle='-', marker='None', color='darkcyan', logy=True, label='AV18 (AMT) FSI', zorder=2 )
-            '''
-            '''
+            
+            
             #CD-Bonn(GK)
             B.plot_exp(pm_avg_data,  sig_CD_GK_pwba, linestyle='--', marker='None', color='purple', logy=True, label='CD-Bonn (GKex05) PWIA', zorder=2 )
             B.plot_exp(pm_avg_data,  sig_CD_GK_dwba, linestyle='-', marker='None', color='purple', logy=True, label='CD-Bonn (GKex05) FSI', zorder=2 )
-            '''
+            
             
             #CD-Bonn (AMT)
             B.plot_exp(pm_avg_data,  sig_CD_AMT_pwba, linestyle='--', marker='None', color='darkviolet', logy=True, label='CD-Bonn (AMT) PWIA', zorder=2 )
@@ -1075,7 +1073,7 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='DATA FIT \n slope: %.4E $\pm$ %.4E'%(mp, mp_err))
             B.pl.yscale('log')
             #----------------------------
-            '''
+            
             #--------Fit Paris--------
             #PWIA (Galster)
             xd =pm_paris[ (~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
@@ -1105,8 +1103,8 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #----------------------------
-            '''
-            '''
+            
+            
             #--------Fit AV18------------
             #PWIA
             xd =pm_avg1[ (~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
@@ -1135,9 +1133,9 @@ def plot_momentum_dist():
             B.pl.yscale('log')
             
             #----------------------------
-            '''
             
-            '''
+            
+            
             #--------Fit CD-Bonn---------
             #PWIA
             xd =pm_avg3[ (~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
@@ -1166,11 +1164,11 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #----------------------------
-            '''
+            
             
             #========J.W.V.Orden Calculations======
 
-            '''
+            
             #--------Fit WJC2----------
             #PWBA (GKex05) 
             xd =pm_avg_data[ (~np.isnan(sig_WJC2_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
@@ -1196,8 +1194,8 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC2 (GKex05) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_wjc2, mp_wjc2_err, R_wjc2))
             B.pl.yscale('log')
             #----------------------------
-            '''
-            '''
+            
+            
             #--------Fit WJC2-----------
             #PWBA (AMT)
             xd =pm_avg_data[ (~np.isnan(sig_WJC2_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
@@ -1223,9 +1221,9 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC2 (AMT) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_wjc2, mp_wjc2_err, R_wjc2))
             B.pl.yscale('log')
             #----------------------------
-            '''
             
-            '''
+            
+            
             #--------Fit AV18------------
             #PWBA (GKex05)
             xd =pm_avg_data[ (~np.isnan(sig_AV18_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
@@ -1251,8 +1249,8 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (GKex05) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_av18, mp_av18_err, R_av18))
             B.pl.yscale('log')
             #----------------------------
-            '''
-            '''
+            
+            
             #--------Fit AV18------------
             #PWBA (AMT)
             xd =pm_avg_data[ (~np.isnan(sig_AV18_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
@@ -1278,8 +1276,8 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='AV18 (AMT) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_av18, mp_av18_err, R_av18))
             B.pl.yscale('log')
             #----------------------------
-            '''
-            '''
+            
+            
             #--------Fit CD-Bonn---------
             #PWBA (GKex05)
             xd =pm_avg_data[ (~np.isnan(sig_CD_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
@@ -1305,8 +1303,8 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='CD-Bonn (GKex05) FSI FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_cd, mp_cd_err, R_cd))
             B.pl.yscale('log')
             #----------------------------
-            '''
-
+            
+            
             #--------Fit CD-Bonn---------
             #PWBA (AMT)
             xd =pm_avg_data[ (~np.isnan(sig_CD_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
@@ -1360,7 +1358,7 @@ def plot_momentum_dist():
             B.pl.legend(loc='upper right', fontsize='small')
             B.pl.show()
             
-            '''
+            
             #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
             
             
@@ -1465,11 +1463,11 @@ def plot_momentum_dist():
                 B.pl.legend(loc='upper right', fontsize='small')
                 B.pl.show()
                 #B.pl.savefig(dir_name+'/ratio_test_fp%f_thnq%i.pdf'%(fp[j], ithnq))   
-            '''
+            
 
 
         
-    '''
+    
     #Read Models at all other angles
     #Read All Other Theoretical Models At all angles (V18, CD-BONN)
 
