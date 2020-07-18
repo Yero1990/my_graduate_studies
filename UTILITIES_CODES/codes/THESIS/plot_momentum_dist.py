@@ -569,6 +569,7 @@ def plot_momentum_dist():
         #======================END PRL PLOTS==============
 
 
+        '''
         
         #----------------------PRODUCE PLOTS FOR THESIS----------
         
@@ -824,7 +825,9 @@ def plot_momentum_dist():
         B.pl.savefig(dir_name1+'/redXsec_thnq%i_deg.pdf'%(ithnq))
 
         #B.pl.show()
+        '''
 
+        
         '''
         #----------------------------PLOT RELATIVE ERRORS------------------------
         B.pl.figure(figsize=(10,7))
@@ -947,7 +950,10 @@ def plot_momentum_dist():
         
         #=============================END CODE TO PRODUCE THESIS PLOTS================================
         '''
-        '''
+
+
+        #DO LINE FITS OF Pr = 550 - 1000 MeV/c
+        
         #Require ONLY thnq = 35, 45 deg
         if (ithnq==35 or ithnq==45):
             #-------FIT data and model reduced cross sections directly----------
@@ -1062,6 +1068,7 @@ def plot_momentum_dist():
                 return y
             
             #--------Fit data----------
+            print('DATA')
             xd =pm_avg_data[ (~np.isnan(sig_exp)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_exp[(~np.isnan(sig_exp)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd_err = sig_exp_err[(~np.isnan(sig_exp)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
@@ -1070,11 +1077,12 @@ def plot_momentum_dist():
             F = B.genfit(f,[m,b], xd, yd, yd_err)            
             mp = m.get()[1] ; mp_err=m.get()[2]
             bp = np.log(b.get()[1]) ; bp_err=np.log(b.get()[2])
-            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='DATA FIT \n slope: %.4E $\pm$ %.4E'%(mp, mp_err))
+            B.plot_line(F.xpl, F.ypl, color='r', lw=2, label=r'DATA FIT \n slope: %.2E $\pm$ %.2E$'%(mp, mp_err))
             B.pl.yscale('log')
             #----------------------------
             
             #--------Fit Paris--------
+            print('PARIS PWIA (Galster)')
             #PWIA (Galster)
             xd =pm_paris[ (~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             yd = sig_paris_pwia[(~np.isnan(sig_paris_pwia)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
@@ -1089,7 +1097,9 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='Paris (Galster) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_paris, mp_paris_err, R_paris))
             B.pl.yscale('log')
 
+            
             #FSI (Galster)
+            print('PARIS FSI (Galster)')
             xd =pm_paris[ (~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             yd = sig_paris_fsi[(~np.isnan(sig_paris_fsi)) & (pm_paris>=0.55) & (pm_paris<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1103,10 +1113,11 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #----------------------------
-            
+        
             
             #--------Fit AV18------------
             #PWIA
+            print('AV18 PWIA (JJK)')
             xd =pm_avg1[ (~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
             yd = sig_V18_pwia[(~np.isnan(sig_V18_pwia)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
             m = B.Parameter(1., 'm')
@@ -1120,6 +1131,7 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #FSI
+            print('AV18 FSI (JJK)')
             xd =pm_avg1[ (~np.isnan(sig_V18_fsi)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
             yd = sig_V18_fsi[(~np.isnan(sig_V18_fsi)) & (pm_avg1>=0.55) & (pm_avg1<=1.)]
             m = B.Parameter(1., 'm')
@@ -1138,6 +1150,7 @@ def plot_momentum_dist():
             
             #--------Fit CD-Bonn---------
             #PWIA
+            print('CD-Bonn PWIA (JJK)')
             xd =pm_avg3[ (~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
             yd = sig_CD_pwia[(~np.isnan(sig_CD_pwia)) & (pm_avg3>=0.55) & (pm_avg3<=1.)]
             m = B.Parameter(1., 'm')
@@ -1151,6 +1164,7 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #FSI
+            print('CD-Bonn FSI (JJK)')
             xd =pm_avg4[ (~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
             yd = sig_CD_fsi[(~np.isnan(sig_CD_fsi)) & (pm_avg4>=0.55) & (pm_avg4<=1.)]
             m = B.Parameter(1., 'm')
@@ -1170,7 +1184,8 @@ def plot_momentum_dist():
 
             
             #--------Fit WJC2----------
-            #PWBA (GKex05) 
+            #PWBA (GKex05)
+            print('WJC2 PWIA (GKex05)')
             xd =pm_avg_data[ (~np.isnan(sig_WJC2_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_WJC2_GK_pwba[(~np.isnan(sig_WJC2_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1182,7 +1197,8 @@ def plot_momentum_dist():
             B.plot_line(F.xpl, F.ypl, color='r', lw=2, label='WJC2 (GKex05) PWIA FIT \n slope: %.4E $\pm$ %.4E \n (R=%.3f$\\sigma$)'%(mp_wjc2, mp_wjc2_err, R_wjc2))
             B.pl.yscale('log')
             
-            #DWBA (GKex05) 
+            #DWBA (GKex05)
+            print('WJC2 FSI (GKex05)')
             xd =pm_avg_data[ (~np.isnan(sig_WJC2_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_WJC2_GK_dwba[(~np.isnan(sig_WJC2_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1198,6 +1214,7 @@ def plot_momentum_dist():
             
             #--------Fit WJC2-----------
             #PWBA (AMT)
+            print('WJC2 PWIA (AMT)')
             xd =pm_avg_data[ (~np.isnan(sig_WJC2_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_WJC2_AMT_pwba[(~np.isnan(sig_WJC2_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1210,6 +1227,7 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #DWBA (AMT)
+            print('WJC2 FSI (AMT)')
             xd =pm_avg_data[ (~np.isnan(sig_WJC2_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_WJC2_AMT_dwba[(~np.isnan(sig_WJC2_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1226,6 +1244,7 @@ def plot_momentum_dist():
             
             #--------Fit AV18------------
             #PWBA (GKex05)
+            print('AV18 PWIA (GKex05)')
             xd =pm_avg_data[ (~np.isnan(sig_AV18_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_AV18_GK_pwba[(~np.isnan(sig_AV18_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1238,6 +1257,7 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #DWBA (GKex05)
+            print('AV18 FSI (GKex05)')
             xd =pm_avg_data[ (~np.isnan(sig_AV18_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_AV18_GK_dwba[(~np.isnan(sig_AV18_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1253,6 +1273,7 @@ def plot_momentum_dist():
             
             #--------Fit AV18------------
             #PWBA (AMT)
+            print('AV18 PWIA (AMT)')
             xd =pm_avg_data[ (~np.isnan(sig_AV18_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_AV18_AMT_pwba[(~np.isnan(sig_AV18_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1265,6 +1286,7 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #DWBA (AMT)
+            print('AV18 FSI (AMT)')
             xd =pm_avg_data[ (~np.isnan(sig_AV18_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_AV18_AMT_dwba[(~np.isnan(sig_AV18_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1280,6 +1302,7 @@ def plot_momentum_dist():
             
             #--------Fit CD-Bonn---------
             #PWBA (GKex05)
+            print('CD-Bonn PWIA (GKex05)')
             xd =pm_avg_data[ (~np.isnan(sig_CD_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_CD_GK_pwba[(~np.isnan(sig_CD_GK_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1292,6 +1315,7 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #DWBA (GKex05)
+            print('CD-Bonn FSI (GKex05)')
             xd =pm_avg_data[ (~np.isnan(sig_CD_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_CD_GK_dwba[(~np.isnan(sig_CD_GK_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1307,6 +1331,7 @@ def plot_momentum_dist():
             
             #--------Fit CD-Bonn---------
             #PWBA (AMT)
+            print('CD-Bonn PWIA (AMT)')
             xd =pm_avg_data[ (~np.isnan(sig_CD_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_CD_AMT_pwba[(~np.isnan(sig_CD_AMT_pwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1319,6 +1344,7 @@ def plot_momentum_dist():
             B.pl.yscale('log')
 
             #DWBA (AMT)
+            print('CD-Bonn FSI (AMT)')
             xd =pm_avg_data[ (~np.isnan(sig_CD_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             yd = sig_CD_AMT_dwba[(~np.isnan(sig_CD_AMT_dwba)) & (pm_avg_data>=0.55) & (pm_avg_data<=1.0)]
             m = B.Parameter(1., 'm')
@@ -1358,7 +1384,7 @@ def plot_momentum_dist():
             B.pl.legend(loc='upper right', fontsize='small')
             B.pl.show()
             
-            
+            '''
             #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
             
             
