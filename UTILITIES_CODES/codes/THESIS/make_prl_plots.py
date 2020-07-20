@@ -995,10 +995,10 @@ def make_prl_plots():
 
     #Plot the Data (and all models) to CD-Bonn PWIA model
     #B.plot_exp(pm_avg[thnq==35], R_ref35,  marker='None', linestyle='--', color='#ff00ff', label='CD-Bonn PWIA')
-    B.pl.axhline(y=1.0, xmin=0.0, xmax=0.6, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
+    B.pl.axhline(y=1.0, xmin=0.0, xmax=0.5, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
 
     B.plot_exp(pm_ha75, R_HAdata75, R_HAdata_err75, marker='s', color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0,zorder=3)
-    B.plot_exp(pm_avg_75, R_data75, R_data_err75, marker='o', color='k', label='Hall C Data', capsize=0,zorder=4)
+    B.plot_exp(pm_avg_75, R_data75, R_data_err75, marker='o', color='k', label='This Experiment (Hall C)', capsize=0,zorder=4)
 
     B.plot_exp(pm_avg_75, R_CDBonn_fsi75, marker='None', linestyle='-', color='#ff00ff', label='MS CD-Bonn FSI',zorder=1)
 
