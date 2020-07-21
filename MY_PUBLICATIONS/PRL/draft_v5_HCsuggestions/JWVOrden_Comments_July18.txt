@@ -1,7 +1,8 @@
 Hi All,
  
 I have a few brief comments on this draft.
- 
+
+***being looked at by M. Sargsian
 First, I would like to comment on the discussion of exchange currents (including what you refer to as the IC) on page 2.
 If the NN model used to obtain the wave functions, and ideally the final state interactions us a derivative coupling of NNpi
 coupling as in chiral EFT, there is an NN\pi\gamma contact interaction that also contributes to the exchange current with only
@@ -14,10 +15,11 @@ This seems to imply that this is the only formulation of the problem that does s
 replaced by something like “can be described by”.
 ************
 
-
-On page 5 in the second full paragraph above the bottom of the first full column you mentioned the extraction of the genuine
-momentum distribution. You may tired of hearing this from me, but the momentum distribution is not a quantum mechanical
+*****DONE*****
+On page 5 in the second full paragraph above the bottom of the first full column you mentioned the extraction of the     "genuine" (remove this word)
+close approximation to the momentum distribution. You may tired of hearing this from me, but the momentum distribution is not a quantum mechanical
 observable an will always be model dependent at some level.
+**************
 
 *****DONE*****
 It would probably be useful to state which parameterization of the electromagnetic form factors are used in all of the
@@ -45,3 +47,8 @@ Hello all,
 
 Best wishes,
 Sabine
+
+
+-----------------
+
+July 21, 2020 PRL Meeting:

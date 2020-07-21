@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  20 JUL 2020 13:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  21 JUL 2020 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -499,10 +499,10 @@ Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 5FB4ED4F338BC142CDC291E26D1DB09F;197.
  ) 
 Here is how much of TeX's memory you used:
- 8471 strings out of 494108
- 119764 string characters out of 6155655
- 358496 words of memory out of 5000000
- 11684 multiletter control sequences out of 15000+600000
+ 8469 strings out of 494108
+ 119744 string characters out of 6155655
+ 351919 words of memory out of 5000000
+ 11682 multiletter control sequences out of 15000+600000
  15027 words of font info for 56 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
  30i,8n,57p,646b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -529,7 +529,7 @@ ype1/public/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public
 /amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on prl.pdf (7 pages, 424769 bytes).
+Output written on prl.pdf (7 pages, 424813 bytes).
 PDF statistics:
  375 PDF objects out of 1000 (max. 8388607)
  322 compressed objects within 4 object streams

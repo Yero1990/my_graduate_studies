@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  20 JUL 2020 13:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  21 JUL 2020 11:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -426,13 +426,14 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 89.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (./intro-diff.tex
 [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-(./body-diff.tex [2] <prl_plots/PRL_plot1.pdf, id=81, 968.41798pt x 433.62pt>
+(./body-diff.tex [2] [3]
+<prl_plots/PRL_plot1.pdf, id=95, 968.41798pt x 433.62pt>
 File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use prl_plots/PRL_plot1.pdf>
 Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 48.
 (pdftex.def)             Requested size: 445.47768pt x 199.46762pt.
- [3]
+
 <./prl_plots/PRL_plot2.pdf, id=128, 484.209pt x 722.7pt>
 File: ./prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
@@ -512,13 +513,13 @@ Package rerunfilecheck Info: File `prl-diff.out' has not changed.
 (rerunfilecheck)             Checksum: 5FB4ED4F338BC142CDC291E26D1DB09F;197.
  ) 
 Here is how much of TeX's memory you used:
- 8562 strings out of 494108
- 120738 string characters out of 6155655
- 366559 words of memory out of 5000000
- 11770 multiletter control sequences out of 15000+600000
+ 8564 strings out of 494108
+ 120759 string characters out of 6155655
+ 358577 words of memory out of 5000000
+ 11772 multiletter control sequences out of 15000+600000
  15133 words of font info for 57 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 31i,8n,57p,651b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 31i,8n,57p,651b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -543,7 +544,7 @@ ublic/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public
 /amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/latxfont/lasy6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on prl-diff.pdf (7 pages, 429436 bytes).
+Output written on prl-diff.pdf (7 pages, 430014 bytes).
 PDF statistics:
  378 PDF objects out of 1000 (max. 8388607)
  324 compressed objects within 4 object streams
