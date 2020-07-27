@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  21 JUL 2020 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  27 JUL 2020 15:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**prl-diff.tex
-(./prl-diff.tex
+**prl.tex
+(./prl.tex
 LaTeX2e <2017-04-15>
 Babel <3.10> and hyphenation patterns for 46 language(s) loaded.
 (/opt/local/share/texmf-texlive/tex/latex/revtex4-2.cls
@@ -319,102 +319,48 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count107
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 42.
-
-(/opt/local/share/texmf-texlive/tex/generic/ulem/ulem.sty
-\UL@box=\box43
-\UL@hyphenbox=\box44
-\UL@skip=\skip58
-\UL@hook=\toks21
-\UL@height=\dimen110
-\UL@pe=\count108
-\UL@pixel=\dimen111
-\ULC@box=\box45
-Package: ulem 2012/05/18
-\ULdepth=\dimen112
-)
-(/opt/local/share/texmf-texlive/tex/latex/oberdiek/settobox.sty
-Package: settobox 2016/05/16 v1.5 Assign box dimensions to length registers (HO
-)
-)
-\DIFdelgraphicsbox=\box46
-\DIFdelgraphicswidth=\skip59
-\DIFdelgraphicsheight=\skip60
-LaTeX Info: Redefining \DIFaddbegin on input line 100.
-LaTeX Info: Redefining \DIFaddend on input line 101.
-LaTeX Info: Redefining \DIFdelbegin on input line 102.
-LaTeX Info: Redefining \DIFdelend on input line 103.
-LaTeX Info: Redefining \DIFaddbeginFL on input line 108.
-LaTeX Info: Redefining \DIFaddendFL on input line 109.
-LaTeX Info: Redefining \DIFdelbeginFL on input line 110.
-LaTeX Info: Redefining \DIFdelendFL on input line 111.
-
-(/opt/local/share/texmf-texlive/tex/latex/listings/listings.sty
-\lst@mode=\count109
-\lst@gtempboxa=\box47
-\lst@token=\toks22
-\lst@length=\count110
-\lst@currlwidth=\dimen113
-\lst@column=\count111
-\lst@pos=\count112
-\lst@lostspace=\dimen114
-\lst@width=\dimen115
-\lst@newlines=\count113
-\lst@lineno=\count114
-\lst@maxwidth=\dimen116
-
-(/opt/local/share/texmf-texlive/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count115
-\lst@skipnumbers=\count116
-\lst@framebox=\box48
-)
-(/opt/local/share/texmf-texlive/tex/latex/listings/listings.cfg
-File: listings.cfg 2015/06/04 1.6 listings configuration
-))
-Package: listings 2015/06/04 1.6 (Carsten Heinz)
+Package hyperref Info: Option `colorlinks' set `true' on input line 39.
 Class revtex4-2 Info: Unrecognized array package. Please update this document c
-lass! (Proceeding with fingers crossed.) on input line 130.
+lass! (Proceeding with fingers crossed.) on input line 46.
 
 
 Class revtex4-2 Warning: Repair the float package.
 
-Class revtex4-2 Info: Robustifying \LaTeX's \boldmath command on input line 130
-.
-Class revtex4-2 Info: cite was not loaded (OK!) on input line 130.
-Class revtex4-2 Info: mcite was not loaded (OK!) on input line 130.
-Class revtex4-2 Info: multicol was not loaded (OK!) on input line 130.
-(./prl-diff.aux)
-\openout1 = `prl-diff.aux'.
+Class revtex4-2 Info: Robustifying \LaTeX's \boldmath command on input line 46.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 46.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 46.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 46.
+(./prl.aux)
+\openout1 = `prl.aux'.
 
-(/opt/local/share/texmf-texlive/tex/context/base/mkii/supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+ (/opt/local/share/texmf-texlive/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen117
-\scratchbox=\box49
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen118
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count108
+\scratchdimen=\dimen110
+\scratchbox=\box43
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen111
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks22
 ) (/opt/local/share/texmf-texlive/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -432,8 +378,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\AtBeginShipoutBox=\box50
-Package hyperref Info: Link coloring ON on input line 130.
+\AtBeginShipoutBox=\box44
+Package hyperref Info: Link coloring ON on input line 46.
 
 (/opt/local/share/texmf-texlive/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -441,183 +387,57 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/opt/local/share/texmf-texlive/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count123
+\c@section@level=\count114
 )
-LaTeX Info: Redefining \ref on input line 130.
-LaTeX Info: Redefining \pageref on input line 130.
-LaTeX Info: Redefining \nameref on input line 130.
+LaTeX Info: Redefining \ref on input line 46.
+LaTeX Info: Redefining \pageref on input line 46.
+LaTeX Info: Redefining \nameref on input line 46.
 
-(./prl-diff.out) (./prl-diff.out)
+(./prl.out) (./prl.out)
 \@outlinefile=\write4
-\openout4 = `prl-diff.out'.
+\openout4 = `prl.out'.
 
-\c@lstlisting=\count124
-Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 130.
-\openout3 = `prl-diffNotes.bib'.
+Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 46.
+\openout3 = `prlNotes.bib'.
 
- (./authorlist-diff.tex)
-LaTeX Font Info:    Try loading font information for U+msa on input line 156.
+ (./authorlist.tex)
+LaTeX Font Info:    Try loading font information for U+msa on input line 70.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 156.
+LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\DIFaddincludegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\DIFdelincludegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\DIFdelincludegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\DIFaddincludegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\<let>-command' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\includegraphics' on input line 166.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\@ifnextchar' on input line 166.
-
-(./intro-diff.tex
-Underfull \hbox (badness 1552) in paragraph at lines 1--44
-|   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []
- []
-
-[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
-(./body-diff.tex [3] <prl_plots/PRL_plot1.pdf, id=94, 968.41798pt x 433.62pt>
+) (./introduction.tex [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex
+.map}]) (./body.tex
+[2] <prl_plots/PRL_plot1.pdf, id=80, 968.41798pt x 433.62pt>
 File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use prl_plots/PRL_plot1.pdf>
 Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 48.
 (pdftex.def)             Requested size: 445.47768pt x 199.46762pt.
-
-<./prl_plots/PRL_plot2.pdf, id=130, 484.209pt x 722.7pt>
+ [3]
+<./prl_plots/PRL_plot2.pdf, id=127, 484.209pt x 722.7pt>
 File: ./prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use ./prl_plots/PRL_plot2.pdf>
-Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 161.
+Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 110.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
-
-Underfull \hbox (badness 1616) in paragraph at lines 82--190
-|   []   |   []   |   []   |   []   |   []   |   []   |   []
- []
-
-
-Underfull \hbox (badness 1259) in paragraph at lines 82--190
-|   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []
- []
-
-
-Underfull \hbox (badness 1540) in paragraph at lines 82--190
-|   []   |   []   |   []   |   []   |   []   |   []   |   []
- []
-
-
-Underfull \hbox (badness 2573) in paragraph at lines 82--190
-|   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []
- []
-
-
-Underfull \hbox (badness 5460) in paragraph at lines 82--190
-|   []   |   []   |   []   |   []   |   []   |   []   |   []   |   []
- []
-
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
-has been already used, duplicate ignored
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
+ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.190 
-       <./prl_plots/PRL_plot1.pdf>] [5]
+l.137 
+       <./prl_plots/PRL_plot1.pdf>] [5pdfTeX warning (ext4): destination with t
+he same identifier (name{figure.2}) has been already used, duplicate ignored
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 190.
-
-) (./prl-diff.bbl
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.137 
+       <./prl_plots/PRL_plot2.pdf>]) (./prl.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
@@ -630,13 +450,7 @@ Underfull \hbox (badness 2922) in paragraph at lines 118--126
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
-[6pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.188   \emph {et~al.}}]{PhysRevLett.107.262501}
-                                                % <./prl_plots/PRL_plot2.pdf>]
 Underfull \hbox (badness 1558) in paragraph at lines 192--198
  []\OT1/cmr/m/n/9 W. U. Boeglin \OT1/cmr/m/it/9 et al. \OT1/cmr/m/n/9 (For the 
 Hall A Col-lab-o-ra-
@@ -672,25 +486,26 @@ Underfull \hbox (badness 2351) in paragraph at lines 280--285
 teron
  []
 
+[6]
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
 ) [7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 179.
- (./prl-diff.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 179.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 179.
-Package rerunfilecheck Info: File `prl-diff.out' has not changed.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 93.
+ (./prl.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 93.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 93.
+Package rerunfilecheck Info: File `prl.out' has not changed.
 (rerunfilecheck)             Checksum: 5FB4ED4F338BC142CDC291E26D1DB09F;197.
  ) 
 Here is how much of TeX's memory you used:
- 9800 strings out of 494108
- 139118 string characters out of 6155655
- 451102 words of memory out of 5000000
- 12993 multiletter control sequences out of 15000+600000
- 15133 words of font info for 57 fonts, out of 8000000 for 9000
+ 8469 strings out of 494108
+ 119744 string characters out of 6155655
+ 351919 words of memory out of 5000000
+ 11682 multiletter control sequences out of 15000+600000
+ 15027 words of font info for 56 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 37i,8n,61p,715b,524s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,8n,57p,646b,553s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -713,12 +528,11 @@ onts/type1/public/amsfonts/cm/cmsy9.pfb></opt/local/share/texmf-texlive/fonts/t
 ype1/public/amsfonts/cm/cmti9.pfb></opt/local/share/texmf-texlive/fonts/type1/p
 ublic/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public
 /amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
-nts/latxfont/lasy6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on prl-diff.pdf (7 pages, 444999 bytes).
+Output written on prl.pdf (7 pages, 424813 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 328 compressed objects within 4 object streams
+ 375 PDF objects out of 1000 (max. 8388607)
+ 322 compressed objects within 4 object streams
  53 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
