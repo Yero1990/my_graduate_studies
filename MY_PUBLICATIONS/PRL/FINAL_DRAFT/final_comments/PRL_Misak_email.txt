@@ -1,0 +1,41 @@
+Hi Carlos,
+
+Attached is your draft of the paper with some suggestions
+
+The text I suggest to add is marked by numbers 1,2 3 which are
+
+1 However in difference to SRCs they were related mostly to the final state structure of nuclei
+rather than to its initial state (see. e.g. Ref.\cite{Frankfurt:1999ik}).
+
+
+2 
+In addition to  PWIA picture,  the ejected nucleon undergoes  final state interaction  with the recoiling nucleon.
+Other contributing  processes are the photon coupling to the exchanged mesons in the 
+$pn$ system generating meson exchange currents (MEC) or photon exciting the bound nucleon into 
+the resonating state (mainly $\Delta$ -isobar)  with subsequent $\Delta N\to NN$ rescattering 
+referred to  as  isobar currents, (IC).
+
+
+3.
+Note that other meson exchange contributions that take place before the 
+virtual photon interaction is included in the definition of the ground state wave function of 
+the detueron.
+
+\bibitem{Frankfurt:1999ik}
+L.~L.~Frankfurt, G.~A.~Miller, M.~M.~Sargsian and M.~I.~Strikman,
+%``QCD rescattering and high-energy two-body photodisintegration of the deuteron,''
+Phys. Rev. Lett. \textbf{84}, 3045-3048 (2000)
+doi:10.1103/PhysRevLett.84.3045
+[arXiv:hep-ph/9904222 [hep-ph]].
+
+
+—— also Reference [5] is about EMC effect. I suggest to replace it by 
+\bibitem{Hen:2014nza}
+O.~Hen, {\em et al.}  %``Momentum sharing in imbalanced Fermi systems,'' Science \textbf{346}, 614-617 (2014)
+doi:10.1126/science.1256785
+[arXiv:1412.0138 [nucl-ex]].
+
+
+Regards
+Misak
+

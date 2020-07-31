@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  29 JUL 2020 11:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  31 JUL 2020 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -489,64 +489,85 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 159.
 (/opt/local/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./introduction-diff.tex [1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdf
-tex.map}]) (./body-diff.tex
-<prl_plots/PRL_plot1.pdf, id=65, 968.41798pt x 433.62pt>
+(./introduction-diff.tex
+Underfull \hbox (badness 2005) in paragraph at lines 1--48
+[]\OT1/cmr/m/n/10 In []|   [][][]|   []   |   []   |   []   |   [][], the eject
+ed
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 1--48
+\OT1/cmr/m/n/10 nu-cleon un-der-goes []|   []   |   []   |   []   |   []
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 1--48
+[]\OT1/cmr/m/n/10 bound nu-cleon into []|   []   |   []   |   []   |   []   |  
+ [][][]|   []
+ []
+
+[1{/opt/local/var/db/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2])
+(./body-diff.tex <prl_plots/PRL_plot1.pdf, id=88, 968.41798pt x 433.62pt>
 File: prl_plots/PRL_plot1.pdf Graphic file (type pdf)
 
 <use prl_plots/PRL_plot1.pdf>
-Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 45.
+Package pdftex.def Info: prl_plots/PRL_plot1.pdf used on input line 42.
 (pdftex.def)             Requested size: 435.78407pt x 195.1272pt.
- [2] [3]
-<./prl_plots/PRL_plot2.pdf, id=128, 484.209pt x 722.7pt>
+ [3]
+<./prl_plots/PRL_plot2.pdf, id=130, 484.209pt x 722.7pt>
 File: ./prl_plots/PRL_plot2.pdf Graphic file (type pdf)
 
 <use ./prl_plots/PRL_plot2.pdf>
-Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 114.
+Package pdftex.def Info: ./prl_plots/PRL_plot2.pdf used on input line 99.
 (pdftex.def)             Requested size: 242.1039pt x 361.3491pt.
  [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.141 
+l.134 
        <./prl_plots/PRL_plot1.pdf>] [5pdfTeX warning (ext4): destination with t
 he same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.141 
+l.134 
        <./prl_plots/PRL_plot2.pdf>]) (./prl-diff.bbl
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
 
-Underfull \hbox (badness 2922) in paragraph at lines 118--126
+Underfull \hbox (badness 2922) in paragraph at lines 118--132
  \OT1/cmr/m/n/9 045002 (2017)[][], [][]$\OT1/cmtt/m/n/9 https : / / link . aps 
 . org / doi / 10 . 1103 /
+ []
+
+
+Underfull \hbox (badness 4505) in paragraph at lines 152--158
+ []\OT1/cmr/m/n/9 O. Hen, M. Sargsian, L. We-in-stein, E. Pi-aset-
  []
 
 Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
 
-Underfull \hbox (badness 1558) in paragraph at lines 192--198
+Underfull \hbox (badness 1558) in paragraph at lines 237--243
  []\OT1/cmr/m/n/9 W. U. Boeglin \OT1/cmr/m/it/9 et al. \OT1/cmr/m/n/9 (For the 
 Hall A Col-lab-o-ra-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--234
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 274--279
  []\OT1/cmr/m/n/9 M. Christy, P. Mon-aghan, N. Kalan-tar-i-ans,
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 229--234
+Underfull \hbox (badness 1946) in paragraph at lines 274--279
  \OT1/cmr/m/n/9 D. Biswas, and M. Long, SHMS Drift Cham-bers,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--234
+Underfull \hbox (badness 10000) in paragraph at lines 274--279
  [][]$\OT1/cmtt/m/n/9 https : / / hallcweb . jlab . org / document / howtos / s
 hms _
  []
@@ -555,12 +576,12 @@ Missing character: There is no â in font cmr9!
 Missing character: There is no € in font cmr9!
 Missing character: There is no “ in font cmr9!
 
-Underfull \hbox (badness 6220) in paragraph at lines 257--263
+Underfull \hbox (badness 6220) in paragraph at lines 302--308
  []\OT1/cmr/m/n/9 D. Day, Pre-lim-i-nary De-sign of the SHMS No-
  []
 
-[6]
-Underfull \hbox (badness 2351) in paragraph at lines 280--285
+
+Underfull \hbox (badness 2351) in paragraph at lines 325--330
  []\OT1/cmr/m/n/9 C. Yero, \OT1/cmr/m/it/9 Cross Sec-tion Mea-sure-ments of Deu
 teron
  []
@@ -577,13 +598,13 @@ Package rerunfilecheck Info: File `prl-diff.out' has not changed.
 (rerunfilecheck)             Checksum: 5FB4ED4F338BC142CDC291E26D1DB09F;197.
  ) 
 Here is how much of TeX's memory you used:
- 9873 strings out of 494108
- 140666 string characters out of 6155655
- 385479 words of memory out of 5000000
- 13059 multiletter control sequences out of 15000+600000
+ 9884 strings out of 494108
+ 140880 string characters out of 6155655
+ 387132 words of memory out of 5000000
+ 13068 multiletter control sequences out of 15000+600000
  15133 words of font info for 57 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
- 37i,9n,61p,716b,546s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,8n,61p,718b,533s stack positions out of 5000i,500n,10000p,200000b,80000s
 </opt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></o
 pt/local/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.pfb></opt/loc
 al/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/local/sh
@@ -608,10 +629,10 @@ ublic/amsfonts/cm/cmtt10.pfb></opt/local/share/texmf-texlive/fonts/type1/public
 /amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/latxfont/lasy6.pfb></opt/local/share/texmf-texlive/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on prl-diff.pdf (7 pages, 431202 bytes).
+Output written on prl-diff.pdf (7 pages, 436305 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 325 compressed objects within 4 object streams
- 53 named destinations out of 1000 (max. 500000)
+ 390 PDF objects out of 1000 (max. 8388607)
+ 336 compressed objects within 4 object streams
+ 55 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 
