@@ -1,0 +1,22 @@
+H(e,e)p Elastic Cross Section
+
+Q2 =  0.8  [GeV^2]
+e- Beam Energy (Eb) =  2.84353  [GeV]
+e- momentum (kf) =  2.4155348338406935  [GeV/c]
+e- angle (th_e) =  19.65  [deg]
+Xsec (ub/sr) =  0.029752028064657446  +/-  0.000723518889760465  [microbarn/sr]
+Xsec_rel_err= 2.4318304896328597  [%]
+
+Q2 =  2.1  [GeV^2]
+e- Beam Energy (Eb) =  4.70326  [GeV]
+e- momentum (kf) =  3.5803828688875257  [GeV/c]
+e- angle (th_e) =  20.34  [deg]
+Xsec (ub/sr) =  0.0005290426624749775  +/-  1.2041785886799744e-05  [microbarn/sr]
+Xsec_rel_err= 2.276146470015411  [%]
+
+Q2 =  3.5  [GeV^2]
+e- Beam Energy (Eb) =  5.00875  [GeV]
+e- momentum (kf) =  3.1300758146547087  [GeV/c]
+e- angle (th_e) =  27.33  [deg]
+Xsec (ub/sr) =  1.5766380351881776e-05  +/-  6.187104102973347e-07  [microbarn/sr]
+Xsec_rel_err= 3.924238769385576  [%]

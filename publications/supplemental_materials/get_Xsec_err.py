@@ -5,15 +5,11 @@ from interpolate_ff import *
 #the electric and magnetic form factors. Then apply error propagation
 #in terms of the form factors to get uncertainty in cross section at thw
 #gven beam energy, elecrtron angle and momentum.
-#Finally, use the error in the Xsec as the error as the simc yield error
 #Define Physical Constnats
-
 
 hbarc = 197.327053 / 1000.       #GeV * fm
 alpha = 1./137.0359895    #structure constant
 dtr = np.pi / 180.
-
-#(1 GeV)^2 = (1000 MeV)^2 = 1e6 MeV^2
 
 #Masses in GeV
 MP = 938.272 / 1000.
@@ -21,7 +17,7 @@ MN = 939.566 / 1000.
 MD = 1875.61 / 1000.
 me = 0.51099 / 1000.
 
-#Elastic Cross Section and its error
+#Template function that returns the H(e,e'p) cross section and its absolute uncertainty in units of ub / sr
 def sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD):
 
     #Units: kf ~ Ef [GeV]   electron momentum  
@@ -41,7 +37,7 @@ def sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD):
     GD = 1. / (1 + Q2/L2)**2     #dipole form factor
     muGD = mu_p * GD   #[GeV T^-1]
     
-    #Get form factors
+    #Calculate the form factors
     GEp = GEp_GD * GD
     GMp = GMp_muGD * muGD
 
@@ -63,39 +59,33 @@ def sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD):
     return sig, dsig
 
 
-#Heep Kinematics
-dtr = np.pi / 180.
-Eb = 10.6005   #beam
-#Ef = 8.5342488  #e- momentum
-th_e = np.array([12.194, 13.93, 9.928, 8.495])  #e- angle
 
-#This selection of e- final momentum is determined by selectin
-#the th_e bin +/- 0.01 deg, i.e. for [13.92,13.94], 
-Ef = np.array([8.4407, 7.951, 9.0603, 9.425])
+#------User Input:
+#Q2 [GeV2]
+#final e- momentum (kf) [GeV]
+#final e- angle (th_e) [deg]
 
-Q2 = 4.*Eb*Ef*np.sin(th_e*dtr/2.)**2   #central Q2 for given kinematics
+Eb = 5.00875
+Q2 = 3.5 
+th_e = 27.33
 
-run = np.array([3288, 3371, 3374, 3377])
+kf = Q2 / ( 4. * Eb * pow(np.sin( th_e/2. * dtr), 2) )  #GeV
 
-for i in range(len(th_e)):
-    
-    ith_e = th_e[i]
-    kf = Ef[i]
-    iQ2 = Q2[i] 
 
-    
-    GEp_GD = get_GEp_GD(iQ2)
-    dGEp_GD = get_dGEp_GD(iQ2)
-    GMp_muGD = get_GMp_muGD(iQ2)
-    dGMp_muGD = get_dGMp_muGD(iQ2)
-     
-    Xsec, Xsec_err = sig(kf, ith_e, iQ2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD)
+#Get the numerical values of the fofa uncertainties from JRA parametrization interpolation (see interpolate_ff.py)
+GEp_GD = get_GEp_GD(Q2)
+dGEp_GD = get_dGEp_GD(Q2)
+GMp_muGD = get_GMp_muGD(Q2)
+dGMp_muGD = get_dGMp_muGD(Q2)
 
-    print('Run Number: %i'%(run[i]))
+Xsec, Xsec_err = sig(kf, th_e, Q2, GEp_GD, GMp_muGD, dGEp_GD, dGMp_muGD)
+Xsec_rel_err = (Xsec_err / Xsec)*100.  #relatice cross section error in percent
 
-    print('Beam Energy: ', Eb,' GeV')
-    print('electron momentum: ', kf, ' GeV')
-    print('electron angle: ',ith_e, ' deg')
-    print('Q2: ', iQ2, ' GeV2')
-    print('Xsec = ',Xsec,' +/- ',Xsec_err, 'microbarn/sr')
-    print('Xsec_rel_err=',Xsec_err / Xsec)
+print('H(e,e)p Elastic Cross Section')
+print('Q2 = ', Q2, ' [GeV^2]')
+print('e- Beam Energy (Eb) = ', Eb, ' [GeV]')
+print('e- momentum (kf) = ', kf, ' [GeV/c]')
+print('e- angle (th_e) = ', th_e, ' [deg]')
+print('Xsec (ub/sr) = ',Xsec,' +/- ',Xsec_err, ' [microbarn/sr]')
+print('Xsec_rel_err=', Xsec_rel_err, ' [%]' )
+

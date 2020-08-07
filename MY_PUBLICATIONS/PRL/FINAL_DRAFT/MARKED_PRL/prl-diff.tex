@@ -1,6 +1,6 @@
 %% ****** Start of file template.aps ****** %
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL prl.tex       Mon Jul 27 15:39:16 2020
+%DIF DEL prl.tex       Fri Aug  7 10:29:02 2020
 %DIF ADD prl-rev.tex   Fri Jul 31 13:01:13 2020
 %%
 %%
@@ -26,9 +26,7 @@
 \documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4-2}  % for review and submission
 %\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
 \usepackage{graphicx}  % needed for figures
-%DIF 26a26
-\usepackage{ragged2e} %DIF > 
-%DIF -------
+\usepackage{ragged2e}
 \usepackage{dcolumn}   % needed for some tables
 \usepackage{bm}        % for math
 \usepackage{amssymb}   % for math
@@ -134,10 +132,8 @@
 
 % The following information is for internal review, please remove them for submission
 \widetext
-\DIFdelbegin %DIFDELCMD < \leftline{Version 05 as of \today}
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \leftline{Version 06 as of \today}
-\DIFaddend \leftline{Primary authors: Carlos Yero, Werner Boeglin, Mark Jones}
+\leftline{Version 06 as of \today}
+\leftline{Primary authors: Carlos Yero, Werner Boeglin, Mark Jones}
 \leftline{To be submitted to PRL}
 \leftline{Comment to {\tt cyero002@fiu.edu, \tt boeglinw@fiu.edu, \tt jones@jlab.org} by July 31, 2020}
 \centerline{INTERNAL DOCUMENT -- NOT FOR PUBLIC DISTRIBUTION}
@@ -150,20 +146,19 @@
 %\title{Deuteron Electro-Disintegration up to $\sim$ 1 GeV/c Missing Momentum}
 \title{Probing the Deuteron at Very Large Internal Momenta}
 
-\input authorlist-diff.tex
+\input authorlist.tex
 
 \date{\today}
 
 
 \begin{abstract}
   $^{2}\mathrm{H}(e,e'p)n$ cross sections have been measured at 4-momentum transfers of $Q^{2} = 4.5 \pm 0.5$ (GeV/c)$^{2}$
-  over a range of neutron recoil momenta, $p_{\mathrm{r}}$,  \DIFdelbegin \DIFdel{with $p_{\mathrm{r}}$ }\DIFdelend reaching up to $\sim1.0$ GeV/c. The data \DIFdelbegin \DIFdel{have
-  been }\DIFdelend \DIFaddbegin \DIFadd{were
-  }\DIFaddend obtained at fixed neutron recoil angles $\theta_{nq} = 35^\circ$, $45^\circ$ and $75^{\circ}$  with respect to the 3-momentum
-  transfer $\vec q$. The new data \DIFdelbegin \DIFdel{agrees }\DIFdelend \DIFaddbegin \DIFadd{agree }\DIFaddend well with previous data which reached $p_{\mathrm{r}}\sim500$ MeV/c. At $\theta_{nq} = 35^\circ$
-  and $45^\circ$, final state interactions (FSI), meson exchange currents (MEC) and isobar \DIFdelbegin \DIFdel{configurations }\DIFdelend \DIFaddbegin \DIFadd{currents }\DIFaddend (IC) are suppressed and
+  over a range of neutron recoil momenta, $p_{\mathrm{r}}$,  reaching up to $\sim1.0$ GeV/c. The data were
+  obtained at fixed neutron recoil angles $\theta_{nq} = 35^\circ$, $45^\circ$ and $75^{\circ}$  with respect to the 3-momentum
+  transfer $\vec q$. The new data agree well with previous data which reached $p_{\mathrm{r}}\sim500$ MeV/c. At $\theta_{nq} = 35^\circ$
+  and $45^\circ$, final state interactions (FSI), meson exchange currents (MEC) and isobar currents (IC) are suppressed and
   the plane wave impulse approximation (PWIA) provides the dominant cross section contribution. The new data are compared to recent
-  theoretical calculations, where \DIFdelbegin \DIFdel{a significant disagreement }\DIFdelend \DIFaddbegin \DIFadd{we observe a significant discrepancy }\DIFaddend for missing momenta $p_{\mathrm{r}}>700$ MeV/c\DIFdelbegin \DIFdel{is observed}\DIFdelend . 
+  theoretical calculations, where we observe a significant discrepancy for missing momenta $p_{\mathrm{r}}>700$ MeV/c. 
 \end{abstract}
 
 \pacs{}
