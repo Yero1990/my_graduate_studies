@@ -13,8 +13,8 @@
 0.340           0.33790       1.09192E-03              22.43                3.66                 2.48                 4.42                 22.86                
 0.380           0.37678       4.41898E-04              44.78                3.66                 2.00                 4.17                 44.97                
 0.420           0.41448       NAN                      100.08               3.66                 1.71                 4.04                 100.17               
-0.460           0.44925       NAN                      nan                  nan                  nan                  nan                  nan                  
-0.500           0.48278       NAN                      nan                  nan                  nan                  nan                  nan                  
+0.460           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.500           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.540           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.580           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.620           nan           NAN                      nan                  nan                  nan                  nan                  nan                  

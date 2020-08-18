@@ -2,14 +2,14 @@
 #pm_bin: central bin with +/- 0.02 GeV. The pwia/fsi Xsec are from Laget calculation. red_dataXsec_avg with nan values have > 50%% stats uncertainty should be ignored.
 #Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  
 #!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,3]/  rel_norm_syst[f,4]/  rel_kin_syst[f,5]/ rel_syst_tot[f,6]/   rel_tot_err[f,7]/
-0.020           0.03048       3.39695E+00              46.80                3.66                 6.23                 7.23                 47.35                
-0.060           0.05984       1.63954E+00              16.85                3.66                 8.27                 9.05                 19.12                
-0.100           0.09783       2.41635E-01              14.49                3.66                 7.19                 8.07                 16.58                
-0.140           0.13606       8.15882E-02              17.95                3.66                 6.17                 7.18                 19.33                
-0.180           0.17524       3.55495E-02              26.77                3.66                 5.23                 6.38                 27.52                
-0.220           0.21358       3.30732E-02              46.09                3.66                 4.55                 5.84                 46.46                
-0.260           0.25145       NAN                      nan                  nan                  nan                  nan                  nan                  
-0.300           0.28753       NAN                      nan                  nan                  nan                  nan                  nan                  
+0.020           0.03048       3.39458E+00              46.80                3.66                 6.23                 7.23                 47.35                
+0.060           0.05984       1.63840E+00              16.85                3.66                 8.27                 9.05                 19.12                
+0.100           0.09783       2.41467E-01              14.49                3.66                 7.19                 8.07                 16.58                
+0.140           0.13606       8.15315E-02              17.95                3.66                 6.17                 7.18                 19.33                
+0.180           0.17524       3.55247E-02              26.77                3.66                 5.23                 6.38                 27.52                
+0.220           0.21358       3.30502E-02              46.09                3.66                 4.55                 5.84                 46.46                
+0.260           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.300           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.340           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.380           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.420           nan           NAN                      nan                  nan                  nan                  nan                  nan                  

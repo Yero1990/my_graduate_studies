@@ -3,10 +3,10 @@
 #Each of the quantities here have been averaged over overlapping (Pm, thnq) bins for Pm=80, 580(sets 1,2) and 750(sets 1,2,3). Energy and angle units are in [Gev] and [deg]  
 #!pm_bin[i,0]/  pm_avg[f,1]/  red_dataXsec_avg[f,2]/  rel_stats_err[f,3]/  rel_norm_syst[f,4]/  rel_kin_syst[f,5]/ rel_syst_tot[f,6]/   rel_tot_err[f,7]/
 0.020           0.02932       NAN                      66.82                3.66                 7.39                 8.24                 67.33                
-0.060           0.05919       1.59295E+00              32.62                3.66                 8.85                 9.58                 33.99                
-0.100           0.09435       2.86678E-01              39.52                3.66                 8.06                 8.85                 40.50                
+0.060           0.05919       1.59184E+00              32.62                3.66                 8.85                 9.58                 33.99                
+0.100           0.09435       2.86478E-01              39.52                3.66                 8.06                 8.85                 40.50                
 0.140           0.13081       NAN                      71.33                3.66                 6.83                 7.75                 71.75                
-0.180           0.16406       NAN                      nan                  nan                  nan                  nan                  nan                  
+0.180           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.220           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.260           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.300           nan           NAN                      nan                  nan                  nan                  nan                  nan                  

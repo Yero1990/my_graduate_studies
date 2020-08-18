@@ -22,6 +22,7 @@
 %  Add 'showpacs' option to make PACS codes appear
 \documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4-2}  % for review and submission
 %\documentclass[aps,preprint,showpacs,superscriptaddress,groupedaddress]{revtex4}  % for double-spaced preprint
+\pdfoutput=1 
 \usepackage{graphicx}  % needed for figures
 \usepackage{ragged2e}
 \usepackage{dcolumn}   % needed for some tables
@@ -77,18 +78,12 @@
   theoretical calculations, where we observe a significant discrepancy for missing momenta $p_{\mathrm{r}}>700$ MeV/c. 
 \end{abstract}
 
-\pacs{}
+\pacs{25.30.Fj, 25.60.Gc}
 \maketitle
 %\thispagestyle{plain} 
 
-%\section{\label{sec:level1}First-level heading}
-% sections are not used for PRL papers
-
-%--------------MOTIVATION / introduction (from my proposal)--------------
-
 \input introduction.tex
 \input body.tex
-%\input acknowledgement.tex    % input acknowledgement
 \bibliography{prl}
 %.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 \end{document}

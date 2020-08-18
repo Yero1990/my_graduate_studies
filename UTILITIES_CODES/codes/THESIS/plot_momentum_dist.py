@@ -569,7 +569,7 @@ def plot_momentum_dist():
         #======================END PRL PLOTS==============
 
 
-        '''
+        
         
         #----------------------PRODUCE PLOTS FOR THESIS----------
         
@@ -825,7 +825,7 @@ def plot_momentum_dist():
         B.pl.savefig(dir_name1+'/redXsec_thnq%i_deg.pdf'%(ithnq))
 
         #B.pl.show()
-        '''
+       
 
         
         '''
@@ -878,6 +878,7 @@ def plot_momentum_dist():
         #B.pl.show()
         B.pl.tight_layout()
 
+        '''
 
         #-----------------------------WRITE DATA REDUCED XSEC TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
@@ -927,7 +928,7 @@ def plot_momentum_dist():
             fout_4to5.write(line)
         fout_4to5.close()
 
-
+        '''
         
         #-----------------------------WRITE DATA 5-FOLD DIFFERENTIAL XSEC (PER DATASET) TO WRITE IN THESIS KINEMATICS TABLE----------------------------------
         #Create output files to write relative uncertainties for (Pm) bins for each th_nq setting for kinematic bin Q2 = 3.5 +/- 0.5
@@ -949,7 +950,7 @@ def plot_momentum_dist():
         fout_3to4.close()
         
         #=============================END CODE TO PRODUCE THESIS PLOTS================================
-        '''
+       
 
 
         #DO LINE FITS OF Pr = 550 - 1000 MeV/c
@@ -1384,10 +1385,10 @@ def plot_momentum_dist():
             B.pl.legend(loc='upper right', fontsize='small')
             B.pl.show()
             
-            '''
-            #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
+        '''
+        #-------FITTING: Plot the Ratio  sig_red_exp(pm) / sig_red_exp(p0=0.5 GeV/c) for pm >=0.5 GeV/c (same for models), to compare shapes------
             
-            
+        '''
             fp = np.array([0.5, 0.82])
             for j in range(len(fp)):
                 B.pl.clf()                                                                                                          

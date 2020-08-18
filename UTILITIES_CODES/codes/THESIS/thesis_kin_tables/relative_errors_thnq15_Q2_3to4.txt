@@ -11,10 +11,10 @@
 0.260           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.300           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.340           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
-0.380           0.39337       NAN                      nan                  nan                  nan                  nan                  nan                  
-0.420           0.42026       NAN                      nan                  nan                  nan                  nan                  nan                  
-0.460           0.45383       NAN                      nan                  nan                  nan                  nan                  nan                  
-0.500           0.48378       NAN                      nan                  nan                  nan                  nan                  nan                  
+0.380           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.420           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.460           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
+0.500           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.540           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.580           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
 0.620           nan           NAN                      nan                  nan                  nan                  nan                  nan                  
