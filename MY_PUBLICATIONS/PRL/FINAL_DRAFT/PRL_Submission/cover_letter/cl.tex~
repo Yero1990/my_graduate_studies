@@ -23,57 +23,42 @@
 
 
 \begin{document}
-\begin{letter}{Carlos Yero\\
-Thomas Jefferson National Accelerator Facility\\
-12000 Jefferson Avenue \\
-Newport News, VA 23602\\
-(786) 387-8667 \\
-cyero@jlab.org
-  }
+\begin{letter}{
+    Dr. Michael Thoennessen\\
+    Editor-in-Chief, APS Editorial Office \\
+    \textit{Physical Review Letters} (PRL)\\
+    }
 
 
-\opening{Dear PRL Editors,}
-%say what job are you are for:
-%I am writing to express my interest in 
-%I am writing to be considered for
-I am writing to apply for (Name of job here).
-%who are you?
-I am a Ph.D. candidate at the University of Illinois at Urbana-Champaign under
-the direction of C. Ward Henson. I expect to complete my degree in May of 2009.
+\opening{Dear Dr. Thoennessen,\\}
 
-%what are your specific research/teaching interests?
-My research interests include continuous logic
-and its application to metric structures from analysis and geometry.
-My thesis work is on the model theory of $\R$-trees, which are
-metric spaces of central importance in geometric group theory.
-I am currently finishing a paper 
-with my advisor, and
-expect at least one more paper to result from the contents of my thesis.
-I am also committed to being an effective, engaging teacher.
-While at Illinois I worked hard to
-develop my teaching skills, teaching in various formats and earning
-a graduate teacher certificate. 
-%here you could play up either teaching or research and mention highlights of your
-%CV, I also used it to say something about papers, since I hadn't published any
-% to put on my CV
+I hereby submit a manuscript entitled ``Probing the Deuteron at Very Large Internal Momenta'' to be considered for publication by \textit{Physical Review Letters}.
+There are eight files in all: the main manuscript file (prl.tex), 2 figure files (.pdf), a bibliography file (.bbl), an author list file (.tex), and three supplementary (.txt)
+files with the numerical results of the cross sections evaluated at the relevant kinematics described in the manuscript.\\
 
-%tell them what application materials you have submitted and where
-%say who wrote your recs
-Attached you will find my curriculum vitae and research statement.
-Letters in support of my application will be sent separately. You should expect
-letters from (Letter writers names). Please contact
-me if you need any further information. 
-Thank you for your consideration.
+We report cross-section measurements of the $^{2}$H$(e,e'p)n$ at neutron recoil momenta up to $p_{\mathrm{r}}\sim$ 1.0 GeV/c which is almost
+double the maximum recoil momentum measured in a previous deuteron electro-disintegration experiment carried out in Hall A at Jefferson Lab. 
+The Hall A experiment concluded that at neutron recoil angles $35^{\circ}\leq \theta_{nq}\leq 45^{\circ}$, final state interactions (FSI) are largely
+reduced and the plane wave impulse approximation (PWIA) provides the dominant contribution to the cross section. This experiment focused
+on the kinematic window (where FSI are small) previously found in the Hall A experiment and extended the missing momentum coverage from $p_{\mathrm{r}}\sim0.5 - 1.0$ GeV/c, giving
+direct access to the high momentum component of the deuteron wave-function. This is a crucial step forward in the understanding the nucleon-nucleon ($NN$) interaction at
+the sub-Fermi distance scale which is currently poorly understood. We believe these findings will be of general interest to the readers of your journal.\\
 
-
+We declare that this manuscript is original, has not been published before in a peer-reviewed journal and is not currently being considered for publication elsewhere.\\
+\\
 \closing{Sincerely,
 %\includegraphics[width=6cm]{signature.pdf}
 }
 %I made a pdf file of my signature using the scanner, so that all the cover letters I sent
 %electronically were "signed."  
-
 Carlos Yero\\
-Hall C Postdoctoral Fellow\\
+Hall C Postdoctoral Research Fellow\\
+Thomas Jefferson National Accelerator Facility\\
+12000 Jefferson Avenue \\
+Newport News, VA 23602\\
+e-mail: cyero@jlab.org\\
+phone: (786) 387-8667 
+
 \end{letter}
 
 \end{document}

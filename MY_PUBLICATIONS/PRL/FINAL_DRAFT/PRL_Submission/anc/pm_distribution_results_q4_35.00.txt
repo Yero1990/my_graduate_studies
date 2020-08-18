@@ -1,3 +1,4 @@
+%auto-ignore
 # exp. cross sections as a function of missing momentum 
 # all cross sections include the bin correction factor 
 #
