@@ -1,0 +1,33 @@
+\BOOKMARK [1][-]{section.1}{Detector Electronics Racks and Patch Panel Diagrams}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{HMS Detector Hut}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{SHMS Detector Hut}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Hall C Counting Room}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{HMS Trigger Set-Up}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Hodoscope Pre-Trigger}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Calorimeter Pre-Trigger}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.3}{Gas Cerenkov Pre-Trigger}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.4}{Aerogel Cerenkov Pre-Trigger}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.5}{HMS Single Arm Pre-Trigger}{section.2}% 10
+\BOOKMARK [1][-]{section.3}{SHMS Trigger Set-Up}{}% 11
+\BOOKMARK [2][-]{subsection.3.1}{Hodoscopes Pre-Trigger}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.2}{Pre-Shower / Shower Calorimeter Pre-Trigger}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.3}{Heavy/Noble Gas Cerenkov Pre-Trigger}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.4}{Aerogel Cerenkov Pre-Trigger}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.5}{SHMS Single Arm Pre-Trigger}{section.3}% 16
+\BOOKMARK [1][-]{section.4}{Coincidence Trigger Set-Up}{}% 17
+\BOOKMARK [1][-]{section.5}{Electronic Dead Time Monitoring \(EDTM\)}{}% 18
+\BOOKMARK [1][-]{section.6}{Notes on Changes to the Trigger}{}% 19
+\BOOKMARK [2][-]{subsection.6.1}{January, 2018: Removal of STOF from Reference Time Definition}{section.6}% 20
+\BOOKMARK [2][-]{subsection.6.2}{August, 2018: Removal of EL-CLEAN from Reference Time Definition}{section.6}% 21
+\BOOKMARK [2][-]{subsection.6.3}{December, 2019: Removal of STOF from trigger / Removal of EL-REAL from Reference Time Definition}{section.6}% 22
+\BOOKMARK [2][-]{subsection.6.4}{Electronics Trigger Oscilloscope Traces}{section.6}% 23
+\BOOKMARK [1][-]{appendix.A}{Original Electronics Diagrams}{}% 24
+\BOOKMARK [2][-]{subsection.A.1}{HMS Hodoscopes Electronics Diagram}{appendix.A}% 25
+\BOOKMARK [2][-]{subsection.A.2}{HMS Calorimeter Electronics Diagram}{appendix.A}% 26
+\BOOKMARK [2][-]{subsection.A.3}{HMS Gas Cerenkov Electronics Diagram}{appendix.A}% 27
+\BOOKMARK [2][-]{subsection.A.4}{HMS Aerogel Cerenkov Electronics Diagram}{appendix.A}% 28
+\BOOKMARK [2][-]{subsection.A.5}{HMS Single Arm Electronics Diagram}{appendix.A}% 29
+\BOOKMARK [2][-]{subsection.A.6}{SHMS Hodoscopes Pre-Trigger}{appendix.A}% 30
+\BOOKMARK [2][-]{subsection.A.7}{SHMS Pre-Shower / Shower Calorimeter Pre-Trigger}{appendix.A}% 31
+\BOOKMARK [2][-]{subsection.A.8}{SHMS Single Arm Pre-Trigger}{appendix.A}% 32
+\BOOKMARK [2][-]{subsection.A.9}{Coincidence Pre-Trigger}{appendix.A}% 33

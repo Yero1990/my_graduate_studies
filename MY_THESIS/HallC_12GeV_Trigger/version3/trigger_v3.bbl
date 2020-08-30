@@ -1,0 +1,67 @@
+\begin{thebibliography}{1}
+
+\bibitem{hms_aero_article}
+{\sc Asaturyan, R., Ent, R., et~al.}
+\newblock The aerogel threshold cherenkov detector for the high momentum
+  spectrometer in hall c at jefferson lab.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment 548}, 03
+  (2005), 364--374.
+
+\bibitem{hms_cer_article}
+{\sc Cothran, C., Day, D., and Mitchell, J.}
+\newblock A threshold gas cerenkov detector for cebaf's hall c high momentum
+  spectrometer.
+\newblock {\em Bulletin of the American Physical Society 28}, 01 (1995), 1007f.
+
+\bibitem{shms_ngc_talk}
+{\sc Day, D., and Yurov, M.}
+\newblock Shms noble gas \v{C}erenkov.
+\newblock Presented at the 2013 Hall C Users Meeting, Jefferson Lab, Newport
+  News, VA.
+\newblock \url {https://www.jlab.org/Hall-C/talks/01_24_13/day.pdf}.
+
+\bibitem{shms_aero_article}
+{\sc Horn, T., Mkrtchyan, H., et~al.}
+\newblock The aerogel threshold cherenkov detector for the shms magnetic
+  spectrometer in hall c at jefferson lab.
+\newblock {\em Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment 842\/}
+  (2017), 28--47.
+
+\bibitem{shms_hgc_talk}
+{\sc Huber, G.}
+\newblock Shms heavy gas \v{C}erenkov.
+\newblock Presented at the 2008 Hall C User's Summer Workshop, Jefferson Lab,
+  Newport News, VA.
+\newblock \url
+  {https://www.jlab.org/Hall-C/talks/08_04_08/talks/huber_heavygas.ppt}.
+
+\bibitem{SHMS_PID}
+{\sc Huber, G., Day, D., and Mkrtchyan, H.}
+\newblock Shms particle identification.
+\newblock Presented at the 2009 SHMS Detector Review, Jefferson Lab, Newport
+  News, VA.
+\newblock \url
+  {http://lichen.phys.uregina.ca/index_files/talks/shms_pidreview_09aug.pdf}.
+
+\bibitem{DMack_livetime_2019}
+{\sc Mack, D.}
+\newblock {Live Time Calculations}, 2019.
+\newblock
+  \url{https://hallcweb.jlab.org/DocDB/0010/001001/002/EDTMnonPoissonBiasCorrectionv2.pdf}.
+
+\bibitem{shms_preSh_talk}
+{\sc Mkrtchyan, H., et~al.}
+\newblock Shms calorimeter status update.
+\newblock Presented at the 2012 Hall C Meeting, Jefferson Lab, Newport News,
+  VA.
+\newblock \url {https://www.jlab.org/Hall-C/talks/01_13_12/mkrtchyan.pdf}.
+
+\bibitem{pooser_livetime_2019}
+{\sc Pooser, E.}
+\newblock {Live Time Calculations}, 2019.
+\newblock
+  \url{https://hallcweb.jlab.org/DocDB/0010/001022/001/pooser_live_time.pdf}.
+
+\end{thebibliography}

@@ -549,7 +549,9 @@ def make_prl_plots():
     #ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, WJC2_GK_PWBA, WJC2_GK_DWBA, WJC2_AMT_PWBA, WJC2_AMT_DWBA, AV18_GK_PWBA, AV18_GK_DWBA, AV18_AMT_PWBA, AV18_AMT_DWBA, CD_GK_PWBA, CD_GK_DWBA, CD_AMT_PWBA, CD_AMT_DWBA], line_labels, loc='upper right', frameon=False, fontsize=9)      #subplot to use for common legend
 
     line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI']
+    #line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI']
     ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, WJC2_GK_PWBA, WJC2_GK_DWBA], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
+    #ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
            
 
     #B.pl.show()
