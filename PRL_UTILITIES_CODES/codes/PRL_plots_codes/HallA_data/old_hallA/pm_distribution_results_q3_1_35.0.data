@@ -1,0 +1,41 @@
+# exp. cross sections as a function of missing momentum 
+#
+# theta_nq = 35.0 
+#
+# Averaged for all contributing bins
+#
+# p_miss_av     : fm^-1, missing momentum
+# delta_rho     : fm^3, total error in reduced cross section (momentum distribution) 
+# delta_rho1    : fm^3, total error in reduced cross section including chi2 of averaging 
+#
+# Kinematics and cross section for each contributing bin: 
+#
+#  th_e         : electron scattering angle (deg)
+#  Ei           : incident energy (MeV)
+#  omega        : energy transfer (MeV) 
+#  qlab         : 3-momentum transfer in lab (MeV/c)
+#  cos_phi      : cos(phi), phi reaction plane angle
+#  pf           : final proton momentum (MeV/c)
+#  p_miss       : averaged missing momentum (MeV/c)
+#  th_nq        : angle between recoiling neutron and qlab
+#  sig_exp      : exp. cross section for this bin (nb)
+#  dsig_exp     : error in exp cross section for this bin (nb)
+#  sig_red_exp  : exp. red. cross section (rho) for this bin (fm^3)
+#  dsig_red_exp : error in red. cross section (drho) for this bin (fm^3)
+#  bc           : bin centering correction factor sig_exp * bc = exp. cross section at avg. kinematics
+#
+#! Nr[i,0]/ p_miss_av[f,1]/ rho[f,2]/ delta_rho[f,3]/ delta_rho1[f,4]/ th_e[f,5]/ Ei[f,6]/ omega[f,7]/ qlab[f,8]/ cos_phi[f, 9]/ pf[f,10]/ p_miss[f,11]/ th_nq[f,12]/ sig_red_exp[f,13]/ dsig_red_exp[f,14]/ bc[f,15]/ 
+0 0.133  6.757e+00  4.320e-01  4.320e-01 27.577 5008.410 1857.809 2652.725 0.06551 2631.170   27.344  37.793  6.811e+00  4.355e-01 1.05404 
+1 0.284  1.593e+00  7.225e-02  2.287e-01 27.407 5008.480 1802.396 2617.852 -0.33829 2570.779   58.062  35.460  1.411e+00  9.444e-02 1.12676 
+2 0.454  4.103e-01  3.189e-02  9.446e-03 27.718 5008.480 1789.714 2627.367 -0.24141 2554.606   89.969  35.446  3.984e-01  3.980e-02 1.06067 
+3 0.736  5.169e-02  3.198e-03  9.167e-04 25.325 5008.480 1531.470 2385.943 -0.88566 2270.353  143.678  35.400  5.245e-02  4.525e-03 1.05330 
+4 0.904  1.669e-02  9.280e-04  1.059e-03 25.110 5008.590 1479.359 2351.476 -0.57907 2207.549  178.121  34.797  1.573e-02  1.229e-03 1.04681 
+5 1.101  6.675e-03  4.420e-04  5.276e-04 25.296 5008.590 1461.168 2354.240 -0.27016 2178.839  217.913  34.794  6.206e-03  5.936e-04 1.03037 
+6 1.295  2.364e-03  2.636e-04  3.816e-05 25.557 5008.590 1453.706 2365.885 -0.11966 2160.210  257.228  34.996  2.337e-03  3.285e-04 1.02783 
+7 1.502  1.106e-03  2.527e-04  2.527e-04 25.850 5008.590 1452.420 2381.988 -0.04623 2146.654  296.647  35.275  1.103e-03  2.520e-04 1.02021 
+8 1.734  4.985e-04  6.127e-05  4.654e-05 24.592 5008.440 1324.625 2258.717 -0.95011 1990.050  342.630  35.576  4.834e-04  6.247e-05 1.01230 
+9 1.926  2.653e-04  2.863e-05  2.817e-05 24.252 5008.440 1262.735 2214.878 -0.76822 1906.222  380.589  32.817  3.750e-04  8.573e-05 1.00998 
+10 2.127  1.538e-04  1.728e-05  1.532e-05 24.041 5008.420 1227.137 2188.948 -0.97065 1845.004  429.001  33.203  2.260e-04  6.367e-05 1.00480 
+11 2.328  1.104e-04  1.223e-05  9.382e-06 24.197 5008.420 1234.048 2201.011 -0.94427 1836.673  462.444  34.137  1.156e-04  1.882e-05 1.01010 
+12 2.523  7.467e-05  9.870e-06  6.267e-06 24.432 5008.420 1244.371 2219.162 -0.91406 1829.348  499.418  34.462  8.006e-05  1.190e-05 1.01369 
+13 2.726  5.482e-05  9.509e-06  9.074e-06 24.776 5008.420 1260.628 2246.017 -0.87744 1826.509  538.277  34.269  5.220e-05  9.675e-06 1.01342 

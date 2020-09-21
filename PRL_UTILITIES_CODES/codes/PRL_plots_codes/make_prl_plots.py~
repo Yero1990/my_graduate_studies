@@ -558,11 +558,16 @@ def make_prl_plots():
     B.pl.savefig('./PRL_plot1.pdf')
 
 
-
-    #========WRITE OUT THE FOFA RATIO TO FILE========
-    fout_name = 'FOFA_ratio_HallC_thnq35_deg.txt'
-    fout = open(fout_name, 'w')
+    #Write PRL PLOT 1 data to file (avg. Pm, data Xsec and errors, and theory Xsec
     
+    #fout_name = 'redXsec_HallC_thnq35_deg.txt'
+    fout_name = 'FOFA_ratio_HallC_thnq35_deg.txt'
+    
+    fout = open(fout_name, 'w')
+    #comment1='#This datafile contains redXsec from Hall C Deuteron Experiment: E12-10-003\n'
+    #comment2='#Units: pm_avg [GeV/c] :: redXsec [fm^3],   theta_nq = 35 +\- 5 deg \n'
+    #header='#!pm_avg[f,0]/   data_redXsec[f,1]/   data_redXsec_tot_err[f,2]/   stats_rel_err[f,3]/  kin_rel_err[f,4]/   norm_rel_err[f,5]   tot_rel_syst_err[f,6]/   tot_rel_err[f,7]/   \n'
+
     comment1='#This datafile contains ratio of J.W.V.Orden to Misak calculations using different fofa parametrizations\n'
     comment2='#Units: pm_avg [GeV/c],   theta_nq = 35 +\- 5 deg \n'
     comment3='#R_av18_GK_pwia = redXsec_av18_GK / redXsec_av18_jjk, R_av18_amt_pwia = redXsec_av18_amt / redXsec_av18_jjk, same for CD-Bonn \n'
@@ -669,26 +674,8 @@ def make_prl_plots():
     for i in range(len(pm_avg[thnq==45])):
         fout.write('%.5f %.5f  %.5f  %.5f  %.5f  %.5f  %.5f  %.5f\n' % (pm_45[i],  R_av18_GK_pwia[i], R_av18_amt_pwia[i], R_cd_GK_pwia[i], R_cd_amt_pwia[i], R_av18_GK2amt_pwia[i], R_cd_GK2amt_pwia[i], R_wjc2_GK2amt_pwia[i]))
     fout.close()
-
-
     
-    
-    #=========Write PRL PLOT 1 data to file (avg. Pm, data Xsec and errors, and theory Xsec============
-    
-    fout_name = 'redXsec_HallC_thnq35_deg.txt'
-    fout = open(fout_name, 'w')
-    comment1='#This datafile contains redXsec from Hall C Deuteron Experiment: E12-10-003\n'
-    comment2='#Units: pm_avg [GeV/c] :: redXsec [fm^3],   theta_nq = 35 +\- 5 deg \n'
-    header='#!pm_avg[f,0]/   data_redXsec[f,1]/   data_redXsec_tot_err[f,2]/   stats_rel_err[f,3]/  kin_rel_err[f,4]/   norm_rel_err[f,5]   tot_rel_syst_err[f,6]/   tot_rel_err[f,7]/   \n'
-    fout.write(comment1)
-    fout.write(comment2)
-    fout.write(header)
-    
-    for i in range(len(pm_avg[thnq==35])):
-        fout.write('%.5f %.5E  %.5E  %.5f  %.5f  %.5f  %.5f  %.5f\n' % ((pm_avg[thnq==35])[i], (red_dataXsec_avg_masked[thnq==35]*MeV2fm)[i], (red_dataXsec_avg_tot_err[thnq==35]*MeV2fm)[i], (tot_stats_err[thnq==35])[i], (kin_syst_tot[thnq==35])[i], (norm_syst_tot[thnq==35])[i], (tot_syst_err[thnq==35])[i], (tot_err[thnq==35])[i]))
-
-    fout.close()
-
+    '''
     fout_name = 'redXsec_HallC_thnq45_deg.txt'
     fout = open(fout_name, 'w')
     comment1='#This datafile contains redXsec from Hall C Deuteron Experiment: E12-10-003\n'
@@ -717,7 +704,7 @@ def make_prl_plots():
         fout.write('%.5f %.5E  %.5E  %.5f  %.5f  %.5f  %.5f  %.5f\n' % ((pm_avg[thnq==75])[i], (red_dataXsec_avg_masked[thnq==75]*MeV2fm)[i], (red_dataXsec_avg_tot_err[thnq==75]*MeV2fm)[i], (tot_stats_err[thnq==75])[i], (kin_syst_tot[thnq==75])[i], (norm_syst_tot[thnq==75])[i], (tot_syst_err[thnq==75])[i], (tot_err[thnq==75])[i]))
 
     fout.close()
-    
+    '''
     
     #====================================================PRL PLOT 2=============================================================
     
