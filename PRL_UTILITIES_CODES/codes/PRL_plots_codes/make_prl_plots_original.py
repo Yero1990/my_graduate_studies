@@ -54,8 +54,8 @@ MeV2fm = 197.3**3    #convert MeV^-3 to fm^3
      
 
 #Get Reduced Xsec Data File
-fname = '../deep_data_files/Q2_4to5GeV/redXsec_combined_wrongNormalization.txt'
-#fname = '../deep_data_files/Q2_4to5GeV/redXsec_combined.txt'
+#fname = '../deep_data_files/Q2_4to5GeV/redXsec_combined_wrongNormalization.txt'
+fname = '../deep_data_files/Q2_4to5GeV/redXsec_combined.txt'
 #redXsec_combined.txt'
 f = B.get_file(fname)
 

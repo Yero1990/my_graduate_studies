@@ -1,0 +1,133 @@
+#Define utility functions for generating PRL plots
+
+
+#___________________________________________________
+def convert2NaN(arr=np.array([]), value=0):
+
+    #Function to convert a specified value in a array to nan (not a number)
+
+    for i in enumerate(arr):
+        if arr[i[0]]==value:
+            arr[i[0]] = np.nan
+    return arr
+
+#___________________________________________________
+def read_halla_data(thnq=0):
+
+    #Function to read data files containing momentum distributions from Hall A
+
+    #Conversion factor: 1 fm = 1 / (0.1973 GeV)  or  1 fm^-1 = 0.1973 GeV
+    #fminv2GeV = 1./(1./0.1973)
+    ifm2GeV = 0.1973  #inverse fermi to GeV
+
+    thnq_f = '%.1f' % (thnq)
+
+    #Hall A data filename
+    fname = './HallA_data/pm_distribution_results_q3_1_%s.data' % (thnq_f) 
+    kin = dfile(fname)
+
+    #Pm here is not the central bin value, but an average over that bin
+    p_miss = np.array(kin['p_miss_av']) * ifm2GeV    
+    red_dataXsec = np.array(kin['rho'])             #units fm^3
+    red_dataXsec_err = np.array(kin['delta_rho'])
+
+    return p_miss, red_dataXsec, red_dataXsec_err
+
+
+
+#___________________________________________________________________
+def read_theoretical_models(theory="", model="", thnq=0):
+
+    #This code read the averaged theoretical red. Xsec and returns arrays in pm and reduced Xsec
+    #theory: V18, CD-Bonn    model: PWIA, FSI
+
+    thnq_f = "%.2f" %(thnq)
+    fname = './theoretical_models/updated_%s_models/theoryXsec_%s%s_thnq%s_combined.data' % (model, theory, model, thnq_f)
+    kin = dfile(fname)
+    
+    pm_avg = np.array(kin['pm_avg'])
+    
+
+    #print(pm_bin)
+    if(model=="PWIA" and theory=="V18"):
+        red_pwiaXsec_V18 = np.array(kin['red_pwiaXsec_theory'])
+        return pm_avg, red_pwiaXsec_V18 
+    if(model=="PWIA" and theory=="CD-Bonn"):                                     
+        red_pwiaXsec_CD_Bonn = np.array(kin['red_pwiaXsec_theory']) 
+        return pm_avg, red_pwiaXsec_CD_Bonn
+    if(model=="FSI" and theory=="V18"):                                                 
+        red_fsiXsec_V18 = np.array(kin['red_fsiXsec_theory'])                                               
+        return pm_avg, red_fsiXsec_V18 
+    if(model=="FSI" and theory=="CD-Bonn"):                                                                    
+        red_fsiXsec_CD_Bonn = np.array(kin['red_fsiXsec_theory']) 
+        return pm_avg, red_fsiXsec_CD_Bonn
+
+
+#______________________________________________________________________________
+def read_JWVO_theory(ithnq=0, theory='', fofa='', model='', pmavg=np.array([])):
+    
+    #Read theoretical cross sections from W.V.Orden
+    #The cross sections used the WJC2, AV18 and CD-Bonn models
+
+    fname = '../deep_data_files/JWVOrden_calculations/JWV_Orden_redXsec_%i_deg_AVERAGE.txt' % (ithnq)
+
+    f = dfile(fname)
+    
+    pm_avg = np.array(f['pm_avg'])                       #average missing momentum (GeV/c)
+    WJC2_GKex05_PWBA_red = np.array(f['WJC2_GKex05_PWBA_red'])
+    WJC2_GKex05_DWBA_red = np.array(f['WJC2_GKex05_DWBA_red'])
+    WJC2_AMT_PWBA_red = np.array(f['WJC2_AMT_PWBA_red'])
+    WJC2_AMT_DWBA_red = np.array(f['WJC2_AMT_DWBA_red'])
+
+    AV18_GKex05_PWBA_red = np.array(f['AV18_GKex05_PWBA_red'])
+    AV18_GKex05_DWBA_red = np.array(f['AV18_GKex05_DWBA_red'])
+    AV18_AMT_PWBA_red = np.array(f['AV18_AMT_PWBA_red'])
+    AV18_AMT_DWBA_red = np.array(f['AV18_AMT_DWBA_red'])
+
+    CD_GKex05_PWBA_red = np.array(f['CD_GKex05_PWBA_red'])
+    CD_GKex05_DWBA_red = np.array(f['CD_GKex05_DWBA_red'])
+    CD_AMT_PWBA_red = np.array(f['CD_AMT_PWBA_red'])
+    CD_AMT_DWBA_red = np.array(f['CD_AMT_DWBA_red'])
+    
+    #Perform Interpolation on theoretical calculations
+    f_WJC2_GKex05_PWBA_red = interp1d(pm_avg, WJC2_GKex05_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_WJC2_GKex05_DWBA_red = interp1d(pm_avg, WJC2_GKex05_DWBA_red, fill_value='extrapolate', kind='linear')  
+    f_WJC2_AMT_PWBA_red = interp1d(pm_avg, WJC2_AMT_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_WJC2_AMT_DWBA_red = interp1d(pm_avg, WJC2_AMT_DWBA_red, fill_value='extrapolate', kind='linear') 
+
+    f_AV18_GKex05_PWBA_red = interp1d(pm_avg, AV18_GKex05_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_AV18_GKex05_DWBA_red = interp1d(pm_avg, AV18_GKex05_DWBA_red, fill_value='extrapolate', kind='linear')  
+    f_AV18_AMT_PWBA_red = interp1d(pm_avg, AV18_AMT_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_AV18_AMT_DWBA_red = interp1d(pm_avg, AV18_AMT_DWBA_red, fill_value='extrapolate', kind='linear') 
+
+    f_CD_GKex05_PWBA_red = interp1d(pm_avg, CD_GKex05_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_CD_GKex05_DWBA_red = interp1d(pm_avg, CD_GKex05_DWBA_red, fill_value='extrapolate', kind='linear')  
+    f_CD_AMT_PWBA_red = interp1d(pm_avg, CD_AMT_PWBA_red, fill_value='extrapolate', kind='linear')  
+    f_CD_AMT_DWBA_red = interp1d(pm_avg, CD_AMT_DWBA_red, fill_value='extrapolate', kind='linear')
+
+    if(theory=='WJC2' and fofa=='GKex05' and model=='PWBA'):
+        return[pmavg, f_WJC2_GKex05_PWBA_red(pmavg)]
+    elif(theory=='WJC2' and fofa=='GKex05' and model=='DWBA'):
+        return[pmavg, f_WJC2_GKex05_DWBA_red(pmavg)]
+    elif(theory=='WJC2' and fofa=='AMT' and model=='PWBA'):
+        return[pmavg, f_WJC2_AMT_PWBA_red(pmavg)]
+    elif(theory=='WJC2' and fofa=='AMT' and model=='DWBA'):
+        return[pmavg, f_WJC2_AMT_DWBA_red(pmavg)]
+
+    elif(theory=='AV18' and fofa=='GKex05' and model=='PWBA'):
+        return[pmavg, f_AV18_GKex05_PWBA_red(pmavg)]
+    elif(theory=='AV18' and fofa=='GKex05' and model=='DWBA'):
+        return[pmavg, f_AV18_GKex05_DWBA_red(pmavg)]
+    elif(theory=='AV18' and fofa=='AMT' and model=='PWBA'):
+        return[pmavg, f_AV18_AMT_PWBA_red(pmavg)]
+    elif(theory=='AV18' and fofa=='AMT' and model=='DWBA'):
+        return[pmavg, f_AV18_AMT_DWBA_red(pmavg)]
+
+    elif(theory=='CD' and fofa=='GKex05' and model=='PWBA'):
+        return[pmavg, f_CD_GKex05_PWBA_red(pmavg)]
+    elif(theory=='CD' and fofa=='GKex05' and model=='DWBA'):
+        return[pmavg, f_CD_GKex05_DWBA_red(pmavg)]
+    elif(theory=='CD' and fofa=='AMT' and model=='PWBA'):
+        return[pmavg, f_CD_AMT_PWBA_red(pmavg)]
+    elif(theory=='CD' and fofa=='AMT' and model=='DWBA'):
+        return[pmavg, f_CD_AMT_DWBA_red(pmavg)] 
