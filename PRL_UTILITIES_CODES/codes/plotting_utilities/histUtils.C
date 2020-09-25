@@ -16,8 +16,8 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
 
   //VARIABLES TO Normalize histogram (if desired)
   Double_t scale; //Used to scale SIMC histograms by 1./h->Integral(data)
-  int dataI;  //data integral
-  int simcI;  //simc integral
+  double dataI;  //data integral
+  double simcI;  //simc integral
   
   //Set Histo Aesthetics
   hsimc->SetLineWidth(2);
@@ -69,8 +69,8 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   double R = (float)dataI / simcI;
   double R_err = R * sqrt(pow(dataI_err/dataI,2) + pow(simcI_err/simcI,2));
   
-  leg->AddEntry(hdata,Form("Data | Integral: %d", dataI),"f");
-  leg->AddEntry(hsimc,Form("SIMC | Integral: %d", simcI));
+  leg->AddEntry(hdata,Form("Data | Integral: %.3f", dataI),"f");
+  leg->AddEntry(hsimc,Form("SIMC | Integral: %.3f", simcI));
   leg->AddEntry((TObject*)0, Form("Ratio: %.3f #pm %.3f", R, R_err), "");
   leg->Draw();
 
@@ -133,7 +133,7 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
   c->SetFrameLineWidth(2);
   //VARIABLES TO Normalize histogram (if desired)
   Double_t scale; //Used to scale SIMC histograms by 1./h->Integral(data)
-  int dataI;  //data, simc integral
+  double dataI;  //data, simc integral
   double dataI_err;
 
 
@@ -176,7 +176,7 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
   double nbins = hist->GetNbinsX();  //Get total number of bins (excluding overflow)
   dataI = hist->IntegralAndError(1, nbins, dataI_err);
   
-  leg->AddEntry(hist,Form("Data | Integral: %d", dataI),"f");
+  leg->AddEntry(hist,Form("Data | Integral: %.3f", dataI),"f");
   leg->Draw();
 
 }
