@@ -64,7 +64,7 @@ def read_hallc_data(thnq=0, write_output=0):
     pm_bin = np.array( (kin['yb'])[thnq_data==thnq] )  #[GeV]
     pm_avg = np.array( (kin['pm_avg'])[thnq_data==thnq] ) #[GeV]
 
-    #Get Combined Final Red Xsec for all kinematics (and convert to fm^-3)
+    #Get Combined Final Red Xsec for all kinematics (and convert to fm^3)
     red_dataXsec_avg     = np.array( (kin['red_dataXsec_avg'])[thnq_data==thnq] ) * MeV2fm
     red_dataXsec_avg_err = np.array( (kin['red_dataXsec_avg_err'])[thnq_data==thnq] ) * MeV2fm            #absolute statistical
     red_dataXsec_avg_syst_err = np.array( (kin['red_dataXsec_avg_syst_err'])[thnq_data==thnq] ) * MeV2fm  #absolute systematic
@@ -85,7 +85,7 @@ def read_hallc_data(thnq=0, write_output=0):
     #if(write_output==1):
     #    return 
 
-    return pm_avg, red_dataXsec_avg_masked, red_dataXsec_avg_tot_err
+    return pm_avg, red_dataXsec_avg_masked, red_dataXsec_avg_tot_err   #Units: Gev/c, fm^3, fm^3
 #___________________________________________________________________
 def read_theoretical_models(theory="", model="", thnq=0):
 
