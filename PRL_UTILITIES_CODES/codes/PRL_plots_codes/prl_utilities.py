@@ -12,7 +12,6 @@ from matplotlib import rc
 from matplotlib import *
 from mpl_toolkits.axes_grid1.inset_locator import (inset_axes, InsetPosition, mark_inset)
 
-
 #Define utility functions for generating PRL plots
 
 
@@ -96,8 +95,10 @@ def read_theoretical_models(theory="", model="", thnq=0):
 
     thnq_f = "%.2f" %(thnq)
     fname = './theoretical_models/updated_%s_models/theoryXsec_%s%s_thnq%s_combined.data' % (model, theory, model, thnq_f) #this file only reads CD-Bonn/AV18. JML will bw read separately.
-    kin = dfile(fname)
-    
+    try:
+        kin = dfile(fname)
+    except:
+        print(fname,' \n does not exist. Bypassing error')
     #print(pm_bin)
     if(model=="PWIA" and theory=="V18"):
         red_pwiaXsec_V18 = np.array(kin['red_pwiaXsec_theory']) * MeV2fm
@@ -150,13 +151,13 @@ def read_theoretical_models(theory="", model="", thnq=0):
             if(thnq==75):
                 #interpolate
                 f_red_fsiXsec_JML = interp1d(pm_avg, red_fsiXsec_JML, fill_value='extrapolate', kind='linear')
-                return pm_avg, f_red_pwiaXsec_JML
+                return pm_avg, f_red_fsiXsec_JML
             else:
                 f_red_fsiXsec_JML = interp1d(pm_avg, red_fsiXsec_JML, fill_value='extrapolate', kind='cubic')
-                return pm_avg, f_red_pwiaXsec_JML
+                return pm_avg, f_red_fsiXsec_JML
             
 #______________________________________________________________________________
-def read_JWVO_theory(ithnq=0, theory='', fofa='', model='', pmavg=np.array([])):
+def read_JWVO_theory(ithnq=0, theory='', fofa='', model=''):
     
     #Read theoretical cross sections from W.V.Orden
     #The cross sections used the WJC2, AV18 and CD-Bonn models
@@ -198,28 +199,28 @@ def read_JWVO_theory(ithnq=0, theory='', fofa='', model='', pmavg=np.array([])):
     f_CD_AMT_DWBA_red = interp1d(pm_avg, CD_AMT_DWBA_red, fill_value='extrapolate', kind='linear')
 
     if(theory=='WJC2' and fofa=='GKex05' and model=='PWBA'):
-        return[pmavg, f_WJC2_GKex05_PWBA_red(pmavg)]
+        return[pm_avg, f_WJC2_GKex05_PWBA_red]
     elif(theory=='WJC2' and fofa=='GKex05' and model=='DWBA'):
-        return[pmavg, f_WJC2_GKex05_DWBA_red(pmavg)]
+        return[pm_avg, f_WJC2_GKex05_DWBA_red]
     elif(theory=='WJC2' and fofa=='AMT' and model=='PWBA'):
-        return[pmavg, f_WJC2_AMT_PWBA_red(pmavg)]
+        return[pm_avg, f_WJC2_AMT_PWBA_red]
     elif(theory=='WJC2' and fofa=='AMT' and model=='DWBA'):
-        return[pmavg, f_WJC2_AMT_DWBA_red(pmavg)]
+        return[pm_avg, f_WJC2_AMT_DWBA_red]
 
     elif(theory=='AV18' and fofa=='GKex05' and model=='PWBA'):
-        return[pmavg, f_AV18_GKex05_PWBA_red(pmavg)]
+        return[pm_avg, f_AV18_GKex05_PWBA_red]
     elif(theory=='AV18' and fofa=='GKex05' and model=='DWBA'):
-        return[pmavg, f_AV18_GKex05_DWBA_red(pmavg)]
+        return[pm_avg, f_AV18_GKex05_DWBA_red]
     elif(theory=='AV18' and fofa=='AMT' and model=='PWBA'):
-        return[pmavg, f_AV18_AMT_PWBA_red(pmavg)]
+        return[pm_avg, f_AV18_AMT_PWBA_red]
     elif(theory=='AV18' and fofa=='AMT' and model=='DWBA'):
-        return[pmavg, f_AV18_AMT_DWBA_red(pmavg)]
+        return[pm_avg, f_AV18_AMT_DWBA_red]
 
     elif(theory=='CD' and fofa=='GKex05' and model=='PWBA'):
-        return[pmavg, f_CD_GKex05_PWBA_red(pmavg)]
+        return[pm_avg, f_CD_GKex05_PWBA_red]
     elif(theory=='CD' and fofa=='GKex05' and model=='DWBA'):
-        return[pmavg, f_CD_GKex05_DWBA_red(pmavg)]
+        return[pm_avg, f_CD_GKex05_DWBA_red]
     elif(theory=='CD' and fofa=='AMT' and model=='PWBA'):
-        return[pmavg, f_CD_AMT_PWBA_red(pmavg)]
+        return[pm_avg, f_CD_AMT_PWBA_red]
     elif(theory=='CD' and fofa=='AMT' and model=='DWBA'):
-        return[pmavg, f_CD_AMT_DWBA_red(pmavg)] 
+        return[pm_avg, f_CD_AMT_DWBA_red] 
