@@ -244,9 +244,9 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
   double R = (float)dataI / simcI;
   double R_err = R * sqrt(pow(dataI_err/dataI,2) + pow(simcI_err/simcI,2));
   
-  leg->AddEntry(hdata,Form("Data | Integral: %.5f", dataI),"f");
-  leg->AddEntry(hsimc,Form("SIMC | Integral: %.5f", simcI));
-  leg->AddEntry((TObject*)0, Form("Ratio: %.5f #pm %.5f", R, R_err), "");
+  leg->AddEntry(hdata,Form("Data | Integral: %.3f", dataI),"f");
+  leg->AddEntry(hsimc,Form("SIMC | Integral: %.3f", simcI));
+  leg->AddEntry((TObject*)0, Form("Ratio: %.3f #pm %.3f", R, R_err), "");
   leg->Draw();
 
 

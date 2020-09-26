@@ -46,7 +46,7 @@ bool h_delta = 1
 bool e_delta = 1                                                                                              
 bool ztar_diff = 1                                                                                            
 bool Q2 = 1                                                                                                   
-bool th_nq = 0                                                                                                
+bool th_nq = 1                                                                                                
 bool MM = 0                                                                                                   
                                                                                                               
 ;PID Cuts                                                                                                     
@@ -81,8 +81,8 @@ ztarDiff_max: 2.
 Q2_min: 4.                                                                                                    
 Q2_max: 5.                                                                                                    
                                                                                                               
-thnq_min: 70.                                                                                                 
-thnq_max: 80.                                                                                                 
+thnq_min: 40.                                                                                                 
+thnq_max: 50.                                                                                                 
                                                                                                               
 MM_min: 0.9                                                                                                   
 MM_max: 0.985                                                                                                 
@@ -93,5 +93,4 @@ shms_cal_max: 5.
                                                                                                               
 coin_time_min: 10.5                                                                                           
 coin_time_max: 14.5                                                                                           
-
-
+                                                                                                              

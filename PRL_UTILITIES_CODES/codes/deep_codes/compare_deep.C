@@ -11,12 +11,12 @@ void compare_deep(int pm, int set, int thnq)
   gStyle->SetOptStat(0000000);
   string thnq_set;
   TString root_dir;
-  if(thnq==-1){thnq_set = "all_thnq_Q2_4to5GeV";}
-  else{thnq_set = Form("thnq%d_Q2_4to5GeV", thnq);}
+  if(thnq==-1){thnq_set = "all_thnq_Q2_4to5";}
+  else{thnq_set = Form("thnq%d_Q2_4to5", thnq);}
 
   
   if(thnq==-1){root_dir = Form("../../root_files/pm%d_fsiXsec_set%d_%s/", pm, set, thnq_set.c_str());}
-  else{TString root_dir = Form("../../root_files/pm%d_fsiXsec_set%d_%s/", pm, set, thnq_set.c_str());}
+  else{root_dir = Form("../../root_files/pm%d_fsiXsec_set%d_%s/", pm, set, thnq_set.c_str());}
   string simc_fname = Form("deep_simc_histos_pm%d_lagetfsi_rad_set%d.root", pm, set);
   string data_fname = Form("deep_data_histos_pm%d_set%d_combined.root", pm, set);
     
@@ -134,12 +134,47 @@ void compare_deep(int pm, int set, int thnq)
   data_file->GetObject("H_Em_nuc_sys", data_emiss);  
   data_file->GetObject("H_Pm", data_Pm);
 
+  //============================================================================================
+
+
+  //-------EVENT SELECTION CUTS
+  //Plot Only Data Histos
+  plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts / mC", "SHMS Calorimeter Total Normalized Energy"); 
+  plot_hist(data_CoinTime, "Coincidence Time [ns]", "Counts / mC", "Coincidence Time"); 
+
+  //ONLY PLOT DATA-2-SIMC COMPARISONS (NOT RATIOS)
+  compare_hist(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts / mC", "HMS #delta");
+  compare_hist(data_edelta, simc_edelta_fsi, "SHMS #delta [%]", "Counts / mC", "SHMS #delta");
+
+  compare_hist(data_Q2, simc_Q2_fsi, "Q^{2} [GeV^{2}]", "Counts / mC", "4-Momentum Transfer, Q^{2}"); 
+  //compare_hist(data_thnq, simc_thnq_fsi, "#theta_{nq} [deg]", "Counts", "Neutron Recoil Angles, #theta_{nq}");
+  compare_hist(data_ztar_diff, simc_ztar_diff_fsi, "Z_{tar} Difference [cm]", "Counts / mC", "Z_{tar} Difference"); 
+  compare_hist(data_emiss, simc_emiss_fsi, "Missing Energy, E_{m} [GeV]", "Counts / mC", "Nuclear Missing Energy"); 
+
+  //compare_hist(data_Pm, simc_Pm_fsi, "Neutron Recoil Momentum, P_{r} [GeV]", "Counts", "Neutron Recoil Momentum");
+
   
-  //Plot the SHMS Recon
+  //==============================================================
+  //===============  DATA / SIMC RECONSTRUCTIONS =================
+  //==============================================================
+  
+  //Plot the SHMS Recon (data-to-simc comparison)
+  //compare_hist(data_eytar, simc_eytar_fsi, "SHMS Y_{tar} [cm]", "Counts/mC", "SHMS Y_{tar}");
+  //compare_hist(data_exptar, simc_exptar_fsi, "SHMS X'_{tar} [rad]", "Counts/mC", "SHMS X'_{tar}");
+  //compare_hist(data_eyptar, simc_eyptar_fsi, "SHMS Y'_{tar} [rad]", "Counts/mC", "SHMS Y'_{tar}");
+  //compare_hist(data_edelta, simc_edelta_fsi, "SHMS #delta [%]", "Counts/mC", "SHMS #delta");
+  
+  //Plot the SHMS Recon (data-to-simc ratio)
   //hist_ratio(data_eytar, simc_eytar_fsi, "SHMS Y_{tar} [cm]", "Counts / mC", "SHMS Y_{tar}");
   //hist_ratio(data_exptar, simc_exptar_fsi, "SHMS X'_{tar} [rad]", "Counts / mC", "SHMS X'_{tar}");
   //hist_ratio(data_eyptar, simc_eyptar_fsi, "SHMS Y'_{tar} [rad]", "Counts / mC", "SHMS Y'_{tar}");
   //hist_ratio(data_edelta, simc_edelta_fsi, "SHMS #delta [%]", "Counts / mC", "SHMS #delta");
+  
+  //Plot the HMS Recon
+  //compare_hist(data_hytar, simc_hytar_fsi, "HMS Y_{tar} [cm]", "Counts/mC", "HMS Y_{tar}");
+  //compare_hist(data_hxptar, simc_hxptar_fsi, "HMS X'_{tar} [rad]", "Counts/mC", "HMS X'_{tar}");
+  //compare_hist(data_hyptar, simc_hyptar_fsi, "HMS Y'_{tar} [rad]", "Counts/mC", "HMS Y'_{tar}");
+  //compare_hist(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts/mC", "HMS #delta");
 
   //Plot the HMS Recon
   //hist_ratio(data_hytar, simc_hytar_fsi, "HMS Y_{tar} [cm]", "Counts / mC", "HMS Y_{tar}");
@@ -147,32 +182,4 @@ void compare_deep(int pm, int set, int thnq)
   //hist_ratio(data_hyptar, simc_hyptar_fsi, "HMS Y'_{tar} [rad]", "Counts / mC", "HMS Y'_{tar}");
   //hist_ratio(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts / mC", "HMS #delta");
 
-  //-------EVENT SELECTION CUTS
-  //Plot Only Data Histos
-  plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts / mC", "SHMS Calorimeter Total Normalized Energy");
-  plot_hist(data_CoinTime, "Coincidence Time [ns]", "Counts / mC", "Coincidence Time");
-
-  //ONLY PLOT DATA-2-SIMC COMPARISONS (NOT RATIOS)
-  //compare_hist(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts / mC", "HMS #delta");
-  //compare_hist(data_edelta, simc_edelta_fsi, "SHMS #delta [%]", "Counts / mC", "SHMS #delta");
-
-  //compare_hist(data_Q2, simc_Q2_fsi, "Q^{2} [GeV^{2}]", "Counts / mC", "4-Momentum Transfer, Q^{2}");
-  //compare_hist(data_thnq, simc_thnq_fsi, "#theta_{nq} [deg]", "Counts", "Neutron Recoil Angles, #theta_{nq}");
-  //compare_hist(data_ztar_diff, simc_ztar_diff_fsi, "Z_{tar} Difference [cm]", "Counts / mC", "Z_{tar} Difference");
-  //compare_hist(data_emiss, simc_emiss_fsi, "Missing Energy, E_{m} [GeV]", "Counts / mC", "Nuclear Missing Energy");
-
-  //compare_hist(data_Pm, simc_Pm_fsi, "Neutron Recoil Momentum, P_{r} [GeV]", "Counts", "Neutron Recoil Momentum");
-
-    //ONLY COMPARE HISTOS  
-   //Plot the SHMS Recon
-  //compare_hist(data_eytar, simc_eytar_fsi, "SHMS Y_{tar} [cm]", "Counts", "SHMS Y_{tar}");
-  //compare_hist(data_exptar, simc_exptar_fsi, "SHMS X'_{tar} [rad]", "Counts", "SHMS X'_{tar}");
-  //compare_hist(data_eyptar, simc_eyptar_fsi, "SHMS Y'_{tar} [rad]", "Counts", "SHMS Y'_{tar}");
-  //compare_hist(data_edelta, simc_edelta_fsi, "SHMS #delta [%]", "Counts", "SHMS #delta");
-
-  //Plot the HMS Recon
-  //compare_hist(data_hytar, simc_hytar_fsi, "HMS Y_{tar} [cm]", "Counts", "HMS Y_{tar}");
-  //compare_hist(data_hxptar, simc_hxptar_fsi, "HMS X'_{tar} [rad]", "Counts", "HMS X'_{tar}");
-  //compare_hist(data_hyptar, simc_hyptar_fsi, "HMS Y'_{tar} [rad]", "Counts", "HMS Y'_{tar}");
-  //compare_hist(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts", "HMS #delta");
 }
