@@ -315,11 +315,9 @@ def make_prl_plots(plot2_inset=0):
     #Set axis limits
     B.pl.xlim(0.0, 1.2)
     B.pl.ylim(-0.5, 5.8)  #ORIGINAL
-    #B.pl.ylim(-0.5, 10.8)  #INSET
     B.pl.ylim(-0.5, 16.8)  #INSET
     
     #log settings
-    #B.pl.ylim(0.5, 2.3)
     B.pl.yscale('linear')
 
     #Set Tick Marks
@@ -336,8 +334,12 @@ def make_prl_plots(plot2_inset=0):
     if(plot2_inset==1):
         #----CRTE INSET PLOT(35 DEG)
         axins35 = inset_axes(ax0, width='60%', height='60%', loc='upper left')
-        B.pl.xlim(-0.1, 1.2)
-        B.pl.ylim(0.3, 4.5)
+        #B.pl.xlim(-0.1, 1.2)  --ORIGINAL INSET RANGE
+        #B.pl.ylim(0.3, 4.5)   --ORIGINAL INSET RANGE
+
+        B.pl.xlim(-0.1, 0.700)  #--INSET RANGE (M.K.Jones)
+        B.pl.ylim(0.3, 2.08)   #--INSET RANGE (M.K.Jones)
+        
         
         #Plot the Data (and all models) to CD-Bonn PWIA model
         B.pl.axhline(y=1.0, xmin = 0.0, xmax=1.2, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
@@ -410,8 +412,11 @@ def make_prl_plots(plot2_inset=0):
     if(plot2_inset==1):
         #----CRTE INSET PLOT(45 DEG)
         axins45 = inset_axes(ax1, width='60%', height='60%', loc='upper left')
-        B.pl.xlim(-0.1, 1.2)
-        B.pl.ylim(0.3, 4.5)
+        #B.pl.xlim(-0.1, 1.2) --ORIGINAL INSET RANGE
+        #B.pl.ylim(0.3, 4.5)  --ORIGINAL INSET RANGE
+
+        B.pl.xlim(-0.1, 0.700)  #--INSET RANGE (M.K.Jones)
+        B.pl.ylim(0.3, 2.08)   #--INSET RANGE (M.K.Jones)
         
         #Plot the Data (and all models) to CD-Bonn PWIA model
         B.pl.axhline(y=1.0, xmin = 0.0, xmax=1.2, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
