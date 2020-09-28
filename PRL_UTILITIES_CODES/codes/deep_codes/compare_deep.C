@@ -10,7 +10,7 @@ void compare_deep(int pm, int set, int thnq)
   //gStyle->SetOptStat(1001111);
   gStyle->SetOptStat(0000000);
   string thnq_set;
-  TString root_dir;
+  string root_dir;
   if(thnq==-1){thnq_set = "all_thnq_Q2_4to5";}
   else{thnq_set = Form("thnq%d_Q2_4to5", thnq);}
 
