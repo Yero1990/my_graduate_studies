@@ -54,6 +54,7 @@ data_set = int(sys.argv[2])
 
 plt.rcParams["font.family"] = "Times New Roman"
 
+
 #Read data file
 if pm_set==80:
     fname = './pm%i_laget_RCratio.txt' % (pm_set)
@@ -329,7 +330,7 @@ for i, ithnq in enumerate(thnq_arr):
     B.pl.xticks(fontsize=14)
     B.pl.yticks(fontsize=14)
     B.pl.tight_layout()
-    B.pl.show()
+    #B.pl.show()
 
     B.pl.savefig('./BCratio_thnq%i.pdf'%(ithnq))
 
