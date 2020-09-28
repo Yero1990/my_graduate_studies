@@ -185,7 +185,7 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
 
 //---------------------
 
-void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", TString title="", TString set_logy="")
+void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", TString title="", TString set_logy="", Int_t norm=0)
 {
 
   gStyle->SetOptStat(0);
@@ -233,9 +233,18 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
   if(set_logy=="logy"){
     c->SetLogy();
   }
+
+  if(norm==0)
+    {
+      hdata->Draw("samehistE0");
+      hsimc->Draw("samesE0");
+    }
   
-  hdata->Draw("samehistE0");
-  hsimc->Draw("samesE0");
+  else if(norm==1)
+    {
+      hdata->DrawNormalized("samehistE0");
+      hsimc->DrawNormalized("samesE0");
+    }
   
   double dataI_err, simcI_err;
   double nbins = hdata->GetNbinsX();  //Get total number of bins (excluding overflow)
