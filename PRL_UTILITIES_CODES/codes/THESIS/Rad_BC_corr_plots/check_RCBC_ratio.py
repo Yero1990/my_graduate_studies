@@ -259,10 +259,11 @@ thnq_arr = [5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105]
 for i, ithnq in enumerate(thnq_arr):
     
     print('thnq=',ithnq)
-         
+
     B.pl.clf()
     B.pl.figure(i)
-
+  
+    
     #Plot RC ratio PWIA and FSI
     B.plot_exp(pm[thnq==ithnq], RC_fact_pwia_80[thnq==ithnq], RC_fact_pwia_80_err[thnq==ithnq], marker='o', color='k', label='PWIA')
     B.plot_exp(pm[thnq==ithnq], RC_fact_pwia_580s1[thnq==ithnq], RC_fact_pwia_580s1_err[thnq==ithnq], marker='s', color='b', logy=False, label='PWIA')

@@ -2,12 +2,13 @@
 //Used to plot data/simc comparison and their ratio
 void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", TString title="")
 {
-
+  int font_type = 132;
+  
   gStyle->SetOptStat(0);
   gStyle->SetTitleFontSize(0.08);
-  gStyle->SetTitleFont(22, "");
+  gStyle->SetTitleFont(font_type, "");
   gStyle->SetLegendBorderSize(0);
-  gStyle->SetLegendFont(22);
+  gStyle->SetLegendFont(font_type);
   gStyle->SetLegendTextSize(0.06);
 
   //Create Canvas
@@ -46,7 +47,7 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
 
   TPad* pad1 = (TPad*)c->GetPad(1);
   pad1->SetBottomMargin(0.02);
-  pad1->SetRightMargin(0.03);
+  pad1->SetRightMargin(0.05);
   pad1->SetLeftMargin(0.1);
   pad1->SetTopMargin(0.13);
   pad1->SetFrameLineWidth(2);
@@ -59,8 +60,8 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   hdata->GetYaxis()->CenterTitle();
   hdata->GetYaxis()->SetRangeUser(0,hdata->GetMaximum()+0.6*hdata->GetMaximum());
   hdata->GetYaxis()->SetTitleOffset(0.6);
-  hdata->SetLabelFont(22, "XY");
-  hdata->SetTitleFont(22, "XY");
+  hdata->SetLabelFont(font_type, "XY");
+  hdata->SetTitleFont(font_type, "XY");
 
   double dataI_err, simcI_err;
   double nbins = hdata->GetNbinsX();  //Get total number of bins (excluding overflow)
@@ -77,8 +78,8 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   c->cd(2);
   TPad* pad = (TPad*)c->GetPad(2);
   pad->SetTopMargin(0.01);
-  pad->SetBottomMargin(0.5);
-  pad->SetRightMargin(0.03);
+  pad->SetBottomMargin(0.2);
+  pad->SetRightMargin(0.05);
   pad->SetLeftMargin(0.1);
   pad->SetFrameLineWidth(2);
 
@@ -91,8 +92,8 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
   hratio->GetXaxis()->CenterTitle();
   hratio->GetYaxis()->CenterTitle();
   hratio->GetYaxis()->SetTitleOffset(0.6);
-  hratio->SetLabelFont(22, "XY");
-  hratio->SetTitleFont(22, "XY");
+  hratio->SetLabelFont(font_type, "XY");
+  hratio->SetTitleFont(font_type, "XY");
 
   hratio->Draw();
   pad->Update();
@@ -120,12 +121,13 @@ void hist_ratio(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", 
 
 void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="", TString set_logy="")
 {
+  int font_type = 132;
 
   gStyle->SetOptStat(0);
   gStyle->SetTitleFontSize(0.05);
-  gStyle->SetTitleFont(22, "");
+  gStyle->SetTitleFont(font_type, "");
   gStyle->SetLegendBorderSize(0);
-  gStyle->SetLegendFont(22);
+  gStyle->SetLegendFont(font_type);
   gStyle->SetLegendTextSize(0.03);
 
   //Create Canvas
@@ -170,8 +172,8 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
   hist->GetYaxis()->SetTitleOffset(1.3);
   hist->GetXaxis()->SetTitleOffset(1.3);
   
-  hist->SetLabelFont(22, "XY");
-  hist->SetTitleFont(22, "XY");
+  hist->SetLabelFont(font_type, "XY");
+  hist->SetTitleFont(font_type, "XY");
 
   double nbins = hist->GetNbinsX();  //Get total number of bins (excluding overflow)
   dataI = hist->IntegralAndError(1, nbins, dataI_err);
@@ -188,11 +190,13 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
 void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel="", TString title="", TString set_logy="", Int_t norm=0)
 {
 
+  int font_type = 132;
+  
   gStyle->SetOptStat(0);
   gStyle->SetTitleFontSize(0.04);
-  gStyle->SetTitleFont(22, "");
+  gStyle->SetTitleFont(font_type, "");
   gStyle->SetLegendBorderSize(0);
-  gStyle->SetLegendFont(22);
+  gStyle->SetLegendFont(font_type);
   gStyle->SetLegendTextSize(0.03);
 
   //Create Canvas
@@ -225,8 +229,8 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
   hdata->GetYaxis()->SetRangeUser(0.001,hdata->GetMaximum()+0.6*hdata->GetMaximum());
   hdata->GetXaxis()->SetTitleOffset(1.);  
   hdata->GetYaxis()->SetTitleOffset(1.);
-  hdata->SetLabelFont(22, "XY");
-  hdata->SetTitleFont(22, "XY");
+  hdata->SetLabelFont(font_type, "XY");
+  hdata->SetTitleFont(font_type, "XY");
   
   //auto leg = new TLegend(0.1,0.8,0.28,0.9); 
   TLegend *leg = new TLegend(0.14,0.88,0.25,0.73); 

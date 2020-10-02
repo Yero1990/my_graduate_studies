@@ -10,8 +10,8 @@ void compare_heep(int run)
   gStyle->SetOptStat(0000000);
 
 
-  TString root_dir = "../../root_files/pre_HEEP_ELASTICS/";
-  //TString root_dir = "../../root_files/HEEP_ELASTICS/";
+  //TString root_dir = "../../root_files/pre_HEEP_ELASTICS/";
+  TString root_dir = "../../root_files/HEEP_ELASTICS/";
 
   //NO CUT and Ztar Diff Cut
   //TString data_filename = "../../root_files/heep_data_histos_3288_combined.root";    
@@ -23,13 +23,13 @@ void compare_heep(int run)
   //TString simc_filename = "heep_simc_histos_3288_rad_Q2_4to5.root";       
 
   //Full Q2 range
-  //TString data_filename = Form("heep_data_histos_%d_combined_Q2full.root", run);    
-  //TString simc_filename = Form("heep_simc_histos_%d_rad_Q2full.root", run);       
+  TString data_filename = Form("heep_data_histos_%d_combined_Q2full.root", run);    
+  TString simc_filename = Form("heep_simc_histos_%d_rad_Q2full.root", run);       
 
   
   //Pre-defined SIMC/data root file names containing histogram object to comapare
-  TString simc_filename =  Form("heep_simc_histos_%d_rad.root", run);                      
-  TString data_filename = Form("heep_data_histos_%d_combined.root",run); 
+  //TString simc_filename =  Form("heep_simc_histos_%d_rad.root", run);                      
+  //TString data_filename = Form("heep_data_histos_%d_combined.root",run); 
 
   TString simc_f = root_dir + simc_filename;
   TString data_f = root_dir + data_filename;
@@ -337,10 +337,10 @@ void compare_heep(int run)
   //hist_ratio(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts / mC", "SHMS #delta");
 
   //Plot the HMS Recon Ratio
-  //hist_ratio(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts / mC", "HMS Y_{tar}");
-  //hist_ratio(data_hxptar, simc_hxptar, "HMS X'_{tar} [rad]", "Counts / mC", "HMS X'_{tar}");
-  //hist_ratio(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts / mC", "HMS Y'_{tar}");
-  //hist_ratio(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts / mC", "HMS #delta");
+  hist_ratio(data_hytar, simc_hytar, "HMS Y_{tar} [cm]", "Counts / mC", "HMS Y_{tar}");
+  hist_ratio(data_hxptar, simc_hxptar, "HMS X'_{tar} [rad]", "Counts / mC", "HMS X'_{tar}");
+  hist_ratio(data_hyptar, simc_hyptar, "HMS Y'_{tar} [rad]", "Counts / mC", "HMS Y'_{tar}");
+  hist_ratio(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts / mC", "HMS #delta");
   
   
   //Plot Kinematic Variables
@@ -363,7 +363,7 @@ void compare_heep(int run)
   
 
   //------Plot Event Selection Cuts----
-  compare_hist(data_W, simc_W, "Invariant Mass W [GeV]", "Counts / mC", Form("H(e,e'p) Elastic Run %d: Invariant Mass", run));
+  //compare_hist(data_W, simc_W, "Invariant Mass W [GeV]", "Counts / mC", Form("H(e,e'p) Elastic Run %d: Invariant Mass", run));
   
   //Also plot collimator
   //plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts / mC", "SHMS Calorimeter Total Normalized Energy", "logy");
@@ -373,14 +373,14 @@ void compare_heep(int run)
   //compare_hist(data_hdelta, simc_hdelta, "HMS #delta [%]", "Counts / mC", "HMS #delta");
   //compare_hist(data_edelta, simc_edelta, "SHMS #delta [%]", "Counts / mC", "SHMS #delta");
 
-  compare_hist(data_Q2, simc_Q2, "Q^{2} [GeV^{2}]", "Counts / mC", Form("H(e,e'p) Elastic Run %d: 4-Momentum Transfer, Q^{2}", run));
+  //compare_hist(data_Q2, simc_Q2, "Q^{2} [GeV^{2}]", "Counts / mC", Form("H(e,e'p) Elastic Run %d: 4-Momentum Transfer, Q^{2}", run));
   //compare_hist(data_thnq, simc_thnq_fsi, "#theta_{nq} [deg]", "Charge Normalized Counts", "Neutron Recoil Angles, #theta_{nq}");
   //compare_hist(data_ztar_diff, simc_ztar_diff, "Z_{tar} Difference [cm]", "Counts / mC", "Z_{tar} Difference", "logy");
   //compare_hist(data_emiss, simc_emiss, "Missing Energy, E_{m} [GeV]", "Counts / mC", "Missing Energy");
 
 
   //------Plott elecntron angle/momentum
-  compare_hist(data_th_elec, simc_th_elec, "#theta_{e} [deg]", "Charge Normalized Counts", "Electron Scattered Angles, #theta_{e}");
-  compare_hist(data_kf, simc_kf, "k_{f} [GeV/c]", "Charge Normalized Counts", "Electron Scattered Momentum, k_{f}");
+  //compare_hist(data_th_elec, simc_th_elec, "#theta_{e} [deg]", "Charge Normalized Counts", "Electron Scattered Angles, #theta_{e}");
+  //compare_hist(data_kf, simc_kf, "k_{f} [GeV/c]", "Charge Normalized Counts", "Electron Scattered Momentum, k_{f}");
   
 }

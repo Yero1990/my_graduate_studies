@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{1}%
+\begin{thebibliography}{5}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,18 +50,41 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{\citenamefont {Fabian}\ and\ \citenamefont
-  {Arenhövel}(1976)}]{Arenhovel_1976}%
+\bibitem [{COS()}]{COSY}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Fabian}}\ and\ \bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
-  {Arenhövel}},\ }\bibfield  {title} {\bibinfo {title} {Pion {E}xchange
-  currents and {I}sobar {C}onfigurations in {D}euteron
-  {E}lectro-{D}isintegration {B}elow {P}ion {T}hreshold},\ }\href
-  {https://doi.org/https://doi.org/10.1016/0375-9474(76)90485-1} {\bibfield
-  {journal} {\bibinfo  {journal} {Nuclear Physics A}\ }\textbf {\bibinfo
-  {volume} {258}},\ \bibinfo {pages} {461} (\bibinfo {year} {1976})},\ \bibinfo
-  {note}
-  {\url{http://www.sciencedirect.com/science/article/pii/0375947476904851}}\BibitemShut
+  \href@noop {} {\bibinfo {title} {{COSY INFINITY}}},\ \bibinfo {howpublished}
+  {\url{https://bt.pa.msu.edu//index_cosy.htm}},\ \bibinfo {note} {accessed:
+  2020-09-30}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Arrington}(2004)}]{PhysRevC.69.022201}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {J.}~\bibnamefont
+  {Arrington}},\ }\bibfield  {title} {\bibinfo {title} {Implications of the
+  discrepancy between proton form factor measurements},\ }\href
+  {https://doi.org/10.1103/PhysRevC.69.022201} {\bibfield  {journal} {\bibinfo
+  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {69}},\ \bibinfo
+  {pages} {022201} (\bibinfo {year} {2004})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Yero}(2020)}]{cyero_phdthesis}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Yero}},\ }\emph {\bibinfo {title} {{Cross Section Measurements of Deuteron
+  Electro-Disintegration at Very High Recoil Momenta and Large 4-Momentum
+  Transfers ($Q^{2}$)}}},\ \href@noop {} {Ph.D. thesis},\ \bibinfo  {school}
+  {Florida International University}, \bibinfo {address} {11200 SW 8th St,
+  Miami, FL 33199} (\bibinfo {year} {2020}),\ \bibinfo {note}
+  {\url{https://arxiv.org/abs/2009.11343}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Barlow}(2002)}]{barlow2002systematic}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Barlow}},\ }\href@noop {} {\bibinfo {title} {{Systematic Errors: facts and
+  fictions}}} (\bibinfo {year} {2002}),\ \bibinfo {note}
+  {\url{https://arxiv.org/abs/hep-ex/0207026}},\ \Eprint
+  {https://arxiv.org/abs/hep-ex/0207026} {arXiv:hep-ex/0207026 [hep-ex]}
+  \BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Barlow}(2017)}]{barlow2017}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Barlow}},\ }\href@noop {} {\bibinfo {title} {{Systematic Errors in Particle
+  Physics}}} (\bibinfo {year} {2017}),\ \bibinfo {note}
+  {\url{https://indico.cern.ch/event/591374/contributions/2511753/attachments/1429002/2193943/01_PWA-Barlow.pdf}}\BibitemShut
   {NoStop}%
 \end{thebibliography}%

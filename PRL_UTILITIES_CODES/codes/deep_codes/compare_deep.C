@@ -143,16 +143,16 @@ void compare_deep(int pm, int set, int thnq)
 
   //-------EVENT SELECTION CUTS
   //Plot Only Data Histos
-  //plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts / mC", "SHMS Calorimeter Total Normalized Energy"); 
-  //plot_hist(data_CoinTime, "Coincidence Time [ns]", "Counts / mC", "Coincidence Time"); 
+  plot_hist(data_pid_eCal, "SHMS Calorimeter E_{dep}/P_{trk}", "Counts / mC", "SHMS Calorimeter Energy"); 
+  plot_hist(data_CoinTime, "Coincidence Time [ns]", "Counts / mC", "Coincidence Time"); 
 
   //ONLY PLOT DATA-2-SIMC COMPARISONS (NOT RATIOS)
-  //compare_hist(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts / mC", "HMS #delta");
-  //compare_hist(data_edelta, simc_edelta_fsi, "SHMS #delta [%]", "Counts / mC", "SHMS #delta");
+  compare_hist(data_hdelta, simc_hdelta_fsi, "HMS #delta [%]", "Counts / mC", "HMS #delta");
+  compare_hist(data_edelta, simc_edelta_fsi, "SHMS #delta [%]", "Counts / mC", "SHMS #delta");
 
-  //compare_hist(data_Q2, simc_Q2_fsi, "Q^{2} [GeV^{2}]", "Counts / mC", "4-Momentum Transfer, Q^{2}"); 
+  compare_hist(data_Q2, simc_Q2_fsi, "Q^{2} [GeV^{2}]", "Counts / mC", "4-Momentum Transfer, Q^{2}"); 
   //compare_hist(data_thnq, simc_thnq_fsi, "#theta_{nq} [deg]", "Counts", "Neutron Recoil Angles, #theta_{nq}");
-  //compare_hist(data_ztar_diff, simc_ztar_diff_fsi, "Z_{tar} Difference [cm]", "Counts / mC", "Z_{tar} Difference"); 
+  compare_hist(data_ztar_diff, simc_ztar_diff_fsi, "Z_{tar} Difference [cm]", "Counts / mC", "Z_{tar} Difference"); 
   compare_hist(data_emiss, simc_emiss_fsi, "Missing Energy, E_{m} [GeV]", "Counts / mC", "Nuclear Missing Energy", 1); 
 
   //compare_hist(data_Pm, simc_Pm_fsi, "Neutron Recoil Momentum, P_{r} [GeV]", "Counts", "Neutron Recoil Momentum");
