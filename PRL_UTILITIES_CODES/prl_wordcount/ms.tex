@@ -1,4 +1,4 @@
-\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4-2}  % for review and submission
+\documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress,nofootbib]{revtex4-2}  % for review and submission
 \pdfoutput=1 
 \usepackage{graphicx}  % needed for figures
 \usepackage{ragged2e}
@@ -39,7 +39,7 @@
 \end{abstract}
 
 \pacs{25.30.Fj, 25.60.Gc}
-\maketitle
+%\maketitle
 
 The deuteron is the only bound two-nucleon system and serves as an ideal framework to study the strong nuclear force at the sub-Fermi distance scale, a region which is currently
 practically unexplored and not well understood. At such small inter-nucleon distances, the nucleon-nucleon ($NN$) interaction is expected to become repulsive and the interacting
@@ -125,10 +125,10 @@ AV18 (green), CD-Bonn (magenta) and WJC2 (orange) $NN$ potentials.}
 For each bin in ($\theta_{nq}, p_{\mathrm{r}}$), the averaged $^{2}\mathrm{H}(e,e'p)n$ kinematics was calculated and used in the bin centering correction factor defined as:
 $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}} / \bar{\sigma}$, where $\sigma_{\mathrm{avg.kin}}$ is the cross section calculated at the averaged kinematics and $\bar{\sigma}$ is the cross section averaged
 over the kinematic bin. The systematic uncertainties associated with the radiative and bin-centering corrections were investigated using the Laget PWIA and FSI models but negligible effects on the cross sections were found (see Supplemental Material). The experimental and theoretical reduced cross sections were extracted and are defined as follows:
-\begin{equation}
-\sigma_{\mathrm{red}} \equiv \frac{\sigma_{\mathrm{exp(th)}}}{E_{\mathrm{f}}p_{\mathrm{f}}f_{\mathrm{rec}}\sigma_{\mathrm{cc1}}},
-\label{eq:1}
-\end{equation}
+%\begin{equation}
+%\sigma_{\mathrm{red}} \equiv \frac{\sigma_{\mathrm{exp(th)}}}{E_{\mathrm{f}}p_{\mathrm{f}}f_{\mathrm{rec}}\sigma_{\mathrm{cc1}}},
+%\label{eq:1}
+%\end{equation}
 \noindent where $\sigma_{\mathrm{exp(th)}}$ is the 5-fold experimental (or theoretical) differential cross section $\frac{d^{5}\sigma}{d\omega d\Omega_{e} d\Omega_{p}}$,
 $E_{\mathrm{f}}$ is the final proton energy, $f_{\mathrm{rec}}\equiv \frac{2p_{\mathrm{f}}^{2}E_{\mathrm{r}}}{2p_{\mathrm{f}}^{2}E_{\mathrm{r}} - (q^{2} - (p_{\mathrm{f}}^{2} + p_{\mathrm{r}}^{2}))E_{\mathrm{f}}}$
 is a recoil factor obtained by integrating over the missing energy of the bound state in the 6-fold differential cross section where $E_{\mathrm{r}}$ is the neutron recoil energy, and $\sigma_{\mathrm{cc1}}$ is the
@@ -173,7 +173,7 @@ deuteron momentum distribution calculated using the CD-Bonn potential ($\sigma^{
 \indent For $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ (Figs. \hyperref[fig:fig2]{2(a),(b)}), the data are best described by the MS CD-Bonn PWIA calculation for recoil momenta up
 to $p_{\mathrm{r}}\sim700$ MeV/c and $\sim600$ MeV/c, respectively. Furthermore, the agreement between the Halls A and C data validates the Hall A approach of selecting a kinematic
 region where recoil angles are small and FSI are reduced. \\
-\indent At larger recoil momenta, where the ratio $R>1$ and increasing with $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ FSI start to dominate at
+\indent At larger recoil momenta, where the ratio $R>1$ and increasing with $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ FSI start to dominate for
 $p_{\mathrm{r}} \gtrsim 800$ MeV/c for the MS CD-Bonn
 \begin{figure}[!t]
 \includegraphics[scale=0.5]{PRL_plot2.pdf}
@@ -196,19 +196,19 @@ Furthermore, the MS CD-Bonn model was found to be significantly different than t
 At the higher missing momenta provided by this experiment ($p_{\mathrm{r}}>700$ MeV/c), however, all models were unable to describe the data. 
 Additional measurements of the $^{2}\mathrm{H}(e,e'p)n$ would be required to reduce the statistical uncertainties in this very high missing
 momentum region ($p_{\mathrm{r}}>500$ MeV/c) to better understand the large deviations observed between the different models and data.\\
-\indent We acknowledge the outstanding support of the staff of the Accelerator and Physics Divisions at Jefferson Lab
-as well as the entire Hall C staff, technicians, graduate students and users who took shifts or contributed
-to the equipment for the Hall C upgrade, making all four commissioning experiments possible. We would also like to
-thank Misak Sargsian, J.M. Laget, Sabine Jeschonnek and J.W. Van Orden for providing the theoretical calculations as well as the useful
-discussions we had on this topic. This work was supported in part by the U.S. Department of Energy (DOE), Office of Science, Office of Nuclear Physics
-under grant No. DE-SC0013620 and contract DE-AC05-06OR23177, the Nuclear Regulatory Commission (NRC) Fellowship
-under grant No. NRC-HQ-84-14-G-0040, the Doctoral Evidence Acquisition (DEA) Fellowship and the Natural Sciences and Engineering Research Council of Canada (NSERC).
+%\indent We acknowledge the outstanding support of the staff of the Accelerator and Physics Divisions at Jefferson Lab
+%as well as the entire Hall C staff, technicians, graduate students and users who took shifts or contributed
+%to the equipment for the Hall C upgrade, making all four commissioning experiments possible. We would also like to
+%thank Misak Sargsian, J.M. Laget, Sabine Jeschonnek and J.W. Van Orden for providing the theoretical calculations as well as the useful
+%discussions we had on this topic. This work was supported in part by the U.S. Department of Energy (DOE), Office of Science, Office of Nuclear Physics
+%under grant No. DE-SC0013620 and contract DE-AC05-06OR23177, the Nuclear Regulatory Commission (NRC) Fellowship
+%under grant No. NRC-HQ-84-14-G-0040, the Doctoral Evidence Acquisition (DEA) Fellowship and the Natural Sciences and Engineering Research Council of Canada (NSERC).
 
 
 %---include references that are not mentioned in the main text
 %---but are included in the supplemental material
 %---cite supp. material as follows:  (See Supplemental Material) after description of the topic being discussed.
 %\nocite{COSY}
-
-\bibliography{ms}
 \end{document}
+\bibliography{ms}
+%\end{document}

@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2020)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: ms.aux
+The top-level auxiliary file: ms_diff.aux
 The style file: apsrev4-2.bst
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -11,7 +11,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: msNotes.bib
+Database file #1: ms_diffNotes.bib
 Database file #2: ms.bib
 Repeated entry---line 785 of file ms.bib
  : @misc{COSY
@@ -30,46 +30,49 @@ Control: production of article title (0) allowed
 Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
+Warning--empty year in hodo_techreport
+Warning--empty year in dc_techreport
+Warning--empty year in ngc_techreport
 Warning--empty year in COSY
-You've used 40 entries,
+You've used 45 entries,
             6079 wiz_defined-function locations,
-            1964 strings with 24380 characters,
-and the built_in function-call counts, 40404 in all, are:
-= -- 3070
-> -- 892
-< -- 219
-+ -- 287
-- -- 220
-* -- 5950
-:= -- 3897
-add.period$ -- 38
-call.type$ -- 40
-change.case$ -- 195
-chr.to.int$ -- 49
-cite$ -- 43
-duplicate$ -- 3723
-empty$ -- 2910
-format.name$ -- 494
-if$ -- 8271
+            1996 strings with 25586 characters,
+and the built_in function-call counts, 44761 in all, are:
+= -- 3370
+> -- 1011
+< -- 238
++ -- 327
+- -- 250
+* -- 6632
+:= -- 4342
+add.period$ -- 43
+call.type$ -- 45
+change.case$ -- 222
+chr.to.int$ -- 54
+cite$ -- 51
+duplicate$ -- 4127
+empty$ -- 3222
+format.name$ -- 566
+if$ -- 9129
 int.to.chr$ -- 2
-int.to.str$ -- 47
-missing$ -- 591
-newline$ -- 166
-num.names$ -- 111
-pop$ -- 1403
+int.to.str$ -- 52
+missing$ -- 639
+newline$ -- 181
+num.names$ -- 126
+pop$ -- 1565
 preamble$ -- 1
-purify$ -- 189
+purify$ -- 211
 quote$ -- 0
-skip$ -- 1877
+skip$ -- 2039
 stack$ -- 0
-substring$ -- 1085
-swap$ -- 3488
-text.length$ -- 91
+substring$ -- 1178
+swap$ -- 3855
+text.length$ -- 105
 text.prefix$ -- 0
 top$ -- 10
-type$ -- 530
-warning$ -- 2
-while$ -- 118
+type$ -- 600
+warning$ -- 5
+while$ -- 129
 width$ -- 0
-write$ -- 395
+write$ -- 434
 (There was 1 error message)

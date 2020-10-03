@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{38}%
+\begin{thebibliography}{43}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -246,6 +246,60 @@
   {Florida International University}, \bibinfo {address} {11200 SW 8th St,
   Miami, FL 33199} (\bibinfo {year} {2020}),\ \bibinfo {note}
   {\url{https://arxiv.org/abs/2009.11343}}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Niculescu}\ \emph {et~al.}()\citenamefont
+  {Niculescu}, \citenamefont {Niculescu}, \citenamefont {Burton}, \citenamefont
+  {Coquelin}, \citenamefont {Nisson},\ and\ \citenamefont
+  {Jarell}}]{hodo_techreport}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
+  {Niculescu}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
+  {Niculescu}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Burton}},
+  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Coquelin}}, \bibinfo
+  {author} {\bibfnamefont {K.}~\bibnamefont {Nisson}},\ and\ \bibinfo {author}
+  {\bibfnamefont {T.}~\bibnamefont {Jarell}},\ }\href@noop {} {\bibinfo {title}
+  {{S}{H}{M}{S} {H}odoscope {S}cintillator {D}etectors}},\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/document/howtos/shms_scintillator_hodoscope.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Christy}\ \emph {et~al.}()\citenamefont {Christy},
+  \citenamefont {Monaghan}, \citenamefont {Kalantarians}, \citenamefont
+  {Biswas},\ and\ \citenamefont {Long}}]{dc_techreport}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Christy}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Monaghan}},
+  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Kalantarians}}, \bibinfo
+  {author} {\bibfnamefont {D.}~\bibnamefont {Biswas}},\ and\ \bibinfo {author}
+  {\bibfnamefont {M.}~\bibnamefont {Long}},\ }\href@noop {} {\bibinfo {title}
+  {{SHMS Drift Chambers}}},\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/document/howtos/shms_drift_chambers.pdf}}\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Mkrtchyan}\ \emph {et~al.}(2013)\citenamefont
+  {Mkrtchyan} \emph {et~al.}}]{Mkrtchyan_2013}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
+  {Mkrtchyan}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {{T}he
+  lead-glass electromagnetic calorimeters for the magnetic spectrometers in
+  {H}all {C} at {J}efferson {L}ab},\ }\href
+  {https://doi.org/10.1016/j.nima.2013.03.070} {\bibfield  {journal} {\bibinfo
+  {journal} {Nuclear Instruments and Methods in Physics Research Section A:
+  Accelerators, Spectrometers, Detectors and Associated Equipment}\ }\textbf
+  {\bibinfo {volume} {719}},\ \bibinfo {pages} {85–100} (\bibinfo {year}
+  {2013})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Li}(2012)}]{Li_Wenliang_mthesis}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Li}},\ }\emph {\bibinfo {title} {{H}eavy {G}as {C}herenkov {D}etector
+  {C}onstruction for {H}all {C} at {T}homas {J}efferson {N}ational
+  {A}ccelerator {F}acility}},\ \href
+  {https://ourspace.uregina.ca/handle/10294/3818} {Master's thesis},\ \bibinfo
+  {school} {University of Regina} (\bibinfo {year} {2012})\BibitemShut
+  {NoStop}%
+\bibitem [{\citenamefont {Day}()}]{ngc_techreport}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
+  {Day}},\ }\href@noop {} {\bibinfo {title} {{Preliminary Design of the SHMS
+  Noble Cerenkov Detector}}},\ \bibinfo {note}
+  {\url{https://hallcweb.jlab.org/DocDB/0009/000933/001/shms-cerv6.pdf}}\BibitemShut
+  {NoStop}%
 \bibitem [{\citenamefont {Ent}\ \emph {et~al.}(2001)\citenamefont {Ent},
   \citenamefont {Filippone}, \citenamefont {Makins}, \citenamefont {Milner},
   \citenamefont {O'Neill},\ and\ \citenamefont {Wasson}}]{PhysRevC.64.054610}%

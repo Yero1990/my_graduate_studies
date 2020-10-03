@@ -44,18 +44,18 @@
 \maketitle
 \section{\large Spectrometer Acceptance}
 \noindent The $^{1}$H$(e,e'p)$ coincidence elastic reaction was used (at kinematics very similar to the deuteron 80 MeV/c setting) to check of the spectrometers'
-acceptance model\cite{COSY} using the simulation program, SIMC. The proton form factor parametrization of Ref.\cite{PhysRevC.69.022201} were used. \\
+acceptance model\cite{COSY} using the simulation program, SIMC. The proton form factor parametrization of Ref.\cite{PhysRevC.69.022201} was used. \\
 \indent Figures \ref{fig:fig1} and \ref{fig:fig2} show the spectrometers' reconstructed quantities ($\delta$,  $Y_{\mathrm{tar}}$, $Y'_{\mathrm{tar}}$, $X'_{\mathrm{tar}}$)
 where $\delta$ is the momentum fraction defined as $\delta = \frac{P-P_{0}}{P_{p}}$, where $P$ is the particle momentum and $P_{0}$ is the spectrometer central momentum.
 The $Y_{\mathrm{tar}}$ is the reconstructed trajectory along the spectrometer $y-$coordinate, and ($Y'_{\mathrm{tar}}$, $X'_{\mathrm{tar}}$) are the reconstructed trajectories
-tangent to the spectrometer central axis ($+z$) and are defined as $Y'_{\mathrm{tar}} = \frac{dY_{\mathrm{tar}}}{dz}$ and $X'_{\mathrm{tar}} = \frac{dX_{\mathrm{tar}}}{dz}$.
+tangent to the spectrometer central optics axis ($+z$) and are defined as $Y'_{\mathrm{tar}} = \frac{dY_{\mathrm{tar}}}{dz}$ and $X'_{\mathrm{tar}} = \frac{dX_{\mathrm{tar}}}{dz}$.
 See Section 4.4 of Ref.\cite{cyero_phdthesis} for a more detailed description of these quantities.\\
 \begin{figure}[h]
 \includegraphics[scale=0.36]{plots/hms_acc_3288.png}
 \caption{HMS reconstructed quantities ($\delta$,  $Y_{\mathrm{tar}}$, $Y'_{\mathrm{tar}}$, $X'_{\mathrm{tar}}$) at the target reaction vertex using $^{1}$H$(e,e'p)$.
   For each reconstructed quantity, the top panel shows a comparison between data (blue) and SIMC (red) with their respective integrated charge-normalized yields
-  and the data-to-SIMC ratio numerical values (top-left). The bottom panel shows the ratio of the data (Y$_{\mathrm{data}}$) to SIMC (Y$_{\mathrm{SIMC}}$) on a bin-by-bin basis, where the inner (black)
-and outer (blue) dashed lines represent a percent deviation from unity of $\pm10\%$ and $\pm20\%$, respectively.}
+  and the data-to-SIMC ratio numerical values (top-left corner). The bottom panel shows the data to SIMC yield ratio (Y$_{\mathrm{data}}$/Y$_{\mathrm{SIMC}}$) on a
+  bin-by-bin basis, where the inner (black) and outer (blue) dashed lines represent a percent deviation from unity of $\pm10\%$ and $\pm20\%$, respectively.}
 \label{fig:fig1}
 \end{figure}
 \clearpage
@@ -78,14 +78,14 @@ The FSI model from J.M. Laget was used in the simulation for the plots shown bel
 \begin{figure}
 \includegraphics[scale=0.30]{plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png}
 \caption{Acceptance cut on HMS momentum fraction (left) and event selection cut on the difference between the $z$-reaction vertex on both spectrometers (right).
-  Inset (left): The SHMS momentum fraction was set by the HMS $\delta$ cut to be $\lesssim$3$\%$ which is well within the SHMS specifications of  $-10 \leq \delta \leq22 \%$}
+  Inset (left): The SHMS momentum fraction was set by the HMS $\delta$ cut to be $\lesssim$3$\%$ which is well within the SHMS momentum acceptance range of $-10 \leq \delta \leq22 \%$}
 \label{fig:fig4}
 \includegraphics[scale=0.30]{plots/coin_and_eCal_CUT_80MeV_35deg.png}
-\caption{Event selection cuts on the $ep$ coincidence time (left) and total deposited energy on calorimeted normalized by the track momentum (right).}
+\caption{Event selection cuts on the electron-proton ($ep$) coincidence time (left) and total deposited energy on calorimeted normalized by the particle track momentum (right).}
 \label{fig:fig5}
 \includegraphics[scale=0.30]{plots/collimator_CUT_80MeV_35deg_data.png}
-\caption{Geometrical acceptance cut on reconstructed events projected at the HMS collimator (left). The SHMS events (in coincidence with HMS events) were projected at the SHMS collimator (right)
-  which clearly shows that the acceptance of the SHMS is driven by that of the HMS.}
+\caption{(left) Geometrical acceptance cut on reconstructed events projected at the HMS collimator. (right) The SHMS events (correlated with HMS events on left plot), projected at the SHMS collimator.
+  The projection at the SHMS collimator clearly shows that the acceptance of the SHMS is driven by that of the HMS.}
 \label{fig:fig6}
 \includegraphics[scale=0.30]{plots/collimator_CUT_80MeV_35deg_SIMC.png}
 \caption{Same as Fig. \ref{fig:fig6}, but for simulation.}
@@ -110,7 +110,7 @@ which is negligible.
 \label{fig:fig8}
 \end{figure}
 \section{\large Radiative \& Bin-Centering Corrections}
-\noindent The radiative corrections were applied by multiplying the ratio of non-radiative to radiative SIMC yields to the data yield for each ($\theta_{nq}$,$p_{\mathrm{r}}$)
+\noindent The radiative corrections were applied by multiplying the ratio of non-radiative to radiative SIMC yields to the data yield for each ($\theta_{nq}$, $p_{\mathrm{r}}$)
 kinematic bin as described in the Letter. The radiative correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in Fig. \ref{fig:fig9}. The calculation was done using the
 Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data yield.
 \begin{figure}[!h]
@@ -118,7 +118,7 @@ Laget PWIA and FSI models for systematic effect studies, but the FSI model was u
 \caption{Radiative correction factor versus neutron recoil momenta, $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). }
 \label{fig:fig9}
 \end{figure}\\
-The bin centering corrections were applied by multiplying the ratio, $f_{bc} \equiv \sigma_{avg.kin}/\bar{\sigma}$, to the average data cross section over each ($\theta_{nq}$,$p_{\mathrm{r}}$)
+The bin centering corrections were applied by multiplying the ratio, $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}}/\bar{\sigma}$, to the average data cross section over each ($\theta_{nq}$, $p_{\mathrm{r}}$)
 kinematic bin, as described in the Letter. The bin centering correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in
 Fig. \ref{fig:fig10}. The calculation was done using the Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data cross section.
 \begin{figure}[!h]
@@ -152,7 +152,7 @@ the test passes and if $R_{\mathrm{Barlow}} > 4$ (or $\Delta >4\sigma_{\Delta}$)
 In Fig. \ref{fig:fig11}, the different color groups represent the Barlow ratio evaluated at difference between the subset and full missing energy cut range. For mostly the entire momentum range,
 the Barlow ratio was kept within 2-4 standard deviations with the exception of a few outliers which can be understood from the fact that these might have very similar variances. These systematic
 studies were mainly done to check the stability of the event selection cuts and the effects of cut variation on the cross section were found to be negligible. Similar plots for the other event selection
-cuts can be found in Section 5.10 of Ref. \cite{cyero_phdthesis}. 
+cuts systematics can be found in Section 5.10 of Ref. \cite{cyero_phdthesis}. 
 \clearpage
 \begin{figure}[!ht]
 \includegraphics[scale=0.4]{plots/Em_syst.png}
@@ -172,7 +172,7 @@ In this case, the ratio was calculated from the difference between the experimen
 \end{figure}
 \clearpage
 Figures \ref{fig:fig12} and \ref{fig:fig13} show the Barlow ratio for radiative and bin-centering systematics is mostly within 2 standard deviations which show that
-the model dependency on the correction factors have a negligible effect on the experimental cross sections.
+the model dependency of the correction factors have a negligible effect on the experimental cross sections.
 \section{\large Cross-Section Extraction}
 \noindent The average experimental cross section was extracted by taking the ratio of the radiative corrected data yield ($Y_{\mathrm{corr}}$) to the Monte Carlo generated phase space volume for each
 kinematic bin in ($\theta_{nq}$, $p_{\mathrm{r}}$). For illustration purposes, Fig. \ref{fig:fig14} shows the experimental data yield (left) and the spectrometers' phase space volume (right) binned in
@@ -184,7 +184,7 @@ found in Sections 5.1 and 6.1 of Ref. \cite{cyero_phdthesis}.
   the spectrometers' phase space volume binned in missing momentum.}
 \label{fig:fig14}
 \end{figure}
-\clearpage
+%\clearpage
 \bibliography{supp}
 
 \end{document}
