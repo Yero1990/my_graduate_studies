@@ -38,9 +38,18 @@ and							      1
 very high neutron recoil momenta                              5
 ---------------------------------------------------------------------------
                                                           66 words
-
+#made plots smaller to remove ~100 words per plot.
 PRL plot 1: 308 -> 204 words = 104 words removed 
 
 PRL plot 2: 243 -> 143 words = 100 words removed
 
 --> total: 204 + 66 = 270 words removed. 
+
+
+*Words added (ONLY intended for referencing supplemental material)*
+(these must be subtracted from the words removed to get the net total words removed. Remember, do not go below 247 words)
+
+phrase added                             words
+see Supplemental Material                 +3
+See Supplemental Material                 +3
+see Supplemental Material                 +3

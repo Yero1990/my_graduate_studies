@@ -127,7 +127,7 @@ Fig. \ref{fig:fig10}. The calculation was done using the Laget PWIA and FSI mode
   The inner (black dashed) and outer (red dash-dotted) lines represent a percent deviation from unity of $\pm10\%$ and $\pm20\%$, respectively.}
 \label{fig:fig10}
 \end{figure}
-\section{\large Systematic Uncertainty Studies on Event Selection Cuts}
+\section{\large Systematic Uncertainty Studies on Event Selection Cuts, Radiative and Bin-Centering Corrections }
 A study of the sensitivity on the experimental cross section due to variations in the event selection cuts was carried out. 
 To determine if the variation in each of the cuts contributes to a systematic effect and whether this contribution is significant
 enough to be considered as a systematic error, we used the approach by R. Barlow described in Ref. \cite{barlow2002systematic}.\\
@@ -155,21 +155,34 @@ studies were mainly done to check the stability of the event selection cuts and 
 cuts can be found in Section 5.10 of Ref. \cite{cyero_phdthesis}. 
 \clearpage
 \begin{figure}[!ht]
-\includegraphics[scale=0.45]{plots/Em_syst.png}
+\includegraphics[scale=0.4]{plots/Em_syst.png}
 \caption{Systematic effects of the missing energy cut on the data cross section for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). The inner (black dashed) and outer (black solid)
   lines represent the $\Delta=\pm2\sigma_{\Delta}$ and $\pm4\sigma_{\Delta}$ boundaries, respectively.}
 \label{fig:fig11}
 \end{figure}
+\indent The systematic effect on the cross sections due to model dependency of the radiative and bin-centering corrections was investigated using the Barlow ratio approach described above.
+In this case, the ratio was calculated from the difference between the experimental cross sections using the Laget PWIA and FSI models for both radiative and bin-centering corrections.
+\begin{figure}[!h]
+\includegraphics[scale=0.33]{plots/rad_sys.png}
+\caption{Systematic effects of the radiative corrections model dependency on the data cross sections for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). The inner (black dashed) and outer (black solid) lines represent the $\Delta=\pm2\sigma_{\Delta}$ and $\pm4\sigma_{\Delta}$ boundaries, respectively.  }
+\label{fig:fig12}
+\includegraphics[scale=0.33]{plots/bc_sys.png}
+\caption{Same as Fig. \ref{fig:fig12} but for bin-centering corrections.}
+\label{fig:fig13}
+\end{figure}
+\clearpage
+Figures \ref{fig:fig12} and \ref{fig:fig13} show the Barlow ratio for radiative and bin-centering systematics is mostly within 2 standard deviations which show that
+the model dependency on the correction factors have a negligible effect on the experimental cross sections.
 \section{\large Cross-Section Extraction}
 \noindent The average experimental cross section was extracted by taking the ratio of the radiative corrected data yield ($Y_{\mathrm{corr}}$) to the Monte Carlo generated phase space volume for each
-kinematic bin in ($\theta_{nq}$, $p_{\mathrm{r}}$). For illustration purposes, Fig. \ref{fig:fig12} shows the experimental data yield (left) and the spectrometers' phase space volume (right) binned in
-missing momentum and integrated over all $\theta_{nq}$ bins for each of the three central momentum settings.  A detailed discussion of how the experimental and reduced cross sections were extracted can be
+kinematic bin in ($\theta_{nq}$, $p_{\mathrm{r}}$). For illustration purposes, Fig. \ref{fig:fig14} shows the experimental data yield (left) and the spectrometers' phase space volume (right) binned in
+missing momentum and integrated over all $\theta_{nq}$ bins for each of the three central momentum settings. A detailed discussion of how the experimental and reduced cross sections were extracted can be
 found in Sections 5.1 and 6.1 of Ref. \cite{cyero_phdthesis}.
 \begin{figure}[!h]
 \includegraphics[scale=0.38]{plots/Pr_and_Ps.png}
 \caption{(left) Experimental neutron recoil (``missing'') momentum distribution for each of the three central settings. (right) Monte Carlo (un-weighted) events generated over
   the spectrometers' phase space volume binned in missing momentum.}
-\label{fig:fig12}
+\label{fig:fig14}
 \end{figure}
 \clearpage
 \bibliography{supp}

@@ -87,7 +87,7 @@ the lower and higher missing momentum settings, respectively. At these kinematic
 measured in this experiment. As a result, most of the virtual photon momentum is transferred to the proton, which scatters at angles relative to $\vec{q}$ in the range $0.4^{\circ}\lesssim \theta_{pq}\lesssim21.4^{\circ}$.
 At these forward angles and large momenta transferred to the proton, the  process where the neutron is struck by the virtual photon is suppressed.\\
 \indent Hydrogen elastic $^{1}\mathrm{H}(e,e'p)$ data were also taken at kinematics close to the deuteron $p_{\mathrm{r}}=80$ MeV/c setting for cross-checks with the spectrometer acceptance model using the Hall C Monte Carlo
-simulation program, SIMC \cite{PhysRevC.64.054610}. Additional $^{1}\mathrm{H}(e,e'p)$ data were also taken at three other kinematic settings that covered the SHMS momentum acceptance range for the deuteron and were used for spectrometer optics optimization, 
+simulation program, SIMC \cite{PhysRevC.64.054610}(see Supplemental Material). Additional $^{1}\mathrm{H}(e,e'p)$ data were also taken at three other kinematic settings that covered the SHMS momentum acceptance range for the deuteron and were used for spectrometer optics optimization, 
 momentum calibration and the determination of the spectrometer offsets and kinematic uncertainties \cite{cyero_phdthesis}.\\
 \indent The kinematics of the recoiling neutron was reconstructed using energy-momentum conservation. The recoil momentum is defined as $\vec{p_{\mathrm{r}}} = \vec{q} - \vec{p_{\mathrm{f}}}$,
 and the nuclear binding (or ``missing'') energy as $E_{\mathrm{m}} = \omega - T_{p} - T_{\mathrm{r}}$, where $\vec{p_{\mathrm{f}}}$ is the final proton momentum, $\vec{q}$ is the
@@ -97,7 +97,7 @@ and the nuclear binding (or ``missing'') energy as $E_{\mathrm{m}} = \omega - T_
 are well known,  a cut to restrict the HMS solid angle acceptance to events that passed directly through the collimator and not by re-scattering from the collimator edges, a ``missing''
 energy cut (peak $\sim$ 2.22 MeV for the deuteron) to select true $^{2}\mathrm{H}(e,e'p)n$ coincidences, a coincidence time cut to select true coincidence events, a particle identification (PID) cut on the
 SHMS calorimeter normalized total track energy to select electrons and not other sources of background (mostly pions), and a cut on the reconstructed HMS and SHMS reaction vertices to select events that 
-originated from the same reaction vertex at the target.\\
+originated from the same reaction vertex at the target (See Supplemental Material). \\
 \indent The experimental data yields for both hydrogen and deuteron data were normalized by the total charge and corrected for various inefficiencies. For $^{2}\mathrm{H}(e,e'p)n$, the corrections
 were as follows\cite{cyero_phdthesis}: tracking efficiencies ($98.9 \%$-HMS, $96.4 \%$-SHMS), total live time ($92.3 \%$), proton loss inefficiency due to nuclear interactions in the HMS ($4.7 \%$) and
 target boiling inefficiency ($4.2 \%$). The values in parentheses were averaged over all missing momentum settings. \\
@@ -124,7 +124,7 @@ AV18 (green), CD-Bonn (magenta) and WJC2 (orange) $NN$ potentials.}
 \indent The data were radiatively corrected for each bin in ($\theta_{nq}, p_{\mathrm{r}}$) by multiplying the measured cross sections by the ratio of the calculated particle yield excluding and including radiative effects. The SIMC simulation code was used for these calculations with the Deuteron Model by Laget including FSI \cite{LAGET2005}.
 For each bin in ($\theta_{nq}, p_{\mathrm{r}}$), the averaged $^{2}\mathrm{H}(e,e'p)n$ kinematics was calculated and used in the bin centering correction factor defined as:
 $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}} / \bar{\sigma}$, where $\sigma_{\mathrm{avg.kin}}$ is the cross section calculated at the averaged kinematics and $\bar{\sigma}$ is the cross section averaged
-over the kinematic bin. The systematic uncertainties associated with the radiative and bin-centering corrections were investigated using the Laget PWIA and FSI models but negligible effects on the cross sections were found. The experimental and theoretical reduced cross sections were extracted and are defined as follows:
+over the kinematic bin. The systematic uncertainties associated with the radiative and bin-centering corrections were investigated using the Laget PWIA and FSI models but negligible effects on the cross sections were found (see Supplemental Material). The experimental and theoretical reduced cross sections were extracted and are defined as follows:
 \begin{equation}
 \sigma_{\mathrm{red}} \equiv \frac{\sigma_{\mathrm{exp(th)}}}{E_{\mathrm{f}}p_{\mathrm{f}}f_{\mathrm{rec}}\sigma_{\mathrm{cc1}}},
 \label{eq:1}
@@ -203,6 +203,12 @@ thank Misak Sargsian, J.M. Laget, Sabine Jeschonnek and J.W. Van Orden for provi
 discussions we had on this topic. This work was supported in part by the U.S. Department of Energy (DOE), Office of Science, Office of Nuclear Physics
 under grant No. DE-SC0013620 and contract DE-AC05-06OR23177, the Nuclear Regulatory Commission (NRC) Fellowship
 under grant No. NRC-HQ-84-14-G-0040, the Doctoral Evidence Acquisition (DEA) Fellowship and the Natural Sciences and Engineering Research Council of Canada (NSERC).
+
+
+%---include references that are not mentioned in the main text
+%---but are included in the supplemental material
+%---cite supp. material as follows:  (See Supplemental Material) after description of the topic being discussed.
+%\nocite{COSY}
 
 \bibliography{ms}
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  2 OCT 2020 16:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/MacPorts 2017_0) (preloaded format=pdflatex 2017.7.30)  3 OCT 2020 00:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -700,66 +700,101 @@ Package pdftex.def Info: plots/BC_factor.png used on input line 125.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.130 ...ertainty Studies on Event Selection Cuts}
+l.130 ...Radiative and Bin-Centering Corrections }
                                                   pdfTeX warning (ext4): destin
 ation with the same identifier (name{figure.9}) has been already used, duplicat
 e ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.130 ...ertainty Studies on Event Selection Cuts}
+l.130 ...Radiative and Bin-Centering Corrections }
                                                    <./plots/tgt_bkg_d2_pm580_al
 lthnq.png> <./plots/RC_factor.png>]
 <plots/Em_syst.png, id=116, 989.6975pt x 424.58624pt>
 File: plots/Em_syst.png Graphic file (type png)
  <use plots/Em_syst.png>
 Package pdftex.def Info: plots/Em_syst.png used on input line 158.
-(pdftex.def)             Requested size: 445.35976pt x 191.06204pt.
+(pdftex.def)             Requested size: 395.87198pt x 169.83148pt.
 
 [5pdfTeX warning (ext4): destination with the same identifier (name{figure.10})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.163 \section{\large Cross-Section Extraction}
-                                                <./plots/BC_factor.png>]
-<plots/Pr_and_Ps.png, id=130, 1280.785pt x 444.66125pt>
+l.163 \indent
+              The systematic effect on the cross sections due to model depen...
+ <./plots/BC_factor.png>]
+<plots/rad_sys.png, id=129, 1269.74374pt x 464.73625pt>
+File: plots/rad_sys.png Graphic file (type png)
+
+<use plots/rad_sys.png>
+Package pdftex.def Info: plots/rad_sys.png used on input line 166.
+(pdftex.def)             Requested size: 419.01672pt x 153.36343pt.
+ <plots/bc_sys.png, id=130, 1269.74374pt x 465.74pt>
+File: plots/bc_sys.png Graphic file (type png)
+
+<use plots/bc_sys.png>
+Package pdftex.def Info: plots/bc_sys.png used on input line 169.
+(pdftex.def)             Requested size: 419.01672pt x 153.69467pt.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.11}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.174 F
+       igures \ref{fig:fig12} and \ref{fig:fig13} show the Barlow ratio for ...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.12}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.174 F
+       igures \ref{fig:fig12} and \ref{fig:fig13} show the Barlow ratio for ...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.13}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.174 F
+       igures \ref{fig:fig12} and \ref{fig:fig13} show the Barlow ratio for ...
+ <./plots/Em_syst.png> <./plots/rad_sys.png> <./plots/bc_sys.png>]
+<plots/Pr_and_Ps.png, id=144, 1280.785pt x 444.66125pt>
 File: plots/Pr_and_Ps.png Graphic file (type png)
 
 <use plots/Pr_and_Ps.png>
-Package pdftex.def Info: plots/Pr_and_Ps.png used on input line 169.
+Package pdftex.def Info: plots/Pr_and_Ps.png used on input line 182.
 (pdftex.def)             Requested size: 486.70335pt x 168.97302pt.
 
-Overfull \hbox (2.49347pt too wide) in paragraph at lines 169--170
+Overfull \hbox (2.49347pt too wide) in paragraph at lines 182--183
  [][] 
  []
 
-(./supp.bbl [6pdfTeX warning (ext4): destination with the same identifier (name
-{figure.11}) has been already used, duplicate ignored
+(./supp.bbl [7pdfTeX warning (ext4): destination with the same identifier (name
+{figure.14}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.9 \begin{thebibliography}{5}
-                              %pdfTeX warning (ext4): destination with the same
- identifier (name{figure.12}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.9 \begin{thebibliography}{5}
-                              % <./plots/Em_syst.png> <./plots/Pr_and_Ps.png>])
-[7]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
+                              % <./plots/Pr_and_Ps.png>]) [8]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 190.
  (./supp.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
-Package rerunfilecheck Info: File `supp.out' has not changed.
-(rerunfilecheck)             Checksum: 5ED50E98844D69DA7D6ABF3BCC2D17E8;663.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 190.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 190.
+
+
+Package rerunfilecheck Warning: File `supp.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `supp.out':
+(rerunfilecheck)             Before: 14E4027EE826EFF1E70549C9EF12083C;717
+(rerunfilecheck)             After:  BDEF5B2D19003EC05E1484A734725F8F;705.
  ) 
 Here is how much of TeX's memory you used:
- 9692 strings out of 494108
- 135095 string characters out of 6155655
- 353193 words of memory out of 5000000
- 12890 multiletter control sequences out of 15000+600000
+ 9707 strings out of 494108
+ 135332 string characters out of 6155655
+ 354560 words of memory out of 5000000
+ 12900 multiletter control sequences out of 15000+600000
  14161 words of font info for 53 fonts, out of 8000000 for 9000
  433 hyphenation exceptions out of 8191
  28i,9n,48p,759b,368s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -781,10 +816,10 @@ l/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></opt/local/shar
 e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb></opt/local/share/texm
 f-texlive/fonts/type1/public/amsfonts/cm/cmtt9.pfb></opt/local/share/texmf-texl
 ive/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on supp.pdf (7 pages, 3752650 bytes).
+Output written on supp.pdf (8 pages, 3934154 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 171 compressed objects within 2 object streams
- 32 named destinations out of 1000 (max. 500000)
- 125 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 179 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
