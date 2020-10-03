@@ -1,0 +1,46 @@
+goal:  remove 247 words
+removed                             replaced by:              #words removed
+'or equivalently, its		    	     		      6
+high momentum component'
+
+'neutron recoil angles'             th_nq                     2
+
+'missing momentum dependence'       p_r                       2
+
+'neutron recoil angles (th_nq)'     th_nq                     3
+
+'neutron recoil momenta'            recoil momenta            1
+
+'missing momenta'                   p_r                       1
+'about 8.5                          ~8.5                      1
+
+ neutron recoil angles between
+ $35^{\circ}$ and $45^{\circ}$      35 < thnq < 45            4
+
+(hydrogren and deuterium)                                     3
+
+neutron recoil momentum             p_r                       2
+
+kinematic settings                  kinematics                1
+
+The good agreement between	    			      31
+the Hall A and C data at lower
+$p_{\mathrm{r}}$ gives us
+confidence in the measurements
+made at higher missing momentum
+settings for which no previous
+data exist.
+
+missing momenta typically above    p_r >                      3
+
+and							      1
+
+very high neutron recoil momenta                              5
+---------------------------------------------------------------------------
+                                                          66 words
+
+PRL plot 1: 308 -> 204 words = 104 words removed 
+
+PRL plot 2: 243 -> 143 words = 100 words removed
+
+--> total: 204 + 66 = 270 words removed. 
