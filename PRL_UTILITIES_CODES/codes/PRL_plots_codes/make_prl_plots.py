@@ -139,7 +139,7 @@ def make_prl_plots(plot2_inset=0):
     #------------------------------------------------------------------------------------
     
     #-----Create Subplots-----
-    fig = B.pl.subplots(3, sharex=True, sharey=True, figsize=(14.2, 3.9))   #figsize (width, height), (13.4,6) is in inches;  PRL requirements: width = 8.6 cm (3.38583 in) --> 1 manuscript column (for wider figs, use 1.5 or 2 columns: (17.2 cm or 6.771654 in)
+    fig = B.pl.subplots(3, sharex=True, sharey=True, figsize=(13.4, 6))   #figsize (width, height), (13.4,6) is in inches;  PRL requirements: width = 8.6 cm (3.38583 in) --> 1 manuscript column (for wider figs, use 1.5 or 2 columns: (17.2 cm or 6.771654 in)
     gs = gridspec.GridSpec(1, 3) 
 
     #=====================
@@ -282,7 +282,7 @@ def make_prl_plots(plot2_inset=0):
     #------------------------------------------------------------------------------------------
         
     #-----Create Subplots-----
-    fig = B.pl.subplots(3, sharex=True, sharey=True, figsize=(6.7, 5.5))    #ORIGINAL SIZE: (width, height) = (6.7, 10)
+    fig = B.pl.subplots(3, sharex=True, sharey=True, figsize=(6.7, 10))    #ORIGINAL SIZE: (width, height) = (6.7, 10)
     gs = gridspec.GridSpec(3, 1) 
 
     #=====================

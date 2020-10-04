@@ -497,6 +497,32 @@ def make_prl_plots(plot2_inset=0):
     #B.pl.show()
     B.pl.savefig('./PRL_plot2.pdf')
     
+
+
+
+def write_Xsec(ithnq=0, ipm=np.array([])):
+
+    
+    fout_name = 'redXsec_theory_thnq%d_deg.txt' % (int(ithnq))
+    fout = open(fout_name, 'w')
+    comment1='#theoretical reduced cross sections as a function of missing momentum \n
+    all reduced cross sections have been MS_CD-Bonn, MS_AV18, JML_Paris, JVO_WJC2 using  PWIA and FSI. \n
+    '
+
+
+
+    
+    comment2='#Units: pm_avg [GeV/c] :: redXsec [fm^3],   theta_nq = 35 +\- 5 deg \n'
+    header='#!pm_avg[f,0]/   data_redXsec[f,1]/   data_redXsec_tot_err[f,2]/   stats_rel_err[f,3]/  kin_rel_err[f,4]/   norm_rel_err[f,5]   tot_rel_syst_err[f,6]/   tot_rel_err[f,7]/   \n'
+    fout.write(comment1)
+    fout.write(comment2)
+    fout.write(header)
+    
+    for i in range(len(pm_avg[thnq==35])):
+        fout.write('%.5f %.5E  %.5E  %.5f  %.5f  %.5f  %.5f  %.5f\n' % ((pm_avg[thnq==35])[i], (red_dataXsec_avg_masked[thnq==35]*MeV2fm)[i], (red_dataXsec_avg_tot_err[thnq==35]*MeV2fm)[i], (tot_stats_err[thnq==35])[i], (kin_syst_tot[thnq==35])[i], (norm_syst_tot[thnq==35])[i], (tot_syst_err[thnq==35])[i], (tot_err[thnq==35])[i]))
+
+    fout.close()
+    
 def main():
     print('Entering Main . . .')
 
