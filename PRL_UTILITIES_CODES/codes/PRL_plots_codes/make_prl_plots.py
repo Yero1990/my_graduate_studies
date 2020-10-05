@@ -71,6 +71,7 @@ def make_prl_plots(plot2_inset=0):
     pm_jml_75_fsi, f_red_fsiXsec_JML_75 = read_theoretical_models("JML", "FSI", 75)
     pm_wjc2_75_fsi, f_red_fsiXsec_WJC2_75 = read_JWVO_theory(75, "WJC2", "GKex05", "DWBA")
 
+    print(0.09788, f_red_fsiXsec_JML_75(0.09788))
 
 
     #======== Define Ratios of Reduced Cross Sections (to be used in PRL PLOT 2)=====
