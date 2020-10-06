@@ -7,12 +7,12 @@
     #
     # pm_bin            : missig momentum bin center (GeV/c) (bin width from center is +/- 0.02 GeV)
     # pm_avg            : average missing momentum over pm_bin (GeV/c)
-    # JML_pwiaXsec      : theoretical cross section using the JML Paris PWIA model (fm^3) 
-    # JML_fsiXsec       : theoretical cross section using the JML Paris FSI model (fm^3)
-    # JML_red_pwiaXsec  : theoretical reduced cross section using the JML Paris PWIA model (fm^3) 
-    # JML_red_fsiXsec   : theoretical reduced cross section using the JML Paris FSI model (fm^3)
+    # theory_pwiaXsec      : theoretical cross section using the JML Paris PWIA model ( nb / (MeV Sr^2) ) 
+    # theory_fsiXsec       : theoretical cross section using the JML Paris FSI model ( nb / (MeV Sr^2) )
+    # theory_red_pwiaXsec  : theoretical reduced cross section using the JML Paris PWIA model (fm^3) 
+    # theory_red_fsiXsec   : theoretical reduced cross section using the JML Paris FSI model (fm^3)
     
-    #! pm_bin[f,0]/ pm_avg[f,1]/ JML_pwiaXsec[f,2]/ JML_fsiXsec[f,3]/  JML_red_pwiaXsec[f,4]/ JML_red_fsiXsec[f,5]/  setting[s,6]/ 
+    #! pm_bin[f,0]/ pm_avg[f,1]/ theory_pwiaXsec[f,2]/ theory_fsiXsec[f,3]/  theory_red_pwiaXsec[f,4]/ theory_red_fsiXsec[f,5]/  setting[s,6]/ 
 
     0.02000  0.03205  1.77483E+00  1.63084E+00  5.50118E+00  5.10726E+00 80_set1
 0.06000  0.06131  5.79515E-01  5.64763E-01  1.79876E+00  1.75628E+00 80_set1

@@ -1,18 +1,20 @@
  
 # Jean-Marc Laget (JML) theoretical cross sections and reduced cross sections as a function of missing momentum
 #
-# theta_nq = 35
+# theta_nq = 35 (deg)
 #
 # header definitions
 #
-# pm_bin            : missig momentum bin center (GeV/c) (bin width from center is +/- 0.02 GeV)
-# pm_avg            : average missing momentum over pm_bin (GeV/c)
-# JML_pwiaXsec      : theoretical cross section using the JML Paris PWIA model (fm^3) 
-# JML_fsiXsec       : theoretical cross section using the JML Paris FSI model (fm^3)
-# JML_red_pwiaXsec  : theoretical reduced cross section using the JML Paris PWIA model (fm^3) 
-# JML_red_fsiXsec   : theoretical reduced cross section using the JML Paris FSI model (fm^3)
-
-#! pm_bin[f,0]/ pm_avg[f,1]/ JML_pwiaXsec[f,2]/ JML_fsiXsec[f,3]/  JML_red_pwiaXsec[f,4]/ JML_red_fsiXsec[f,5]/  setting[s,6]/ 
+# pm_bin               : missig momentum bin center (GeV/c) (bin width from center is +/- 0.02 GeV)
+# pm_avg               : average missing momentum over pm_bin (GeV/c)
+# theory_pwiaXsec      : theoretical cross section using the JML Paris PWIA model ( nb / (MeV Sr^2) ) 
+# theory_fsiXsec       : theoretical cross section using the JML Paris FSI model ( nb / (MeV Sr^2) )
+# theory_red_pwiaXsec  : theoretical reduced cross section using the JML Paris PWIA model (fm^3) 
+# theory_red_fsiXsec   : theoretical reduced cross section using the JML Paris FSI model (fm^3)
+#
+# common values for pm_bin indicate kinematic settings that contribute to the same missing momentum bin and are used in averaging
+#
+#! pm_bin[f,0]/ pm_avg[f,1]/ theory_pwiaXsec[f,2]/ theory_fsiXsec[f,3]/  theory_red_pwiaXsec[f,4]/ theory_red_fsiXsec[f,5]/  setting[s,6]/ 
 0.02000  0.03181  1.61523E+00  1.53652E+00  5.11131E+00  4.87851E+00 80_set1
 0.06000  0.06217  4.21284E-01  4.07189E-01  1.40260E+00  1.34910E+00 80_set1
 0.10000  0.09914  8.38780E-02  7.80362E-02  3.02404E-01  2.81526E-01 80_set1

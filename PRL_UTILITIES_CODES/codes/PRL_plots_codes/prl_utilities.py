@@ -125,6 +125,7 @@ def read_theoretical_models(theory="", model="", thnq=0):
         red_fsiXsec_CD_Bonn = np.array(kin['red_fsiXsec_theory']) * MeV2fm
         pm_avg = np.array(kin['pm_avg'])
         #interpolate
+        print('CD-Bonn FSI:', pm_avg,  red_fsiXsec_CD_Bonn )
         f_red_fsiXsec_CD = interp1d(pm_avg, red_fsiXsec_CD_Bonn,fill_value='extrapolate', kind='cubic')
         return pm_avg, f_red_fsiXsec_CD
 

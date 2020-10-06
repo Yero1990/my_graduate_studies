@@ -1,5 +1,18 @@
 #This script prepares the PRL addendum data files in the correct formats / units
 
+
+import LT.box as B
+from LT.datafile import dfile
+import numpy as np
+import matplotlib.pyplot as plt
+import numpy.ma as ma
+import sys                                     
+import os                                                                                                       
+from sys import argv  
+import matplotlib
+from matplotlib import rc
+from matplotlib import *
+
 def make_prl_addendum(model='', thnq=0):
 
     #input file to read
@@ -19,10 +32,10 @@ def make_prl_addendum(model='', thnq=0):
     #
     # pm_bin            : missig momentum bin center (GeV/c) (bin width from center is +/- 0.02 GeV)
     # pm_avg            : average missing momentum over pm_bin (GeV/c)
-    # theory_pwiaXsec      : theoretical cross section using the MS AV18 PWIA model ( nb / (MeV Sr^2) ) 
-    # theory_fsiXsec       : theoretical cross section using the MS AV18 FSI model ( nb / (MeV Sr^2) )
-    # theory_red_pwiaXsec  : theoretical reduced cross section using the MS AV18 PWIA model (fm^3) 
-    # theory_red_fsiXsec   : theoretical reduced cross section using the MS AV18 FSI model (fm^3)
+    # theory_pwiaXsec      : theoretical cross section using the MS CD-Bonn PWIA model ( nb / (MeV Sr^2) ) 
+    # theory_fsiXsec       : theoretical cross section using the MS CD-Bonn FSI model ( nb / (MeV Sr^2) )
+    # theory_red_pwiaXsec  : theoretical reduced cross section using the MS CD-Bonn PWIA model (fm^3) 
+    # theory_red_fsiXsec   : theoretical reduced cross section using the MS CD-Bonn FSI model (fm^3)
     
     #! pm_bin[f,0]/ pm_avg[f,1]/ theory_pwiaXsec[f,2]/ theory_fsiXsec[f,3]/  theory_red_pwiaXsec[f,4]/ theory_red_fsiXsec[f,5]/  setting[s,6]/ 
     """
@@ -54,7 +67,9 @@ def make_prl_addendum(model='', thnq=0):
 def main():
     print('Entering Main')
 
-    make_prl_addendum('V18', thnq=35)  #V18 or CD-Bonn
+    make_prl_addendum('CD-Bonn', thnq=35)  #V18 or CD-Bonn
+    make_prl_addendum('CD-Bonn', thnq=45)  #V18 or CD-Bonn
+    make_prl_addendum('CD-Bonn', thnq=75)  #V18 or CD-Bonn
 
 if __name__ == "__main__":
     main()
