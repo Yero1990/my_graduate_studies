@@ -12,8 +12,8 @@
     # theory_red_pwiaXsec  : theoretical reduced cross section using the MS AV18 PWIA model (fm^3) 
     # theory_red_fsiXsec   : theoretical reduced cross section using the MS AV18 FSI model (fm^3)
     
-    #! pm_bin[f,0]/ pm_avg[f,1]/ theory_pwiaXsec[f,2]/ theory_fsiXsec[f,3]/  theory_red_pwiaXsec[f,4]/ theory_red_fsiXsec[f,5]/  setting[s,6]/ 
-    0.02000  0.03181  1.71444E+00  1.65388E+00  5.44341E+00  5.25114E+00 80_set1
+#! pm_bin[f,0]/ pm_avg[f,1]/ theory_pwiaXsec[f,2]/ theory_fsiXsec[f,3]/  theory_red_pwiaXsec[f,4]/ theory_red_fsiXsec[f,5]/  setting[s,6]/ 
+0.02000  0.03181  1.71444E+00  1.65388E+00  5.44341E+00  5.25114E+00 80_set1
 0.06000  0.06217  4.09962E-01  3.86748E-01  1.35829E+00  1.28138E+00 80_set1
 0.10000  0.09914  7.98064E-02  7.29603E-02  2.87913E-01  2.63214E-01 80_set1
 0.14000  0.13875  1.77170E-02  1.57921E-02  7.10444E-02  6.33256E-02 80_set1
