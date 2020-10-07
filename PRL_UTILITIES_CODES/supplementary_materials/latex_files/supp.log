@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  3 OCT 2020 12:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  7 OCT 2020 19:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,12 +615,12 @@ File: plots/Em_and_Q2_CUT_80MeV_35deg.png Graphic file (type png)
 Package pdftex.def Info: plots/Em_and_Q2_CUT_80MeV_35deg.png  used on input lin
 e 73.
 (pdftex.def)             Requested size: 381.22719pt x 154.4783pt.
-<plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png, id=72, 1261.71375pt x 505.89pt>
+<plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png, id=72, 1134.2375pt x 456.70625pt>
 File: plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png Graphic file (type png)
 <use plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png>
 Package pdftex.def Info: plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png  used on in
 put line 79.
-(pdftex.def)             Requested size: 378.51704pt x 151.76816pt.
+(pdftex.def)             Requested size: 374.29953pt x 150.71352pt.
 <plots/coin_and_eCal_CUT_80MeV_35deg.png, id=73, 1260.71pt x 509.905pt>
 File: plots/coin_and_eCal_CUT_80MeV_35deg.png Graphic file (type png)
 <use plots/coin_and_eCal_CUT_80MeV_35deg.png>
@@ -641,7 +641,7 @@ ut line 90.
 (pdftex.def)             Requested size: 345.69417pt x 115.63289pt.
 
 
-LaTeX Warning: Float too large for page by 27.75127pt on input line 93.
+LaTeX Warning: Float too large for page by 26.69662pt on input line 93.
 
 [2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
@@ -814,7 +814,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on supp.pdf (7 pages, 3933659 bytes).
+Output written on supp.pdf (7 pages, 3835814 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  176 compressed objects within 2 object streams
