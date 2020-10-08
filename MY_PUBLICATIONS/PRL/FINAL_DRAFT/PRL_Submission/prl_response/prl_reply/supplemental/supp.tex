@@ -76,7 +76,7 @@ The FSI model from J.M. Laget was used in the simulation for the plots shown bel
 \end{figure}
 \clearpage
 \begin{figure}
-\includegraphics[scale=0.30]{plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png}
+\includegraphics[scale=0.33]{plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png}
 \caption{Acceptance cut on HMS momentum fraction (left) and event selection cut on the difference between the $z$-reaction vertex on both spectrometers (right).
   Inset (left): The SHMS momentum fraction was set by the HMS $\delta$ cut to be $\lesssim$3$\%$ which is well within the SHMS momentum acceptance range of $-10 \leq \delta \leq22 \%$}
 \label{fig:fig4}
@@ -92,6 +92,20 @@ The FSI model from J.M. Laget was used in the simulation for the plots shown bel
 \label{fig:fig7}
 \end{figure}
 \clearpage
+\section{\large Deuteron Kinematic Distributions }
+\noindent Figures \ref{fig:fig8} and \ref{fig:fig9} show the fundamental kinematic variable distributions for each of the central missing momentum settings at $\theta_{nq}=35^{\circ}$ and $45^{\circ}$.
+The data has been normalized by the total charge and corrected for the inefficiencies described in the Letter. Radiative and bin-centering corrections have not been applied for these plots.
+The same event selection cuts mentioned in the previous sections were applied (including the $Q^{2}$ cut), with the exception of the $Q^{2}$ distribution itself.
+Only the first dataset (out of 2) for the 580 and (out of 3) for the 750 MeV/c settings are shown. 
+\begin{figure}[!h]
+\includegraphics[scale=0.4]{plots/d2_kin_thnq35.png}
+\caption{Deuteron kinematic distributions for the 80 (blue), 580 (set1, red) and 750 (set1, magenta) MeV/c cental missing momentum settings at $\theta_{nq}=35^{\circ}$.}
+\label{fig:fig8}
+\includegraphics[scale=0.35]{plots/d2_kin_thnq45.png}
+\caption{Same as Fig. \ref{fig:fig8}, but for $\theta_{nq}=45^{\circ}$}
+\label{fig:fig9}
+\end{figure}
+\clearpage
 \section{\large Estimate of the Target Cell Endcaps Contribution to the Data Yield}
 \noindent To estimate the contribution to the yield due to the electron interaction with the aluminum endcaps of the target cell,
 a sample of events were selected in the negative part of the missing energy spectrum using the deuteron high missing momentum settings (580 and 750 MeV/c).
@@ -99,7 +113,7 @@ a sample of events were selected in the negative part of the missing energy spec
 %the reconstructed events extended to the negative part of the missing energy spectrum since we assume the mass of the deuteron in the missing energy definition.\\
 We assume that the contribution due to the target endcaps is constant across the missing energy spectrum, therefore, by selecting a sample in the
 negative part of the spectrum over a specific range, we can estimate the endcaps contribution beneath the deuteron missing energy peak over the same range.\\
-\indent Figure \ref{fig:fig8} shows the missing energy spectrum for the 580 MeV/c setting (left) and the corresponding reconstructed SHMS $z$-vertex (right) for the specified
+\indent Figure \ref{fig:fig10} shows the missing energy spectrum for the 580 MeV/c setting (left) and the corresponding reconstructed SHMS $z$-vertex (right) for the specified
 range. The integral over endcaps and $^{2}\mathrm{H}(e,e'p)n$ events show that the contribution from the cell walls is 0.00806/0.275 $\sim$ 0.0293 or approximately 2.9 $\%$
 which is negligible.
 \begin{figure}[!h]
@@ -107,25 +121,25 @@ which is negligible.
 \caption{(left) Missing energy spectrum for the deuteron 580 MeV/c setting with event selection region corresponding to Aluminum endcaps (in red) and deuteron missing energy peak over
   a 40 MeV range, each. (right) The SHMS $z$-reaction vertex corresponding to the specified region in the missing energy spectrum. Inset (left): Missing energy spectrum on a logarithmic
   scale.}
-\label{fig:fig8}
+\label{fig:fig10}
 \end{figure}
 \section{\large Radiative \& Bin-Centering Corrections}
 \noindent The radiative corrections were applied by multiplying the ratio of non-radiative to radiative SIMC yields to the data yield for each ($\theta_{nq}$, $p_{\mathrm{r}}$)
-kinematic bin as described in the Letter. The radiative correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in Fig. \ref{fig:fig9}. The calculation was done using the
+kinematic bin as described in the Letter. The radiative correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in Fig. \ref{fig:fig11}. The calculation was done using the
 Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data yield.
 \begin{figure}[!h]
 \includegraphics[scale=0.40]{plots/RC_factor.png}
 \caption{Radiative correction factor versus neutron recoil momenta, $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). }
-\label{fig:fig9}
+\label{fig:fig11}
 \end{figure}\\
 The bin centering corrections were applied by multiplying the ratio, $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}}/\bar{\sigma}$, to the average data cross section over each ($\theta_{nq}$, $p_{\mathrm{r}}$)
 kinematic bin, as described in the Letter. The bin centering correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in
-Fig. \ref{fig:fig10}. The calculation was done using the Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data cross section.
+Fig. \ref{fig:fig12}. The calculation was done using the Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data cross section.
 \begin{figure}[!h]
 \includegraphics[scale=0.40]{plots/BC_factor.png}
 \caption{Bin centering correction factor versus neutron recoil momenta, $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right).
   The inner (black dashed) and outer (red dash-dotted) lines represent a percent deviation from unity of $\pm10\%$ and $\pm20\%$, respectively.}
-\label{fig:fig10}
+\label{fig:fig12}
 \end{figure}
 \section{\large Systematic Uncertainty Studies on Event Selection Cuts, Radiative and Bin-Centering Corrections }
 A study of the sensitivity on the experimental cross section due to variations in the event selection cuts was carried out. 
@@ -148,8 +162,8 @@ error accounts for the possible correlation between the two measurements. By tak
 a criterion imposed on $R_{\mathrm{Barlow}}$ determines whether the difference is significant enough to be considered as a systematic error or sufficiently small that it may be
 ignored. This criterion requires knowledge of the correlation between the subsets, but in general, as suggested in Ref.\cite{barlow2017}: if $R_{\mathrm{Barlow}} < 2$ (or $\Delta <2\sigma_{\Delta}$)
 the test passes and if $R_{\mathrm{Barlow}} > 4$ (or $\Delta >4\sigma_{\Delta}$), the test fails and the discrepancy must be added as a systematic error. For $2<R_{\mathrm{Barlow}}<4$, a judgement must be made.\\
-\indent Figure \ref{fig:fig11} below shows an example of the systematic effects on the missing energy cut for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ over the full $p_{\mathrm{r}}$ range.
-In Fig. \ref{fig:fig11}, the different color groups represent the Barlow ratio evaluated at difference between the subset and full missing energy cut range. For mostly the entire momentum range,
+\indent Figure \ref{fig:fig13} below shows an example of the systematic effects on the missing energy cut for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ over the full $p_{\mathrm{r}}$ range.
+In Fig. \ref{fig:fig13}, the different color groups represent the Barlow ratio evaluated at difference between the subset and full missing energy cut range. For mostly the entire momentum range,
 the Barlow ratio was kept within 2-4 standard deviations with the exception of a few outliers which can be understood from the fact that these might have very similar variances. These systematic
 studies were mainly done to check the stability of the event selection cuts and the effects of cut variation on the cross section were found to be negligible. Similar plots for the other event selection
 cuts systematics can be found in Section 5.10 of Ref. \cite{cyero_phdthesis}. 
@@ -158,31 +172,31 @@ cuts systematics can be found in Section 5.10 of Ref. \cite{cyero_phdthesis}.
 \includegraphics[scale=0.4]{plots/Em_syst.png}
 \caption{Systematic effects of the missing energy cut on the data cross section for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). The inner (black dashed) and outer (black solid)
   lines represent the $\Delta=\pm2\sigma_{\Delta}$ and $\pm4\sigma_{\Delta}$ boundaries, respectively.}
-\label{fig:fig11}
+\label{fig:fig13}
 \end{figure}
 \indent The systematic effect on the cross sections due to model dependency of the radiative and bin-centering corrections was investigated using the Barlow ratio approach described above.
 In this case, the ratio was calculated from the difference between the experimental cross sections using the Laget PWIA and FSI models for both radiative and bin-centering corrections.
 \begin{figure}[!h]
 \includegraphics[scale=0.33]{plots/rad_sys.png}
 \caption{Systematic effects of the radiative corrections model dependency on the data cross sections for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). The inner (black dashed) and outer (black solid) lines represent the $\Delta=\pm2\sigma_{\Delta}$ and $\pm4\sigma_{\Delta}$ boundaries, respectively.  }
-\label{fig:fig12}
+\label{fig:fig14}
 \includegraphics[scale=0.33]{plots/bc_sys.png}
-\caption{Same as Fig. \ref{fig:fig12} but for bin-centering corrections.}
-\label{fig:fig13}
+\caption{Same as Fig. \ref{fig:fig14} but for bin-centering corrections.}
+\label{fig:fig15}
 \end{figure}
 \clearpage
-Figures \ref{fig:fig12} and \ref{fig:fig13} show the Barlow ratio for radiative and bin-centering systematics is mostly within 2 standard deviations which show that
+Figures \ref{fig:fig14} and \ref{fig:fig15} show the Barlow ratio for radiative and bin-centering systematics is mostly within 2 standard deviations which show that
 the model dependency of the correction factors have a negligible effect on the experimental cross sections.
 \section{\large Cross-Section Extraction}
 \noindent The average experimental cross section was extracted by taking the ratio of the radiative corrected data yield ($Y_{\mathrm{corr}}$) to the Monte Carlo generated phase space volume for each
-kinematic bin in ($\theta_{nq}$, $p_{\mathrm{r}}$). For illustration purposes, Fig. \ref{fig:fig14} shows the experimental data yield (left) and the spectrometers' phase space volume (right) binned in
+kinematic bin in ($\theta_{nq}$, $p_{\mathrm{r}}$). For illustration purposes, Fig. \ref{fig:fig16} shows the experimental data yield (left) and the spectrometers' phase space volume (right) binned in
 missing momentum and integrated over all $\theta_{nq}$ bins for each of the three central momentum settings. A detailed discussion of how the experimental and reduced cross sections were extracted can be
 found in Sections 5.1 and 6.1 of Ref. \cite{cyero_phdthesis}.
 \begin{figure}[!h]
 \includegraphics[scale=0.38]{plots/Pr_and_Ps.png}
 \caption{(left) Experimental neutron recoil (``missing'') momentum distribution for each of the three central settings. (right) Monte Carlo (un-weighted) events generated over
   the spectrometers' phase space volume binned in missing momentum.}
-\label{fig:fig14}
+\label{fig:fig16}
 \end{figure}
 %\clearpage
 \bibliography{supp}
