@@ -1,8 +1,8 @@
 \documentclass[aps,prl,twocolumn,showpacs,superscriptaddress,groupedaddress]{revtex4-2}  % for review and submission
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL ms.tex           Wed Oct  7 15:58:44 2020
-%DIF ADD ms_revised.tex   Wed Oct  7 15:59:18 2020
-\pdfoutput=1 
+%DIF DEL ms.tex           Thu Oct  8 16:13:34 2020
+%DIF ADD ms_revised.tex   Thu Oct  8 16:13:22 2020
+\pdfoutput=1
 \usepackage{graphicx}  % needed for figures
 \usepackage{ragged2e}
 \usepackage{dcolumn}   % needed for some tables
@@ -200,7 +200,7 @@ by the new SHMS and the existing High Momentum Spectrometer (HMS), respectively.
 }\DIFdelend and gas \u{C}erenkov \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
 \cite{Li_Wenliang_mthesis,ngc_techreport} }\hspace{0pt}%DIFAUXCMD
 }\DIFdelend used for electron identification.
-For each spectrometer, a logic signal was created from  the coincidence of hits in three of the four scintillator planes. The event trigger was the coincidence of these two signals. \\
+For each spectrometer, a logic signal was created from  the coincidence of hits in \DIFaddbegin \DIFadd{at least }\DIFaddend three of the four scintillator planes. The event trigger was the coincidence of these two signals. \\
 \indent We measured three central missing momentum settings: $p_{\mathrm{r}}=80, 580$ and $750$ MeV/c. At each of these settings, the electron arm (SHMS) was fixed and the proton arm (HMS) was rotated from smaller to larger angles corresponding to
 the lower and higher missing momentum settings, respectively. At these kinematic settings, the 3-momentum transfer covered a range of $2.4\lesssim|\vec{q}|\lesssim3.2$ GeV/c, which is more than twice the highest neutron recoil momentum
 measured in this experiment. As a result, most of the virtual photon momentum is transferred to the proton, which scatters at angles relative to $\vec{q}$ in the range $0.4^{\circ}\lesssim \theta_{pq}\lesssim21.4^{\circ}$.
@@ -265,7 +265,7 @@ de Forest \cite{DEFOREST1983} electron-proton off-shell cross section calculated
 Within the PWIA, $\sigma_{\mathrm{red}}$ corresponds to the PWIA cross section from the scattering of a proton in the deuteron. \\
 \indent Figure \ref{fig:fig1} shows the extracted experimental and theoretical reduced cross sections as a function of \DIFdelbegin \DIFdel{neutron recoil momentum
 }\DIFdelend $p_{\mathrm{r}}$ for three recoil angle settings at $Q^{2}=4.5\pm0.5$ (GeV/c)$^{2}$.
-For the two highest momentum settings ($p_{\mathrm{r}}=580, 750$ MeV/c), a weighted average of the cross sections were taken in the overlapping regions of $p_{\mathrm{r}}$. The results from the previous experiment \cite{PhysRevLett.107.262501} at a $Q^{2}=3.5\pm0.25$ (GeV/c)$^{2}$ are plotted as well (red square). \DIFdelbegin \DIFdel{The good agreement between the Hall A and C data at lower $p_{\mathrm{r}}$
+For the two highest momentum settings ($p_{\mathrm{r}}=580, 750$ MeV/c), a weighted average of the \DIFaddbegin \DIFadd{reduced }\DIFaddend cross sections were taken in the overlapping regions of $p_{\mathrm{r}}$. The results from the previous experiment \cite{PhysRevLett.107.262501} at a $Q^{2}=3.5\pm0.25$ (GeV/c)$^{2}$ are plotted as well (red square). \DIFdelbegin \DIFdel{The good agreement between the Hall A and C data at lower $p_{\mathrm{r}}$
 gives us confidence in the measurements made at higher missing momentum settings for which no previous data exist. The data }\DIFdelend %DIF > The good agreement between the Hall A and C data at lower $p_{\mathrm{r}}$ gives us confidence in the measurements made at higher missing momentum settings for which no previous data exist.
 \DIFaddbegin \DIFadd{The data }\DIFaddend are compared to theoretical calculations using wave functions determined from the charge-dependent Bonn (CD-Bonn) \cite{PhysRevC.63.024001}, Argonne $v_{18}$ (AV18) \cite{PhysRevC.51.38}, Paris \cite{PhysRevC.21.861} and WJC2 \cite{Gross_2007} $NN$ potentials. The theoretical calculations
 for the CD-Bonn (magenta) and AV18 (green) potentials were performed by Sargsian \cite{PhysRevC.82.014612} within the GEA, referred to as MS, and those for the Paris potential (blue) were by Laget \cite{LAGET2005} within the diagrammatic approach, referred to as JML.
@@ -310,7 +310,8 @@ $p_{\mathrm{r}} \gtrsim 800$ }\DIFaddend MeV/c for the MS CD-Bonn
 \begin{figure}[!t]
 \includegraphics[scale=0.5]{PRL_plot2.pdf}
 \caption{(Color online). The ratio $R(p_{\mathrm{r}}$) is shown in (a)-(c) for $\theta_{nq}=35^{\circ}, 45^{\circ}$ and $75^{\circ}$, respectively, each with a bin width of $\pm 5^{\circ}$.
-The dashed reference (magenta) line refers to MS CD-Bonn PWIA calculation (or momentum distribution) by which the data and all models are divided.}
+  The dashed reference (magenta) line refers to MS CD-Bonn PWIA calculation (or momentum distribution) by which the data and all models are divided.
+  \DIFaddbeginFL \DIFaddFL{Insets: Blowup of the subfigures below $p_{\mathrm{r}}=$0.7 GeV/c.}\DIFaddendFL }
 \label{fig:fig2}
 \end{figure}
 calculation while the other models predict still relatively small FSI below 900 MeV/c.
@@ -341,16 +342,10 @@ under grant No. NRC-HQ-84-14-G-0040, the Doctoral Evidence Acquisition (DEA) Fel
 %DIF > ---include references that are not mentioned in the main text
 %DIF > ---but are included in the supplemental material
 %DIF > ---cite supp. material as follows:  (See Supplemental Material) after description of the topic being discussed.
-\DIFadd{\mbox{%DIFAUXCMD
-\nocite{COSY}
-}\hspace{0pt}%DIFAUXCMD
-\mbox{%DIFAUXCMD
-\nocite{barlow2002systematic}
-}\hspace{0pt}%DIFAUXCMD
-\mbox{%DIFAUXCMD
-\nocite{barlow2017}
-  }\hspace{0pt}%DIFAUXCMD
-}\DIFaddend 
+%DIF > \nocite{COSY}
+%DIF > \nocite{barlow2002systematic}
+%DIF > \nocite{barlow2017}
+  \DIFaddend 
 
 \bibliography{ms}
 \end{document}

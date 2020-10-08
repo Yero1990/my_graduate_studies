@@ -1,0 +1,28 @@
+ORIGINAL PRL (COUNTED BY C. YERO)
+fig1: 308 words
+fig2: 243 words
+text: 3502 words
+eq: 16 words
+----------------
+total = 3502 + 308 + 243 + 16 = 4069 words
+
+
+PRL (COUNTER BY EDITORS)
+fig1: 306 words
+fig2: 247 words
+text: 3428 words
+eq: 16
+--------------------
+tota = 3997 words
+
+
+UPDATE PRL (RE-SBUMITTED)
+fig1: 204 words   (figsize = 14.2 x 3.9)
+fig2: 143 words
+text: 3489 words
+eq: 16 words
+---------------
+total = 3489 + 204 + 143 + 16 = 3852 words
+
+
+
