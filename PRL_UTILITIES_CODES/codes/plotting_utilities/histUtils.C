@@ -175,10 +175,20 @@ void plot_hist(TH1F *hist, TString xlabel="", TString ylabel="", TString title="
   hist->SetLabelFont(font_type, "XY");
   hist->SetTitleFont(font_type, "XY");
 
-  double nbins = hist->GetNbinsX();  //Get total number of bins (excluding overflow)
-  dataI = hist->IntegralAndError(1, nbins, dataI_err);
+  //Get DATA, SIMC histogram names to determine which range to integrate
+  TString H_name = hist->GetName();
+
+  double xmin, xmax;
+  if(H_name=="H_pcal_etotTrkNorm_sys")
+    { xmin = hist->FindBin(0.7), xmax = hist->FindBin(5.0);}
+  else if(H_name=="H_ctime_sys")
+    { xmin = hist->FindBin(10.5), xmax = hist->FindBin(14.5);}
+
   
-  leg->AddEntry(hist,Form("Data | Integral: %.3f", dataI),"f");
+  double nbins = hist->GetNbinsX();  //Get total number of bins (excluding overflow)
+  dataI = hist->IntegralAndError(xmin, xmax, dataI_err);
+  
+  leg->AddEntry(hist,Form("Data | Integral: %.3f #pm %.3f", dataI, dataI_err),"f");
   leg->Draw();
 
 }
@@ -249,16 +259,36 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
       hdata->DrawNormalized("samehistE0");
       hsimc->DrawNormalized("samesE0");
     }
+
+
+
+  //Get DATA, SIMC histogram names to determine which range to integrate
+  TString H_data_name = hdata->GetName();
+  TString H_simc_name = hsimc->GetName();
+
+  double xmin, xmax;
+  double xmin_simc, xmax_simc;
+  if(H_data_name=="H_Em_nuc_sys")
+    { xmin = hdata->FindBin(-0.02), xmax = hdata->FindBin(0.04);}
+  else if(H_data_name=="H_Q2_sys")
+    { xmin = hdata->FindBin(4.0), xmax = hdata->FindBin(5.0);}
+  else if(H_data_name=="H_hdelta_sys")
+    { xmin = hdata->FindBin(-8.0), xmax = hdata->FindBin(8.0);}
+  else if(H_data_name=="H_edelta_sys")
+    { xmin = hdata->FindBin(-10.0), xmax = hdata->FindBin(22.0);}
+  else if(H_data_name=="H_ztar_diff_sys")
+    { xmin = hdata->FindBin(-2.2), xmax = hdata->FindBin(1.98),  xmin_simc = hsimc->FindBin(-2.1), xmax_simc = hsimc->FindBin(1.9);}
+
   
   double dataI_err, simcI_err;
   double nbins = hdata->GetNbinsX();  //Get total number of bins (excluding overflow)
-  dataI = hdata->IntegralAndError(1, nbins, dataI_err);
-  simcI = hsimc->IntegralAndError(1, nbins, simcI_err);
+  dataI = hdata->IntegralAndError(xmin, xmax, dataI_err);
+  simcI = hsimc->IntegralAndError(xmin, xmax, simcI_err);
   double R = (float)dataI / simcI;
   double R_err = R * sqrt(pow(dataI_err/dataI,2) + pow(simcI_err/simcI,2));
   
-  leg->AddEntry(hdata,Form("Data | Integral: %.3f", dataI),"f");
-  leg->AddEntry(hsimc,Form("SIMC | Integral: %.3f", simcI));
+  leg->AddEntry(hdata,Form("Data | Integral: %.3f #pm %.3f", dataI, dataI_err),"f");
+  leg->AddEntry(hsimc,Form("SIMC | Integral: %.3f #pm %.3f", simcI, simcI_err));
   leg->AddEntry((TObject*)0, Form("Ratio: %.3f #pm %.3f", R, R_err), "");
   leg->Draw();
 
