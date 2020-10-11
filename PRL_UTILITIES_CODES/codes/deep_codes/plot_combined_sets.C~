@@ -1,0 +1,53 @@
+#include "../plotting_utilities/histUtils.C"   //load utilities code for histo plotting
+
+void plot_combined_sets(int thnq=0)
+{
+ gStyle->SetOptStat(0000000);
+
+ 
+ string fname_80 = Form("root_files_combined/deep_data_histos_pm80_set1_combined.root", thnq);
+ string fname_580_set1 = Form("root_files_combined/deep_data_histos_pm580_set1_combined.root", thnq);
+ string fname_580_set2 = Form("deep_data_histos_pm580_set2_combined.root", thnq);
+
+ string fname_750_set1 = Form("deep_data_histos_pm750_set1_combined.root", thnq);
+ string fname_750_set2 = Form("deep_data_histos_pm750_set2_combined.root", thnq);
+ string fname_750_set3 = Form("deep_data_histos_pm750_set3_combined.root", thnq);
+
+ TFile *f_80 = new TFile(fname_80);
+ TFile *f_580_1 = new TFile(fname_580_set1);
+ TFile *f_580_2 = new TFile(fname_580_set2);
+
+ TFile *f_750_1 = new TFile(fname_750_set1);
+ TFile *f_750_2 = new TFile(fname_750_set2);
+ TFile *f_750_3 = new TFile(fname_750_set3);
+
+ //Create Hist object
+ TH1F *hist_80 = 0;
+ TH1F *hist_580_set1 = 0;
+ TH1F *hist_580_set2 = 0;
+ TH1F *hist_750_set1 = 0;
+ TH1F *hist_750_set2 = 0;
+ TH1F *hist_750_set3 = 0;
+ 
+ TString hist_name = "H_Q2_sys";
+
+ //GET HISTOS FROM EACH SET
+ f_80->cd();
+ f_80->GetObject(hist_name.Data(), hist_80);
+ 
+ f_580_1->cd();
+ f_580_1->GetObject(hist_name.Data(), hist_580_set1);
+
+ f_580_2->cd();
+ f_580_2->GetObject(hist_name.Data(), hist_580_set2);
+ 
+ f_750_1->cd();
+ f_750_1->GetObject(hist_name.Data(), hist_750_set1);
+  
+ f_750_2->cd();
+ f_750_2->GetObject(hist_name.Data(), hist_750_set2);
+
+ f_750_3->cd();
+ f_750_3->GetObject(hist_name.Data(), hist_750_set3);
+  
+}
