@@ -12,7 +12,7 @@
 %\usepackage{float}
 %\usepackage[compact]{titlesec}
 %\titlespacing{\section}{0pt}{2ex}{2ex}
-
+\usepackage{comment}
 \usepackage{graphicx}  % needed for figures
 \usepackage{ragged2e}
 \usepackage{dcolumn}   % needed for some tables
@@ -65,31 +65,30 @@ See Section 4.4 of Ref.\cite{cyero_phdthesis} for a more detailed description of
 \label{fig:fig2}
 \end{figure}
 \section{\large Event Selection Cuts}
-\noindent Figures \ref{fig:fig3}-\ref{fig:fig7} show the event selection cuts for data (blue hatched) and SIMC (red data points) for the deuteron 80 MeV/c kinematic setting at $\theta_{nq}=35\pm5^{\circ}$.
+\noindent Figures \ref{fig:fig1}-\ref{fig:fig5} show the event selection cuts for data (blue hatched) and SIMC (red data points) for the deuteron 80 MeV/c kinematic setting at $\theta_{nq}=35\pm5^{\circ}$.
 The black dashed or red solid lines (for collimators) represent the cuts or geometrical (collimators) boundaries used to select true $^{2}$H$(e,e'p)n$ coincidence events.
 The exact same cuts were also applied to the 580 and 750 MeV/c settings. The data yield has been normalized by the total charge and corrected for the inefficiencies described in the Letter.
 The FSI model from J.M. Laget was used in the simulation for the plots shown below.
 \begin{figure}[!h]
-\includegraphics[scale=0.30]{plots/Em_and_Q2_CUT_80MeV_35deg.png}
+\includegraphics[scale=0.35]{plots/Em_and_Q2_CUT_80MeV_35deg.png}
 \caption{Event selection cuts on missing energy (left) and 4-momentum transfer (right).}
-\label{fig:fig3}
+\label{fig:fig1}
 \end{figure}
-\clearpage
 \begin{figure}
 \includegraphics[scale=0.33]{plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png}
 \caption{Acceptance cut on HMS momentum fraction (left) and event selection cut on the difference between the $z$-reaction vertex on both spectrometers (right).
   Inset (left): The SHMS momentum fraction was set by the HMS $\delta$ cut to be $\lesssim$3$\%$ which is well within the SHMS momentum acceptance range of $-10 \leq \delta \leq22 \%$}
-\label{fig:fig4}
+\label{fig:fig2}
 \includegraphics[scale=0.30]{plots/coin_and_eCal_CUT_80MeV_35deg.png}
 \caption{Event selection cuts on the electron-proton ($ep$) coincidence time (left) and total deposited energy on calorimeted normalized by the particle track momentum (right).}
-\label{fig:fig5}
+\label{fig:fig3}
 \includegraphics[scale=0.30]{plots/collimator_CUT_80MeV_35deg_data.png}
 \caption{(left) Geometrical acceptance cut on reconstructed events projected at the HMS collimator. (right) The SHMS events (correlated with HMS events on left plot), projected at the SHMS collimator.
   The projection at the SHMS collimator clearly shows that the acceptance of the SHMS is driven by that of the HMS.}
-\label{fig:fig6}
+\label{fig:fig4}
 \includegraphics[scale=0.30]{plots/collimator_CUT_80MeV_35deg_SIMC.png}
-\caption{Same as Fig. \ref{fig:fig6}, but for simulation.}
-\label{fig:fig7}
+\caption{Same as Fig. \ref{fig:fig4}, but for simulation.}
+\label{fig:fig5}
 \end{figure}
 \clearpage
 \section{\large Deuteron Kinematic Distributions }
@@ -198,6 +197,7 @@ found in Sections 5.1 and 6.1 of Ref. \cite{cyero_phdthesis}.
   the spectrometers' phase space volume binned in missing momentum.}
 \label{fig:fig16}
 \end{figure}
+
 %\clearpage
 \bibliography{supp}
 

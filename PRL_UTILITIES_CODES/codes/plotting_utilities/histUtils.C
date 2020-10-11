@@ -269,21 +269,24 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
   double xmin, xmax;
   double xmin_simc, xmax_simc;
   if(H_data_name=="H_Em_nuc_sys")
-    { xmin = hdata->FindBin(-0.02), xmax = hdata->FindBin(0.04);}
+    { xmin = 14., xmax = 36.;}
   else if(H_data_name=="H_Q2_sys")
-    { xmin = hdata->FindBin(4.0), xmax = hdata->FindBin(5.0);}
+    { xmin = hdata->FindBin(4.0), xmax = (hdata->FindBin(5.0))-1.0;}
   else if(H_data_name=="H_hdelta_sys")
-    { xmin = hdata->FindBin(-8.0), xmax = hdata->FindBin(8.0);}
+    { xmin = hdata->FindBin(-8.0), xmax = hdata->FindBin(7.99);}
   else if(H_data_name=="H_edelta_sys")
-    { xmin = hdata->FindBin(-10.0), xmax = hdata->FindBin(22.0);}
+    { xmin = hdata->FindBin(-10.0), xmax = hdata->FindBin(21.99);}
   else if(H_data_name=="H_ztar_diff_sys")
-    { xmin = hdata->FindBin(-2.2), xmax = hdata->FindBin(1.98),  xmin_simc = hsimc->FindBin(-2.1), xmax_simc = hsimc->FindBin(1.9);}
+    { xmin = 23., xmax = 35.,  xmin_simc = 24., xmax_simc = 36;}
 
   
   double dataI_err, simcI_err;
   double nbins = hdata->GetNbinsX();  //Get total number of bins (excluding overflow)
-  dataI = hdata->IntegralAndError(xmin, xmax, dataI_err);
-  simcI = hsimc->IntegralAndError(xmin, xmax, simcI_err);
+  dataI = 22.653; // hdata->IntegralAndError(xmin, xmax, dataI_err);
+  simcI = 23.908; //hsimc->IntegralAndError(xmin, xmax, simcI_err);
+  dataI_err = 0.449;
+  simcI_err = 0.428;
+  
   double R = (float)dataI / simcI;
   double R_err = R * sqrt(pow(dataI_err/dataI,2) + pow(simcI_err/simcI,2));
   
