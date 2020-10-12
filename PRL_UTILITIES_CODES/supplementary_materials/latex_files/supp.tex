@@ -142,27 +142,30 @@ found in Sections 5.1 and 6.1 of Ref. \cite{cyero_phdthesis}.
 \section{\large Radiative \& Bin-Centering Corrections}
 \noindent The radiative corrections were applied by multiplying the ratio of non-radiative to radiative SIMC yields to the data yield for each ($\theta_{nq}$, $p_{\mathrm{r}}$)
 kinematic bin as described in the Letter. The radiative correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in Fig. \ref{fig:RC_factor}. The calculation was done using the
-Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data yield.
+Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data yield. The uncertainty in the radiative
+correction factor was determined by the Monte-Carlo statistics from the simulation. The large uncertainty in the lowest momentum bin, $p_{\mathrm{r}} = 0.02\pm0.02$, can
+be understood from the fact that statistics were limited in this phase space region as indicated by the "hole" observed at $p_{\mathrm{r}} = 0.02$ in Fig. \ref{fig:Pm_Ps} (right). 
 \begin{figure}[!h]
-\includegraphics[scale=0.27]{plots/RC_factor.png}
+\includegraphics[scale=0.26]{plots/RC_factor.png}
 \caption{Radiative correction factor versus neutron recoil momenta, $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). }
 \label{fig:RC_factor}
 \end{figure}\\
 The bin centering corrections were applied by multiplying the ratio, $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}}/\bar{\sigma}$, to the average data cross section over each ($\theta_{nq}$, $p_{\mathrm{r}}$)
 kinematic bin, as described in the Letter. The bin centering correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in
-Fig. \ref{fig:BC_factor}. The calculation was done using the Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data cross section.
+Fig. \ref{fig:BC_factor}. The calculation was done using the Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data cross section. The
+uncertainty in the bin-centering correction factor was determined from the standard error propagation of a ratio between two quantities. 
 \begin{figure}[!h]
-\includegraphics[scale=0.27]{plots/BC_factor.png}
+\includegraphics[scale=0.26]{plots/BC_factor.png}
 \caption{Bin centering correction factor versus neutron recoil momenta, $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right).
   The inner (black dashed) and outer (red dash-dotted) lines represent a percent deviation from unity of $\pm10\%$ and $\pm20\%$, respectively.}
 \label{fig:BC_factor}
-\end{figure}
+\end{figure}\\
 \section{\large Systematic Uncertainty Studies on Event Selection Cuts, Radiative and Bin-Centering Corrections }
 A study of the sensitivity on the experimental cross section due to variations in the event selection cuts was carried out. 
 To determine if the variation in each of the cuts contributes to a systematic effect and whether this contribution is significant
 enough to be considered as a systematic error, we used the approach by R. Barlow described in Ref. \cite{barlow2002systematic}.\\
 \indent Consider a cross section measurement done two different ways (i.e., apply different cuts). Let the measurements and their
-statistical uncertainties be: ($\sigma^{\mathrm{exp}}_{\mathrm{bc,1}}\pm\delta\sigma^{\mathrm{exp}}_{\mathrm{bc,1}}$) and ($\sigma^{\mathrm{exp}}_{\mathrm{bc,2}}\pm\delta\sigma^{\mathrm{exp}}_{\mathrm{bc,2}}$)
+statistical uncertainties be: ($\sigma^{\mathrm{exp}}_{\mathrm{1}}\pm\delta\sigma^{\mathrm{exp}}_{\mathrm{1}}$) and ($\sigma^{\mathrm{exp}}_{\mathrm{2}}\pm\delta\sigma^{\mathrm{exp}}_{\mathrm{2}}$)
 where one of the measurements is a subset of the other. The difference and its associated uncertainty can be expressed as,
 \begin{subequations}
   \begin{align}
@@ -185,23 +188,24 @@ studies were mainly done to check the stability of the event selection cuts and 
 cuts systematics can be found in Section 5.10 of Ref. \cite{cyero_phdthesis}. 
 \clearpage
 \begin{figure}[!ht]
-\includegraphics[scale=0.3]{plots/Em_syst.png}
+\includegraphics[scale=0.4]{plots/Em_syst.png}
 \caption{Systematic effects of the missing energy cut on the data cross section for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). The inner (black dashed) and outer (black solid)
   lines represent the $\Delta=\pm2\sigma_{\Delta}$ and $\pm4\sigma_{\Delta}$ boundaries, respectively.}
 \label{fig:Em_sys}
 \end{figure}
-\indent The systematic effect on the cross sections due to model dependency of the radiative and bin-centering corrections was investigated using the Barlow ratio approach described above.
-In this case, the ratio was calculated from the difference between the experimental cross sections using the Laget PWIA and FSI models for both radiative and bin-centering corrections.
+\indent The systematic effect on the cross sections due to model dependency of the radiative and bin-centering corrections was investigated
+using the Barlow ratio approach described above. In this case, the ratio was calculated from the difference between the experimental cross
+sections using the Laget PWIA and FSI models for both radiative and bin-centering corrections. Figures \ref{fig:rad_sys} and \ref{fig:bc_sys}
+show the Barlow ratio for radiative and bin-centering systematics is mostly within 2 standard deviations which show that
+the model dependency of the correction factors have a negligible effect on the experimental cross sections.
 \begin{figure}[!h]
-\includegraphics[scale=0.3]{plots/rad_sys.png}
+\includegraphics[scale=0.31]{plots/rad_sys.png}
 \caption{Systematic effects of the radiative corrections model dependency on the data cross sections for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). The inner (black dashed) and outer (black solid) lines represent the $\Delta=\pm2\sigma_{\Delta}$ and $\pm4\sigma_{\Delta}$ boundaries, respectively.  }
 \label{fig:rad_sys}
-\includegraphics[scale=0.3]{plots/bc_sys.png}
-\caption{Same as Fig. \ref{fig:rad_sys} but for bin-centering corrections.}
+\includegraphics[scale=0.31]{plots/bc_sys.png}
+\caption{Same as Fig. \ref{fig:rad_sys} but for bin-centering correction systematics.}
 \label{fig:bc_sys}
 \end{figure}
-Figures \ref{fig:rad_sys} and \ref{fig:bc_sys} show the Barlow ratio for radiative and bin-centering systematics is mostly within 2 standard deviations which show that
-the model dependency of the correction factors have a negligible effect on the experimental cross sections.
 
 
 %\clearpage
