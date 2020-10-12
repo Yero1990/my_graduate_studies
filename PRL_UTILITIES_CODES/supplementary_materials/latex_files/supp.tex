@@ -49,10 +49,10 @@ The exact same cuts were also applied to the 580 and 750 MeV/c settings. Each hi
 The integrated counts (within the cut boundary) for data and simulation as well as the data-to-simulation yield ratio is shown (top left) for each selection cut.
 The data yield has been normalized by the total charge and corrected for the inefficiencies described in the Letter. The FSI model from J.M. Laget was used in the simulation for the plots shown below.
 \begin{figure}[!h]
-\includegraphics[scale=0.25]{plots/Em_and_Q2_CUT_80MeV_35deg.png}
+\includegraphics[scale=0.24]{plots/Em_and_Q2_CUT_80MeV_35deg.png}
 \caption{Event selection cuts on missing energy (left) and 4-momentum transfer (right).}
 \label{fig:Em_Q2_cuts}
-\includegraphics[scale=0.25]{plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png}
+\includegraphics[scale=0.24]{plots/deltaAcc_and_ZtarCUT_80MeV_35deg.png}
 \caption{Acceptance cut on HMS momentum fraction (left) and event selection cut on the difference between the $z$-reaction vertex on both spectrometers (right).
   Inset (left): The SHMS momentum acceptance range.}
 \label{fig:delta_Ztar_cuts}
@@ -68,20 +68,31 @@ $|\delta|\lesssim$3$\%$ which is well within the reliable SHMS momentum acceptan
 on the difference between the HMS and SHMS reconstructed reaction vertices along the $z$-coordinate (target length). The cut is made at $\pm2$ cm relative to the histogram peak.
 If the events originated from the same reaction vertex (i.e., true coincidences), the difference should peak at zero with a finite resolution width. If the events are uncorrelated
 (i.e., accidental coincidences), however, the reconstruction along the $z_{\mathrm{v}}$-vertex can vary significantly between the two spectrometers, which contribute to the tails of the
-distribution.
-
-\begin{figure}
-\includegraphics[scale=0.25]{plots/coin_and_eCal_CUT_80MeV_35deg.png}
+distribution.\\
+\begin{figure}[!h]
+\includegraphics[scale=0.24]{plots/coin_and_eCal_CUT_80MeV_35deg.png}
 \caption{Event selection cuts on the electron-proton ($ep$) coincidence time (left) and total deposited energy on calorimeted normalized by the particle track momentum (right).}
 \label{fig:coin_ecal_cuts}
-\includegraphics[scale=0.25]{plots/collimator_CUT_80MeV_35deg_data.png}
+\end{figure}\\
+\indent Figure \ref{fig:coin_ecal_cuts} (left) shows a coincidence time cut on the $ep$ coincidence time spectrum formed by requiring a logic signal of
+at least 3 out of 4 scintillator planes between both spectrometers. The spectrum is very clean as the typical 2 ns beam bunch structure due to accidental
+coincidences is not observed. The out-of-time events observed at the tails can originate from the radiation in the Hall partially entering the detector huts and forming
+a trigger in coincidence with the other arm. Figure \ref{fig:coin_ecal_cuts} (right) shows a particle identification cut on the SHMS calorimeter total energy
+deposited normalized by the particle track momentum. This cut was used to separate electrons from background (pions), however, the spectrum shows a very clean distribution
+with a peak at about one indicating the detected particles were electrons.
+\begin{figure}[!h]
+\includegraphics[scale=0.24]{plots/collimator_CUT_80MeV_35deg_data.png}
 \caption{(left) Geometrical acceptance cut on reconstructed events projected at the HMS collimator. (right) The SHMS events (correlated with HMS events on left plot), projected at the SHMS collimator.
   The projection at the SHMS collimator clearly shows that the acceptance of the SHMS is driven by that of the HMS.}
 \label{fig:data_coll_cuts}
-\includegraphics[scale=0.25]{plots/collimator_CUT_80MeV_35deg_SIMC.png}
+\end{figure}
+\begin{figure}[!h]
+\includegraphics[scale=0.24]{plots/collimator_CUT_80MeV_35deg_SIMC.png}
 \caption{Same as Fig. \ref{fig:data_coll_cuts}, but for simulation.}
 \label{fig:simc_coll_cuts}
-\end{figure}
+\end{figure}\\
+\indent Figure \ref{fig:data_coll_cuts} (left) shows  
+
 \clearpage
 \section{\large Deuteron Kinematic Distributions }
 \noindent Figures \ref{fig:d2_kin_35deg} and \ref{fig:d2_kin_45deg} show the fundamental kinematic variable distributions for each of the central missing momentum settings at $\theta_{nq}=35^{\circ}$ and $45^{\circ}$.
@@ -89,10 +100,10 @@ The data has been normalized by the total charge and corrected for the inefficie
 The same event selection cuts mentioned in the previous sections were applied (including the $Q^{2}$ cut), with the exception of the $Q^{2}$ distribution itself.
 Only the first dataset (out of 2) for the 580 and (out of 3) for the 750 MeV/c settings are shown. 
 \begin{figure}[!h]
-\includegraphics[scale=0.3]{plots/d2_kin_thnq35.png}
+\includegraphics[scale=0.25]{plots/d2_kin_thnq35.png}
 \caption{Deuteron kinematic distributions for the 80 (blue), 580 (set1, red) and 750 (set1, magenta) MeV/c cental missing momentum settings at $\theta_{nq}=35^{\circ}$.}
 \label{fig:d2_kin_35deg}
-\includegraphics[scale=0.3]{plots/d2_kin_thnq45.png}
+\includegraphics[scale=0.25]{plots/d2_kin_thnq45.png}
 \caption{Same as Fig. \ref{fig:d2_kin_35deg}, but for $\theta_{nq}=45^{\circ}$}
 \label{fig:d2_kin_45deg}
 \end{figure}
