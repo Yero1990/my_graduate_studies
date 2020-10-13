@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{46}%
+\begin{thebibliography}{31}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,152 +50,6 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{\citenamefont {Egiyan}\ \emph {et~al.}(2003)\citenamefont {Egiyan}
-  \emph {et~al.}}]{PhysRevC.68.014313}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~S.}\ \bibnamefont
-  {Egiyan}} \emph {et~al.} (\bibinfo {collaboration} {CLAS Collaboration}),\
-  }\bibfield  {title} {\bibinfo {title} {Observation of nuclear scaling in the
-  ${A}(e,e')$ reaction at ${x}_{B}>1$},\ }\href
-  {https://doi.org/10.1103/PhysRevC.68.014313} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {68}},\ \bibinfo
-  {pages} {014313} (\bibinfo {year} {2003})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Egiyan}\ \emph {et~al.}(2006)\citenamefont {Egiyan}
-  \emph {et~al.}}]{PhysRevLett.96.082501}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {K.~S.}\ \bibnamefont
-  {Egiyan}} \emph {et~al.} (\bibinfo {collaboration} {CLAS Collaboration}),\
-  }\bibfield  {title} {\bibinfo {title} {Measurement of {T}wo- and
-  {T}hree-{N}ucleon {S}hort-{R}ange {C}orrelation {P}robabilities in
-  {N}uclei},\ }\href {https://doi.org/10.1103/PhysRevLett.96.082501} {\bibfield
-   {journal} {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo
-  {volume} {96}},\ \bibinfo {pages} {082501} (\bibinfo {year}
-  {2006})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Shneor}\ \emph {et~al.}(2007)\citenamefont {Shneor}
-  \emph {et~al.}}]{PhysRevLett.99.072501}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Shneor}} \emph {et~al.} (\bibinfo {collaboration} {Jefferson Lab Hall A
-  Collaboration}),\ }\bibfield  {title} {\bibinfo {title} {Investigation of
-  {P}roton-{P}roton {S}hort-{R}ange {C}orrelations via the
-  $^{12}\mathrm{C}(e,e'pp)$ {R}eaction},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.99.072501} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {99}},\
-  \bibinfo {pages} {072501} (\bibinfo {year} {2007})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Fomin}\ \emph {et~al.}(2017)\citenamefont {Fomin},
-  \citenamefont {Higinbotham}, \citenamefont {Sargsian},\ and\ \citenamefont
-  {Solvignon}}]{Fomin_2017}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
-  {Fomin}}, \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Higinbotham}},
-  \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Sargsian}},\ and\
-  \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Solvignon}},\ }\bibfield
-  {title} {\bibinfo {title} {New {R}esults on {S}hort-{R}ange {C}orrelations in
-  {N}uclei},\ }\href {https://doi.org/10.1146/annurev-nucl-102115-044939}
-  {\bibfield  {journal} {\bibinfo  {journal} {Annual Review of Nuclear and
-  Particle Science}\ }\textbf {\bibinfo {volume} {67}},\ \bibinfo {pages}
-  {129–159} (\bibinfo {year} {2017})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Hen}\ \emph {et~al.}(2014)\citenamefont {Hen},
-  \citenamefont {Sargsian}, \citenamefont {Weinstein}, \citenamefont
-  {Piasetzky}, \citenamefont {Hakobyan}, \citenamefont {Higinbotham},
-  \citenamefont {Braverman}, \citenamefont {Brooks}, \citenamefont {Gilad},
-  \citenamefont {Adhikari}, \citenamefont {Arrington}, \citenamefont {Asryan},
-  \citenamefont {Avakian}, \citenamefont {Ball}, \citenamefont {Baltzell},
-  \citenamefont {Battaglieri}, \citenamefont {Beck}, \citenamefont {Beck},
-  \citenamefont {Bedlinskiy},\ and\ \citenamefont {Zonta}}]{Hen2014}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
-  {Hen}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Sargsian}},
-  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Weinstein}}, \bibinfo
-  {author} {\bibfnamefont {E.}~\bibnamefont {Piasetzky}}, \bibinfo {author}
-  {\bibfnamefont {H.}~\bibnamefont {Hakobyan}}, \bibinfo {author}
-  {\bibfnamefont {D.}~\bibnamefont {Higinbotham}}, \bibinfo {author}
-  {\bibfnamefont {M.}~\bibnamefont {Braverman}}, \bibinfo {author}
-  {\bibfnamefont {W.}~\bibnamefont {Brooks}}, \bibinfo {author} {\bibfnamefont
-  {S.}~\bibnamefont {Gilad}}, \bibinfo {author} {\bibfnamefont
-  {K.}~\bibnamefont {Adhikari}}, \bibinfo {author} {\bibfnamefont
-  {J.}~\bibnamefont {Arrington}}, \bibinfo {author} {\bibfnamefont
-  {G.}~\bibnamefont {Asryan}}, \bibinfo {author} {\bibfnamefont
-  {H.}~\bibnamefont {Avakian}}, \bibinfo {author} {\bibfnamefont
-  {J.}~\bibnamefont {Ball}}, \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont
-  {Baltzell}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Battaglieri}}, \bibinfo {author} {\bibfnamefont {A.}~\bibnamefont {Beck}},
-  \bibinfo {author} {\bibfnamefont {S.}~\bibnamefont {Beck}}, \bibinfo {author}
-  {\bibfnamefont {I.}~\bibnamefont {Bedlinskiy}},\ and\ \bibinfo {author}
-  {\bibfnamefont {I.}~\bibnamefont {Zonta}},\ }\bibfield  {title} {\bibinfo
-  {title} {Nuclear physics. momentum sharing in imbalanced fermi systems},\
-  }\href {https://doi.org/10.1126/science.1256785} {\bibfield  {journal}
-  {\bibinfo  {journal} {Science (New York, N.Y.)}\ }\textbf {\bibinfo {volume}
-  {346}} (\bibinfo {year} {2014})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Hen}\ \emph {et~al.}(2017)\citenamefont {Hen},
-  \citenamefont {Miller}, \citenamefont {Piasetzky},\ and\ \citenamefont
-  {Weinstein}}]{RevModPhys.89.045002}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {O.}~\bibnamefont
-  {Hen}}, \bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont {Miller}},
-  \bibinfo {author} {\bibfnamefont {E.}~\bibnamefont {Piasetzky}},\ and\
-  \bibinfo {author} {\bibfnamefont {L.~B.}\ \bibnamefont {Weinstein}},\
-  }\bibfield  {title} {\bibinfo {title} {Nucleon-nucleon correlations,
-  short-lived excitations, and the quarks within},\ }\href
-  {https://doi.org/10.1103/RevModPhys.89.045002} {\bibfield  {journal}
-  {\bibinfo  {journal} {Rev. Mod. Phys.}\ }\textbf {\bibinfo {volume} {89}},\
-  \bibinfo {pages} {045002} (\bibinfo {year} {2017})},\ \bibinfo {note}
-  {\url{https://link.aps.org/doi/10.1103/RevModPhys.89.045002}}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
-  {Sargsian}(2015)}]{sargsian_2015}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Boeglin}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {Modern studies of the
-  {D}euteron: {F}rom the lab frame to the light front},\ }\href
-  {https://doi.org/10.1142/S0218301315300039} {\bibfield  {journal} {\bibinfo
-  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
-  {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo {year} {2015})},\
-  \Eprint {https://arxiv.org/abs/https://doi.org/10.1142/S0218301315300039}
-  {https://doi.org/10.1142/S0218301315300039} \BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Bochna}\ \emph {et~al.}(1998)\citenamefont {Bochna}
-  \emph {et~al.}}]{PhysRevLett.81.4576}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Bochna}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
-  {Measurements of {D}euteron {P}hotodisintegration up to 4.0 {G}e{V}},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.81.4576} {\bibfield  {journal} {\bibinfo
-   {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {81}},\ \bibinfo
-  {pages} {4576} (\bibinfo {year} {1998})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Schulte}\ \emph {et~al.}(2001)\citenamefont {Schulte}
-  \emph {et~al.}}]{PhysRevLett.87.102302}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~C.}\ \bibnamefont
-  {Schulte}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title}
-  {Measurement of the {H}igh {E}nergy {T}wo-{B}ody {D}euteron
-  {P}hotodisintegration {D}ifferential {C}ross {S}ection},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.87.102302} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {87}},\
-  \bibinfo {pages} {102302} (\bibinfo {year} {2001})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Schulte}\ \emph {et~al.}(2002)\citenamefont {Schulte}
-  \emph {et~al.}}]{PhysRevC.66.042201}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.~C.}\ \bibnamefont
-  {Schulte}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {High
-  energy angular distribution measurements of the exclusive deuteron
-  photodisintegration reaction},\ }\href
-  {https://doi.org/10.1103/PhysRevC.66.042201} {\bibfield  {journal} {\bibinfo
-  {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {66}},\ \bibinfo
-  {pages} {042201} (\bibinfo {year} {2002})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Frankfurt}\ \emph {et~al.}(2000)\citenamefont
-  {Frankfurt}, \citenamefont {Miller}, \citenamefont {Sargsian},\ and\
-  \citenamefont {Strikman}}]{PhysRevLett.84.3045}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.~L.}\ \bibnamefont
-  {Frankfurt}}, \bibinfo {author} {\bibfnamefont {G.~A.}\ \bibnamefont
-  {Miller}}, \bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
-  {Sargsian}},\ and\ \bibinfo {author} {\bibfnamefont {M.~I.}\ \bibnamefont
-  {Strikman}},\ }\bibfield  {title} {\bibinfo {title} {{QCD Rescattering and
-  High Energy Two-Body Photodisintegration of the Deuteron}},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.84.3045} {\bibfield  {journal} {\bibinfo
-   {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {84}},\ \bibinfo
-  {pages} {3045} (\bibinfo {year} {2000})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Piasetzky}\ \emph {et~al.}(2006)\citenamefont
   {Piasetzky}, \citenamefont {Sargsian}, \citenamefont {Frankfurt},
   \citenamefont {Strikman},\ and\ \citenamefont
@@ -266,6 +120,18 @@
   {https://doi.org/10.1103/PhysRevLett.94.192302} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {94}},\
   \bibinfo {pages} {192302} (\bibinfo {year} {2005})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Boeglin}\ and\ \citenamefont
+  {Sargsian}(2015)}]{sargsian_2015}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Boeglin}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Sargsian}},\ }\bibfield  {title} {\bibinfo {title} {Modern studies of the
+  {D}euteron: {F}rom the lab frame to the light front},\ }\href
+  {https://doi.org/10.1142/S0218301315300039} {\bibfield  {journal} {\bibinfo
+  {journal} {International Journal of Modern Physics E}\ }\textbf {\bibinfo
+  {volume} {24}},\ \bibinfo {pages} {1530003} (\bibinfo {year} {2015})},\
+  \Eprint {https://arxiv.org/abs/https://doi.org/10.1142/S0218301315300039}
+  {https://doi.org/10.1142/S0218301315300039} \BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Sargsian}(2001)}]{Sargsian_2001}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.~M.}\ \bibnamefont
@@ -316,60 +182,6 @@
   {Florida International University}, \bibinfo {address} {11200 SW 8th St,
   Miami, FL 33199} (\bibinfo {year} {2020}),\ \bibinfo {note}
   {\url{https://arxiv.org/abs/2009.11343}}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Niculescu}\ \emph {et~al.}()\citenamefont
-  {Niculescu}, \citenamefont {Niculescu}, \citenamefont {Burton}, \citenamefont
-  {Coquelin}, \citenamefont {Nisson},\ and\ \citenamefont
-  {Jarell}}]{hodo_techreport}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {G.}~\bibnamefont
-  {Niculescu}}, \bibinfo {author} {\bibfnamefont {I.}~\bibnamefont
-  {Niculescu}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Burton}},
-  \bibinfo {author} {\bibfnamefont {D.}~\bibnamefont {Coquelin}}, \bibinfo
-  {author} {\bibfnamefont {K.}~\bibnamefont {Nisson}},\ and\ \bibinfo {author}
-  {\bibfnamefont {T.}~\bibnamefont {Jarell}},\ }\href@noop {} {\bibinfo {title}
-  {{S}{H}{M}{S} {H}odoscope {S}cintillator {D}etectors}},\ \bibinfo {note}
-  {\url{https://hallcweb.jlab.org/document/howtos/shms_scintillator_hodoscope.pdf}}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Christy}\ \emph {et~al.}()\citenamefont {Christy},
-  \citenamefont {Monaghan}, \citenamefont {Kalantarians}, \citenamefont
-  {Biswas},\ and\ \citenamefont {Long}}]{dc_techreport}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
-  {Christy}}, \bibinfo {author} {\bibfnamefont {P.}~\bibnamefont {Monaghan}},
-  \bibinfo {author} {\bibfnamefont {N.}~\bibnamefont {Kalantarians}}, \bibinfo
-  {author} {\bibfnamefont {D.}~\bibnamefont {Biswas}},\ and\ \bibinfo {author}
-  {\bibfnamefont {M.}~\bibnamefont {Long}},\ }\href@noop {} {\bibinfo {title}
-  {{SHMS Drift Chambers}}},\ \bibinfo {note}
-  {\url{https://hallcweb.jlab.org/document/howtos/shms_drift_chambers.pdf}}\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Mkrtchyan}\ \emph {et~al.}(2013)\citenamefont
-  {Mkrtchyan} \emph {et~al.}}]{Mkrtchyan_2013}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {H.}~\bibnamefont
-  {Mkrtchyan}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {{T}he
-  lead-glass electromagnetic calorimeters for the magnetic spectrometers in
-  {H}all {C} at {J}efferson {L}ab},\ }\href
-  {https://doi.org/10.1016/j.nima.2013.03.070} {\bibfield  {journal} {\bibinfo
-  {journal} {Nuclear Instruments and Methods in Physics Research Section A:
-  Accelerators, Spectrometers, Detectors and Associated Equipment}\ }\textbf
-  {\bibinfo {volume} {719}},\ \bibinfo {pages} {85–100} (\bibinfo {year}
-  {2013})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Li}(2012)}]{Li_Wenliang_mthesis}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
-  {Li}},\ }\emph {\bibinfo {title} {{H}eavy {G}as {C}herenkov {D}etector
-  {C}onstruction for {H}all {C} at {T}homas {J}efferson {N}ational
-  {A}ccelerator {F}acility}},\ \href
-  {https://ourspace.uregina.ca/handle/10294/3818} {Master's thesis},\ \bibinfo
-  {school} {University of Regina} (\bibinfo {year} {2012})\BibitemShut
-  {NoStop}%
-\bibitem [{\citenamefont {Day}()}]{ngc_techreport}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {D.}~\bibnamefont
-  {Day}},\ }\href@noop {} {\bibinfo {title} {{Preliminary Design of the SHMS
-  Noble Cerenkov Detector}}},\ \bibinfo {note}
-  {\url{https://hallcweb.jlab.org/DocDB/0009/000933/001/shms-cerv6.pdf}}\BibitemShut
-  {NoStop}%
 \bibitem [{\citenamefont {Ent}\ \emph {et~al.}(2001)\citenamefont {Ent},
   \citenamefont {Filippone}, \citenamefont {Makins}, \citenamefont {Milner},
   \citenamefont {O'Neill},\ and\ \citenamefont {Wasson}}]{PhysRevC.64.054610}%

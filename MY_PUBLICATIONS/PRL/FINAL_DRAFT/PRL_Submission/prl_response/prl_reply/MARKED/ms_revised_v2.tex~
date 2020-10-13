@@ -44,10 +44,10 @@
 The deuteron is the only bound two-nucleon system and serves as an ideal framework to study the strong nuclear force at the sub-Fermi distance scale, a region which is currently
 practically unexplored and not well understood. Understanding the high momentum structure of the proton-neutron ($pn$) system is highly important for nuclear physics due to the observed 
 dominance of short-range correlations (SRC) in nuclei at nucleon momenta above the fermi momentum. This dominance has been well established by a series of recent experiments
-carried out at Jefferson Lab (JLab) and Brookhaven National Lab (BNL). In these experiments missing momenta up to $\sim1$ GeV/c have been probed and missing momentum distributions
+carried out at Jefferson Lab (JLab) and Berkeley National Lab (BNL). In these experiments nucleon momenta up to $p_{\mathrm{r}}\sim1$ GeV/c have been probed and recoil momentum distributions
 have been compared to the high momentum part of theoretical deuteron momentum distributions \cite{PhysRevLett.97.162504,PhysRevLett.113.022501,PhysRevLett.122.172502,PhysRevLett.124.212501}.
-Missing momenta up to $\sim1$ GeV/c have also been probed in a $^{3}\mathrm{He}(e,e'p)$ experiment \cite{PhysRevLett.94.082305,PhysRevLett.94.192302} but at a relatively low momentum transfer of 1.5 (GeV/c)$^{2}$ and at a kinematic region
-(Bjorken $x_{\mathrm{Bj}}\sim1$) where the cross section is dominated by final state interactions. \\
+Recoil momenta up to $p_{\mathrm{r}}\sim1$ GeV/c have also been probed in a $^{3}\mathrm{He}(e,e'p)$ experiment \cite{PhysRevLett.94.082305,PhysRevLett.94.192302} but at a relatively low momentum transfer of 1.5 (GeV/c)$^{2}$ and at a kinematic region
+(Bjorken $x_{\mathrm{Bj}}\sim1$) where the cross section is dominated by final state interactions.\\
 %===Original introguction (replaced by above intro, suggested by W. Boeglin, in response to referee. comments)====
 %At such small inter-nucleon distances, the nucleon-nucleon ($NN$) interaction is expected to become repulsive and the interacting
 %nucleons begin to overlap. The dynamics in this short distance region are directly related to the dynamics of two-nucleon short range correlations (SRC) observed in $A>2$ nuclei \cite{PhysRevC.68.014313,PhysRevLett.96.082501,PhysRevLett.99.072501,Fomin_2017,Hen2014,RevModPhys.89.045002}.
