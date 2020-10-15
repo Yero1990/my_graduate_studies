@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  14 OCT 2020 19:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  15 OCT 2020 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -454,13 +454,13 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<PRL_plot1.pdf, id=42, 1026.23402pt x 281.85298pt>
+<PRL_plot1.pdf, id=44, 1026.23402pt x 281.85298pt>
 File: PRL_plot1.pdf Graphic file (type pdf)
 <use PRL_plot1.pdf>
 Package pdftex.def Info: PRL_plot1.pdf  used on input line 126.
 (pdftex.def)             Requested size: 461.80104pt x 126.83267pt.
  [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<PRL_plot2.pdf, id=104, 484.209pt x 397.485pt>
+<PRL_plot2.pdf, id=108, 484.209pt x 397.485pt>
 File: PRL_plot2.pdf Graphic file (type pdf)
 <use PRL_plot2.pdf>
 Package pdftex.def Info: PRL_plot2.pdf  used on input line 195.
@@ -470,14 +470,14 @@ Package pdftex.def Info: PRL_plot2.pdf  used on input line 195.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.223 
+l.225 
        <./PRL_plot1.pdf>] (./ms.bbl [5pdfTeX warning (ext4): destination with t
 he same identifier (name{figure.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.56   {Watson}}]{PhysRevLett.97.162504}
-                                        % <./PRL_plot2.pdf>]
+l.9 \begin{thebibliography}{28}
+                               % <./PRL_plot2.pdf>]
 Underfull \hbox (badness 1558) in paragraph at lines 161--167
  []\OT1/cmr/m/n/9 W. U. Boeglin \OT1/cmr/m/it/9 et al. \OT1/cmr/m/n/9 (For the 
 Hall A Col-lab-o-ra-
@@ -512,21 +512,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 337--341
  []
 
 ) [6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 233.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 235.
  (./ms.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 233.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 233.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 235.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 235.
 Package rerunfilecheck Info: File `ms.out' has not changed.
 (rerunfilecheck)             Checksum: 5FB4ED4F338BC142CDC291E26D1DB09F;197.
  ) 
 Here is how much of TeX's memory you used:
- 9145 strings out of 480608
- 140635 string characters out of 5903631
- 625420 words of memory out of 5000000
- 24818 multiletter control sequences out of 15000+600000
+ 9146 strings out of 480608
+ 140643 string characters out of 5903631
+ 627420 words of memory out of 5000000
+ 24819 multiletter control sequences out of 15000+600000
  543158 words of font info for 64 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 36i,8n,57p,688b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,57p,688b,444s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
 /usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -551,10 +551,10 @@ ts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2020/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/texmf-dist/fonts/typ
 e1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms.pdf (6 pages, 477725 bytes).
+Output written on ms.pdf (6 pages, 476976 bytes).
 PDF statistics:
- 349 PDF objects out of 1000 (max. 8388607)
- 294 compressed objects within 3 object streams
+ 352 PDF objects out of 1000 (max. 8388607)
+ 297 compressed objects within 3 object streams
  42 named destinations out of 1000 (max. 500000)
  35 words of extra memory for PDF output out of 10000 (max. 10000000)
 

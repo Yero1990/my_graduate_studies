@@ -78,3 +78,18 @@ text: 3354 words
 eq: 16 words
 ---------------
 total = 3354 + 204 + 143 + 16 = 3717 words
+
+
+
+
+After making additonal corrections to PRL (as of 10/15/2020)":
+
+===============================
+UPDATE PRL (RE-SBUMITTAL)
+===============================
+fig1: 204 words   (figsize = 14.2 x 3.9)
+fig2: 143 words
+text: 3409 words
+eq: 16 words
+---------------
+total = 3409 + 204 + 143 + 16 = 3772

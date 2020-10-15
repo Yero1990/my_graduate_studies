@@ -35,7 +35,7 @@
   transfer $\vec q$. The new data agree well with previous data which reached $p_{\mathrm{r}}\sim500$ MeV/c. At $\theta_{nq} = 35^\circ$
   and $45^\circ$, final state interactions (FSI), meson exchange currents (MEC) and isobar currents (IC) are suppressed and
   the plane wave impulse approximation (PWIA) provides the dominant cross section contribution. The new data are compared to recent
-  theoretical calculations, where we observe a significant discrepancy for missing momenta $p_{\mathrm{r}}>700$ MeV/c. 
+  theoretical calculations, where we observe a significant discrepancy for recoil momenta $p_{\mathrm{r}}>700$ MeV/c. 
 \end{abstract}
 
 \pacs{25.30.Fj, 25.60.Gc}
@@ -44,10 +44,11 @@
 The deuteron is the only bound two-nucleon system and serves as an ideal framework to study the strong nuclear force at the sub-Fermi distance scale, a region which is currently
 practically unexplored and not well understood. Understanding the high momentum structure of the proton-neutron ($pn$) system is highly important for nuclear physics due to the observed 
 dominance of short-range correlations (SRC) in nuclei at nucleon momenta above the fermi momentum. This dominance has been well established by a series of recent experiments
-carried out at Jefferson Lab (JLab) and Berkeley National Lab (BNL). In these experiments nucleon momenta up to $p_{\mathrm{r}}\sim1$ GeV/c have been probed and recoil momentum distributions
+carried out at Jefferson Lab (JLab) \cite{PhysRevLett.113.022501,PhysRevLett.122.172502,PhysRevLett.124.212501} and Brookhaven National Lab (BNL) \cite{PhysRevLett.97.162504}. In these experiments missing momenta up to $\sim1$ GeV/c have been probed and missing momentum distributions
 have been compared to the high momentum part of theoretical deuteron momentum distributions \cite{PhysRevLett.97.162504,PhysRevLett.113.022501,PhysRevLett.122.172502,PhysRevLett.124.212501}.
-Recoil momenta up to $p_{\mathrm{r}}\sim1$ GeV/c have also been probed in a $^{3}\mathrm{He}(e,e'p)$ experiment \cite{PhysRevLett.94.082305,PhysRevLett.94.192302} but at a relatively low momentum transfer of 1.5 (GeV/c)$^{2}$ and at a kinematic region
-(Bjorken $x_{\mathrm{Bj}}\sim1$) where the cross section is dominated by final state interactions.\\
+Missing momenta up to $\sim1$ GeV/c have also been probed in a $^{3}\mathrm{He}(e,e'p)$ experiment \cite{PhysRevLett.94.082305,PhysRevLett.94.192302} but at a relatively low momentum transfer of 1.5 (GeV/c)$^{2}$ and at a kinematic region
+(Bjorken $x_{\mathrm{Bj}}\sim1$) where the cross section is dominated by final state interactions. Due to FSI effects, the measurement of a certain missing momentum does not yet guarantee that the initial
+bound nucleon with the same momentum is being measured.\\
 %===Original introguction (replaced by above intro, suggested by W. Boeglin, in response to referee. comments)====
 %At such small inter-nucleon distances, the nucleon-nucleon ($NN$) interaction is expected to become repulsive and the interacting
 %nucleons begin to overlap. The dynamics in this short distance region are directly related to the dynamics of two-nucleon short range correlations (SRC) observed in $A>2$ nuclei \cite{PhysRevC.68.014313,PhysRevLett.96.082501,PhysRevLett.99.072501,Fomin_2017,Hen2014,RevModPhys.89.045002}.
@@ -69,11 +70,11 @@ The suppression of MEC can be understood from the fact that the estimated MEC sc
 $\Lambda^{2}\sim 0.8-1 $ (GeV/c)$^{2}$ \cite{Sargsian_2001}. Note that other meson exchange contributions that take place before the virtual photon interaction are included in the definition of the ground state wave function of the deuteron. IC can be suppressed kinematically by selecting $x_{\mathrm{Bj}}>1$, where one probes the lower energy ($\omega$) part of the deuteron quasi-elastic peak which is maximally away from the inelastic resonance
 electro-production threshold. Previous deuteron electro-disintegration experiments performed at lower $Q^{2}$ ($Q^{2}<1$ (GeV/c)$^{2}$) (see Section 5 of Ref. \cite{sargsian_2015}) have helped quantify the contributions
 from FSI, MEC and IC to the $^{2}\mathrm{H}(e,e'p)n$ cross sections and to determine the kinematics at which they are either suppressed (MEC and IC) or under control (FSI).  \\
-\indent At large $Q^{2}$, FSI can be described by the Generalized Eikonal Approximation (GEA) \cite{Sargsian_2001,PhysRevC.56.1124,sargsian_2015}, which predicts a strong dependence of FSI on neutron recoil angles $\theta_{nq}$.
+\indent At large $Q^{2}$, FSI can be described by the Generalized Eikonal Approximation (GEA) \cite{Sargsian_2001,PhysRevC.56.1124,sargsian_2015}, which predicts a strong dependence of FSI on neutron recoil angles $\theta_{nq}$ (relative angles between recoil momenta $\vec{p}_{\mathrm{r}}$ and 3-momentum transfers $\vec{q}$).
 GEA predicts FSI to be maximal for $\theta_{nq}\sim70^{\circ}$. This strong angular dependence has been found to lead to the cancellation of FSI at neutron recoil angles around $\theta_{nq}\sim40^{\circ}$ and $\theta_{nq}\sim120^{\circ}$. Because at
 $\theta_{nq}\sim120^{\circ}$ ($x_{\mathrm{Bj}}<1$) IC are not negligible, the $x_{\mathrm{Bj}}>1$ ($\theta_{nq}\sim40^{\circ}$) kinematics are the preferred choice to suppress IC as well as FSI. \\
 \indent The first $^{2}\mathrm{H}(e,e'p)n$ experiments at high $Q^{2}$ ($>1$ (GeV/c)$^{2}$) were carried out at JLab in Halls A \cite{PhysRevLett.107.262501} and B \cite{PhysRevLett.98.262502}. Both
-experiments determined that the cross sections for fixed missing momenta indeed exhibited a strong angular dependence with $\theta_{nq}$, peaking
+experiments determined that the cross sections for fixed recoil momenta indeed exhibited a strong angular dependence with $\theta_{nq}$, peaking
 at $\theta_{nq} \sim 70^{\circ}$ in agreement with GEA \cite{Sargsian_2001,PhysRevC.56.1124} calculations. In Hall B, the CEBAF Large Acceptance Spectrometer (CLAS) measured angular
 distributions for a range of $Q^2$ values as well as momentum distributions. However, statistical limitations made it necessary to integrate over a wide angular range to determine momentum distributions
 which are therefore dominated by  FSI, MEC and IC for $p_{\mathrm{r}}$ above $\sim 300$ MeV/c. \\
@@ -89,25 +90,25 @@ At the selected kinematic settings with $35^{\circ} \leq \theta_{nq} \leq45^{\ci
 by the new SHMS and the existing High Momentum Spectrometer (HMS), respectively. The beam currents delivered by the accelerator ranged between 45-60 $\mu$A and the beam was rastered over a 2x2 mm$^{2}$ area to reduce the effects of localized boiling on the cryogenic targets.\\ %(hydrogen and deuterium).\\
 \indent Both Hall C spectrometers have similar standard detector packages \cite{cyero_phdthesis}, each with four scintillator planes used for triggering, a pair of drift chambers used for tracking, and a calorimeter and gas \u{C}erenkov used for electron identification.
 For each spectrometer, a logic signal was created from  the coincidence of hits in at least three of the four scintillator planes. The event trigger was the coincidence of these two signals. \\
-\indent We measured three central missing momentum settings: $p_{\mathrm{r}}=80, 580$ and $750$ MeV/c. At each of these settings, the electron arm (SHMS) was fixed and the proton arm (HMS) was rotated from smaller to larger angles corresponding to
-the lower and higher missing momentum settings, respectively. At these kinematic settings, the 3-momentum transfer covered a range of $2.4\lesssim|\vec{q}|\lesssim3.2$ GeV/c, which is more than twice the highest neutron recoil momentum
+\indent We measured three central recoil momentum settings: $p_{\mathrm{r}}=80, 580$ and $750$ MeV/c. At each of these settings, the electron arm (SHMS) was fixed and the proton arm (HMS) was rotated from smaller to larger angles corresponding to
+the lower and higher recoil momentum settings, respectively. At these kinematic settings, the 3-momentum transfer covered a range of $2.4\lesssim|\vec{q}|\lesssim3.2$ GeV/c, which is more than twice the highest neutron recoil momentum
 measured in this experiment. As a result, most of the virtual photon momentum is transferred to the proton, which scatters at angles relative to $\vec{q}$ in the range $0.4^{\circ}\lesssim \theta_{pq}\lesssim21.4^{\circ}$.
 At these forward angles and large momenta transferred to the proton, the  process where the neutron is struck by the virtual photon is suppressed.\\
 \indent Hydrogen elastic $^{1}\mathrm{H}(e,e'p)$ data were also taken at kinematics close to the deuteron $p_{\mathrm{r}}=80$ MeV/c setting for cross-checks with the spectrometer acceptance model using the Hall C Monte Carlo
-simulation program, SIMC \cite{PhysRevC.64.054610} (see Supplemental Material). Additional $^{1}\mathrm{H}(e,e'p)$ data were also taken at three other kinematic settings that covered the SHMS momentum acceptance range for the deuteron and were used for spectrometer optics optimization, 
+simulation program, SIMC \cite{PhysRevC.64.054610}. Additional $^{1}\mathrm{H}(e,e'p)$ data were also taken at three other kinematic settings that covered the SHMS momentum acceptance range for the deuteron and were used for spectrometer optics optimization, 
 momentum calibration and the determination of the spectrometer offsets and kinematic uncertainties \cite{cyero_phdthesis}.\\
-\indent The kinematics of the recoiling neutron was reconstructed using energy-momentum conservation. The recoil momentum is defined as $\vec{p_{\mathrm{r}}} = \vec{q} - \vec{p_{\mathrm{f}}}$,
-and the nuclear binding (or ``missing'') energy as $E_{\mathrm{m}} = \omega - T_{p} - T_{\mathrm{r}}$, where $\vec{p_{\mathrm{f}}}$ is the final proton momentum, $\vec{q}$ is the
-3-momentum transfer and $T_{p}$ is the final proton kinetic energy. The recoil particle kinetic energy, $T_{\mathrm{r}}$, is calculated from the electron and proton
-4-momentum vectors assuming an exclusive three-body final state with a recoiling neutron.\\
+%\indent The kinematics of the recoiling neutron was reconstructed using energy-momentum conservation. The recoil momentum is defined as $\vec{p_{\mathrm{r}}} = \vec{q} - \vec{p_{\mathrm{f}}}$,
+%and the nuclear binding (or ``missing'') energy as $E_{\mathrm{m}} = \omega - T_{p} - T_{\mathrm{r}}$, where $\vec{p_{\mathrm{f}}}$ is the final proton momentum, $\vec{q}$ is the
+%3-momentum transfer and $T_{p}$ is the final proton kinetic energy. The recoil particle kinetic energy, $T_{\mathrm{r}}$, is calculated from the electron and proton
+%4-momentum vectors assuming an exclusive three-body final state with a recoiling neutron.\\
 \indent Identical event selection criteria were used for the hydrogen and deuteron data. The criteria were determined by making standard cuts on the spectrometer momentum fraction ($\delta$) to select a region for which the reconstruction optics
-are well known,  a cut to restrict the HMS solid angle acceptance to events that passed directly through the collimator and not by re-scattering from the collimator edges, a ``missing''
+are well known,  a cut to restrict the HMS solid angle acceptance to events that passed directly through the collimator and not by re-scattering from the collimator edges, a reconstructed binding
 energy cut (peak $\sim$ 2.22 MeV for the deuteron) to select true $^{2}\mathrm{H}(e,e'p)n$ coincidences, a coincidence time cut to select true coincidence events, a particle identification (PID) cut on the
 SHMS calorimeter normalized total track energy to select electrons and not other sources of background (mostly pions), and a cut on the reconstructed HMS and SHMS reaction vertices to select events that 
-originated from the same reaction vertex at the target (see Supplemental Material). \\
+originated from the same reaction vertex at the target (see online Supplemental Material). \\
 \indent The experimental data yields for both hydrogen and deuteron data were normalized by the total charge and corrected for various inefficiencies. For $^{2}\mathrm{H}(e,e'p)n$, the corrections
 were as follows\cite{cyero_phdthesis}: tracking efficiencies ($98.9 \%$-HMS, $96.4 \%$-SHMS), total live time ($92.3 \%$), proton loss inefficiency due to nuclear interactions in the HMS ($4.7 \%$) and
-target boiling inefficiency ($4.2 \%$). The values in parentheses were averaged over all missing momentum settings. \\
+target boiling inefficiency ($4.2 \%$). The values in parentheses were averaged over all recoil momentum settings. \\
 \indent For $^{1}\mathrm{H}(e,e'p)$, the corrected data yield was compared to SIMC calculations using Arrington's proton form factor (FF) parametrization \cite{PhysRevC.69.022201} to check the spectrometer acceptance
 model. The ratio of data to simulation yield was determined to be $97.6\pm0.3 \%$ (statistical uncertainty only).\\
 \indent The systematic uncertainties on the measured cross sections were determined from 
@@ -117,7 +118,7 @@ and target boiling ($0.38 \%$) which were added in quadrature and determined to 
 the systematic uncertainties due to proton loss in HMS ($0.49 \%$), total live time ($3.0 \%$) and total charge ($2.0\%$), which were the same for every setting,
 to define the overall normalization uncertainty ($\leq$ 4.2$\%$).\\
 \indent The systematic uncertainties due to the systematic error on the absolute beam energy and spectrometer angle/momentum settings were
-determined point-to-point in ($\theta_{nq}$, $p_{\mathrm{r}}$) bins for each missing momentum setting, and added in quadrature for overlapping $p_{\mathrm{r}}$ bins. 
+determined point-to-point in ($\theta_{nq}$, $p_{\mathrm{r}}$) bins for each recoil momentum setting, and added in quadrature for overlapping $p_{\mathrm{r}}$ bins. 
 For $\theta_{nq}= 35^{\circ}, 45^{\circ}$ and $75^{\circ}$ (presented in this Letter) the overall kinematic uncertainty varied below 6.5$\%$.
 The total uncertainty was defined as the quadrature sum of the normalization ($\leq$ 4.2$\%$), kinematic ($\leq$ 6.5$\%$) and statistical ($\sim20-30\%$ on average) uncertainties.\\
 \begin{figure*}[t]
@@ -132,15 +133,16 @@ AV18 (green), CD-Bonn (magenta) and WJC2 (orange) $NN$ potentials.}
 The SIMC simulation code was used for these calculations with the Deuteron Model by Laget including FSI \cite{LAGET2005}.
 For each bin in ($\theta_{nq}, p_{\mathrm{r}}$), the averaged $^{2}\mathrm{H}(e,e'p)n$ kinematics was calculated and used in the bin centering correction factor defined as:
 $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}} / \bar{\sigma}$, where $\sigma_{\mathrm{avg.kin}}$ is the cross section calculated at the averaged kinematics and $\bar{\sigma}$ is the cross section averaged
-over the kinematic bin. The systematic uncertainties associated with the radiative and bin-centering corrections were investigated using the Laget PWIA and FSI models but negligible effects on the cross sections were found (see Supplemental Material).
+over the kinematic bin. The systematic uncertainties associated with the radiative and bin-centering corrections were investigated using the Laget PWIA and FSI models but negligible effects
+on the cross sections were found (see online Supplemental Material).
 The experimental and theoretical reduced cross sections were extracted and are defined as follows:
 \begin{equation}
 \sigma_{\mathrm{red}} \equiv \frac{\sigma_{\mathrm{exp(th)}}}{E_{\mathrm{f}}p_{\mathrm{f}}f_{\mathrm{rec}}\sigma_{\mathrm{cc1}}},
 \label{eq:1}
 \end{equation}
 \noindent where $\sigma_{\mathrm{exp(th)}}$ is the 5-fold experimental (or theoretical) differential cross section $\frac{d^{5}\sigma}{d\omega d\Omega_{e} d\Omega_{p}}$,
-$E_{\mathrm{f}}$ is the final proton energy, $f_{\mathrm{rec}}\equiv \frac{2p_{\mathrm{f}}^{2}E_{\mathrm{r}}}{2p_{\mathrm{f}}^{2}E_{\mathrm{r}} - (q^{2} - (p_{\mathrm{f}}^{2} + p_{\mathrm{r}}^{2}))E_{\mathrm{f}}}$
-is a recoil factor obtained by integrating over the missing energy of the bound state in the 6-fold differential cross section where $E_{\mathrm{r}}$ is the neutron recoil energy, and $\sigma_{\mathrm{cc1}}$ is the
+($E_{\mathrm{f}}, p_{\mathrm{f}}$) are the final proton energy and momentum, respectively, $f_{\mathrm{rec}}$ %\equiv \frac{2p_{\mathrm{f}}^{2}E_{\mathrm{r}}}{2p_{\mathrm{f}}^{2}E_{\mathrm{r}} - (q^{2} - (p_{\mathrm{f}}^{2} + p_{\mathrm{r}}^{2}))E_{\mathrm{f}}}$
+is a recoil factor obtained by integrating over the binding energy of the bound state in the 6-fold differential cross section and $\sigma_{\mathrm{cc1}}$ is the
 de Forest \cite{DEFOREST1983} electron-proton off-shell cross section calculated using the FF parametrization of Ref. \cite{PhysRevC.69.022201}.
 Within the PWIA, $\sigma_{\mathrm{red}}$ corresponds to the PWIA cross section from the scattering of a proton in the deuteron. \\
 \indent Figure \ref{fig:fig1} shows the extracted experimental and theoretical reduced cross sections as a function of $p_{\mathrm{r}}$ for three recoil angle settings at $Q^{2}=4.5\pm0.5$ (GeV/c)$^{2}$.
@@ -148,9 +150,14 @@ For the two highest momentum settings ($p_{\mathrm{r}}=580, 750$ MeV/c), a weigh
 The data are compared to theoretical calculations using wave functions determined from the charge-dependent Bonn (CD-Bonn) \cite{PhysRevC.63.024001}, Argonne $v_{18}$ (AV18) \cite{PhysRevC.51.38}, Paris \cite{PhysRevC.21.861} and WJC2 \cite{Gross_2007} $NN$ potentials. The theoretical calculations
 for the CD-Bonn (magenta) and AV18 (green) potentials were performed by Sargsian \cite{PhysRevC.82.014612} within the GEA, referred to as MS, and those for the Paris potential (blue) were by Laget \cite{LAGET2005} within the diagrammatic approach, referred to as JML.
 For the WJC2 (orange) potential, the calculations were carried out by Ford, Jeschonnek and Van Orden \cite{PhysRevC.90.064006} using a Bethe-Salpeter-like formalism for two-body bound states, which will be labeled JVO.
-The MS calculations used the FF parametrization of Ref. \cite{PhysRevC.70.068202} while the JML calculations used the conventional dipole parametrization for the proton and neutron magnetic FF, the Galster \cite{Galster:1971} parametrization
-for the neutron electric FF, and the results from the Hall A experiment of Ref. \cite{PhysRevLett.88.092301} for the proton electric FF parametrization. The JVO calculations used two different FF parametrizations (GKex05 \cite{PhysRevC.66.045501}, AMT \cite{PhysRevC.76.035205}) where a difference of $\sim5.8-6.6 \%$ was found between the respective
-JVO reduced cross sections. Figure \ref{fig:fig1} shows the results using only the GKex05 parametrization. \\
+The calculations use different FF parametrizations which can lead to a $\sim$5.8 -6.6$\%$ variation of the theortical cross section.\\
+%----REMOVED ON 10/14/2020----------
+%The MS calculations used the FF parametrization of Ref. \cite{PhysRevC.70.068202} while the JML calculations used the conventional dipole parametrization for
+%the proton and neutron magnetic FF, the Galster \cite{Galster:1971} parametrization
+%for the neutron electric FF, and the results from the Hall A experiment of Ref. \cite{PhysRevLett.88.092301} for the proton electric FF parametrization.
+%The JVO calculations used two different FF parametrizations (GKex05 \cite{PhysRevC.66.045501}, AMT \cite{PhysRevC.76.035205}) where a
+%difference of $\sim5.8-6.6 \%$ was found between the respective
+%JVO reduced cross sections. Figure \ref{fig:fig1} shows the results using only the GKex05 parametrization. \\
 \indent The difference between the deuteron wave functions with CD-Bonn, Paris, AV18 and WJC2 potentials is 
 how the $NN$ potential is modeled based on the empirical $NN$ scattering data.
 The CD-Bonn model is based on the One-Boson-Exchange Potential (OBEP) approach in which the 
@@ -203,8 +210,10 @@ which gives us confidence in our understanding of FSI at the smaller recoil angl
 $p_{\mathrm{r}}>500$ MeV/c at kinematics where FSI were expected to be small and the cross sections were dominated by PWIA and sensitive to the
 short range part of the deuteron wave function. The experimental reduced cross sections were extracted and found to be in good agreement with the Hall A data at lower recoil momenta where they overlap.
 Furthermore, the MS CD-Bonn model was found to be significantly different than the JML, MS AV18 or JVO models and was able to partially describe the data over a larger range in $p_{\mathrm{r}}$.
-At the higher missing momenta provided by this experiment ($p_{\mathrm{r}}>700$ MeV/c), however, all models were unable to describe the data. 
-Additional measurements of the $^{2}\mathrm{H}(e,e'p)n$ would be required to reduce the statistical uncertainties in this very high missing
+At the higher recoil momenta provided by this experiment ($p_{\mathrm{r}}>700$ MeV/c), however, all models were unable to describe the data,
+potentially illustrating the limit to which a non-relativistic wave function from the solution to the Schr\"{o}dinger equation is valid and able to describe
+experimental data that probe the high momentum region of the $np$ system in the most direct way possible.
+Additional measurements of the $^{2}\mathrm{H}(e,e'p)n$ would be required to reduce the statistical uncertainties in this very high recoil
 momentum region ($p_{\mathrm{r}}>500$ MeV/c) to better understand the large deviations observed between the different models and data.\\
 \indent We acknowledge the outstanding support of the staff of the Accelerator and Physics Divisions at Jefferson Lab
 as well as the entire Hall C staff, technicians, graduate students and users who took shifts or contributed
@@ -219,8 +228,8 @@ under grant No. NRC-HQ-84-14-G-0040, the Doctoral Evidence Acquisition (DEA) Fel
 %---but are included in the supplemental material
 %---cite supp. material as follows:  (See Supplemental Material) after description of the topic being discussed.
 %\nocite{COSY}
-%\nocite{barlow2002systematic}
-%\nocite{barlow2017}
-  
+\nocite{barlow2002systematic}
+\nocite{barlow2017}
+
 \bibliography{ms}
 \end{document}
