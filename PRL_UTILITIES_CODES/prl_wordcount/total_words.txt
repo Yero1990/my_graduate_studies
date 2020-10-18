@@ -89,7 +89,7 @@ UPDATE PRL (RE-SBUMITTAL)
 ===============================
 fig1: 204 words   (figsize = 14.2 x 3.9)
 fig2: 143 words
-text: 3409 words
+text: 3410 words
 eq: 16 words
 ---------------
-total = 3409 + 204 + 143 + 16 = 3772
+total = 3410 + 204 + 143 + 16 = 3773 (PRL Limit: 3750)
