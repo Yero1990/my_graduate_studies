@@ -1,0 +1,61 @@
+Carlos and Werner,
+      I have attached plots of the HMS and SHMS acceptance. For HMS ,  I selected thrown 
+events which passed the collimator cut and the plot the ratio of events which passed all
+the remaining apertures to the events which were thrown in the 2d yptar versus delta and
+xptar versus delta. The ratio of acc/thrown = 98.6% for abs(delta)<8 && abs(yptari) < 30mr && abs(xptar) < 70mr.
+
+For SHMS, the HMS defines the acceptance as roughly
+abs(deltai)<4 && abs(yptar)<20 && abs(xptar) < 35
+and within these constraints , the ratio of acc/thrown = 1.
+
+So I would suggested that the systematic on the acceptance is 1.4% .
+The main systematic on acceptance would be the software HMS collimator cut.
+But we study that by scaling the cut by at 1, 0.9 and 0.8
+and the results were consistent.
+
+Cheers,
+          Mark
+
+
+
+-------------------------------------------------------------------
+
+NOTES
+------------------------
+
+Write is as a sentence for the response to the referee, stating the systematics of the acceptance is 1.4%
+
+
+*** Inlcude 2.9% in the systematic error, as an upper limit. (integrated over all theta_nq)
+--> Add quadrarically to the overall normalization uncertainty. 
+**  Add 1.4% quadratically to the overall normalization error
+
+--> remove "it is negligible" for the target endcaps in the supplementary.
+
+
+
+** The target wall corrections over estimated cross sections by at most ~3%. The reason is that this ~3%
+is the contribution from all neutron recoil angles, th_nq.
+
+
+----------------------
+
+Software cuts systmeatics: remove the software cuts section
+
+** Write in the response to the referee about the software cuts. remove barlow explanation
+
+** to referee: We used the R. Barlow approach to determine the stability of the software analysis cuts. \cite[thesis]
+
+----------------------
+
+---Cross Section Extraction----
+** remove the units in counts / mC,  arb. units for both plots. 
+
+
+
+
+
+collimator:
+proton-Aluminum -->  proton-Tungsten
+
+change Counts / mC ----> arb. units for all plots in supplemental

@@ -139,7 +139,7 @@ def make_prl_plots(plot2_inset=0):
     R_WJC2_pwba75 = f_red_pwbaXsec_WJC2_75(pm_avg75) / f_red_pwiaXsec_CD_75(pm_avg75)
     R_WJC2_fsi75  = f_red_fsiXsec_WJC2_75(pm_avg75)  / f_red_pwiaXsec_CD_75(pm_avg75)
 
-    
+    print(">>>>>>>>>>>> ", red_dataXsec_avg_tot_err35)
     #------------------------------------------------------------------------------------
     #--------MAKE PRL PLOT 1 (Reduced Cross Sections vs. recoil momenta)-----------------
     #------------------------------------------------------------------------------------
