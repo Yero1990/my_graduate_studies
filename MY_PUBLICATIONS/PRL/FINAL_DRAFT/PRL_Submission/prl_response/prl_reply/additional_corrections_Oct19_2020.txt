@@ -23,14 +23,14 @@ Cheers,
 NOTES
 ------------------------
 
-Write is as a sentence for the response to the referee, stating the systematics of the acceptance is 1.4%
+Write is as a sentence for the response to the referee, stating the systematics of the acceptance is 1.4%  (need to do)
 
 
-*** Inlcude 2.9% in the systematic error, as an upper limit. (integrated over all theta_nq)
---> Add quadrarically to the overall normalization uncertainty. 
-**  Add 1.4% quadratically to the overall normalization error
+*** Inlcude 2.9% in the systematic error, as an upper limit. (integrated over all theta_nq) --done
+--> Add quadrarically to the overall normalization uncertainty.  -- done
+**  Add 1.4% quadratically to the overall normalization error  --done
 
---> remove "it is negligible" for the target endcaps in the supplementary.
+--> remove "it is negligible" for the target endcaps in the supplementary. --done
 
 
 
@@ -40,22 +40,21 @@ is the contribution from all neutron recoil angles, th_nq.
 
 ----------------------
 
-Software cuts systmeatics: remove the software cuts section
+Software cuts systmeatics: remove the software cuts section --done
 
-** Write in the response to the referee about the software cuts. remove barlow explanation
+** Write in the response to the referee about the software cuts. remove barlow explanation --done (need to explain software cuts)
 
 ** to referee: We used the R. Barlow approach to determine the stability of the software analysis cuts. \cite[thesis]
 
 ----------------------
 
 ---Cross Section Extraction----
-** remove the units in counts / mC,  arb. units for both plots. 
+** remove the units in counts / mC,  arb. units for both plots. --done
 
 
 
 
 
 collimator:
-proton-Aluminum -->  proton-Tungsten
+proton-Aluminum -->  proton-Tungsten --done
 
-change Counts / mC ----> arb. units for all plots in supplemental
