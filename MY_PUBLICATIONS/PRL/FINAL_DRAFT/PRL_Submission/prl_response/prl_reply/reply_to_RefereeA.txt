@@ -5,7 +5,6 @@ Reply to: Report of Referee A
 A concise, point-by-point response for each of the recommendations and criticisms made by referee A is shown below:
 
 
-
 -------------
 Referee A:
 -------------
@@ -117,7 +116,7 @@ a broad interest. However, the present work does not, in my opinion, meet this c
 ----------
 Response:
 ----------
-As mentioned in response to (1), I re-wrote the introductory paragraph.
+As mentioned in response to (1), the introductory paragraph was re-written.
 
 
 -------------
@@ -145,8 +144,8 @@ and the reader to assess the quality of the data.
 ----------
 Response:
 ----------
-I have added Q2 distribution (for 80 MeV/c setting) in the Supplemental Material. I have also
-added the missing momentum distributions for each of the central settings (80, 580 and 750 MeV/c) *** Maybe I can add Q2, xB, w and Pp for each setting (smaller plots)
+I have added the missing momentum distributions as well as the kinematic distributions for Q2, xB, w and Pp 
+for each of the central settings (80, 580 and 750 MeV/c).  See Supplemental Material.
 
 
 -------------
@@ -156,7 +155,7 @@ Referee A:
 ----------
 Response:
 ----------
-The background from target cell wall was found to be negligible at the deuteron kinematics
+The background from target cell wall was accounted for as an overall normalization systematic uncertainty.
 (See Supplemental Material)
 
 
@@ -177,7 +176,11 @@ Referee A:
 ----------
 Response:
 ----------
-See Supplemental Materials. 
+A study of the systematic effects on the cross-section due to software cuts was carried out in Section 5.10 of Ref. https://arxiv.org/abs/2009.11343
+The results showed that a reasonable variation of the software cuts had a negligible effect on the cross section.
+
+An additional study on the spectrometers acceptance systematic error was carried out by M.K. Jones where systematic error of ~1.4 % was determined
+and added quadratically to the final resut.
 
 -------------
 Referee A:
