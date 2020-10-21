@@ -73,18 +73,17 @@ If the events originated from the same reaction vertex (i.e., true coincidences)
 (i.e., accidental coincidences), however, the reconstruction along the $z_{\mathrm{v}}$-vertex can vary significantly between the two spectrometers, which contribute to the tails of the
 distribution.\\
 \begin{figure}[!h]
-\includegraphics[scale=0.22]{plots/coin_and_eCal_CUT_80MeV_35deg.png}
+\includegraphics[scale=0.23]{plots/coin_and_eCal_CUT_80MeV_35deg.png}
 \caption{Event selection cuts on the electron-proton ($ep$) coincidence time (left) and total deposited energy on calorimeted normalized by the particle track momentum (right).}
 \label{fig:coin_ecal_cuts}
 \end{figure}\\
 \indent Figure \ref{fig:coin_ecal_cuts} (left) shows a coincidence time cut on the $ep$ coincidence time spectrum formed by requiring a logic signal of
-at least 3 out of 4 scintillator planes between both spectrometers. The spectrum is very clean as the typical 2 ns beam bunch structure due to accidental
-coincidences is not observed. The out-of-time events observed at the tails can originate from the radiation in the Hall partially entering the detector huts and forming
-a trigger in coincidence with the other arm. Figure \ref{fig:coin_ecal_cuts} (right) shows a particle identification cut on the SHMS calorimeter total energy
+at least 3 out of 4 scintillator planes between both spectrometers. The spectrum is very clean as the typical 4 ns beam bunch structure due to accidental
+coincidences is not observed. Figure \ref{fig:coin_ecal_cuts} (right) shows a particle identification cut on the SHMS calorimeter total energy
 deposited normalized by the particle track momentum. This cut was used to separate electrons from background (pions), however, the spectrum shows a very clean distribution
 with a peak at about one indicating the detected particles were electrons.
 \begin{figure}[!h]
-\includegraphics[scale=0.22]{plots/collimator_CUT_80MeV_35deg_data.png}
+\includegraphics[scale=0.24]{plots/collimator_CUT_80MeV_35deg_data.png}
 \caption{(left) Geometrical acceptance cut on reconstructed events projected at the HMS collimator. (right) The SHMS events (correlated with HMS events on left plot),
   projected at the SHMS collimator.}
 \label{fig:data_coll_cuts}
@@ -146,24 +145,27 @@ found in Sections 5.1 and 6.1 of Ref. \cite{cyero_phdthesis}.
 \section{\large Radiative \& Bin-Centering Corrections}
 \indent The radiative corrections were applied by multiplying the ratio of non-radiative to radiative SIMC yields to the data yield for each ($\theta_{nq}$, $p_{\mathrm{r}}$)
 kinematic bin as described in the Letter. The radiative correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in Fig. \ref{fig:RC_factor}. The calculation was done using the
-Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data yield. The uncertainty in the radiative
-correction factor was determined by the Monte-Carlo statistics from the simulation. The large uncertainty in the lowest momentum bin, $p_{\mathrm{r}} = 0.02\pm0.02$, can
-be understood from the fact that statistics were limited in this phase space region as indicated by the "hole" observed at $p_{\mathrm{r}} = 0.02$ in Fig. \ref{fig:Pm_Ps} (right). 
+Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data yield. \\
+\indent The uncertainty in the radiative
+correction factor was determined for each ($\theta_{nq}$, $p_{\mathrm{r}}$) bin by the Monte-Carlo statistics from the simulation and was propagated to the final cross section error.
+The large uncertainty in the lowest momentum bin, $p_{\mathrm{r}} = 0.02\pm0.02$, can be understood from the fact that statistics were limited in this phase space region as indicated by
+the "hole" observed at $p_{\mathrm{r}} = 0.02$ in Fig. \ref{fig:Pm_Ps} (right). 
 \begin{figure}[!h]
-\includegraphics[scale=0.26]{plots/RC_factor.png}
+\includegraphics[scale=0.27]{plots/RC_factor.png}
 \caption{Radiative correction factor versus neutron recoil momenta, $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right). }
 \label{fig:RC_factor}
 \end{figure}\\
 The bin centering corrections were applied by multiplying the ratio, $f_{\mathrm{bc}} \equiv \sigma_{\mathrm{avg.kin}}/\bar{\sigma}$, to the average data cross section over each ($\theta_{nq}$, $p_{\mathrm{r}}$)
 kinematic bin, as described in the Letter. The bin centering correction factors for $\theta_{nq}=35^{\circ}$ and $45^{\circ}$ are shown in
-Fig. \ref{fig:BC_factor}. The calculation was done using the Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data cross section. The
-uncertainty in the bin-centering correction factor was determined from the standard error propagation of a ratio between two quantities. 
-\begin{figure}[!h]
-\includegraphics[scale=0.26]{plots/BC_factor.png}
+Fig. \ref{fig:BC_factor}. The calculation was done using the Laget PWIA and FSI models for systematic effect studies, but the FSI model was ultimately used to correct the data cross section. \\
+\begin{figure}[!ht]
+\includegraphics[scale=0.27]{plots/BC_factor.png}
 \caption{Bin centering correction factor versus neutron recoil momenta, $p_{\mathrm{r}}$, for $\theta_{nq}=35^{\circ}$ (left) and $45^{\circ}$ (right).
   The inner (black dashed) and outer (red dash-dotted) lines represent a percent deviation from unity of $\pm10\%$ and $\pm20\%$, respectively.}
 \label{fig:BC_factor}
 \end{figure}\\
+\indent The uncertainty in the bin-centering correction factor was determined for each  ($\theta_{nq}$, $p_{\mathrm{r}}$) bin
+using the standard error propagation for a ratio of two quantities and the result was propagated to the final cross section error. \\
 \section{\large Systematic Uncertainty Studies on Radiative and Bin-Centering Corrections }
 %\indent A study of the sensitivity on the experimental cross section due to variations in the event selection cuts was carried out. 
 %To determine if the variation in each of the cuts contributes to a systematic effect and whether this contribution is significant
