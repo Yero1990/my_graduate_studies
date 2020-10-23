@@ -273,7 +273,7 @@ def make_prl_plots(plot2_inset=0):
     #= SUBPLOTS SIZE / SPACING / LEGEND =
     #====================================
 
-    leg_font_size = 9
+    leg_font_size = 9.2
     #Remove spacing between subplots
     plt.subplots_adjust(wspace = 0.0000000001, bottom=0.16, top=0.97, left=0.085, right=0.98) #, hspace = 0.001, wspace = 0.001)
     line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI']
@@ -281,7 +281,7 @@ def make_prl_plots(plot2_inset=0):
 
 
     #B.pl.show()
-    B.pl.savefig('./PRL_plot1.pdf')
+    B.pl.savefig('./PRL_plot1.pdf', format='pdf')
 
 
 
@@ -501,7 +501,7 @@ def make_prl_plots(plot2_inset=0):
     B.pl.legend(loc='upper right', fontsize=7.5, frameon=False)
 
     #B.pl.show()
-    B.pl.savefig('./PRL_plot2.pdf')
+    B.pl.savefig('./PRL_plot2.pdf', format='pdf')
     
 
 

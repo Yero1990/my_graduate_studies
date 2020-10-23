@@ -102,8 +102,8 @@ After making additonal corrections to PRL (as of 10/23/2020)":
 ===============================
 UPDATE PRL (RE-SBUMITTAL)
 ===============================
-fig1: 204 words   (figsize = 14.2 x 3.9)
-fig2: 143 words
+fig1: 204 words   (figsize = 14.2 x 3.9)  ncols = 2
+fig2: 143 words   (figsize = 6.7 x 5.5)  ncols = 1
 text: 3413 words
 eq: 16 words
 ---------------
