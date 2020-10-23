@@ -199,7 +199,7 @@ Referee A:
 Response:
 ----------
 To clarify, a weighted average of the reduced cross sections were taken for overlapping regions in pr. See example
-of overlapping pr bins in Fig. 14 of Supplemental Materials. 
+of overlapping pr bins in Fig. 9 of Supplemental Materials. 
 
 -------------
 Referee A:

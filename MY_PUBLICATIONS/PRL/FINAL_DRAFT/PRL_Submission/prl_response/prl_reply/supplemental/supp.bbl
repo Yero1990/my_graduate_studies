@@ -50,6 +50,15 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {Yero}(2020)}]{cyero_phdthesis}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
+  {Yero}},\ }\emph {\bibinfo {title} {{Cross Section Measurements of Deuteron
+  Electro-Disintegration at Very High Recoil Momenta and Large 4-Momentum
+  Transfers ($Q^{2}$)}}},\ \href@noop {} {Ph.D. thesis},\ \bibinfo  {school}
+  {Florida International University}, \bibinfo {address} {11200 SW 8th St,
+  Miami, FL 33199} (\bibinfo {year} {2020}),\ \bibinfo {note}
+  {\url{https://arxiv.org/abs/2009.11343}}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Barlow}(2002)}]{barlow2002systematic}%
   \BibitemOpen
   \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
@@ -65,13 +74,4 @@
   Physics}}} (\bibinfo {year} {2017}),\ \bibinfo {note}
   {\url{https://indico.cern.ch/event/591374/contributions/2511753/attachments/1429002/2193943/01_PWA-Barlow.pdf}}\BibitemShut
   {NoStop}%
-\bibitem [{\citenamefont {Yero}(2020)}]{cyero_phdthesis}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {C.}~\bibnamefont
-  {Yero}},\ }\emph {\bibinfo {title} {{Cross Section Measurements of Deuteron
-  Electro-Disintegration at Very High Recoil Momenta and Large 4-Momentum
-  Transfers ($Q^{2}$)}}},\ \href@noop {} {Ph.D. thesis},\ \bibinfo  {school}
-  {Florida International University}, \bibinfo {address} {11200 SW 8th St,
-  Miami, FL 33199} (\bibinfo {year} {2020}),\ \bibinfo {note}
-  {\url{https://arxiv.org/abs/2009.11343}}\BibitemShut {NoStop}%
 \end{thebibliography}%

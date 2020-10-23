@@ -50,21 +50,6 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
-\bibitem [{\citenamefont {Piasetzky}\ \emph {et~al.}(2006)\citenamefont
-  {Piasetzky}, \citenamefont {Sargsian}, \citenamefont {Frankfurt},
-  \citenamefont {Strikman},\ and\ \citenamefont
-  {Watson}}]{PhysRevLett.97.162504}%
-  \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
-  {Piasetzky}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Sargsian}},
-  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Frankfurt}}, \bibinfo
-  {author} {\bibfnamefont {M.}~\bibnamefont {Strikman}},\ and\ \bibinfo
-  {author} {\bibfnamefont {J.~W.}\ \bibnamefont {Watson}},\ }\bibfield  {title}
-  {\bibinfo {title} {{Evidence for Strong Dominance of Proton-Neutron
-  Correlations in Nuclei}},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.97.162504} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {97}},\
-  \bibinfo {pages} {162504} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Korover}\ \emph {et~al.}(2014)\citenamefont {Korover}
   \emph {et~al.}}]{PhysRevLett.113.022501}%
   \BibitemOpen
@@ -97,6 +82,21 @@
   {https://doi.org/10.1103/PhysRevLett.124.212501} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {124}},\
   \bibinfo {pages} {212501} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Piasetzky}\ \emph {et~al.}(2006)\citenamefont
+  {Piasetzky}, \citenamefont {Sargsian}, \citenamefont {Frankfurt},
+  \citenamefont {Strikman},\ and\ \citenamefont
+  {Watson}}]{PhysRevLett.97.162504}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {E.}~\bibnamefont
+  {Piasetzky}}, \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont {Sargsian}},
+  \bibinfo {author} {\bibfnamefont {L.}~\bibnamefont {Frankfurt}}, \bibinfo
+  {author} {\bibfnamefont {M.}~\bibnamefont {Strikman}},\ and\ \bibinfo
+  {author} {\bibfnamefont {J.~W.}\ \bibnamefont {Watson}},\ }\bibfield  {title}
+  {\bibinfo {title} {{Evidence for Strong Dominance of Proton-Neutron
+  Correlations in Nuclei}},\ }\href
+  {https://doi.org/10.1103/PhysRevLett.97.162504} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {97}},\
+  \bibinfo {pages} {162504} (\bibinfo {year} {2006})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Benmokhtar}\ \emph {et~al.}(2005)\citenamefont
   {Benmokhtar} \emph {et~al.}}]{PhysRevLett.94.082305}%
   \BibitemOpen
