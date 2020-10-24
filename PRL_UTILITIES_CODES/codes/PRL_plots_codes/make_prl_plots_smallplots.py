@@ -281,7 +281,7 @@ def make_prl_plots(plot2_inset=0):
 
 
     #B.pl.show()
-    B.pl.savefig('./PRL_plot1.pdf', format='pdf')
+    B.pl.savefig('./PRL_plot1.png', format='png')
 
 
 
@@ -501,7 +501,7 @@ def make_prl_plots(plot2_inset=0):
     B.pl.legend(loc='upper right', fontsize=7.5, frameon=False)
 
     #B.pl.show()
-    B.pl.savefig('./PRL_plot2.pdf', format='pdf')
+    B.pl.savefig('./PRL_plot2.png', format='png')
     
 
 
