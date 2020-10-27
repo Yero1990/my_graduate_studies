@@ -167,7 +167,7 @@ Referee A:
 ----------
 Response:
 ----------
-Yes, at least 3/4 planes. This has been clarified this in the manuscript.
+Yes, at least 3/4 planes. This has been clarified in the manuscript.
 
 
 -------------
