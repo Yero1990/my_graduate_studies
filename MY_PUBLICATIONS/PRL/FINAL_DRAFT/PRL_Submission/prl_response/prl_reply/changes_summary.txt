@@ -10,3 +10,4 @@ Summary of Changes Made to PRL
 
 4) Replaced part of the text with mathematical symbols to reduce word count further.
 
+5) Removed parts of the text that were not relevant for the understanding of the paper, to reduce word count further.

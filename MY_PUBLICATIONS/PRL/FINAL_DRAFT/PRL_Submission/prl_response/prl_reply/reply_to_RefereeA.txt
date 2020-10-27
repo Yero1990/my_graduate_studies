@@ -84,7 +84,8 @@ supplementary materials or similar. See details below.
 ----------
 Response:
 ----------
-I have published my thesis on arXiv and reference it in the PRL manuscript. I also added supplementary materials. 
+The authors' thesis has been published on the arXiv and a reference has been added to the PRL manuscript.
+In addition, supplementary materials have been added. 
 
 -------------
 Referee A:
@@ -94,7 +95,7 @@ theory in the 0 – 700 MeV/c region. Please add an insert with a blowup on that
 ----------
 Response:
 ----------
-I have added an inset with a blowup for Fig. 2, subplots (a) and (b).
+An inset with a blowup for Fig. 2, subplots (a) and (b) has been added.
 
 -------------
 Referee A:
@@ -104,8 +105,7 @@ for the relevant calculations so that the interested reader can examine the resu
 ----------
 Response:
 ----------
-I have added additional raw data files with the theoretical calculations as part of the
-supplemental material.
+Additional raw data files with the theoretical calculations as part of the supplemental material have been added.
 
 -------------
 Referee A:
@@ -133,7 +133,8 @@ studies and the partonic structure of nuclei, e.g. by referencing the EMC effect
 ----------
 Response:
 ----------
-This part the referee refers to was removed in the introductory paragraph.
+The authors believe that (e, e'p) data can contribute significantly to this difficult question, however, given the word limit of this paper, 
+this section was removed in the introductory paragraph.
 
 -------------
 Referee A:
@@ -144,8 +145,8 @@ and the reader to assess the quality of the data.
 ----------
 Response:
 ----------
-I have added the missing momentum distributions as well as the kinematic distributions for Q2, xB, w and Pp 
-for each of the central settings (80, 580 and 750 MeV/c).  See Supplemental Material.
+The missing momentum distributions as well as the kinematic distributions for Q2, xB, w and Pp 
+for each of the central settings (80, 580 and 750 MeV/c) have been added to the Supplemental Material.
 
 
 -------------
@@ -166,7 +167,7 @@ Referee A:
 ----------
 Response:
 ----------
-Yes, at least 3/4 planes. I have clarified this in the manuscript.
+Yes, at least 3/4 planes. This has been clarified in the manuscript.
 
 
 -------------
@@ -179,8 +180,8 @@ Response:
 A study of the systematic effects on the cross-section due to software cuts was carried out in Section 5.10 of Ref. https://arxiv.org/abs/2009.11343
 The results showed that a reasonable variation of the software cuts had a negligible effect on the cross section.
 
-An additional study on the spectrometers acceptance systematic error was carried out by M.K. Jones where systematic error of ~1.4 % was determined
-and added quadratically to the final resut.
+An additional study on the spectrometers acceptance systematic error was carried out by M.K. Jones where a systematic error of ~1.4 % was determined
+and added quadratically to the final result.
 
 -------------
 Referee A:
@@ -208,7 +209,7 @@ Referee A:
 ----------
 Response:
 ----------
-I did not find this typo in the manuscript.
+This typo was not found in the manuscript.
 
 -------------
 Referee A:
@@ -228,7 +229,7 @@ wave function that is the solution of the Schroedinger equation is valid and abl
 experimental data that probe the high momentum region of the np system in the most direct way
 possible.
 
-As was mentioned before, the theoretical interpretation of these results is
+As was mentioned before, the complete theoretical interpretation of these results is
 out of the scope of this paper and is currently being investigated by the theory
-groups we are collaborating with. Our goal was to simply present these new and
-interesting results.
+groups we are collaborating with. Our goal was to present these new and
+interesting results and make them accessible to the general public.
