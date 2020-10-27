@@ -1,0 +1,13 @@
+==============================
+Summary of Changes Made to PRL
+==============================
+
+1) Re-formulated introductory paragraph in accordance with referee recommendations.
+
+2) Added supplemental materials with additional analysis details.
+
+3) Reduced Fig. 1 and 2 aspect ratio to reduce word count by ~200 words
+
+4) Replaced part of the text with mathematical symbols to reduce word count further.
+
+5) Removed parts of the text that were not relevant for the understanding of the paper, to reduce word count further.
