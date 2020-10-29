@@ -75,10 +75,10 @@ outlines the first necessary steps in the data analysis regardless of the nature
 limited to: \\ \textit{1. reference time cuts}, \textit{2. detector time window cuts}, \textit{3. detector calibrations}.
 Additional necessary procedures will be added in subsequent sections as updates to this document are made.
 
-\section{Set Reference Time Cuts}
+\section{Set Reference Time Cuts}\label{sec:ref_time_cuts}
 \noindent The first step in Hall C Data Analysis is to make sure the \textit{reference time}  cuts are set properly,
 as one needs to make sure the reference times correlated with the trigger are selected. The \textit{reference time}
-is a copy of the pre-trigger which is distributed to all ADCs/TDCs in all detectors Read-Out Crontrollers (ROCs). When the pre-trigger
+is a copy of the pre-trigger which is distributed to all ADCs/TDCs in all detectors Read-Out Crontrollers (ROCs)\footnote{Refer to \url{https://hallcweb.jlab.org/DocDB/0010/001028/002/trigger_v2.pdf} for a detailed discussion on the Hall C trigger}. When the pre-trigger
 is accepted, all crates read-out detector signals associated with the trigger, including the reference time itself (copy of pre-trigger). The
 reference time is subtracted from the detector signal later on during the analysis replay. When using the reference time,
 the Hall C analyzer, \textit{hcana}, choses the first hit in the time window if multiple hits are present per event. In this scenario, the first hit may NOT
@@ -359,8 +359,6 @@ where \texttt{DETEC(HMS): CAL, CER, DC, HODO, AERO}, \texttt{DETEC(SHMS): CAL, H
 \texttt{spec: hms, shms, coin}.
 For the aerogel, no examples were shown, but in principle, in terms of setting the time window cuts should be similar procedure.
 For examples of how the parameter file to be modified looks like for all the detectors, see Appendix \ref{appendix:AppxA}.
-
-\newpage
 \section{Detector Calibrations}
 After selecting the right reference times and setting proper detector time window cuts, detector calibrations can be started. Ideally, one would
 use specific runs for calibrations in which most of the focal plane is illuminated. Sometimes, a magnet de-focused run is used, however, one has to be
@@ -412,7 +410,32 @@ Additional documentation on the Cherenkovs can be found on the Hall C Document D
 \begin{center}
 \url{https://hallcweb.jlab.org/DocDB/0008/000893/001/HGC_Calibration.pdf}
 \end{center}
-\newpage
+\section{Summary of Analysis Procedure}
+\textbf{STEP 1:} Set the reference time cut parameters, as they are needed to select the correct pre-trigger correlated with each event (see Section \ref{sec:ref_time_cuts}).
+\begin{itemize}
+\item You can select a representative run for each kinematic setting of the experiment to check and set the reference time cut parameters. Check if the reference time histograms per
+  kinematic setting shift significantly, in which case, you may need to set the reference time parameters per setting.  
+\item After the reference time parameters have been set, make sure to replay the data before moving on to the next step (detector time windows) to ensure
+  that the correct reference times (determined by the reference time parameter file in step 1) are selected per event. 
+\end{itemize}
+\textbf{STEP 2:} Set the detector time window cut parameters, as they are needed to reduce sources of background that slips into the detector readout windows when detecting the physics signals of interest.
+\begin{itemize}
+  \item Similarly to step 1, you can select a representative run for each kinematic setting of the experiment to check whether the relevant histograms shift per setting, in which case the detectors time window cuts
+    may need to be determined for each setting.
+  \item After the detector time window cut parameters have been set, make sure to replay the data before moving on to the next step (detector calibrations) to ensure that the sources of background are reduced.
+\end{itemize}
+\textbf{STEP 3}: Do the detector calibrations relevant only for your experiment. You DO NOT need to calibrate a detector that was NOT used in your experiment. The particular order of detector calibrations does
+NOT matter for ``particle identification'' (PID) detectors such as the calorimeters, gas and aerogel cherenkovs. For the standard hodoscope (determines the trigger) and drift chambers (track reconstruction),
+however, the calibration of one of these detectors affects the other.
+\begin{itemize}
+\item It is recommended to do the hodoscopes calibration first in order to determine the correct signal timing (hodoscope start time) which is used
+  by the drift chambers to determine the drift times (replay the data after hodoscope calibration). Then do the drift chamber calibration in order to improve the tracking (smaller residuals $\rightarrow$ more tracks). 
+\item After a first iteration of hodoscope and drift chamber calibrations (and remembering to replay the data after each calibration), check the hodoscopes characteristic plot ($\beta$) as a sanity check that the drift chamber
+calibration has not negatively impacted that of the hodoscopes. You should NOT need to do a second calibration of the hodoscopes if the hodoscope $\beta$ is centered at $\beta = p/\sqrt{m^{2} + p^{2}}$, where $p$ is the
+central spectrometer momentum and $m$ is the particle mass.  
+\end{itemize}
+
+\newpage 
 \begin{appendices}
 \appendix
 \section{Examples of Cut Parameter Files}
