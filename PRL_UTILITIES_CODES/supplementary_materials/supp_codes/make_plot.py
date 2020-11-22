@@ -63,8 +63,8 @@ ax1.errorbar(pm_avg_80[thnq_80==35], red_Xsec_80[thnq_80==35], red_Xsec_sys_err_
 ax1.errorbar(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_tot_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='r', capsize=0, label=r'580 MeV/c setting' )
 ax1.errorbar(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_sys_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='lightgray', elinewidth=3, capsize=0)
 
-ax1.errorbar(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='g', mfc='g', ecolor='g', capsize=0, label=r'750 MeV/c setting' )
-ax1.errorbar(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_sys_err_750[thnq_750==35], marker='^', linestyle='none', color='g', mfc='g', ecolor='lightgray', elinewidth=3, capsize=0)
+ax1.errorbar(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='magenta', capsize=0, label=r'750 MeV/c setting' )
+ax1.errorbar(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_sys_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='lightgray', elinewidth=3, capsize=0)
 
 ax1.set_yscale('log')
 
@@ -81,7 +81,7 @@ plt.yticks(fontsize=16)
 y_dummy = np.zeros(len(red_Xsec_80[thnq_80==35]))
 l1, = ax2.plot([], [], c='b')
 l2, = ax2.plot([], [], c='r')
-l3, = ax2.plot([], [], c='g')
+l3, = ax2.plot([], [], c='magenta')
 l4, = ax2.plot([], [], c='gray', label='Systematic Uncerainty')
 
 ax2.errorbar(pm_avg_80[thnq_80==35], y_dummy, rel_tot_err_80[thnq_80==35], marker='s', linestyle='none', color='b', mfc='white', ecolor='b', capsize=0)
@@ -92,8 +92,8 @@ ax2.errorbar(pm_avg_580[thnq_580==35], y_dummy, rel_tot_err_580[thnq_580==35], m
 ax2.errorbar(pm_avg_580[thnq_580==35], y_dummy, rel_syst_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
 
 y_dummy = np.zeros(len(red_Xsec_750[thnq_750==35]))
-ax2.errorbar(pm_avg_750[thnq_750==35], y_dummy, rel_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='g', mfc='white', ecolor='g', capsize=0)
-ax2.errorbar(pm_avg_750[thnq_750==35], y_dummy, rel_syst_err_750[thnq_750==35], marker='^', linestyle='none', color='g', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
+ax2.errorbar(pm_avg_750[thnq_750==35], y_dummy, rel_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='white', ecolor='magenta', capsize=0)
+ax2.errorbar(pm_avg_750[thnq_750==35], y_dummy, rel_syst_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
 
 ax2.set_ylim([-0.7,0.7])
 
@@ -117,8 +117,8 @@ fig1 = B.pl.figure(figsize=(8,6))
 B.plot_exp(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_tot_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='r', capsize=0, logy='true', label=r'580 MeV/c setting' )
 B.plot_exp(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_sys_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
-B.plot_exp(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='g', mfc='g', ecolor='g', capsize=0, logy='true', label=r'750 MeV/c setting' )
-B.plot_exp(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_sys_err_750[thnq_750==35], marker='^', linestyle='none', color='g', mfc='g', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
+B.plot_exp(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='magenta', capsize=0, logy='true', label=r'750 MeV/c setting' )
+B.plot_exp(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_sys_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
 plt.subplots_adjust(left=0.12, right=0.96, top=0.93, bottom=0.11)
 
@@ -148,8 +148,8 @@ fig2 = B.pl.figure(figsize=(8,6))
 B.plot_exp(pm_avg_580[thnq_580==45], red_Xsec_580[thnq_580==45], red_Xsec_tot_err_580[thnq_580==45], marker='o', color='r', ecolor='r', capsize=0, logy='true', label=r'580 MeV/c setting' )
 B.plot_exp(pm_avg_580[thnq_580==45], red_Xsec_580[thnq_580==45], red_Xsec_sys_err_580[thnq_580==45], marker='o', color='r', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
-B.plot_exp(pm_avg_750[thnq_750==45], red_Xsec_750[thnq_750==45], red_Xsec_tot_err_750[thnq_750==45], marker='^', color='g', ecolor='g', capsize=0, logy='true', label=r'750 MeV/c setting' )
-B.plot_exp(pm_avg_750[thnq_750==45], red_Xsec_750[thnq_750==45], red_Xsec_sys_err_750[thnq_750==45], marker='^', color='g', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
+B.plot_exp(pm_avg_750[thnq_750==45], red_Xsec_750[thnq_750==45], red_Xsec_tot_err_750[thnq_750==45], marker='^', color='magenta', ecolor='magenta', capsize=0, logy='true', label=r'750 MeV/c setting' )
+B.plot_exp(pm_avg_750[thnq_750==45], red_Xsec_750[thnq_750==45], red_Xsec_sys_err_750[thnq_750==45], marker='^', color='magenta', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
 plt.subplots_adjust(left=0.12, right=0.96, top=0.93, bottom=0.11)
 
@@ -182,8 +182,8 @@ B.plot_exp(pm_avg_80[thnq_80==75], red_Xsec_80[thnq_80==75], red_Xsec_sys_err_80
 #B.plot_exp(pm_avg_580[thnq_580==75], red_Xsec_580[thnq_580==75], red_Xsec_tot_err_580[thnq_580==75], marker='o', color='r', ecolor='r', capsize=0, logy='true', label=r'580 MeV/c setting' )
 #B.plot_exp(pm_avg_580[thnq_580==75], red_Xsec_580[thnq_580==75], red_Xsec_sys_err_580[thnq_580==75], marker='o', color='r', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
-#B.plot_exp(pm_avg_750[thnq_750==75], red_Xsec_750[thnq_750==75], red_Xsec_tot_err_750[thnq_750==75], marker='^', color='g', ecolor='g', capsize=0, logy='true', label=r'750 MeV/c setting' )
-#B.plot_exp(pm_avg_750[thnq_750==75], red_Xsec_750[thnq_750==75], red_Xsec_sys_err_750[thnq_750==75], marker='^', color='g', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
+#B.plot_exp(pm_avg_750[thnq_750==75], red_Xsec_750[thnq_750==75], red_Xsec_tot_err_750[thnq_750==75], marker='^', color='magenta', ecolor='magenta', capsize=0, logy='true', label=r'750 MeV/c setting' )
+#B.plot_exp(pm_avg_750[thnq_750==75], red_Xsec_750[thnq_750==75], red_Xsec_sys_err_750[thnq_750==75], marker='^', color='magenta', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
 #Plot Labels/Titles
 B.pl.title(r'Reduced Cross Section, $\theta_{nq}=75\pm5^{\circ}$', fontsize=20)

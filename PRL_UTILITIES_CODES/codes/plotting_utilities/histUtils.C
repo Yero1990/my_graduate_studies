@@ -301,22 +301,22 @@ void compare_hist(TH1F *hdata, TH1F *hsimc, TString xlabel="", TString ylabel=""
 
 
 //-----------------------------------------------
-void combine_sets(TH1F *hist80, TH1F *hist_580set1, TH1F *hist_580set2, TH1F *hist_750set1, TH1F *hist_750set2, TH1F *hist_750set3, TString xlabel="", TString ylabel="", TString title="", Double_t scale_factor=1)
+void combine_sets(TH1F *hist80, TH1F *hist_580set1, TH1F *hist_580set2, TH1F *hist_750set1, TH1F *hist_750set2, TH1F *hist_750set3, TString xlabel="", TString ylabel="", TString title="", Double_t scale_factor=1, Bool_t combine=0)
 {
 
   //This function adds histograms of multiple data sets from the same kinematic setting (i.e., 580_set1 + 580_set2)
  
 
   //Clone histograms and rename them total
-  TH1F *hist_580tot = (TH1F*)hist_580set1->Clone("hist_580tot");
+  TH1F *hist_580tot = (TH1F*)hist_580set2->Clone("hist_580tot");
   TH1F *hist_750tot = (TH1F*)hist_750set1->Clone("hist_750tot");
 
-  //Add remaining histograms to total
-  hist_580tot->Add(hist_580set2);
+    //Add remaining histograms to total
+    //hist_580tot->Add(hist_580set2);
 
-  hist_750tot->Add(hist_750set2);
-  hist_750tot->Add(hist_750set3);
-
+    //hist_750tot->Add(hist_750set2);
+    //hist_750tot->Add(hist_750set3);
+  
   
   int font_type = 132;
 
