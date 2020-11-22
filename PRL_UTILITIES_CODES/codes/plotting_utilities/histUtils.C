@@ -342,18 +342,23 @@ void combine_sets(TH1F *hist80, TH1F *hist_580set1, TH1F *hist_580set2, TH1F *hi
   hist80->SetLineWidth(2);
   hist80->SetFillColorAlpha(kBlue, 0.6);
   hist80->SetFillStyle(3004);
+  hist80->SetMarkerStyle(21);
+  hist80->SetMarkerColor(kBlue);
 
   hist_580tot->SetLineColor(kRed);
   hist_580tot->SetLineWidth(2);
   hist_580tot->SetFillColorAlpha(kRed, 0.6);
   hist_580tot->SetFillStyle(3004);
+  hist_580tot->SetMarkerStyle(21);
+  hist_580tot->SetMarkerColor(kRed);
 
   hist_750tot->SetLineColor(kMagenta);
   hist_750tot->SetLineWidth(2);
   hist_750tot->SetFillColorAlpha(kMagenta, 0.6);
   hist_750tot->SetFillStyle(3005);
-
-
+  hist_750tot->SetMarkerStyle(21);
+  hist_750tot->SetMarkerColor(kMagenta);
+ 
   //Set Histos Axis Label Size
   hist80->GetYaxis()->SetLabelSize(0.05);
   hist80->SetTitleSize(0.05, "XY");
