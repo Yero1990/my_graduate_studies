@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{28}%
+\begin{thebibliography}{29}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -50,6 +50,15 @@
 \providecommand \BibitemShut  [1]{\csname bibitem#1\endcsname}%
 \let\auto@bib@innerbib\@empty
 %</preamble>
+\bibitem [{\citenamefont {Subedi}\ \emph {et~al.}(2008)\citenamefont {Subedi}
+  \emph {et~al.}}]{Subedi1476}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
+  {Subedi}} \emph {et~al.},\ }\bibfield  {title} {\bibinfo {title} {{Probing
+  Cold Dense Nuclear Matter}},\ }\href
+  {https://doi.org/10.1126/science.1156675} {\bibfield  {journal} {\bibinfo
+  {journal} {Science}\ }\textbf {\bibinfo {volume} {320}},\ \bibinfo {pages}
+  {1476} (\bibinfo {year} {2008})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Korover}\ \emph {et~al.}(2014)\citenamefont {Korover}
   \emph {et~al.}}]{PhysRevLett.113.022501}%
   \BibitemOpen
@@ -71,17 +80,18 @@
   {https://doi.org/10.1103/PhysRevLett.122.172502} {\bibfield  {journal}
   {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {122}},\
   \bibinfo {pages} {172502} (\bibinfo {year} {2019})}\BibitemShut {NoStop}%
-\bibitem [{\citenamefont {Cruz-Torres}\ \emph {et~al.}(2020)\citenamefont
-  {Cruz-Torres} \emph {et~al.}}]{PhysRevLett.124.212501}%
+\bibitem [{\citenamefont {Schmidt}\ \emph {et~al.}(2020)\citenamefont
+  {Schmidt}, \citenamefont {Pybus}, \citenamefont {Weiss} \emph
+  {et~al.}}]{Schmidt_2020}%
   \BibitemOpen
-  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {R.}~\bibnamefont
-  {Cruz-Torres}} \emph {et~al.} (\bibinfo {collaboration} {Jefferson Lab Hall A
-  Tritium Collaboration}),\ }\bibfield  {title} {\bibinfo {title} {{Probing
-  Few-Body Nuclear Dynamics via $^{3}\mathrm{H}$ and $^{3}\mathrm{He}$
-  $(e,{e}^{\ensuremath{'}}p)\mathrm{pn}$ Cross-Section Measurements}},\ }\href
-  {https://doi.org/10.1103/PhysRevLett.124.212501} {\bibfield  {journal}
-  {\bibinfo  {journal} {Phys. Rev. Lett.}\ }\textbf {\bibinfo {volume} {124}},\
-  \bibinfo {pages} {212501} (\bibinfo {year} {2020})}\BibitemShut {NoStop}%
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {A.}~\bibnamefont
+  {Schmidt}}, \bibinfo {author} {\bibfnamefont {J.}~\bibnamefont {Pybus}},
+  \bibinfo {author} {\bibfnamefont {R.}~\bibnamefont {Weiss}}, \emph {et~al.},\
+  }\bibfield  {title} {\bibinfo {title} {{Probing the core of the strong
+  nuclear interaction}},\ }\href@noop {} {\bibfield  {journal} {\bibinfo
+  {journal} {Nature}\ }\textbf {\bibinfo {volume} {578}},\ \bibinfo {pages}
+  {540} (\bibinfo {year} {2020})},\ \bibinfo {note}
+  {\url{https://doi.org/10.1038/s41586-020-2021-6}}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Piasetzky}\ \emph {et~al.}(2006)\citenamefont
   {Piasetzky}, \citenamefont {Sargsian}, \citenamefont {Frankfurt},
   \citenamefont {Strikman},\ and\ \citenamefont
