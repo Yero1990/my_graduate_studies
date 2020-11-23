@@ -117,13 +117,13 @@ fig1 = B.pl.figure(figsize=(8,6))
 B.plot_exp(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_tot_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='r', capsize=0, logy='true', label=r'580 MeV/c setting' )
 B.plot_exp(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_sys_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
-B.plot_exp(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='magenta', capsize=0, logy='true', label=r'750 MeV/c setting' )
-B.plot_exp(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_sys_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
+B.plot_exp(pm_avg_750[thnq_750==35]+0.01, red_Xsec_750[thnq_750==35], red_Xsec_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='magenta', capsize=0, logy='true', label=r'750 MeV/c setting' )
+B.plot_exp(pm_avg_750[thnq_750==35]+0.01, red_Xsec_750[thnq_750==35], red_Xsec_sys_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
 plt.subplots_adjust(left=0.12, right=0.96, top=0.93, bottom=0.11)
 
 #Set X-limits
-B.pl.xlim(0.4, 1.2)
+B.pl.xlim(0.4, 1.3)
 #Set Y-limits
 B.pl.ylim(2e-6, 2e-4)
 
@@ -148,13 +148,13 @@ fig2 = B.pl.figure(figsize=(8,6))
 B.plot_exp(pm_avg_580[thnq_580==45], red_Xsec_580[thnq_580==45], red_Xsec_tot_err_580[thnq_580==45], marker='o', color='r', ecolor='r', capsize=0, logy='true', label=r'580 MeV/c setting' )
 B.plot_exp(pm_avg_580[thnq_580==45], red_Xsec_580[thnq_580==45], red_Xsec_sys_err_580[thnq_580==45], marker='o', color='r', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
-B.plot_exp(pm_avg_750[thnq_750==45], red_Xsec_750[thnq_750==45], red_Xsec_tot_err_750[thnq_750==45], marker='^', color='magenta', ecolor='magenta', capsize=0, logy='true', label=r'750 MeV/c setting' )
-B.plot_exp(pm_avg_750[thnq_750==45], red_Xsec_750[thnq_750==45], red_Xsec_sys_err_750[thnq_750==45], marker='^', color='magenta', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
+B.plot_exp(pm_avg_750[thnq_750==45]+0.01, red_Xsec_750[thnq_750==45], red_Xsec_tot_err_750[thnq_750==45], marker='^', color='magenta', ecolor='magenta', capsize=0, logy='true', label=r'750 MeV/c setting' )
+B.plot_exp(pm_avg_750[thnq_750==45]+0.01, red_Xsec_750[thnq_750==45], red_Xsec_sys_err_750[thnq_750==45], marker='^', color='magenta', ecolor='lightgray', elinewidth=3, capsize=0, logy='true')
 
 plt.subplots_adjust(left=0.12, right=0.96, top=0.93, bottom=0.11)
 
 #Set X-limits
-B.pl.xlim(0.4, 1.2)
+B.pl.xlim(0.4, 1.5)
 #Set Y-limits
 B.pl.ylim(2e-6, 2e-4)
 

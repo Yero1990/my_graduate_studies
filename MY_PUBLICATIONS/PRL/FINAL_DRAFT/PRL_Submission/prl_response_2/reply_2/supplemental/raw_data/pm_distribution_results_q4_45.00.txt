@@ -25,7 +25,6 @@
 #  sig_exp      : exp. cross section for this bin (nb/(MeV Sr^2))
 #  dsig_exp     : error in exp cross section for this bin (nb/(MeV Sr^2))
 #  sig_red_exp  : exp. red. cross section (rho) for this bin (fm^3)
-#  dsig_red_exp : error in red. cross section (drho) for this bin (fm^3)
 #  bc           : bin centering correction factor used: sig_exp_raw * bc = exp. cross section at avg. kinematics reported above 
 #
 # common values for Nr indicate kinematic settings that contribute to the same missing momentum bin and are used in averaging
