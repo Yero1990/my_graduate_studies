@@ -6,7 +6,7 @@
 %Control: page (0) single
 %Control: year (1) truncated
 %Control: production of eprint (0) enabled
-\begin{thebibliography}{30}%
+\begin{thebibliography}{32}%
 \makeatletter
 \providecommand \@ifxundefined [1]{%
  \@ifx{#1\undefined}
@@ -333,6 +333,26 @@
   {https://doi.org/10.1103/PhysRevC.26.2226} {\bibfield  {journal} {\bibinfo
   {journal} {Phys. Rev. C}\ }\textbf {\bibinfo {volume} {26}},\ \bibinfo
   {pages} {2226} (\bibinfo {year} {1982}{\natexlab{b}})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Frankfurt}\ and\ \citenamefont
+  {Strikman}(1981)}]{Frankfurt:1981mk}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {L.}~\bibnamefont
+  {Frankfurt}}\ and\ \bibinfo {author} {\bibfnamefont {M.}~\bibnamefont
+  {Strikman}},\ }\bibfield  {title} {\bibinfo {title} {{{High-Energy Phenomena,
+  Short Range Nuclear Structure and QCD}}},\ }\href
+  {https://doi.org/10.1016/0370-1573(81)90129-0} {\bibfield  {journal}
+  {\bibinfo  {journal} {Phys. Rept.}\ }\textbf {\bibinfo {volume} {76}},\
+  \bibinfo {pages} {215} (\bibinfo {year} {1981})}\BibitemShut {NoStop}%
+\bibitem [{\citenamefont {Buck}\ and\ \citenamefont
+  {Gross}(1979)}]{Buck:1979ff}%
+  \BibitemOpen
+  \bibfield  {author} {\bibinfo {author} {\bibfnamefont {W.}~\bibnamefont
+  {Buck}}\ and\ \bibinfo {author} {\bibfnamefont {F.}~\bibnamefont {Gross}},\
+  }\bibfield  {title} {\bibinfo {title} {{{A Family of Relativistic Deuteron
+  Wave Functions}}},\ }\href {https://doi.org/10.1103/PhysRevD.20.2361}
+  {\bibfield  {journal} {\bibinfo  {journal} {Phys. Rev. D}\ }\textbf {\bibinfo
+  {volume} {20}},\ \bibinfo {pages} {2361} (\bibinfo {year}
+  {1979})}\BibitemShut {NoStop}%
 \bibitem [{\citenamefont {Reinert}\ \emph {et~al.}(2018)\citenamefont
   {Reinert}, \citenamefont {Krebs},\ and\ \citenamefont
   {Epelbaum}}]{Reinert_EFT2018}%
