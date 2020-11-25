@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  23 NOV 2020 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  25 NOV 2020 15:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -704,23 +704,38 @@ g_d2_pm580_allthnq.png>]
 File: Pr_and_Ps_35deg.png Graphic file (type png)
 <use Pr_and_Ps_35deg.png>
 Package pdftex.def Info: Pr_and_Ps_35deg.png  used on input line 130.
-(pdftex.def)             Requested size: 413.33366pt x 155.14566pt.
+(pdftex.def)             Requested size: 427.6008pt x 160.50085pt.
 <Pr_and_Ps_45deg.png, id=107, 1417.295pt x 529.98pt>
 File: Pr_and_Ps_45deg.png Graphic file (type png)
 <use Pr_and_Ps_45deg.png>
 Package pdftex.def Info: Pr_and_Ps_45deg.png  used on input line 131.
-(pdftex.def)             Requested size: 411.00502pt x 153.69025pt.
-<RedXsec_overlap.png, id=108, 1772.6225pt x 675.52374pt>
+(pdftex.def)             Requested size: 425.19179pt x 158.99521pt.
+<RedXsec_overlap.png, id=108, 1439.3775pt x 546.04pt>
 File: RedXsec_overlap.png Graphic file (type png)
 <use RedXsec_overlap.png>
 Package pdftex.def Info: RedXsec_overlap.png  used on input line 136.
-(pdftex.def)             Requested size: 407.69461pt x 155.36719pt.
-<RC_factor.png, id=111, 1699.34875pt x 602.25pt>
+(pdftex.def)             Requested size: 431.81659pt x 163.81326pt.
+ [5pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.140 ...e Radiative \& Bin-Centering Corrections}
+                                                  pdfTeX warning (ext4): destin
+ation with the same identifier (name{figure.10}) has been already used, duplica
+te ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.140 ...e Radiative \& Bin-Centering Corrections}
+                                                   <./Pr_and_Ps_35deg.png> <./P
+r_and_Ps_45deg.png> <./RedXsec_overlap.png>]
+<RC_factor.png, id=120, 1699.34875pt x 602.25pt>
 File: RC_factor.png Graphic file (type png)
 <use RC_factor.png>
 Package pdftex.def Info: RC_factor.png  used on input line 149.
 (pdftex.def)             Requested size: 458.8303pt x 162.60966pt.
-<BC_factor.png, id=113, 1699.34875pt x 621.32124pt>
+<BC_factor.png, id=122, 1699.34875pt x 621.32124pt>
 File: BC_factor.png Graphic file (type png)
 <use BC_factor.png>
 Package pdftex.def Info: BC_factor.png  used on input line 157.
@@ -730,21 +745,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 141--164
 
  []
 
-[5pdfTeX warning (ext4): destination with the same identifier (name{figure.9}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.164 ...Radiative and Bin-Centering Corrections }
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{figure.10}) has been already used, duplica
-te ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.164 ...Radiative and Bin-Centering Corrections }
-                                                   <./Pr_and_Ps_35deg.png> <./P
-r_and_Ps_45deg.png> <./RedXsec_overlap.png>]
 <rad_sys.png, id=128, 1269.74374pt x 464.73625pt>
 File: rad_sys.png Graphic file (type png)
 <use rad_sys.png>
@@ -755,7 +755,7 @@ File: bc_sys.png Graphic file (type png)
 <use bc_sys.png>
 Package pdftex.def Info: bc_sys.png  used on input line 178.
 (pdftex.def)             Requested size: 469.79784pt x 172.32109pt.
- (./supplemental.bbl
+(./supplemental.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 165--9
 
  []
@@ -799,6 +799,11 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 187.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 187.
 Package rerunfilecheck Info: File `supplemental.out' has not changed.
 (rerunfilecheck)             Checksum: F67E746D7ABA15D16596EADA750B2FAD;693.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right .
+
+
  ) 
 Here is how much of TeX's memory you used:
  10520 strings out of 480608
@@ -824,7 +829,7 @@ e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2020/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on supplemental.pdf (8 pages, 5536079 bytes).
+Output written on supplemental.pdf (8 pages, 5490290 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  166 compressed objects within 2 object streams

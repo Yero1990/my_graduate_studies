@@ -1,0 +1,68 @@
+--------------------------------
+Reply to: Report of Referee A
+--------------------------------
+
+A concise, point-by-point response for each of the recommendations and criticisms made by referee A is shown below:
+
+
+-------------
+Referee A:
+-------------
+1) The connection to SRC is now mentioned. However the references chosen by the authors do not make sense to me.
+The standard (general) reference to SRC experimental study is: Subedi et al., Science 320, 1476 (2008). The two
+SRC studies highly relevant to this work (emphasizing high momentum) are Korover et al. and A. Schmidt et al. ,
+Nature volume 578, 540 (2020). Korover et al. is Ref 1 in the new manuscript but the other two are not mentioned.
+Moreover, Ref 3 is an odd choice, since it is not directly related to the subject.
+----------
+Response:
+----------
+The authors have corrected the references to SRC experimental studies accordingly. 
+
+-------------
+Referee A:
+-------------
+2) Relativity (no reference to light-cone formalism), Nucleon-Nucleon interaction (no modern EFT calculations).
+I accept the authors response that these theoretical calculations are out of the scope of this experimental paper.
+However, to my opinion they should at least be mentioned and discussed in some reasonable way.
+----------
+Response:
+----------
+A brief explanation of the light-cone / EFT formalism along with the corresponding references have been added to
+the concluding paragraph of the PRL manuscript.
+
+-------------
+Referee A:
+-------------
+3) Their description of why MEC are suppressed is incomplete. The authors give the MEC amplitude, but do not show
+that it is smaller than the QE amplitude.
+----------
+Response:
+----------
+The description of MEC suppression has been extended to address the QE amplitude.
+See page 2 (left colum), last paragraph of the PRL manuscript.
+
+-------------
+Referee A:
+-------------
+4) “a weighted average of the cross sections were taken in the overlapping regions of pr”. Show consistency.
+They should show the cross section calculated for each setup in the overlap region before they were averaged.
+The new manuscript shows the raw data and the corrections in the overlap regions (Supp. Figs 9-11) but not the
+cross sections which would allow the reader to verify their consistency and whether the systematic uncertainties
+are reasonable.
+----------
+Response:
+----------
+The authors have added Fig. 10 in Supplemental Materials to show the reduced cross sections in the overlap
+region before being averaged.
+
+-------------
+Referee A:
+-------------
+5) I did not see the requested tables of kinematics and cross sections in the supplemental material.
+----------
+Response:
+----------
+The authors did previously inlcude the raw experimental cross-section data (with kinematics)
+as well as raw data files with the theroretical cross sections in the form of .txt files.
+In addition to the raw data previously submitted, a .pdf version of the datafiles will also
+be submitted in this instance. 

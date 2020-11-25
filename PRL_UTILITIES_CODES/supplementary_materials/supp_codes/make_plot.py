@@ -123,7 +123,7 @@ B.plot_exp(pm_avg_750[thnq_750==35]+0.01, red_Xsec_750[thnq_750==35], red_Xsec_s
 plt.subplots_adjust(left=0.12, right=0.96, top=0.93, bottom=0.11)
 
 #Set X-limits
-B.pl.xlim(0.4, 1.3)
+B.pl.xlim(0.4, 1.2)
 #Set Y-limits
 B.pl.ylim(2e-6, 2e-4)
 
@@ -134,7 +134,7 @@ B.pl.ylabel('$\sigma_{\mathrm{red}}$ [fm$^{3}$]', fontsize=20)
 
 plt.xticks(fontsize=18)
 plt.yticks(fontsize=18)
-B.pl.legend(fontsize=16)
+B.pl.legend(fontsize=18)
 
 #B.pl.show()
 B.pl.savefig('redXsec_35.pdf')
@@ -154,7 +154,7 @@ B.plot_exp(pm_avg_750[thnq_750==45]+0.01, red_Xsec_750[thnq_750==45], red_Xsec_s
 plt.subplots_adjust(left=0.12, right=0.96, top=0.93, bottom=0.11)
 
 #Set X-limits
-B.pl.xlim(0.4, 1.5)
+B.pl.xlim(0.4, 1.2)
 #Set Y-limits
 B.pl.ylim(2e-6, 2e-4)
 
@@ -165,7 +165,7 @@ B.pl.ylabel('$\sigma_{\mathrm{red}}$ [fm$^{3}$]', fontsize=20)
 
 plt.xticks(fontsize=18)
 plt.yticks(fontsize=18)
-B.pl.legend(fontsize=16)
+B.pl.legend(fontsize=18)
 
 #B.pl.show()
 B.pl.savefig('redXsec_45.pdf')
