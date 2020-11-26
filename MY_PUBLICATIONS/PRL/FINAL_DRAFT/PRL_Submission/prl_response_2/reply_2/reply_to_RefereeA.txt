@@ -10,13 +10,13 @@ Referee A:
 -------------
 1) The connection to SRC is now mentioned. However the references chosen by the authors do not make sense to me.
 The standard (general) reference to SRC experimental study is: Subedi et al., Science 320, 1476 (2008). The two
-SRC studies highly relevant to this work (emphasizing high momentum) are Korover et al. and A. Schmidt et al. ,
+SRC studies highly relevant to this work (emphasizing high momentum) are Korover et al. and A. Schmidt et al.,
 Nature volume 578, 540 (2020). Korover et al. is Ref 1 in the new manuscript but the other two are not mentioned.
 Moreover, Ref 3 is an odd choice, since it is not directly related to the subject.
 ----------
 Response:
 ----------
-The authors have corrected the references to SRC experimental studies accordingly. 
+The authors have corrected the references to SRC experimental studies accordingly.
 
 -------------
 Referee A:
@@ -62,7 +62,7 @@ Referee A:
 ----------
 Response:
 ----------
-The authors did previously inlcude the raw experimental cross-section data (with kinematics)
-as well as raw data files with the theroretical cross sections in the form of .txt files.
+The authors did previously include the raw experimental cross-section data (with kinematics)
+as well as raw data files with the theoretical cross sections in the form of .txt files.
 In addition to the raw data previously submitted, a .pdf version of the datafiles will also
 be submitted in this instance. 
