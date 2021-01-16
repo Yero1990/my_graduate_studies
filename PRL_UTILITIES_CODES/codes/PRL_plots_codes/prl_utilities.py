@@ -57,7 +57,9 @@ def read_hallc_data(thnq=0, write_output=0):
 
     #Function to read E12-10-003 experimental red Xsec data
 
-    fname = "../deep_data_files/Q2_4to5GeV/redXsec_combined.txt"
+    #fname = "../deep_data_files/Q2_4to5GeV/redXsec_combined.txt"
+    fname = "./deep_data_files/Q2_4to5GeV/redXsec_combined.txt"
+
     kin = dfile(fname)
     thnq_data = np.array(kin['xb'])
     pm_bin = np.array( (kin['yb'])[thnq_data==thnq] )  #[GeV]
@@ -131,7 +133,9 @@ def read_theoretical_models(theory="", model="", thnq=0):
 
     #---Reading J.M. Laget theory from the data file---
     if(theory=="JML"):
-        fname = "../deep_data_files/Q2_4to5GeV/redXsec_combined.txt"
+        #fname = "../deep_data_files/Q2_4to5GeV/redXsec_combined.txt"
+        fname = "./deep_data_files/Q2_4to5GeV/redXsec_combined.txt"
+
         kin = dfile(fname)
         thnq_data = np.array(kin['xb'])
         pm_bin = np.array( (kin['yb'])[thnq_data==thnq] )
@@ -163,7 +167,8 @@ def read_JWVO_theory(ithnq=0, theory='', fofa='', model=''):
     #Read theoretical cross sections from W.V.Orden
     #The cross sections used the WJC2, AV18 and CD-Bonn models
 
-    fname = '../deep_data_files/JWVOrden_calculations/JWV_Orden_redXsec_%i_deg_AVERAGE.txt' % (ithnq)
+    #fname = '../deep_data_files/JWVOrden_calculations/JWV_Orden_redXsec_%i_deg_AVERAGE.txt' % (ithnq)
+    fname = './deep_data_files/JWVOrden_calculations/JWV_Orden_redXsec_%i_deg_AVERAGE.txt' % (ithnq)
 
     f = dfile(fname)
     

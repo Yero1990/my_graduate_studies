@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rc
 from matplotlib.legend_handler import HandlerTuple
+from prl_utilities import *
 
 #Use latex commands (e.g. \textit ot \textbf)
 rc('text', usetex=True)
@@ -54,22 +55,96 @@ red_Xsec_tot_err_750 = np.array(kin_750['red_dataXsec_avg_tot_err'])[stats_750<=
 rel_syst_err_750 = np.array(kin_750['tot_syst_err'])[stats_750<=0.50]
 rel_tot_err_750 = np.array(kin_750['tot_err'])[stats_750<=0.50]
 
-'''
+#Read Hall A experimental data
+pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35 = read_halla_data(35)
+pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45 = read_halla_data(45)  
+pm_ha75, red_dataXsec_ha75, red_dataXsec_err_ha75 = read_halla_data(75) 
+
+#Read Theoretical calculations
+#PWIA (or PWBA, which assumes the neutron, in addition to a proton can be a plane wave - free particle)
+pm_v18_35_pwia,  f_red_pwiaXsec_V18_35  = read_theoretical_models("V18", "PWIA", 35)
+pm_cd_35_pwia,   f_red_pwiaXsec_CD_35  = read_theoretical_models("CD-Bonn", "PWIA", 35)
+pm_jml_35_pwia,  f_red_pwiaXsec_JML_35  = read_theoretical_models("JML", "PWIA", 35)
+pm_wjc2_35_pwba, f_red_pwbaXsec_WJC2_35 = read_JWVO_theory(35, "WJC2", "GKex05", "PWBA")
+
+pm_v18_45_pwia,  f_red_pwiaXsec_V18_45  = read_theoretical_models("V18", "PWIA", 45)
+pm_cd_45_pwia,   f_red_pwiaXsec_CD_45   = read_theoretical_models("CD-Bonn", "PWIA", 45)
+pm_jml_45_pwia,  f_red_pwiaXsec_JML_45  = read_theoretical_models("JML", "PWIA", 45)
+pm_wjc2_45_pwba, f_red_pwbaXsec_WJC2_45 = read_JWVO_theory(45, "WJC2", "GKex05", "PWBA")
+
+pm_v18_75_pwia,  f_red_pwiaXsec_V18_75  = read_theoretical_models("V18", "PWIA", 75)
+pm_cd_75_pwia,   f_red_pwiaXsec_CD_75   = read_theoretical_models("CD-Bonn", "PWIA", 75)
+pm_jml_75_pwia,  f_red_pwiaXsec_JML_75  = read_theoretical_models("JML", "PWIA", 75)
+pm_wjc2_75_pwba, f_red_pwbaXsec_WJC2_75 = read_JWVO_theory(75, "WJC2", "GKex05", "PWBA")
+
+#FSI (or DWBA)
+pm_v18_35_fsi, f_red_fsiXsec_V18_35 = read_theoretical_models("V18", "FSI", 35)
+pm_cd_35_fsi,  f_red_fsiXsec_CD_35  = read_theoretical_models("CD-Bonn", "FSI", 35)
+pm_jml_35_fsi, f_red_fsiXsec_JML_35 = read_theoretical_models("JML", "FSI", 35)
+pm_wjc2_35_fsi, f_red_fsiXsec_WJC2_35 = read_JWVO_theory(35, "WJC2", "GKex05", "DWBA")
+
+pm_v18_45_fsi, f_red_fsiXsec_V18_45 = read_theoretical_models("V18", "FSI", 45)
+pm_cd_45_fsi,  f_red_fsiXsec_CD_45  = read_theoretical_models("CD-Bonn", "FSI", 45)
+pm_jml_45_fsi, f_red_fsiXsec_JML_45 = read_theoretical_models("JML", "FSI", 45)
+pm_wjc2_45_fsi, f_red_fsiXsec_WJC2_45 = read_JWVO_theory(45, "WJC2", "GKex05", "DWBA")
+
+pm_v18_75_fsi, f_red_fsiXsec_V18_75 = read_theoretical_models("V18", "FSI", 75)
+pm_cd_75_fsi,  f_red_fsiXsec_CD_75  = read_theoretical_models("CD-Bonn", "FSI", 75)
+pm_jml_75_fsi, f_red_fsiXsec_JML_75 = read_theoretical_models("JML", "FSI", 75)
+pm_wjc2_75_fsi, f_red_fsiXsec_WJC2_75 = read_JWVO_theory(75, "WJC2", "GKex05", "DWBA")
+
+
+#---Plot redXsec and relative errors----
+
 fig1, (ax1, ax2) = B.pl.subplots(2, sharex=True)
+thnq0 = 45
+ax1.errorbar(pm_avg_80[thnq_80==thnq0], red_Xsec_80[thnq_80==thnq0], red_Xsec_tot_err_80[thnq_80==thnq0], marker='s', linestyle='none', color='b', mfc='b', ecolor='b', capsize=0, label=r'80 MeV/c setting' )
+ax1.errorbar(pm_avg_80[thnq_80==thnq0], red_Xsec_80[thnq_80==thnq0], red_Xsec_sys_err_80[thnq_80==thnq0], marker='s', linestyle='none', color='b', mfc='b', ecolor='lightgray', elinewidth=3, capsize=0)
 
-ax1.errorbar(pm_avg_80[thnq_80==35], red_Xsec_80[thnq_80==35], red_Xsec_tot_err_80[thnq_80==35], marker='s', linestyle='none', color='b', mfc='b', ecolor='b', capsize=0, label=r'80 MeV/c setting' )
-ax1.errorbar(pm_avg_80[thnq_80==35], red_Xsec_80[thnq_80==35], red_Xsec_sys_err_80[thnq_80==35], marker='s', linestyle='none', color='b', mfc='b', ecolor='lightgray', elinewidth=3, capsize=0)
+ax1.errorbar(pm_avg_580[thnq_580==thnq0], red_Xsec_580[thnq_580==thnq0], red_Xsec_tot_err_580[thnq_580==thnq0], marker='o', linestyle='none', color='r', mfc='r', ecolor='r', capsize=0, label=r'580 MeV/c setting' )
+ax1.errorbar(pm_avg_580[thnq_580==thnq0], red_Xsec_580[thnq_580==thnq0], red_Xsec_sys_err_580[thnq_580==thnq0], marker='o', linestyle='none', color='r', mfc='r', ecolor='lightgray', elinewidth=3, capsize=0)
 
-ax1.errorbar(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_tot_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='r', capsize=0, label=r'580 MeV/c setting' )
-ax1.errorbar(pm_avg_580[thnq_580==35], red_Xsec_580[thnq_580==35], red_Xsec_sys_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='r', ecolor='lightgray', elinewidth=3, capsize=0)
+ax1.errorbar(pm_avg_750[thnq_750==thnq0], red_Xsec_750[thnq_750==thnq0], red_Xsec_tot_err_750[thnq_750==thnq0], marker='^', linestyle='none', color='k', mfc='k', ecolor='k', capsize=0, label=r'750 MeV/c setting' )
+ax1.errorbar(pm_avg_750[thnq_750==thnq0], red_Xsec_750[thnq_750==thnq0], red_Xsec_sys_err_750[thnq_750==thnq0], marker='^', linestyle='none', color='k', mfc='k', ecolor='lightgray', elinewidth=3, capsize=0)
 
-ax1.errorbar(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='magenta', capsize=0, label=r'750 MeV/c setting' )
-ax1.errorbar(pm_avg_750[thnq_750==35], red_Xsec_750[thnq_750==35], red_Xsec_sys_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='magenta', ecolor='lightgray', elinewidth=3, capsize=0)
+'''
+#Plot theoretical calculations (35 deg)
+ax1.plot(pm_jml_35_pwia, f_red_pwiaXsec_JML_35(pm_jml_35_pwia), linestyle='--', marker='None', color='#0000ff', label='Paris PWIA', zorder=2)
+ax1.plot(pm_jml_35_fsi,  f_red_fsiXsec_JML_35(pm_jml_35_fsi), linestyle='-', marker='None', color='#0000ff',  label='Paris FSI', zorder=2)
+
+ax1.plot(pm_v18_35_pwia, f_red_pwiaXsec_V18_35(pm_v18_35_pwia), linestyle='--', marker='None', color='#009000',  label='AV18 PWIA', zorder=2)   
+ax1.plot(pm_v18_35_fsi,  f_red_fsiXsec_V18_35(pm_v18_35_fsi), linestyle='-', marker='None', color='#009000',  label='AV18 FSI', zorder=2) 
+
+ax1.plot(pm_cd_35_pwia, f_red_pwiaXsec_CD_35(pm_cd_35_pwia), linestyle='--', marker='None', color='#ff00ff',  label='CD-Bonn PWIA', zorder=2)     
+ax1.plot(pm_cd_35_fsi,  f_red_fsiXsec_CD_35(pm_cd_35_fsi), linestyle='-', marker='None', color='#ff00ff',  label='CD-Bonn FSI', zorder=2) 
+
+ax1.plot(pm_wjc2_35_pwba, f_red_pwbaXsec_WJC2_35(pm_wjc2_35_pwba), linestyle='--', marker='None', color='orange',  label='WJC2 (GKex05) PWBA', zorder=0 )
+ax1.plot(pm_wjc2_35_fsi, f_red_fsiXsec_WJC2_35(pm_wjc2_35_fsi), linestyle='-', marker='None', color='orange',  label='WJC2 (GKex05) DWBA', zorder=0 )
+'''
+
+#Plot theoretical calculations (45 deg)
+ax1.plot(pm_jml_45_pwia, f_red_pwiaXsec_JML_45(pm_jml_45_pwia), linestyle='--', marker='None', color='#0000ff', label='Paris PWIA', zorder=2)
+ax1.plot(pm_jml_45_fsi,  f_red_fsiXsec_JML_45(pm_jml_45_fsi), linestyle='-', marker='None', color='#0000ff',  label='Paris FSI', zorder=2)
+
+ax1.plot(pm_v18_45_pwia, f_red_pwiaXsec_V18_45(pm_v18_45_pwia), linestyle='--', marker='None', color='#009000',  label='AV18 PWIA', zorder=2)   
+ax1.plot(pm_v18_45_fsi,  f_red_fsiXsec_V18_45(pm_v18_45_fsi), linestyle='-', marker='None', color='#009000',  label='AV18 FSI', zorder=2) 
+
+ax1.plot(pm_cd_45_pwia, f_red_pwiaXsec_CD_45(pm_cd_45_pwia), linestyle='--', marker='None', color='#ff00ff',  label='CD-Bonn PWIA', zorder=2)     
+ax1.plot(pm_cd_45_fsi,  f_red_fsiXsec_CD_45(pm_cd_45_fsi), linestyle='-', marker='None', color='#ff00ff',  label='CD-Bonn FSI', zorder=2) 
+
+ax1.plot(pm_wjc2_45_pwba, f_red_pwbaXsec_WJC2_45(pm_wjc2_45_pwba), linestyle='--', marker='None', color='orange',  label='WJC2 (GKex05) PWBA', zorder=0 )
+ax1.plot(pm_wjc2_45_fsi, f_red_fsiXsec_WJC2_45(pm_wjc2_45_fsi), linestyle='-', marker='None', color='orange',  label='WJC2 (GKex05) DWBA', zorder=0 )
+
+
+#ax1.set_ylim([1e-7, 1e2])
+ax1.set_ylim([1e-6, 1e-2])
+ax1.set_xlim([0.4, 1.0])
+
 
 ax1.set_yscale('log')
 
 #Plot Labels/Titles
-ax1.set_title(r'Reduced Cross Section, $\theta_{nq}=35\pm5^{\circ}$', fontsize=20)
+ax1.set_title(r'Reduced Cross Section, $\theta_{nq}=45\pm5^{\circ}$', fontsize=20)
 ax2.set_xlabel('$p_{\mathrm{r}}$ [GeV/c]', fontsize=18)
 ax1.set_ylabel('$\sigma_{\mathrm{red}}$ [fm$^{3}$]', fontsize=18)
 ax1.legend()
@@ -78,36 +153,38 @@ plt.xticks(fontsize=16)
 plt.yticks(fontsize=16)
 
 #---Plot relative error bars
-y_dummy = np.zeros(len(red_Xsec_80[thnq_80==35]))
-l1, = ax2.plot([], [], c='b')
+y_dummy = np.zeros(len(red_Xsec_80[thnq_80==thnq0]))
 l2, = ax2.plot([], [], c='r')
-l3, = ax2.plot([], [], c='magenta')
+l3, = ax2.plot([], [], c='k')
 l4, = ax2.plot([], [], c='gray', label='Systematic Uncerainty')
 
-ax2.errorbar(pm_avg_80[thnq_80==35], y_dummy, rel_tot_err_80[thnq_80==35], marker='s', linestyle='none', color='b', mfc='white', ecolor='b', capsize=0)
-ax2.errorbar(pm_avg_80[thnq_80==35], y_dummy, rel_syst_err_80[thnq_80==35], marker='s', linestyle='none', color='b', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
+ax2.errorbar(pm_avg_80[thnq_80==thnq0], y_dummy, rel_tot_err_80[thnq_80==thnq0], marker='s', linestyle='none', color='b', mfc='white', ecolor='b', capsize=0)
+ax2.errorbar(pm_avg_80[thnq_80==thnq0], y_dummy, rel_syst_err_80[thnq_80==thnq0], marker='s', linestyle='none', color='b', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
 
-y_dummy = np.zeros(len(red_Xsec_580[thnq_580==35]))
-ax2.errorbar(pm_avg_580[thnq_580==35], y_dummy, rel_tot_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='white', ecolor='r', capsize=0)
-ax2.errorbar(pm_avg_580[thnq_580==35], y_dummy, rel_syst_err_580[thnq_580==35], marker='o', linestyle='none', color='r', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
+y_dummy = np.zeros(len(red_Xsec_580[thnq_580==thnq0]))
+ax2.errorbar(pm_avg_580[thnq_580==thnq0], y_dummy, rel_tot_err_580[thnq_580==thnq0], marker='o', linestyle='none', color='r', mfc='white', ecolor='r', capsize=0)
+ax2.errorbar(pm_avg_580[thnq_580==thnq0], y_dummy, rel_syst_err_580[thnq_580==thnq0], marker='o', linestyle='none', color='r', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
 
-y_dummy = np.zeros(len(red_Xsec_750[thnq_750==35]))
-ax2.errorbar(pm_avg_750[thnq_750==35], y_dummy, rel_tot_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='white', ecolor='magenta', capsize=0)
-ax2.errorbar(pm_avg_750[thnq_750==35], y_dummy, rel_syst_err_750[thnq_750==35], marker='^', linestyle='none', color='magenta', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
+y_dummy = np.zeros(len(red_Xsec_750[thnq_750==thnq0]))
+ax2.errorbar(pm_avg_750[thnq_750==thnq0], y_dummy, rel_tot_err_750[thnq_750==thnq0], marker='^', linestyle='none', color='k', mfc='white', ecolor='k', capsize=0)
+ax2.errorbar(pm_avg_750[thnq_750==thnq0], y_dummy, rel_syst_err_750[thnq_750==thnq0], marker='^', linestyle='none', color='k', mfc='white', ecolor='gray', elinewidth=3, capsize=0)
 
 ax2.set_ylim([-0.7,0.7])
+ax2.set_xlim([0.4,1.0])
 
 #Plot Labels/Titles
 ax2.set_ylabel('Relative Uncertainty', fontsize=18)
 
 #ax2.legend()
-ax2.legend([(l1,l2, l3), l4], ['Total Uncertainty', 'Systematic Uncertainty'], handler_map={tuple: HandlerTuple(ndivide=None)}, loc='upper left')
+ax2.legend([(l2, l3), l4], ['Total Uncertainty', 'Systematic Uncertainty'], handler_map={tuple: HandlerTuple(ndivide=None)}, loc='upper left')
 plt.xticks(fontsize=16)
 plt.yticks(fontsize=16)
 
 B.pl.show()
-'''
 
+
+'''
+# ---Plot ONLY reduced cross sections----
 
 fig1 = B.pl.figure(figsize=(8,6))
 
@@ -195,3 +272,4 @@ plt.yticks(fontsize=16)
 
 B.pl.legend()
 B.pl.show()
+'''
