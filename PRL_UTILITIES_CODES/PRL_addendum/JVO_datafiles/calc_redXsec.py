@@ -126,6 +126,11 @@ for i in range(len(ib)):
     CD_GKex05_DWBA_red =    CD_GKex05_DWBA[i] / de_Forest_final  
     CD_AMT_PWBA_red =       CD_AMT_PWBA[i] / de_Forest_final     
     CD_AMT_DWBA_red =       CD_AMT_DWBA[i] / de_Forest_final     
+
+    #Chagneg back units of differential cross sections from fm^3 * sr^-2 to (nb * MeV^-1 * sr^-2)
+    WJC2_GKex05_PWBA[i] = WJC2_GKex05_PWBA[i] / ( 0.001 * (1. / 1.e4) * (1.  / (1/hbarc) ) )
+    WJC2_GKex05_DWBA[i] = WJC2_GKex05_DWBA[i] / ( 0.001 * (1. / 1.e4) * (1.  / (1/hbarc) ) )
+    
     
     pm = pm_avg[i]/1000.
     

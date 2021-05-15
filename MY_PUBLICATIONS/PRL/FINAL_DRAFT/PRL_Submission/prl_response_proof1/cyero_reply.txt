@@ -1,0 +1,84 @@
+Author: C. Yero
+Date: Dec 14, 2020
+
+This .txt file responds to some of the points in the proof_cover1.pdf
+
+
+------------------------------------------------------------------------------------
+
+2) Minor changes were made throughout the paper to follow journal and grammar guidelines
+and to allow improved readability. Please ensure that your meaning has not been changed.
+
+Response: The meaning has not been changed.
+
+------------------------------------------------------------------------------------
+
+7) PWBA is used in Figs. 1 and 2. Please define in the text or in Fig. 1's
+caption.
+
+Response: In the Fig. 1 caption, please include this definition as the last sentence:
+
+The Plane Wave Born Approximation (PWBA) includes the
+PWIA and the process in which the virtual photon couples to the neutron
+and the proton emerges as a spectator without subsequent reinteractions (no FSIs).
+
+------------------------------------------------------------------------------------
+
+8) Please review the funding information section of the proof’s cover letter
+and respond as appropriate. We must receive confirmation that the funding
+agencies have been properly identified before the article can publish.
+
+Response: The funding agencies have been properly identified
+
+------------------------------------------------------------------------------------
+
+10) NOTE: External links, which appear as blue text in the reference section,
+are created for any reference where a Digital Object Identifier (DOI) can be found.
+Please confirm that the links created in this PDF proof, which can be checked by
+clicking on the blue text, direct the reader to the correct references online.
+If there is an error, correct the information in the reference or supply the correct
+DOI for the reference. If no correction can be made or the correct DOI cannot be
+supplied, the link will be removed.
+
+Response: This has been checked.
+
+------------------------------------------------------------------------------------
+
+11) A check of online databases revealed a possible error in Ref. [9]. The page number
+has been changed from “405457” to “405”. Please confirm this is correct.
+
+Response: This is correct
+
+------------------------------------------------------------------------------------
+
+12) Our records indicate that there is Supplemental Material for this Letter.
+Please provide a brief description to be included in Ref. [15] and also the URL
+link will be activated at the time of publication.
+
+Response:
+For the reference,
+"See Supplemental Material at [URL] for [brief description]"
+the brief description should be:
+
+brief description: "analysis details on the extraction of the cross sections."
+
+------------------------------------------------------------------------------------
+
+13) A check of online databases revealed a possible error in Ref. [22]. The page number has
+been changed from “176179” to “176”. Please confirm this is correct.
+
+Response: This is correct.
+
+------------------------------------------------------------------------------------
+
+14)  References [32,33] were not cited in text. Please cite the reference in text
+in numerical order or remove the reference.
+
+
+Response: These references were present in the Supplemental Materials, and I did not
+correctly interpreted the instruction on the Supplemental Materials guidelines and thought
+any references in the supplemental materials should also be placed in the main text. In any
+case, these references can be removed from the manuscript as they are ONLY cited in the
+Supplemental Materials.
+
+------------------------------------------------------------------------------------
