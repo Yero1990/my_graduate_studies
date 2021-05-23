@@ -28,11 +28,12 @@ plt.rc('font', **font)
 csfont = {'fontname':'Times New Roman'}
 
 def make_prl_plots(plot2_inset=0):
-  
+
+    
     #Read Hall C (E12-10-003) experimental data (requires <=50% statistical uncertainty, units: fm^3, GeV/c)
-    pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35 = read_hallc_data(35)
-    pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45 = read_hallc_data(45)
-    pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75 = read_hallc_data(75)
+    pm_bin35, pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35 = read_hallc_data(35)
+    pm_bin45, pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45 = read_hallc_data(45)
+    pm_bin75, pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75 = read_hallc_data(75)
 
     #Read Hall A experimental data
     pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35 = read_halla_data(35)
@@ -154,7 +155,8 @@ def make_prl_plots(plot2_inset=0):
     #Plot Experimental Data (Hall A or Hall C)
     l1 = B.plot_exp(pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35, marker='o', markersize=5, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
     l2 = B.plot_exp(pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35, marker='s',  markersize=5, color='#ff1000', markerfacecolor='white', capsize=0, logy=True,  label='Hall A Data', zorder=3)
-
+    
+    
     #Plot theoretical calculations
     l3, = B.plot_exp(pm_jml_35_pwia, f_red_pwiaXsec_JML_35(pm_jml_35_pwia), linestyle='--', marker='None', color='#0000ff', logy=True, label='Paris PWIA', zorder=2)
     l4, = B.plot_exp(pm_jml_35_fsi,  f_red_fsiXsec_JML_35(pm_jml_35_fsi), linestyle='-', marker='None', color='#0000ff', logy=True, label='Paris FSI', zorder=2)
@@ -180,6 +182,35 @@ def make_prl_plots(plot2_inset=0):
     B.pl.ylabel(r'$\sigma_{\mathrm{red}}$ ($\mathrm{fm}^{3}$) ', fontsize=22,  labelpad=10)                                                                                           
     B.pl.title('')
 
+    #Write to File
+    '''
+    data_35 = np.column_stack([pm_bin35, pm_avg35,      red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35])
+    jml_35 = np.column_stack([pm_bin35, pm_jml_35_pwia, f_red_pwiaXsec_JML_35(pm_jml_35_pwia), f_red_fsiXsec_JML_35(pm_jml_35_fsi) ])
+
+    fout_list = ['data', 'jml_pwia', 'jml_fsi', 'v18_pwia', 'v18_fsi', 'cdbonn_pwia', 'cdbonn_fsi', 'wjc2_pwia', 'wjc2_fsi']
+    fout_name = []
+    
+    for i in enumerate(fout_list):
+        idx = i[0]
+        prfx = i[1]
+        
+        fout_name.append('%s_redXsec_35.txt' % (prfx))
+        fout = open(fout_name[idx], 'w')
+        fout.write('# %s reduced cross sections\n'
+            '# thnq             : 35 +/- 5 deg\n'
+            '# pm_bin           : central bin value (GeV/c)\n'
+            '# pm_avg           : avergae missing momentum (GeV/c)\n'
+            '# red_%s_Xsec       : reduced %s cross sections (fm^3)\n'
+            '# red_%s_Xsec_err   : reduced %s cross sections error (fm^3)\n'
+            '# \n'
+            '#! pm_bin[f,0]/ pm_avg[f,1]/ red_%s_Xsec[f,2]/  red_%s_Xsec_err[f,3]/  \n' % (prfx, prfx, prfx, prfx, prfx, prfx, prfx)
+            )
+        fout.close()
+
+    #np.savetxt(fout_name, data1_35, fmt=['%.3f\t', '%.3f\t', '%.4E\t', '%.4E\t', '%.3f\t', '%.4E\t' ])
+    #fout.close()
+    '''
+        
     #=====================
     #= THETA_NQ = 45 DEG =
     #====================

@@ -65,6 +65,7 @@ interaction model and still explain experimental data. Recent analysis of nuclea
 In addition, there is no reference to relevant previous works that study nuclei heavier than deuterium. These include
 A=3 [124 (2020) 212501; PRL 94 (2005) 082305; 94 (2005) 192302] and 12 [Nature 578 (2020) 540] that study the NN force
 to short distance structure of SRC deuteron like pairs.
+
 ----------
 Response:
 ----------
