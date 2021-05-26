@@ -53,7 +53,7 @@ def read_halla_data(thnq=0):
 
 
 #_____________________________________________________
-def read_hallc_data(thnq=0, write_output=0):
+def read_hallc_data(thnq=0, verbose=False):
 
     #Function to read E12-10-003 experimental red Xsec data
 
@@ -83,10 +83,11 @@ def read_hallc_data(thnq=0, write_output=0):
     tot_stats_err = np.array( (kin['tot_stats_err'])[thnq_data==thnq] )  #total statistical
     tot_err = np.array( (kin['tot_err'])[thnq_data==thnq] )              #overall error
 
-    #if(write_output==1):
-    #    return 
-
-    return pm_bin, pm_avg, red_dataXsec_avg_masked, red_dataXsec_avg_tot_err   #Units: GeV/c, Gev/c, fm^3, fm^3
+    #verbose is to explicitly write unmasked avg red. xsec and all abs. statistical errors (include > 50 %)
+    if(verbose):
+        return red_dataXsec_avg, red_dataXsec_avg_err
+    else:
+        return pm_bin, pm_avg, red_dataXsec_avg_masked, red_dataXsec_avg_tot_err   #Units: GeV/c, Gev/c, fm^3, fm^3
 #___________________________________________________________________
 def read_theoretical_models(theory="", model="", thnq=0):
 

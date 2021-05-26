@@ -14,39 +14,55 @@ dtr = np.pi / 180.
 nb2ub = 1./1000.    # 1ub = 1000 nb
 GeV2MeV = 1000.  # 1 GeV = 1000 MeV
 
-#-----------------USER INPUT-------------------------------------
-model_dir = "./FSI_models/"    #PWIA_models or FSI_models
-#-----------------------------------------------------------------
+model_dir = ["./FSI_models/", "./PWIA_models"]
+pwia_model_name = ["2_1_1_0_1", "3_1_1_0_1"]   #V18, CD-Bonn [PWIA]  
+fsi_model_name = ["2_1_1_0_12", "3_1_1_0_12"]   #V18, CD-Bonn [PWIA+FSI]  
 
-if(model_dir=="./PWIA_models/"):
-    model_name = "2_1_1_0_1"  #2_1_1_0_1 = V18 Potential, 3_1_1_0_1 = CD-Bonn     #!!!!! USER SET BY HAND
+base_prefix = "csec_calc_theta_pm_"
+base_suffix="_fsi_norad_avgkin_"
+
+for i_model_dir in model_dir:
+
+    print(i_model_dir)
+    if(i_model_dir=="./PWIA_models/"):
+
+        for i_model_name in pwia_model_name:
+
+            #model_name = i_model_name   #"3_1_1_0_1"  #2_1_1_0_1 = V18 Potential, 3_1_1_0_1 = CD-Bonn     #!!!!! USER SET BY HAND
     
-    #Create Base Name & Directory to Store Update Files
-    if(model_name=="2_1_1_0_1"):
-        updated_model_name = "V18"
-    if(model_name=="3_1_1_0_1"):
-        updated_model_name = "CD-Bonn"
-    updated_base="theoryXsec_" + updated_model_name + "PWIA"
+            #Create Base Name & Directory to Store Update Files
+            if(i_model_name=="2_1_1_0_1"):
+                updated_model_name = "V18"
+                theory_prefix = i_model_dir + base_prefix
+                theory_suffix = base_suffix + i_model_name + ".data"
+            if(i_model_name=="3_1_1_0_1"):
+                updated_model_name = "CD-Bonn"
+                theory_prefix = i_model_dir + base_prefix
+                theory_suffix = base_suffix + i_model_name + ".data"
+            updated_base="theoryXsec_" + updated_model_name + "PWIA"
+            output_dir_name = "./updated_PWIA_models/"
+            if not os.path.exists(output_dir_name):
+                os.mkdir(output_dir_name)
 
-    output_dir_name = "./updated_PWIA_models/"
-    if not os.path.exists(output_dir_name):
-        os.mkdir(output_dir_name)
+    elif(i_model_dir == "./FSI_models/"):
+        
+        for i_model_name in fsi_model_name:
 
-elif(model_dir == "./FSI_models/"):
-    model_name = "2_1_1_0_12"  #2_1_1_0_12 = V18 Potential, 3_1_1_0_12 = CD-Bonn,  12 -> PWIA+ FSI    #USER SET BY HAND
+        #model_name = "3_1_1_0_12"  #2_1_1_0_12 = V18 Potential, 3_1_1_0_12 = CD-Bonn,  12 -> PWIA+ FSI    #USER SET BY HAND
 
-    #Create Base Name & Directory to Store Update Files
-    if(model_name=="2_1_1_0_12"):
-        updated_model_name = "V18"
-    if(model_name=="3_1_1_0_12"):
-        updated_model_name = "CD-Bonn"
-    updated_base="theoryXsec_" + updated_model_name + "FSI"
-    output_dir_name = "./updated_FSI_models/"
-    if not os.path.exists(output_dir_name):
-        os.mkdir(output_dir_name)
-
-base = "csec_calc_theta_pm_"
-base2="_fsi_norad_avgkin_"
+            #Create Base Name & Directory to Store Update Files
+            if(i_model_name=="2_1_1_0_12"):
+                updated_model_name = "V18"
+                theory_prefix = i_model_dir + base_prefix
+                theory_suffix = base_suffix + i_model_name + ".data"
+            if(i_model_name=="3_1_1_0_12"):
+                updated_model_name = "CD-Bonn"
+                theory_prefix = i_model_dir + base_prefix
+                theory_suffix = base_suffix + i_model_name + ".data"
+            updated_base="theoryXsec_" + updated_model_name + "FSI"
+            output_dir_name = "./updated_FSI_models/"
+            if not os.path.exists(output_dir_name):
+                os.mkdir(output_dir_name)
 
 
 thnq_arr = np.array([5, 15, 25, 35, 45, 55, 65, 75, 85, 95, 105])
@@ -71,7 +87,7 @@ for i, ithnq in enumerate(thnq_arr):
     print('Analyzing ',updated_theory_fname)
     
     #Open ORIGINAL THEORY FILES
-    theory_fname = model_dir + base +  thnq_f + base2 + model_name + ".data"
+    theory_fname = theory_prefix +  thnq_f + theory_suffix
     print(theory_fname)
 
     
@@ -82,8 +98,10 @@ for i, ithnq in enumerate(thnq_arr):
     pm_avg = kin['pr']         #averaged Pmiss value
     ix = kin['ix']           #x-bin number
     iy = kin['iy']           #y-bin number
-    pwia_theoryXsec = kin['crs0']   #crs0: PWIA
-    fsi_theoryXsec = kin['crs12']   #crs12: PWIA+FSI
+    pwia_theoryXsec = kin['crs0']   #crs0: PWIA,  crs12: PWIA+FSI
+    fsi_theoryXsec = kin['crs12']   #crs0: PWIA,  crs12: PWIA+FSI
+
+    
     
     #Loop over all bins of theory datafile
     dlen = len(kin)
@@ -110,21 +128,15 @@ for i, ithnq in enumerate(thnq_arr):
 
         #Open the corresponding file with the K*sigcc1, and match (ix,iy) bins before dividing by K*sigcc1
         avg_kin_dir = "../average_kinematics/Em_final40MeV/"
-        if(model_dir=="./PWIA_models/"):
-            if(pm_set==80):
-                avg_kin_fname = avg_kin_dir + 'pm80_pwia_norad_avgkin.txt'
-            else:
-                avg_kin_fname = avg_kin_dir + 'pm%i_pwia_norad_avgkin_set%i.txt' % (pm_set, data_set)
-        elif(model_dir=="./FSI_models/"):
-            if(pm_set==80):
-                avg_kin_fname = avg_kin_dir + 'pm80_fsi_norad_avgkin.txt'
-            else:
-                avg_kin_fname = avg_kin_dir + 'pm%i_fsi_norad_avgkin_set%i.txt' % (pm_set, data_set)
-
+        if(pm_set==80):
+            avg_kin_fname = avg_kin_dir + 'pm80_fsi_norad_avgkin.txt'
+        else:
+            avg_kin_fname = avg_kin_dir + 'pm%i_fsi_norad_avgkin_set%i.txt' % (pm_set, data_set)
+         
         avg_kin = dfile(avg_kin_fname)
         dklen = len(avg_kin['i_b'])  #get length of array of avgkin file
         pm_k = avg_kin['yb']
-        pm_k_avg = avg_kin['pm'] / 1000.   #convert to GeV/c
+        pm_k_avg = avg_kin['pm'] / 1000.   #conver to GeV/c
         thnq_k = avg_kin['xb']
         ix_k = avg_kin['i_x']
         iy_k = avg_kin['i_y']
@@ -140,11 +152,10 @@ for i, ithnq in enumerate(thnq_arr):
                 #print('avgkin_datafile: pm=',pm_k[k],' thnq=',thnq_k[k])
                 #print('KSig_cc1 = ', Ksig_cc1[k])
                 #Do the Calculations Here ! ! !
-                if(Ksig_cc1[k]==0.0):
-                    continue
+                
                 #Convert Xsec units from nb * GeV ^-1 * sr^-2 to ub * MeV^-1 *sr^-2
-                pwia_theoryXsec[j] = pwia_theoryXsec[j] * nb2ub * (1./GeV2MeV)
-                fsi_theoryXsec[j]  = fsi_theoryXsec[j] * nb2ub * (1./GeV2MeV)
+                pwia_theoryXsec[j] = pwia_theoryXsec[j] * nb2ub * (1/GeV2MeV)
+                fsi_theoryXsec[j]  = fsi_theoryXsec[j] * nb2ub * (1/GeV2MeV)
                 
                 #Calculate Reduced Xsec
                 red_pwiaXsec = pwia_theoryXsec[j] / Ksig_cc1[k]
@@ -154,5 +165,6 @@ for i, ithnq in enumerate(thnq_arr):
                 
                 #Update Theory Files
                 fout.write("%i   %i   %f   %f   %f   %f  %.12e   %.12e    %.12e   %.12e   %s\n"%(ix_k[k], iy_k[k], thnq_k[k], pm_k[k], pm_k_avg[k],  Ksig_cc1[k], pwia_theoryXsec[j], fsi_theoryXsec[j], red_pwiaXsec, red_fsiXsec, pm_setting[j]))
+
 
 

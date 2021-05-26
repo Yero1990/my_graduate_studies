@@ -29,12 +29,69 @@ csfont = {'fontname':'Times New Roman'}
 
 def make_prl_plots(plot2_inset=0):
 
+    #Read projected relative errors for full deuteron experiment (from simulations, at 120, 700,800,900 MeV/c)
+    #  (to compare with PRL data and see how much improvement there is.
+    kin35 = dfile('d2_projected_errors_thnq35deg.txt')
+    kin45 = dfile('d2_projected_errors_thnq45deg.txt')
+    kin75 = dfile('d2_projected_errors_thnq75deg.txt')
+    rel_stats_err35 = kin35['rel_stats_err']
+    rel_stats_err45 = kin45['rel_stats_err']
+    rel_stats_err75 = kin75['rel_stats_err']
+
+    rel_stats_err35_m =  np.ma.array(rel_stats_err35, mask=(rel_stats_err35>0.5) | (rel_stats_err35==0))
+    rel_stats_err35_m = np.ma.filled(rel_stats_err35_m.astype(float), np.nan)
+    rel_stats_err45_m =  np.ma.array(rel_stats_err45, mask=(rel_stats_err45>0.5) | (rel_stats_err45==0))
+    rel_stats_err45_m = np.ma.filled(rel_stats_err45_m.astype(float), np.nan)
+    rel_stats_err75_m =  np.ma.array(rel_stats_err75, mask=(rel_stats_err75>0.5) | (rel_stats_err75==0))
+    rel_stats_err75_m = np.ma.filled(rel_stats_err75_m.astype(float), np.nan)
+
+    #Read all Hall C data (without masking >50 % uncertainty, to be able to compare most bins with the projected uncertainties)
+    red_dataXsec_avg35, red_dataXsec_avg_stats35 = read_hallc_data(35, verbose=True)
+    red_dataXsec_avg45, red_dataXsec_avg_stats45 = read_hallc_data(45, verbose=True)
+    red_dataXsec_avg75, red_dataXsec_avg_stats75 = read_hallc_data(75, verbose=True)
+
+    #Calculate statistical relative errors (requires <=50 %)
+    rel_dataXsec_err35 = red_dataXsec_avg_stats35 / red_dataXsec_avg35
+    rel_dataXsec_err45 = red_dataXsec_avg_stats45 / red_dataXsec_avg45
+    rel_dataXsec_err75 = red_dataXsec_avg_stats75 / red_dataXsec_avg75
+    
+    rel_dataXsec_err35_m = np.ma.array(rel_dataXsec_err35, mask=(rel_dataXsec_err35>0.5))
+    rel_dataXsec_err35_m = np.ma.filled(rel_dataXsec_err35_m.astype(float), np.nan)
+
+    rel_dataXsec_err45_m = np.ma.array(rel_dataXsec_err45, mask=(rel_dataXsec_err45>0.5))
+    rel_dataXsec_err45_m = np.ma.filled(rel_dataXsec_err45_m.astype(float), np.nan)
+
+    rel_dataXsec_err75_m = np.ma.array(rel_dataXsec_err75, mask=(rel_dataXsec_err75>0.5))
+    rel_dataXsec_err75_m = np.ma.filled(rel_dataXsec_err75_m.astype(float), np.nan)
     
     #Read Hall C (E12-10-003) experimental data (requires <=50% statistical uncertainty, units: fm^3, GeV/c)
     pm_bin35, pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35 = read_hallc_data(35)
     pm_bin45, pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45 = read_hallc_data(45)
     pm_bin75, pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75 = read_hallc_data(75)
 
+    #Mask pm_avg bins
+    pm_avg35_m = np.ma.array(pm_avg35, mask=(rel_dataXsec_err35_m>0.5) | (rel_dataXsec_err35_m==0.))
+    pm_avg35_m = np.ma.filled(pm_avg35_m.astype(float), np.nan)
+    pm_avg45_m = np.ma.array(pm_avg45, mask=(rel_dataXsec_err45_m>0.5) | (rel_dataXsec_err45_m==0.))
+    pm_avg45_m = np.ma.filled(pm_avg45_m.astype(float), np.nan)
+    pm_avg75_m = np.ma.array(pm_avg75, mask=(rel_dataXsec_err75_m>0.5) | (rel_dataXsec_err75_m==0.))
+    pm_avg75_m = np.ma.filled(pm_avg75_m.astype(float), np.nan)
+    
+    #Mask pm_bins
+    pm_bin35_m = np.ma.array(pm_bin35, mask=((rel_stats_err35>0.5) | (rel_stats_err35==0)))
+    pm_bin35_m = np.ma.filled(pm_bin35_m.astype(float), np.nan)
+
+    pm_bin45_m = np.ma.array(pm_bin45, mask=((rel_stats_err45>0.5) | (rel_stats_err45==0)))
+    pm_bin45_m = np.ma.filled(pm_bin45_m.astype(float), np.nan)
+
+    pm_bin75_m = np.ma.array(pm_bin75, mask=((rel_stats_err75>0.5) | (rel_stats_err75==0)))
+    pm_bin75_m = np.ma.filled(pm_bin75_m.astype(float), np.nan)
+    
+    #Calculate the projected absolute stats. uncertainty 
+    red_dataXsec_proj_stats35 = red_dataXsec_avg_masked35 * rel_stats_err35_m
+    red_dataXsec_proj_stats45 = red_dataXsec_avg_masked45 * rel_stats_err45_m
+    red_dataXsec_proj_stats75 = red_dataXsec_avg_masked75 * rel_stats_err75_m
+    
     #Read Hall A experimental data
     pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35 = read_halla_data(35)
     pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45 = read_halla_data(45)  
@@ -85,6 +142,7 @@ def make_prl_plots(plot2_inset=0):
 
     R_data35 = red_dataXsec_avg_masked35 / f_red_pwiaXsec_CD_35(pm_avg35)
     R_data_err35 = red_dataXsec_avg_tot_err35 / f_red_pwiaXsec_CD_35(pm_avg35)
+    R_data_proj_err35 = red_dataXsec_proj_stats35 / f_red_pwiaXsec_CD_35(pm_avg35)
 
     R_HAdata35 = red_dataXsec_ha35 / f_red_pwiaXsec_CD_35(pm_ha35)
     R_HAdata_err35 = red_dataXsec_err_ha35 / f_red_pwiaXsec_CD_35(pm_ha35)
@@ -104,6 +162,7 @@ def make_prl_plots(plot2_inset=0):
 
     R_data45 = red_dataXsec_avg_masked45 / f_red_pwiaXsec_CD_45(pm_avg45)
     R_data_err45 = red_dataXsec_avg_tot_err45 / f_red_pwiaXsec_CD_45(pm_avg45)
+    R_data_proj_err45 = red_dataXsec_proj_stats45 / f_red_pwiaXsec_CD_45(pm_avg45)
 
     R_HAdata45 = red_dataXsec_ha45 / f_red_pwiaXsec_CD_45(pm_ha45)
     R_HAdata_err45 = red_dataXsec_err_ha45 / f_red_pwiaXsec_CD_45(pm_ha45)
@@ -123,6 +182,7 @@ def make_prl_plots(plot2_inset=0):
 
     R_data75 = red_dataXsec_avg_masked75 / f_red_pwiaXsec_CD_75(pm_avg75)
     R_data_err75 = red_dataXsec_avg_tot_err75 / f_red_pwiaXsec_CD_75(pm_avg75)
+    R_data_proj_err75 = red_dataXsec_proj_stats75 / f_red_pwiaXsec_CD_75(pm_avg75)
 
     R_HAdata75 = red_dataXsec_ha75 / f_red_pwiaXsec_CD_75(pm_ha75)
     R_HAdata_err75 = red_dataXsec_err_ha75 / f_red_pwiaXsec_CD_75(pm_ha75)
@@ -153,7 +213,18 @@ def make_prl_plots(plot2_inset=0):
     B.pl.text(1.0, 1e0, r'(a)', fontsize=19)
 
     #Plot Experimental Data (Hall A or Hall C)
-    l1 = B.plot_exp(pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35, marker='o', markersize=5, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
+    
+    #Hall C data (for statistical projections of full deuteron experiment)
+    l0 = B.plot_exp(pm_bin35_m+0.01, red_dataXsec_avg_masked35, red_dataXsec_proj_stats35, marker='^', markersize=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
+    print('pm_bin35_m = ', pm_bin35_m)
+    print('AVG XSEC 35 DEG = ', red_dataXsec_avg_masked35)
+    print('AVG XSEC proj err = ', red_dataXsec_proj_stats35)
+
+    #x[-2:] get last 3 elements
+    #B.plot_exp(pm_bin35_m+0.01, red_dataXsec_avg_masked35, red_dataXsec_proj_stats35, marker='^', markersize=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
+    #Hall C data (for PRL)
+    l1 = B.plot_exp(pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
+    #Hall A data
     l2 = B.plot_exp(pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35, marker='s',  markersize=5, color='#ff1000', markerfacecolor='white', capsize=0, logy=True,  label='Hall A Data', zorder=3)
     
     
@@ -221,9 +292,12 @@ def make_prl_plots(plot2_inset=0):
 
     #Remove un-necessary Y tick labels from subplot
     B.pl.setp(ax1.get_yticklabels(), visible=False)
-    
+
+    #Hall C data (for statistical projections of full deuteron experiment)
+    l0 = B.plot_exp(pm_avg45_m+0.01, red_dataXsec_avg_masked45, red_dataXsec_proj_stats45, marker='^', ms=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
+
     #Plot Experimental Data (Hall A or Hall C)
-    l1 = B.plot_exp(pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45, marker='o', markersize=5, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
+    l1 = B.plot_exp(pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
     l2 = B.plot_exp(pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45, marker='s',  markersize=5, color='#ff1000', markerfacecolor='white', capsize=0, logy=True,  label='Hall A Data', zorder=3)
 
     #Plot theoretical calculations
@@ -262,9 +336,12 @@ def make_prl_plots(plot2_inset=0):
 
     #Remove un-necessary Y tick labels from subplot
     B.pl.setp(ax2.get_yticklabels(), visible=False)
+
+    #Hall C data (for statistical projections of full deuteron experiment)
+    l0 = B.plot_exp(pm_avg75_m+0.01, red_dataXsec_avg_masked75, red_dataXsec_proj_stats75, marker='^', ms=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
     
     #Plot Experimental Data (Hall A or Hall C)
-    l1 = B.plot_exp(pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75, marker='o', markersize=5, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
+    l1 = B.plot_exp(pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
     l2 = B.plot_exp(pm_ha75, red_dataXsec_ha75, red_dataXsec_err_ha75, marker='s',  markersize=5, color='#ff1000', markerfacecolor='white', capsize=0, logy=True,  label='Hall A Data', zorder=3)
 
     #Plot theoretical calculations
@@ -299,8 +376,12 @@ def make_prl_plots(plot2_inset=0):
 
     #Remove spacing between subplots
     plt.subplots_adjust(wspace = 0.0000000001, bottom=0.13, top=0.98, left=0.085, right=0.98) #, hspace = 0.001, wspace = 0.001)
-    line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI']
-    ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, l9, l10], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
+    #----PRL PLOT-----
+    #line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI']
+    #ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, l9, l10], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
+    #----Projected Errors Plot----
+    line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI', 'Projected Statistical Error']
+    ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l0], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
 
 
     #B.pl.show()
@@ -331,9 +412,12 @@ def make_prl_plots(plot2_inset=0):
 
     #Plot the Data (and all models) to CD-Bonn PWIA model
     B.pl.axhline(y=1.0, xmin = 0.0, xmax=1.2, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
-    
+
+    #Projected stats. error
+    B.plot_exp(pm_avg35+0.01, R_data35, R_data_proj_err35, marker='^', ms=2, color='cyan', ecolor='cyan', label='Projected Stat. Error', capsize=0, zorder=3)
+        
     B.plot_exp(pm_ha35, R_HAdata35, R_HAdata_err35, marker='s', color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0, zorder=3)
-    B.plot_exp(pm_avg35, R_data35, R_data_err35, marker='o', color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
+    B.plot_exp(pm_avg35, R_data35, R_data_err35, marker='o', ms=2, color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
     B.plot_exp(pm_avg35, R_CD_fsi35, marker='None', linestyle='-', color='#ff00ff', label='MS CD-Bonn FSI', zorder=1)
     B.plot_exp(pm_avg35, R_JML_pwia35, marker='None', linestyle='--', color='#0000ff', label='JML Paris PWIA', zorder=1)
     B.plot_exp(pm_avg35, R_JML_fsi35, marker='None', linestyle='-', color='#0000ff', label='JML Paris FSI', zorder=1)
@@ -375,9 +459,12 @@ def make_prl_plots(plot2_inset=0):
         
         #Plot the Data (and all models) to CD-Bonn PWIA model
         B.pl.axhline(y=1.0, xmin = 0.0, xmax=1.2, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
-       
+
+        #Projected stats. error
+        B.plot_exp(pm_avg35+0.01, R_data35, R_data_proj_err35, marker='^', ms=2, color='cyan', ecolor='cyan', label='Projected Stat. Error', capsize=0, zorder=3)
+                
         B.plot_exp(pm_ha35, R_HAdata35, R_HAdata_err35, marker='s', markersize=4, color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0, zorder=3)
-        B.plot_exp(pm_avg35, R_data35, R_data_err35, marker='o', markersize=4, color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
+        B.plot_exp(pm_avg35, R_data35, R_data_err35, marker='o', markersize=2, color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
         B.plot_exp(pm_avg35, R_CD_fsi35, marker='None', linestyle='-', color='#ff00ff', label='MS CD-Bonn FSI', zorder=1)
         B.plot_exp(pm_avg35, R_JML_pwia35, marker='None', linestyle='--', color='#0000ff', label='JML Paris PWIA', zorder=1)
         B.plot_exp(pm_avg35, R_JML_fsi35, marker='None', linestyle='-', color='#0000ff', label='JML Paris FSI', zorder=1)
@@ -409,9 +496,12 @@ def make_prl_plots(plot2_inset=0):
 
     #Plot the Data (and all models) to CD-Bonn PWIA model
     B.pl.axhline(y=1.0, xmin = 0.0, xmax=1.2, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
-    
+
+    #Projected stats. error
+    B.plot_exp(pm_avg45+0.01, R_data45, R_data_proj_err45, marker='^', color='cyan', ms=2, ecolor='cyan', label='Projected Stat. Error', capsize=0, zorder=3)
+        
     B.plot_exp(pm_ha45, R_HAdata45, R_HAdata_err45, marker='s', color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0, zorder=3)
-    B.plot_exp(pm_avg45, R_data45, R_data_err45, marker='o', color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
+    B.plot_exp(pm_avg45, R_data45, R_data_err45, marker='o', ms=2, color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
     B.plot_exp(pm_avg45, R_CD_fsi45, marker='None', linestyle='-', color='#ff00ff', label='MS CD-Bonn FSI', zorder=1)
     B.plot_exp(pm_avg45, R_JML_pwia45, marker='None', linestyle='--', color='#0000ff', label='JML Paris PWIA', zorder=1)
     B.plot_exp(pm_avg45, R_JML_fsi45, marker='None', linestyle='-', color='#0000ff', label='JML Paris FSI', zorder=1)
@@ -452,9 +542,13 @@ def make_prl_plots(plot2_inset=0):
         
         #Plot the Data (and all models) to CD-Bonn PWIA model
         B.pl.axhline(y=1.0, xmin = 0.0, xmax=1.2, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
-       
-        B.plot_exp(pm_ha45, R_HAdata45, R_HAdata_err45, marker='s', markersize=4, color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0, zorder=3)
-        B.plot_exp(pm_avg45, R_data45, R_data_err45, marker='o', markersize=4, color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
+
+        B.plot_exp(pm_ha45, R_HAdata45, R_HAdata_err45, marker='s', ms=4, color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0, zorder=3)
+        B.plot_exp(pm_avg45, R_data45, R_data_err45, marker='o', ms=2, color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
+
+        #Projected stats. error
+        B.plot_exp(pm_avg45+0.01, R_data45, R_data_proj_err45, marker='^', ms=2, color='cyan', ecolor='cyan', label='Projected Stat. Error', capsize=0, zorder=3)
+
         B.plot_exp(pm_avg45, R_CD_fsi45, marker='None', linestyle='-', color='#ff00ff', label='MS CD-Bonn FSI', zorder=1)
         B.plot_exp(pm_avg45, R_JML_pwia45, marker='None', linestyle='--', color='#0000ff', label='JML Paris PWIA', zorder=1)
         B.plot_exp(pm_avg45, R_JML_fsi45, marker='None', linestyle='-', color='#0000ff', label='JML Paris FSI', zorder=1)
@@ -486,9 +580,13 @@ def make_prl_plots(plot2_inset=0):
 
     #Plot the Data (and all models) to CD-Bonn PWIA model
     B.pl.axhline(y=1.0, xmin = 0.0, xmax=0.5, color='#ff00ff', linestyle='--', label='MS CD-Bonn PWBA',zorder=2)
-    
+
     B.plot_exp(pm_ha75, R_HAdata75, R_HAdata_err75, marker='s', color='#ff0000', markerfacecolor='white',  label='Hall A Data', capsize=0, zorder=3)
-    B.plot_exp(pm_avg75, R_data75, R_data_err75, marker='o', color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
+    B.plot_exp(pm_avg75, R_data75, R_data_err75, marker='o', ms=2, color='k', label='This Experiment (Hall C)', capsize=0, zorder=4)
+
+    #Projected stats. error
+    B.plot_exp(pm_avg75+0.01, R_data75, R_data_proj_err75, marker='^', ms=2, color='cyan', ecolor='cyan', label='Projected Statistical Error', capsize=0, zorder=3)
+    
     B.plot_exp(pm_avg75, R_CD_fsi75, marker='None', linestyle='-', color='#ff00ff', label='MS CD-Bonn FSI', zorder=1)
     B.plot_exp(pm_avg75, R_JML_pwia75, marker='None', linestyle='--', color='#0000ff', label='JML Paris PWIA', zorder=1)
     B.plot_exp(pm_avg75, R_JML_fsi75, marker='None', linestyle='-', color='#0000ff', label='JML Paris FSI', zorder=1)
@@ -525,6 +623,97 @@ def make_prl_plots(plot2_inset=0):
 
     #B.pl.show()
     B.pl.savefig('./PRL_plot2.pdf')
+
+    
+    '''
+    #----------MAKE PLOT OF PROJECTED RELATIVE ERRORS COMPARISON TO COMMISSIONING DATA------------
+
+    
+    fig2 = B.pl.subplots(3, sharex=True, sharey=True, figsize=(13.4, 6))
+    gs = gridspec.GridSpec(1, 3) 
+
+    #=====================
+    #= THETA_NQ = 35 DEG =
+    #====================
+    ax0 = B.pl.subplot(gs[0])
+    l0 = plt.errorbar(pm_bin35_m+0.01, np.repeat(0, len(pm_bin35_m)), rel_stats_err35_m*100., color='cyan', linestyle='none', marker='^', ms=2, label = r'$I_{\textrm{beam}}$=70 $\mu A$' )
+    l1 = plt.errorbar(pm_avg35_m, np.repeat(0, len(pm_avg35_m)), rel_dataXsec_err35_m*100., marker='o', color='k', ms=0, linestyle='none',  capsize=2)
+    l2 = plt.errorbar(pm_avg35_m, np.repeat(0, len(pm_avg35_m)), (red_dataXsec_avg_tot_err35/red_dataXsec_avg_masked35)*100.,  marker='o', color='k', ms=0,  linestyle='none', capsize=2)
+    #Set axis limits
+    B.pl.xlim(0.0, 1.2)
+    B.pl.ylim(-50, 78.)
+
+    x_coord = [0, 1.2]
+    y_coord_1 = [10, 10]
+    y_coord_2 = [-10, -10]
+    plt.plot(x_coord, y_coord_1, linestyle='dashed', color='k', linewidth=1)
+    plt.plot(x_coord, y_coord_2, linestyle='dashed', color='k', linewidth=1)
+ 
+    #Set Tick Marks
+    ax0.tick_params(axis='both', which='both', direction='in', top=True, bottom=True, left=True, right=True, labelsize=19)
+
+    #Set Axes Labels for subplot 0
+    B.pl.xlabel('')                                                                                                                                                                                                   
+    B.pl.ylabel(r'Relative Errors (\%)', fontsize=22,  labelpad=10)                                                                                           
+    B.pl.title('')
+    
+    #=====================
+    #= THETA_NQ = 45 DEG =
+    #====================
+    ax1 = B.pl.subplot(gs[1], sharey=ax0)
+    l0 = plt.errorbar(pm_bin45_m+0.01, np.repeat(0, len(pm_bin45_m)), rel_stats_err45_m*100., color='cyan', linestyle='none', marker='^', ms=2 )
+    l1 = plt.errorbar(pm_avg45_m, np.repeat(0, len(pm_avg45_m)), rel_dataXsec_err45_m*100., color='k', linestyle='none', marker='', capsize=2)
+    l2 = plt.errorbar(pm_avg45_m, np.repeat(0, len(pm_avg45_m)), (red_dataXsec_avg_tot_err45/red_dataXsec_avg_masked45)*100., color='k', linestyle='none', marker='', capsize=2)
+
+    #Remove un-necessary Y tick labels from subplot
+    B.pl.setp(ax1.get_yticklabels(), visible=False)
+    
+    #Set axis limits
+    B.pl.xlim(0.0, 1.2)
+    B.pl.ylim(-50, 78.)
+
+    x_coord = [0, 1.2]
+    y_coord_1 = [10, 10]
+    y_coord_2 = [-10, -10]
+    plt.plot(x_coord, y_coord_1, linestyle='dashed', color='k', linewidth=1)
+    plt.plot(x_coord, y_coord_2, linestyle='dashed', color='k', linewidth=1)
+ 
+    #Set Tick Marks
+    ax1.tick_params(axis='both', which='both', direction='in', top=True, bottom=True, left=True, right=True, labelsize=19)
+
+    B.pl.xlabel(r'Missing Momentum, $P_{m}$ (GeV/c)', fontsize=19)
+    #B.pl.text(0.25, 0.5e-6, r'Missing Momentum, $P_{m} (GeV/c)$', fontsize=19)
+
+    #=====================
+    #= THETA_NQ = 75 DEG =
+    #====================
+    ax2 = B.pl.subplot(gs[2])
+    l0 = plt.errorbar(pm_bin75_m+0.01, np.repeat(0, len(pm_bin75_m)), rel_stats_err75_m*100., color='cyan', linestyle='none', marker='^', ms=2)
+    l1 = plt.errorbar(pm_avg75_m, np.repeat(0, len(pm_avg75_m)), rel_dataXsec_err75_m*100., color='k', linestyle='none', marker='', capsize=2)
+    l2 = plt.errorbar(pm_avg75_m, np.repeat(0, len(pm_avg75_m)), (red_dataXsec_avg_tot_err75/red_dataXsec_avg_masked75)*100., color='k', linestyle='none', marker='', capsize=2)
+
+    #Remove un-necessary Y tick labels from subplot
+    B.pl.setp(ax2.get_yticklabels(), visible=False)
+    
+    #Set axis limits
+    B.pl.xlim(0.0, 1.2)
+    B.pl.ylim(-50, 78.)
+
+    x_coord = [0, 1.2]
+    y_coord_1 = [10, 10]
+    y_coord_2 = [-10, -10]
+    plt.plot(x_coord, y_coord_1, linestyle='dashed', color='k', linewidth=1)
+    plt.plot(x_coord, y_coord_2, linestyle='dashed', color='k', linewidth=1)
+ 
+    #Set Tick Marks
+    ax2.tick_params(axis='both', which='both', direction='in', top=True, bottom=True, left=True, right=True, labelsize=19)
+
+    plt.subplots_adjust(wspace = 0.0000000001, bottom=0.13, top=0.98, left=0.085, right=0.98) #, hspace = 0.001, wspace = 0.001)
+    line_labels=[r'Commissioning Experiment (Hall C)' '\n' r'(72 hrs at 45-60 $\mu$A)', 'Projected Statistical Errors ' '\n' r'(352 hrs at 70 $\mu$A, assuming 50\% beam eff.)']
+    ax2.legend([l1, l0], line_labels, loc='upper right', frameon=False, fontsize=12)
+    
+    plt.show()
+    '''
     
 def main():
     print('Entering Main . . .')
