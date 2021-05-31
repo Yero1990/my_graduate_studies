@@ -211,8 +211,8 @@ def make_prl_plots(plot2_inset=0):
 
 
     #set initial parameters
-    p0_init_low = (1e-6, 1e-5, 1e-6)
-    p0_init_hi = (1, 1, 4e-6)
+    p0_init_low35 = (1e-6, 1e-5, 1e-6)
+    p0_init_hi35 = (1, 1, 4e-6)
 
     #mask infs or nans in the redXsec, and pass masked values to pm_avg, and redXsec_err (then compress, to get rid of masked elements for fitting)
     redXsec_fit35 = ma.masked_invalid(red_dataXsec_avg_masked35) 
@@ -223,23 +223,10 @@ def make_prl_plots(plot2_inset=0):
     redXsec_fit35 = ma.compressed( redXsec_fit35 )
     redXsec_err_fit35 = ma.compressed(redXsec_err_fit35)
     pm_avg35_fit = ma.compressed( pm_avg35_fit )
-
-    #concatenate hall a and c data arrays to form a continuation from low to high pmiss for the exponential fit
-    #redXsec_fit35 = np.concatenate( (redXsec_fit35[0:6], red_dataXsec_ha35[7:10], redXsec_fit35[7:19]), axis=0 )         #In [15]: x = np.concatenate((x,x2), axis=0)
-    #redXsec_err_fit35 = np.concatenate( (redXsec_err_fit35[0:6], red_dataXsec_err_ha35[7:10], redXsec_err_fit35[7:19]), axis=0 )        
-    #pm_avg35_fit =  np.concatenate( (pm_avg35_fit[0:6],pm_ha35[7:10], pm_avg35_fit[7:19]), axis=0)
-    
-    #print('1----> ', redXsec_fit35)
-    #print('2----> ', redXsec_err_fit35)
-    #print('3----> ', pm_avg35_fit)
-
-    #print('1 (halla) ----> ',red_dataXsec_ha35)
-    #print('2 (halla) ----> ',red_dataXsec_err_ha35)
-    #print('3 (halla) ----> ',pm_ha35)
     
     #perform fit
-    fit_parms_35_low, cov_35_low = curve_fit(f=monoExp, xdata=pm_avg35_fit[0:7], ydata=redXsec_fit35[0:7], sigma=redXsec_err_fit35[0:7], p0=p0_init_low)
-    fit_parms_35_hi, cov_35_hi = curve_fit(f=monoExp, xdata=pm_avg35_fit[7:20], ydata=redXsec_fit35[7:20], sigma=redXsec_err_fit35[7:20], p0=p0_init_hi)
+    fit_parms_35_low, cov_35_low = curve_fit(f=monoExp, xdata=pm_avg35_fit[0:7], ydata=redXsec_fit35[0:7], sigma=redXsec_err_fit35[0:7], p0=p0_init_low35)
+    fit_parms_35_hi, cov_35_hi = curve_fit(f=monoExp, xdata=pm_avg35_fit[7:20], ydata=redXsec_fit35[7:20], sigma=redXsec_err_fit35[7:20], p0=p0_init_hi35)
 
     a35_low, m35_low, b35_low = fit_parms_35_low
     a35_hi, m35_hi, b35_hi = fit_parms_35_hi
@@ -247,7 +234,29 @@ def make_prl_plots(plot2_inset=0):
     y35_fit_model_low = monoExp(pm_avg35[0:7], a35_low, m35_low, b35_low)
     y35_fit_model_hi = monoExp(pm_avg35[10:30], a35_hi, m35_hi, b35_hi)
 
+    #set initial parameters (for 45 deg)
+    p0_init_low45 = (1e-6, 1e-5, 1e-6)
+    p0_init_hi45 = (1, 1, 1e-6)
+
+    #mask infs or nans in the redXsec, and pass masked values to pm_avg, and redXsec_err (then compress, to get rid of masked elements for fitting)
+    redXsec_fit45 = ma.masked_invalid(red_dataXsec_avg_masked45) 
+    redXsec_err_fit45 = ma.masked_array(red_dataXsec_avg_tot_err45, redXsec_fit45.mask)
+    pm_avg45_fit = ma.masked_array(pm_avg45, redXsec_fit45.mask)
+
+    #compress masked values (eliminate -- )
+    redXsec_fit45 = ma.compressed( redXsec_fit45 )
+    redXsec_err_fit45 = ma.compressed(redXsec_err_fit45)
+    pm_avg45_fit = ma.compressed( pm_avg45_fit )
     
+    #perform fit
+    #fit_parms_45_low, cov_45_low = curve_fit(f=monoExp, xdata=pm_avg45_fit[0:7], ydata=redXsec_fit45[0:7], sigma=redXsec_err_fit45[0:7], p0=p0_init_low45)
+    #fit_parms_45_hi, cov_45_hi = curve_fit(f=monoExp, xdata=pm_avg45_fit[7:20], ydata=redXsec_fit45[7:20], sigma=redXsec_err_fit45[7:20], p0=p0_init_hi45)
+
+    #a45_low, m45_low, b45_low = fit_parms_45_low
+    #a45_hi, m45_hi, b45_hi = fit_parms_45_hi
+    
+    #y45_fit_model_low = monoExp(pm_avg45[0:7], a45_low, m45_low, b45_low)
+    #y45_fit_model_hi = monoExp(pm_avg45[10:30], a45_hi, m45_hi, b45_hi)
         
     #------------------------------------------------------------------------------------
     #--------MAKE PRL PLOT 1 (Reduced Cross Sections vs. recoil momenta)-----------------
@@ -353,6 +362,12 @@ def make_prl_plots(plot2_inset=0):
     #Plot Experimental Data (Hall A or Hall C)
     l1 = B.plot_exp(pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
     l2 = B.plot_exp(pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45, marker='s',  markersize=5, color='#ff1000', markerfacecolor='white', capsize=0, logy=True,  label='Hall A Data', zorder=3)
+    
+    #lfit_low = B.plot_exp(pm_avg45[0:7], y45_fit_model_low, linestyle='-', marker='', color='dimgray', logy=True, zorder=4)
+    #lfit_hi = B.plot_exp(pm_avg45[10:30], y45_fit_model_hi, linestyle='-', marker='', color='dimgray', logy=True,zorder=4)
+
+    #Hall C data (for statistical projections of full deuteron experiment)
+    #l0 = B.plot_exp(pm_bin45[13:29]+0.01, monoExp(pm_bin45[13:29]+0.01, a45_hi, m45_hi, b45_hi), monoExp(pm_bin45[13:29]+0.01, a45_hi, m45_hi, b45_hi) *rel_stats_err45_m[13:29], marker='o', markersize=3, color='dimgray', mfc='white', mec='dimgray', ecolor='dimgray', capsize=0, logy=True, label='Projected Stat. Error', zorder=4)
 
     #Plot theoretical calculations
     l3, = B.plot_exp(pm_jml_45_pwia, f_red_pwiaXsec_JML_45(pm_jml_45_pwia), linestyle='--', marker='None', color='#0000ff', logy=True, label='Paris PWIA', zorder=2)
