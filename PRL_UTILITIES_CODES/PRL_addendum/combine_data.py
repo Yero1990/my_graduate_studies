@@ -20,7 +20,7 @@ from matplotlib import *
 def find_common_thnq(thnq_match):
 
     fname = np.array(['pm80_laget_bc_corr_set1.txt', 'pm580_laget_bc_corr_set1.txt', 'pm580_laget_bc_corr_set2.txt', 'pm750_laget_bc_corr_set1.txt', 'pm750_laget_bc_corr_set2.txt', 'pm750_laget_bc_corr_set3.txt'])
-    fname_out = 'theory_JML_thnq%d.txt'%(thnq_match)
+    fname_out = 'theory_JML_thnq%d_test.txt'%(thnq_match)
 
     #open file to write results:
     ofile = open(fname_out, 'w')

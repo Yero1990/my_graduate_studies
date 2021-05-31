@@ -236,7 +236,7 @@ def make_prl_plots(plot2_inset=0):
 
     #set initial parameters (for 45 deg)
     p0_init_low45 = (1e-6, 1e-5, 1e-6)
-    p0_init_hi45 = (1, 1, 1e-6)
+    p0_init_hi45 = (1e-3, 1, 1e-6)
 
     #mask infs or nans in the redXsec, and pass masked values to pm_avg, and redXsec_err (then compress, to get rid of masked elements for fitting)
     redXsec_fit45 = ma.masked_invalid(red_dataXsec_avg_masked45) 
@@ -247,16 +247,20 @@ def make_prl_plots(plot2_inset=0):
     redXsec_fit45 = ma.compressed( redXsec_fit45 )
     redXsec_err_fit45 = ma.compressed(redXsec_err_fit45)
     pm_avg45_fit = ma.compressed( pm_avg45_fit )
+
+    print('pm_avg45_fit ---->',pm_avg45_fit)
+    print('redXsec_fit45 ----->',redXsec_fit45)
+    print('redXsec_err_fit45 ----->',redXsec_err_fit45)
     
     #perform fit
-    #fit_parms_45_low, cov_45_low = curve_fit(f=monoExp, xdata=pm_avg45_fit[0:7], ydata=redXsec_fit45[0:7], sigma=redXsec_err_fit45[0:7], p0=p0_init_low45)
-    #fit_parms_45_hi, cov_45_hi = curve_fit(f=monoExp, xdata=pm_avg45_fit[7:20], ydata=redXsec_fit45[7:20], sigma=redXsec_err_fit45[7:20], p0=p0_init_hi45)
+    fit_parms_45_low, cov_45_low = curve_fit(f=monoExp, xdata=pm_avg45_fit[0:6], ydata=redXsec_fit45[0:6], sigma=redXsec_err_fit45[0:6], p0=p0_init_low45)
+    fit_parms_45_hi, cov_45_hi = curve_fit(f=monoExp, xdata=pm_avg45_fit[7:20], ydata=redXsec_fit45[7:20], sigma=redXsec_err_fit45[7:20], p0=p0_init_hi45)
 
-    #a45_low, m45_low, b45_low = fit_parms_45_low
-    #a45_hi, m45_hi, b45_hi = fit_parms_45_hi
+    a45_low, m45_low, b45_low = fit_parms_45_low
+    a45_hi, m45_hi, b45_hi = fit_parms_45_hi
     
-    #y45_fit_model_low = monoExp(pm_avg45[0:7], a45_low, m45_low, b45_low)
-    #y45_fit_model_hi = monoExp(pm_avg45[10:30], a45_hi, m45_hi, b45_hi)
+    y45_fit_model_low = monoExp(pm_avg45[0:7], a45_low, m45_low, b45_low)
+    y45_fit_model_hi = monoExp(pm_avg45[10:30], a45_hi, m45_hi, b45_hi)
         
     #------------------------------------------------------------------------------------
     #--------MAKE PRL PLOT 1 (Reduced Cross Sections vs. recoil momenta)-----------------
@@ -278,13 +282,12 @@ def make_prl_plots(plot2_inset=0):
     
     #Hall C data (for PRL)
     l1 = B.plot_exp(pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
-    lfit_low = B.plot_exp(pm_avg35[0:7], y35_fit_model_low, linestyle='-', marker='', color='dimgray', logy=True, zorder=4)
-    lfit_hi = B.plot_exp(pm_avg35[10:30], y35_fit_model_hi, linestyle='-', marker='', color='dimgray', logy=True,zorder=4)
+    lfit_low, = B.plot_exp(pm_avg35[0:7], y35_fit_model_low, linestyle='-', marker='', color='cyan', logy=True, zorder=3)
+    lfit_hi, = B.plot_exp(pm_avg35[10:30], y35_fit_model_hi, linestyle='-', marker='', color='cyan', logy=True,zorder=3)
 
     #Hall C data (for statistical projections of full deuteron experiment)
-    #l0 = B.plot_exp(pm_bin35_+0.01, red_dataXsec_avg_masked35, red_dataXsec_proj_stats35, marker='^', markersize=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
-
-    l0 = B.plot_exp(pm_bin35[13:29]+0.01, monoExp(pm_bin35[13:29]+0.01, a35_hi, m35_hi, b35_hi), monoExp(pm_bin35[13:29]+0.01, a35_hi, m35_hi, b35_hi) *rel_stats_err35_m[13:29], marker='o', markersize=3, color='dimgray', mfc='white', mec='dimgray', ecolor='dimgray', capsize=0, logy=True, label='Projected Stat. Error', zorder=4)
+    l0_lo = B.plot_exp(pm_bin35[0:6]+0.01, monoExp(pm_bin35[0:6]+0.01, a35_low, m35_low, b35_low), monoExp(pm_bin35[0:6]+0.01, a35_low, m35_low, b35_low) *rel_stats_err35_m[0:6], marker='o', markersize=3, color='cyan', mfc='white', mec='cyan', ecolor='cyan', capsize=0, logy=True, zorder=4)
+    l0_hi = B.plot_exp(pm_bin35[13:29]+0.01, monoExp(pm_bin35[13:29]+0.01, a35_hi, m35_hi, b35_hi), monoExp(pm_bin35[13:29]+0.01, a35_hi, m35_hi, b35_hi) *rel_stats_err35_m[13:29], marker='o', markersize=3, color='cyan', mfc='white', mec='cyan', ecolor='cyan', capsize=0, logy=True, zorder=4)
 
           
     #Hall A data
@@ -360,14 +363,15 @@ def make_prl_plots(plot2_inset=0):
     #l0 = B.plot_exp(pm_avg45_m+0.01, red_dataXsec_avg_masked45, red_dataXsec_proj_stats45, marker='^', ms=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
 
     #Plot Experimental Data (Hall A or Hall C)
-    l1 = B.plot_exp(pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
+    l1 = B.plot_exp(pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)    
+    lfit_low, = B.plot_exp(pm_avg45[0:7], y45_fit_model_low, linestyle='-', marker='', color='cyan', logy=True, zorder=3)
+    lfit_hi, = B.plot_exp(pm_avg45[10:30], y45_fit_model_hi, linestyle='-', marker='', color='cyan', logy=True,zorder=3)
+
     l2 = B.plot_exp(pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45, marker='s',  markersize=5, color='#ff1000', markerfacecolor='white', capsize=0, logy=True,  label='Hall A Data', zorder=3)
-    
-    #lfit_low = B.plot_exp(pm_avg45[0:7], y45_fit_model_low, linestyle='-', marker='', color='dimgray', logy=True, zorder=4)
-    #lfit_hi = B.plot_exp(pm_avg45[10:30], y45_fit_model_hi, linestyle='-', marker='', color='dimgray', logy=True,zorder=4)
 
     #Hall C data (for statistical projections of full deuteron experiment)
-    #l0 = B.plot_exp(pm_bin45[13:29]+0.01, monoExp(pm_bin45[13:29]+0.01, a45_hi, m45_hi, b45_hi), monoExp(pm_bin45[13:29]+0.01, a45_hi, m45_hi, b45_hi) *rel_stats_err45_m[13:29], marker='o', markersize=3, color='dimgray', mfc='white', mec='dimgray', ecolor='dimgray', capsize=0, logy=True, label='Projected Stat. Error', zorder=4)
+    l0_lo = B.plot_exp(pm_bin45[0:6]+0.01, monoExp(pm_bin45[0:6]+0.01, a45_low, m45_low, b45_low), monoExp(pm_bin45[0:6]+0.01, a45_low, m45_low, b45_low) *rel_stats_err45_m[0:6], marker='o', markersize=3, color='cyan', mfc='white', mec='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=4)
+    l0_hi = B.plot_exp(pm_bin45[14:29]+0.01, monoExp(pm_bin45[14:29]+0.01, a45_hi, m45_hi, b45_hi), monoExp(pm_bin45[14:29]+0.01, a45_hi, m45_hi, b45_hi) *rel_stats_err45_m[14:29], marker='o', markersize=3, color='cyan', mfc='white', mec='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=4)
 
     #Plot theoretical calculations
     l3, = B.plot_exp(pm_jml_45_pwia, f_red_pwiaXsec_JML_45(pm_jml_45_pwia), linestyle='--', marker='None', color='#0000ff', logy=True, label='Paris PWIA', zorder=2)
@@ -407,7 +411,7 @@ def make_prl_plots(plot2_inset=0):
     B.pl.setp(ax2.get_yticklabels(), visible=False)
 
     #Hall C data (for statistical projections of full deuteron experiment)
-    #l0 = B.plot_exp(pm_avg75_m+0.01, red_dataXsec_avg_masked75, red_dataXsec_proj_stats75, marker='^', ms=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
+    l0 = B.plot_exp(pm_avg75_m+0.01, red_dataXsec_avg_masked75, red_dataXsec_proj_stats75, marker='o', ms=2, color='cyan', ecolor='cyan', capsize=0, logy=True, label='Projected Stat. Error', zorder=3)
     
     #Plot Experimental Data (Hall A or Hall C)
     l1 = B.plot_exp(pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75, marker='o', markersize=2, color='k', capsize=0, markerfacecolor='k', logy=True, label='This Experiment (Hall C)', zorder=4)
@@ -449,8 +453,8 @@ def make_prl_plots(plot2_inset=0):
     #line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI']
     #ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, l9, l10], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
     #----Projected Errors Plot----
-    line_labels=['This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI']
-    ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, l9, l10], line_labels, loc='upper right', frameon=False, fontsize=12)      #subplot to use for common legend
+    line_labels=[r'This Experiment (Hall C)', 'Hall A Data', 'JML Paris PWIA', 'JML Paris FSI', 'MS AV18 PWBA', 'MS AV18 FSI', 'MS CD-Bonn PWBA', 'MS CD-Bonn FSI', 'JVO WJC2 PWBA', 'JVO WJC2 FSI', 'Projected Stat. Errors', 'Data Fit: f(x) = A$e^{-m x}$+b']
+    ax2.legend([l1, l2, l3, l4, l5, l6, l7, l8, l9, l10, l0, lfit_low], line_labels, loc='upper right', frameon=False, fontsize=11)      #subplot to use for common legend
 
 
     B.pl.show()
