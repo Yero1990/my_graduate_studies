@@ -30,9 +30,9 @@ csfont = {'fontname':'Times New Roman'}
 def make_prl_plots(plot2_inset=0):
   
     #Read Hall C (E12-10-003) experimental data (requires <=50% statistical uncertainty, units: fm^3, GeV/c)
-    pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35 = read_hallc_data(35)
-    pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45 = read_hallc_data(45)
-    pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75 = read_hallc_data(75)
+    pm_bin35, pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35 = read_hallc_data(35)
+    pm_bin45, pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45 = read_hallc_data(45)
+    pm_bin75, pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75 = read_hallc_data(75)
 
     #Read Hall A experimental data
     pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35 = read_halla_data(35)
@@ -139,7 +139,318 @@ def make_prl_plots(plot2_inset=0):
     R_WJC2_pwba75 = f_red_pwbaXsec_WJC2_75(pm_avg75) / f_red_pwiaXsec_CD_75(pm_avg75)
     R_WJC2_fsi75  = f_red_fsiXsec_WJC2_75(pm_avg75)  / f_red_pwiaXsec_CD_75(pm_avg75)
 
-    print(">>>>>>>>>>>> ", red_dataXsec_avg_tot_err35)
+    #------ WRITE NUMERICAL RATIOS DATA TO FILE (FOR FUTURE USE) ---------
+    #Write plotted data to file (It is easier to simply read and plot this data later on, for other purposes, as it is already the combined reduced Xsec.
+
+    #----- 35 DEG -----
+    
+    # Hall C DATA
+    fout = open('RATIO_pm_distributions_hallc_thnq35.txt', 'w')
+    fout.write(
+        '# Hall C d(e,e p)n commissioning numerical data red. Xsec ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq             : 35 +/- 5 deg \n'
+        '# pm_bin           : central missing momentum bin (GeV/c) \n '
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# R                : reduced data cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_err            : reduced data cross-sections / MS_CD_Bonn_PWIA total error \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R[f,2]/    R_err[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_avg35, R_data35, R_data_err35))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # Hall A DATA (PRL 2011, W.U. Boeglin et al.)
+    fout = open('RATIO_pm_distributions_halla_thnq35.txt', 'w')
+    fout.write(
+        '# Hall A d(e,e p)n numerical data (PRL 2011, W.U.Boeglin et al.) ratio to MS CD-Bonn PWIA\n'
+        '# \n'
+        '# thnq             : 35 +/- 5 deg \n'
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# R                : reduced data cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# R_err            : reduced data cross-sections / MS_CD-Bonn_PWIA total error  \n'
+        '# \n'
+    )
+    fout.write('#! pm_avg[f,0]/    R[f,1]/    R_err[f,2]/\n')
+    data = np.column_stack((pm_ha35, R_HAdata35, R_HAdata_err35))
+    np.savetxt(fout, data, fmt='%.6f     %.6E      %.6E ')
+    fout.close()
+
+    # JML Laget (Paris) numerical data (using Hall C input)
+    fout = open('RATIO_jml_paris_thnq35.txt', 'w')
+    fout.write(
+        '# Jean-Marc Laget (JML Paris) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_avg35, R_JML_pwia35, R_JML_fsi35))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (AV18) numerical data (using Hall C input)
+    fout = open('RATIO_ms_v18_thnq35.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS AV18) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA\n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/   R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_avg35, R_V18_pwia35, R_V18_fsi35))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (CD-Bonn) numerical data (using Hall C input)
+    fout = open('RATIO_ms_cdbonn_thnq35.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS CD-Bonn) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_avg35, np.repeat(1.0, len(pm_avg35)), R_CD_fsi35))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.1f      %.6E ')
+    fout.close()
+
+    # J.W. Van Orden and Sabine Jeshonnek (JVO WJC2) numerical data (using Hall C input)
+    fout = open('RATIO_jvo_wjc2_thnq35.txt', 'w')
+    fout.write(
+        '# J.W.V. Orden and S. Jeshonnek (JVO WJC2) d(e,e p)n theory reduced cross-sections to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_avg35, R_WJC2_pwba35, R_WJC2_fsi35))
+    np.savetxt(fout, data, fmt='%.3f    %.6f     %.6E      %.6E ')
+    fout.close()
+
+    #----- 45 DEG -----
+    
+    # Hall C DATA
+    fout = open('RATIO_pm_distributions_hallc_thnq45.txt', 'w')
+    fout.write(
+        '# Hall C d(e,e p)n commissioning numerical data red. Xsec ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq             : 45 +/- 5 deg \n'
+        '# pm_bin           : central missing momentum bin (GeV/c) \n '
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# R                : reduced data cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_err            : reduced data cross-sections / MS_CD_Bonn_PWIA total error \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R[f,2]/    R_err[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_avg45, R_data45, R_data_err45))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # Hall A DATA (PRL 2011, W.U. Boeglin et al.)
+    fout = open('RATIO_pm_distributions_halla_thnq45.txt', 'w')
+    fout.write(
+        '# Hall A d(e,e p)n numerical data (PRL 2011, W.U.Boeglin et al.) ratio to MS CD-Bonn PWIA\n'
+        '# \n'
+        '# thnq             : 45 +/- 5 deg \n'
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# R                : reduced data cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# R_err            : reduced data cross-sections / MS_CD-Bonn_PWIA total error  \n'
+        '# \n'
+    )
+    fout.write('#! pm_avg[f,0]/    R[f,1]/    R_err[f,2]/\n')
+    data = np.column_stack((pm_ha45, R_HAdata45, R_HAdata_err45))
+    np.savetxt(fout, data, fmt='%.6f     %.6E      %.6E ')
+    fout.close()
+
+    # JML Laget (Paris) numerical data (using Hall C input)
+    fout = open('RATIO_jml_paris_thnq45.txt', 'w')
+    fout.write(
+        '# Jean-Marc Laget (JML Paris) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_avg45, R_JML_pwia45, R_JML_fsi45))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (AV18) numerical data (using Hall C input)
+    fout = open('RATIO_ms_v18_thnq45.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS AV18) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA\n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/   R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_avg45, R_V18_pwia45, R_V18_fsi45))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (CD-Bonn) numerical data (using Hall C input)
+    fout = open('RATIO_ms_cdbonn_thnq45.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS CD-Bonn) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_avg45, np.repeat(1.0, len(pm_avg45)), R_CD_fsi45))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.1f      %.6E ')
+    fout.close()
+
+    # J.W. Van Orden and Sabine Jeshonnek (JVO WJC2) numerical data (using Hall C input)
+    fout = open('RATIO_jvo_wjc2_thnq45.txt', 'w')
+    fout.write(
+        '# J.W.V. Orden and S. Jeshonnek (JVO WJC2) d(e,e p)n theory reduced cross-sections to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_avg45, R_WJC2_pwba45, R_WJC2_fsi45))
+    np.savetxt(fout, data, fmt='%.3f    %.6f     %.6E      %.6E ')
+    fout.close()
+
+    #----- 75 DEG -----
+    
+    # Hall C DATA
+    fout = open('RATIO_pm_distributions_hallc_thnq75.txt', 'w')
+    fout.write(
+        '# Hall C d(e,e p)n commissioning numerical data red. Xsec ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq             : 75 +/- 5 deg \n'
+        '# pm_bin           : central missing momentum bin (GeV/c) \n '
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# R                : reduced data cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_err            : reduced data cross-sections / MS_CD_Bonn_PWIA total error \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R[f,2]/    R_err[f,3]/\n')
+    data = np.column_stack((pm_bin75, pm_avg75, R_data75, R_data_err75))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # Hall A DATA (PRL 2011, W.U. Boeglin et al.)
+    fout = open('RATIO_pm_distributions_halla_thnq75.txt', 'w')
+    fout.write(
+        '# Hall A d(e,e p)n numerical data (PRL 2011, W.U.Boeglin et al.) ratio to MS CD-Bonn PWIA\n'
+        '# \n'
+        '# thnq             : 75 +/- 5 deg \n'
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# R                : reduced data cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# R_err            : reduced data cross-sections / MS_CD-Bonn_PWIA total error  \n'
+        '# \n'
+    )
+    fout.write('#! pm_avg[f,0]/    R[f,1]/    R_err[f,2]/\n')
+    data = np.column_stack((pm_ha75, R_HAdata75, R_HAdata_err75))
+    np.savetxt(fout, data, fmt='%.6f     %.6E      %.6E ')
+    fout.close()
+
+    # JML Laget (Paris) numerical data (using Hall C input)
+    fout = open('RATIO_jml_paris_thnq75.txt', 'w')
+    fout.write(
+        '# Jean-Marc Laget (JML Paris) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA  \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin75, pm_avg75, R_JML_pwia75, R_JML_fsi75))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (AV18) numerical data (using Hall C input)
+    fout = open('RATIO_ms_v18_thnq75.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS AV18) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA\n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/   R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin75, pm_avg75, R_V18_pwia75, R_V18_fsi75))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (CD-Bonn) numerical data (using Hall C input)
+    fout = open('RATIO_ms_cdbonn_thnq75.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS CD-Bonn) d(e,e p)n theory reduced cross-sections ratio to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin75, pm_avg75, np.repeat(1.0, len(pm_avg75)), R_CD_fsi75))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.1f      %.6E ')
+    fout.close()
+
+    # J.W. Van Orden and Sabine Jeshonnek (JVO WJC2) numerical data (using Hall C input)
+    fout = open('RATIO_jvo_wjc2_thnq75.txt', 'w')
+    fout.write(
+        '# J.W.V. Orden and S. Jeshonnek (JVO WJC2) d(e,e p)n theory reduced cross-sections to MS CD-Bonn PWIA \n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# R_pwia              : reduced PWIA theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# R_fsi               : reduced FSI  theory cross-sections / MS_CD-Bonn_PWIA \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    R_pwia[f,2]/    R_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin75, pm_avg75, R_WJC2_pwba75, R_WJC2_fsi75))
+    np.savetxt(fout, data, fmt='%.3f    %.6f     %.6E      %.6E ')
+    fout.close()
+    
     #------------------------------------------------------------------------------------
     #--------MAKE PRL PLOT 1 (Reduced Cross Sections vs. recoil momenta)-----------------
     #------------------------------------------------------------------------------------
@@ -186,7 +497,7 @@ def make_prl_plots(plot2_inset=0):
     B.pl.xlabel('')                                                                                                                                                                                                   
     B.pl.ylabel(r'$\sigma_{\mathrm{red}}$ ($\mathrm{fm}^{3}$) ', fontsize=axes_fontsize,  labelpad=10)                                                                                           
     B.pl.title('')
-
+    
     #=====================
     #= THETA_NQ = 45 DEG =
     #====================
@@ -283,9 +594,320 @@ def make_prl_plots(plot2_inset=0):
     #B.pl.show()
     B.pl.savefig('./PRL_plot1.png', format='png')
 
+    '''
+    #------ WRITE NUMERICAL DATA TO FILE (FOR FUTURE USE) ---------
+    #Write plotted data to file (It is easier to simply read and plot this data later on, for other purposes, as it is already the combined reduced Xsec.
 
-
+    #----- 35 DEG -----
     
+    # Hall C DATA
+    fout = open('pm_distributions_hallc_thnq35.txt', 'w')
+    fout.write(
+        '# Hall C d(e,e p)n commissioning numerical data \n'
+        '# \n'
+        '# thnq             : 35 +/- 5 deg \n'
+        '# pm_bin           : central missing momentum bin (GeV/c) \n '
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# red_dataXsec     : reduced data cross-sections (fm^3) \n'
+        '# red_dataXsec_err : reduced data cross-sections total error (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_dataXsec[f,2]/    red_dataXsec_err[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_avg35, red_dataXsec_avg_masked35, red_dataXsec_avg_tot_err35))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # Hall A DATA (PRL 2011, W.U. Boeglin et al.)
+    fout = open('pm_distributions_halla_thnq35.txt', 'w')
+    fout.write(
+        '# Hall A d(e,e p)n numerical data (PRL 2011, W.U.Boeglin et al.) \n'
+        '# \n'
+        '# thnq             : 35 +/- 5 deg \n'
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# red_dataXsec     : reduced data cross-sections (fm^3) \n'
+        '# red_dataXsec_err : reduced data cross-sections total error (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_avg[f,0]/    red_dataXsec[f,1]/    red_dataXsec_err[f,2]/\n')
+    data = np.column_stack((pm_ha35, red_dataXsec_ha35, red_dataXsec_err_ha35))
+    np.savetxt(fout, data, fmt='%.6f     %.6E      %.6E ')
+    fout.close()
+
+    # JML Laget (Paris) numerical data (using Hall C input)
+    fout = open('jml_paris_thnq35.txt', 'w')
+    fout.write(
+        '# Jean-Mark Laget (JML Paris) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_jml_35_fsi, f_red_pwiaXsec_JML_35(pm_jml_35_fsi), f_red_fsiXsec_JML_35(pm_jml_35_fsi)))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (AV18) numerical data (using Hall C input)
+    fout = open('ms_v18_thnq35.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS AV18) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_v18_35_fsi, f_red_pwiaXsec_V18_35(pm_v18_35_fsi), f_red_fsiXsec_V18_35(pm_v18_35_fsi)))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (CD-Bonn) numerical data (using Hall C input)
+    fout = open('ms_cdbonn_thnq35.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS CD-Bonn) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin35, pm_cd_35_fsi, f_red_pwiaXsec_CD_35(pm_cd_35_fsi), f_red_fsiXsec_CD_35(pm_cd_35_fsi)))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # J.W. Van Orden and Sabine Jeshonnek (JVO WJC2) numerical data (using Hall C input)
+    fout = open('jvo_wjc2_thnq35.txt', 'w')
+    fout.write(
+        '# J.W.V. Ordern and S. Jeshonnek (JVO WJC2) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 35 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_wjc2_35_fsi, f_red_pwbaXsec_WJC2_35(pm_wjc2_35_fsi), f_red_fsiXsec_WJC2_35(pm_wjc2_35_fsi)))
+    np.savetxt(fout, data, fmt='     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    #----- 45 DEG -----
+    
+    # Hall C DATA
+    fout = open('pm_distributions_hallc_thnq45.txt', 'w')
+    fout.write(
+        '# Hall C d(e,e p)n commissioning numerical data \n'
+        '# \n'
+        '# thnq             : 45 +/- 5 deg \n'
+        '# pm_bin           : central missing momentum bin (GeV/c) \n '
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# red_dataXsec     : reduced data cross-sections (fm^3) \n'
+        '# red_dataXsec_err : reduced data cross-sections total error (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_dataXsec[f,2]/    red_dataXsec_err[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_avg45, red_dataXsec_avg_masked45, red_dataXsec_avg_tot_err45))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # Hall A DATA (PRL 2011, W.U. Boeglin et al.)
+    fout = open('pm_distributions_halla_thnq45.txt', 'w')
+    fout.write(
+        '# Hall A d(e,e p)n numerical data (PRL 2011, W.U.Boeglin et al.) \n'
+        '# \n'
+        '# thnq             : 45 +/- 5 deg \n'
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# red_dataXsec     : reduced data cross-sections (fm^3) \n'
+        '# red_dataXsec_err : reduced data cross-sections total error (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_avg[f,0]/    red_dataXsec[f,1]/    red_dataXsec_err[f,2]/\n')
+    data = np.column_stack((pm_ha45, red_dataXsec_ha45, red_dataXsec_err_ha45))
+    np.savetxt(fout, data, fmt='%.6f     %.6E      %.6E ')
+    fout.close()
+
+    # JML Laget (Paris) numerical data (using Hall C input)
+    fout = open('jml_paris_thnq45.txt', 'w')
+    fout.write(
+        '# Jean-Mark Laget (JML Paris) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_jml_45_fsi, f_red_pwiaXsec_JML_45(pm_jml_45_fsi), f_red_fsiXsec_JML_45(pm_jml_45_fsi)))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (AV18) numerical data (using Hall C input)
+    fout = open('ms_v18_thnq45.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS AV18) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_v18_45_fsi, f_red_pwiaXsec_V18_45(pm_v18_45_fsi), f_red_fsiXsec_V18_45(pm_v18_45_fsi)))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (CD-Bonn) numerical data (using Hall C input)
+    fout = open('ms_cdbonn_thnq45.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS CD-Bonn) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin45, pm_cd_45_fsi, f_red_pwiaXsec_CD_45(pm_cd_45_fsi), f_red_fsiXsec_CD_45(pm_cd_45_fsi)))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # J.W. Van Orden and Sabine Jeshonnek (JVO WJC2) numerical data (using Hall C input)
+    fout = open('jvo_wjc2_thnq45.txt', 'w')
+    fout.write(
+        '# J.W.V. Ordern and S. Jeshonnek (JVO WJC2) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 45 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_wjc2_45_fsi, f_red_pwbaXsec_WJC2_45(pm_wjc2_45_fsi), f_red_fsiXsec_WJC2_45(pm_wjc2_45_fsi)))
+    np.savetxt(fout, data, fmt='     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    #----- 75 DEG -----
+    
+    # Hall C DATA
+    fout = open('pm_distributions_hallc_thnq75.txt', 'w')
+    fout.write(
+        '# Hall C d(e,e p)n commissioning numerical data \n'
+        '# \n'
+        '# thnq             : 75 +/- 5 deg \n'
+        '# pm_bin           : central missing momentum bin (GeV/c) \n '
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# red_dataXsec     : reduced data cross-sections (fm^3) \n'
+        '# red_dataXsec_err : reduced data cross-sections total error (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_dataXsec[f,2]/    red_dataXsec_err[f,3]/\n')
+    data = np.column_stack((pm_bin75, pm_avg75, red_dataXsec_avg_masked75, red_dataXsec_avg_tot_err75))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # Hall A DATA (PRL 2011, W.U. Boeglin et al.)
+    fout = open('pm_distributions_halla_thnq75.txt', 'w')
+    fout.write(
+        '# Hall A d(e,e p)n numerical data (PRL 2011, W.U.Boeglin et al.) \n'
+        '# \n'
+        '# thnq             : 75 +/- 5 deg \n'
+        '# pm_avg           : average missing momentum value in central bin (GeV/c) \n'
+        '# red_dataXsec     : reduced data cross-sections (fm^3) \n'
+        '# red_dataXsec_err : reduced data cross-sections total error (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_avg[f,0]/    red_dataXsec[f,1]/    red_dataXsec_err[f,2]/\n')
+    data = np.column_stack((pm_ha75, red_dataXsec_ha75, red_dataXsec_err_ha75))
+    np.savetxt(fout, data, fmt='%.6f     %.6E      %.6E ')
+    fout.close()
+
+    # JML Laget (Paris) numerical data (using Hall C input)
+    fout = open('jml_paris_thnq75.txt', 'w')
+    fout.write(
+        '# Jean-Mark Laget (JML Paris) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_bin75, pm_jml_75_fsi, f_red_pwiaXsec_JML_75(pm_jml_75_fsi), f_red_fsiXsec_JML_75(pm_jml_75_fsi)))
+    np.savetxt(fout, data, fmt='%.3f     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (AV18) numerical data (using Hall C input)
+    fout = open('ms_v18_thnq75.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS AV18) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_v18_75_fsi, f_red_pwiaXsec_V18_75(pm_v18_75_fsi), f_red_fsiXsec_V18_75(pm_v18_75_fsi)))
+    np.savetxt(fout, data, fmt='    %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # MS (CD-Bonn) numerical data (using Hall C input)
+    fout = open('ms_cdbonn_thnq75.txt', 'w')
+    fout.write(
+        '# Misak Sargsian (MS CD-Bonn) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_cd_75_fsi, f_red_pwiaXsec_CD_75(pm_cd_75_fsi), f_red_fsiXsec_CD_75(pm_cd_75_fsi)))
+    np.savetxt(fout, data, fmt='     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    # J.W. Van Orden and Sabine Jeshonnek (JVO WJC2) numerical data (using Hall C input)
+    fout = open('jvo_wjc2_thnq75.txt', 'w')
+    fout.write(
+        '# J.W.V. Ordern and S. Jeshonnek (JVO WJC2) d(e,e p)n theory reduced cross-sections \n'
+        '# \n'
+        '# thnq                : 75 +/- 5 deg \n'
+        '# pm_bin              : central missing momentum bin (GeV/c) \n '
+        '# pm_avg              : average missing momentum value in central bin (GeV/c) \n'
+        '# red_theoryXsec_pwia : reduced PWIA theory cross-sections (fm^3) \n'
+        '# red_theoryXsec_fsi  : reduced FSI  theory cross-sections (fm^3) \n'
+        '# \n'
+    )
+    fout.write('#! pm_bin[f,0]/    pm_avg[f,1]/    red_theoryXsec_pwia[f,2]/    red_theoryXsec_fsi[f,3]/\n')
+    data = np.column_stack((pm_wjc2_75_fsi, f_red_pwbaXsec_WJC2_75(pm_wjc2_75_fsi), f_red_fsiXsec_WJC2_75(pm_wjc2_75_fsi)))
+    np.savetxt(fout, data, fmt='     %.6f     %.6E      %.6E ')
+    fout.close()
+
+    '''
     #------------------------------------------------------------------------------------------
     #--------MAKE PRL PLOT 2 (Reduced Cross Sections Ratio vs. recoil momenta)-----------------
     #------------------------------------------------------------------------------------------

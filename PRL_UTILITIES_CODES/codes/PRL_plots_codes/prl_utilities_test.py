@@ -84,7 +84,7 @@ def read_hallc_data(thnq=0, write_output=0):
     #if(write_output==1):
     #    return 
 
-    return pm_avg, red_dataXsec_avg_masked, red_dataXsec_avg_tot_err   #Units: Gev/c, fm^3, fm^3
+    return pm_bin, pm_avg, red_dataXsec_avg_masked, red_dataXsec_avg_tot_err   #Units: Gev/c, fm^3, fm^3
 #___________________________________________________________________
 def read_theoretical_models(theory="", model="", thnq=0):
 
