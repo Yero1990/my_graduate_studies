@@ -19,7 +19,7 @@ def make_prl_addendum(model='', thnq=0):
     fname = 'theoryXsec_%sFSI_thnq%.2f.data' % (model, thnq)
 
     #output file to write
-    fname_out = 'theory_MS%s_thnq%d.txt' % (model, thnq)
+    fname_out = 'theory_MS%s_thnq%d_test.txt' % (model, thnq)
     
     #open file to write results:
     ofile = open(fname_out, 'w')
@@ -67,9 +67,13 @@ def make_prl_addendum(model='', thnq=0):
 def main():
     print('Entering Main')
 
-    make_prl_addendum('CD-Bonn', thnq=35)  #V18 or CD-Bonn
-    make_prl_addendum('CD-Bonn', thnq=45)  #V18 or CD-Bonn
-    make_prl_addendum('CD-Bonn', thnq=75)  #V18 or CD-Bonn
+    #make_prl_addendum('CD-Bonn', thnq=35)  #V18 or CD-Bonn
+    #make_prl_addendum('CD-Bonn', thnq=45)  #V18 or CD-Bonn
+    #make_prl_addendum('CD-Bonn', thnq=75)  #V18 or CD-Bonn
+
+    make_prl_addendum('V18', thnq=35)  #V18 or CD-Bonn
+    make_prl_addendum('V18', thnq=45)  #V18 or CD-Bonn
+    make_prl_addendum('V18', thnq=75)  #V18 or CD-Bonn
 
 if __name__ == "__main__":
     main()
