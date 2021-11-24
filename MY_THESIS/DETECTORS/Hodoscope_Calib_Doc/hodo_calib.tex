@@ -69,10 +69,10 @@
 \author{Carlos Yero} %if necessary, replace with your course title
  
 \maketitle
-\noindent The Hall C Scintillaror Hodoscopes consists on four planes (per spectrometer) of scintillator arrays oriented perpendicular
+\noindent The Hall C Scintillaror Hodoscopes consists of four planes (per spectrometer) of scintillator arrays oriented perpendicular
 to the beam direction(See Figure \ref{fig:Hodo}). Each spectrometer has two sets of planes, each set oriented along the +X and +Y in the hut coordinate system.
 The hodoscopes form the standard HMS/SHMS trigger in Hall C due to the fast signal rise time produced from the scintillating material.
-For a thorough discussion of how the trigger is formed, see . . . \\
+For a thorough discussion of how the trigger is formed, see \url{https://hallcweb.jlab.org/doc-private/ShowDocument?docid=1028}  \\
 \begin{figure}[H]
   \captionsetup{justification=raggedright,singlelinecheck=false}
   \includegraphics[scale=0.3]{Hodo.png}
@@ -80,7 +80,7 @@ For a thorough discussion of how the trigger is formed, see . . . \\
   \label{fig:Hodo}
 \end{figure}
 When a particle traverses a plane, depending on the trajectory, any paddle could in principle be hit,
-the paddle then scintillates light, which propagates to them photomultiplier tubes (PMTs) at the two ends. The PMTs
+the paddle then scintillates light, which propagates to the photomultiplier tubes (PMTs) at the two ends. The PMTs
 convert the incident light to photoelectrons in the photocathode. The photoelectrons then are guided through the various dynodes in the PMT, knocking
 out more electrons, creating an avalanche of electrons. The electron avalanche then reaches the anode, producing a measurable current signal.
 The signal is sent to the Counting Room, where it is processed by the NIM/CAMAC electronics, and ultimately sent to ADCs, and TDCs. At this stage, the raw tdc signal
@@ -106,11 +106,20 @@ The corrections are summarized as follows (See Figure \ref{fig:Paddle}):
 \item \textbf{Time-Walk Corrections}, $t_{TW}$: For analog signals arriving at the \textit{Leading Edge Discriminators}
   at a particular time, depending on the signal \textit{amplitude}, the leading edge of the signal is discriminated,
   which causes the discriminated logic signal to jitter in time, when it should \textbf{NOT}, since the signals arrived at the
-  same time. Analog-to-Digital Converters (ADCs), do not have this disadvantage, since they correct for time-walk internally,
-  and as a result, the ADC Pulse Time is not correlated with the signal amplitude. To correct for this correlation in the TDCs,
-  the ADC Pulse Time is used as a reference by taking the TDC-ADC Pulse Time difference is plotted against the ADC amplitude. A model
-  function is fitted to this correlation, and the parameters extracted are used to correct the TDC time.
-\begin{figure}[H]
+  same time. Flash Analog-to-Digital Converters (fADCs), do not have this disadvantage, since they correct for time-walk internally,
+  and as a result, the ADC Pulse Time is not correlated with the signal amplitude. To correct for this correlation in the high resolution TDCs,
+  the ADC Pulse Time is used as a reference by taking the TDC-ADC Pulse Time difference is plotted against the fADC amplitude. A model
+  function is fitted to this correlation, and the parameters extracted are used to correct the TDC time. (See Figure \ref{fig:TWFit}) The function that is currently
+  being used in Hall C analyzer, \texttt{hcana}, has the form:
+  \begin{equation}
+    f_{TW}(a) = \frac{1}{(\frac{a}{TDC_{Thrs.}})^{c_{2}}} - \frac{1}{(\frac{200}{TDC_{Thrs.}})^{c_{2}}}
+  \end{equation}
+  where $a$ is the ADC amplitude,  $TDC_{Thrs}$ is the TDC threshold which is currently set to 120 mV. \textbf{ONLY} the fit parameter, $c_{2}$, and the
+  TDC Threshold ($TDC_{Thrs.}$), are read in by \texttt{hcana}, where the time-walk correction is applied to the raw TDC to obtain the corrected tdc time as shown in Figure \ref{fig:TWCorr}.
+  Even though the baseline parameter, $c_{1}$, is extracted in the calibration code, it is actually \textbf{NOT} used in \texttt{hcana} as it is highly correlated with the parameter $c_{2}$.
+  As a solution, an empirical baseline:  $-\frac{1}{(\frac{200}{TDC_{Thrs.}})^{c_{2}}}$, is used in \texttt{hcana} to replace $c_{1}$.
+  \newpage
+  \begin{figure}[H]
   \captionsetup{justification=raggedright,singlelinecheck=false}
     \includegraphics[scale=0.35]{1x7-_TWFit.png}
     \caption{Fitted correlation between TDC pulse Time and ADC Pulse Amplitude.}
@@ -123,8 +132,7 @@ The corrections are summarized as follows (See Figure \ref{fig:Paddle}):
     \label{fig:TWCorr}
   \end{figure}
 \newpage
-The plot in Figure \ref{fig:TWFit} shows the correlation between TDC Pulse Time and ADC Pulse Amplitude.  The fit parameters, $c_{1}$, TDC Threshold are read in by hcana, where
-the time-walk correction is applied to the raw TDC to obtain the corrected tdc time as shown in Figure \ref{fig:TWCorr}.
+The plot in Figure \ref{fig:TWFit} shows the correlation between TDC Pulse Time and ADC Pulse Amplitude.
 \item Cable Time Corrections, $t_{Cable}$: This correction takes into account the fact that the analog signal has
   to propagate across signal cables from the PMT all the way into the Counting House electronics rack into the TDC.
   To determine this correction, a correlation between Time-Walk corrected time and hodoscope paddle track position is fitted
@@ -142,7 +150,7 @@ The \textit{half} is to ensure that if the particle hits the edge of the paddle,
 time across the entire paddle is taken to obtain the time from the edge to the center. The hit distance is
 determined by extrapolating the distance determined by the Drift Chambers from tracking. The correlation between
 time and distance is fitted to extract the propagation velocity and the cable time difference between the two ends. (See Figure \ref{fig:Vp_fit})
-The cable time offset parameter is determined for all paddles and the parameter is read by hcana, and added as a correction
+The cable time offset parameter is determined for all paddles and the parameter is read by \texttt{hcana}, and added as a correction
 factor to the time-walk corrected TDC time. 
 \begin{figure}[H]
     \captionsetup{justification=raggedright,singlelinecheck=false}
@@ -299,7 +307,7 @@ method was used.
 
 \item Propagation Time Corrections, $t_{prop.}$: This correction accounts for the propagation
   time across both ends of the scintillator paddle from the particle hit location. The corrections is
-  done in the Hall C Analyzer, \textit{hcana}. Some of the geometrical parameters that are used are shown
+  done in the Hall C Analyzer, \texttt{hcana}. Some of the geometrical parameters that are used are shown
   in Figure \ref{fig:propTime}. \\
   \begin{figure}[H]
     \captionsetup{justification=raggedright,singlelinecheck=false}
@@ -307,7 +315,7 @@ method was used.
     \caption{Scintillator paddle illustrating how to apply the propagation time corrections.}
     \label{fig:propTime}
   \end{figure}
-  To derive how this correction is done in hcana, let the time-walk and cable length corrected time be
+  To derive how this correction is done in \texttt{hcana}, let the time-walk and cable length corrected time be
   defined as
   \begin{equation}
     t^{\pm}_{Corr.} = t_{0} + t^{\pm}_{prop.}
@@ -316,7 +324,7 @@ method was used.
     \begin{align}
       \Delta L &= \frac{1}{2}(t^{(-)}_{Corr.} - t^{(+)}_{Corr.})v_{p} =  \frac{1}{2}(t^{(-)}_{prop.} - t^{(+)}_{prop.})v_{p}
     \end{align}
-    The equations used in hcana are
+    The equations used in \texttt{hcana} are
     \begin{align}\label{eq:11}
       t^{(+)}_{Corr.} = t^{(+)}_{Corr.} - (L_{+} - hit)\frac{1}{v_{p}}, \text{ where } t^{(+)}_{prop.}\equiv(L_{+} - hit)\frac{1}{v_{p}} \nonumber \\
       t^{(-)}_{Corr.} = t^{(-)}_{Corr.} - (hit - L_{-})\frac{1}{v_{p}}, \text{ where } t^{(-)}_{prop.}\equiv(hit - L_{-})\frac{1}{v_{p}}       
@@ -347,7 +355,7 @@ using the new method.
   This script takes as input the ROOTfile containing the histogram objects produced by the previous
   script.  A parameter file containing the time-walk parameters will be produced at 
   \subitem $\Diamond$ {\texttt{hallc\_replay/PARAM/(S)HMS/HODO/(p)hhodo\_TWcalib\_runNUM.param}}
-  This parameter file name has to be manually changed to exclude the run number, since hcana reads in the parameter file as
+  This parameter file name has to be manually changed to exclude the run number, since \texttt{hcana} reads in the parameter file as
   \texttt{(p)hhodo\_TWcalib.param} .
 \item Replay the raw data file, once again (1 - 2 M events), with the updated time-walk parameters.
 \item In the hodoscopoe calibration directory, run the following code:
@@ -357,7 +365,7 @@ using the new method.
   this code solves a matrix equation for the $\lambda$ parameters mentioned in the previous section.
   A parameter file containing the time-walk parameters will be produced at
   \subitem $\Diamond$ {\texttt{hallc\_replay/PARAM/(S)HMS/HODO/(p)hhodo\_Vpcalib\_runNUM.param}} \\
-  This parameter file name has to be manually changed to exclude the run number, since hcana reads in the parameter file as
+  This parameter file name has to be manually changed to exclude the run number, since \texttt{hcana} reads in the parameter file as
   \texttt{(p)hhodo\_Vpcalib.param} .
 \item {Replay the raw data one last time, and check the hodoscope beta distribution. You may have to apply a calorimeter cut (for example, \texttt{(P)H.cal.etracknorm>0.7})}
   A good calibration should have the beta centered at unity. (See Figure \ref{fig:beta})
