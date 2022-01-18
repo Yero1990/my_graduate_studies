@@ -1,5 +1,0 @@
-#This file contains the run-by-run averaged (for all data sets) correction factor systematics on the cross section
-#These are relative errors, dsig / dig. Units: Multiply by 100 to convert to %%
-The last header is the quadrature sum of the headers, 0-6.  
-#! htrk_eff_syst[f,0]/  etrk_eff_syst[f,1]/  tgtBoil_syst[f,3]/  pAbs_syst[f,4]/  tLT_syst[f,5]/   Qtot_syst[f,6]/  total_norm_syst[f,7]/ 
-0.004054  0.005983  0.003986  0.004951  0.030000  0.020000  0.037318 
